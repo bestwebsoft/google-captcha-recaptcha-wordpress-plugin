@@ -3,7 +3,7 @@ Contributors: bestwebsoft
 Tags: captcha, recaptcha, google, google captcha, reCAPTCHA, re captcha, re-captcha, text captcha, spam, antispam, login, registration, comment, lost password, shortcode, capcha, catcha, captha
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 1.01
+Stable tag: 1.02
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -119,7 +119,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/general/System_Status.pdf" target="_blank">System_Status.pdf</a>
+4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
 
 == Screenshots ==
 
@@ -132,6 +132,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.02 - 03.04.2014 =
+* Update : Screenshots are updated.
+* Update : BWS plugins section is updated.
+* Bugfix : Plugin optimization is done.
+
 = V1.01 - 05.02.2014 =
 * Bugfix : The bug with adding comments from admin panel was fixed.
 * NEW : "Settings", "FAQ", "Support" links were added to the plugin action page.
@@ -141,6 +146,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.02 =
+Screenshots are updated. BWS plugins section is updated. Plugin optimization is done.
 
 = V1.01 =
 "Settings", "FAQ", "Support" links were added to the plugin action page. The links were added on the plugins page.
