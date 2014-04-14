@@ -53,6 +53,8 @@ We can fix some things for free for the users who provide translation of our plu
 3. Plugin settings are located in "BWS Plugins" > "Google Captcha".
 4. Create a form in post and insert the shortcode [bws_google_captcha] into the form.
 
+http://www.youtube.com/watch?v=10ImOhmM0Cs
+
 == Frequently Asked Questions ==
 
 = How to get Google Captcha keys? =
