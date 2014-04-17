@@ -14,6 +14,8 @@ This plugin allows you to implement Google Captcha into web forms.
 The Google Captcha plugin allows you to implement a super security captcha form into web forms. Google Captcha is a free CAPTCHA service that helps to digitize books, newspapers and old time radio shows.
 This captcha can be used for login, registration, password recovery, comments forms.
 
+http://www.youtube.com/watch?v=10ImOhmM0Cs
+
 = Copyrights for resources used in this plugin =
 
 1. In Google Captcha plugin we used the "lib/recaptchalib.php" file. The Licence for this file is in the "lib/license.txt" file.
@@ -52,8 +54,6 @@ We can fix some things for free for the users who provide translation of our plu
 2. Activate the plugin via the 'Plugins' menu in WordPress.
 3. Plugin settings are located in "BWS Plugins" > "Google Captcha".
 4. Create a form in post and insert the shortcode [bws_google_captcha] into the form.
-
-http://www.youtube.com/watch?v=10ImOhmM0Cs
 
 == Frequently Asked Questions ==
 
