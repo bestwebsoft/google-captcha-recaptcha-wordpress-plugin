@@ -28,6 +28,7 @@
 				$( '#recaptcha_widget_div' ).after( '<label id="gglcptch_error" style="color:#f00;">' + gglcptch_error_msg + '</label>' );
 				gglcptch_match = false;
 			}
+			$('#recaptcha_reload').click();
 		} else {
 			/* correct catcha */
 			gglcptch_match = true;

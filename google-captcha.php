@@ -4,7 +4,7 @@ Plugin Name: Google Captcha (reCAPTCHA)
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.02
+Version: 1.03
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -29,7 +29,8 @@ License: GPLv3 or later
 if ( ! function_exists( 'google_capthca_admin_menu' ) ) {
 	function google_capthca_admin_menu() {
 		global $bstwbsftwppdtplgns_options, $wpmu, $bstwbsftwppdtplgns_added_menu;
-		$bws_menu_version = '1.2.3';
+		$bws_menu_info = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" );
+		$bws_menu_version = $bws_menu_info["Version"];
 		$base = plugin_basename( __FILE__ );
 
 		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
@@ -216,12 +217,12 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 		/* Private and public keys */
 		$gglcptch_keys = array(
 			'public' => array(
-				'display_name'	=>	'Public Key',
+				'display_name'	=>	__( 'Public Key', 'google_captcha' ),
 				'form_name'		=>	'gglcptch_public_key',
 				'error_msg'		=>	'',
 			),
 			'private' => array(
-				'display_name'	=>	'Private Key',
+				'display_name'	=>	__( 'Private Key', 'google_captcha' ),
 				'form_name'		=>	'gglcptch_private_key',
 				'error_msg'		=>	'',
 			),
@@ -275,6 +276,10 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 		} ?>
 		<div class="wrap">
 			<h2><?php _e( 'Google Captcha Settings', 'google_captcha' ); ?></h2>
+			<h2 class="nav-tab-wrapper">
+				<a class="nav-tab nav-tab-active" href="admin.php?page=google-captcha.php"><?php _e( 'Settings', 'google_captcha' ); ?></a>
+				<a class="nav-tab" href="http://bestwebsoft.com/plugin/google-captcha/#faq" target="_blank"><?php _e( 'FAQ', 'google_captcha' ); ?></a>
+			</h2>
 			<div class="updated fade" <?php if ( ! isset( $_POST['gglcptch_save_changes'] ) || "" != $error ) echo 'style="display:none"'; ?>><p><strong><?php _e( 'Settings saved', 'google_captcha' ); ?></strong></p></div>
 			<div class="error" <?php if ( "" == $error ) echo 'style="display:none"'; ?>><p><strong><?php echo $error; ?></strong></p></div>
 			<p><?php _e( 'If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:', 'google_captcha' ); echo ' [bws_google_captcha]'; ?></p>
@@ -400,8 +405,10 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			<?php }
 			return false;
 		}
-
-		return recaptcha_get_html( $publickey );
+		if ( is_ssl() )
+			return recaptcha_get_html( $publickey, '', true );
+		else
+			return recaptcha_get_html( $publickey );
 	}
 }
 

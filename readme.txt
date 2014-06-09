@@ -1,9 +1,10 @@
 === Google Captcha (reCAPTCHA) ===
 Contributors: bestwebsoft
-Tags: captcha, recaptcha, google, google captcha, reCAPTCHA, re captcha, re-captcha, text captcha, spam, antispam, login, registration, comment, lost password, shortcode, capcha, catcha, captha
+Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
+Tags: antispam, anti-spam, capcha, anti-spam security, arithmetic actions, captcha, captha, capcha, catcha, cpatcha, captcha theme, comment, digitize books, digitize newspapers, digitize radio shows, google, gogle, google captcha, login, lost password, re captcha, recaptcha, re-captcha, registration, shortcode, site keys, spam, text captcha.
 Requires at least: 3.0
-Tested up to: 3.8.1
-Stable tag: 1.02
+Tested up to: 3.9.1
+Stable tag: 1.04
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +16,10 @@ The Google Captcha plugin allows you to implement a super security captcha form 
 This captcha can be used for login, registration, password recovery, comments forms.
 
 http://www.youtube.com/watch?v=10ImOhmM0Cs
+
+<a href="http://wordpress.org/plugins/google-captcha/faq/" target="_blank">FAQ</a>
+
+<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 = Copyrights for resources used in this plugin =
 
@@ -36,7 +41,9 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 
 = Translation =
 
+* Polish (pl_PL) (thanks to <a href="mailto:ryszard.glegola@translanet.com ">Ryszard Glegola</a>, www.translanet.com)
 * Russian (ru_RU)
+* Ukrainian (uk)
 
 If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -134,6 +141,13 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.03 - 06.06.2014 =
+* New : The Polish language file is added.
+* New : The Ukrainian language file is added.
+* New : Renew captcha automaticly if was entered wrong value (thanks to Yaroslav Rogoza, github.com/rogyar).
+* Update : We updated all functionality for wordpress 3.9.1.
+* Bugfix : Problem with checking captcha for sites with https was fixed.
+
 = V1.02 - 03.04.2014 =
 * Update : Screenshots are updated.
 * Update : BWS plugins section is updated.
@@ -148,6 +162,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.03 =
+The Polish language file is added. The Ukrainian language file is added. Renew captcha automaticly if was entered wrong value (thanks to Yaroslav Rogoza, github.com/rogyar). We updated all functionality for wordpress 3.9.1. Problem with checking captcha for sites with https was fixed.
 
 = V1.02 =
 Screenshots are updated. BWS plugins section is updated. Plugin optimization is done.
