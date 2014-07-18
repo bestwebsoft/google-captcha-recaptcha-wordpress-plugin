@@ -41,7 +41,8 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 
 = Translation =
 
-* Polish (pl_PL) (thanks to <a href="mailto:ryszard.glegola@translanet.com ">Ryszard Glegola</a>, www.translanet.com)
+* Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:epeetz@gmail.com">Elton Fernandes Peetz Prado</a>)
+* Polish (pl_PL) (thanks to <a href="mailto:ryszard.glegola@translanet.com">Ryszard Glegola</a>, www.translanet.com)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
@@ -141,6 +142,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.04 - 18.07.2014 =
+* Bugfix : Problem with displaying Google Captcha in Contact Form Pro (by BestWebSoft) is fixed.
+* New : The Brazilian Portuguese language file is added.
+
 = V1.03 - 06.06.2014 =
 * New : The Polish language file is added.
 * New : The Ukrainian language file is added.
@@ -162,6 +167,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.04 =
+Problem with displaying Google Captcha in Contact Form Pro (by BestWebSoft) is fixed. The Brazilian Portuguese language file is added.
 
 = V1.03 =
 The Polish language file is added. The Ukrainian language file is added. Renew captcha automaticly if was entered wrong value (thanks to Yaroslav Rogoza, github.com/rogyar). We updated all functionality for wordpress 3.9.1. Problem with checking captcha for sites with https was fixed.

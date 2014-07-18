@@ -1,0 +1,385 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: google_captcha\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-18 15:01+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
+"Language-Team: Elton Peetz Prado <epeetz@gmail.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.6.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: google-captcha.php:74
+#: google-captcha.php:280
+msgid "Google Captcha Settings"
+msgstr "Configurações Google Captcha"
+
+#: google-captcha.php:74
+msgid "Google Captcha"
+msgstr "Google Captcha"
+
+#: google-captcha.php:87
+msgid "requires"
+msgstr "obrigatório"
+
+#: google-captcha.php:87
+msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
+msgstr "ou superior, é por isso que ele foi desativado! Por favor, atualize WordPress e tente novamente."
+
+#: google-captcha.php:87
+msgid "Back to the WordPress"
+msgstr "Voltar ao WordPress"
+
+#: google-captcha.php:87
+msgid "Plugins page"
+msgstr "Página de plugins"
+
+#: google-captcha.php:222
+msgid "Public Key"
+msgstr "Chave pública"
+
+#: google-captcha.php:227
+msgid "Private Key"
+msgstr "Chave privada"
+
+#: google-captcha.php:235
+msgid "Login form"
+msgstr "Formulário de login"
+
+#: google-captcha.php:236
+msgid "Registration form"
+msgstr "Formulário de registro"
+
+#: google-captcha.php:237
+msgid "Reset password form"
+msgstr "Formulário de alterar senha"
+
+#: google-captcha.php:238
+msgid "Comments form"
+msgstr "Fomulário de comentários"
+
+#: google-captcha.php:253
+msgid "Enter public key"
+msgstr "Digite a chave pública"
+
+#: google-captcha.php:254
+#: google-captcha.php:260
+msgid "WARNING: The captcha will not display while you don't fill key fields."
+msgstr "AVISO: O captcha não será exibido enquanto você não preencher os campos-chave."
+
+#: google-captcha.php:259
+msgid "Enter private key"
+msgstr "Digite a chave privada"
+
+#: google-captcha.php:282
+#: google-captcha.php:535
+#: google-captcha.php:546
+msgid "Settings"
+msgstr "Configurações"
+
+#: google-captcha.php:283
+#: google-captcha.php:547
+msgid "FAQ"
+msgstr "FAQ"
+
+#: google-captcha.php:285
+msgid "Settings saved"
+msgstr "Configurações salvas"
+
+#: google-captcha.php:287
+msgid "If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:"
+msgstr "Se você quiser adicionar o Google Captcha para seu próprio formulário, basta copiar e colar este shortcode para o seu post ou página:"
+
+#: google-captcha.php:289
+msgid "Authentication"
+msgstr "Autenticação"
+
+#: google-captcha.php:290
+#, php-format
+msgid "Before you are able to do something, you must to register %s here %s"
+msgstr "Antes de você fazer alguma coisa, deve se registrar %s aqui %s"
+
+#: google-captcha.php:291
+msgid "Enter public and private keys, that you get after registration."
+msgstr "Digite as chaves públicas e privadas, que você recebe após o registro."
+
+#: google-captcha.php:303
+msgid "Options"
+msgstr "Opções"
+
+#: google-captcha.php:306
+msgid "Enable Google Captcha for:"
+msgstr "Ativar Google Captcha para:"
+
+#: google-captcha.php:315
+#: google-captcha.php:318
+#: google-captcha.php:322
+msgid "Contact form"
+msgstr "Formulário de contato"
+
+#: google-captcha.php:316
+#: google-captcha.php:319
+#: google-captcha.php:323
+msgid "powered by"
+msgstr "distribuído por"
+
+#: google-captcha.php:319
+msgid "Activate contact form"
+msgstr "Ativar formulário de contato"
+
+#: google-captcha.php:323
+msgid "Download contact form"
+msgstr "Baixar formulário de contato"
+
+#: google-captcha.php:328
+msgid "Hide captcha for:"
+msgstr "Esconder captcha para:"
+
+#: google-captcha.php:336
+msgid "Theme:"
+msgstr "Tema:"
+
+#: google-captcha.php:347
+msgid "Save Changes"
+msgstr "Salvar alterações"
+
+#: google-captcha.php:353
+msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+msgstr "Se você gostar de nosso plugin, por favor, dê-lhe 5 estrelas em WordPress"
+
+#: google-captcha.php:354
+msgid "Rate the plugin"
+msgstr "Classifique o plugin"
+
+#: google-captcha.php:357
+msgid "If there is something wrong about it, please contact us"
+msgstr "Se há algo de errado com isso, por favor, entre em contato conosco"
+
+#: google-captcha.php:396
+msgid "Error: You have entered an incorrect CAPTCHA value."
+msgstr "Erro: Você digitou um CAPTCHA com valor incorreto."
+
+#: google-captcha.php:404
+msgid "To use Google Captcha you must get the keys from"
+msgstr "Para usar o Google Captcha é necessário obter as chaves de"
+
+#: google-captcha.php:404
+msgid "here"
+msgstr "aqui"
+
+#: google-captcha.php:404
+msgid "and enter them on the"
+msgstr "e inserí-los no"
+
+#: google-captcha.php:404
+msgid "plugin setting page"
+msgstr "página de configuração do plugin"
+
+#: google-captcha.php:457
+#: google-captcha.php:499
+#: google-captcha.php:521
+msgid "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again."
+msgstr "Erro: Você digitou um CAPTCHA com valor incorreto. Clique no botão Voltar do seu navegador e tente novamente."
+
+#: google-captcha.php:548
+msgid "Support"
+msgstr "Suporte"
+
+#~ msgid "Not set"
+#~ msgstr "Não definido"
+
+#~ msgid "On"
+#~ msgstr "Em"
+
+#~ msgid "Off"
+#~ msgstr "Off"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid " Mb"
+#~ msgstr " Mb"
+
+#~ msgid "Yes"
+#~ msgstr "Sim"
+
+#~ msgid "No"
+#~ msgstr "Não"
+
+#~ msgid "Operating System"
+#~ msgstr "Sistema operacional"
+
+#~ msgid "Server"
+#~ msgstr "Servidor"
+
+#~ msgid "Memory usage"
+#~ msgstr "Uso da memória"
+
+#~ msgid "MYSQL Version"
+#~ msgstr "Versão MySQL"
+
+#~ msgid "SQL Mode"
+#~ msgstr "Modo SQL"
+
+#~ msgid "PHP Version"
+#~ msgstr "Versão do PHP"
+
+#~ msgid "PHP Safe Mode"
+#~ msgstr "PHP Safe Mode"
+
+#~ msgid "PHP Allow URL fopen"
+#~ msgstr "Permitir PHP URL fopen"
+
+#~ msgid "PHP Memory Limit"
+#~ msgstr "Limite de memória do PHP"
+
+#~ msgid "PHP Max Upload Size"
+#~ msgstr "PHP Max Upload Size"
+
+#~ msgid "PHP Max Post Size"
+#~ msgstr "PHP Max Post Size"
+
+#~ msgid "PHP Max Script Execute Time"
+#~ msgstr "PHP Max Script Execute Time"
+
+#~ msgid "PHP Exif support"
+#~ msgstr "Suporte PHP Exif"
+
+#~ msgid "PHP IPTC support"
+#~ msgstr "Suporte PHP IPTC"
+
+#~ msgid "PHP XML support"
+#~ msgstr "Suporte a XML PHP"
+
+#~ msgid "Site URL"
+#~ msgstr "URL do site"
+
+#~ msgid "Home URL"
+#~ msgstr "URL do início"
+
+#~ msgid "WordPress Version"
+#~ msgstr "Versão do WordPress"
+
+#~ msgid "WordPress DB Version"
+#~ msgstr "Versão do DB WordPress"
+
+#~ msgid "Multisite"
+#~ msgstr "Multisite"
+
+#~ msgid "Active Theme"
+#~ msgstr "Tema ativo"
+
+#~ msgid "Please enter a valid email address."
+#~ msgstr "Por favor insira um endereço de e-mail válido."
+
+#~ msgid "Email with system info is sent to "
+#~ msgstr "E-mail com informações do sistema serão enviados para "
+
+#~ msgid "Thank you for contacting us."
+#~ msgstr "Obrigado por nos contatar."
+
+#~ msgid "Sorry, email message could not be delivered."
+#~ msgstr "Desculpe, mensagem de e-mail não pôde ser entregue."
+
+#~ msgid "Plugins"
+#~ msgstr "Plugins"
+
+#~ msgid "Themes"
+#~ msgstr "Temas"
+
+#~ msgid "System status"
+#~ msgstr "Status do sistema"
+
+#~ msgid "All"
+#~ msgstr "Tudo"
+
+#~ msgid "Installed"
+#~ msgstr "Instalado"
+
+#~ msgid "Recommended"
+#~ msgstr "Recomendados"
+
+#~ msgid "Installed plugins"
+#~ msgstr "Plugins instalados"
+
+#~ msgid "Learn more"
+#~ msgstr "Saber mais"
+
+#~ msgid "Go"
+#~ msgstr "Ir"
+
+#~ msgid "DONATE"
+#~ msgstr "DOE"
+
+#~ msgid "Activate this plugin"
+#~ msgstr "Ative este plugin"
+
+#~ msgid "Activate"
+#~ msgstr "Ativar"
+
+#~ msgid "Recommended plugins"
+#~ msgstr "Plugins recomendados"
+
+#~ msgid "Install now"
+#~ msgstr "Instalar agora"
+
+#~ msgid "Try again"
+#~ msgstr "Tentar novamente"
+
+#~ msgid "Preview &#8220;%s&#8221;"
+#~ msgstr "Visualização  &#8220;%s&#8221;"
+
+#~ msgid "Install %s"
+#~ msgstr "Instalação %s"
+
+#~ msgid "Install Now"
+#~ msgstr "Instalar agora"
+
+#~ msgid "Update to version %s"
+#~ msgstr "Atualizar para a versão %s"
+
+#~ msgid "Update"
+#~ msgstr "Atualizar"
+
+#~ msgid "Preview %s"
+#~ msgstr "Visualizar %s"
+
+#~ msgid "Preview"
+#~ msgstr "Visualizar"
+
+#~ msgid "By %s"
+#~ msgstr "Por %s"
+
+#~ msgid "Details"
+#~ msgstr "Detalhes"
+
+#~ msgid "Already Installed"
+#~ msgstr "Já instalado"
+
+#~ msgid "Environment"
+#~ msgstr "Ambiente"
+
+#~ msgid "Active Plugins"
+#~ msgstr "Plugins ativos"
+
+#~ msgid "Inactive Plugins"
+#~ msgstr "Plugins inativos"
+
+#~ msgid "Send to support"
+#~ msgstr "Enviar para o suporte"
+
+#~ msgid "Send to custom email &#187;"
+#~ msgstr "Enviar para o e-mail personalizado &#187;"
+
+#~ msgid "WARNING: The captcha will not display while you not fill key fields."
+#~ msgstr ""
+#~ "ПРЕДУПРЕЖДЕНИЕ: Google Captcha не будет отображаться пока вы не заполните "
+#~ "ключевые поля."

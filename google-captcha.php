@@ -4,7 +4,7 @@ Plugin Name: Google Captcha (reCAPTCHA)
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.03
+Version: 1.04
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -124,8 +124,10 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		}
 		if ( '1' == $gglcptch_options['contact_form'] ) {
 			add_filter( 'cntctfrm_display_captcha', 'gglcptch_display' );
+			add_filter( 'cntctfrmpr_display_captcha', 'gglcptch_display' );
 		} elseif ( '0' == $gglcptch_options['contact_form'] ) {
 			remove_filter( 'cntctfrm_display_captcha', 'gglcptch_display' );
+			remove_filter( 'cntctfrmpr_display_captcha', 'gglcptch_display' );
 		}
 	}
 }
