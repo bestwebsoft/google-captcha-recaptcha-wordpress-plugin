@@ -5,7 +5,7 @@
 			click_trigger();
 			return gglcptch_match;
 		});
-		$( '#cntctfrm_contact_form' ).find( 'input:submit' ).click(function() {
+		$( '#cntctfrm_contact_form, #cntctfrmpr_contact_form' ).find( 'input:submit' ).click(function() {
 			click_trigger();
 			return gglcptch_match;
 		});
