@@ -4,7 +4,7 @@ Plugin Name: Google Captcha (reCAPTCHA)
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.05
+Version: 1.06
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -12,7 +12,7 @@ License: GPLv3 or later
 /*  © Copyright 2014  BestWebSoft  ( http://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
+    it under the terms of the GNU General Public License, version 2, as
     published by the Free Software Foundation.
 
     This program is distributed in the hope that it will be useful,
@@ -261,8 +261,8 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			} else
 				$gglcptch_keys['private']['error_msg'] = '';
 
-			$gglcptch_options['public_key']			=	$_POST['gglcptch_public_key'];
-			$gglcptch_options['private_key']		=	$_POST['gglcptch_private_key'];
+			$gglcptch_options['public_key']			=	trim( stripslashes( esc_html( $_POST['gglcptch_public_key'] ) ) );
+			$gglcptch_options['private_key']		=	trim( stripslashes( esc_html( $_POST['gglcptch_private_key'] ) ) );
 			$gglcptch_options['login_form']			=	isset( $_POST['gglcptch_login_form'] ) ? 1 : 0;
 			$gglcptch_options['registration_form']	=	isset( $_POST['gglcptch_registration_form'] ) ? 1 : 0;
 			$gglcptch_options['reset_pwd_form']		=	isset( $_POST['gglcptch_reset_pwd_form'] ) ? 1 : 0;
@@ -350,11 +350,11 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			</form>
 			<div class="bws-plugin-reviews">
 				<div class="bws-plugin-reviews-rate">
-					<?php _e( 'If you enjoy our plugin, please give it 5 stars on WordPress', 'google_captcha' ); ?>: 
+					<?php _e( 'If you enjoy our plugin, please give it 5 stars on WordPress', 'google_captcha' ); ?>:
 					<a href="http://wordpress.org/support/view/plugin-reviews/google-captcha" target="_blank" title="Google Captcha reviews"><?php _e( 'Rate the plugin', 'google_captcha' ); ?></a>
 				</div>
 				<div class="bws-plugin-reviews-support">
-					<?php _e( 'If there is something wrong about it, please contact us', 'google_captcha' ); ?>: 
+					<?php _e( 'If there is something wrong about it, please contact us', 'google_captcha' ); ?>:
 					<a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a>
 				</div>
 			</div>
@@ -393,8 +393,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 		<script type='text/javascript'>
 			var RecaptchaOptions = { theme : "<?php echo $gglcptch_options['theme']; ?>" },
 			gglcptch_path = "<?php echo plugins_url( 'google_captcha_check.php', __FILE__ ); ?>",
-			gglcptch_error_msg = "<?php _e( 'Error: You have entered an incorrect CAPTCHA value.', 'google_captcha' ); ?>",
-			gglcptch_private_key = "<?php echo $privatekey; ?>";
+			gglcptch_error_msg = "<?php _e( 'Error: You have entered an incorrect CAPTCHA value.', 'google_captcha' ); ?>";
 		</script>
 		<?php
 		if ( ! $privatekey || ! $publickey ) {

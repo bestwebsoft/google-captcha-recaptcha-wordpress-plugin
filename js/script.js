@@ -20,7 +20,7 @@
 		req.open( 'POST', gglcptch_path, false );
 		req.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
 		/* sending POST parameters */
-		req.send( 'recaptcha_challenge_field=' + recaptcha_challenge_field + '&recaptcha_response_field=' + recaptcha_response_field + '&gglcptch_private_key=' + gglcptch_private_key );
+		req.send( 'recaptcha_challenge_field=' + recaptcha_challenge_field + '&recaptcha_response_field=' + recaptcha_response_field );
 		
 		if ( req.responseText == 'error' ) {
 			/* wrong captcha */

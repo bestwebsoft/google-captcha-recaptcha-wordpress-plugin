@@ -1,7 +1,12 @@
 <?php
 /* Check Google Captcha in shortcode and contact form */
 require_once( 'lib/recaptchalib.php' );
-$privatekey = $_POST['gglcptch_private_key'];
+if ( defined('ABSPATH') )
+    require_once( ABSPATH . 'wp-load.php' );
+else
+    require_once( '../../../wp-load.php' );
+$gglcptch_options = get_option( 'gglcptch_options' );
+$privatekey = $gglcptch_options['private_key'];
 $resp = recaptcha_check_answer( $privatekey,
 										$_SERVER['REMOTE_ADDR'],
 										$_POST['recaptcha_challenge_field'],
