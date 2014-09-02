@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: antispam, anti-spam, capcha, anti-spam security, arithmetic actions, captcha, captha, capcha, catcha, cpatcha, captcha theme, comment, digitize books, digitize newspapers, digitize radio shows, google, gogle, google captcha, login, lost password, re captcha, recaptcha, re-captcha, registration, shortcode, site keys, spam, text captcha.
 Requires at least: 3.0
 Tested up to: 3.9.2
-Stable tag: 1.06
+Stable tag: 1.07
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +42,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 = Translation =
 
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:epeetz@gmail.com">Elton Fernandes Peetz Prado</a>)
+* Chinese Traditional (zh_TW) (thanks to <a href="mailto:nick20080808@gmail.com">Nick Lai</a>)
 * Polish (pl_PL) (thanks to <a href="mailto:ryszard.glegola@translanet.com">Ryszard Glegola</a>, www.translanet.com)
 * Russian (ru_RU)
 * Ukrainian (uk)
@@ -142,6 +143,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.07 - 02.09.2014 =
+* New : The Chinese (Traditional) language file is added.
+
 = V1.06 - 07.08.2014 =
 * Bugfix : Security Exploit was fixed.
 * Bugfix : The display of private key in the front-end was removed.
@@ -174,6 +178,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.07 =
+The Chinese (Traditional) language file is added.
 
 = V1.06 =
 Security Exploit was fixed. The display of private key in the front-end was removed.
