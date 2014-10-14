@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Google Captcha (reCAPTCHA)
-Plugin URI: http://bestwebsoft.com/plugin/
+Plugin URI: http://bestwebsoft.com/products/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.07
+Version: 1.08
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -76,15 +76,19 @@ if ( ! function_exists( 'google_capthca_admin_menu' ) ) {
 }
 
 /* Function check if plugin is compatible with current WP version  */
-if ( ! function_exists ( 'gglcptch_version_check' ) ) {
+ if ( ! function_exists ( 'gglcptch_version_check' ) ) {
 	function gglcptch_version_check() {
 		global $wp_version, $gglcptch_plugin_info;
 		$require_wp		=	"3.0"; /* Wordpress at least requires version */
 		$plugin			=	plugin_basename( __FILE__ );
 	 	if ( version_compare( $wp_version, $require_wp, "<" ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			if ( is_plugin_active( $plugin ) ) {
 				deactivate_plugins( $plugin );
-				wp_die( "<strong>" . $gglcptch_plugin_info['Name'] . " </strong> " . __( 'requires', 'google_captcha' ) . " <strong>WordPress " . $require_wp . "</strong> " . __( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'google_captcha') . "<br /><br />" . __( 'Back to the WordPress', 'google_captcha') . " <a href='" . get_admin_url( null, 'plugins.php' ) . "'>" . __( 'Plugins page', 'google_captcha') . "</a>." );
+				$admin_url = ( function_exists( 'get_admin_url' ) ) ? get_admin_url( null, 'plugins.php' ) : esc_url( '/wp-admin/plugins.php' );
+				if ( ! $gglcptch_plugin_info )
+					$gglcptch_plugin_info = get_plugin_data( __FILE__, false );
+				wp_die( "<strong>" . $gglcptch_plugin_info['Name'] . " </strong> " . __( 'requires', 'google_captcha' ) . " <strong>WordPress " . $require_wp . "</strong> " . __( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'google_captcha') . "<br /><br />" . __( 'Back to the WordPress', 'google_captcha') . " <a href='" . $admin_url . "'>" . __( 'Plugins page', 'google_captcha') . "</a>." );
 			}
 		}
 	}
@@ -92,9 +96,13 @@ if ( ! function_exists ( 'gglcptch_version_check' ) ) {
 
 if ( ! function_exists( 'gglcptch_init' ) ) {
 	function gglcptch_init() {
+		global $wpmu, $gglcptch_options;
+
 		load_plugin_textdomain( 'google_captcha', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
-		global $wpmu, $gglcptch_options;
+		/* Check version on WordPress */
+		gglcptch_version_check();
+
 		/* Get options from the database */
 		if ( 1 == $wpmu )
 			$gglcptch_options = get_site_option( 'gglcptch_options' );
@@ -104,7 +112,7 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		/* Add hooks */
 		if ( '1' == $gglcptch_options['login_form'] ) {
 			add_action( 'login_form', 'gglcptch_login_display' );
-			add_filter( 'login_redirect', 'gglcptch_login_check' );
+			add_filter( 'login_redirect', 'gglcptch_login_check', 10, 3 );
 		}
 
 		if ( '1' == $gglcptch_options['comments_form'] ) {
@@ -140,9 +148,6 @@ if ( ! function_exists( 'gglcptch_admin_init' ) ) {
 
 		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '109', 'version' => $gglcptch_plugin_info["Version"] );
-
-		/* Check version on WordPress */
-		gglcptch_version_check();
 
 		/* Call register settings function */
 		if ( isset( $_GET['page'] ) && "google-captcha.php" == $_GET['page'] )
@@ -214,7 +219,7 @@ if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 /* Display settings page */
 if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 	function gglcptch_settings_page() {
-		global $gglcptch_options;
+		global $gglcptch_options, $gglcptch_plugin_info, $wp_version;
 
 		/* Private and public keys */
 		$gglcptch_keys = array(
@@ -280,7 +285,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			<h2><?php _e( 'Google Captcha Settings', 'google_captcha' ); ?></h2>
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab nav-tab-active" href="admin.php?page=google-captcha.php"><?php _e( 'Settings', 'google_captcha' ); ?></a>
-				<a class="nav-tab" href="http://bestwebsoft.com/plugin/google-captcha/#faq" target="_blank"><?php _e( 'FAQ', 'google_captcha' ); ?></a>
+				<a class="nav-tab" href="http://bestwebsoft.com/products/google-captcha/faq" target="_blank"><?php _e( 'FAQ', 'google_captcha' ); ?></a>
 			</h2>
 			<div class="updated fade" <?php if ( ! isset( $_POST['gglcptch_save_changes'] ) || "" != $error ) echo 'style="display:none"'; ?>><p><strong><?php _e( 'Settings saved', 'google_captcha' ); ?></strong></p></div>
 			<div class="error" <?php if ( "" == $error ) echo 'style="display:none"'; ?>><p><strong><?php echo $error; ?></strong></p></div>
@@ -308,19 +313,25 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 							<?php foreach ( $gglcptch_forms as $form ) : ?>
 								<label><input type="checkbox" name="<?php echo 'gglcptch_' . $form[0]; ?>" value=<?php echo $form[0]; if ( '1' == $gglcptch_options[ $form[0] ] ) echo ' checked'; ?>><?php echo $form[1]; ?></label><br />
 							<?php endforeach;
-							$all_plugins = get_plugins();
-							$active_plugins = get_option( 'active_plugins' );
-							if ( isset( $all_plugins['contact-form-plugin/contact_form.php'] ) || isset( $all_plugins['contact-form-pro/contact_form_pro.php'] ) ) :
-								if ( in_array( 'contact-form-plugin/contact_form.php', $active_plugins ) || in_array( 'contact-form-pro/contact_form_pro.php', $active_plugins ) ) : ?>
+							$gglcptch_all_plugins = get_plugins();
+							$gglcptch_cntctfrm_installed = ( isset( $gglcptch_all_plugins['contact-form-plugin/contact_form.php'] ) || isset( $gglcptch_all_plugins['contact-form-pro/contact_form_pro.php'] ) ) ? true : false;
+							$gglcptch_active_plugins = get_option( 'active_plugins' );
+							if ( is_multisite() ) {
+								$gglcptch_active_network_plugins = array_flip( get_site_option('active_sitewide_plugins') );
+								$gglcptch_active_plugins = array_unique( array_merge( $gglcptch_active_plugins, $gglcptch_active_network_plugins ) );
+							}
+							$gglcptch_cntctfrm_activated = ( in_array( 'contact-form-plugin/contact_form.php', $gglcptch_active_plugins ) || in_array( 'contact-form-pro/contact_form_pro.php', $gglcptch_active_plugins ) ) ? true : false;
+							if ( $gglcptch_cntctfrm_installed ) :
+								if ( $gglcptch_cntctfrm_activated ) : ?>
 									<label><input type="checkbox" name="gglcptch_contact_form" value="contact_form"<?php if ( '1' == $gglcptch_options['contact_form'] ) echo ' checked'; ?>><?php _e( 'Contact form', 'google_captcha' ); ?></label>
-									<span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'google_captcha' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>)</span><br />
+									<span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'google_captcha' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>)</span><br />
 								<?php else : ?>
 									<label><input type="checkbox" disabled name="gglcptch_contact_form" value="contact_form"<?php if ( '1' == $gglcptch_options['contact_form'] ) echo ' checked'; ?>><?php _e( 'Contact form', 'google_captcha' ); ?></label>
-									<span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'google_captcha' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate contact form', 'google_captcha' ); ?></a></span><br />
+									<span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'google_captcha' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate contact form', 'google_captcha' ); ?></a></span><br />
 								<?php endif;
 							else : ?>
 								<label><input type="checkbox" disabled name="gglcptch_contact_form" value="contact_form"<?php if ( '1' == $gglcptch_options['contact_form'] ) echo ' checked'; ?>><?php _e( 'Contact form', 'google_captcha' ); ?></label>
-								<span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'google_captcha' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/contact-form-pro/?k=d70b58e1739ab4857d675fed2213cedc&pn=75&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Download contact form', 'google_captcha' ); ?></a></span><br />
+								<span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'google_captcha' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/products/contact-form/?k=d70b58e1739ab4857d675fed2213cedc&pn=75&v=<?php echo $gglcptch_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Download contact form', 'google_captcha' ); ?></a></span><br />
 							<?php endif; ?>
 						</td>
 					</tr>
@@ -445,7 +456,7 @@ if ( ! function_exists( 'gglcptch_login_check' ) ) {
 			$privatekey = $gglcptch_options['private_key'];
 
 			if ( ! $privatekey || ! $publickey )
-				return 'wp-admin';
+				return admin_url();
 
 			$resp = recaptcha_check_answer( $privatekey,
 										$_SERVER['REMOTE_ADDR'],
@@ -455,7 +466,7 @@ if ( ! function_exists( 'gglcptch_login_check' ) ) {
 				wp_clear_auth_cookie();
 				wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
 			} else
-				return 'wp-admin';
+				return admin_url();
 		}
 	}
 }

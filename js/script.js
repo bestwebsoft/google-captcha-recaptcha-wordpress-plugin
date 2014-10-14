@@ -6,8 +6,15 @@
 			return gglcptch_match;
 		});
 		$( '#cntctfrm_contact_form, #cntctfrmpr_contact_form' ).find( 'input:submit' ).click(function() {
-			click_trigger();
-			return gglcptch_match;
+			if( $( this ).parents('#cntctfrm_contact_form, #cntctfrmpr_contact_form').find('#recaptcha_widget_div').size() > 0 ) {
+				click_trigger();
+				return gglcptch_match;
+			}
+		});
+		$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', function() {
+			if( $( '#gglcptch_error' ).size() > 0 ) {
+				 $( '#gglcptch_error' ).remove();
+			}
 		});
 	});
 
@@ -21,7 +28,7 @@
 		req.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
 		/* sending POST parameters */
 		req.send( 'recaptcha_challenge_field=' + recaptcha_challenge_field + '&recaptcha_response_field=' + recaptcha_response_field );
-		
+
 		if ( req.responseText == 'error' ) {
 			/* wrong captcha */
 			if ( ! $( '#gglcptch_error' ).text() ) {
