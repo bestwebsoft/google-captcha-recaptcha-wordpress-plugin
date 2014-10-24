@@ -5,12 +5,12 @@ The Google Captcha plugin allows you to implement a super security captcha form 
 
 <img src="http://bestwebsoft.com/wp-content/uploads/2014/02/google-captcha-banner-website.jpg" />
 
-<a href="http://bestwebsoft.com/plugin/google-captcha/#description" target=_blank>Description</a> | 
-<a href="http://bestwebsoft.com/plugin/google-captcha/#installation" target=_blank>Installation</a> | 
-<a href="http://bestwebsoft.com/plugin/google-captcha/#faq" target=_blank>FAQ</a> | 
-<a href="http://bestwebsoft.com/plugin/google-captcha/#screenshots" target=_blank>Screenshots</a> | 
-<a href="http://bestwebsoft.com/plugin/google-captcha/#changelog" target=_blank>Changelog</a> | 
-<a href="http://bestwebsoft.com/plugin/google-captcha/#download" target=_blank>Download</a>
+<a href="http://bestwebsoft.com/products/google-captcha/description" target=_blank>Description</a> | 
+<a href="http://bestwebsoft.com/products/google-captcha/installation" target=_blank>Installation</a> | 
+<a href="http://bestwebsoft.com/products/google-captcha/faq" target=_blank>FAQ</a> | 
+<a href="http://bestwebsoft.com/products/google-captcha/screenshots" target=_blank>Screenshots</a> | 
+<a href="http://bestwebsoft.com/products/google-captcha/changelog" target=_blank>Changelog</a> | 
+<a href="http://bestwebsoft.com/products/google-captcha/download" target=_blank>Download</a>
 
 Copyrights for resources used in this plugin
 -----------------------------
