@@ -27,12 +27,23 @@ Features
 * Actions: You can choose the users, for whom captcha will be hidden.
 * Display: You can choose one of four standard Google Captcha themes.
 
+Recommended Plugins
+-----------------------------
+The author of the Google Captcha also recommends the following plugins:
+
+* <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
+There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/updater/?k=f47f3eb3d739725d592249dbd129f7ff">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
 
 Translation
 -----------------------------
+* Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:epeetz@gmail.com">Elton Fernandes Peetz Prado</a>)
+* Chinese Traditional (zh_TW) (thanks to <a href="mailto:nick20080808@gmail.com">Nick Lai</a>)
+* Polish (pl_PL) (thanks to <a href="mailto:ryszard.glegola@translanet.com">Ryszard Glegola</a>, www.translanet.com)
 * Russian (ru_RU)
-If you would like to create your own language pack or update the existing one, you can send the text of PO and MO files for BestWebSoft and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files Poedit.
+* Spanish (es_ES) (thanks to <a href="mailto:cloudzeroxyz@gmail.com">Cloudzeroxyz</a>)
+* Ukrainian (uk)
 
+If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 Technical support
 -----------------------------
