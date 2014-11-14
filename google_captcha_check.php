@@ -8,9 +8,12 @@ else
 $gglcptch_options = get_option( 'gglcptch_options' );
 $privatekey = $gglcptch_options['private_key'];
 $resp = recaptcha_check_answer( $privatekey,
-										$_SERVER['REMOTE_ADDR'],
-										$_POST['recaptcha_challenge_field'],
-										$_POST['recaptcha_response_field'] );
+									$_SERVER['REMOTE_ADDR'],
+									$_POST['recaptcha_challenge_field'],
+									$_POST['recaptcha_response_field']
+);
 if ( ! $resp->is_valid )
 	echo "error";
+else
+	echo "success";
 ?>
