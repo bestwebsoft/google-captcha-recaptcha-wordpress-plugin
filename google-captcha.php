@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Google Captcha (reCAPTCHA)
+Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
