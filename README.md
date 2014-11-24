@@ -1,4 +1,4 @@
-<a href="http://bestwebsoft.com/plugin/google-captcha/" target=_blank>Google Captcha (reCaptcha)</a>
+<a href="http://bestwebsoft.com/products/google-captcha" target=_blank>Google Captcha (reCAPTCHA) by BestWebSoft</a>
 ==========================
 
 The Google Captcha plugin allows you to implement a super security captcha form into web forms. Google Captcha is a free CAPTCHA service that helps to digitize books, newspapers and old time radio shows. This captcha can be used for login, registration, password recovery, comments forms.
