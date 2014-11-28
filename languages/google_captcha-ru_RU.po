@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: google_captcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-22 17:41+0300\n"
+"POT-Creation-Date: 2014-11-27 15:00+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -13,22 +13,22 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:73 google-captcha.php:277
+#: google-captcha.php:80 google-captcha.php:277
 msgid "Google Captcha Settings"
 msgstr "Настройки Google Captcha"
 
-#: google-captcha.php:73
+#: google-captcha.php:80
 msgid "Google Captcha"
 msgstr "Google Captcha"
 
-#: google-captcha.php:86
+#: google-captcha.php:97
 msgid "requires"
 msgstr "требует"
 
-#: google-captcha.php:86
+#: google-captcha.php:97
 msgid ""
 "or higher, that is why it has been deactivated! Please upgrade WordPress and "
 "try again."
@@ -36,21 +36,21 @@ msgstr ""
 "или выше, поэтому плагин был деактивирован! Обновите WordPress и повторите "
 "попытку."
 
-#: google-captcha.php:86
+#: google-captcha.php:97
 msgid "Back to the WordPress"
 msgstr "Вернуться назад на WordPress"
 
-#: google-captcha.php:86
+#: google-captcha.php:97
 msgid "Plugins page"
 msgstr "Страницу плагинов"
 
 #: google-captcha.php:219
-msgid "Public Key"
-msgstr "Открытый ключ"
+msgid "Site key"
+msgstr "Ключ"
 
 #: google-captcha.php:224
-msgid "Private Key"
-msgstr "Закрытый ключ"
+msgid "Secret Key"
+msgstr "Секретный ключ"
 
 #: google-captcha.php:232
 msgid "Login form"
@@ -69,8 +69,8 @@ msgid "Comments form"
 msgstr "Форма комментариев"
 
 #: google-captcha.php:250
-msgid "Enter public key"
-msgstr "Введите открытый ключ"
+msgid "Enter site key"
+msgstr "Введите ключ"
 
 #: google-captcha.php:251 google-captcha.php:257
 msgid "WARNING: The captcha will not display while you don't fill key fields."
@@ -79,14 +79,22 @@ msgstr ""
 "ключевые поля."
 
 #: google-captcha.php:256
-msgid "Enter private key"
-msgstr "Введите закрытый ключ"
+msgid "Enter secret key"
+msgstr "Введите секретный ключ"
 
-#: google-captcha.php:278
+#: google-captcha.php:279 google-captcha.php:530 google-captcha.php:541
+msgid "Settings"
+msgstr "Настройки"
+
+#: google-captcha.php:280 google-captcha.php:542
+msgid "FAQ"
+msgstr "FAQ"
+
+#: google-captcha.php:282
 msgid "Settings saved"
 msgstr "Настройки сохранены"
 
-#: google-captcha.php:280
+#: google-captcha.php:284
 msgid ""
 "If you would like to add the Google Captcha to your own form, just copy and "
 "paste this shortcode to your post or page:"
@@ -94,92 +102,91 @@ msgstr ""
 "Если вы хотите добавить Google Captcha в свою форму, просто скопируйте и "
 "вставьте в контент страницы или поста этот шорткод:"
 
-#: google-captcha.php:282
+#: google-captcha.php:286
 msgid "Authentication"
 msgstr "Идентификация"
 
-#: google-captcha.php:283
+#: google-captcha.php:287
 #, php-format
 msgid "Before you are able to do something, you must to register %s here %s"
 msgstr ""
 "Прежде чем вы сможете сделать что-нибудь, вы должны зарегистрироваться %s "
 "здесь %s"
 
-#: google-captcha.php:284
-msgid "Enter public and private keys, that you get after registration."
-msgstr ""
-"Введите открытый и закрытый ключи, которые вы получили после регистрации."
+#: google-captcha.php:288
+msgid "Enter site key and secret key, that you get after registration."
+msgstr "Введите ключ и секретный ключ, которые вы получили после регистрации."
 
-#: google-captcha.php:296
+#: google-captcha.php:300
 msgid "Options"
 msgstr "Опции"
 
-#: google-captcha.php:299
+#: google-captcha.php:303
 msgid "Enable Google Captcha for:"
 msgstr "Отображать Google Captcha для:"
 
-#: google-captcha.php:308 google-captcha.php:311 google-captcha.php:315
+#: google-captcha.php:318 google-captcha.php:321 google-captcha.php:325
 msgid "Contact form"
 msgstr "Contact form"
 
-#: google-captcha.php:309 google-captcha.php:312 google-captcha.php:316
+#: google-captcha.php:319 google-captcha.php:322 google-captcha.php:326
 msgid "powered by"
 msgstr "разработано компанией"
 
-#: google-captcha.php:312
+#: google-captcha.php:322
 msgid "Activate contact form"
 msgstr "Активировать Contact form"
 
-#: google-captcha.php:316
+#: google-captcha.php:326
 msgid "Download contact form"
 msgstr "Скачать Contact form"
 
-#: google-captcha.php:321
+#: google-captcha.php:331
 msgid "Hide captcha for:"
 msgstr "Не показывать Google Captcha для:"
 
-#: google-captcha.php:329
+#: google-captcha.php:339
 msgid "Theme:"
 msgstr "Тема:"
 
-#: google-captcha.php:340
+#: google-captcha.php:350
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: google-captcha.php:346
+#: google-captcha.php:356
 msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
 msgstr ""
 "Если вам понравился плагин, пожалуйста, поставте нам 5 звезд на WordPress"
 
-#: google-captcha.php:347
+#: google-captcha.php:357
 msgid "Rate the plugin"
 msgstr "Оценить плагин"
 
-#: google-captcha.php:350
+#: google-captcha.php:360
 msgid "If there is something wrong about it, please contact us"
 msgstr "Если у вас есть какие-то вопросы, обращайтесь"
 
-#: google-captcha.php:389
-msgid "Error: You have entered an incorrect CAPTCHA value."
-msgstr "Ошибка: Вы ввели неверное значение Captcha."
-
-#: google-captcha.php:397
+#: google-captcha.php:402
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Чтобы использовать Google Captcha вам необходимо получить ключи"
 
-#: google-captcha.php:397
+#: google-captcha.php:403
 msgid "here"
 msgstr "здесь"
 
-#: google-captcha.php:397
+#: google-captcha.php:404
 msgid "and enter them on the"
 msgstr "и вставить их на"
 
-#: google-captcha.php:397
+#: google-captcha.php:406
 msgid "plugin setting page"
 msgstr "страницу настроек плагина"
 
-#: google-captcha.php:448 google-captcha.php:490 google-captcha.php:512
+#: google-captcha.php:429
+msgid "Error: You have entered an incorrect CAPTCHA value."
+msgstr "Ошибка: Вы ввели неверное значение Captcha."
+
+#: google-captcha.php:480 google-captcha.php:516
 msgid ""
 "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on "
 "your browser, and try again."
@@ -187,17 +194,18 @@ msgstr ""
 "Ошибка: Вы ввели неверное значение Captcha. Нажмите копку НАЗАД в своем "
 "браузере и попытайтесь еще."
 
-#: google-captcha.php:526 google-captcha.php:537
-msgid "Settings"
-msgstr "Настройки"
-
-#: google-captcha.php:538
-msgid "FAQ"
-msgstr "FAQ"
-
-#: google-captcha.php:539
+#: google-captcha.php:543
 msgid "Support"
 msgstr "Поддержка"
+
+#~ msgid "Public Key"
+#~ msgstr "Открытый ключ"
+
+#~ msgid "Private Key"
+#~ msgstr "Закрытый ключ"
+
+#~ msgid "Enter public key"
+#~ msgstr "Введите открытый ключ"
 
 #, fuzzy
 #~ msgid "Activated theme"

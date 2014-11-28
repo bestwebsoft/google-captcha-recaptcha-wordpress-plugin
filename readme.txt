@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: antispam, anti-spam, capcha, anti-spam security, arithmetic actions, captcha, captha, capcha, catcha, cpatcha, captcha theme, comment, digitize books, digitize newspapers, digitize radio shows, google, gogle, google captcha, login, lost password, re captcha, recaptcha, re-captcha, registration, shortcode, site keys, spam, text captcha.
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 1.09
+Tested up to: 4.0.1
+Stable tag: 1.10
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -144,6 +144,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.10 - 26.11.2014 =
+* Update : We updated url and key names for Google Api.
+
 = V1.09 - 14.11.2014 =
 * Bugfix : We fixed the bug with joint displaying Google reCaptcha and Captcha.
 * Bugfix : We fixed the bug with wrong answers in custom forms.
@@ -190,6 +193,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.10 =
+We updated url and key names for Google Api.
 
 = V1.09 =
 We fixed the bug with joint displaying Google reCaptcha and Captcha. We fixed the bug with wrong answers in custom forms. We fixed the bug with login redirect.
