@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: google_captcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-02 12:15+0300\n"
+"POT-Creation-Date: 2014-12-30 13:02+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: Nick Lai <nick20080808@gmail.com>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:74
-#: google-captcha.php:280
+#: google-captcha.php:80
+#: google-captcha.php:282
 msgid "Google Captcha Settings"
 msgstr "reCAPTCHA 驗證碼設置"
 
-#: google-captcha.php:74
+#: google-captcha.php:80
 msgid "Google Captcha"
 msgstr "reCAPTCHA 驗證碼"
 
-#: google-captcha.php:87
+#: google-captcha.php:97
 msgid "requires"
 msgstr "必須填寫"
 
-#: google-captcha.php:87
+#: google-captcha.php:97
 msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
 msgstr "或更高，因此本外掛已被停用。請升級您的WordPress，然後再試一次。"
 
-#: google-captcha.php:87
+#: google-captcha.php:97
 msgid "Back to the WordPress"
 msgstr "回到WordPress"
 
-#: google-captcha.php:87
+#: google-captcha.php:97
 msgid "Plugins page"
 msgstr "外掛頁面"
 
 #: google-captcha.php:222
-msgid "Public Key"
-msgstr "公開金鑰(Public Key)"
+msgid "Site key"
+msgstr ""
 
 #: google-captcha.php:227
-msgid "Private Key"
-msgstr "私有密鑰(Private Key)"
+msgid "Secret Key"
+msgstr ""
 
 #: google-captcha.php:235
 msgid "Login form"
@@ -67,8 +67,9 @@ msgid "Comments form"
 msgstr "發表迴響框"
 
 #: google-captcha.php:253
-msgid "Enter public key"
-msgstr "輸入公開金鑰"
+#, fuzzy
+msgid "Enter site key"
+msgstr "輸入私有密鑰"
 
 #: google-captcha.php:254
 #: google-captcha.php:260
@@ -76,122 +77,158 @@ msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr "警告：如果你不填寫此欄，驗證碼將不會顯示。"
 
 #: google-captcha.php:259
-msgid "Enter private key"
+#, fuzzy
+msgid "Enter secret key"
 msgstr "輸入私有密鑰"
 
-#: google-captcha.php:282
-#: google-captcha.php:534
-#: google-captcha.php:545
+#: google-captcha.php:284
+#: google-captcha.php:618
+#: google-captcha.php:629
 msgid "Settings"
 msgstr "設定"
 
-#: google-captcha.php:283
-#: google-captcha.php:546
+#: google-captcha.php:285
+#: google-captcha.php:630
 msgid "FAQ"
 msgstr "常見問題"
 
-#: google-captcha.php:285
+#: google-captcha.php:287
+msgid "Notice:"
+msgstr ""
+
+#: google-captcha.php:287
+msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
+msgstr ""
+
+#: google-captcha.php:288
 msgid "Settings saved"
 msgstr "設定已儲存"
 
-#: google-captcha.php:287
+#: google-captcha.php:290
 msgid "If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:"
 msgstr "如果您想在自己的表格中加入reCAPTCHA驗證碼，只需貼上此代號到您的文章或頁面："
 
-#: google-captcha.php:289
+#: google-captcha.php:292
 msgid "Authentication"
 msgstr "身份驗證"
 
-#: google-captcha.php:290
+#: google-captcha.php:293
 #, php-format
 msgid "Before you are able to do something, you must to register %s here %s"
 msgstr "在開始使用本外掛之先，請到%s這裡%s註冊。"
 
-#: google-captcha.php:291
-msgid "Enter public and private keys, that you get after registration."
+#: google-captcha.php:294
+#, fuzzy
+msgid "Enter site key and secret key, that you get after registration."
 msgstr "然後複製公開金鑰(Public Key)和私有密鑰(Private Key)到到以下方框。"
 
-#: google-captcha.php:303
+#: google-captcha.php:306
 msgid "Options"
 msgstr "選項"
 
-#: google-captcha.php:306
+#: google-captcha.php:309
 msgid "Enable Google Captcha for:"
 msgstr "在下列畫面及表格使用reCAPTCHA："
 
-#: google-captcha.php:315
-#: google-captcha.php:318
-#: google-captcha.php:322
+#: google-captcha.php:324
+#: google-captcha.php:327
+#: google-captcha.php:331
 msgid "Contact form"
 msgstr "聯絡表格"
 
-#: google-captcha.php:316
-#: google-captcha.php:319
-#: google-captcha.php:323
+#: google-captcha.php:325
+#: google-captcha.php:328
+#: google-captcha.php:332
 msgid "powered by"
 msgstr "服務提供者："
 
-#: google-captcha.php:319
+#: google-captcha.php:328
 msgid "Activate contact form"
 msgstr "啟用聯絡表格"
 
-#: google-captcha.php:323
+#: google-captcha.php:332
 msgid "Download contact form"
 msgstr "下載聯絡表格"
 
-#: google-captcha.php:328
+#: google-captcha.php:337
 msgid "Hide captcha for:"
 msgstr "為下列用戶隱藏驗證碼："
 
-#: google-captcha.php:336
+#: google-captcha.php:345
+msgid "reCAPTCHA version:"
+msgstr ""
+
+#: google-captcha.php:347
+#: google-captcha.php:348
+msgid "version"
+msgstr ""
+
+#: google-captcha.php:353
+#: google-captcha.php:366
 msgid "Theme:"
 msgstr "風格："
 
-#: google-captcha.php:347
+#: google-captcha.php:354
+#: google-captcha.php:367
+msgid "for reCAPTCHA version"
+msgstr ""
+
+#: google-captcha.php:378
 msgid "Save Changes"
 msgstr "儲存變更"
 
-#: google-captcha.php:353
+#: google-captcha.php:384
 msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
 msgstr "如果你喜歡本外掛，請到WordPress給它五星評級！"
 
-#: google-captcha.php:354
+#: google-captcha.php:385
 msgid "Rate the plugin"
 msgstr "為外掛評分"
 
-#: google-captcha.php:357
+#: google-captcha.php:388
 msgid "If there is something wrong about it, please contact us"
 msgstr "如果對本外掛出現任何錯誤，歡迎與我們聯絡"
 
-#: google-captcha.php:396
-msgid "Error: You have entered an incorrect CAPTCHA value."
-msgstr "錯誤：您輸入的驗證碼不正確。"
-
-#: google-captcha.php:403
+#: google-captcha.php:432
 msgid "To use Google Captcha you must get the keys from"
 msgstr "如要用reCAPTCHA驗證碼，你必須輸入兩組金鑰。您可以在這裡領取："
 
-#: google-captcha.php:403
+#: google-captcha.php:433
 msgid "here"
 msgstr "點我"
 
-#: google-captcha.php:403
+#: google-captcha.php:434
 msgid "and enter them on the"
 msgstr "然後將他們輸入到"
 
-#: google-captcha.php:403
+#: google-captcha.php:436
 msgid "plugin setting page"
 msgstr "外掛設置頁"
 
-#: google-captcha.php:456
-#: google-captcha.php:498
-#: google-captcha.php:520
+#: google-captcha.php:464
+#: google-captcha.php:480
+msgid "Error: You have entered an incorrect CAPTCHA value."
+msgstr "錯誤：您輸入的驗證碼不正確。"
+
+#: google-captcha.php:542
+#: google-captcha.php:555
+#: google-captcha.php:588
+#: google-captcha.php:598
 msgid "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again."
 msgstr "錯誤：您輸入的驗證碼不正確。請回到上一頁，然後重新輸入。"
 
-#: google-captcha.php:547
+#: google-captcha.php:631
 msgid "Support"
 msgstr "支援"
+
+#~ msgid "Public Key"
+#~ msgstr "公開金鑰(Public Key)"
+
+#~ msgid "Private Key"
+#~ msgstr "私有密鑰(Private Key)"
+
+#~ msgid "Enter public key"
+#~ msgstr "輸入公開金鑰"
 
 #, fuzzy
 #~ msgid "Activated theme"

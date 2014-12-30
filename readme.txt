@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: antispam, anti-spam, capcha, anti-spam security, arithmetic actions, captcha, captha, capcha, catcha, cpatcha, captcha theme, comment, digitize books, digitize newspapers, digitize radio shows, google, gogle, google captcha, login, lost password, re captcha, recaptcha, re-captcha, registration, shortcode, site keys, spam, text captcha.
 Requires at least: 3.0
-Tested up to: 4.0.1
-Stable tag: 1.10
+Tested up to: 4.1
+Stable tag: 1.11
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,7 +23,7 @@ http://www.youtube.com/watch?v=10ImOhmM0Cs
 
 = Copyrights for resources used in this plugin =
 
-1. In Google Captcha plugin we used the "lib/recaptchalib.php" file. The Licence for this file is in the "lib/license.txt" file.
+1. In Google Captcha plugin we used the "lib/recaptchalib.php" and "lib_v2/recaptchalib.php" file. The Licence for this file is in the "lib/license.txt" and "lib_v2/license.txt" file.
 2. Everything else used in this plugin has been created by the Bestwebsoft team and is distributed under GPL license.
 
 = Features =
@@ -144,6 +144,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.11 - 30.12.2014 =
+* Update : New Google Captcha version is added.
+* Bugfix : We fixed the bug with displaying Google Captcha on the multisite register form.
+* Bugfix : We fixed the bug with multilanguage plugin.
+* Update : We updated all functionality for wordpress 4.1.
+
 = V1.10 - 26.11.2014 =
 * Update : We updated url and key names for Google Api.
 
@@ -193,6 +199,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.11 =
+New Google Captcha version is added. We fixed the bug with displaying Google Captcha on the multisite register form. We fixed the bug with multilanguage plugin. We updated all functionality for wordpress 4.1.
 
 = V1.10 =
 We updated url and key names for Google Api.

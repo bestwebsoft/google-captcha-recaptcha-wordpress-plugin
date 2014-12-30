@@ -4,3 +4,7 @@
 #gglcptch-keys input[type=text] {
 	width: 250px;
 }
+.gglcptch_span {
+	color: #888888;
+	font-size: 10px;
+}
