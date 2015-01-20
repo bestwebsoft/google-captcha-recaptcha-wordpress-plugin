@@ -4,12 +4,12 @@ Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.11
+Version: 1.12
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2014  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2015  BestWebSoft  ( http://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -72,8 +72,8 @@ if ( ! function_exists( 'google_capthca_admin_menu' ) ) {
 			if ( file_exists( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' ) )
 				require_once( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' );
 			else
-				require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );	
-			$bstwbsftwppdtplgns_added_menu = true;			
+				require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
+			$bstwbsftwppdtplgns_added_menu = true;
 		}
 
 		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 );
@@ -102,7 +102,7 @@ if ( ! function_exists( 'google_capthca_admin_menu' ) ) {
 
 if ( ! function_exists( 'gglcptch_init' ) ) {
 	function gglcptch_init() {
-		global $gglcptch_options;
+		global $gglcptch_options, $gglcptch_allow_url_fopen;
 
 		load_plugin_textdomain( 'google_captcha', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
@@ -111,6 +111,10 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 
 		/* Get options from the database */
 		$gglcptch_options = get_option( 'gglcptch_options' );
+
+		/* Get option from the php.ini */
+		if ( isset( $gglcptch_options['recaptcha_version'] ) && $gglcptch_options['recaptcha_version'] == 'v2' )
+			$gglcptch_allow_url_fopen = ( ini_get( 'allow_url_fopen' ) != 1 ) ? false : true;
 
 		/* Add hooks */
 		if ( '1' == $gglcptch_options['login_form'] ) {
@@ -136,14 +140,14 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		}
 		if ( '1' == $gglcptch_options['contact_form'] ) {
 			add_filter( 'cntctfrm_display_captcha', 'gglcptch_cf_display' );
-			add_filter( 'cntctfrmpr_display_captcha', 'gglcptch_cf_display' );			
+			add_filter( 'cntctfrmpr_display_captcha', 'gglcptch_cf_display' );
 		}
 	}
 }
 
 if ( ! function_exists( 'gglcptch_admin_init' ) ) {
 	function gglcptch_admin_init() {
-		 global $bws_plugin_info, $gglcptch_plugin_info;
+		global $bws_plugin_info, $gglcptch_plugin_info;
 
 		if ( ! $gglcptch_plugin_info )
  			$gglcptch_plugin_info = get_plugin_data( __FILE__, false );
@@ -214,7 +218,7 @@ if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 /* Display settings page */
 if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 	function gglcptch_settings_page() {
-		global $gglcptch_options, $gglcptch_plugin_info, $wp_version;
+		global $gglcptch_options, $gglcptch_plugin_info, $wp_version, $gglcptch_allow_url_fopen;
 
 		/* Private and public keys */
 		$gglcptch_keys = array(
@@ -268,7 +272,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			$gglcptch_options['reset_pwd_form']		=	isset( $_POST['gglcptch_reset_pwd_form'] ) ? 1 : 0;
 			$gglcptch_options['comments_form']		=	isset( $_POST['gglcptch_comments_form'] ) ? 1 : 0;
 			$gglcptch_options['contact_form']		=	isset( $_POST['gglcptch_contact_form'] ) ? 1 : 0;
-			$gglcptch_options['recaptcha_version']	=	$_POST['gglcptch_recaptcha_version'];			
+			$gglcptch_options['recaptcha_version']	=	$_POST['gglcptch_recaptcha_version'];
 			$gglcptch_options['theme']				=	$_POST['gglcptch_theme'];
 			$gglcptch_options['theme_v2']			=	$_POST['gglcptch_theme_v2'];
 
@@ -277,6 +281,9 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			}
 
 			update_option( 'gglcptch_options', $gglcptch_options );
+
+			if ( ! $gglcptch_allow_url_fopen && $gglcptch_options['recaptcha_version'] == 'v2' )
+				$gglcptch_allow_url_fopen = ( ini_get( 'allow_url_fopen' ) != 1 ) ? false : true;
 		} ?>
 		<div class="wrap">
 			<h2><?php _e( 'Google Captcha Settings', 'google_captcha' ); ?></h2>
@@ -287,6 +294,12 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			<div id="gglcptch_settings_notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice:", 'google_captcha' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'google_captcha' ); ?></p></div>
 			<div class="updated fade" <?php if ( ! isset( $_POST['gglcptch_save_changes'] ) || "" != $error ) echo 'style="display:none"'; ?>><p><strong><?php _e( 'Settings saved', 'google_captcha' ); ?></strong></p></div>
 			<div class="error" <?php if ( "" == $error ) echo 'style="display:none"'; ?>><p><strong><?php echo $error; ?></strong></p></div>
+			<?php if ( ! $gglcptch_allow_url_fopen && $gglcptch_options['recaptcha_version'] == 'v2' ) {
+				printf( '<div class="error"><p><strong>%s</strong> <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank">%s</a></p></div>',
+					__( 'Google Captcha version 2 will not work correctly, since the option "allow_url_fopen" is disabled in the PHP settings of your hosting.', 'google_captcha' ),
+					__( 'Read more.', 'google_captcha' )
+				);
+			} ?>
 			<p><?php _e( 'If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:', 'google_captcha' ); echo ' [bws_google_captcha]'; ?></p>
 			<form id="gglcptch_settings_form" method="post" action="admin.php?page=google-captcha.php">
 				<h3><?php _e( 'Authentication', 'google_captcha' ); ?></h3>
@@ -340,11 +353,11 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 								<label><input type="checkbox" name="<?php echo 'gglcptch_' . $role; ?>" value=<?php echo $role; if ( '1' == $gglcptch_options[ $role ] ) echo ' checked'; ?>> <?php echo $fields['name']; ?></label><br/>
 							<?php endforeach; ?>
 						</td>
-					</tr>					
+					</tr>
 					<tr valign="top">
 						<th scope="row"><?php _e( 'reCAPTCHA version:', 'google_captcha' ); ?></th>
 						<td>
-							<label><input type="radio" name="gglcptch_recaptcha_version" value="v1"<?php if ( 'v1' == $gglcptch_options['recaptcha_version'] ) echo ' checked="checked"'; ?>> <?php _e( 'version', 'google_captcha' ); ?> 1</label><br/> 
+							<label><input type="radio" name="gglcptch_recaptcha_version" value="v1"<?php if ( 'v1' == $gglcptch_options['recaptcha_version'] ) echo ' checked="checked"'; ?>> <?php _e( 'version', 'google_captcha' ); ?> 1</label><br/>
 							<label><input type="radio" name="gglcptch_recaptcha_version" value="v2"<?php if ( 'v2' == $gglcptch_options['recaptcha_version'] ) echo ' checked="checked"'; ?>> <?php _e( 'version', 'google_captcha' ); ?> 2</label>
 						</td>
 					</tr>
@@ -370,7 +383,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 							<select name="gglcptch_theme_v2">
 								<option value="light" <?php if ( 'light' == $gglcptch_options['theme_v2'] ) echo ' selected'; ?>>light</option>
 								<option value="dark" <?php if ( 'dark' == $gglcptch_options['theme_v2'] ) echo ' selected'; ?>>dark</option>
-							</select>							
+							</select>
 						</td>
 					</tr>
 				</table>
@@ -398,7 +411,7 @@ if ( ! function_exists( 'gglcptch_check_role' ) ) {
 	function gglcptch_check_role() {
 		global $current_user, $gglcptch_options;
 		if ( ! is_user_logged_in() )
-			return false;		
+			return false;
 		if ( ! empty( $current_user->roles[0] ) ) {
 			$role = $current_user->roles[0];
 			if ( '1' == $gglcptch_options[ $role ] )
@@ -415,11 +428,16 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 	function gglcptch_display( $content = false ) {
 		if ( gglcptch_check_role() )
 			return;
-		global $gglcptch_options, $gglcptch_count;
+		global $gglcptch_options, $gglcptch_count, $gglcptch_allow_url_fopen;
 		if ( empty( $gglcptch_count ) ) {
 			$gglcptch_count = 1;
 		}
 		if ( $gglcptch_count > 1 ) {
+			return $content;
+		}
+		if ( ! $gglcptch_allow_url_fopen && isset( $gglcptch_options['recaptcha_version'] ) && $gglcptch_options['recaptcha_version'] == 'v2' ) {
+			$content .= '<div class="gglcptch allow_url_fopen_off"></div>';
+			$gglcptch_count++;
 			return $content;
 		}
 		$publickey = $gglcptch_options['public_key'];
@@ -440,34 +458,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			$gglcptch_count++;
 			return $content;
 		}
-		if ( 'v1' == $gglcptch_options['recaptcha_version'] ) {
-			require_once( 'lib/recaptchalib.php' );
-			$content .= sprintf(
-				'<style type="text/css" media="screen">
-					#recaptcha_response_field {
-						max-height: 35px;
-					}
-					#gglcptch_error {
-						color: #F00;
-					}
-					.gglcptch table#recaptcha_table {
-					    table-layout: auto;
-					}
-				</style>
-				<script type="text/javascript">
-					var RecaptchaOptions = { theme : "%s" },
-					ajaxurl = "%s",
-					gglcptch_error_msg = "%s";
-				</script>',
-				$gglcptch_options['theme'],
-				admin_url( 'admin-ajax.php' ),
-				__( 'Error: You have entered an incorrect CAPTCHA value.', 'google_captcha' )
-			);
-			if ( is_ssl() )
-				$content .= recaptcha_get_html( $publickey, '', true );
-			else
-				$content .= recaptcha_get_html( $publickey );			
-		} else {
+		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
 			require_once( 'lib_v2/recaptchalib.php' );
 			$reCaptcha = new ReCaptcha( $privatekey );
 			$content .= '<style type="text/css" media="screen">
@@ -493,6 +484,33 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 					</div>
 				</div>
 			</noscript>';
+		} else {
+			require_once( 'lib/recaptchalib.php' );
+			$content .= sprintf(
+				'<style type="text/css" media="screen">
+					#recaptcha_response_field {
+						max-height: 35px;
+					}
+					#gglcptch_error {
+						color: #F00;
+					}
+					.gglcptch table#recaptcha_table {
+					    table-layout: auto;
+					}
+				</style>
+				<script type="text/javascript">
+					var RecaptchaOptions = { theme : "%s" },
+					ajaxurl = "%s",
+					gglcptch_error_msg = "%s";
+				</script>',
+				$gglcptch_options['theme'],
+				admin_url( 'admin-ajax.php' ),
+				__( 'Error: You have entered an incorrect CAPTCHA value.', 'google_captcha' )
+			);
+			if ( is_ssl() )
+				$content .= recaptcha_get_html( $publickey, '', true );
+			else
+				$content .= recaptcha_get_html( $publickey );
 		}
 		$content .= '</div>';
 		$gglcptch_count++;
@@ -504,9 +522,13 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 if ( ! function_exists( 'gglcptch_login_display' ) ) {
 	function gglcptch_login_display() {
 		global $gglcptch_options;
-		$from_width = 320;
-		if ( 'clean' == $gglcptch_options['theme'] )
-			$from_width = 450; ?>
+		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
+			$from_width = 302;
+		} else {
+			$from_width = 320;
+			if ( 'clean' == $gglcptch_options['theme'] )
+				$from_width = 450;
+		} ?>
 		<style type="text/css" media="screen">
 			#loginform,
 			#lostpasswordform,
@@ -524,26 +546,21 @@ if ( ! function_exists( 'gglcptch_login_display' ) ) {
 
 /* Check google captcha in login form */
 if ( ! function_exists( 'gglcptch_login_check' ) ) {
-	function gglcptch_login_check( $redirect_to, $request, $user ) {		
+	function gglcptch_login_check( $redirect_to, $request, $user ) {
 		if ( isset( $_POST['wp-submit'] ) ) {
-			global $gglcptch_options;			
+			global $gglcptch_options, $gglcptch_allow_url_fopen;
+
+			if ( ! $gglcptch_allow_url_fopen && isset( $gglcptch_options['recaptcha_version'] ) && $gglcptch_options['recaptcha_version'] == 'v2' ) {
+				return $redirect_to;
+			}
+
 			$publickey = $gglcptch_options['public_key'];
 			$privatekey = $gglcptch_options['private_key'];
 
 			if ( ! $privatekey || ! $publickey ) {
 				return $redirect_to;
 			}
-			if ( 'v1' == $gglcptch_options['recaptcha_version'] ) {
-				require_once( 'lib/recaptchalib.php' );
-				$resp = recaptcha_check_answer( $privatekey, $_SERVER['REMOTE_ADDR'], $_POST['recaptcha_challenge_field'], $_POST['recaptcha_response_field'] );
-
-				if ( ! $resp->is_valid ) {
-					wp_clear_auth_cookie();
-					wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
-				} else {
-					return $redirect_to;
-				}
-			} else {
+			if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
 				require_once( 'lib_v2/recaptchalib.php' );
 				$reCaptcha = new ReCaptcha( $privatekey );
 				$resp = $reCaptcha->verifyResponse( $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"] );
@@ -554,6 +571,16 @@ if ( ! function_exists( 'gglcptch_login_check' ) ) {
 					wp_clear_auth_cookie();
 					wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
 				}
+			} else {
+				require_once( 'lib/recaptchalib.php' );
+				$resp = recaptcha_check_answer( $privatekey, $_SERVER['REMOTE_ADDR'], $_POST['recaptcha_challenge_field'], $_POST['recaptcha_response_field'] );
+
+				if ( ! $resp->is_valid ) {
+					wp_clear_auth_cookie();
+					wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
+				} else {
+					return $redirect_to;
+				}				
 			}
 		} else {
 			return $redirect_to;
@@ -574,29 +601,36 @@ if ( ! function_exists( 'gglcptch_commentform_display' ) ) {
 /* Check google captcha in lostpassword form */
 if ( ! function_exists( 'gglcptch_lostpassword_check' ) ) {
 	function gglcptch_lostpassword_check() {
-		global $gglcptch_options;
+		global $gglcptch_options, $gglcptch_allow_url_fopen;
+
+		if ( ! $gglcptch_allow_url_fopen && isset( $gglcptch_options['recaptcha_version'] ) && $gglcptch_options['recaptcha_version'] == 'v2' ) {
+			return;
+		}
+
 		$publickey	=	$gglcptch_options['public_key'];
 		$privatekey	=	$gglcptch_options['private_key'];
 
 		if ( ! $privatekey || ! $publickey )
 			return;
 
-		if ( 'v1' == $gglcptch_options['recaptcha_version'] ) {
-			require_once( 'lib/recaptchalib.php' );
-			$resp = recaptcha_check_answer( $privatekey, $_SERVER['REMOTE_ADDR'], $_POST['recaptcha_challenge_field'], $_POST['recaptcha_response_field'] );
-			if ( ! $resp->is_valid ) {
-				wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
-			} else
-				return;
-		} else {
+		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
 			require_once( 'lib_v2/recaptchalib.php' );
 			$reCaptcha = new ReCaptcha( $privatekey );
 			$resp = $reCaptcha->verifyResponse( $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"] );
 			if ( $resp != null && $resp->success )
 				return;
 			else
-				wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );			
-		}			
+				wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
+		} else {
+			require_once( 'lib/recaptchalib.php' );
+			$resp = recaptcha_check_answer( $privatekey, $_SERVER['REMOTE_ADDR'], $_POST['recaptcha_challenge_field'], $_POST['recaptcha_response_field'] );
+			if ( ! $resp->is_valid ) {
+				wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
+			} else
+				return;
+		
+			
+		}
 	}
 }
 
@@ -636,18 +670,11 @@ if ( ! function_exists( 'gglcptch_links' ) ) {
 
 /* Check Google Captcha in shortcode and contact form */
 if ( ! function_exists( 'gglcptch_captcha_check' ) ) {
-	function gglcptch_captcha_check() {		
-		$gglcptch_options = get_option( 'gglcptch_options' );		
+	function gglcptch_captcha_check() {
+		$gglcptch_options = get_option( 'gglcptch_options' );
 		$privatekey = $gglcptch_options['private_key'];
 
-		if ( 'v1' == $gglcptch_options['recaptcha_version'] ) {
-			require_once( 'lib/recaptchalib.php' );
-			$resp = recaptcha_check_answer( $privatekey, $_SERVER['REMOTE_ADDR'], $_POST['recaptcha_challenge_field'], $_POST['recaptcha_response_field'] );
-			if ( ! $resp->is_valid )
-				echo "error";
-			else
-				echo "success";
-		} else {
+		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
 			require_once( 'lib_v2/recaptchalib.php' );
 			$reCaptcha = new ReCaptcha( $privatekey );
 			$resp = $reCaptcha->verifyResponse( $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"] );
@@ -655,7 +682,14 @@ if ( ! function_exists( 'gglcptch_captcha_check' ) ) {
 				echo "success";
 			else
 				echo "error";
-		}		
+		} else {
+			require_once( 'lib/recaptchalib.php' );
+			$resp = recaptcha_check_answer( $privatekey, $_SERVER['REMOTE_ADDR'], $_POST['recaptcha_challenge_field'], $_POST['recaptcha_response_field'] );
+			if ( ! $resp->is_valid )
+				echo "error";
+			else
+				echo "success";
+		}
 		die();
 	}
 }

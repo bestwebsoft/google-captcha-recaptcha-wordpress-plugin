@@ -55,7 +55,7 @@
 					},
 					data    : {
 						action: 'gglcptch_captcha_check',
-						'g-recaptcha-response'  : $form.find( '#g-recaptcha-response' ).val()
+						'g-recaptcha-response'  : $form.find( '.g-recaptcha-response' ).val()
 					},
 					success : function( data ) {
 						if ( data == 'error' ) {
