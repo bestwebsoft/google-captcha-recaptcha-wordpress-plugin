@@ -103,7 +103,7 @@ msgstr "Настройки сохранены"
 
 #: google-captcha.php:301
 msgid "Google Captcha version 2 will not work correctly, since the option \"allow_url_fopen\" is disabled in the PHP settings of your hosting."
-msgstr "Google Captcha версии 2 не будет работать корректно, потому что отключена опция  \"allow_url_fopen\" в настройках PHP вашего хостинга."
+msgstr "Google Captcha версии 2 не будет работать корректно, потому что отключена опция \"allow_url_fopen\" в настройках PHP вашего хостинга."
 
 #: google-captcha.php:302
 msgid "Read more."

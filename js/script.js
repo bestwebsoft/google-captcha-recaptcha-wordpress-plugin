@@ -9,7 +9,7 @@
 		$( 'form' ).submit( function( e ) {
 			var $form = $( this ),
 				$captcha = $form.find( '#recaptcha_widget_div:visible' ),
-				$captcha_v2 = $form.find( '.g-recaptcha:visible' );				
+				$captcha_v2 = $form.find( '.g-recaptcha:visible' );
 			if ( $captcha.length ) {
 				$.ajax({
 					async   : false,
