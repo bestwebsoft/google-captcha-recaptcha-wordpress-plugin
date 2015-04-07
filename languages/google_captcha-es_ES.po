@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: google_captcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-19 16:57+0300\n"
+"POT-Creation-Date: 2015-04-07 14:13+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: BestWebSoft <support@bestwebsoft.com>\n"
 "Language-Team: Cloudzeroxyz <cloudzeroxyz@gmail.com>\n"
@@ -17,217 +17,226 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:80
-#: google-captcha.php:291
+#: google-captcha.php:32
+#: google-captcha.php:229
 msgid "Google Captcha Settings"
 msgstr "Googe Captcha Ajustes"
 
-#: google-captcha.php:80
+#: google-captcha.php:32
 msgid "Google Captcha"
 msgstr "Google Captcha"
 
-#: google-captcha.php:97
-msgid "requires"
-msgstr "requiere"
-
-#: google-captcha.php:97
-msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
-msgstr "o superior, es por eso que ha sido desactivado! Por favor, actualice WordPress y vuelva a intentarlo."
-
-#: google-captcha.php:97
-msgid "Back to the WordPress"
-msgstr "Volver a WordPress"
-
-#: google-captcha.php:97
-msgid "Plugins page"
-msgstr "Página de Plugins"
-
-#: google-captcha.php:231
+#: google-captcha.php:166
 msgid "Site key"
 msgstr ""
 
-#: google-captcha.php:236
+#: google-captcha.php:171
 msgid "Secret Key"
 msgstr ""
 
-#: google-captcha.php:244
+#: google-captcha.php:179
 msgid "Login form"
 msgstr "Formulario de acceso"
 
-#: google-captcha.php:245
+#: google-captcha.php:180
 msgid "Registration form"
 msgstr "Formulario de registro"
 
-#: google-captcha.php:246
+#: google-captcha.php:181
 msgid "Reset password form"
 msgstr "Formulario de restablecimiento de contraseña"
 
-#: google-captcha.php:247
+#: google-captcha.php:182
 msgid "Comments form"
 msgstr "Formulario de comentarios"
 
-#: google-captcha.php:262
+#: google-captcha.php:197
 #, fuzzy
 msgid "Enter site key"
 msgstr "Introduce la clave privada"
 
-#: google-captcha.php:263
-#: google-captcha.php:269
+#: google-captcha.php:198
+#: google-captcha.php:204
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr "ADVERTENCIA: El Captcha no se mostrará mientras usted no llene los campos clave."
 
-#: google-captcha.php:268
+#: google-captcha.php:203
 #, fuzzy
 msgid "Enter secret key"
 msgstr "Introduce la clave privada"
 
-#: google-captcha.php:293
-#: google-captcha.php:648
-#: google-captcha.php:659
+#: google-captcha.php:231
+#: google-captcha.php:590
+#: google-captcha.php:603
 msgid "Settings"
 msgstr "Ajustes"
 
-#: google-captcha.php:294
-#: google-captcha.php:660
+#: google-captcha.php:232
+#: google-captcha.php:604
 msgid "FAQ"
 msgstr "Preguntas Frecuentes"
 
-#: google-captcha.php:296
+#: google-captcha.php:234
 msgid "Notice:"
 msgstr ""
 
-#: google-captcha.php:296
+#: google-captcha.php:234
 msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
 msgstr ""
 
-#: google-captcha.php:297
+#: google-captcha.php:235
 msgid "Settings saved"
 msgstr "Configuración guardada"
 
-#: google-captcha.php:301
+#: google-captcha.php:239
 msgid "Google Captcha version 2 will not work correctly, since the option \"allow_url_fopen\" is disabled in the PHP settings of your hosting."
 msgstr ""
 
-#: google-captcha.php:302
+#: google-captcha.php:240
 msgid "Read more."
 msgstr ""
 
-#: google-captcha.php:305
+#: google-captcha.php:243
 msgid "If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:"
 msgstr "Si quisiera añadir el Google Captcha para su formulario, simplemente copia y pega este código corto en tu post o página:"
 
-#: google-captcha.php:307
+#: google-captcha.php:245
 msgid "Authentication"
 msgstr "Autentificación"
 
-#: google-captcha.php:308
+#: google-captcha.php:246
 #, php-format
 msgid "Before you are able to do something, you must to register %s here %s"
 msgstr "Antes de que pueda hacer algo, debe registrar %s aquí %s"
 
-#: google-captcha.php:309
+#: google-captcha.php:247
 #, fuzzy
 msgid "Enter site key and secret key, that you get after registration."
 msgstr "Introduzca las claves pública y privada, que se obtiene después de Registrarse."
 
-#: google-captcha.php:321
+#: google-captcha.php:259
 msgid "Options"
 msgstr "Opciones"
 
-#: google-captcha.php:324
+#: google-captcha.php:262
 msgid "Enable Google Captcha for:"
 msgstr "Habilitar Google Captcha para:"
 
-#: google-captcha.php:339
-#: google-captcha.php:342
-#: google-captcha.php:346
+#: google-captcha.php:272
+#: google-captcha.php:275
+#: google-captcha.php:279
 msgid "Contact form"
 msgstr "Formulario de contacto"
 
-#: google-captcha.php:340
-#: google-captcha.php:343
-#: google-captcha.php:347
+#: google-captcha.php:273
+#: google-captcha.php:276
+#: google-captcha.php:280
 msgid "powered by"
 msgstr "impulsado por"
 
-#: google-captcha.php:343
+#: google-captcha.php:276
 msgid "Activate contact form"
 msgstr "Activar formulario de contacto"
 
-#: google-captcha.php:347
+#: google-captcha.php:280
 msgid "Download contact form"
 msgstr "Descargar formulario de contacto"
 
-#: google-captcha.php:352
+#: google-captcha.php:285
 msgid "Hide captcha for:"
 msgstr "Ocultar captcha para:"
 
-#: google-captcha.php:360
+#: google-captcha.php:293
 msgid "reCAPTCHA version:"
 msgstr ""
 
-#: google-captcha.php:362
-#: google-captcha.php:363
+#: google-captcha.php:295
+#: google-captcha.php:296
 msgid "version"
 msgstr ""
 
-#: google-captcha.php:368
-#: google-captcha.php:381
+#: google-captcha.php:301
+#: google-captcha.php:314
 msgid "Theme:"
 msgstr "Tema:"
 
-#: google-captcha.php:369
-#: google-captcha.php:382
+#: google-captcha.php:302
+#: google-captcha.php:315
 msgid "for reCAPTCHA version"
 msgstr ""
 
-#: google-captcha.php:393
+#: google-captcha.php:326
 msgid "Save Changes"
 msgstr "Guardar Cambios"
 
-#: google-captcha.php:399
-msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
-msgstr "Si te gusta nuestro plugin, por favor, dale 5 estrellas en WordPress"
-
-#: google-captcha.php:400
-msgid "Rate the plugin"
-msgstr "Valorar el plugin"
-
-#: google-captcha.php:403
-msgid "If there is something wrong about it, please contact us"
-msgstr "Si hay algo malo en ello, por favor ponte en contacto con nosotros"
-
-#: google-captcha.php:452
+#: google-captcha.php:376
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Para utilizar Google Captcha debe obtener las claves de"
 
-#: google-captcha.php:453
+#: google-captcha.php:377
 msgid "here"
 msgstr "aquí"
 
-#: google-captcha.php:454
+#: google-captcha.php:378
 msgid "and enter them on the"
 msgstr "e introducirlas en"
 
-#: google-captcha.php:456
+#: google-captcha.php:380
 msgid "plugin setting page"
 msgstr "página de configuración de plugin"
 
-#: google-captcha.php:484
-#: google-captcha.php:500
+#: google-captcha.php:397
+#: google-captcha.php:434
 msgid "Error: You have entered an incorrect CAPTCHA value."
 msgstr "Error: Ha introducido un valor incorrecto de CAPTCHA."
 
-#: google-captcha.php:567
-#: google-captcha.php:580
-#: google-captcha.php:618
-#: google-captcha.php:628
+#: google-captcha.php:502
+#: google-captcha.php:512
+#: google-captcha.php:521
+msgid "Error"
+msgstr ""
+
+#: google-captcha.php:502
+#: google-captcha.php:512
+#: google-captcha.php:521
+#, fuzzy
+msgid "You have entered an incorrect CAPTCHA value."
+msgstr "Error: Ha introducido un valor incorrecto de CAPTCHA."
+
+#: google-captcha.php:563
+#: google-captcha.php:568
 msgid "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again."
 msgstr "Error: Ha introducido un valor incorrecto de CAPTCHA. Haga clic en el botón Regresar de su navegador y vuelva a intentarlo."
 
-#: google-captcha.php:661
+#: google-captcha.php:605
 msgid "Support"
 msgstr "Soporte"
+
+#~ msgid "requires"
+#~ msgstr "requiere"
+
+#~ msgid ""
+#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
+#~ "and try again."
+#~ msgstr ""
+#~ "o superior, es por eso que ha sido desactivado! Por favor, actualice "
+#~ "WordPress y vuelva a intentarlo."
+
+#~ msgid "Back to the WordPress"
+#~ msgstr "Volver a WordPress"
+
+#~ msgid "Plugins page"
+#~ msgstr "Página de Plugins"
+
+#~ msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+#~ msgstr ""
+#~ "Si te gusta nuestro plugin, por favor, dale 5 estrellas en WordPress"
+
+#~ msgid "Rate the plugin"
+#~ msgstr "Valorar el plugin"
+
+#~ msgid "If there is something wrong about it, please contact us"
+#~ msgstr "Si hay algo malo en ello, por favor ponte en contacto con nosotros"
 
 #~ msgid "Public Key"
 #~ msgstr "Clave Pública"

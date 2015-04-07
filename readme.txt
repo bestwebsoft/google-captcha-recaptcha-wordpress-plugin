@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: antispam, anti-spam, capcha, anti-spam security, arithmetic actions, captcha, captha, capcha, catcha, cpatcha, captcha theme, comment, digitize books, digitize newspapers, digitize radio shows, google, gogle, google captcha, login, lost password, re captcha, recaptcha, re-captcha, registration, shortcode, site keys, spam, text captcha.
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.13
+Tested up to: 4.2-beta4
+Stable tag: 1.14
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,6 +44,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pr
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:epeetz@gmail.com">Elton Fernandes Peetz Prado</a>)
 * Bulgarian (bg_BG) (thanks to <a href="mailto:me@ygeorgiev.com">Yasen Georgiev</a>)
 * Chinese Traditional (zh_TW) (thanks to <a href="mailto:nick20080808@gmail.com">Nick Lai</a>)
+* Italian (it_IT) (thanks to <a href="mailto:wart17@hotmail.com">Istvan</a>)
 * Greek (el) (thanks to Dimitris Karantonis, www.soft4real.com/en-UK)
 * Polish (pl_PL) (thanks to <a href="mailto:ryszard.glegola@translanet.com">Ryszard Glegola</a>, www.translanet.com)
 * Russian (ru_RU)
@@ -66,6 +67,8 @@ We can fix some things for free for the users who provide translation of our plu
 2. Activate the plugin via the 'Plugins' menu in WordPress.
 3. Plugin settings are located in "BWS Plugins" > "Google Captcha".
 4. Create a form in post and insert the shortcode [bws_google_captcha] into the form.
+
+<a href="https://docs.google.com/document/d/1Nrccb-OLDN80yYjz_6-JPErdpZoslqfPV-g2IZ-GD0A/edit" target="_blank">View a Step-by-step Instruction on Google Captcha (reCAPTCHA) Installation</a>.
 
 == Frequently Asked Questions ==
 
@@ -147,6 +150,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.14 - 07.04.2015 =
+* Bugfix : Captcha work with comments forms with disabled javascript was fixed.
+* Bugfix : Check reCaptcha v2 in PHP version 5.6 and above was fixed.
+* NEW : The Italian language file is added.
+
 = V1.13 - 13.02.2015 =
 * Bugfix : We fixed the vulnerability when entering the dashboard.
 * NEW : The Greek language file is added.
@@ -211,6 +219,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.14 =
+Captcha work with comments forms with disabled javascript was fixed. Check reCaptcha v2 in PHP version 5.6 and above was fixed. The Italian language file is added.
 
 = V1.13 =
 We fixed the vulnerability when entering the dashboard. The Greek language file is added.

@@ -4,7 +4,7 @@ Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.13
+Version: 1.14
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -28,86 +28,27 @@ License: GPLv3 or later
 /* Add menu page */
 if ( ! function_exists( 'google_capthca_admin_menu' ) ) {
 	function google_capthca_admin_menu() {
-		global $bstwbsftwppdtplgns_options, $bstwbsftwppdtplgns_added_menu;
-		$bws_menu_info = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" );
-		$bws_menu_version = $bws_menu_info["Version"];
-		$base = plugin_basename( __FILE__ );
-
-		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
-			if ( is_multisite() ) {
-				if ( ! get_site_option( 'bstwbsftwppdtplgns_options' ) )
-					add_site_option( 'bstwbsftwppdtplgns_options', array() );
-				$bstwbsftwppdtplgns_options = get_site_option( 'bstwbsftwppdtplgns_options' );
-			} else {
-				if ( ! get_option( 'bstwbsftwppdtplgns_options' ) )
-					add_option( 'bstwbsftwppdtplgns_options', array() );
-				$bstwbsftwppdtplgns_options = get_option( 'bstwbsftwppdtplgns_options' );
-			}
-		}
-
-		if ( isset( $bstwbsftwppdtplgns_options['bws_menu_version'] ) ) {
-			$bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
-			unset( $bstwbsftwppdtplgns_options['bws_menu_version'] );
-			if ( is_multisite() )
-				update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			else
-				update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-		} else if ( ! isset( $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] ) || $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] < $bws_menu_version ) {
-			$bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
-			if ( is_multisite() )
-				update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			else
-				update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
-			require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-		} else if ( ! isset( $bstwbsftwppdtplgns_added_menu ) ) {
-			$plugin_with_newer_menu = $base;
-			foreach ( $bstwbsftwppdtplgns_options['bws_menu']['version'] as $key => $value ) {
-				if ( $bws_menu_version < $value && is_plugin_active( $base ) ) {
-					$plugin_with_newer_menu = $key;
-				}
-			}
-			$plugin_with_newer_menu = explode( '/', $plugin_with_newer_menu );
-			$wp_content_dir = defined( 'WP_CONTENT_DIR' ) ? basename( WP_CONTENT_DIR ) : 'wp-content';
-			if ( file_exists( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' ) )
-				require_once( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' );
-			else
-				require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-			$bstwbsftwppdtplgns_added_menu = true;
-		}
-
-		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 );
-		add_submenu_page( 'bws_plugins', __( 'Google Captcha Settings', 'google_captcha' ), __( 'Google Captcha', 'google_captcha' ), 'manage_options', 'google-captcha.php', 'gglcptch_settings_page' );
-	}
-}
-
-/* Function check if plugin is compatible with current WP version  */
- if ( ! function_exists ( 'gglcptch_version_check' ) ) {
-	function gglcptch_version_check() {
-		global $wp_version, $gglcptch_plugin_info;
-		$require_wp		=	"3.0"; /* Wordpress at least requires version */
-		$plugin			=	plugin_basename( __FILE__ );
-	 	if ( version_compare( $wp_version, $require_wp, "<" ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-			if ( is_plugin_active( $plugin ) ) {
-				deactivate_plugins( $plugin );
-				$admin_url = ( function_exists( 'get_admin_url' ) ) ? get_admin_url( null, 'plugins.php' ) : esc_url( '/wp-admin/plugins.php' );
-				if ( ! $gglcptch_plugin_info )
-					$gglcptch_plugin_info = get_plugin_data( __FILE__, false );
-				wp_die( "<strong>" . $gglcptch_plugin_info['Name'] . " </strong> " . __( 'requires', 'google_captcha' ) . " <strong>WordPress " . $require_wp . "</strong> " . __( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'google_captcha') . "<br /><br />" . __( 'Back to the WordPress', 'google_captcha') . " <a href='" . $admin_url . "'>" . __( 'Plugins page', 'google_captcha') . "</a>." );
-			}
-		}
+		bws_add_general_menu( plugin_basename( __FILE__ ) );
+		add_submenu_page( 'bws_plugins', __( 'Google Captcha Settings', 'google_captcha' ), 'Google Captcha', 'manage_options', 'google-captcha.php', 'gglcptch_settings_page' );
 	}
 }
 
 if ( ! function_exists( 'gglcptch_init' ) ) {
 	function gglcptch_init() {
-		global $gglcptch_options, $gglcptch_allow_url_fopen;
+		global $gglcptch_options, $gglcptch_allow_url_fopen, $gglcptch_plugin_info;
 
 		load_plugin_textdomain( 'google_captcha', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
-		/* Check version on WordPress */
-		gglcptch_version_check();
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_functions.php' );
+
+		if ( empty( $gglcptch_plugin_info ) ) {
+			if ( ! function_exists( 'get_plugin_data' ) )
+				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			$gglcptch_plugin_info = get_plugin_data( __FILE__ );
+		}
+
+		/* Function check if plugin is compatible with current WP version  */
+		bws_wp_version_check( plugin_basename( __FILE__ ), $gglcptch_plugin_info, "3.0" );
 
 		/* Get options from the database */
 		$gglcptch_options = get_option( 'gglcptch_options' );
@@ -125,6 +66,7 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		if ( '1' == $gglcptch_options['comments_form'] ) {
 			add_action( 'comment_form_after_fields', 'gglcptch_commentform_display' );
 			add_action( 'comment_form_logged_in_after', 'gglcptch_commentform_display' );
+			add_action( 'pre_comment_on_post', 'gglcptch_coommentform_check' );
 		}
 
 		if ( '1' == $gglcptch_options['reset_pwd_form'] ) {
@@ -138,6 +80,7 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 			/* for multisite */
 			add_action( 'signup_extra_fields', 'gglcptch_login_display' );
 		}
+		
 		if ( '1' == $gglcptch_options['contact_form'] ) {
 			add_filter( 'cntctfrm_display_captcha', 'gglcptch_cf_display' );
 			add_filter( 'cntctfrmpr_display_captcha', 'gglcptch_cf_display' );
@@ -148,9 +91,6 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 if ( ! function_exists( 'gglcptch_admin_init' ) ) {
 	function gglcptch_admin_init() {
 		global $bws_plugin_info, $gglcptch_plugin_info;
-
-		if ( ! $gglcptch_plugin_info )
- 			$gglcptch_plugin_info = get_plugin_data( __FILE__, false );
 
 		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '109', 'version' => $gglcptch_plugin_info["Version"] );
@@ -175,6 +115,7 @@ if ( ! function_exists( 'gglcptch_add_style' ) ) {
 if ( ! function_exists( 'gglcptch_add_script' ) ) {
 	function gglcptch_add_script() {
 		wp_enqueue_script( 'gglcptch_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ) );
+		wp_localize_script( 'gglcptch_script', 'gglcptch_vars', array( 'nonce' => wp_create_nonce( 'gglcptch_recaptcha_nonce' ) ) );
 	}
 }
 /* Google catpcha settings */
@@ -387,16 +328,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 				</p>
 				<?php wp_nonce_field( plugin_basename( __FILE__ ), 'gglcptch_nonce_name' ); ?>
 			</form>
-			<div class="bws-plugin-reviews">
-				<div class="bws-plugin-reviews-rate">
-					<?php _e( 'If you enjoy our plugin, please give it 5 stars on WordPress', 'google_captcha' ); ?>:
-					<a href="http://wordpress.org/support/view/plugin-reviews/google-captcha" target="_blank" title="Google Captcha reviews"><?php _e( 'Rate the plugin', 'google_captcha' ); ?></a>
-				</div>
-				<div class="bws-plugin-reviews-support">
-					<?php _e( 'If there is something wrong about it, please contact us', 'google_captcha' ); ?>:
-					<a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a>
-				</div>
-			</div>
+			<?php bws_plugin_reviews_block( $gglcptch_plugin_info['Name'], 'google-captcha' ); ?>
 		</div>
 	<?php }
 }
@@ -700,6 +632,20 @@ if ( ! function_exists( 'gglcptch_captcha_check' ) ) {
 				echo "success";
 		}
 		die();
+	}
+}
+
+/* Check JS enabled for comment form  */
+if ( ! function_exists( 'gglcptch_coommentform_check' ) ) {
+	function gglcptch_coommentform_check() {
+		if ( isset( $_POST['gglcptch_test_enable_js_field'] ) ) {
+			if ( wp_verify_nonce( $_POST['gglcptch_test_enable_js_field'], 'gglcptch_recaptcha_nonce' ) ) 
+				return;
+			else
+				gglcptch_lostpassword_check();
+		} else {
+			gglcptch_lostpassword_check();
+		}
 	}
 }
 

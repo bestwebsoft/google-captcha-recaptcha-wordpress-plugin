@@ -88,10 +88,21 @@ class ReCaptcha
      *
      * @return array response
      */
-    private function _submitHTTPGet($path, $data)
+    private function _submitHTTPGet( $path, $data )
     {
         $req = $this->_encodeQS($data);
-        $response = file_get_contents($path . $req);
+        if ( version_compare( phpversion(), '5.6', '<' ) ) {
+            $response = file_get_contents( $path . $req );
+        } else {
+            $ctx = array(
+               'ssl' => array(
+                  'verify_peer' => false,
+                  'verify_peer_name' => false,
+                  'allow_self_signed' => true
+               )
+            );
+            $response = file_get_contents( $path . $req, false, stream_context_create( $ctx ) );
+        }
         return $response;
     }
 

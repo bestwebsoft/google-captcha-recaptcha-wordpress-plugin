@@ -10,6 +10,10 @@
 .sticky-menu #toplevel_page_bws_plugins .wp-submenu .wp-first-item {
 	display: none;
 }
+.bws_info {
+    color: #888888;
+    font-size: 10px;
+}
 /*
 * styles for rate-support div on the settings page
 */
@@ -116,6 +120,8 @@ table.bws_pro_version td {
 .bws_pro_version_tooltip .bws_info {
     float: left;
     padding-top: 10px;
+    font-size: 14px;
+    color: #444;
 }
 .bws_pro_version_tooltip .bws_pro_links {
     float: right;
@@ -210,7 +216,7 @@ a.bws_plugin_pro_version {
     border: none; 
     font-size: 14px;
     margin: 18px 0 18px 16px;
-    padding: 12px 0;
+    padding: 12px 29px;
     color: #FFF;
     text-shadow: none;
     font-weight: bold;
@@ -222,7 +228,6 @@ a.bws_plugin_pro_version {
     height: 50px;
     text-align: center;
     text-transform: uppercase;
-    width: 147px;
     box-shadow: none;
     line-height: 26px;
 }

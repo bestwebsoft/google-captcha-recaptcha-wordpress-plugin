@@ -6,6 +6,9 @@
 				$error.remove();
 			}
 		});
+
+		$( '.gglcptch' ).append( '<input type="hidden" value="' + gglcptch_vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
+
 		$( 'form' ).submit( function( e ) {
 			var $form = $( this ),
 				$captcha = $form.find( '#recaptcha_widget_div:visible' ),
