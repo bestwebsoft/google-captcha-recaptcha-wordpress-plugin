@@ -4,7 +4,7 @@ Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.14
+Version: 1.15
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -66,7 +66,7 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		if ( '1' == $gglcptch_options['comments_form'] ) {
 			add_action( 'comment_form_after_fields', 'gglcptch_commentform_display' );
 			add_action( 'comment_form_logged_in_after', 'gglcptch_commentform_display' );
-			add_action( 'pre_comment_on_post', 'gglcptch_coommentform_check' );
+			add_action( 'pre_comment_on_post', 'gglcptch_commentform_check' );
 		}
 
 		if ( '1' == $gglcptch_options['reset_pwd_form'] ) {
@@ -636,14 +636,19 @@ if ( ! function_exists( 'gglcptch_captcha_check' ) ) {
 }
 
 /* Check JS enabled for comment form  */
-if ( ! function_exists( 'gglcptch_coommentform_check' ) ) {
-	function gglcptch_coommentform_check() {
+if ( ! function_exists( 'gglcptch_commentform_check' ) ) {
+	function gglcptch_commentform_check() {
 		if ( isset( $_POST['gglcptch_test_enable_js_field'] ) ) {
 			if ( wp_verify_nonce( $_POST['gglcptch_test_enable_js_field'], 'gglcptch_recaptcha_nonce' ) ) 
 				return;
-			else
+			else {
+				if ( gglcptch_check_role() )
+					return;
 				gglcptch_lostpassword_check();
+			}
 		} else {
+			if ( gglcptch_check_role() )
+				return;
 			gglcptch_lostpassword_check();
 		}
 	}
