@@ -84,7 +84,6 @@
 	});
 
 	function cleanError() {
-		alert('here');
 		$error = $( this ).parents( '#recaptcha_widget_div' ).next( '#gglcptch_error' );
 		if( $error.length ) {
 			$error.remove();
