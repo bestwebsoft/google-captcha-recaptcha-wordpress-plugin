@@ -1,11 +1,9 @@
 (function( $ ) {
 	$( document ).ready(function() {
-		$( '#recaptcha_widget_div #recaptcha_response_field' ).live( 'input paste change', function() {
-			$error = $( this ).parents( '#recaptcha_widget_div' ).next( '#gglcptch_error' );
-			if( $error.length ) {
-				$error.remove();
-			}
-		});
+		if(parseInt($.fn.jquery) >= 1.7)
+			$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError());
+		else
+			$( '#recaptcha_widget_div #recaptcha_response_field' ).live( 'input paste change', cleanError());
 
 		$( '.gglcptch' ).append( '<input type="hidden" value="' + gglcptch_vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
 
@@ -84,4 +82,13 @@
 			}
 		});
 	});
+
+	function cleanError() {
+		alert('here');
+		$error = $( this ).parents( '#recaptcha_widget_div' ).next( '#gglcptch_error' );
+		if( $error.length ) {
+			$error.remove();
+		}
+	}
+
 })(jQuery);
