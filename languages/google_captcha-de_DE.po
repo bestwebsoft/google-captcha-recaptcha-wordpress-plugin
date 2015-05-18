@@ -1,0 +1,254 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: google_captcha\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-10 15:02+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
+"Language-Team: Fred Zimmer <fred.zimmer@medienconsulting.at>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: google-captcha.php:32
+#: google-captcha.php:230
+msgid "Google Captcha Settings"
+msgstr "Google Captcha-Einstellungen"
+
+#: google-captcha.php:167
+msgid "Site key"
+msgstr "Site-Schlüssel"
+
+#: google-captcha.php:172
+msgid "Secret Key"
+msgstr "Geheimer Schlüssel"
+
+#: google-captcha.php:180
+msgid "Login form"
+msgstr "Login Formular"
+
+#: google-captcha.php:181
+msgid "Registration form"
+msgstr "Registrierungsformular"
+
+#: google-captcha.php:182
+msgid "Reset password form"
+msgstr "Passwort Forumlar zurücksetzen"
+
+#: google-captcha.php:183
+msgid "Comments form"
+msgstr "Kommentarformular"
+
+#: google-captcha.php:198
+msgid "Enter site key"
+msgstr "Geben Sie den Site-Schlüssel ein"
+
+#: google-captcha.php:199
+#: google-captcha.php:205
+msgid "WARNING: The captcha will not display while you don't fill key fields."
+msgstr "WARNUNG: das CAPTCHA wird nicht angezeigt wenn die Schlüsselfelder nicht ausgefüllt sind!"
+
+#: google-captcha.php:204
+msgid "Enter secret key"
+msgstr "Geben Sie den geheimen Schlüssel ein"
+
+#: google-captcha.php:232
+#: google-captcha.php:591
+#: google-captcha.php:604
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: google-captcha.php:233
+#: google-captcha.php:605
+msgid "FAQ"
+msgstr "FAQ"
+
+#: google-captcha.php:235
+msgid "Notice:"
+msgstr "Hinweis:"
+
+#: google-captcha.php:235
+msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
+msgstr "Das Plugin-Einstellungen wurden geändert. Vergessen Sie nicht auf die Schaltfläche 'Änderungen speichern' zu klicken."
+
+#: google-captcha.php:236
+msgid "Settings saved"
+msgstr "Einstellungen gespeichert"
+
+#: google-captcha.php:240
+msgid "Google Captcha version 2 will not work correctly, since the option \"allow_url_fopen\" is disabled in the PHP settings of your hosting."
+msgstr "Google Captcha Version 2 funktioniert nicht ordnungsgemäß, da die Option \"Allow_url_fopen\" in den PHP-Einstellungen von Ihrem hosting deaktiviert ist."
+
+#: google-captcha.php:241
+msgid "Read more."
+msgstr "weiterlesen"
+
+#: google-captcha.php:244
+msgid "If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:"
+msgstr "Wenn Sie Ihrem eigenen Formular Google CAPTCHA hinzufügen wollen, dann kopieren Sie diesen Shortcode in Ihren Beitrag oder Seite"
+
+#: google-captcha.php:246
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+#: google-captcha.php:247
+#, php-format
+msgid "Before you are able to do something, you must to register %s here %s"
+msgstr "Bevor Sie etwas tun können, müssen Sie %s hier %s registrieren"
+
+#: google-captcha.php:248
+msgid "Enter site key and secret key, that you get after registration."
+msgstr "Geben Sie den Site- und Geheimen Schlüssel ein, den Sie nach der Registrierung erhalten werden."
+
+#: google-captcha.php:260
+msgid "Options"
+msgstr "Optionen"
+
+#: google-captcha.php:263
+msgid "Enable Google Captcha for:"
+msgstr "Aktivieren Sie Google Captcha für:"
+
+#: google-captcha.php:273
+#: google-captcha.php:276
+#: google-captcha.php:280
+msgid "Contact form"
+msgstr "Kontaktformular"
+
+#: google-captcha.php:274
+#: google-captcha.php:277
+#: google-captcha.php:281
+msgid "powered by"
+msgstr "Bereitgestellt von"
+
+#: google-captcha.php:277
+msgid "Activate contact form"
+msgstr "Kontaktformular aktivieren"
+
+#: google-captcha.php:281
+msgid "Download contact form"
+msgstr "Kontaktformular herunterladen"
+
+#: google-captcha.php:286
+msgid "Hide captcha for:"
+msgstr "CAPTCHA verbergen bei:"
+
+#: google-captcha.php:294
+msgid "reCAPTCHA version:"
+msgstr "ReCAPTCHA Version:"
+
+#: google-captcha.php:296
+#: google-captcha.php:297
+msgid "version"
+msgstr "Version"
+
+#: google-captcha.php:302
+#: google-captcha.php:315
+msgid "Theme:"
+msgstr "Theme:"
+
+#: google-captcha.php:303
+#: google-captcha.php:316
+msgid "for reCAPTCHA version"
+msgstr "für ReCAPTCHA-version"
+
+#: google-captcha.php:327
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: google-captcha.php:377
+msgid "To use Google Captcha you must get the keys from"
+msgstr "Um Google Catpcha verwenden zu können, müssen Sie sich die Schlüssel holen bei"
+
+#: google-captcha.php:378
+msgid "here"
+msgstr "hier"
+
+#: google-captcha.php:379
+msgid "and enter them on the"
+msgstr "und geben Sie sie ein auf"
+
+#: google-captcha.php:381
+msgid "plugin setting page"
+msgstr "Plugin Einstellungsseite"
+
+#: google-captcha.php:398
+#: google-captcha.php:435
+msgid "Error: You have entered an incorrect CAPTCHA value."
+msgstr "Fehler: Sie haben den CAPTCHA nicht korrekt eingegeben."
+
+#: google-captcha.php:503
+#: google-captcha.php:513
+#: google-captcha.php:522
+msgid "Error"
+msgstr "Fehler"
+
+#: google-captcha.php:503
+#: google-captcha.php:513
+#: google-captcha.php:522
+msgid "You have entered an incorrect CAPTCHA value."
+msgstr "Sie haben den CAPTCHA nicht korrekt eingegeben."
+
+#: google-captcha.php:564
+#: google-captcha.php:569
+msgid "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again."
+msgstr "Fehler: Sie haben den CAPTCHA nicht korrekt eingegeben. Klicken Sie auf den \"zurück\" Knopf im Browser und versuchen Sie es nochmal."
+
+#: google-captcha.php:606
+msgid "Support"
+msgstr "Support"
+
+#~ msgid "Google Captcha"
+#~ msgstr "Google Captcha"
+
+#~ msgid "requires"
+#~ msgstr "erfordert"
+
+#~ msgid ""
+#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
+#~ "and try again."
+#~ msgstr ""
+#~ "oder höher, deshalb ist es deaktiviert! Bitte aktualisieren Sie WordPress "
+#~ "und versuchen Sie es erneut."
+
+#~ msgid "Back to the WordPress"
+#~ msgstr "Zurück zu Wordpress"
+
+#~ msgid "Plugins page"
+#~ msgstr "Plugins Seite"
+
+#~ msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+#~ msgstr ""
+#~ "Bewerten Sie das Plugin mit 5 Sternen auf WordPress, wenn Sie es mögen."
+
+#~ msgid "Rate the plugin"
+#~ msgstr "Plugin bewerten"
+
+#~ msgid "If there is something wrong about it, please contact us"
+#~ msgstr "Wenn etwas nicht passt, kontieren Sie uns bitte"
+
+#~ msgid "Public Key"
+#~ msgstr "Öffentlicher Schlüssel"
+
+#~ msgid "Private Key"
+#~ msgstr "Privater Schlüssel"
+
+#~ msgid "Enter public key"
+#~ msgstr "Öffentlichen Schlüssel eingeben"
+
+#~ msgid "Activated theme"
+#~ msgstr "Oberfläche aktivieren"
+
+#~ msgid "Themes"
+#~ msgstr "Themes"
+
+#~ msgid "WARNING: The captcha will not display while you not fill key fields."
+#~ msgstr ""
+#~ "Warnung: es werden keine CAPTCHA Felder angezeigt, solange die Schlüssel "
+#~ "nicht eingegeben sind."

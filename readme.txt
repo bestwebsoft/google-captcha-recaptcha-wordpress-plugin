@@ -1,10 +1,10 @@
 === Google Captcha (reCAPTCHA) by BestWebSoft ===
 Contributors: bestwebsoft
-Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
+Donate link: http://bestwebsoft.com/donate/
 Tags: antispam, anti-spam, capcha, anti-spam security, arithmetic actions, captcha, captha, capcha, catcha, cpatcha, captcha theme, comment, digitize books, digitize newspapers, digitize radio shows, google, gogle, google captcha, login, lost password, re captcha, recaptcha, re-captcha, registration, shortcode, site keys, spam, text captcha.
 Requires at least: 3.0
-Tested up to: 4.2-beta4
-Stable tag: 1.15
+Tested up to: 4.2.2
+Stable tag: 1.16
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,6 +16,8 @@ The Google Captcha plugin allows you to implement a super security captcha form 
 This captcha can be used for login, registration, password recovery, comments forms.
 
 http://www.youtube.com/watch?v=10ImOhmM0Cs
+
+<a href="http://www.youtube.com/watch?v=RUJ9VwZLFSY" target="_blank">Video instruction on Installation</a>
 
 <a href="http://wordpress.org/plugins/google-captcha/faq/" target="_blank">FAQ</a>
 
@@ -41,11 +43,14 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pr
 
 = Translation =
 
+* Arabic (ar) (thanks to <a href="mailto:mor0cc0@live.com">SAID MOULLA</a>, www.aljoulane.ma)
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:epeetz@gmail.com">Elton Fernandes Peetz Prado</a>)
 * Bulgarian (bg_BG) (thanks to <a href="mailto:me@ygeorgiev.com">Yasen Georgiev</a>)
 * Chinese Traditional (zh_TW) (thanks to <a href="mailto:nick20080808@gmail.com">Nick Lai</a>)
-* Italian (it_IT) (thanks to <a href="mailto:wart17@hotmail.com">Istvan</a>)
+* German (de_DE) (thanks to <a href="mailto:fred.zimmer@medienconsulting.at">Fred Zimmer</a>,www.medienconsulting.at)
 * Greek (el) (thanks to Dimitris Karantonis, www.soft4real.com/en-UK)
+* Hindi (hi) (thanks to <a href="mailto:contact@developmentlogics.com">Development Logics Solutions Pvt Ltd</a>, www.developmentlogics.com)
+* Italian (it_IT) (thanks to <a href="mailto:wart17@hotmail.com">Istvan</a>)
 * Polish (pl_PL) (thanks to <a href="mailto:ryszard.glegola@translanet.com">Ryszard Glegola</a>, www.translanet.com)
 * Russian (ru_RU)
 * Spanish (es_ES) (thanks to <a href="mailto:cloudzeroxyz@gmail.com">Cloudzeroxyz</a>)
@@ -69,6 +74,8 @@ We can fix some things for free for the users who provide translation of our plu
 4. Create a form in post and insert the shortcode [bws_google_captcha] into the form.
 
 <a href="https://docs.google.com/document/d/1Nrccb-OLDN80yYjz_6-JPErdpZoslqfPV-g2IZ-GD0A/edit" target="_blank">View a Step-by-step Instruction on Google Captcha (reCAPTCHA) Installation</a>.
+
+http://www.youtube.com/watch?v=RUJ9VwZLFSY
 
 == Frequently Asked Questions ==
 
@@ -133,6 +140,7 @@ If the form is HTML you should insert the line with the PHP tags:
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
 Please make sure that the problem hasn't been discussed yet on our forum (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If no, please provide the following data along with your problem's description:
+
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
@@ -149,6 +157,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 7. Contact form with Google Captcha.
 
 == Changelog ==
+
+= V1.16 - 18.05.2015 =
+* Bugfix : We fixed the bug with checking captcha when deleted 'recaptcha_widget_div'.
+* Bugfix : We fixed the bug with using deprecated jQuery methods (thanks to Junio Vitorino, github.com/juniovitorino).
+* NEW : The Arabic language file is added.
+* NEW : The German language file is added.
+* NEW : The Hindi language file is added.
+* Update : We updated all functionality for wordpress 4.2.2.
 
 = V1.15 - 09.04.2015 =
 * Bugfix : We fixed the bug with captcha check for users from the list of exceptions.
@@ -222,6 +238,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.16 =
+We fixed the bug with checking captcha when deleted 'recaptcha_widget_div'. We fixed the bug with using deprecated jQuery methods (thanks to Junio Vitorino, github.com/juniovitorino). The Arabic language file is added. The German language file is added. The Hindi language file is added. We updated all functionality for wordpress 4.2.2.
 
 = V1.15 =
 We fixed the bug with captcha check for users from the list of exceptions.

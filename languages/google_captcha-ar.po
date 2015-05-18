@@ -1,0 +1,211 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: google_captcha\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-18 10:11+0300\n"
+"PO-Revision-Date: 2015-05-18 10:11+0300\n"
+"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
+"Language-Team: SAID MOULLA <mor0cc0@live.com >\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Loco-Source-Locale: fr_FR\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Loco-Target-Locale: uk_UA\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: google-captcha.php:32
+#: google-captcha.php:230
+msgid "Google Captcha Settings"
+msgstr "إعدادات Google Captcha"
+
+#: google-captcha.php:167
+msgid "Site key"
+msgstr "مفتاح الموقع"
+
+#: google-captcha.php:172
+msgid "Secret Key"
+msgstr "المفتاح السري"
+
+#: google-captcha.php:180
+msgid "Login form"
+msgstr "فورم تسجيل الدخول"
+
+#: google-captcha.php:181
+msgid "Registration form"
+msgstr "فورم التسجيل"
+
+#: google-captcha.php:182
+msgid "Reset password form"
+msgstr "فورم إعادة تعيين كلمة السر"
+
+#: google-captcha.php:183
+msgid "Comments form"
+msgstr "فورم التعليقات"
+
+#: google-captcha.php:198
+msgid "Enter site key"
+msgstr "أدخل مفتاح الموقع"
+
+#: google-captcha.php:199
+#: google-captcha.php:205
+msgid "WARNING: The captcha will not display while you don't fill key fields."
+msgstr "تحذير: الكابتشا لن تعمل في حالة عدم إدخال المفاتيح."
+
+#: google-captcha.php:204
+msgid "Enter secret key"
+msgstr "أدخل المفتاح السري"
+
+#: google-captcha.php:232
+#: google-captcha.php:597
+#: google-captcha.php:610
+msgid "Settings"
+msgstr "إعدادات"
+
+#: google-captcha.php:233
+#: google-captcha.php:611
+msgid "FAQ"
+msgstr "أسئلة شائعة"
+
+#: google-captcha.php:235
+msgid "Notice:"
+msgstr "ملاحظة :"
+
+#: google-captcha.php:235
+msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
+msgstr "تم حفظ إعدادات الإضافة بنجاح."
+
+#: google-captcha.php:236
+msgid "Settings saved"
+msgstr "تم حفظ الإعدادات"
+
+#: google-captcha.php:240
+msgid "Google Captcha version 2 will not work correctly, since the option \"allow_url_fopen\" is disabled in the PHP settings of your hosting."
+msgstr "النسخة الثانية من Google Captcha لن تعمل بشكل جيد، في حالة تم تعطيل الدالة \"allow_url_fopen\" في PHP الإستضافة."
+
+#: google-captcha.php:241
+msgid "Read more."
+msgstr "إقرأ المزيد"
+
+#: google-captcha.php:244
+msgid "If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:"
+msgstr "إذا كنت ترغب في إضافة Google Captcha إلى الفورم، فقط قم بنسخ ولصق هذا الكود في المقال أو الصفحة."
+
+#: google-captcha.php:246
+msgid "Authentication"
+msgstr "المصادقة"
+
+#: google-captcha.php:247
+#, php-format
+msgid "Before you are able to do something, you must to register %s here %s"
+msgstr "قبل التفكير في عمل أي شيء، لابد من التسجيل %s من هنا %s"
+
+#: google-captcha.php:248
+msgid "Enter site key and secret key, that you get after registration."
+msgstr "أدخل مفتاح الموقع والمفتاح السري، الذي حصلت عليه بعد التسجيل."
+
+#: google-captcha.php:260
+msgid "Options"
+msgstr "خيارات"
+
+#: google-captcha.php:263
+msgid "Enable Google Captcha for:"
+msgstr "تفعيل Google Captcha في كل من :"
+
+#: google-captcha.php:273
+#: google-captcha.php:276
+#: google-captcha.php:280
+msgid "Contact form"
+msgstr "فورم الإتصال"
+
+#: google-captcha.php:274
+#: google-captcha.php:277
+#: google-captcha.php:281
+msgid "powered by"
+msgstr "مدعوم من"
+
+#: google-captcha.php:277
+msgid "Activate contact form"
+msgstr "تفعيل فورم الإتصال"
+
+#: google-captcha.php:281
+msgid "Download contact form"
+msgstr "تحميل فورم الإتصال"
+
+#: google-captcha.php:286
+msgid "Hide captcha for:"
+msgstr "تعطيل Google Captcha ل :"
+
+#: google-captcha.php:294
+msgid "reCAPTCHA version:"
+msgstr "نسخة reCAPTCHA:"
+
+#: google-captcha.php:296
+#: google-captcha.php:297
+msgid "version"
+msgstr "النسخة"
+
+#: google-captcha.php:302
+#: google-captcha.php:315
+msgid "Theme:"
+msgstr "الإستايل :"
+
+#: google-captcha.php:303
+#: google-captcha.php:316
+msgid "for reCAPTCHA version"
+msgstr "لنسخة reCAPTCHA"
+
+#: google-captcha.php:327
+msgid "Save Changes"
+msgstr "حفظ التغييرات"
+
+#: google-captcha.php:377
+msgid "To use Google Captcha you must get the keys from"
+msgstr "لتفعيل Google Captcha لابد من الحصول على المفاتيح من"
+
+#: google-captcha.php:378
+msgid "here"
+msgstr "هنا"
+
+#: google-captcha.php:379
+msgid "and enter them on the"
+msgstr "ثم أدخلهم في"
+
+#: google-captcha.php:381
+msgid "plugin setting page"
+msgstr "صفحة إعدادات الإضافة"
+
+#: google-captcha.php:398
+#: google-captcha.php:435
+msgid "Error: You have entered an incorrect CAPTCHA value."
+msgstr "خطأ: لقد أدخلت قيمة كابتشا بشكل خاطئ."
+
+#: google-captcha.php:504
+#: google-captcha.php:516
+#: google-captcha.php:525
+msgid "Error"
+msgstr "خطأ"
+
+#: google-captcha.php:504
+#: google-captcha.php:516
+#: google-captcha.php:525
+msgid "You have entered an incorrect CAPTCHA value."
+msgstr "لقد أدخلت قيمة كابتشا بشكل خاطئ"
+
+#: google-captcha.php:568
+#: google-captcha.php:575
+msgid "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again."
+msgstr "خطأ: لقد أدخلت قيمة كابتشا بشكل خاطئ. اضغط زر الرجوع في المتصفح وحاول مجددا."
+
+#: google-captcha.php:612
+msgid "Support"
+msgstr "الدعم الفني"
+
+#~ msgid "Google Captcha"
+#~ msgstr "Google Captcha"

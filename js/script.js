@@ -1,19 +1,21 @@
 (function( $ ) {
 	$( document ).ready(function() {
-		$( '#recaptcha_widget_div #recaptcha_response_field' ).live( 'input paste change', function() {
-			$error = $( this ).parents( '#recaptcha_widget_div' ).next( '#gglcptch_error' );
-			if( $error.length ) {
-				$error.remove();
-			}
-		});
 
-		$( '.gglcptch' ).append( '<input type="hidden" value="' + gglcptch_vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
+		if ( parseInt( $.fn.jquery ) >= 1.7 ) {
+			$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
+		} else {
+			$( '#recaptcha_widget_div #recaptcha_response_field' ).live( 'input paste change', cleanError );
+		}
 
 		$( 'form' ).submit( function( e ) {
 			var $form = $( this ),
+				$gglcptch = $form.find( '.gglcptch' ),
 				$captcha = $form.find( '#recaptcha_widget_div:visible' ),
 				$captcha_v2 = $form.find( '.g-recaptcha:visible' );
 			if ( $captcha.length ) {
+				if ( $gglcptch.find( 'input[name="gglcptch_test_enable_js_field"]:hidden' ).length == 0 ) {
+					$gglcptch.append( '<input type="hidden" value="' + gglcptch_vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
+				}
 				$.ajax({
 					async   : false,
 					cache   : false,
@@ -27,7 +29,7 @@
 						recaptcha_challenge_field : $( '#recaptcha_challenge_field' ).val(),
 						recaptcha_response_field  : $( '#recaptcha_response_field' ).val()
 					},
-					success : function( data ) {
+					success: function( data ) {
 						if ( data == 'error' ) {
 							if ( $captcha.next( '#gglcptch_error' ).length == 0 ) {
 								$captcha.after( '<label id="gglcptch_error">' + gglcptch_error_msg + '</label>' );
@@ -48,6 +50,9 @@
 				});
 				$( '#recaptcha_reload' ).trigger( 'click' );
 			} else if ( $captcha_v2.length ) {
+				if ( $gglcptch.find( 'input[name="gglcptch_test_enable_js_field"]:hidden' ).length == 0 ) {
+					$gglcptch.append( '<input type="hidden" value="' + gglcptch_vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
+				}
 				$.ajax({
 					async   : false,
 					cache   : false,
@@ -60,7 +65,7 @@
 						action: 'gglcptch_captcha_check',
 						'g-recaptcha-response'  : $form.find( '.g-recaptcha-response' ).val()
 					},
-					success : function( data ) {
+					success: function( data ) {
 						if ( data == 'error' ) {
 							if ( $captcha_v2.next( '#gglcptch_error' ).length == 0 ) {
 								$captcha_v2.after( '<label id="gglcptch_error">' + gglcptch_error_msg + '</label>' );
@@ -84,4 +89,12 @@
 			}
 		});
 	});
+
+	function cleanError() {
+		$error = $( this ).parents( '#recaptcha_widget_div' ).next( '#gglcptch_error' );
+		if ( $error.length ) {
+			$error.remove();
+		}
+	}
+
 })(jQuery);

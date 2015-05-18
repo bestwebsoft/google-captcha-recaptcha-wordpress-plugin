@@ -211,11 +211,11 @@ a.bws_plugin_pro_version {
     font-size: 12px;
     opacity: 0.7;
 }
-.bws_banner_on_plugin_page .button {
-    float: left;
+div.bws_banner_on_plugin_page .button {
+    float: right;
     border: none; 
     font-size: 14px;
-    margin: 18px 0 18px 16px;
+    margin: 18px 16px;
     padding: 12px 29px;
     color: #FFF;
     text-shadow: none;
@@ -236,9 +236,15 @@ a.bws_plugin_pro_version {
     background: #222;
     color: #FFF;
 }
-.bws_banner_on_plugin_page .icon {
-    float: right;
-    margin: 12px 8px 8px 0;
+div.bws_banner_on_plugin_page .icon {
+    float: left;
+    margin: 12px 8px 8px 12px;
+}
+.bws_banner_on_plugin_page .icon img {
+    max-width: 60px;
+}
+.bws_banner_on_plugin_page .text + .icon {
+    display: none;
 }
 .bws_banner_on_plugin_page .close_icon {
     float: right;
@@ -254,5 +260,9 @@ a.bws_plugin_pro_version {
         float: none;
         text-align: center;
         max-width: 100%;
+    }
+    .bws_banner_on_plugin_page .icon {
+        position: relative;
+        left: 8px;
     }
 }
