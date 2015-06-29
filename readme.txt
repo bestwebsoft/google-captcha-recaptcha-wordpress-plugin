@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: antispam, anti-spam, capcha, anti-spam security, arithmetic actions, captcha, captha, capcha, catcha, cpatcha, captcha theme, comment, digitize books, digitize newspapers, digitize radio shows, google, gogle, google captcha, login, lost password, re captcha, recaptcha, re-captcha, registration, shortcode, site keys, spam, text captcha.
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 1.16
+Stable tag: 1.17
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -110,19 +110,15 @@ Instead it uses a new function call inside of comments.php: `<?php comment_form(
 If you have WP3 and captcha is still missing, make sure your theme has `<?php comment_form(); ?>`
 inside of `/wp-content/themes/[your_theme]/comments.php` (please check the Twenty Ten theme's comments.php for proper example)
 
-= How to use the other language files with CAPTCHA? = 
+= How can I change the location of google captcha in the comments form? =
 
-Here is an example for the German language files.
+It depends on the comments form. If the hook call by means of which captcha works ('after_comment_field' or something like this) is present in the file comments.php, you can change captcha positioning by moving this hook call. Please find the file 'comments.php' in the theme and change position of the line
 
-1. In order to use another language for WordPress it is necessary to set a WordPress version to the required language and in the configuration wp file - `wp-config.php` in the line `define('WPLANG', '');` you should enter `define('WPLANG', 'de_DE');`. If everything is done properly the admin panel will be in German.
+`do_action( 'comment_form_after_fields' );`
 
-2. Make sure the files `de_DE.po` and `de_DE.mo` are present in the plugin (the folder "Languages" in the plugin root).
+or any similar line - place it under the Submit button.
 
-3. If there are no such files you should copy the other files from this folder (for example, for Russian or Italian) and rename them (you should write `de_DE` instead of `ru_RU` in both files).
-
-4. The files can be edited with the help of the program Poedit - http://www.poedit.net/download.php - please download this program, install it, open the file using this program (the required language file) and for each line in English you should write translation in German.
-
-5. If everything is done properly all lines will be in German in the admin panel and in the front-end.
+In case there is no such hook in the comments file of your theme, then, unfortunately, this option is not available.
 
 = I would like to add Google Captcha to the custom form on my website. How can I do this? =
 
@@ -157,6 +153,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 7. Contact form with Google Captcha.
 
 == Changelog ==
+
+= V1.17 - 29.06.2015 =
+* Bugfix : We fixed the bug with checking captcha in custom login form\register form\lost password form.
 
 = V1.16 - 18.05.2015 =
 * Bugfix : We fixed the bug with checking captcha when deleted 'recaptcha_widget_div'.
@@ -238,6 +237,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.17 =
+We fixed the bug with checking captcha in custom login form\register form\lost password form.
 
 = V1.16 =
 We fixed the bug with checking captcha when deleted 'recaptcha_widget_div'. We fixed the bug with using deprecated jQuery methods (thanks to Junio Vitorino, github.com/juniovitorino). The Arabic language file is added. The German language file is added. The Hindi language file is added. We updated all functionality for wordpress 4.2.2.

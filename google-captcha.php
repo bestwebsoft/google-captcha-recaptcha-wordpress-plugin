@@ -4,7 +4,7 @@ Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.16
+Version: 1.17
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -251,7 +251,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 						<tr valign="top">
 							<th scope="row"><?php echo $fields['display_name']; ?></th>
 							<td>
-								<input type="text" name="<?php echo $fields['form_name']; ?>" value="<?php echo $gglcptch_options[ $key . '_key' ] ?>" />
+								<input type="text" name="<?php echo $fields['form_name']; ?>" value="<?php echo $gglcptch_options[ $key . '_key' ] ?>" maxlength="200" />
 								<label class="gglcptch_error_msg"><?php echo $fields['error_msg']; ?></label>
 							</td>
 						</tr>

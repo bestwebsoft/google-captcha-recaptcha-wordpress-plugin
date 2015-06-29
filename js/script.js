@@ -7,7 +7,7 @@
 			$( '#recaptcha_widget_div #recaptcha_response_field' ).live( 'input paste change', cleanError );
 		}
 
-		$( 'form' ).submit( function( e ) {
+		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"]' ).submit( function( e ) {
 			var $form = $( this ),
 				$gglcptch = $form.find( '.gglcptch' ),
 				$captcha = $form.find( '#recaptcha_widget_div:visible' ),
