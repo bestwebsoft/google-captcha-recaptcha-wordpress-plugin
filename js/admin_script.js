@@ -12,19 +12,19 @@
 		});
 
 		if ( 'v1' == $( 'input[name="gglcptch_recaptcha_version"]:checked' ).val() ) {
-			$( '#gglcptch_theme_v2' ).hide();
+			$( '#gglcptch_theme_v2,#gglcptch_size_v2' ).hide();
 			$( '#gglcptch_theme_v1' ).show();
 		} else {
-			$( '#gglcptch_theme_v2' ).show();
+			$( '#gglcptch_theme_v2,#gglcptch_size_v2' ).show();
 			$( '#gglcptch_theme_v1' ).hide();
 		}
 		$( 'th .gglcptch_span' ).hide();
 		$( 'input[name="gglcptch_recaptcha_version"]').change( function() {
 			if ( 'v1' == $( this ).filter(':checked').val() ) {
-				$( '#gglcptch_theme_v2' ).hide();
+				$( '#gglcptch_theme_v2,#gglcptch_size_v2' ).hide();
 				$( '#gglcptch_theme_v1' ).show();
 			} else {
-				$( '#gglcptch_theme_v2' ).show();
+				$( '#gglcptch_theme_v2,#gglcptch_size_v2' ).show();
 				$( '#gglcptch_theme_v1' ).hide();
 			}
 		});

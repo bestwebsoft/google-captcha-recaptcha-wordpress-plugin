@@ -133,6 +133,7 @@ if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 			'contact_form'			=> '0',
 			'theme'					=> 'red',
 			'theme_v2'				=> 'light',
+			'size_v2'				=> 'normal',
 			'recaptcha_version'		=> 'v1',
 			'plugin_option_version'	=> $gglcptch_plugin_info["Version"]
 		);
@@ -216,6 +217,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			$gglcptch_options['recaptcha_version']	=	$_POST['gglcptch_recaptcha_version'];
 			$gglcptch_options['theme']				=	$_POST['gglcptch_theme'];
 			$gglcptch_options['theme_v2']			=	$_POST['gglcptch_theme_v2'];
+			$gglcptch_options['size_v2']			=	$_POST['gglcptch_size_v2'];
 
 			foreach ( get_editable_roles() as $role => $fields ) {
 				$gglcptch_options[ $role ] = isset( $_POST[ 'gglcptch_' . $role ] ) ? 1 : 0;
@@ -322,6 +324,18 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 							</select>
 						</td>
 					</tr>
+					<tr id="gglcptch_size_v2" valign="top">
+						<th scope="row">
+							<?php _e( 'Size:', 'google_captcha' ); ?>
+							<br/><span class="gglcptch_span">(<?php _e( 'for reCAPTCHA version', 'google_captcha' ); ?> 2)</span>
+						</th>
+						<td>
+							<select name="gglcptch_size_v2">
+								<option value="normal " <?php if ( 'normal' == $gglcptch_options['size_v2'] ) echo ' selected'; ?>>normal</option>
+								<option value="compact" <?php if ( 'compact' == $gglcptch_options['size_v2'] ) echo ' selected'; ?>>compact</option>
+							</select>
+						</td>
+					</tr>
 				</table>
 				<p class="submit">
 					<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'google_captcha' ); ?>" name="gglcptch_save_changes" />
@@ -397,7 +411,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 					var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '",
 					gglcptch_error_msg = "' . __( 'Error: You have entered an incorrect CAPTCHA value.', 'google_captcha' ) . '";
 				</script>';
-			$content .= '<div class="g-recaptcha" data-sitekey="' . $publickey . '" data-theme="' . $gglcptch_options['theme_v2'] . '"></div>
+			$content .= '<div class="g-recaptcha" data-sitekey="' . $publickey . '" data-theme="' . $gglcptch_options['theme_v2'] . '" data-size="' . $gglcptch_options['size_v2'] . '"></div>
 			<script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
 			<noscript>
 				<div style="width: 302px; height: 352px;">
