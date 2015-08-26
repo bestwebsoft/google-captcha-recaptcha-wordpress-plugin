@@ -1,7 +1,7 @@
 (function( $ ) {
 	$( document ).ready(function() {
 
-		if ( parseInt( $.fn.jquery ) >= 1.7 ) {
+		if ( parseFloat( $.fn.jquery ) >= 1.7 ) {
 			$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
 		} else {
 			$( '#recaptcha_widget_div #recaptcha_response_field' ).live( 'input paste change', cleanError );

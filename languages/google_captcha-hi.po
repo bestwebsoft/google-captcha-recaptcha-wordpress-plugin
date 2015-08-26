@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: google_captcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-18 10:13+0300\n"
+"POT-Creation-Date: 2015-08-25 18:51+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
-"Language-Team: Development Logics Solutions Pvt Ltd <contact@developmentlogics.com>\n"
+"Language-Team: Development Logics Solutions Pvt Ltd "
+"<contact@developmentlogics.com>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,192 +18,254 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:32
-#: google-captcha.php:230
+#: google-captcha.php:32 google-captcha.php:308
 msgid "Google Captcha Settings"
 msgstr "गूगल कॅप्चा सेटिंग्स"
 
-#: google-captcha.php:167
+#: google-captcha.php:227
+msgid "Normal"
+msgstr ""
+
+#: google-captcha.php:228
+msgid "Compact"
+msgstr ""
+
+#: google-captcha.php:234
 msgid "Site key"
 msgstr "साइट कुंजी "
 
-#: google-captcha.php:172
+#: google-captcha.php:239
 msgid "Secret Key"
 msgstr "गुप्त कुंजी"
 
-#: google-captcha.php:180
+#: google-captcha.php:247
 msgid "Login form"
 msgstr "प्रवेश फार्म"
 
-#: google-captcha.php:181
+#: google-captcha.php:248
 msgid "Registration form"
 msgstr "पंजीकरण फॉर्म"
 
-#: google-captcha.php:182
+#: google-captcha.php:249
 msgid "Reset password form"
 msgstr "पुन: पासवर्ड फार्म"
 
-#: google-captcha.php:183
+#: google-captcha.php:250
 msgid "Comments form"
 msgstr "टिप्पणियां फार्म"
 
-#: google-captcha.php:198
+#: google-captcha.php:264
 msgid "Enter site key"
 msgstr "दर्ज साइट कुंजी "
 
-#: google-captcha.php:199
-#: google-captcha.php:205
+#: google-captcha.php:265 google-captcha.php:271
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr "चेतावनी: यदि आप कुंजी क्षेत्र नहीं भरेंगें तो कैप्चा प्रदर्शित नहीं करेगा।"
 
-#: google-captcha.php:204
+#: google-captcha.php:270
 msgid "Enter secret key"
 msgstr "दर्ज गुप्त कुंजी"
 
-#: google-captcha.php:232
-#: google-captcha.php:597
-#: google-captcha.php:610
-msgid "Settings"
-msgstr "सेटिंग्स"
-
-#: google-captcha.php:233
-#: google-captcha.php:611
-msgid "FAQ"
-msgstr "सामान्यतःपूछे जाने वाले प्रश्न (फ ए क्यू )"
-
-#: google-captcha.php:235
-msgid "Notice:"
-msgstr "सूचना:"
-
-#: google-captcha.php:235
-msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
-msgstr "प्लगइन की सेटिंग्स बदल दी गयी है। उन्हें बचाने के लिए ,'परिवर्तन सुरक्षित' बटन क्लिक करना मत भूलना।"
-
-#: google-captcha.php:236
+#: google-captcha.php:291
 msgid "Settings saved"
 msgstr "सेटिंग्स सुरक्षित"
 
-#: google-captcha.php:240
-msgid "Google Captcha version 2 will not work correctly, since the option \"allow_url_fopen\" is disabled in the PHP settings of your hosting."
-msgstr "गूगल कैप्चा संस्करण 2 सही ढंग से काम नहीं करेगा, क्यूंकि विकल्प \"allow_url_fopen\" आपके होस्टिंग के पीएचपी सेटिंग में अक्षम है ।"
+#: google-captcha.php:297
+#, fuzzy
+msgid "All plugin settings were restored."
+msgstr "प्लगइन सेटिंग पृष्ठ पर "
 
-#: google-captcha.php:241
+#: google-captcha.php:310 google-captcha.php:768 google-captcha.php:781
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+#: google-captcha.php:311 google-captcha.php:782
+msgid "FAQ"
+msgstr "सामान्यतःपूछे जाने वाले प्रश्न (फ ए क्यू )"
+
+#: google-captcha.php:312
+msgid "Go PRO"
+msgstr ""
+
+#: google-captcha.php:314
+msgid "Notice:"
+msgstr "सूचना:"
+
+#: google-captcha.php:314
+msgid ""
+"The plugin's settings have been changed. In order to save them please don't "
+"forget to click the 'Save Changes' button."
+msgstr ""
+"प्लगइन की सेटिंग्स बदल दी गयी है। उन्हें बचाने के लिए ,'परिवर्तन सुरक्षित' बटन क्लिक करना "
+"मत भूलना।"
+
+#: google-captcha.php:319
+msgid ""
+"Google Captcha version 2 will not work correctly, since the option "
+"\"allow_url_fopen\" is disabled in the PHP settings of your hosting."
+msgstr ""
+"गूगल कैप्चा संस्करण 2 सही ढंग से काम नहीं करेगा, क्यूंकि विकल्प \"allow_url_fopen\" आपके "
+"होस्टिंग के पीएचपी सेटिंग में अक्षम है ।"
+
+#: google-captcha.php:320
 msgid "Read more."
 msgstr "और पढ़ें।"
 
-#: google-captcha.php:244
-msgid "If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:"
-msgstr "अगर आप अपने खुद के फार्म में गूगल कैप्चा जोड़ना चाहते हैं तो बस इस शॉर्टकोड को अपने पृष्ठ या पोस्ट पर कॉपी और पेस्ट करेँ ।"
+#: google-captcha.php:323
+msgid ""
+"If you would like to add the Google Captcha to your own form, just copy and "
+"paste this shortcode to your post or page:"
+msgstr ""
+"अगर आप अपने खुद के फार्म में गूगल कैप्चा जोड़ना चाहते हैं तो बस इस शॉर्टकोड को अपने पृष्ठ या "
+"पोस्ट पर कॉपी और पेस्ट करेँ ।"
 
-#: google-captcha.php:246
+#: google-captcha.php:329
 msgid "Authentication"
 msgstr "प्रमाणीकरण"
 
-#: google-captcha.php:247
+#: google-captcha.php:330
 #, php-format
 msgid "Before you are able to do something, you must to register %s here %s"
 msgstr " कुछ भी करने से पहले %s यहाँ %s पंजीकरण करायें "
 
-#: google-captcha.php:248
+#: google-captcha.php:331
 msgid "Enter site key and secret key, that you get after registration."
 msgstr "पंजीकरण के बाद जो साइट कुंजी और गुप्त कुंजी  मिलती है उसे दर्ज करें।"
 
-#: google-captcha.php:260
+#: google-captcha.php:343
 msgid "Options"
 msgstr "विकल्प"
 
-#: google-captcha.php:263
-msgid "Enable Google Captcha for:"
-msgstr "गूगल कैप्चा के लिए सक्षम करें:"
+#: google-captcha.php:346
+msgid "Enable reCAPTCHA for"
+msgstr ""
 
-#: google-captcha.php:273
-#: google-captcha.php:276
-#: google-captcha.php:280
+#: google-captcha.php:356 google-captcha.php:359 google-captcha.php:363
 msgid "Contact form"
 msgstr "संपर्क फार्म"
 
-#: google-captcha.php:274
-#: google-captcha.php:277
-#: google-captcha.php:281
+#: google-captcha.php:357 google-captcha.php:360 google-captcha.php:364
 msgid "powered by"
 msgstr "के द्वारा संचालित"
 
-#: google-captcha.php:277
+#: google-captcha.php:360
 msgid "Activate contact form"
 msgstr "संपर्क फ़ॉर्म को सक्रिय करें"
 
-#: google-captcha.php:281
+#: google-captcha.php:364
 msgid "Download contact form"
 msgstr "डाउनलोड संपर्क फ़ॉर्म"
 
-#: google-captcha.php:286
-msgid "Hide captcha for:"
-msgstr "कैप्चा छुपाएं:"
+#: google-captcha.php:369
+#, fuzzy
+msgid "Hide reCAPTCHA for"
+msgstr "रीकैप्चा संस्करण के लिए"
 
-#: google-captcha.php:294
-msgid "reCAPTCHA version:"
+#: google-captcha.php:382
+#, fuzzy
+msgid "reCAPTCHA language"
 msgstr "रीकैप्चा संस्करण:"
 
-#: google-captcha.php:296
-#: google-captcha.php:297
+#: google-captcha.php:402
+msgid "Activate"
+msgstr "सक्रिय"
+
+#: google-captcha.php:406
+msgid "Download"
+msgstr ""
+
+#: google-captcha.php:409
+msgid "Use the current site language"
+msgstr ""
+
+#: google-captcha.php:409
+msgid "Using"
+msgstr ""
+
+#: google-captcha.php:417 google-captcha.php:483
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr ""
+
+#: google-captcha.php:420 google-captcha.php:486
+msgid "Learn More"
+msgstr ""
+
+#: google-captcha.php:427
+#, fuzzy
+msgid "reCAPTCHA version"
+msgstr "रीकैप्चा संस्करण:"
+
+#: google-captcha.php:429 google-captcha.php:430
 msgid "version"
 msgstr "संस्करण"
 
-#: google-captcha.php:302
-#: google-captcha.php:315
-msgid "Theme:"
-msgstr "विषय:"
+#: google-captcha.php:435 google-captcha.php:448
+#, fuzzy
+msgid "reCAPTCHA theme"
+msgstr "रीकैप्चा संस्करण:"
 
-#: google-captcha.php:303
-#: google-captcha.php:316
-msgid "for reCAPTCHA version"
-msgstr "रीकैप्चा संस्करण के लिए"
+#: google-captcha.php:436 google-captcha.php:449 google-captcha.php:466
+#, fuzzy
+msgid "for version"
+msgstr "संस्करण"
 
-#: google-captcha.php:327
+#: google-captcha.php:465
+#, fuzzy
+msgid "reCAPTCHA size"
+msgstr "रीकैप्चा संस्करण:"
+
+#: google-captcha.php:492
 msgid "Save Changes"
 msgstr "परिवर्तनों को सुरक्षित करें"
 
-#: google-captcha.php:377
+#: google-captcha.php:547
 msgid "To use Google Captcha you must get the keys from"
 msgstr "गूगल कॅप्चा का उपयोग करने के लिए,आप कुंजी लें "
 
-#: google-captcha.php:378
+#: google-captcha.php:548
 msgid "here"
 msgstr "यहाँ से "
 
-#: google-captcha.php:379
+#: google-captcha.php:549
 msgid "and enter them on the"
 msgstr "और उन्हें दर्ज करें "
 
-#: google-captcha.php:381
+#: google-captcha.php:551
 msgid "plugin setting page"
 msgstr "प्लगइन सेटिंग पृष्ठ पर "
 
-#: google-captcha.php:398
-#: google-captcha.php:435
+#: google-captcha.php:568 google-captcha.php:605
 msgid "Error: You have entered an incorrect CAPTCHA value."
 msgstr "त्रुटि: आपने एक गलत कॅप्चा मान दर्ज किया है।"
 
-#: google-captcha.php:504
-#: google-captcha.php:516
-#: google-captcha.php:525
+#: google-captcha.php:674 google-captcha.php:686 google-captcha.php:695
 msgid "Error"
 msgstr "त्रुटि"
 
-#: google-captcha.php:504
-#: google-captcha.php:516
-#: google-captcha.php:525
+#: google-captcha.php:674 google-captcha.php:686 google-captcha.php:695
 msgid "You have entered an incorrect CAPTCHA value."
 msgstr "आपने एक गलत कॅप्चा मान दर्ज किया है।"
 
-#: google-captcha.php:568
-#: google-captcha.php:575
-msgid "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again."
-msgstr "त्रुटि: आपने एक गलत कॅप्चा मान दर्ज किया है। अपने ब्राउज़र पर वापस बटन क्लिक करें, और फिर कोशिश करें।"
+#: google-captcha.php:739 google-captcha.php:746
+msgid ""
+"Error: You have entered an incorrect CAPTCHA value. Click the BACK button on "
+"your browser, and try again."
+msgstr ""
+"त्रुटि: आपने एक गलत कॅप्चा मान दर्ज किया है। अपने ब्राउज़र पर वापस बटन क्लिक करें, और फिर "
+"कोशिश करें।"
 
-#: google-captcha.php:612
+#: google-captcha.php:783
 msgid "Support"
 msgstr "सहयोग"
+
+#~ msgid "Enable Google Captcha for:"
+#~ msgstr "गूगल कैप्चा के लिए सक्षम करें:"
+
+#~ msgid "Hide captcha for:"
+#~ msgstr "कैप्चा छुपाएं:"
+
+#~ msgid "Theme:"
+#~ msgstr "विषय:"
 
 #~ msgid "Google Captcha"
 #~ msgstr "गूगल कॅप्चा"
@@ -360,9 +423,6 @@ msgstr "सहयोग"
 
 #~ msgid "Activate this plugin"
 #~ msgstr "प्लगइन सक्रिय करना "
-
-#~ msgid "Activate"
-#~ msgstr "सक्रिय"
 
 #~ msgid "Recommended plugins"
 #~ msgstr "प्लगइन जिनकी सलाह दी जाती है "

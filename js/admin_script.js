@@ -8,25 +8,18 @@
 		});
 		$( '#gglcptch_settings_form select' ).bind( "change", function() {
 			$( '.updated.fade' ).css( 'display', 'none' );
-			$( '#gglcptch_settings_notice' ).css( 'display', 'block' );
+			$( '#gglcptch_theme_notice' ).css( 'display', 'block' );
 		});
 
-		if ( 'v1' == $( 'input[name="gglcptch_recaptcha_version"]:checked' ).val() ) {
-			$( '#gglcptch_theme_v2' ).hide();
-			$( '#gglcptch_theme_v1' ).show();
-		} else {
-			$( '#gglcptch_theme_v2' ).show();
-			$( '#gglcptch_theme_v1' ).hide();
-		}
+		var gglcptch_version_not_selected = $( 'input[name="gglcptch_recaptcha_version"]:not(:checked)' ).val();
+		$( '.gglcptch_theme_' + gglcptch_version_not_selected ).hide();
 		$( 'th .gglcptch_span' ).hide();
+
 		$( 'input[name="gglcptch_recaptcha_version"]').change( function() {
-			if ( 'v1' == $( this ).filter(':checked').val() ) {
-				$( '#gglcptch_theme_v2' ).hide();
-				$( '#gglcptch_theme_v1' ).show();
-			} else {
-				$( '#gglcptch_theme_v2' ).show();
-				$( '#gglcptch_theme_v1' ).hide();
-			}
+			var gglcptch_version_selected = $( this ).val(),
+				gglcptch_version_not_selected = $( 'input[name="gglcptch_recaptcha_version"]:not(:checked)' ).val();
+			$( '.gglcptch_theme_' + gglcptch_version_selected ).show();
+			$( '.gglcptch_theme_' + gglcptch_version_not_selected ).hide();
 		});
 	});
 })(jQuery);

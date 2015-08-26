@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: google_captcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 14:12+0300\n"
+"POT-Creation-Date: 2015-08-25 18:51+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: Yasen Georgiev <me@ygeorgiev.com>\n"
@@ -13,200 +13,264 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.6.6\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:32
-#: google-captcha.php:229
+#: google-captcha.php:32 google-captcha.php:308
 msgid "Google Captcha Settings"
 msgstr "Настройки на Google Captcha"
 
-#: google-captcha.php:32
-msgid "Google Captcha"
-msgstr "Google Captcha"
+#: google-captcha.php:227
+msgid "Normal"
+msgstr ""
 
-#: google-captcha.php:166
+#: google-captcha.php:228
+msgid "Compact"
+msgstr ""
+
+#: google-captcha.php:234
 msgid "Site key"
 msgstr "Ключ"
 
-#: google-captcha.php:171
+#: google-captcha.php:239
 msgid "Secret Key"
 msgstr "Секретен ключ"
 
-#: google-captcha.php:179
+#: google-captcha.php:247
 msgid "Login form"
 msgstr "Форма за вход"
 
-#: google-captcha.php:180
+#: google-captcha.php:248
 msgid "Registration form"
 msgstr "Форма регистрация"
 
-#: google-captcha.php:181
+#: google-captcha.php:249
 msgid "Reset password form"
 msgstr "Форма за възстановяване на парола"
 
-#: google-captcha.php:182
+#: google-captcha.php:250
 msgid "Comments form"
 msgstr "Форма за коментиране"
 
-#: google-captcha.php:197
+#: google-captcha.php:264
 msgid "Enter site key"
 msgstr "Въведете ключ"
 
-#: google-captcha.php:198
-#: google-captcha.php:204
+#: google-captcha.php:265 google-captcha.php:271
 msgid "WARNING: The captcha will not display while you don't fill key fields."
-msgstr "ПРЕДУПРЕЖДЕНИЕ: Google Captcha няма да се покаже докато не въведете ключовите полета."
+msgstr ""
+"ПРЕДУПРЕЖДЕНИЕ: Google Captcha няма да се покаже докато не въведете "
+"ключовите полета."
 
-#: google-captcha.php:203
+#: google-captcha.php:270
 msgid "Enter secret key"
 msgstr "Въведете секретен ключ"
 
-#: google-captcha.php:231
-#: google-captcha.php:590
-#: google-captcha.php:603
-msgid "Settings"
-msgstr "Настройки"
-
-#: google-captcha.php:232
-#: google-captcha.php:604
-msgid "FAQ"
-msgstr "ЧЗВ"
-
-#: google-captcha.php:234
-msgid "Notice:"
-msgstr "Внимание:"
-
-#: google-captcha.php:234
-msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
-msgstr "Настройките бяха успешно променени. В случай, че искате да ги запаметите, моля, не забравяйте да кликнете върху бутона \"Запази промените\"."
-
-#: google-captcha.php:235
+#: google-captcha.php:291
 msgid "Settings saved"
 msgstr "Настройките бяха запазени успешно."
 
-#: google-captcha.php:239
-msgid "Google Captcha version 2 will not work correctly, since the option \"allow_url_fopen\" is disabled in the PHP settings of your hosting."
+#: google-captcha.php:297
+#, fuzzy
+msgid "All plugin settings were restored."
+msgstr "настройките на плъгина"
+
+#: google-captcha.php:310 google-captcha.php:768 google-captcha.php:781
+msgid "Settings"
+msgstr "Настройки"
+
+#: google-captcha.php:311 google-captcha.php:782
+msgid "FAQ"
+msgstr "ЧЗВ"
+
+#: google-captcha.php:312
+msgid "Go PRO"
 msgstr ""
 
-#: google-captcha.php:240
+#: google-captcha.php:314
+msgid "Notice:"
+msgstr "Внимание:"
+
+#: google-captcha.php:314
+msgid ""
+"The plugin's settings have been changed. In order to save them please don't "
+"forget to click the 'Save Changes' button."
+msgstr ""
+"Настройките бяха успешно променени. В случай, че искате да ги запаметите, "
+"моля, не забравяйте да кликнете върху бутона \"Запази промените\"."
+
+#: google-captcha.php:319
+msgid ""
+"Google Captcha version 2 will not work correctly, since the option "
+"\"allow_url_fopen\" is disabled in the PHP settings of your hosting."
+msgstr ""
+
+#: google-captcha.php:320
 msgid "Read more."
 msgstr ""
 
-#: google-captcha.php:243
-msgid "If you would like to add the Google Captcha to your own form, just copy and paste this shortcode to your post or page:"
-msgstr "Ако искате да добавите Google Captcha към Ваша собствена форма, проста копирайте и поставете този код на желаната публикация или страница:"
+#: google-captcha.php:323
+msgid ""
+"If you would like to add the Google Captcha to your own form, just copy and "
+"paste this shortcode to your post or page:"
+msgstr ""
+"Ако искате да добавите Google Captcha към Ваша собствена форма, проста "
+"копирайте и поставете този код на желаната публикация или страница:"
 
-#: google-captcha.php:245
+#: google-captcha.php:329
 msgid "Authentication"
 msgstr "Идентификация"
 
-#: google-captcha.php:246
+#: google-captcha.php:330
 #, php-format
 msgid "Before you are able to do something, you must to register %s here %s"
 msgstr "Преди да можете да направите нещо, трябва да се %sрегистрирате%s."
 
-#: google-captcha.php:247
+#: google-captcha.php:331
 msgid "Enter site key and secret key, that you get after registration."
-msgstr "Въведете ключ и секретен ключ, който взимате след регистрация в Google Captcha."
+msgstr ""
+"Въведете ключ и секретен ключ, който взимате след регистрация в Google "
+"Captcha."
 
-#: google-captcha.php:259
+#: google-captcha.php:343
 msgid "Options"
 msgstr "Опции"
 
-#: google-captcha.php:262
-msgid "Enable Google Captcha for:"
-msgstr "Активирай Google Captcha за:"
+#: google-captcha.php:346
+msgid "Enable reCAPTCHA for"
+msgstr ""
 
-#: google-captcha.php:272
-#: google-captcha.php:275
-#: google-captcha.php:279
+#: google-captcha.php:356 google-captcha.php:359 google-captcha.php:363
 msgid "Contact form"
 msgstr "Contact form"
 
-#: google-captcha.php:273
-#: google-captcha.php:276
-#: google-captcha.php:280
+#: google-captcha.php:357 google-captcha.php:360 google-captcha.php:364
 msgid "powered by"
 msgstr "разработено от"
 
-#: google-captcha.php:276
+#: google-captcha.php:360
 msgid "Activate contact form"
 msgstr "Активирай Contact form"
 
-#: google-captcha.php:280
+#: google-captcha.php:364
 msgid "Download contact form"
 msgstr "Изтегли Contact form"
 
-#: google-captcha.php:285
-msgid "Hide captcha for:"
-msgstr "Не показвай Google Captcha за:"
+#: google-captcha.php:369
+#, fuzzy
+msgid "Hide reCAPTCHA for"
+msgstr "за reCAPTCHA версия"
 
-#: google-captcha.php:293
-msgid "reCAPTCHA version:"
+#: google-captcha.php:382
+#, fuzzy
+msgid "reCAPTCHA language"
 msgstr "Версия на reCAPTCHA:"
 
-#: google-captcha.php:295
-#: google-captcha.php:296
+#: google-captcha.php:402
+#, fuzzy
+msgid "Activate"
+msgstr "Активировать Contact form"
+
+#: google-captcha.php:406
+msgid "Download"
+msgstr ""
+
+#: google-captcha.php:409
+msgid "Use the current site language"
+msgstr ""
+
+#: google-captcha.php:409
+msgid "Using"
+msgstr ""
+
+#: google-captcha.php:417 google-captcha.php:483
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr ""
+
+#: google-captcha.php:420 google-captcha.php:486
+msgid "Learn More"
+msgstr ""
+
+#: google-captcha.php:427
+#, fuzzy
+msgid "reCAPTCHA version"
+msgstr "Версия на reCAPTCHA:"
+
+#: google-captcha.php:429 google-captcha.php:430
 msgid "version"
 msgstr "версия"
 
-#: google-captcha.php:301
-#: google-captcha.php:314
-msgid "Theme:"
-msgstr "Тема:"
+#: google-captcha.php:435 google-captcha.php:448
+#, fuzzy
+msgid "reCAPTCHA theme"
+msgstr "Версия на reCAPTCHA:"
 
-#: google-captcha.php:302
-#: google-captcha.php:315
-msgid "for reCAPTCHA version"
-msgstr "за reCAPTCHA версия"
+#: google-captcha.php:436 google-captcha.php:449 google-captcha.php:466
+#, fuzzy
+msgid "for version"
+msgstr "версия"
 
-#: google-captcha.php:326
+#: google-captcha.php:465
+#, fuzzy
+msgid "reCAPTCHA size"
+msgstr "Версия на reCAPTCHA:"
+
+#: google-captcha.php:492
 msgid "Save Changes"
 msgstr "Запази промените"
 
-#: google-captcha.php:376
+#: google-captcha.php:547
 msgid "To use Google Captcha you must get the keys from"
 msgstr "За да използвате Google Captcha трябва да вземете ключовете от"
 
-#: google-captcha.php:377
+#: google-captcha.php:548
 msgid "here"
 msgstr "тук"
 
-#: google-captcha.php:378
+#: google-captcha.php:549
 msgid "and enter them on the"
 msgstr "и да ги въведете в"
 
-#: google-captcha.php:380
+#: google-captcha.php:551
 msgid "plugin setting page"
 msgstr "настройките на плъгина"
 
-#: google-captcha.php:397
-#: google-captcha.php:434
+#: google-captcha.php:568 google-captcha.php:605
 msgid "Error: You have entered an incorrect CAPTCHA value."
 msgstr "Грешка: Въвели сте невалиден анти-спам код."
 
-#: google-captcha.php:502
-#: google-captcha.php:512
-#: google-captcha.php:521
+#: google-captcha.php:674 google-captcha.php:686 google-captcha.php:695
 msgid "Error"
 msgstr ""
 
-#: google-captcha.php:502
-#: google-captcha.php:512
-#: google-captcha.php:521
+#: google-captcha.php:674 google-captcha.php:686 google-captcha.php:695
 #, fuzzy
 msgid "You have entered an incorrect CAPTCHA value."
 msgstr "Грешка: Въвели сте невалиден анти-спам код."
 
-#: google-captcha.php:563
-#: google-captcha.php:568
-msgid "Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again."
-msgstr "Грешка: Въвели сте невалиден анти-спам код. Натиснете бутона НАЗАД в браузъра и опитайте отново."
+#: google-captcha.php:739 google-captcha.php:746
+msgid ""
+"Error: You have entered an incorrect CAPTCHA value. Click the BACK button on "
+"your browser, and try again."
+msgstr ""
+"Грешка: Въвели сте невалиден анти-спам код. Натиснете бутона НАЗАД в "
+"браузъра и опитайте отново."
 
-#: google-captcha.php:605
+#: google-captcha.php:783
 msgid "Support"
 msgstr "Поддръжка"
+
+#~ msgid "Google Captcha"
+#~ msgstr "Google Captcha"
+
+#~ msgid "Enable Google Captcha for:"
+#~ msgstr "Активирай Google Captcha за:"
+
+#~ msgid "Hide captcha for:"
+#~ msgstr "Не показвай Google Captcha за:"
+
+#~ msgid "Theme:"
+#~ msgstr "Тема:"
 
 #~ msgid "requires"
 #~ msgstr "изисква"
@@ -239,10 +303,6 @@ msgstr "Поддръжка"
 
 #~ msgid "Enter public key"
 #~ msgstr "Введите открытый ключ"
-
-#, fuzzy
-#~ msgid "Activated theme"
-#~ msgstr "Активировать Contact form"
 
 #, fuzzy
 #~ msgid "Themes"
