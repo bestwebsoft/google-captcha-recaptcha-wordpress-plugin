@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: anti, anti-spam, antispam, antispam security, anti-spam security, antispambot, arithmetic actions, block spam, bot, bots, best google captcha, best recaptcha, best google recaptcha, best wordpress captcha, recaptcha, capcha, captha, catcha, captcha theme, captcha bank, captcha, captcha plugin, recaptcha plugin, captcha protection, recaptcha protection, comment captcha, comment, comments, cpatcha, digitize books, digitize newspapers, digitize radio shows, e-mail, email, email address, filter, form, forms, form captcha, forgot password captcha, free, gogle, google, google captcha, google recaptcha, login, lost password, login captcha, login recaptcha, mail, match captcha, plugin, protect, protection, popular captcha, popular recaptcha, protection shield, re captcha, re-captcha, register, registration, registration spam, robot, robots, register captcha, rest password captcha, registration captcha security, spam, secure, security, signup, signup spam, spam blocker, spam comments, spam filter, spambot, shield, simple captcha, simple recaptcha, spam control, spam protection, text captcha, user, user registration spam, users, web form protection, wordpress google captcha, wp google recapthca, wp recaptcha, wordpress protection, wordpress security loss password captcha, register captcha, wp captcha
 Requires at least: 3.1
 Tested up to: 4.3
-Stable tag: 1.18
+Stable tag: 1.19
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,7 +27,7 @@ http://www.youtube.com/watch?v=10ImOhmM0Cs
 
 = Copyrights for resources used in this plugin =
 
-1. In Google Captcha (reCAPTCHA) plugin we used "lib/recaptchalib.php" and "lib_v2" reCAPTCHA PHP client library. The Licence for this file is in "lib/license.txt" and "lib_v2/LICENSE" file.
+1. In Google Captcha (reCAPTCHA) plugin we used "lib/recaptchalib.php" and "lib_v2/recaptchalib.php" file. The Licence for this file is in "lib/license.txt" and "lib_v2/license.txt" file.
 2. Everything else used in this plugin has been created by Bestwebsoft team and is distributed under GPL license.
 
 = Features =
@@ -158,6 +158,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.19 - 28.08.2015 =
+* Bugfix : We fixed the bug with Google Captcha (reCAPTCHA) version 2 working in PHP version lower than 5.3.
+
 = V1.18 - 26.08.2015 =
 * NEW : Ability to restore default settings.
 * Update : BWS Menu was updated.
@@ -246,6 +249,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.19 =
+We fixed the bug with Google Captcha (reCAPTCHA) version 2 working in PHP version lower than 5.3.
 
 = V1.18 =
 Ability to restore default settings. BWS Menu was updated. We updated all functionality for wordpress 4.3.

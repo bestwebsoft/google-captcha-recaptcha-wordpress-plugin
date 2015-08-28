@@ -4,7 +4,7 @@ Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
 Author: BestWebSoft
-Version: 1.18
+Version: 1.19
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -556,8 +556,6 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			return $content;
 		}
 		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
-			require_once( 'lib_v2/src/autoload.php' );
-			$reCaptcha = new \ReCaptcha\ReCaptcha( $privatekey );
 			$content .= '<style type="text/css" media="screen">
 					#gglcptch_error {
 						color: #F00;
@@ -661,12 +659,12 @@ if ( ! function_exists( 'gglcptch_login_check' ) ) {
 		}
 
 		if ( isset( $_REQUEST['g-recaptcha-response'] ) && isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
-			require_once( 'lib_v2/src/autoload.php' );
-			$reCaptcha = new \ReCaptcha\ReCaptcha( $privatekey );
+			require_once( 'lib_v2/recaptchalib.php' );
+			$reCaptcha = new gglcptch_ReCaptcha( $privatekey );
 			$gglcptch_g_recaptcha_response = isset( $_POST["g-recaptcha-response"] ) ? $_POST["g-recaptcha-response"] : '';
-			$resp = $reCaptcha->verify( $gglcptch_g_recaptcha_response, $_SERVER['REMOTE_ADDR'] );
+			$resp = $reCaptcha->verifyResponse( $_SERVER["REMOTE_ADDR"], $gglcptch_g_recaptcha_response );
 
-			if ( $resp != null && $resp->isSuccess() )
+			if ( $resp != null && $resp->success )
 				return $user;
 			else {
 				wp_clear_auth_cookie();
@@ -728,12 +726,12 @@ if ( ! function_exists( 'gglcptch_lostpassword_check' ) ) {
 			return;
 
 		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
-			require_once( 'lib_v2/src/autoload.php' );
-			$reCaptcha = new \ReCaptcha\ReCaptcha( $privatekey );
+			require_once( 'lib_v2/recaptchalib.php' );
+			$reCaptcha = new gglcptch_ReCaptcha( $privatekey );
 			$gglcptch_g_recaptcha_response = isset( $_POST["g-recaptcha-response"] ) ? $_POST["g-recaptcha-response"] : '';
-			$resp = $reCaptcha->verify( $gglcptch_g_recaptcha_response, $_SERVER['REMOTE_ADDR'] );
+			$resp = $reCaptcha->verifyResponse( $_SERVER["REMOTE_ADDR"], $gglcptch_g_recaptcha_response );
 
-			if ( $resp != null && $resp->isSuccess() )
+			if ( $resp != null && $resp->success )
 				return;
 			else
 				wp_die( __( 'Error: You have entered an incorrect CAPTCHA value. Click the BACK button on your browser, and try again.', 'google_captcha' ) );
@@ -803,12 +801,12 @@ if ( ! function_exists( 'gglcptch_captcha_check' ) ) {
 		$privatekey = $gglcptch_options['private_key'];
 
 		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] ) {
-			require_once( 'lib_v2/src/autoload.php' );
-			$reCaptcha = new \ReCaptcha\ReCaptcha( $privatekey );
+			require_once( 'lib_v2/recaptchalib.php' );
+			$reCaptcha = new gglcptch_ReCaptcha( $privatekey );
 			$gglcptch_g_recaptcha_response = isset( $_POST["g-recaptcha-response"] ) ? $_POST["g-recaptcha-response"] : '';
-			$resp = $reCaptcha->verify( $gglcptch_g_recaptcha_response, $_SERVER['REMOTE_ADDR'] );
+			$resp = $reCaptcha->verifyResponse( $_SERVER["REMOTE_ADDR"], $gglcptch_g_recaptcha_response );
 
-			if ( $resp != null && $resp->isSuccess() )
+			if ( $resp != null && $resp->success )
 				echo "success";
 			else
 				echo "error";
