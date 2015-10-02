@@ -1,7 +1,7 @@
 <?php
 /*
 * Function for displaying BestWebSoft menu
-* Version: 1.7.0
+* Version: 1.7.6
 */
 
 if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) )
@@ -459,6 +459,14 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 				'download'		=> 'http://bestwebsoft.com/products/profile-extra-fields/download/?k=fe3b6c3dbc80bd4b1cf9a27a2f339820&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 				'wp_install'	=> $admin_url . 'plugin-install.php?tab=search&type=term&s=Profile+Extra+Fields+BestWebSoft&plugin-search-input=Search+Plugins',
 				'settings'		=> 'admin.php?page=profile-extra-fields.php'
+			),
+			'error-log-viewer/error-log-viewer.php' => array(
+				'name'			=> 'Error Log Viewer',
+				'description'	=> "Work with log files and folders on the WordPress server",
+				'link'			=> 'http://bestwebsoft.com/products/error-log-viewer/?k=da0de8bd2c7a0b2fea5df64d55a368b3&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'download'		=> 'http://bestwebsoft.com/products/error-log-viewer/download/?k=da0de8bd2c7a0b2fea5df64d55a368b3&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'wp_install'	=> $admin_url . 'plugin-install.php?tab=search&type=term&s=Error+Log+Viewer+BestWebSoft&plugin-search-input=Search+Plugins',
+				'settings'		=> 'admin.php?page=rrrlgvwr.php&tab=settings'
 			)		
 		);
 
