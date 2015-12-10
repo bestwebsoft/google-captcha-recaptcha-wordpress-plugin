@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bestwebsoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-02 13:01+0300\n"
-"PO-Revision-Date: 2015-10-02 13:01+0300\n"
-"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
+"POT-Creation-Date: 2015-11-17 13:31+0300\n"
+"PO-Revision-Date: 2015-11-17 13:31+0300\n"
+"Last-Translator: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "Language-Team: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -14,17 +14,20 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2;plural=n>2;\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: bws_functions.php:39
-#: bws_functions.php:63
+#: bws_functions.php:39 bws_functions.php:63
 msgid "requires"
 msgstr "obligatoire"
 
 #: bws_functions.php:41
-msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
-msgstr "ou supérieure, c'est pourquoi il a été désactivé! Merci de faire la mise à jour de WordPress puis de ré-essayer."
+msgid ""
+"or higher, that is why it has been deactivated! Please upgrade WordPress and "
+"try again."
+msgstr ""
+"ou supérieure, c'est pourquoi il a été désactivé! Merci de faire la mise à "
+"jour de WordPress puis de ré-essayer."
 
 #: bws_functions.php:42
 msgid "Back to the WordPress"
@@ -35,8 +38,12 @@ msgid "Plugins page"
 msgstr "Page des extensions"
 
 #: bws_functions.php:65
-msgid "or higher! We do not guarantee that our plugin will work correctly. Please upgrade to WordPress latest version."
+msgid ""
+"or higher! We do not guarantee that our plugin will work correctly. Please "
+"upgrade to WordPress latest version."
 msgstr ""
+"ou plus ! Nous ne garantissons pas que notre extension fonctionne "
+"correctement. Merci de mettre à jour Wordpress avec la dernière version."
 
 #: bws_functions.php:122
 msgid "It’s time to upgrade your"
@@ -52,16 +59,19 @@ msgstr "version"
 
 #: bws_functions.php:123
 msgid "Extend standard plugin functionality with new great options."
-msgstr "Etend les fonctionalités classiques de l'extension avec des nouvelles options."
+msgstr ""
+"Étend les fonctionnalités classiques de l'extension avec des nouvelles "
+"options."
 
-#: bws_functions.php:126
-#: bws_functions.php:561
+#: bws_functions.php:126 bws_functions.php:561
 msgid "Learn More"
 msgstr "En savoir plus"
 
 #: bws_functions.php:143
 msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
-msgstr "Si notre extension vous satisfait, merci de la notée avec 5 étoiles dans Wordpress"
+msgstr ""
+"Si notre extension vous satisfait, merci de la notée avec 5 étoiles dans "
+"Wordpress"
 
 #: bws_functions.php:144
 msgid "Rate the plugin"
@@ -74,21 +84,22 @@ msgstr "Si vous avez une question, n'hésitez pas à nous contacter"
 #: bws_functions.php:179
 msgid "Check premium options on the plugin settings page!"
 msgstr ""
+"Vérifier les options premium sur la page des paramètres de l'extension!"
 
-#: bws_functions.php:186
-#: bws_functions.php:222
+#: bws_functions.php:186 bws_functions.php:222
 msgid "Wrong license key"
 msgstr "Clé de licence incorrecte"
 
-#: bws_functions.php:216
-#: bws_functions.php:474
-#: bws_functions.php:525
-msgid "Something went wrong. Please try again later. If the error appears again, please contact us"
-msgstr "Il est survenu une erreur. Essayer de nouveau. Si l'erreur se produit de nouveau, merci de contacter <a href=http://support.bestwebsoft.com>BestWebSoft</a>. Nous sommes désolés pour le désagrément."
+#: bws_functions.php:216 bws_functions.php:474 bws_functions.php:525
+msgid ""
+"Something went wrong. Please try again later. If the error appears again, "
+"please contact us"
+msgstr ""
+"Il est survenu une erreur. Essayer de nouveau. Si l'erreur se produit de "
+"nouveau, merci de contacter <a href=http://support.bestwebsoft."
+"com>BestWebSoft</a>. Nous sommes désolés pour le désagrément."
 
-#: bws_functions.php:216
-#: bws_functions.php:474
-#: bws_functions.php:525
+#: bws_functions.php:216 bws_functions.php:474 bws_functions.php:525
 msgid "We are sorry for inconvenience."
 msgstr "Nous sommes désolés pour le désagrément."
 
@@ -96,69 +107,91 @@ msgstr "Nous sommes désolés pour le désagrément."
 msgid "This license key is bind to another site"
 msgstr "La clé de licence correspond à un autre site."
 
-#: bws_functions.php:226
-#: bws_functions.php:384
-msgid "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually."
-msgstr "Désoler mais vous avez dépassé le nombre d'essai de la journée. Merci de télécharger l'extension manuellement."
+#: bws_functions.php:226 bws_functions.php:384
+msgid ""
+"Unfortunately, you have exceeded the number of available tries per day. "
+"Please, upload the plugin manually."
+msgstr ""
+"Désoler mais vous avez dépassé le nombre d'essai de la journée. Merci de "
+"télécharger l'extension manuellement."
 
 #: bws_functions.php:228
-msgid "Unfortunately, Your license has expired. To continue getting top-priority support and plugin updates you should extend it in your"
-msgstr "Désoler, votre licence est terminée. Pour continuer à disposer du support rapide et des mises à jour de l'extension vous devez la renouveller dans votre"
+msgid ""
+"Unfortunately, Your license has expired. To continue getting top-priority "
+"support and plugin updates you should extend it in your"
+msgstr ""
+"Désoler, votre licence est terminée. Pour continuer à disposer du support "
+"rapide et des mises à jour de l'extension vous devez la renouveler dans votre"
 
 #: bws_functions.php:230
-#, fuzzy
-msgid "Unfortunately, the Pro licence was already installed to this domain. The Pro Trial license can be installed only once."
-msgstr "Une licence a déjà été installée sur ce domaine. La licence d'évaluation ne peut-être installée qu'une seule fois."
+msgid ""
+"Unfortunately, the Pro licence was already installed to this domain. The Pro "
+"Trial license can be installed only once."
+msgstr ""
+"Une licence a déjà été installée sur ce domaine. La licence d'évaluation ne "
+"peut-être installée qu'une seule fois."
 
-#: bws_functions.php:251
-#: bws_functions.php:273
-#: bws_functions.php:295
+#: bws_functions.php:251 bws_functions.php:273 bws_functions.php:295
 msgid "Failed to download the zip archive. Please, upload the plugin manually"
-msgstr "Erreur de téléchargement de l'archive ZIP. Merci de télécharger l'extension manuellement."
+msgstr ""
+"Erreur de téléchargement de l'archive ZIP. Merci de télécharger l'extension "
+"manuellement."
 
 #: bws_functions.php:263
 msgid "Failed to open the zip archive. Please, upload the plugin manually"
-msgstr "Erreur d'ouverture de l'archive zip. Merci de télécharger l'extension manuellement."
+msgstr ""
+"Erreur d'ouverture de l'archive zip. Merci de télécharger l'extension "
+"manuellement."
 
 #: bws_functions.php:269
-msgid "Your server does not support either ZipArchive or Phar. Please, upload the plugin manually"
-msgstr "Votre server n'a pas le support du format des archives ZIP ou Phar. Merci de télécharger l'extension manuellement."
+msgid ""
+"Your server does not support either ZipArchive or Phar. Please, upload the "
+"plugin manually"
+msgstr ""
+"Votre serveur n'a pas le support du format des archives ZIP ou Phar. Merci "
+"de télécharger l'extension manuellement."
 
 #: bws_functions.php:276
 msgid "UploadDir is not writable. Please, upload the plugin manually"
-msgstr "Erreur d'ouverture de l'archive zip. Merci de télécharger l'extension manuellement."
+msgstr ""
+"Erreur d'ouverture de l'archive zip. Merci de télécharger l'extension "
+"manuellement."
 
 #: bws_functions.php:299
-msgid "Something went wrong. Try again later or upload the plugin manually. We are sorry for inconvenience."
-msgstr "Il est survenu une erreur. Essayer de nouveau ou bien télécharger l'extension manuellement.Nous sommes désolés pour le désagrément."
+msgid ""
+"Something went wrong. Try again later or upload the plugin manually. We are "
+"sorry for inconvenience."
+msgstr ""
+"Il est survenu une erreur. Essayer de nouveau ou bien télécharger "
+"l'extension manuellement.Nous sommes désolés pour le désagrément."
 
 #: bws_functions.php:324
 msgid "Please, enter Your license key"
 msgstr "Merci de saisir votre clé de licence"
 
 #: bws_functions.php:348
-#, fuzzy
-msgid "Congratulations! The Pro version of the plugin is successfully download and activated."
-msgstr "Félicitations! La version PRO de cette extension a été téléchargée et activée avec succès."
+msgid ""
+"Congratulations! The Pro version of the plugin is successfully download and "
+"activated."
+msgstr ""
+"Félicitations! La version PRO de cette extension a été téléchargée et "
+"activée avec succès."
 
-#: bws_functions.php:350
-#: bws_functions.php:441
+#: bws_functions.php:350 bws_functions.php:441
 msgid "Please, go to"
-msgstr "Merci d'allez à"
+msgstr "Merci d’aller à"
 
-#: bws_functions.php:350
-#: bws_functions.php:441
+#: bws_functions.php:350 bws_functions.php:441
 msgid "the setting page"
 msgstr "Options supplémentaires"
 
-#: bws_functions.php:351
-#: bws_functions.php:442
+#: bws_functions.php:351 bws_functions.php:442
 msgid "You will be redirected automatically in 5 seconds."
 msgstr "Vous allez être redirigé automatiquement dans 5 secondes"
 
 #: bws_functions.php:358
 msgid "Show Pro features"
-msgstr ""
+msgstr "Voir les fonctionnalités de la version PRO"
 
 #: bws_functions.php:365
 msgid "You can download and activate"
@@ -168,18 +201,21 @@ msgstr "Vous pouvez télécharger et activer la version "
 msgid "version of this plugin by entering Your license key."
 msgstr " de cette extension en donnant votre clé de licence."
 
-#: bws_functions.php:369
-#: bws_functions.php:410
-msgid "You can find your license key on your personal page Client area, by clicking on the link"
-msgstr "Vous pouvez trouver votre clé de licence sur votre page personnelle dans la zone cliente en cliquant sur le lien"
+#: bws_functions.php:369 bws_functions.php:410
+msgid ""
+"You can find your license key on your personal page Client area, by clicking "
+"on the link"
+msgstr ""
+"Vous pouvez trouver votre clé de licence sur votre page personnelle dans la "
+"zone cliente en cliquant sur le lien"
 
-#: bws_functions.php:371
-#: bws_functions.php:412
+#: bws_functions.php:371 bws_functions.php:412
 msgid "(your username is the email you specify when purchasing the product)."
-msgstr "(votre nom d'utilisateur est l'adresse e-mail que vous avez donné lors de l'achat de l'extension)."
+msgstr ""
+"(votre nom d'utilisateur est l'adresse e-mail que vous avez donné lors de "
+"l'achat de l'extension)."
 
-#: bws_functions.php:375
-#: bws_functions.php:678
+#: bws_functions.php:375 bws_functions.php:659
 msgid "or"
 msgstr "ou"
 
@@ -188,33 +224,36 @@ msgstr "ou"
 msgid "Start Your Free %s-Day Trial Now"
 msgstr "Débuter votre licence d'évaluation gratuite de %s jours"
 
-#: bws_functions.php:381
-#: bws_functions.php:390
-#: bws_functions.php:420
-#: bws_functions.php:428
-#: bws_menu.php:693
-#: bws_menu.php:750
+#: bws_functions.php:381 bws_functions.php:390 bws_functions.php:420
+#: bws_functions.php:428 bws_menu.php:693 bws_menu.php:750
 msgid "Activate"
 msgstr "Activé"
 
-#: bws_functions.php:407
-#: bws_functions.php:500
+#: bws_functions.php:407 bws_functions.php:500
 #, php-format
-msgid "In order to continue using the plugin it is necessary to buy a %s license."
-msgstr "Afin de pouvoir continuer à utiliser cette extension il est nécessaire d'acheter une licence %s."
+msgid ""
+"In order to continue using the plugin it is necessary to buy a %s license."
+msgstr ""
+"Afin de pouvoir continuer à utiliser cette extension il est nécessaire "
+"d'acheter une licence %s."
 
 #: bws_functions.php:408
 msgid "After that you can activate it by entering your license key."
-msgstr " Après vous pouvez activer cette extension en donnant votre clé de licence."
+msgstr ""
+" Après vous pouvez activer cette extension en donnant votre clé de licence."
 
 #: bws_functions.php:422
 msgid "Unfortunately, you have exceeded the number of available tries per day."
-msgstr "Désoler mais vous avez dépassé le nombre d'essai de la journée. Merci de télécharger l'extension manuellement."
+msgstr ""
+"Désoler mais vous avez dépassé le nombre d'essai de la journée. Merci de "
+"télécharger l'extension manuellement."
 
 #: bws_functions.php:439
-#, fuzzy
-msgid "Congratulations! The Pro license of the plugin is successfully activated."
-msgstr "Félicitations! La version PRO de cette extension a été téléchargée et activée avec succès."
+msgid ""
+"Congratulations! The Pro license of the plugin is successfully activated."
+msgstr ""
+"Félicitations! La version PRO de cette extension a été téléchargée et "
+"activée avec succès."
 
 #: bws_functions.php:480
 msgid "Wrong license key."
@@ -225,20 +264,29 @@ msgid "This license key is bind to another site."
 msgstr "La clé de licence correspond à un autre site."
 
 #: bws_functions.php:484
-msgid "This license key is valid, but Your license has expired. If you want to update our plugin in future, you should extend the license."
-msgstr "La clé de licence est valide mais votre durée de validité est passée. Pour continuer à disposer du support rapide et des mises à jour de l'extension vous devez la renouveller."
+msgid ""
+"This license key is valid, but Your license has expired. If you want to "
+"update our plugin in future, you should extend the license."
+msgstr ""
+"La clé de licence est valide mais votre durée de validité est passée. Pour "
+"continuer à disposer du support rapide et des mises à jour de l'extension "
+"vous devez la renouveller."
 
 #: bws_functions.php:486
 msgid "Unfortunately, you have exceeded the number of available tries."
-msgstr "Désoler mais vous avez dépassé le nombre d'essai de la journée. Merci de télécharger l'extension manuellement."
+msgstr ""
+"Désoler mais vous avez dépassé le nombre d'essai de la journée. Merci de "
+"télécharger l'extension manuellement."
 
 #: bws_functions.php:488
-#, fuzzy
-msgid "Unfortunately, the Pro Trial licence was already installed to this domain. The Pro Trial license can be installed only once."
-msgstr "Une licence a déjà été installée sur ce domaine. La licence d'évaluation ne peut-être installée qu'une seule fois."
+msgid ""
+"Unfortunately, the Pro Trial licence was already installed to this domain. "
+"The Pro Trial license can be installed only once."
+msgstr ""
+"Une licence a déjà été installée sur ce domaine. La licence d'évaluation ne "
+"peut-être installée qu'une seule fois."
 
 #: bws_functions.php:492
-#, fuzzy
 msgid "The Pro Trial license key is valid."
 msgstr "La clé de licence d'évaluation est valide."
 
@@ -255,12 +303,23 @@ msgid "Please, enter your license key"
 msgstr "Merci de saisir votre clé de licence"
 
 #: bws_functions.php:543
-msgid "If needed you can check if the license key is correct or reenter it in the field below. You can find your license key on your personal page - Client area - on our website"
-msgstr "Si nécessaire vous pouvez vérifier que la clé de licence est correcte ou la saisir de nouveau dans le champ ci-dessous. Vous pouvez trouver votre clé de licence sur votre page personnelle (zone client) sur notre site web."
+msgid ""
+"If needed you can check if the license key is correct or reenter it in the "
+"field below. You can find your license key on your personal page - Client "
+"area - on our website"
+msgstr ""
+"Si nécessaire vous pouvez vérifier que la clé de licence est correcte ou la "
+"saisir de nouveau dans le champ ci-dessous. Vous pouvez trouver votre clé de "
+"licence sur votre page personnelle (zone client) sur notre site web."
 
 #: bws_functions.php:543
-msgid "(your username is the email you specify when purchasing the product). If necessary, please submit \"Lost your password?\" request."
-msgstr "(votre nom d'utilisateur est l'adresse e-mail que vous avez donné lors de l'achat de l'extension). Si nécessaire, utilisez la fonction de demande de mot de passe perdu."
+msgid ""
+"(your username is the email you specify when purchasing the product). If "
+"necessary, please submit \"Lost your password?\" request."
+msgstr ""
+"(votre nom d'utilisateur est l'adresse e-mail que vous avez donné lors de "
+"l'achat de l'extension). Si nécessaire, utilisez la fonction de demande de "
+"mot de passe perdu."
 
 #: bws_functions.php:547
 msgid "Check license key"
@@ -271,42 +330,52 @@ msgid "WARNING: Illegal use notification"
 msgstr "AVERTISSEMENT : Notification d'utilisation abusive"
 
 #: bws_functions.php:561
-msgid "You can use one license of the Pro plugin for one domain only. Please check and edit your license or domain if necessary using you personal Client Area. We strongly recommend you to solve the problem within 24 hours, otherwise the Pro plugin will be deactivated."
-msgstr "Nous avons détecté une utilisation abusive de notre extension. Nous vous recommandons de résoudre ce problème dans les 24 heures, sinon l'extension sera rendue inactive. Merci de vous rendre dans votre espace personel"
+msgid ""
+"You can use one license of the Pro plugin for one domain only. Please check "
+"and edit your license or domain if necessary using you personal Client Area. "
+"We strongly recommend you to solve the problem within 24 hours, otherwise "
+"the Pro plugin will be deactivated."
+msgstr ""
+"Vous ne pouvez utilisez qu'une licence de la version Pro de l'extension pour "
+"un seul domaine. Merci de vérifier et de modifier votre licence ou votre "
+"domaine si nécessaire en utilisant votre zone client. Nous vous recommandons "
+"de résoudre ce problème dans les 24 heures, sinon l'extension sera rendue "
+"inactive."
 
 #: bws_functions.php:569
-#, fuzzy
-msgid "Notice: Your Pro Trial license has expired. To continue using the plugin you should buy a Pro license"
-msgstr "Votre licence d'évaluation est terminée. Pour continuer à disposer du support rapide et des mises à jour de l'extension vous devez la renouveller."
+msgid ""
+"Notice: Your Pro Trial license has expired. To continue using the plugin you "
+"should buy a Pro license"
+msgstr ""
+"Votre licence d'évaluation est terminée. Pour continuer à disposer du "
+"support rapide et des mises à jour de l'extension vous devez la renouveler."
 
 #: bws_functions.php:571
-msgid "Your license has expired. To continue getting top-priority support and plugin updates you should extend it."
-msgstr "Votre licence est terminée. Pour continuer à disposer du support rapide et des mises à jour de l'extension vous devez la renouveller."
+msgid ""
+"Your license has expired. To continue getting top-priority support and "
+"plugin updates you should extend it."
+msgstr ""
+"Votre licence est terminée. Pour continuer à disposer du support rapide et "
+"des mises à jour de l'extension vous devez la renouveller."
 
-#: bws_functions.php:571
-#: bws_functions.php:624
-#: bws_menu.php:669
-#: bws_menu.php:691
-#: bws_menu.php:718
-#: bws_menu.php:748
-#: bws_menu.php:794
+#: bws_functions.php:571 bws_functions.php:624 bws_menu.php:669
+#: bws_menu.php:691 bws_menu.php:718 bws_menu.php:748 bws_menu.php:794
 msgid "Learn more"
 msgstr "En savoir plus"
 
 #: bws_functions.php:581
-#, fuzzy, php-format
+#, php-format
 msgid "Notice: You are using the Pro Trial license of %s plugin."
-msgstr "Avertissement : vous utilisez la version d'évaluation de l'extension %s."
+msgstr ""
+"Avertissement : vous utilisez la version d'évaluation de l'extension %s."
 
 #: bws_functions.php:583
-#, fuzzy
 msgid "Notice: You are using the Pro Trial license of plugin."
 msgstr "Avertissement : vous utilisez la version d'évaluation de l'extension."
 
 #: bws_functions.php:586
-#, fuzzy
 msgid "The Pro Trial license will expire on"
-msgstr "Votre licence se termine le "
+msgstr "La licence PRO d'évaluation expirera le"
 
 #: bws_functions.php:624
 msgid "You license for"
@@ -318,116 +387,138 @@ msgstr "se termine le"
 
 #: bws_functions.php:624
 msgid "and you won't be granted TOP-PRIORITY SUPPORT or UPDATES."
-msgstr "et vous ne diposerez plus du support rapide et des mises à jour."
+msgstr "et vous ne disposerez plus du support rapide et des mises à jour."
 
-#: bws_functions.php:674
-#, fuzzy
+#: bws_functions.php:655
 msgid "Thank you for installing"
-msgstr "Merci de nous avoir contacté."
+msgstr "Merci d'avoir installé"
 
-#: bws_functions.php:675
+#: bws_functions.php:656
 msgid "Let's get started"
-msgstr ""
+msgstr "Démarrer"
 
-#: bws_functions.php:676
-#, fuzzy
+#: bws_functions.php:657
 msgid "Configure Settings"
-msgstr "Options du formulaire de Contact"
+msgstr "Configuration des paramètres"
 
-#: bws_functions.php:679
+#: bws_functions.php:660
 msgid "Add New"
-msgstr ""
+msgstr "Ajouter"
 
-#: bws_functions.php:683
+#: bws_functions.php:664
 msgid "Close notice"
-msgstr ""
+msgstr "Effacer l'avertissement"
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "Notice"
-msgstr ""
+msgstr "Avertissement"
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "The plugin's settings have been changed."
-msgstr ""
+msgstr "Les paramètres de l'extension ont été modifiés."
 
-#: bws_functions.php:697
+#: bws_functions.php:678
 msgid "Save Changes"
 msgstr "Sauvegarder les modifications"
 
-#: bws_functions.php:712
-msgid "You can always look at premium options by clicking on the \"Show Pro features\" in the \"Go PRO\" tab"
+#: bws_functions.php:693
+msgid ""
+"You can always look at premium options by clicking on the \"Show Pro features"
+"\" in the \"Go PRO\" tab"
 msgstr ""
+"Vous pouvez toujours consulter les options premium en cliquant sur le lien "
+"\"Voir les fonctionnalités de la version PRO\" dans l'onglet Passer PRO"
 
-#: bws_functions.php:769
-#, fuzzy
+#: bws_functions.php:773
 msgid "Add BWS Plugins Shortcode"
-msgstr "Utiliser le code court"
+msgstr "Ajouter le code court de l'extension BWS"
 
-#: bws_functions.php:813
+#: bws_functions.php:793
+msgid "Add shortcode"
+msgstr "Ajouter le code court"
+
+#: bws_functions.php:793
+msgid "Add BestWebSoft plugins' shortcodes using this button."
+msgstr "Ajouter le code court des extensions BestWebSoft avec ce bouton."
+
+#: bws_functions.php:835
 msgid "Close"
 msgstr "Fermer"
 
-#: bws_functions.php:904
+#: bws_functions.php:927
 msgid "Restore all plugin settings to defaults"
-msgstr ""
+msgstr "Remettre les valeurs par défaut des paramètres de l'extension"
 
-#: bws_functions.php:906
-#, fuzzy
+#: bws_functions.php:929
 msgid "Restore settings"
-msgstr "Options supplémentaires"
+msgstr "Remettre les paramètres"
 
-#: bws_functions.php:917
-#, fuzzy
+#: bws_functions.php:940
 msgid "Are you sure you want to restore all settings by default?"
-msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
+msgstr "Êtes vous sûr de vouloir remettre toutes les valeurs par défaut ?"
 
-#: bws_functions.php:920
+#: bws_functions.php:943
 msgid "Yes, restore all settings"
-msgstr ""
+msgstr "Oui, remettre les valeurs par défaut"
 
-#: bws_functions.php:921
-#, fuzzy
+#: bws_functions.php:944
 msgid "No, go back to the settings page"
-msgstr "Options supplémentaires"
+msgstr "Non, retourner à la page des paramètres"
 
-#: bws_functions.php:965
-#, fuzzy
+#: bws_functions.php:988
 msgid "Plugin"
-msgstr "Extensions"
+msgstr "Extension"
 
-#: bws_functions.php:974
-#, fuzzy
+#: bws_functions.php:997
 msgid "Shortcode settings"
-msgstr "Options supplémentaires"
+msgstr "Paramètres du code court"
 
-#: bws_functions.php:979
+#: bws_functions.php:1002
 msgid "The shortcode will be inserted"
-msgstr ""
+msgstr "Le code court sera inséré"
 
-#: bws_functions.php:984
+#: bws_functions.php:1007
 msgid "Insert"
-msgstr ""
+msgstr "Insérer"
+
+#: bws_functions.php:1038
+msgid "Visit Help Center"
+msgstr "Visiter le site du support"
+
+#: bws_functions.php:1043
+msgid "FAQ"
+msgstr "FAQ"
+
+#: bws_functions.php:1049
+msgid "For more information:"
+msgstr "Pour plus d'informations&nbsp;:"
+
+#: bws_functions.php:1050
+msgid "Documentation"
+msgstr "Documentation"
+
+#: bws_functions.php:1051
+msgid "Video Instructions"
+msgstr "Vidéo explicative"
+
+#: bws_functions.php:1052
+msgid "Submit a Request"
+msgstr "Soumettre une requête"
 
 #: bws_menu.php:506
 msgid "Not set"
 msgstr "Not set"
 
-#: bws_menu.php:508
-#: bws_menu.php:509
+#: bws_menu.php:508 bws_menu.php:509
 msgid "On"
 msgstr "On"
 
-#: bws_menu.php:508
-#: bws_menu.php:509
+#: bws_menu.php:508 bws_menu.php:509
 msgid "Off"
 msgstr "Off"
 
-#: bws_menu.php:510
-#: bws_menu.php:511
-#: bws_menu.php:512
-#: bws_menu.php:513
-#: bws_menu.php:514
-#: bws_menu.php:526
+#: bws_menu.php:510 bws_menu.php:511 bws_menu.php:512 bws_menu.php:513
+#: bws_menu.php:514 bws_menu.php:526
 msgid "N/A"
 msgstr "N/A"
 
@@ -435,17 +526,11 @@ msgstr "N/A"
 msgid " Mb"
 msgstr " Mb"
 
-#: bws_menu.php:515
-#: bws_menu.php:516
-#: bws_menu.php:517
-#: bws_menu.php:522
+#: bws_menu.php:515 bws_menu.php:516 bws_menu.php:517 bws_menu.php:522
 msgid "Yes"
 msgstr "Yes"
 
-#: bws_menu.php:515
-#: bws_menu.php:516
-#: bws_menu.php:517
-#: bws_menu.php:524
+#: bws_menu.php:515 bws_menu.php:516 bws_menu.php:517 bws_menu.php:524
 msgid "No"
 msgstr "No"
 
@@ -557,8 +642,7 @@ msgstr "Besoin d'aide ?"
 msgid "Client area"
 msgstr "Espace client"
 
-#: bws_menu.php:622
-#: bws_menu.php:933
+#: bws_menu.php:622 bws_menu.php:933
 msgid "System status"
 msgstr "System status"
 
@@ -584,33 +668,27 @@ msgstr "Recommandé"
 
 #: bws_menu.php:640
 msgid "Installed plugins"
-msgstr "Plugin installé"
+msgstr "Extensions installées"
 
-#: bws_menu.php:672
-#: bws_menu.php:721
+#: bws_menu.php:672 bws_menu.php:721
 msgid "Settings"
 msgstr "Réglages"
 
-#: bws_menu.php:693
-#: bws_menu.php:750
+#: bws_menu.php:693 bws_menu.php:750
 msgid "Activate this plugin"
 msgstr "Activer cette extension"
 
-#: bws_menu.php:708
-#: bws_menu.php:738
-#: bws_menu.php:784
+#: bws_menu.php:708 bws_menu.php:738 bws_menu.php:784
 msgid "Go"
 msgstr "Passez"
 
-#: bws_menu.php:712
-#: bws_menu.php:742
-#: bws_menu.php:788
+#: bws_menu.php:712 bws_menu.php:742 bws_menu.php:788
 msgid "DONATE"
 msgstr "Faire un don"
 
 #: bws_menu.php:758
 msgid "Recommended plugins"
-msgstr "Plugin recommandé"
+msgstr "Extensions recommandées"
 
 #: bws_menu.php:796
 msgid "Install now"
@@ -632,12 +710,12 @@ msgstr "%s installé"
 
 #: bws_menu.php:866
 msgid "Install Now"
-msgstr "Installa Ora"
+msgstr "Installer maintenant"
 
 #: bws_menu.php:869
 #, php-format
 msgid "Update to version %s"
-msgstr "Mettre à jour pour la version %s"
+msgstr "Mettre à jour avec la version %s"
 
 #: bws_menu.php:869
 msgid "Update"
@@ -652,8 +730,7 @@ msgstr "Pré-visualiser %s"
 msgid "Preview"
 msgstr "Pré-visualiser"
 
-#: bws_menu.php:882
-#: bws_menu.php:914
+#: bws_menu.php:882 bws_menu.php:914
 #, php-format
 msgid "By %s"
 msgstr "Par %s"
@@ -668,15 +745,15 @@ msgstr "Déjà installé"
 
 #: bws_menu.php:936
 msgid "Environment"
-msgstr "Environment"
+msgstr "Environnent"
 
 #: bws_menu.php:947
 msgid "Active Plugins"
-msgstr "Plugin actifs"
+msgstr "Extensions actives"
 
 #: bws_menu.php:960
 msgid "Inactive Plugins"
-msgstr "Plugin inactifs"
+msgstr "Extensions inactives"
 
 #: bws_menu.php:976
 msgid "Send to support"
@@ -1133,9 +1210,6 @@ msgstr "Envoyer un e-mail spécifique &#187;"
 #~ msgid "Border color"
 #~ msgstr "Couleur des bordures"
 
-#~ msgid "Submit button"
-#~ msgstr "Bouton Envoyer"
-
 #~ msgid "Width in px, numbers only"
 #~ msgstr "Largeur en px, nombre seulement"
 
@@ -1193,9 +1267,6 @@ msgstr "Envoyer un e-mail spécifique &#187;"
 #~ msgstr ""
 #~ "Si vous voyez ce MIME c'est que votre navigateur n'accepte pas ce type de "
 #~ "MIME !"
-
-#~ msgid "FAQ"
-#~ msgstr "FAQ"
 
 #~ msgid "Support"
 #~ msgstr "Support"

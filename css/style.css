@@ -1,6 +1,10 @@
 /*
 * styles for settings page
 */
+#gglcptch_v1_notice {
+	border-color: #00a0d2 !important;
+}
 #gglcptch-keys input[type=text] {
-	width: 250px;
+	max-width: 350px;
+	width: 100%;
 }

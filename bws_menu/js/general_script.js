@@ -18,6 +18,6 @@ function bws_show_settings_notice() {
 		$( '.bws_save_anchor' ).on( "click", function( event ) {
 			event.preventDefault();
 			$( '.bws_form #bws-submit-button' ).click();
-		});		
+		});
 	});
 })(jQuery);

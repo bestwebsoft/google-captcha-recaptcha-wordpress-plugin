@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bestwebsoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-02 13:01+0300\n"
-"PO-Revision-Date: 2015-10-02 13:01+0300\n"
+"POT-Creation-Date: 2015-10-09 14:42+0300\n"
+"PO-Revision-Date: 2015-10-09 14:42+0300\n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: foken <foken@gmx.com>\n"
 "Language: ja_JP\n"
@@ -184,7 +184,7 @@ msgid "(your username is the email you specify when purchasing the product)."
 msgstr ""
 
 #: bws_functions.php:375
-#: bws_functions.php:678
+#: bws_functions.php:659
 msgid "or"
 msgstr "又は"
 
@@ -322,93 +322,127 @@ msgstr ""
 msgid "and you won't be granted TOP-PRIORITY SUPPORT or UPDATES."
 msgstr ""
 
-#: bws_functions.php:674
+#: bws_functions.php:655
 #, fuzzy
 msgid "Thank you for installing"
 msgstr "ご連絡ありがとうございます"
 
-#: bws_functions.php:675
+#: bws_functions.php:656
 msgid "Let's get started"
 msgstr ""
 
-#: bws_functions.php:676
+#: bws_functions.php:657
 #, fuzzy
 msgid "Configure Settings"
 msgstr "コンタクトフォーム設定"
 
-#: bws_functions.php:679
+#: bws_functions.php:660
 msgid "Add New"
 msgstr ""
 
-#: bws_functions.php:683
+#: bws_functions.php:664
 msgid "Close notice"
 msgstr ""
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "Notice"
 msgstr ""
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "The plugin's settings have been changed."
 msgstr ""
 
-#: bws_functions.php:697
+#: bws_functions.php:678
 msgid "Save Changes"
 msgstr "変更を保存"
 
-#: bws_functions.php:712
+#: bws_functions.php:693
 msgid "You can always look at premium options by clicking on the \"Show Pro features\" in the \"Go PRO\" tab"
 msgstr ""
 
-#: bws_functions.php:769
+#: bws_functions.php:773
 #, fuzzy
 msgid "Add BWS Plugins Shortcode"
 msgstr "短いコードの利用"
 
-#: bws_functions.php:813
+#: bws_functions.php:793
+#, fuzzy
+msgid "Add shortcode"
+msgstr "短いコードの利用"
+
+#: bws_functions.php:793
+msgid "Add BestWebSoft plugins' shortcodes using this button."
+msgstr ""
+
+#: bws_functions.php:833
 msgid "Close"
 msgstr ""
 
-#: bws_functions.php:904
+#: bws_functions.php:925
 msgid "Restore all plugin settings to defaults"
 msgstr ""
 
-#: bws_functions.php:906
+#: bws_functions.php:927
 #, fuzzy
 msgid "Restore settings"
 msgstr "追加設定"
 
-#: bws_functions.php:917
+#: bws_functions.php:938
 #, fuzzy
 msgid "Are you sure you want to restore all settings by default?"
 msgstr "本当に、この言語データを削除しますか?"
 
-#: bws_functions.php:920
+#: bws_functions.php:941
 msgid "Yes, restore all settings"
 msgstr ""
 
-#: bws_functions.php:921
+#: bws_functions.php:942
 #, fuzzy
 msgid "No, go back to the settings page"
 msgstr "追加設定"
 
-#: bws_functions.php:965
+#: bws_functions.php:986
 #, fuzzy
 msgid "Plugin"
 msgstr "Pro Plugins"
 
-#: bws_functions.php:974
+#: bws_functions.php:995
 #, fuzzy
 msgid "Shortcode settings"
 msgstr "追加設定"
 
-#: bws_functions.php:979
+#: bws_functions.php:1000
 msgid "The shortcode will be inserted"
 msgstr ""
 
-#: bws_functions.php:984
+#: bws_functions.php:1005
 msgid "Insert"
 msgstr ""
+
+#: bws_functions.php:1036
+msgid "Visit Help Center"
+msgstr ""
+
+#: bws_functions.php:1041
+msgid "FAQ"
+msgstr "FAQ"
+
+#: bws_functions.php:1047
+msgid "For more information:"
+msgstr ""
+
+#: bws_functions.php:1048
+msgid "Documentation"
+msgstr ""
+
+#: bws_functions.php:1049
+msgid "Video Instructions"
+msgstr ""
+
+#: bws_functions.php:1050
+#, fuzzy
+msgid "Submit a Request"
+msgstr "送信ボタン"
 
 #: bws_menu.php:506
 msgid "Not set"
@@ -1116,9 +1150,6 @@ msgstr "カスタムEメールに送信&#187;"
 #~ msgid "Border color"
 #~ msgstr "罫線色"
 
-#~ msgid "Submit button"
-#~ msgstr "送信ボタン"
-
 #~ msgid "Width in px, numbers only"
 #~ msgstr "px単位の幅、数字のみ"
 
@@ -1175,9 +1206,6 @@ msgstr "カスタムEメールに送信&#187;"
 #~ "your email client!"
 #~ msgstr ""
 #~ "このMIMEを見ている場合は、貴方のクライアントはMIMEタイプを読めません。"
-
-#~ msgid "FAQ"
-#~ msgstr "FAQ"
 
 #~ msgid "Support"
 #~ msgstr "サポート"

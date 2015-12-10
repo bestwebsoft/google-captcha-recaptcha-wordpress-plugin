@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: anti, anti-spam, antispam, antispam security, anti-spam security, antispambot, arithmetic actions, block spam, bot, bots, best google captcha, best recaptcha, best google recaptcha, best wordpress captcha, recaptcha, capcha, captha, catcha, captcha theme, captcha bank, captcha, captcha plugin, recaptcha plugin, captcha protection, recaptcha protection, comment captcha, comment, comments, cpatcha, digitize books, digitize newspapers, digitize radio shows, e-mail, email, email address, filter, form, forms, form captcha, forgot password captcha, free, gogle, google, google captcha, google recaptcha, login, lost password, login captcha, login recaptcha, mail, match captcha, plugin, protect, protection, popular captcha, popular recaptcha, protection shield, re captcha, re-captcha, register, registration, registration spam, robot, robots, register captcha, rest password captcha, registration captcha security, spam, secure, security, signup, signup spam, spam blocker, spam comments, spam filter, spambot, shield, simple captcha, simple recaptcha, spam control, spam protection, text captcha, user, user registration spam, users, web form protection, wordpress google captcha, wp google recapthca, wp recaptcha, wordpress protection, wordpress security loss password captcha, register captcha, wp captcha
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.20
+Tested up to: 4.4
+Stable tag: 1.21
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,7 +15,7 @@ This plugin allows you to implement Google Captcha (reCAPTCHA) into web forms.
 Google Captcha (reCAPTCHA) plugin allows you to implement a super security Captcha into web forms. Google Captcha (reCAPTCHA) is a free CAPTCHA service that helps to digitize books, newspapers older radio shows.
 This plugin can be used for login, registration, password recovery, comments forms.
 
-http://www.youtube.com/watch?v=10ImOhmM0Cs
+http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 
 <a href="http://www.youtube.com/watch?v=RUJ9VwZLFSY" target="_blank">Google Captcha (reCAPTCHA) by BestWebSoft Video instruction on Installation</a>
 
@@ -51,6 +51,8 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pr
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:epeetz@gmail.com">Elton Fernandes Peetz Prado</a>)
 * Bulgarian (bg_BG) (thanks to <a href="mailto:me@ygeorgiev.com">Yasen Georgiev</a>)
 * Chinese Traditional (zh_TW) (thanks to <a href="mailto:nick20080808@gmail.com">Nick Lai</a>)
+* Farsi/Persian (fa_IR) (thanks to <a href="mailto:nasiri.amirreza.96@gmail.com">Amirreza Nasiri</a>, www.bytegate.ir)
+* French (fr_FR) (thanks to <a href="mailto:lefinnois@lefinnois.net">Denis Bodorr</a>)
 * German (de_DE) (thanks to <a href="mailto:fred.zimmer@medienconsulting.at">Fred Zimmer</a>,www.medienconsulting.at)
 * Greek (el) (thanks to Dimitris Karantonis, www.soft4real.com/en-UK)
 * Hindi (hi) (thanks to <a href="mailto:contact@developmentlogics.com">Development Logics Solutions Pvt Ltd</a>, www.developmentlogics.com)
@@ -93,7 +95,7 @@ On the next screen you will see your public and private keys.
 You should go to the Settings page and select the roles, for which you want to hide Google Captcha.
 Then you must click 'Save Changes' button.
 
-= How to chage Google Captcha (reCAPTCHA) style? =
+= How to change Google Captcha (reCAPTCHA) style? =
 
 You should go to the Settings page and select Theme from dropdown list.
 Then you must click the 'Save Changes' button.
@@ -144,7 +146,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
+4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instruction on System Status</a>
 
 == Screenshots ==
 
@@ -158,6 +160,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 8. The form with Google Captcha (reCAPTCHA) dark theme.
 
 == Changelog ==
+
+= V1.21 - 10.12.2015 =
+* NEW : A button for Google Captcha (reCAPTCHA) shortcode inserting to the content was added.
+* NEW : The Farsi/Persian language file was added.
+* NEW : The French language file was added.
 
 = V1.20 - 02.10.2015 =
 * Update : Textdomain was changed.
@@ -253,6 +260,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.21 =
+A button for Google Captcha (reCAPTCHA) shortcode inserting to the content was added. The Farsi/Persian language file was added. The French language file was added.
 
 = V1.20 =
 Textdomain was changed.

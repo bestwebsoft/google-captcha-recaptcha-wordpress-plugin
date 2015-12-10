@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bestwebsoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-02 13:02+0300\n"
-"PO-Revision-Date: 2015-10-02 13:09+0300\n"
+"POT-Creation-Date: 2015-10-09 16:33+0300\n"
+"PO-Revision-Date: 2015-10-09 17:02+0300\n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <http://support.bestwebsoft.com>\n"
 "Language: ru_RU\n"
@@ -176,7 +176,7 @@ msgid "(your username is the email you specify when purchasing the product)."
 msgstr "(ваше имя пользователя - это электронный адрес, указанный при покупке продукта)."
 
 #: bws_functions.php:375
-#: bws_functions.php:678
+#: bws_functions.php:659
 msgid "or"
 msgstr "или"
 
@@ -311,85 +311,117 @@ msgstr "истекает"
 msgid "and you won't be granted TOP-PRIORITY SUPPORT or UPDATES."
 msgstr "и вы не будете получать приоритетную тех.поддержку или обновления."
 
-#: bws_functions.php:674
+#: bws_functions.php:655
 msgid "Thank you for installing"
 msgstr "Спасибо за установку"
 
-#: bws_functions.php:675
+#: bws_functions.php:656
 msgid "Let's get started"
 msgstr "Давайте начнем"
 
-#: bws_functions.php:676
+#: bws_functions.php:657
 msgid "Configure Settings"
 msgstr "Настройка параметров"
 
-#: bws_functions.php:679
+#: bws_functions.php:660
 msgid "Add New"
 msgstr "Добавить"
 
-#: bws_functions.php:683
+#: bws_functions.php:664
 msgid "Close notice"
 msgstr "Закрыть"
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "Notice"
 msgstr "Внимание"
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "The plugin's settings have been changed."
 msgstr "Настройки плагина были изменены"
 
-#: bws_functions.php:697
+#: bws_functions.php:678
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: bws_functions.php:712
+#: bws_functions.php:693
 msgid "You can always look at premium options by clicking on the \"Show Pro features\" in the \"Go PRO\" tab"
 msgstr "Вы всегда можете просмотреть премиум опции нажав на кнопку \"Показать Pro опции\" на вкладке \"Перейти на PRO\""
 
-#: bws_functions.php:769
+#: bws_functions.php:773
 msgid "Add BWS Plugins Shortcode"
 msgstr "Добавить шорткод BWS Плагина"
 
-#: bws_functions.php:813
+#: bws_functions.php:793
+msgid "Add shortcode"
+msgstr "Добавить шорткод"
+
+#: bws_functions.php:793
+msgid "Add BestWebSoft plugins' shortcodes using this button."
+msgstr "Добавьте шорткоды BestWebSoft плагинов с помощью этой кнопки."
+
+#: bws_functions.php:833
 msgid "Close"
 msgstr "Закрыть"
 
-#: bws_functions.php:904
+#: bws_functions.php:926
 msgid "Restore all plugin settings to defaults"
 msgstr "Восстановить все настройки плагина к настройкам по умолчанию"
 
-#: bws_functions.php:906
+#: bws_functions.php:928
 msgid "Restore settings"
 msgstr "Восстановить настройки"
 
-#: bws_functions.php:917
+#: bws_functions.php:939
 msgid "Are you sure you want to restore all settings by default?"
 msgstr "Вы уверены что хотите восстановить все настройки плагина к настройкам по умолчанию?"
 
-#: bws_functions.php:920
+#: bws_functions.php:942
 msgid "Yes, restore all settings"
 msgstr "Да, восстановить все настройки"
 
-#: bws_functions.php:921
+#: bws_functions.php:943
 msgid "No, go back to the settings page"
 msgstr "Нет, вернуться на страницу настроек"
 
-#: bws_functions.php:965
+#: bws_functions.php:987
 msgid "Plugin"
 msgstr "Плагин"
 
-#: bws_functions.php:974
+#: bws_functions.php:996
 msgid "Shortcode settings"
 msgstr "Настройки шорткода"
 
-#: bws_functions.php:979
+#: bws_functions.php:1001
 msgid "The shortcode will be inserted"
 msgstr "Будет вставлен шорткод"
 
-#: bws_functions.php:984
+#: bws_functions.php:1006
 msgid "Insert"
 msgstr "Вставить"
+
+#: bws_functions.php:1037
+msgid "Visit Help Center"
+msgstr "Перейти в Help Center"
+
+#: bws_functions.php:1042
+msgid "FAQ"
+msgstr "FAQ"
+
+#: bws_functions.php:1048
+msgid "For more information:"
+msgstr "Для дополнительной информации:"
+
+#: bws_functions.php:1049
+msgid "Documentation"
+msgstr "Документация"
+
+#: bws_functions.php:1050
+msgid "Video Instructions"
+msgstr "Видео инструкции"
+
+#: bws_functions.php:1051
+msgid "Submit a Request"
+msgstr "Отправить запрос"
 
 #: bws_menu.php:506
 msgid "Not set"

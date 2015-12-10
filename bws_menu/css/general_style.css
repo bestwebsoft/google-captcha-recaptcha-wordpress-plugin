@@ -255,6 +255,14 @@ div.bws_banner_on_plugin_page .icon {
     margin: 8px;
     cursor: pointer;
 }
+.rtl .bws_banner_on_plugin_page .close_icon {
+    float: left;
+}
+.rtl div.bws_banner_on_plugin_page .icon,
+.rtl div.bws_banner_on_plugin_page .button,
+.rtl .bws_banner_on_plugin_page .text {
+    float: right;
+}
 /* #### Mobile Phones Portrait or Landscape #### */
 @media screen and (max-device-width: 768px) {
     .bws_banner_on_plugin_page .text,
@@ -288,7 +296,9 @@ span.bws_code {
     position: relative;
     margin: 3px 5px;
     width: 28px;
-    display: inline-block;
+    display: inline-block;    
+}
+.bws_help_box:not(.dashicons) {
     vertical-align: middle;
 }
 .bws_help_box.dashicons-editor-help {
@@ -382,8 +392,6 @@ span.bws_code {
 .rtl .bws_hidden_help_text:before {
     margin-right: -2px;
 }
-
-
 /* bws shortcode insert */
 #bws_shortcode_content,
 #bws_shortcode_select_plugin {

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bestwebsoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-02 13:05+0300\n"
-"PO-Revision-Date: 2015-10-02 13:08+0300\n"
+"POT-Creation-Date: 2015-10-09 17:02+0300\n"
+"PO-Revision-Date: 2015-10-09 17:02+0300\n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <http://support.bestwebsoft.com>\n"
 "Language: ru_RU\n"
@@ -176,7 +176,7 @@ msgid "(your username is the email you specify when purchasing the product)."
 msgstr "(ваше ім'я - це емейл, який ви вказували при купівлі плагіну)"
 
 #: bws_functions.php:375
-#: bws_functions.php:678
+#: bws_functions.php:659
 msgid "or"
 msgstr "або"
 
@@ -311,85 +311,117 @@ msgstr "витікає"
 msgid "and you won't be granted TOP-PRIORITY SUPPORT or UPDATES."
 msgstr "та ви більше не будете отримувати першочергову технічну підтримку та оновлення."
 
-#: bws_functions.php:674
+#: bws_functions.php:655
 msgid "Thank you for installing"
 msgstr "Дякуємо, що встановили"
 
-#: bws_functions.php:675
+#: bws_functions.php:656
 msgid "Let's get started"
 msgstr "Розпочнемо"
 
-#: bws_functions.php:676
+#: bws_functions.php:657
 msgid "Configure Settings"
 msgstr "Налаштувати плагін"
 
-#: bws_functions.php:679
+#: bws_functions.php:660
 msgid "Add New"
 msgstr "Додати"
 
-#: bws_functions.php:683
+#: bws_functions.php:664
 msgid "Close notice"
 msgstr "Закрити"
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "Notice"
 msgstr "Зауважте"
 
-#: bws_functions.php:696
+#: bws_functions.php:677
 msgid "The plugin's settings have been changed."
 msgstr "Налаштування плагіну змінено."
 
-#: bws_functions.php:697
+#: bws_functions.php:678
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: bws_functions.php:712
+#: bws_functions.php:693
 msgid "You can always look at premium options by clicking on the \"Show Pro features\" in the \"Go PRO\" tab"
 msgstr "Ви завжди можете подивитися на преміум опції, натиснувши на кнопку \"Показати Pro особливост\" на вкладці \"Перейти на PRO\""
 
-#: bws_functions.php:769
+#: bws_functions.php:773
 msgid "Add BWS Plugins Shortcode"
 msgstr "Додати BWS шорткод"
 
-#: bws_functions.php:813
+#: bws_functions.php:793
+msgid "Add shortcode"
+msgstr "Додати шорткод"
+
+#: bws_functions.php:793
+msgid "Add BestWebSoft plugins' shortcodes using this button."
+msgstr "Додайте шорткоди BestWebSoft плагінів за допомогою цієї кнопки."
+
+#: bws_functions.php:833
 msgid "Close"
 msgstr "Закрити"
 
-#: bws_functions.php:904
+#: bws_functions.php:926
 msgid "Restore all plugin settings to defaults"
 msgstr "Скинути налаштування плагіну до стандартних"
 
-#: bws_functions.php:906
+#: bws_functions.php:928
 msgid "Restore settings"
 msgstr "Скинути налаштування"
 
-#: bws_functions.php:917
+#: bws_functions.php:939
 msgid "Are you sure you want to restore all settings by default?"
 msgstr "Ви впевнені, що хочете скинути налаштування плагіну до стандартних?"
 
-#: bws_functions.php:920
+#: bws_functions.php:942
 msgid "Yes, restore all settings"
 msgstr "Так, скинути налаштування"
 
-#: bws_functions.php:921
+#: bws_functions.php:943
 msgid "No, go back to the settings page"
 msgstr "Ні, повернутись назад на сторінку налаштувань"
 
-#: bws_functions.php:965
+#: bws_functions.php:987
 msgid "Plugin"
 msgstr "Плагін"
 
-#: bws_functions.php:974
+#: bws_functions.php:996
 msgid "Shortcode settings"
 msgstr "Налаштування шорткоду"
 
-#: bws_functions.php:979
+#: bws_functions.php:1001
 msgid "The shortcode will be inserted"
 msgstr "Буде вставлено шорткод"
 
-#: bws_functions.php:984
+#: bws_functions.php:1006
 msgid "Insert"
 msgstr "Вставити"
+
+#: bws_functions.php:1037
+msgid "Visit Help Center"
+msgstr "Перейти в Help Center"
+
+#: bws_functions.php:1042
+msgid "FAQ"
+msgstr "FAQ"
+
+#: bws_functions.php:1048
+msgid "For more information:"
+msgstr "Для отримання додаткової інформації:"
+
+#: bws_functions.php:1049
+msgid "Documentation"
+msgstr "Документація"
+
+#: bws_functions.php:1050
+msgid "Video Instructions"
+msgstr "Відео інструкції"
+
+#: bws_functions.php:1051
+msgid "Submit a Request"
+msgstr "Надіслати запит"
 
 #: bws_menu.php:506
 msgid "Not set"
@@ -763,9 +795,6 @@ msgstr "Відправити на електронну адресу &#187;"
 
 #~ msgid "Captcha"
 #~ msgstr "КАПЧА"
-
-#~ msgid "FAQ"
-#~ msgstr "FAQ"
 
 #~ msgid "Support"
 #~ msgstr "Поддержка"

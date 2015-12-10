@@ -2,33 +2,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 10:01+0300\n"
-"PO-Revision-Date: 2015-12-10 10:01+0300\n"
+"POT-Creation-Date: 2015-12-10 10:02+0300\n"
+"PO-Revision-Date: \n"
 "Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language-Team: SAID MOULLA <mor0cc0@live.com >\n"
-"Language: uk\n"
+"Language-Team: Denis Bodorr <lefinnois@lefinnois.net>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
-"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Loco-Source-Locale: fr_FR\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Loco-Parser: loco_parse_po\n"
-"X-Loco-Target-Locale: uk_UA\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: google-captcha.php:34 google-captcha.php:362
 msgid "Google Captcha Settings"
-msgstr "إعدادات Google Captcha"
+msgstr "Configuration Google Captcha"
 
 #: google-captcha.php:166
 #, fuzzy
 msgid "Error: You have entered an incorrect reCAPTCHA value."
-msgstr "خطأ: لقد أدخلت قيمة كابتشا بشكل خاطئ."
+msgstr "ERREUR: Vous avez saisi une valeur de CAPTCHA incorrecte"
 
 #: google-captcha.php:270
 msgid "Normal"
@@ -40,56 +36,58 @@ msgstr ""
 
 #: google-captcha.php:277
 msgid "Site key"
-msgstr "مفتاح الموقع"
+msgstr "Clé du site"
 
 #: google-captcha.php:282
 msgid "Secret Key"
-msgstr "المفتاح السري"
+msgstr "Clé secrète"
 
 #: google-captcha.php:290
 msgid "Login form"
-msgstr "فورم تسجيل الدخول"
+msgstr "Formulaire de connexion"
 
 #: google-captcha.php:291
 msgid "Registration form"
-msgstr "فورم التسجيل"
+msgstr "Formulaire d'enregistrement"
 
 #: google-captcha.php:292
 msgid "Reset password form"
-msgstr "فورم إعادة تعيين كلمة السر"
+msgstr "Formulaire de réinitialisation de mot de passe"
 
 #: google-captcha.php:293
 msgid "Comments form"
-msgstr "فورم التعليقات"
+msgstr "Formulaire de commentaire"
 
 #: google-captcha.php:312
 msgid "Enter site key"
-msgstr "أدخل مفتاح الموقع"
+msgstr "Saisissez la clé du site"
 
 #: google-captcha.php:313 google-captcha.php:319
 msgid "WARNING: The captcha will not display while you don't fill key fields."
-msgstr "تحذير: الكابتشا لن تعمل في حالة عدم إدخال المفاتيح."
+msgstr ""
+"ATTENTION: Le captcha ne s'affichera pas tant que vous n'avez pas spécifié "
+"les clés"
 
 #: google-captcha.php:318
 msgid "Enter secret key"
-msgstr "أدخل المفتاح السري"
+msgstr "Saisissez la clé secrète"
 
 #: google-captcha.php:341
 msgid "Settings saved"
-msgstr "تم حفظ الإعدادات"
+msgstr "Configuration enregistrée"
 
 #: google-captcha.php:347
 #, fuzzy
 msgid "All plugin settings were restored."
-msgstr "صفحة إعدادات الإضافة"
+msgstr "Tous les paramètre sont restaurés"
 
 #: google-captcha.php:364 google-captcha.php:948 google-captcha.php:981
 msgid "Settings"
-msgstr "إعدادات"
+msgstr "Configuration"
 
 #: google-captcha.php:365
 msgid "Go PRO"
-msgstr ""
+msgstr "Version PRO"
 
 #: google-captcha.php:370
 #, fuzzy
@@ -97,8 +95,9 @@ msgid ""
 "Google Captcha version 2 will not work correctly, since the option "
 "\"allow_url_fopen\" is disabled. Please contact your hosting support service."
 msgstr ""
-"النسخة الثانية من Google Captcha لن تعمل بشكل جيد، في حالة تم تعطيل الدالة "
-"\"allow_url_fopen\" في PHP الإستضافة."
+"Google Captcha version 2 ne fonctionnera pas correctement, car l'option "
+"\"allow_url_fopen\" est désactivée dans la configuration PHP de votre "
+"hébergement"
 
 #: google-captcha.php:375
 msgid ""
@@ -112,8 +111,8 @@ msgid ""
 "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
 "please use %s button"
 msgstr ""
-"إذا كنت ترغب في إضافة Google Captcha إلى الفورم، فقط قم بنسخ ولصق هذا الكود "
-"في المقال أو الصفحة."
+"Si vous voulez ajouter Google Captcha à vos propres formulaires, copiez/"
+"collez simplement ce code:"
 
 #: google-captcha.php:396
 #, php-format
@@ -126,24 +125,28 @@ msgstr ""
 
 #: google-captcha.php:404
 msgid "Authentication"
-msgstr "المصادقة"
+msgstr "Authentification"
 
 #: google-captcha.php:405
 #, fuzzy, php-format
 msgid "Before you are able to do something, you must to register %shere%s"
-msgstr "قبل التفكير في عمل أي شيء، لابد من التسجيل %s من هنا %s"
+msgstr ""
+"Avant de pouvoir faire quoi que ce soit, vous devez vous enregistrer %s ici "
+"%s"
 
 #: google-captcha.php:406
 msgid "Enter site key and secret key, that you get after registration."
-msgstr "أدخل مفتاح الموقع والمفتاح السري، الذي حصلت عليه بعد التسجيل."
+msgstr ""
+"Saisissez la clé du site et la clé secrète que vous avez obtenues après "
+"enregistrement"
 
 #: google-captcha.php:418
 msgid "Options"
-msgstr "خيارات"
+msgstr "Options"
 
 #: google-captcha.php:421
 msgid "Enable reCAPTCHA for"
-msgstr ""
+msgstr "Activer reCAPTCHA pour"
 
 #: google-captcha.php:425
 msgid "WordPress default"
@@ -154,17 +157,19 @@ msgid "This option is available only for network or for main blog"
 msgstr ""
 
 #: google-captcha.php:442
+#, fuzzy
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins Seite"
 
 #: google-captcha.php:450 google-captcha.php:455
-#, php-format
+#, fuzzy, php-format
 msgid "You should %s to use this functionality"
-msgstr ""
+msgstr "pour utiliser cette fonctionnalité"
 
 #: google-captcha.php:451
+#, fuzzy
 msgid "activate"
-msgstr ""
+msgstr "activer"
 
 #: google-captcha.php:451
 msgid "for network"
@@ -172,19 +177,19 @@ msgstr ""
 
 #: google-captcha.php:456
 msgid "download"
-msgstr ""
+msgstr "télécharger"
 
 #: google-captcha.php:468 google-captcha.php:545
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: google-captcha.php:480 google-captcha.php:581
 msgid "Unlock premium options by upgrading to Pro version"
-msgstr ""
+msgstr "Débloquez les options premium en mettant à jour vers la version Pro"
 
 #: google-captcha.php:483 google-captcha.php:584
 msgid "Learn More"
-msgstr ""
+msgstr "En savoir plus"
 
 #: google-captcha.php:489
 #, php-format
@@ -194,79 +199,73 @@ msgstr ""
 
 #: google-captcha.php:489 google-captcha.php:982
 msgid "FAQ"
-msgstr "أسئلة شائعة"
+msgstr "FAQ"
 
 #: google-captcha.php:494
-#, fuzzy
 msgid "Hide reCAPTCHA in Comments form for"
-msgstr "لنسخة reCAPTCHA"
+msgstr "Cacher reCAPTCHA dans le formulaire de commentaires pour"
 
 #: google-captcha.php:506
-#, fuzzy
 msgid "reCAPTCHA version"
-msgstr "نسخة reCAPTCHA:"
+msgstr "Version reCAPTCHA"
 
 #: google-captcha.php:509 google-captcha.php:510 google-captcha.php:511
 #: google-captcha.php:512
 msgid "version"
-msgstr "النسخة"
+msgstr "Version"
 
 #: google-captcha.php:518 google-captcha.php:531
-#, fuzzy
 msgid "reCAPTCHA theme"
-msgstr "نسخة reCAPTCHA:"
+msgstr "Thème reCAPTCHA"
 
 #: google-captcha.php:519 google-captcha.php:532 google-captcha.php:563
-#, fuzzy
 msgid "for version"
-msgstr "النسخة"
+msgstr "pour la version"
 
 #: google-captcha.php:549
-#, fuzzy
 msgid "reCAPTCHA language"
-msgstr "نسخة reCAPTCHA:"
+msgstr "Langue reCAPTCHA"
 
 #: google-captcha.php:556
 msgid "Use the current site language"
-msgstr ""
+msgstr "Utiliser le langage courant du site"
 
 #: google-captcha.php:556
 msgid "Using"
-msgstr ""
+msgstr "Utilisant"
 
 #: google-captcha.php:562
-#, fuzzy
 msgid "reCAPTCHA size"
-msgstr "نسخة reCAPTCHA:"
+msgstr "Taille ReCAPTCHA"
 
 #: google-captcha.php:591
 msgid "Save Changes"
-msgstr "حفظ التغييرات"
+msgstr "Enregistrer les modifications"
 
 #: google-captcha.php:650 google-captcha.php:998
 msgid "To use Google Captcha you must get the keys from"
-msgstr "لتفعيل Google Captcha لابد من الحصول على المفاتيح من"
+msgstr "Pour utiliser Google Captcha vous devez obtenir les clés depuis"
 
 #: google-captcha.php:651 google-captcha.php:999
 msgid "here"
-msgstr "هنا"
+msgstr "ici"
 
 #: google-captcha.php:652 google-captcha.php:1000
 msgid "and enter them on the"
-msgstr "ثم أدخلهم في"
+msgstr "et les saisir sur la"
 
 #: google-captcha.php:654 google-captcha.php:1002
 msgid "plugin setting page"
-msgstr "صفحة إعدادات الإضافة"
+msgstr "page de configuration de l'extension"
 
 #: google-captcha.php:822 google-captcha.php:851
 msgid "Error"
-msgstr "خطأ"
+msgstr "Erreur"
 
 #: google-captcha.php:822 google-captcha.php:881
 #, fuzzy
 msgid "You have entered an incorrect reCAPTCHA value."
-msgstr "لقد أدخلت قيمة كابتشا بشكل خاطئ"
+msgstr "Vous avez saisi une valeur de CAPTCHA incorrecte"
 
 #: google-captcha.php:851
 #, fuzzy
@@ -274,50 +273,106 @@ msgid ""
 "You have entered an incorrect reCAPTCHA value. Click the BACK button on your "
 "browser, and try again."
 msgstr ""
-"خطأ: لقد أدخلت قيمة كابتشا بشكل خاطئ. اضغط زر الرجوع في المتصفح وحاول مجددا."
+"Erreur: Vous avez saisi une valeur de CAPTCHA incorrecte. Cliquez sur le "
+"bouton \"Revenir en arrière\" de votre navigateur et essayez à nouveau"
 
 #: google-captcha.php:983
 msgid "Support"
-msgstr "الدعم الفني"
+msgstr "Support"
 
 #~ msgid ""
 #~ "Google Captcha version 2 will not work correctly, since the option "
 #~ "\"allow_url_fopen\" is disabled in the PHP settings of your hosting."
 #~ msgstr ""
-#~ "النسخة الثانية من Google Captcha لن تعمل بشكل جيد، في حالة تم تعطيل "
-#~ "الدالة \"allow_url_fopen\" في PHP الإستضافة."
+#~ "Google Captcha version 2 ne fonctionnera pas correctement, car l'option "
+#~ "\"allow_url_fopen\" est désactivée dans la configuration PHP de votre "
+#~ "hébergement"
 
 #~ msgid "Read more."
-#~ msgstr "إقرأ المزيد"
+#~ msgstr "Lire plus"
 
 #~ msgid "powered by"
-#~ msgstr "مدعوم من"
+#~ msgstr "par"
+
+#~ msgid "Activate"
+#~ msgstr "Activer"
+
+#~ msgid "Download"
+#~ msgstr "Télécharger"
+
+#~ msgid "Enable CAPTCHA"
+#~ msgstr "Activer CAPTCHA"
+
+#~ msgid "You should"
+#~ msgstr "Vous devez"
 
 #~ msgid "Notice:"
-#~ msgstr "ملاحظة :"
+#~ msgstr "Hinweis:"
 
 #~ msgid ""
 #~ "The plugin's settings have been changed. In order to save them please "
 #~ "don't forget to click the 'Save Changes' button."
-#~ msgstr "تم حفظ إعدادات الإضافة بنجاح."
+#~ msgstr ""
+#~ "Das Plugin-Einstellungen wurden geändert. Vergessen Sie nicht auf die "
+#~ "Schaltfläche 'Änderungen speichern' zu klicken."
 
 #~ msgid "Contact form"
-#~ msgstr "فورم الإتصال"
+#~ msgstr "Kontaktformular"
 
 #~ msgid "Activate contact form"
-#~ msgstr "تفعيل فورم الإتصال"
+#~ msgstr "Kontaktformular aktivieren"
 
 #~ msgid "Download contact form"
-#~ msgstr "تحميل فورم الإتصال"
+#~ msgstr "Kontaktformular herunterladen"
 
 #~ msgid "Enable Google Captcha for:"
-#~ msgstr "تفعيل Google Captcha في كل من :"
+#~ msgstr "Aktivieren Sie Google Captcha für:"
 
 #~ msgid "Hide captcha for:"
-#~ msgstr "تعطيل Google Captcha ل :"
+#~ msgstr "CAPTCHA verbergen bei:"
 
 #~ msgid "Theme:"
-#~ msgstr "الإستايل :"
+#~ msgstr "Theme:"
 
 #~ msgid "Google Captcha"
 #~ msgstr "Google Captcha"
+
+#~ msgid "requires"
+#~ msgstr "erfordert"
+
+#~ msgid ""
+#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
+#~ "and try again."
+#~ msgstr ""
+#~ "oder höher, deshalb ist es deaktiviert! Bitte aktualisieren Sie WordPress "
+#~ "und versuchen Sie es erneut."
+
+#~ msgid "Back to the WordPress"
+#~ msgstr "Zurück zu Wordpress"
+
+#~ msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+#~ msgstr ""
+#~ "Bewerten Sie das Plugin mit 5 Sternen auf WordPress, wenn Sie es mögen."
+
+#~ msgid "Rate the plugin"
+#~ msgstr "Plugin bewerten"
+
+#~ msgid "If there is something wrong about it, please contact us"
+#~ msgstr "Wenn etwas nicht passt, kontieren Sie uns bitte"
+
+#~ msgid "Public Key"
+#~ msgstr "Öffentlicher Schlüssel"
+
+#~ msgid "Private Key"
+#~ msgstr "Privater Schlüssel"
+
+#~ msgid "Enter public key"
+#~ msgstr "Öffentlichen Schlüssel eingeben"
+
+#~ msgid "Themes"
+#~ msgstr "Themes"
+
+#~ msgid "WARNING: The captcha will not display while you not fill key fields."
+#~ msgstr ""
+#~ "Warnung: es werden keine CAPTCHA Felder angezeigt, solange die Schlüssel "
+#~ "nicht eingegeben sind."
