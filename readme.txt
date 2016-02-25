@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: anti, anti-spam, antispam, antispam security, anti-spam security, antispambot, arithmetic actions, block spam, bot, bots, best google captcha, best recaptcha, best google recaptcha, best wordpress captcha, recaptcha, capcha, captha, catcha, captcha theme, captcha bank, captcha, captcha plugin, recaptcha plugin, captcha protection, recaptcha protection, comment captcha, comment, comments, cpatcha, digitize books, digitize newspapers, digitize radio shows, e-mail, email, email address, filter, form, forms, form captcha, forgot password captcha, free, gogle, google, google captcha, google recaptcha, login, lost password, login captcha, login recaptcha, mail, match captcha, plugin, protect, protection, popular captcha, popular recaptcha, protection shield, re captcha, re-captcha, register, registration, registration spam, robot, robots, register captcha, rest password captcha, registration captcha security, spam, secure, security, signup, signup spam, spam blocker, spam comments, spam filter, spambot, shield, simple captcha, simple recaptcha, spam control, spam protection, text captcha, user, user registration spam, users, web form protection, wordpress google captcha, wp google recapthca, wp recaptcha, wordpress protection, wordpress security loss password captcha, register captcha, wp captcha
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 1.21
+Tested up to: 4.4.2
+Stable tag: 1.22
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,8 +12,7 @@ This plugin allows you to implement Google Captcha (reCAPTCHA) into web forms.
 
 == Description ==
 
-Google Captcha (reCAPTCHA) plugin allows you to implement a super security Captcha into web forms. Google Captcha (reCAPTCHA) is a free CAPTCHA service that helps to digitize books, newspapers older radio shows.
-This plugin can be used for login, registration, password recovery, comments forms.
+Google Captcha (reCAPTCHA) plugin allows you to implement a super security Captcha into web forms. This plugin can be used for login, registration, password recovery, comments forms.
 
 http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 
@@ -27,7 +26,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 
 = Copyrights for resources used in this plugin =
 
-1. In Google Captcha (reCAPTCHA) plugin we used "lib/recaptchalib.php" and "lib_v2/recaptchalib.php" file. The Licence for this file is in "lib/license.txt" and "lib_v2/license.txt" file.
+1. In Google Captcha (reCAPTCHA) plugin we used "lib/recaptchalib.php" file. The Licence for this file is in "lib/license.txt" file.
 2. Everything else used in this plugin has been created by Bestwebsoft team and is distributed under GPL license.
 
 = Features =
@@ -36,7 +35,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 * Compatible with Contact Form by BestWebSoft.
 * Hide Google Captcha (reCAPTCHA) for certain user roles.
 * Supports version 1 and version 2 Google Captcha (reCAPTCHA).
-* Supports standart Google Captcha (reCAPTCHA) themes.
+* Supports standard Google Captcha (reCAPTCHA) themes.
 
 = Recommended Plugins =
 
@@ -50,6 +49,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pr
 * Arabic (ar) (thanks to <a href="mailto:mor0cc0@live.com">SAID MOULLA</a>, www.aljoulane.ma)
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:epeetz@gmail.com">Elton Fernandes Peetz Prado</a>)
 * Bulgarian (bg_BG) (thanks to <a href="mailto:me@ygeorgiev.com">Yasen Georgiev</a>)
+* Czech (cs_CZ) (thanks to <a href="mailto:info@pamadessoft.cz">PaMaDeSSoft</a>, www.pamadessoft.cz)
 * Chinese Traditional (zh_TW) (thanks to <a href="mailto:nick20080808@gmail.com">Nick Lai</a>)
 * Farsi/Persian (fa_IR) (thanks to <a href="mailto:nasiri.amirreza.96@gmail.com">Amirreza Nasiri</a>, www.bytegate.ir)
 * French (fr_FR) (thanks to <a href="mailto:lefinnois@lefinnois.net">Denis Bodorr</a>)
@@ -69,7 +69,7 @@ If you would like to create your own language pack or update the existing one, y
 Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in another languages won't be accepted.
 
 If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
-Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
+Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then.
 We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
 
 == Installation ==
@@ -100,22 +100,6 @@ Then you must click 'Save Changes' button.
 You should go to the Settings page and select Theme from dropdown list.
 Then you must click the 'Save Changes' button.
 
-= Missing Google Captcha (reCAPTCHA) on the comment form? = 
-
-You might have a theme where comments.php is not coded properly. 
-
-Wopdpress version matters. 
-
-(WP2 series) Your theme must have a tag `<?php do_action('comment_form', $post->ID); ?>` inside the file `/wp-content/themes/[your_theme]/comments.php`. 
-Most WP2 themes already have it. The best place to put this tag is before the comment textarea, you can move it up if it is below the comment textarea.
-
-(WP3 series) WP3 has a new function comment_form inside of `/wp-includes/comment-template.php`. 
-Your theme is probably not up-to-date to call that function from comments.php.
-WP3 theme does not need the code line `do_action('comment_form'`... inside of `/wp-content/themes/[your_theme]/comments.php`.
-Instead it uses a new function call inside of comments.php: `<?php comment_form(); ?>`
-If you have WP3 and captcha is still missing, make sure your theme has `<?php comment_form(); ?>`
-inside of `/wp-content/themes/[your_theme]/comments.php` (please check the Twenty Ten theme's comments.php for proper example)
-
 = How can I change the location of Google Captcha (reCAPTCHA) in the comments form? =
 
 It depends on the comments form. If the hook call by means of which captcha works ('after_comment_field' or something like this) is present in the file comments.php, you can change captcha positioning by moving this hook call. Please find the file 'comments.php' in the theme and change position of the line
@@ -131,7 +115,7 @@ In case there is no such hook in the comments file of your theme, then, unfortun
 1. Install the Google Captcha (reCAPTCHA) plugin and activate it.
 2. Open the file with the form (where you would like to add Google Captcha (reCAPTCHA) to).
 3. Find a place to insert the code for the Google Captcha (reCAPTCHA) output.
-4. Insert the necessary lines: 
+4. Insert the necessary lines:
 
 `if( function_exists( 'gglcptch_display' ) ) { echo gglcptch_display(); } ;`
 
@@ -160,6 +144,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 8. The form with Google Captcha (reCAPTCHA) dark theme.
 
 == Changelog ==
+
+= V1.22 - 25.02.2016 =
+* NEW : The Czech language file has been added.
+* UPDATE : Functionality of plugin`s scripts adding has been changed so that they will be added only on pages where the CAPTCHA will be displayed.
+* Bugfix : The bug with displaying several reCAPTCHA`s blocks on the same page in different forms has been fixed.
+* Bugfix : The bug with definition of JS function on() has been fixed.
 
 = V1.21 - 10.12.2015 =
 * NEW : A button for Google Captcha (reCAPTCHA) shortcode inserting to the content was added.
@@ -260,6 +250,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.22 =
+The Czech language file has been added. Functionality of plugin`s scripts adding has been changed so that they will be added only on pages where the CAPTCHA will be displayed. The bug with displaying several reCAPTCHA`s blocks on the same page in different forms has been fixed. The bug with definition of JS function on() has been fixed.
 
 = V1.21 =
 A button for Google Captcha (reCAPTCHA) shortcode inserting to the content was added. The Farsi/Persian language file was added. The French language file was added.

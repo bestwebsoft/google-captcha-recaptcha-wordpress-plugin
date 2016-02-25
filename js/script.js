@@ -2,13 +2,80 @@
 	gglcptch = gglcptch || {};
 
 	gglcptch.prepare = function() {
+		/*
+		 * display reCaptcha for plugin`s block
+		 */
 		$( '.gglcptch_v1, .gglcptch_v2' ).each( function() {
 			var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' );
-			gglcptch.display( container );
+			if ( $( this ).is( ':visible' ) )
+				gglcptch.display( container );
 		});
+
+		/*
+		 * display reCaptcha for others blocks
+		 * this part is neccessary because
+		 * we have disabled the connection to Google reCaptcha API from other plugins
+		 * via plugin`s php-functionality
+		 */
+		if ( gglcptch.options.version == 'v2' ) {
+			$( '.g-recaptcha' ).each( function() {
+				/* reCAPTCHA will be generated into the empty block only */
+				if ( $( this ).html() === '' && $( this ).text() === '' ) {
+
+					/* get element`s ID */
+					var container = $( this ).attr( 'id' );
+
+					if ( typeof container == 'undefined' ) {
+						container = get_id();
+						$( this ).attr( 'id', container );
+					}
+
+					/* get reCapatcha parameters */
+					var sitekey  = $( this ).attr( 'data-sitekey' ),
+						theme    = $( this ).attr( 'data-theme' ),
+						lang     = $( this ).attr( 'data-lang' ),
+						size     = $( this ).attr( 'data-size' ),
+						type     = $( this ).attr( 'data-type' ),
+						tabindex = $( this ).attr( 'data-tabindex' ),
+						callback = $( this ).attr( 'data-callback' ),
+						ex_call  = $( this ).attr( 'data-expired-callback' ),
+						stoken   = $( this ).attr( 'data-stoken' ),
+						params   = [];
+
+					params['sitekey'] = sitekey ? sitekey : gglcptch.options.sitekey;
+					if ( !! theme )
+						params['theme'] = theme;
+					if ( !! lang )
+						params['lang'] = lang;
+					if ( !! size )
+						params['size'] = size;
+					if ( !! type )
+						params['type'] = type;
+					if ( !! tabindex )
+						params['tabindex'] = tabindex;
+					if ( !! callback )
+						params['callback'] = callback;
+					if ( !! ex_call )
+						params['expired-callback'] = ex_call;
+					if ( !! stoken )
+						params['stoken'] = stoken;
+
+					gglcptch.display( container, false, params );
+				}
+			});
+
+			/*
+			 * count the number of reCAPTCHA blocks in the form
+			 */
+			$( 'form' ).each( function() {
+				if ( $( this ).contents().find( 'iframe[title="recaptcha widget"]' ).length > 1 && ! $( this ).children( '.gglcptch_dublicate_error' ).length ) {
+					$( this ).prepend( '<div class="gglcptch_dublicate_error error" style="color: red;">'+ gglcptch.options.error + '</div><br />\n' );
+				}
+			});
+		}
 	};
 
-	gglcptch.display = function( container, v1_add_to_last_element ) {
+	gglcptch.display = function( container, v1_add_to_last_element, params ) {
 		if ( typeof( container ) == 'undefined' || container == '' || typeof( gglcptch.options ) == 'undefined' ) {
 			return;
 		}
@@ -21,9 +88,9 @@
 				Recaptcha.create( gglcptch.options.sitekey, container, { 'theme' : gglcptch.options.theme } );
 			}
 		}
-
 		if ( gglcptch_version == 'v2' ) {
-			var gglcptch_index = grecaptcha.render( container, { 'sitekey' : gglcptch.options.sitekey, 'theme' : gglcptch.options.theme } );
+			var parameters = params ? params : { 'sitekey' : gglcptch.options.sitekey, 'theme' : gglcptch.options.theme },
+				gglcptch_index = grecaptcha.render( container, parameters );
 			$( '#' + container ).data( 'gglcptch_index', gglcptch_index );
 		}
 	};
@@ -32,13 +99,9 @@
 
 	$( document ).ready(function() {
 
-		if ( parseFloat( $.fn.jquery ) >= 1.7 ) {
-			$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
-		} else {
-			$( '#recaptcha_widget_div #recaptcha_response_field' ).live( 'input paste change', cleanError );
-		}
+		$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
 
-		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"], #setupform' ).submit( function( e ) {
+		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"], #setupform, #cntctfrmpr_contact_form, #cntctfrm_contact_form, #commentform' ).submit( function( e ) {
 			var $form = $( this ),
 				$gglcptch = $form.find( '.gglcptch' ),
 				$captcha = $gglcptch.filter( '.gglcptch_v1' ).find( '.gglcptch_recaptcha:visible' ),
@@ -126,6 +189,14 @@
 		if ( $error.length ) {
 			$error.remove();
 		}
+	}
+
+	function get_id() {
+		var id = 'gglcptch_recaptcha_' + Math.floor( Math.random() * 1000 );
+		if ( $( '#' + id ).length )
+			id = get_id();
+		else
+			return id;
 	}
 
 })(jQuery, gglcptch);
