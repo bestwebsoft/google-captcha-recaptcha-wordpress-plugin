@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: anti, anti-spam, antispam, antispam security, anti-spam security, antispambot, arithmetic actions, block spam, bot, bots, best google captcha, best recaptcha, best google recaptcha, best wordpress captcha, recaptcha, capcha, captha, catcha, captcha theme, captcha bank, captcha, captcha plugin, recaptcha plugin, captcha protection, recaptcha protection, comment captcha, comment, comments, cpatcha, digitize books, digitize newspapers, digitize radio shows, e-mail, email, email address, filter, form, forms, form captcha, forgot password captcha, free, gogle, google, google captcha, google recaptcha, login, lost password, login captcha, login recaptcha, mail, match captcha, plugin, protect, protection, popular captcha, popular recaptcha, protection shield, re captcha, re-captcha, register, registration, registration spam, robot, robots, register captcha, rest password captcha, registration captcha security, spam, secure, security, signup, signup spam, spam blocker, spam comments, spam filter, spambot, shield, simple captcha, simple recaptcha, spam control, spam protection, text captcha, user, user registration spam, users, web form protection, wordpress google captcha, wp google recapthca, wp recaptcha, wordpress protection, wordpress security loss password captcha, register captcha, wp captcha
 Requires at least: 3.8
-Tested up to: 4.4.2
-Stable tag: 1.22
+Tested up to: 4.5
+Stable tag: 1.23
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,6 +37,8 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 * Supports version 1 and version 2 Google Captcha (reCAPTCHA).
 * Supports standard Google Captcha (reCAPTCHA) themes.
 
+If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
+
 = Recommended Plugins =
 
 The author of the Google Captcha (reCAPTCHA) also recommends the following plugins:
@@ -66,7 +68,7 @@ If you would like to create your own language pack or update the existing one, y
 
 = Technical support =
 
-Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in another languages won't be accepted.
+Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.
 
 If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
 Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then.
@@ -144,6 +146,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 8. The form with Google Captcha (reCAPTCHA) dark theme.
 
 == Changelog ==
+
+= V1.23 - 19.04.2016 =
+* NEW : Ability to test entered site key and secret key.
+* NEW : Ability to add custom styles.
 
 = V1.22 - 25.02.2016 =
 * NEW : The Czech language file has been added.
@@ -250,6 +256,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.23 =
+Ability to test entered site key and secret key. Ability to add custom styles.
 
 = V1.22 =
 The Czech language file has been added. Functionality of plugin`s scripts adding has been changed so that they will be added only on pages where the CAPTCHA will be displayed. The bug with displaying several reCAPTCHA`s blocks on the same page in different forms has been fixed. The bug with definition of JS function on() has been fixed.

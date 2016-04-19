@@ -8,3 +8,9 @@
 	max-width: 350px;
 	width: 100%;
 }
+.gglcptch_verified {
+	color: #03AA03;
+}
+.gglcptch_error_msg {
+	color: #dc3232;
+}

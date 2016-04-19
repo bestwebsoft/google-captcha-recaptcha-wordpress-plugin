@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-24 12:29+0300\n"
+"POT-Creation-Date: 2016-04-05 17:20+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -16,15 +16,15 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:33 google-captcha.php:403
+#: google-captcha.php:34 google-captcha.php:367
 msgid "Google Captcha Settings"
 msgstr "Налаштування Google Captcha"
 
-#: google-captcha.php:146
+#: google-captcha.php:154
 msgid "Warning"
 msgstr "Увага"
 
-#: google-captcha.php:146
+#: google-captcha.php:154
 msgid ""
 "It has been found more than one reCAPTCHA in current form. In this case "
 "reCAPTCHA will not work properly. Please remove all unnecessary reCAPTCHA "
@@ -34,83 +34,78 @@ msgstr ""
 "reCAPTCHA не буде працювати коректно. Будь-ласка видаліть усі зайві блоки "
 "reCAPTCHA."
 
-#: google-captcha.php:150
+#: google-captcha.php:158
 msgid "Error: You have entered an incorrect reCAPTCHA value."
 msgstr ""
 "Помилка: Ви ввели невірне значення Captcha.Помилка: Ви ввели невірне "
 "значення reCAPTCHA."
 
-#: google-captcha.php:311
+#: google-captcha.php:272
 msgid "Normal"
 msgstr "Нормальний"
 
-#: google-captcha.php:312
+#: google-captcha.php:273
 msgid "Compact"
 msgstr "Компактний"
 
-#: google-captcha.php:318
+#: google-captcha.php:279
 msgid "Site key"
 msgstr "Ключ сайту"
 
-#: google-captcha.php:323
+#: google-captcha.php:284
 msgid "Secret Key"
 msgstr "Секретний ключ"
 
-#: google-captcha.php:331
+#: google-captcha.php:292
 msgid "Login form"
 msgstr "Форма логіну"
 
-#: google-captcha.php:332
+#: google-captcha.php:293
 msgid "Registration form"
 msgstr "Форма реєстрації"
 
-#: google-captcha.php:333
+#: google-captcha.php:294
 msgid "Reset password form"
 msgstr "Форма відновлення паролю"
 
-#: google-captcha.php:334
+#: google-captcha.php:295
 msgid "Comments form"
 msgstr "Форма коментарів"
 
-#: google-captcha.php:353
+#: google-captcha.php:314
 msgid "Enter site key"
 msgstr "Введіть ключ сайту"
 
-#: google-captcha.php:354 google-captcha.php:360
+#: google-captcha.php:315 google-captcha.php:321
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr ""
 "УВАГА: Капча не буде відображатись, поки ви не заповните необхідні поля."
 
-#: google-captcha.php:359
+#: google-captcha.php:320
 msgid "Enter secret key"
 msgstr "Введіть секретний ключ"
 
-#: google-captcha.php:382
+#: google-captcha.php:346
 msgid "Settings saved"
 msgstr "Налаштування збережено"
 
-#: google-captcha.php:388
+#: google-captcha.php:352
 msgid "All plugin settings were restored."
 msgstr "Налаштування плагіна були відновлені."
 
-#: google-captcha.php:405 google-captcha.php:1023 google-captcha.php:1056
+#: google-captcha.php:369 google-captcha.php:1040 google-captcha.php:1073
 msgid "Settings"
 msgstr "Налаштування"
 
-#: google-captcha.php:406
+#: google-captcha.php:370
+msgid "Custom code"
+msgstr "Користувацький код"
+
+#: google-captcha.php:371
 msgid "Go PRO"
 msgstr "Перейти на PRO версію"
 
-#: google-captcha.php:411
-msgid ""
-"Google Captcha version 2 will not work correctly, since the option "
-"\"allow_url_fopen\" is disabled. Please contact your hosting support service."
-msgstr ""
-"Google Captcha версії 2 не працюватиме коректно, тому що відключена опція "
-"\"allow_url_fopen \". Будь ласка, зверніться в службу підтримки вашого "
-"хостингу."
-
-#: google-captcha.php:416
+#: google-captcha.php:376
 msgid ""
 "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA "
 "version 1 features."
@@ -118,7 +113,7 @@ msgstr ""
 "У зв'язку з особливостями роботи reCAPTCHA версії 1 на сторінці може "
 "відображатися тільки одна reCAPTCHA."
 
-#: google-captcha.php:431
+#: google-captcha.php:391
 #, php-format
 msgid ""
 "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
@@ -127,7 +122,7 @@ msgstr ""
 "Якщо ви хочете додати Google Captcha (reCAPTCHA) на вашу сторінку або пост, "
 "то використовуйте кнопку %s"
 
-#: google-captcha.php:437
+#: google-captcha.php:397
 #, php-format
 msgid ""
 "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking "
@@ -140,69 +135,73 @@ msgstr ""
 "кнопка не відображається або ви хочете додати Google Captcha (reCAPTCHA) в "
 "вашу власну форму, будь ласка, використовуйте шорткод %s"
 
-#: google-captcha.php:445
+#: google-captcha.php:405
 msgid "Authentication"
 msgstr "Ідентифікація"
 
-#: google-captcha.php:446
+#: google-captcha.php:406
 #, php-format
 msgid "Before you are able to do something, you must to register %shere%s"
 msgstr "Щоб виконувати якісь дії, спершу зареєструйтесь %sтут%s"
 
-#: google-captcha.php:447
+#: google-captcha.php:407
 msgid "Enter site key and secret key, that you get after registration."
 msgstr "Введіть відкритий і секретний ключі, які ви отримали після реєстрації."
 
-#: google-captcha.php:459
+#: google-captcha.php:422
+msgid "Test Keys"
+msgstr "Тестування ключів"
+
+#: google-captcha.php:425
 msgid "Options"
 msgstr "Опції"
 
-#: google-captcha.php:462
+#: google-captcha.php:428
 msgid "Enable reCAPTCHA for"
 msgstr "Включити  reCAPTCHA для"
 
-#: google-captcha.php:466
+#: google-captcha.php:432
 msgid "WordPress default"
 msgstr "Стандартних форм WordPress"
 
-#: google-captcha.php:475
+#: google-captcha.php:441
 msgid "This option is available only for network or for main blog"
 msgstr "Ця опція доступна тільки для мережі або для основного блогу"
 
-#: google-captcha.php:483
+#: google-captcha.php:449
 msgid "Plugins"
 msgstr "Плагінів"
 
-#: google-captcha.php:491 google-captcha.php:496
+#: google-captcha.php:457 google-captcha.php:462
 #, php-format
 msgid "You should %s to use this functionality"
 msgstr "Щоб використовувати цей функціонал %s"
 
-#: google-captcha.php:492
+#: google-captcha.php:458
 msgid "activate"
 msgstr "активувати"
 
-#: google-captcha.php:492
+#: google-captcha.php:458
 msgid "for network"
 msgstr "для мережі"
 
-#: google-captcha.php:497
+#: google-captcha.php:463
 msgid "download"
 msgstr "завантажити"
 
-#: google-captcha.php:509 google-captcha.php:586
+#: google-captcha.php:475 google-captcha.php:552
 msgid "Close"
 msgstr "Закрити"
 
-#: google-captcha.php:521 google-captcha.php:622
+#: google-captcha.php:487 google-captcha.php:588
 msgid "Unlock premium options by upgrading to Pro version"
 msgstr "Активуйте преміум опції оновившись до Pro версії"
 
-#: google-captcha.php:524 google-captcha.php:625
+#: google-captcha.php:490 google-captcha.php:591
 msgid "Learn More"
 msgstr "Детальніше"
 
-#: google-captcha.php:530
+#: google-captcha.php:496
 #, php-format
 msgid ""
 "If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s"
@@ -210,84 +209,84 @@ msgstr ""
 "Якщо ви хочете додати Google Captcha (reCAPTCHA) в кастомний форму, дивіться "
 "%s"
 
-#: google-captcha.php:530 google-captcha.php:1057
+#: google-captcha.php:496 google-captcha.php:1074
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-captcha.php:535
+#: google-captcha.php:501
 msgid "Hide reCAPTCHA in Comments form for"
-msgstr "Приховати reCAPTCHA у Форма коментарів для"
+msgstr "Приховати reCAPTCHA у Формі коментарів для"
 
-#: google-captcha.php:547
+#: google-captcha.php:513
 msgid "reCAPTCHA version"
 msgstr "Версія reCAPTCHA"
 
-#: google-captcha.php:550 google-captcha.php:551 google-captcha.php:552
-#: google-captcha.php:553
+#: google-captcha.php:516 google-captcha.php:517 google-captcha.php:518
+#: google-captcha.php:519
 msgid "version"
 msgstr "версія"
 
-#: google-captcha.php:559 google-captcha.php:572
+#: google-captcha.php:525 google-captcha.php:538
 msgid "reCAPTCHA theme"
 msgstr "reCAPTCHA theme"
 
-#: google-captcha.php:560 google-captcha.php:573 google-captcha.php:604
+#: google-captcha.php:526 google-captcha.php:539 google-captcha.php:570
 msgid "for version"
 msgstr "для версії"
 
-#: google-captcha.php:590
+#: google-captcha.php:556
 msgid "reCAPTCHA language"
 msgstr "Мова reCAPTCHA"
 
-#: google-captcha.php:597
+#: google-captcha.php:563
 msgid "Use the current site language"
 msgstr "Використовувати поточну мову сайту"
 
-#: google-captcha.php:597
+#: google-captcha.php:563
 msgid "Using"
 msgstr "Використовуючи"
 
-#: google-captcha.php:603
+#: google-captcha.php:569
 msgid "reCAPTCHA size"
 msgstr "Розмір reCAPTCHA"
 
-#: google-captcha.php:632
+#: google-captcha.php:598
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: google-captcha.php:690 google-captcha.php:1073
+#: google-captcha.php:652 google-captcha.php:1090
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Щоб використовувати Google Captcha, вам необхідно отримати ключі з"
 
-#: google-captcha.php:691 google-captcha.php:1074
+#: google-captcha.php:653 google-captcha.php:1091
 msgid "here"
 msgstr "тут"
 
-#: google-captcha.php:692 google-captcha.php:1075
+#: google-captcha.php:654 google-captcha.php:1092
 msgid "and enter them on the"
 msgstr "і вставте їх у"
 
-#: google-captcha.php:694 google-captcha.php:1077
+#: google-captcha.php:656 google-captcha.php:1094
 msgid "plugin setting page"
 msgstr "сторінку налаштувань плагіну"
 
-#: google-captcha.php:885 google-captcha.php:923
+#: google-captcha.php:842 google-captcha.php:880
 msgid "Error"
 msgstr "Помилка"
 
-#: google-captcha.php:885
+#: google-captcha.php:842
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Ви ввели невірне значення reCAPTCHA."
 
-#: google-captcha.php:923 google-captcha.php:940 google-captcha.php:969
+#: google-captcha.php:880 google-captcha.php:897 google-captcha.php:926
 msgid "You have entered an incorrect reCAPTCHA value"
 msgstr "Ви ввели невірне значення reCAPTCHA"
 
-#: google-captcha.php:940 google-captcha.php:969 google-captcha.php:995
+#: google-captcha.php:897 google-captcha.php:926 google-captcha.php:952
 msgid "ERROR"
 msgstr "ПОМИЛКА"
 
-#: google-captcha.php:995
+#: google-captcha.php:952
 msgid ""
 "You have entered an incorrect reCAPTCHA value. Click the BACK button on your "
 "browser, and try again."
@@ -295,9 +294,55 @@ msgstr ""
 "Помилка: Ви ввели невірне значення Captcha. Клікніть НАЗАД у своєму браузері "
 "та спробуйте знову."
 
-#: google-captcha.php:1058
+#: google-captcha.php:976
+msgid "Please, complete the captcha and submit \"Test verification\""
+msgstr ""
+"Будь ласка, заповніть капчу і натисніть кнопку \"Тестування перевірки\""
+
+#: google-captcha.php:980
+msgid "Test verification"
+msgstr "Тестування перевірки"
+
+#: google-captcha.php:994 google-captcha.php:1003
+msgid "The user response was missing."
+msgstr "Відповідь користувача відсутня."
+
+#: google-captcha.php:996
+msgid "The Secret Key is missing."
+msgstr "Секретний ключ відсутній."
+
+#: google-captcha.php:999 google-captcha.php:1008
+msgid "The Secret Key is invalid"
+msgstr "Секретний ключ некоректний"
+
+#: google-captcha.php:1000 google-captcha.php:1009
+msgid "Check your domain configuration"
+msgstr "Перевірте конфігурацію вашого домену"
+
+#: google-captcha.php:1001 google-captcha.php:1010
+msgid "and enter it again"
+msgstr "і введіть його знову"
+
+#: google-captcha.php:1004 google-captcha.php:1012
+msgid "The user response is invalid."
+msgstr "Некоректна відповідь користувача."
+
+#: google-captcha.php:1021
+msgid "The verification is successfully completed."
+msgstr "Перевірка завершена успішно."
+
+#: google-captcha.php:1075
 msgid "Support"
 msgstr "Техпідтримка"
+
+#~ msgid ""
+#~ "Google Captcha version 2 will not work correctly, since the option "
+#~ "\"allow_url_fopen\" is disabled. Please contact your hosting support "
+#~ "service."
+#~ msgstr ""
+#~ "Google Captcha версії 2 не працюватиме коректно, тому що відключена опція "
+#~ "\"allow_url_fopen \". Будь ласка, зверніться в службу підтримки вашого "
+#~ "хостингу."
 
 #~ msgid ""
 #~ "Google Captcha version 2 will not work correctly, since the option "
