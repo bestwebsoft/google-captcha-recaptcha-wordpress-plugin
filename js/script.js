@@ -101,7 +101,7 @@
 
 		$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
 
-		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"], #setupform, #cntctfrmpr_contact_form, #cntctfrm_contact_form, #commentform, #gglcptch_admin_settings_page' ).submit( function( e ) {
+		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"], #setupform, .cntctfrmpr_contact_form, .cntctfrm_contact_form, #commentform, #gglcptch_admin_settings_page' ).submit( function( e ) {
 			var $form = $( this ),
 				$gglcptch = $form.find( '.gglcptch' ),
 				$captcha = $gglcptch.filter( '.gglcptch_v1' ).find( '.gglcptch_recaptcha:visible' ),
