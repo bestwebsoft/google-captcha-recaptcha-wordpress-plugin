@@ -4,11 +4,11 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: antispam, captcha, capcha, security, website security, google captcha, google captcha plugin, recaptcha, recaptcha plugin, add recaptcha, recaptcha protection, spam protection
 Requires at least: 3.8
 Tested up to: 4.5.3
-Stable tag: 1.24
+Stable tag: 1.25
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-This plugin allows you to implement Google Captcha (reCAPTCHA) into web forms.
+Protect WordPress website forms from spam entries with Google Captcha (reCaptcha).
 
 == Description ==
 
@@ -78,7 +78,7 @@ We can fix some things for free for the users who provide translation of our plu
 
 1. Upload the `google-captcha` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin via the 'Plugins' menu in WordPress.
-3. Plugin settings are located in "BWS Plugins" > "Google Captcha".
+3. Plugin settings are located in "BWS Panel" > "Google Captcha".
 4. Create a form in post and insert the shortcode [bws_google_captcha] into the form.
 
 <a href="https://docs.google.com/document/d/1Nrccb-OLDN80yYjz_6-JPErdpZoslqfPV-g2IZ-GD0A/edit" target="_blank">View a Step-by-step Instruction on Google Captcha (reCAPTCHA) Installation</a>.
@@ -146,6 +146,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 8. Google Captcha (reCAPTCHA) Settings page. 
 
 == Changelog ==
+
+= V1.25 - 15.07.2016 =
+* Update : BWS panel section was updated.
 
 = V1.24 - 27.06.2016 =
 * Update : Functionality to use Captcha with Contact Form Multi was updated.
@@ -260,6 +263,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.25 =
+Usability improved.
 
 = V1.24 =
 Functionality to use Captcha with Contact Form Multi was updated. BWS Panel section is updated.

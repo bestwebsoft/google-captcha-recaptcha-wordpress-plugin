@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/
-Description: Plugin Google Captcha intended to prove that the visitor is a human being and not a spam robot.
+Plugin URI: http://bestwebsoft.com/products/google-captcha/
+Description: Protect WordPress website forms from spam entries with Google Captcha (reCaptcha).
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.24
+Version: 1.25
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
