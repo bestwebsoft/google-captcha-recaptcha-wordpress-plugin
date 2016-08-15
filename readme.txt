@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: antispam, captcha, capcha, security, website security, google captcha, google captcha plugin, recaptcha, recaptcha plugin, add recaptcha, recaptcha protection, spam protection
 Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 1.25
+Tested up to: 4.6
+Stable tag: 1.26
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -92,7 +92,7 @@ http://www.youtube.com/watch?v=RUJ9VwZLFSY
 You should go to the Settings page and click the 'here' link. Then you should enter your domain name in text field and click 'Create Key' button.
 On the next screen you will see your public and private keys.
 
-= How to hide Google Capthca for registered users? =
+= How to hide Google Captcha in Comments for registered users? =
 
 You should go to the Settings page and select the roles, for which you want to hide Google Captcha.
 Then you must click 'Save Changes' button.
@@ -146,6 +146,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 8. Google Captcha (reCAPTCHA) Settings page. 
 
 == Changelog ==
+
+= V1.26 - 08.08.2016 =
+* Update : Hook's priority was changed for displaying captcha in the registration form.
+* Update : Compatible with JetPack.
 
 = V1.25 - 15.07.2016 =
 * Update : BWS panel section was updated.
@@ -263,6 +267,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.26 =
+* Bugs fixed.
 
 = V1.25 =
 Usability improved.

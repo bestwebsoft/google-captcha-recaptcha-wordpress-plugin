@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-05 17:14+0300\n"
+"POT-Creation-Date: 2016-07-25 11:33+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: Dimitris Karantonis\n"
@@ -16,100 +16,100 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:34 google-captcha.php:367
+#: google-captcha.php:34 google-captcha.php:422
 msgid "Google Captcha Settings"
 msgstr "Ρυθμίσεις Google Captcha"
 
-#: google-captcha.php:154
+#: google-captcha.php:202
 msgid "Warning"
 msgstr ""
 
-#: google-captcha.php:154
+#: google-captcha.php:202
 msgid ""
 "It has been found more than one reCAPTCHA in current form. In this case "
 "reCAPTCHA will not work properly. Please remove all unnecessary reCAPTCHA "
 "blocks."
 msgstr ""
 
-#: google-captcha.php:158
+#: google-captcha.php:206
 #, fuzzy
 msgid "Error: You have entered an incorrect reCAPTCHA value."
 msgstr "Σφάλμα: Έχετε εισάγει μια εσφαλμένη τιμή CAPTCHA."
 
-#: google-captcha.php:272
+#: google-captcha.php:327
 msgid "Normal"
 msgstr ""
 
-#: google-captcha.php:273
+#: google-captcha.php:328
 msgid "Compact"
 msgstr ""
 
-#: google-captcha.php:279
+#: google-captcha.php:334
 msgid "Site key"
 msgstr "Κλειδί ιστοσελίδας"
 
-#: google-captcha.php:284
+#: google-captcha.php:339
 msgid "Secret Key"
 msgstr "Μυστικό κλειδί"
 
-#: google-captcha.php:292
+#: google-captcha.php:347
 msgid "Login form"
 msgstr "Φόρμα εισόδου"
 
-#: google-captcha.php:293
+#: google-captcha.php:348
 msgid "Registration form"
 msgstr "Φόρμα εγγραφής"
 
-#: google-captcha.php:294
+#: google-captcha.php:349
 msgid "Reset password form"
 msgstr "Φόρμα ανάκτησης κωδικού πρόσβασης"
 
-#: google-captcha.php:295
+#: google-captcha.php:350
 msgid "Comments form"
 msgstr "Φόρμα για σχόλια"
 
-#: google-captcha.php:314
+#: google-captcha.php:369
 msgid "Enter site key"
 msgstr "Εισάγετε το κλειδί της ιστοσελίδας"
 
-#: google-captcha.php:315 google-captcha.php:321
+#: google-captcha.php:370 google-captcha.php:376
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr ""
 "ΠΡΟΣΟΧΗ: Το captcha δεν θα εμφανιστεί εάν δεν συμπληρώσετε τα κλειδιά στα "
 "πεδία."
 
-#: google-captcha.php:320
+#: google-captcha.php:375
 msgid "Enter secret key"
 msgstr "Εισάγετε το μυστικό κλειδί"
 
-#: google-captcha.php:346
+#: google-captcha.php:401
 msgid "Settings saved"
 msgstr "Οι ρυμθίσεις αποθηκεύτηκαν"
 
-#: google-captcha.php:352
+#: google-captcha.php:407
 #, fuzzy
 msgid "All plugin settings were restored."
 msgstr "σελίδα ρυθμίσεων της επέκτασης"
 
-#: google-captcha.php:369 google-captcha.php:1040 google-captcha.php:1073
+#: google-captcha.php:424 google-captcha.php:1128 google-captcha.php:1150
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: google-captcha.php:370
+#: google-captcha.php:425
 msgid "Custom code"
 msgstr ""
 
-#: google-captcha.php:371
+#: google-captcha.php:426
 msgid "Go PRO"
 msgstr ""
 
-#: google-captcha.php:376
+#: google-captcha.php:431
 msgid ""
 "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA "
 "version 1 features."
 msgstr ""
 
-#: google-captcha.php:391
+#: google-captcha.php:446
 #, fuzzy, php-format
 msgid ""
 "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
@@ -119,7 +119,7 @@ msgstr ""
 "αντιγράψτε και επικολλήστε αυτό το σύντομο κωδικό στη δημοσίευση ή στη "
 "σελίδα σας:"
 
-#: google-captcha.php:397
+#: google-captcha.php:452
 #, php-format
 msgid ""
 "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking "
@@ -128,171 +128,175 @@ msgid ""
 "your own form , please use the shortcode %s"
 msgstr ""
 
-#: google-captcha.php:405
+#: google-captcha.php:460
 msgid "Authentication"
 msgstr "Πιστοποίηση"
 
-#: google-captcha.php:406
+#: google-captcha.php:461
 #, fuzzy, php-format
 msgid "Before you are able to do something, you must to register %shere%s"
 msgstr ""
 "Πριν να είστε σε θέση να κάνετε κάτι, θα πρέπει να εγγραφείτε %s εδώ %s"
 
-#: google-captcha.php:407
+#: google-captcha.php:462
 msgid "Enter site key and secret key, that you get after registration."
 msgstr ""
 "Πληκτρολογήστε το κλειδί της ιστοσελίδας και το μυστικό κλειδί, τα οποία "
 "παραλάβατε μετά την εγγραφή."
 
-#: google-captcha.php:422
+#: google-captcha.php:477
 #, fuzzy
 msgid "Test Keys"
 msgstr "Μυστικό κλειδί"
 
-#: google-captcha.php:425
+#: google-captcha.php:480
 msgid "Options"
 msgstr "Επιλογές"
 
-#: google-captcha.php:428
+#: google-captcha.php:483
 msgid "Enable reCAPTCHA for"
 msgstr ""
 
-#: google-captcha.php:432
+#: google-captcha.php:487
 msgid "WordPress default"
 msgstr ""
 
-#: google-captcha.php:441
+#: google-captcha.php:496
 msgid "This option is available only for network or for main blog"
 msgstr ""
 
-#: google-captcha.php:449
+#: google-captcha.php:504
 #, fuzzy
 msgid "Plugins"
 msgstr "Σελίδα επεκτάσεων"
 
-#: google-captcha.php:457 google-captcha.php:462
+#: google-captcha.php:512 google-captcha.php:517
 #, php-format
 msgid "You should %s to use this functionality"
 msgstr ""
 
-#: google-captcha.php:458
+#: google-captcha.php:513
 #, fuzzy
 msgid "activate"
 msgstr "Активировать Contact form"
 
-#: google-captcha.php:458
+#: google-captcha.php:513
 msgid "for network"
 msgstr ""
 
-#: google-captcha.php:463
+#: google-captcha.php:518
 msgid "download"
 msgstr ""
 
-#: google-captcha.php:475 google-captcha.php:552
+#: google-captcha.php:522
+msgid "Check off for adding captcha to forms on their settings pages."
+msgstr ""
+
+#: google-captcha.php:533 google-captcha.php:610
 msgid "Close"
 msgstr ""
 
-#: google-captcha.php:487 google-captcha.php:588
+#: google-captcha.php:545 google-captcha.php:646
 msgid "Unlock premium options by upgrading to Pro version"
 msgstr ""
 
-#: google-captcha.php:490 google-captcha.php:591
+#: google-captcha.php:548 google-captcha.php:649
 msgid "Learn More"
 msgstr ""
 
-#: google-captcha.php:496
+#: google-captcha.php:554
 #, php-format
 msgid ""
 "If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s"
 msgstr ""
 
-#: google-captcha.php:496 google-captcha.php:1074
+#: google-captcha.php:554 google-captcha.php:1151
 msgid "FAQ"
 msgstr "Συχνές Ερωτήσεις"
 
-#: google-captcha.php:501
+#: google-captcha.php:559
 #, fuzzy
 msgid "Hide reCAPTCHA in Comments form for"
 msgstr "για την έκδοση reCAPTCHA"
 
-#: google-captcha.php:513
+#: google-captcha.php:571
 #, fuzzy
 msgid "reCAPTCHA version"
 msgstr "Έκδοση reCAPTCHA:"
 
-#: google-captcha.php:516 google-captcha.php:517 google-captcha.php:518
-#: google-captcha.php:519
+#: google-captcha.php:574 google-captcha.php:575 google-captcha.php:576
+#: google-captcha.php:577
 msgid "version"
 msgstr "έκδοση"
 
-#: google-captcha.php:525 google-captcha.php:538
+#: google-captcha.php:583 google-captcha.php:596
 #, fuzzy
 msgid "reCAPTCHA theme"
 msgstr "Έκδοση reCAPTCHA:"
 
-#: google-captcha.php:526 google-captcha.php:539 google-captcha.php:570
+#: google-captcha.php:584 google-captcha.php:597 google-captcha.php:628
 #, fuzzy
 msgid "for version"
 msgstr "έκδοση"
 
-#: google-captcha.php:556
+#: google-captcha.php:614
 #, fuzzy
 msgid "reCAPTCHA language"
 msgstr "Έκδοση reCAPTCHA:"
 
-#: google-captcha.php:563
+#: google-captcha.php:621
 msgid "Use the current site language"
 msgstr ""
 
-#: google-captcha.php:563
+#: google-captcha.php:621
 msgid "Using"
 msgstr ""
 
-#: google-captcha.php:569
+#: google-captcha.php:627
 #, fuzzy
 msgid "reCAPTCHA size"
 msgstr "Έκδοση reCAPTCHA:"
 
-#: google-captcha.php:598
+#: google-captcha.php:656
 msgid "Save Changes"
 msgstr "Αποθήκευση αλλαγών"
 
-#: google-captcha.php:652 google-captcha.php:1090
+#: google-captcha.php:710 google-captcha.php:1167
 msgid "To use Google Captcha you must get the keys from"
 msgstr ""
 "Για να χρησιμοποιήσετε το Google Captcha θα πρέπει να πάρετε τα κλειδιά από"
 
-#: google-captcha.php:653 google-captcha.php:1091
+#: google-captcha.php:711 google-captcha.php:1168
 msgid "here"
 msgstr "εδώ"
 
-#: google-captcha.php:654 google-captcha.php:1092
+#: google-captcha.php:712 google-captcha.php:1169
 msgid "and enter them on the"
 msgstr "και να τα εισάγετε στη"
 
-#: google-captcha.php:656 google-captcha.php:1094
+#: google-captcha.php:714 google-captcha.php:1171
 msgid "plugin setting page"
 msgstr "σελίδα ρυθμίσεων της επέκτασης"
 
-#: google-captcha.php:842 google-captcha.php:880
+#: google-captcha.php:900 google-captcha.php:948
 msgid "Error"
 msgstr ""
 
-#: google-captcha.php:842
+#: google-captcha.php:900 google-captcha.php:948
 #, fuzzy
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Σφάλμα: Έχετε εισάγει μια εσφαλμένη τιμή CAPTCHA."
 
-#: google-captcha.php:880 google-captcha.php:897 google-captcha.php:926
+#: google-captcha.php:978 google-captcha.php:1007 google-captcha.php:1033
+msgid "ERROR"
+msgstr ""
+
+#: google-captcha.php:978 google-captcha.php:1007
 #, fuzzy
 msgid "You have entered an incorrect reCAPTCHA value"
 msgstr "Σφάλμα: Έχετε εισάγει μια εσφαλμένη τιμή CAPTCHA."
 
-#: google-captcha.php:897 google-captcha.php:926 google-captcha.php:952
-msgid "ERROR"
-msgstr ""
-
-#: google-captcha.php:952
+#: google-captcha.php:1033
 #, fuzzy
 msgid ""
 "You have entered an incorrect reCAPTCHA value. Click the BACK button on your "
@@ -301,44 +305,44 @@ msgstr ""
 "Σφάλμα: Έχετε εισάγει μια εσφαλμένη τιμή CAPTCHA. Κάντε κλικ στο κουμπί Πίσω "
 "στον περιηγητή σας, και δοκιμάστε ξανά."
 
-#: google-captcha.php:976
+#: google-captcha.php:1064
 msgid "Please, complete the captcha and submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:980
+#: google-captcha.php:1068
 msgid "Test verification"
 msgstr ""
 
-#: google-captcha.php:994 google-captcha.php:1003
+#: google-captcha.php:1082 google-captcha.php:1091
 msgid "The user response was missing."
 msgstr ""
 
-#: google-captcha.php:996
+#: google-captcha.php:1084
 msgid "The Secret Key is missing."
 msgstr ""
 
-#: google-captcha.php:999 google-captcha.php:1008
+#: google-captcha.php:1087 google-captcha.php:1096
 msgid "The Secret Key is invalid"
 msgstr ""
 
-#: google-captcha.php:1000 google-captcha.php:1009
+#: google-captcha.php:1088 google-captcha.php:1097
 msgid "Check your domain configuration"
 msgstr ""
 
-#: google-captcha.php:1001 google-captcha.php:1010
+#: google-captcha.php:1089 google-captcha.php:1098
 #, fuzzy
 msgid "and enter it again"
 msgstr "και να τα εισάγετε στη"
 
-#: google-captcha.php:1004 google-captcha.php:1012
+#: google-captcha.php:1092 google-captcha.php:1100
 msgid "The user response is invalid."
 msgstr ""
 
-#: google-captcha.php:1021
+#: google-captcha.php:1109
 msgid "The verification is successfully completed."
 msgstr ""
 
-#: google-captcha.php:1075
+#: google-captcha.php:1152
 msgid "Support"
 msgstr "Υποστήριξη"
 

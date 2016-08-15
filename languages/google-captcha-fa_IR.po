@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-05 17:14+0300\n"
-"PO-Revision-Date: 2016-04-05 17:14+0300\n"
+"POT-Creation-Date: 2016-07-25 11:33+0300\n"
+"PO-Revision-Date: 2016-07-25 11:33+0300\n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: Amirreza Nasiri <nasiri.amirreza.96@gmail.com>\n"
 "Language: fa_IR\n"
@@ -21,99 +21,99 @@ msgstr ""
 "X-Loco-Target-Locale: uk_UA\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:34 google-captcha.php:367
+#: google-captcha.php:34 google-captcha.php:422
 msgid "Google Captcha Settings"
 msgstr "تنظیمات Google Captcha"
 
-#: google-captcha.php:154
+#: google-captcha.php:202
 msgid "Warning"
 msgstr ""
 
-#: google-captcha.php:154
+#: google-captcha.php:202
 msgid ""
 "It has been found more than one reCAPTCHA in current form. In this case "
 "reCAPTCHA will not work properly. Please remove all unnecessary reCAPTCHA "
 "blocks."
 msgstr ""
 
-#: google-captcha.php:158
+#: google-captcha.php:206
 #, fuzzy
 msgid "Error: You have entered an incorrect reCAPTCHA value."
 msgstr "خطا: شما مقدار CAPTCHA اشتباهی را وارد کرده اید."
 
-#: google-captcha.php:272
+#: google-captcha.php:327
 msgid "Normal"
 msgstr "عادی"
 
-#: google-captcha.php:273
+#: google-captcha.php:328
 msgid "Compact"
 msgstr "فشرده"
 
-#: google-captcha.php:279
+#: google-captcha.php:334
 msgid "Site key"
 msgstr "کلید سایت (site key در تنظیمات گوگل)"
 
-#: google-captcha.php:284
+#: google-captcha.php:339
 msgid "Secret Key"
 msgstr "کلید سری (secret key در تنظیمات گوگل)"
 
-#: google-captcha.php:292
+#: google-captcha.php:347
 msgid "Login form"
 msgstr "فرم ورود"
 
-#: google-captcha.php:293
+#: google-captcha.php:348
 msgid "Registration form"
 msgstr "فرم ثبت نام"
 
-#: google-captcha.php:294
+#: google-captcha.php:349
 msgid "Reset password form"
 msgstr "فرم فراموش رمز عبور"
 
-#: google-captcha.php:295
+#: google-captcha.php:350
 msgid "Comments form"
 msgstr "فرم دیدگاه ها"
 
-#: google-captcha.php:314
+#: google-captcha.php:369
 msgid "Enter site key"
 msgstr "کلید سایت را وارد کنید"
 
-#: google-captcha.php:315 google-captcha.php:321
+#: google-captcha.php:370 google-captcha.php:376
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr ""
 "تذکر: Captcha تا زمانی که فیلد مربوط به کلیدها را وارد نکنید، نشان داده "
 "نخواهد شد."
 
-#: google-captcha.php:320
+#: google-captcha.php:375
 msgid "Enter secret key"
 msgstr "کلید سری را وارد کنید"
 
-#: google-captcha.php:346
+#: google-captcha.php:401
 msgid "Settings saved"
 msgstr "تنظیمات ذخیره شدند"
 
-#: google-captcha.php:352
+#: google-captcha.php:407
 msgid "All plugin settings were restored."
 msgstr "تمام تنظیمات پلاگین بازگردانده شدند."
 
-#: google-captcha.php:369 google-captcha.php:1040 google-captcha.php:1073
+#: google-captcha.php:424 google-captcha.php:1128 google-captcha.php:1150
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: google-captcha.php:370
+#: google-captcha.php:425
 msgid "Custom code"
 msgstr ""
 
-#: google-captcha.php:371
+#: google-captcha.php:426
 msgid "Go PRO"
 msgstr "ارتقاء به نسخه حرفه ای"
 
-#: google-captcha.php:376
+#: google-captcha.php:431
 msgid ""
 "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA "
 "version 1 features."
 msgstr ""
 
-#: google-captcha.php:391
+#: google-captcha.php:446
 #, fuzzy, php-format
 msgid ""
 "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
@@ -122,7 +122,7 @@ msgstr ""
 "اگر می خواهید که Google Captcha را به فرم دلخواه خود اضافه کنید، کافیست شورت "
 "کد زیر را کپی کرده و درون فرم مورد نظر بچسبانید:"
 
-#: google-captcha.php:397
+#: google-captcha.php:452
 #, php-format
 msgid ""
 "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking "
@@ -131,159 +131,163 @@ msgid ""
 "your own form , please use the shortcode %s"
 msgstr ""
 
-#: google-captcha.php:405
+#: google-captcha.php:460
 msgid "Authentication"
 msgstr "تایید هویت"
 
-#: google-captcha.php:406
+#: google-captcha.php:461
 #, fuzzy, php-format
 msgid "Before you are able to do something, you must to register %shere%s"
 msgstr "قبل از این که قادر به انجام کاری باشید، باید ثبت نام کنید %s در %s"
 
-#: google-captcha.php:407
+#: google-captcha.php:462
 msgid "Enter site key and secret key, that you get after registration."
 msgstr "کلید سایت و کلید سری را که بعد از ثبت نام دریافت کردید، وارد کنید."
 
-#: google-captcha.php:422
+#: google-captcha.php:477
 #, fuzzy
 msgid "Test Keys"
 msgstr "کلید سری (secret key در تنظیمات گوگل)"
 
-#: google-captcha.php:425
+#: google-captcha.php:480
 msgid "Options"
 msgstr "تنظیمات"
 
-#: google-captcha.php:428
+#: google-captcha.php:483
 msgid "Enable reCAPTCHA for"
 msgstr "فعال کردن reCAPTCHA  برای"
 
-#: google-captcha.php:432
+#: google-captcha.php:487
 msgid "WordPress default"
 msgstr ""
 
-#: google-captcha.php:441
+#: google-captcha.php:496
 msgid "This option is available only for network or for main blog"
 msgstr ""
 
-#: google-captcha.php:449
+#: google-captcha.php:504
 msgid "Plugins"
 msgstr ""
 
-#: google-captcha.php:457 google-captcha.php:462
+#: google-captcha.php:512 google-captcha.php:517
 #, fuzzy, php-format
 msgid "You should %s to use this functionality"
 msgstr "تا از این قابلیت استفاده کنید"
 
-#: google-captcha.php:458
+#: google-captcha.php:513
 msgid "activate"
 msgstr "فعال کنید"
 
-#: google-captcha.php:458
+#: google-captcha.php:513
 msgid "for network"
 msgstr ""
 
-#: google-captcha.php:463
+#: google-captcha.php:518
 msgid "download"
 msgstr "دانلود"
 
-#: google-captcha.php:475 google-captcha.php:552
+#: google-captcha.php:522
+msgid "Check off for adding captcha to forms on their settings pages."
+msgstr ""
+
+#: google-captcha.php:533 google-captcha.php:610
 msgid "Close"
 msgstr "بستن"
 
-#: google-captcha.php:487 google-captcha.php:588
+#: google-captcha.php:545 google-captcha.php:646
 msgid "Unlock premium options by upgrading to Pro version"
 msgstr "گزینه های اضافی را با آپگرید کردن به نسخه حرفه ای باز کنید"
 
-#: google-captcha.php:490 google-captcha.php:591
+#: google-captcha.php:548 google-captcha.php:649
 msgid "Learn More"
 msgstr "بیشتر بدانید"
 
-#: google-captcha.php:496
+#: google-captcha.php:554
 #, php-format
 msgid ""
 "If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s"
 msgstr ""
 
-#: google-captcha.php:496 google-captcha.php:1074
+#: google-captcha.php:554 google-captcha.php:1151
 msgid "FAQ"
 msgstr "سوالات متداول"
 
-#: google-captcha.php:501
+#: google-captcha.php:559
 msgid "Hide reCAPTCHA in Comments form for"
 msgstr "reCAPTCHA را در فرم دیدگاه ها مخفی کن در"
 
-#: google-captcha.php:513
+#: google-captcha.php:571
 msgid "reCAPTCHA version"
 msgstr "نسخه reCAPTCHA"
 
-#: google-captcha.php:516 google-captcha.php:517 google-captcha.php:518
-#: google-captcha.php:519
+#: google-captcha.php:574 google-captcha.php:575 google-captcha.php:576
+#: google-captcha.php:577
 msgid "version"
 msgstr "نسخه"
 
-#: google-captcha.php:525 google-captcha.php:538
+#: google-captcha.php:583 google-captcha.php:596
 msgid "reCAPTCHA theme"
 msgstr "پوسته reCAPTCHA"
 
-#: google-captcha.php:526 google-captcha.php:539 google-captcha.php:570
+#: google-captcha.php:584 google-captcha.php:597 google-captcha.php:628
 msgid "for version"
 msgstr "برای نسخه"
 
-#: google-captcha.php:556
+#: google-captcha.php:614
 msgid "reCAPTCHA language"
 msgstr "زبان reCAPTCHA "
 
-#: google-captcha.php:563
+#: google-captcha.php:621
 msgid "Use the current site language"
 msgstr "از زبان کنونی سایت استفاده کن"
 
-#: google-captcha.php:563
+#: google-captcha.php:621
 msgid "Using"
 msgstr "استفاده کردن"
 
-#: google-captcha.php:569
+#: google-captcha.php:627
 msgid "reCAPTCHA size"
 msgstr "اندازه reCAPTCHA"
 
-#: google-captcha.php:598
+#: google-captcha.php:656
 msgid "Save Changes"
 msgstr "ذخیره کردن تنظیمات"
 
-#: google-captcha.php:652 google-captcha.php:1090
+#: google-captcha.php:710 google-captcha.php:1167
 msgid "To use Google Captcha you must get the keys from"
 msgstr "برای استفاده از Google Captcha باید کلید ها را تهیه کنید از"
 
-#: google-captcha.php:653 google-captcha.php:1091
+#: google-captcha.php:711 google-captcha.php:1168
 msgid "here"
 msgstr "اینجا"
 
-#: google-captcha.php:654 google-captcha.php:1092
+#: google-captcha.php:712 google-captcha.php:1169
 msgid "and enter them on the"
 msgstr "و آنها را وارد کنید در"
 
-#: google-captcha.php:656 google-captcha.php:1094
+#: google-captcha.php:714 google-captcha.php:1171
 msgid "plugin setting page"
 msgstr "صفحه تنظیمات افزونه"
 
-#: google-captcha.php:842 google-captcha.php:880
+#: google-captcha.php:900 google-captcha.php:948
 msgid "Error"
 msgstr "خطا"
 
-#: google-captcha.php:842
+#: google-captcha.php:900 google-captcha.php:948
 #, fuzzy
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "شما مقدار CAPTCHA اشتباهی را وارد کرده اید."
 
-#: google-captcha.php:880 google-captcha.php:897 google-captcha.php:926
+#: google-captcha.php:978 google-captcha.php:1007 google-captcha.php:1033
+msgid "ERROR"
+msgstr ""
+
+#: google-captcha.php:978 google-captcha.php:1007
 #, fuzzy
 msgid "You have entered an incorrect reCAPTCHA value"
 msgstr "شما مقدار CAPTCHA اشتباهی را وارد کرده اید."
 
-#: google-captcha.php:897 google-captcha.php:926 google-captcha.php:952
-msgid "ERROR"
-msgstr ""
-
-#: google-captcha.php:952
+#: google-captcha.php:1033
 #, fuzzy
 msgid ""
 "You have entered an incorrect reCAPTCHA value. Click the BACK button on your "
@@ -292,44 +296,44 @@ msgstr ""
 "خطا: شما مقدار CAPTCHA اشتباهی را وارد کرده اید. به صفحه قبلی بازگشته و "
 "دوباره تلاش کنید."
 
-#: google-captcha.php:976
+#: google-captcha.php:1064
 msgid "Please, complete the captcha and submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:980
+#: google-captcha.php:1068
 msgid "Test verification"
 msgstr ""
 
-#: google-captcha.php:994 google-captcha.php:1003
+#: google-captcha.php:1082 google-captcha.php:1091
 msgid "The user response was missing."
 msgstr ""
 
-#: google-captcha.php:996
+#: google-captcha.php:1084
 msgid "The Secret Key is missing."
 msgstr ""
 
-#: google-captcha.php:999 google-captcha.php:1008
+#: google-captcha.php:1087 google-captcha.php:1096
 msgid "The Secret Key is invalid"
 msgstr ""
 
-#: google-captcha.php:1000 google-captcha.php:1009
+#: google-captcha.php:1088 google-captcha.php:1097
 msgid "Check your domain configuration"
 msgstr ""
 
-#: google-captcha.php:1001 google-captcha.php:1010
+#: google-captcha.php:1089 google-captcha.php:1098
 #, fuzzy
 msgid "and enter it again"
 msgstr "و آنها را وارد کنید در"
 
-#: google-captcha.php:1004 google-captcha.php:1012
+#: google-captcha.php:1092 google-captcha.php:1100
 msgid "The user response is invalid."
 msgstr ""
 
-#: google-captcha.php:1021
+#: google-captcha.php:1109
 msgid "The verification is successfully completed."
 msgstr ""
 
-#: google-captcha.php:1075
+#: google-captcha.php:1152
 msgid "Support"
 msgstr "پشتیبانی"
 

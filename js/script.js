@@ -7,7 +7,7 @@
 		 */
 		$( '.gglcptch_v1, .gglcptch_v2' ).each( function() {
 			var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' );
-			if ( $( this ).is( ':visible' ) )
+			if ( gglcptch.vars.visibility || $( this ).is( ':visible' ) )
 				gglcptch.display( container );
 		});
 

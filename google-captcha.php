@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.25
+Version: 1.26
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -31,7 +31,7 @@ License: GPLv3 or later
 if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
 	function gglcptch_admin_menu() {
 		bws_general_menu();
-		$gglcptch_settings = add_submenu_page( 'bws_panel', __( 'Google Captcha Settings', 'google-captcha' ), 'Google Captcha', 'manage_options', 'google-captcha.php', 'gglcptch_settings_page' );
+		$gglcptch_settings = add_submenu_page( 'bws_panel', __( 'Google Captcha Settings', 'google-captcha' ), 'Google Captcha', 'manage_options', 'google-captcha.php', 'gglcptch_add_settings_page' );
 		add_action( 'load-' . $gglcptch_settings, 'gglcptch_add_tabs' );
 	}
 }
@@ -45,7 +45,7 @@ if ( ! function_exists( 'gglcptch_plugins_loaded' ) ) {
 
 if ( ! function_exists( 'gglcptch_init' ) ) {
 	function gglcptch_init() {
-		global $gglcptch_plugin_info;
+		global $gglcptch_plugin_info, $gglcptch_options;
 
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
@@ -57,7 +57,59 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		}
 
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $gglcptch_plugin_info, '3.8', '3.1' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $gglcptch_plugin_info, '3.8' );
+
+		/* Call register settings function */
+		if ( ! ( $is_admin = is_admin() ) || ( isset( $_GET['page'] ) && 'google-captcha.php' == $_GET['page'] ) )
+			register_gglcptch_settings();
+
+		/* Add hooks */
+		if ( ! $is_admin ) {
+			/* Add hooks */
+			if ( '1' == $gglcptch_options['login_form'] || '1' == $gglcptch_options['reset_pwd_form'] || '1' == $gglcptch_options['registration_form'] ) {
+				add_action( 'login_enqueue_scripts', 'gglcptch_add_styles' );
+
+				if ( '1' == $gglcptch_options['login_form'] ) {
+					add_action( 'login_form', 'gglcptch_login_display' );
+					add_action( 'authenticate', 'gglcptch_login_check', 21, 1 );
+				}
+
+				if ( '1' == $gglcptch_options['reset_pwd_form'] ) {
+					add_action( 'lostpassword_form', 'gglcptch_login_display' );
+					add_action( 'allow_password_reset', 'gglcptch_lostpassword_check' );
+				}
+
+				if ( '1' == $gglcptch_options['registration_form'] ) {
+					if ( ! is_multisite() ) {
+						add_action( 'register_form', 'gglcptch_login_display', 99 );
+						add_action( 'registration_errors', 'gglcptch_lostpassword_check' );
+					} else {
+						add_action( 'signup_extra_fields', 'gglcptch_signup_display' );
+						add_action( 'signup_blogform', 'gglcptch_signup_display' );
+						add_filter( 'wpmu_validate_user_signup', 'gglcptch_signup_check' );
+					}
+				}
+			}
+
+			if ( '1' == $gglcptch_options['comments_form'] ) {
+				add_action( 'comment_form_after_fields', 'gglcptch_commentform_display' );
+				add_action( 'comment_form_logged_in_after', 'gglcptch_commentform_display' );
+				add_action( 'pre_comment_on_post', 'gglcptch_commentform_check' );
+			}
+
+			if ( '1' == $gglcptch_options['contact_form'] ) {
+				add_filter( 'cntctfrm_display_captcha', 'gglcptch_cf_display', 10, 2 );				
+				add_filter( 'cntctfrm_check_form', 'gglcptch_recaptcha_check' );
+				/**
+				 * this filters are necessary for compatibility
+				 * with old Contact Form Pro by BestWebsoft versions
+				 * @deprecated since 1.0.4
+				 * @todo remove after 25.02.2017
+				 */
+				add_filter( 'cntctfrmpr_display_captcha', 'gglcptch_cf_display', 10, 2 );
+				add_filter( 'cntctfrmpr_check_form', 'gglcptch_recaptcha_check' );
+			}
+		}
 	}
 }
 
@@ -65,12 +117,8 @@ if ( ! function_exists( 'gglcptch_admin_init' ) ) {
 	function gglcptch_admin_init() {
 		global $bws_plugin_info, $gglcptch_plugin_info, $bws_shortcode_list;
 
-		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
+		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '109', 'version' => $gglcptch_plugin_info["Version"] );
-
-		/* Call register settings function */
-		if ( isset( $_GET['page'] ) && "google-captcha.php" == $_GET['page'] )
-			register_gglcptch_settings();
 
 		/* add google captcha to global $bws_shortcode_list  */
 		$bws_shortcode_list['gglcptch'] = array( 'name' => 'Google Captcha (reCAPTCHA)' );
@@ -143,7 +191,7 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 		global $gglcptch_options;
 
 		if ( empty( $gglcptch_options ) )
-			$gglcptch_options = get_option( 'gglcptch_options' );
+			register_gglcptch_settings();
 
 		if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v2' == $gglcptch_options['recaptcha_version'] )
 			gglcptch_remove_dublicate_scripts();
@@ -160,9 +208,10 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 				'error'   => "<strong>" . __( 'Warning', 'google-captcha' ) . ":</strong>&nbsp;" . __( 'It has been found more than one reCAPTCHA in current form. In this case reCAPTCHA will not work properly. Please remove all unnecessary reCAPTCHA blocks.', 'google-captcha' )
 			),
 			'vars' => array(
-				'ajaxurl'   => admin_url( 'admin-ajax.php' ),
-				'error_msg' => __( 'Error: You have entered an incorrect reCAPTCHA value.', 'google-captcha' ),
-				'nonce'     => wp_create_nonce( 'gglcptch_recaptcha_nonce' )
+				'ajaxurl'   	=> admin_url( 'admin-ajax.php' ),
+				'error_msg' 	=> __( 'Error: You have entered an incorrect reCAPTCHA value.', 'google-captcha' ),
+				'nonce'     	=> wp_create_nonce( 'gglcptch_recaptcha_nonce' ),
+				'visibility'	=> ( 'login_footer' == current_filter() ) ? true : false
 			)
 		) );
 	}
@@ -182,9 +231,30 @@ if ( ! function_exists( 'gglcptch_add_async_attribute' ) ) {
 /* Google catpcha settings */
 if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 	function register_gglcptch_settings() {
-		global $gglcptch_options, $bws_plugin_info, $gglcptch_plugin_info, $gglcptch_default_options;
+		global $gglcptch_options, $bws_plugin_info, $gglcptch_plugin_info;
 
-		$gglcptch_default_options = array(
+		/* Install the option defaults */
+		if ( ! get_option( 'gglcptch_options' ) )
+			add_option( 'gglcptch_options', gglcptch_get_default_options() );
+		/* Get options from the database */
+		$gglcptch_options = get_option( 'gglcptch_options' );
+
+		/* Array merge incase this version has added new options */
+		if ( ! isset( $gglcptch_options['plugin_option_version'] ) || $gglcptch_options['plugin_option_version'] != $gglcptch_plugin_info["Version"] ) {
+			$gglcptch_options = array_merge( gglcptch_get_default_options(), $gglcptch_options );
+			$gglcptch_options['plugin_option_version'] = $gglcptch_plugin_info["Version"];
+			/* show pro features */
+			$gglcptch_options['hide_premium_options'] = array();
+			update_option( 'gglcptch_options', $gglcptch_options );
+		}
+	}
+}
+
+if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
+	function gglcptch_get_default_options() {
+		global $gglcptch_plugin_info;
+
+		$default_options = array(
 			'public_key'				=> '',
 			'private_key'				=> '',
 			'login_form'				=> '1',
@@ -203,25 +273,10 @@ if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 
 		if ( function_exists( 'get_editable_roles' ) ) {
 			foreach ( get_editable_roles() as $role => $fields ) {
-				$gglcptch_default_options[ $role ] = '0';
+				$default_options[ $role ] = '0';
 			}
 		}
-
-		/* Install the option defaults */
-		if ( ! get_option( 'gglcptch_options' ) )
-			add_option( 'gglcptch_options', $gglcptch_default_options );
-		/* Get options from the database */
-		$gglcptch_options = get_option( 'gglcptch_options' );
-
-		/* Array merge incase this version has added new options */
-		if ( ! isset( $gglcptch_options['plugin_option_version'] ) || $gglcptch_options['plugin_option_version'] != $gglcptch_plugin_info["Version"] ) {
-			$gglcptch_default_options['display_settings_notice'] = 0;
-			$gglcptch_options = array_merge( $gglcptch_default_options, $gglcptch_options );
-			$gglcptch_options['plugin_option_version'] = $gglcptch_plugin_info["Version"];
-			/* show pro features */
-			$gglcptch_options['hide_premium_options'] = array();
-			update_option( 'gglcptch_options', $gglcptch_options );
-		}
+		return $default_options;
 	}
 }
 
@@ -257,9 +312,9 @@ if ( ! function_exists( 'gglcptch_plugin_status' ) ) {
 }
 
 /* Display settings page */
-if ( ! function_exists( 'gglcptch_settings_page' ) ) {
-	function gglcptch_settings_page() {
-		global $gglcptch_options, $gglcptch_plugin_info, $wp_version, $gglcptch_default_options;
+if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
+	function gglcptch_add_settings_page() {
+		global $gglcptch_options, $gglcptch_plugin_info, $wp_version;
 
 		$plugin_basename = plugin_basename( __FILE__ );
 		$message = $error = '';
@@ -353,7 +408,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 			}
 
 			if ( isset( $_REQUEST['bws_restore_confirm'] ) && check_admin_referer( $plugin_basename, 'bws_settings_nonce_name' ) ) {
-				$gglcptch_options = $gglcptch_default_options;
+				$gglcptch_options = gglcptch_get_default_options();
 				update_option( 'gglcptch_options', $gglcptch_options );
 				$message = __( 'All plugin settings were restored.', 'google-captcha' );
 			}
@@ -425,7 +480,7 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 						</table>
 						<?php if ( ! empty( $gglcptch_options['public_key'] ) && ! empty( $gglcptch_options['private_key'] ) ) { ?>
 							<p id="gglcptch-test-keys" class="submit hide-if-no-js">
-								<a class="button button-primary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ) , 'action' => 'gglcptch-test-keys' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test Keys' , 'google-captcha' ); ?></a>
+								<a class="button button-secondary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ) , 'action' => 'gglcptch-test-keys' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test Keys' , 'google-captcha' ); ?></a>
 							</p>
 						<?php } ?>
 						<h3><?php _e( 'Options', 'google-captcha' ); ?></h3>
@@ -466,11 +521,14 @@ if ( ! function_exists( 'gglcptch_settings_page' ) ) {
 										} elseif ( 'not_installed' == $gglcptch_plugin['status'] ) {
 											$gglcptch_attrs = 'disabled="disabled"';
 											$gglcptch_plugin_notice = sprintf( __( 'You should %s to use this functionality', 'google-captcha' ),
-												sprintf( '<a href="http://bestwebsoft.com/products/contact-form/?k=d70b58e1739ab4857d675fed2213cedc&pn=75&v=%s&wp_v=%s">%s %s</a>', $gglcptch_plugin_info["Version"], $wp_version, __( 'download', 'google-captcha' ), $gglcptch_plugin_name )
+												sprintf( '<a href="http://bestwebsoft.com/products/contact-form/?k=0a750deb99a8e5296a5432f4c9cb9b55&pn=75&v=%s&wp_v=%s">%s %s</a>', $gglcptch_plugin_info["Version"], $wp_version, __( 'download', 'google-captcha' ), $gglcptch_plugin_name )
 											);
 										}
+										if ( $gglcptch_attrs == '' && ( is_plugin_active( 'contact-form-multi-pro/contact-form-multi-pro.php' ) || is_plugin_active( 'contact-form-multi/contact-form-multi.php' ) ) )
+											$gglcptch_plugin_notice = ' (' . __( 'Check off for adding captcha to forms on their settings pages.', 'google-captcha' ) . ')';
+
 										if ( '1' == $gglcptch_options['contact_form'] && $gglcptch_attrs == '' ) {
-											$gglcptch_attrs .= ' checked="checked"';
+											$gglcptch_attrs .= ' checked="checked"';												
 										} ?>
 										<label><input type="checkbox" <?php echo $gglcptch_attrs; ?> name="gglcptch_contact_form" value="contact_form" /> <?php echo $gglcptch_plugin_name; ?></label>
 										<div class="bws_help_box dashicons dashicons-editor-help" style="vertical-align: middle;"><div class="bws_hidden_help_text"><img src="<?php echo plugins_url( 'google-captcha/images'); ?>/contact_form.jpg" title="<?php echo $gglcptch_plugin_name; ?>" alt="<?php echo $gglcptch_plugin_name; ?>"></div></div>
@@ -629,7 +687,7 @@ if ( ! function_exists( 'gglcptch_check_role' ) ) {
 		if ( ! empty( $current_user->roles[0] ) ) {
 			$role = $current_user->roles[0];
 			if ( empty( $gglcptch_options ) )
-				$gglcptch_options = get_option( 'gglcptch_options' );
+				register_gglcptch_settings();
 			return isset( $gglcptch_options[ $role ] ) && '1' == $gglcptch_options[ $role ] ? true : false;
 		} else
 			return false;
@@ -642,7 +700,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 		global $gglcptch_options, $gglcptch_count;
 
 		if ( empty( $gglcptch_options ) )
-			$gglcptch_options = get_option( 'gglcptch_options' );
+			register_gglcptch_settings();
 
 		if ( ! $gglcptch_count )
 			$gglcptch_count = 1;
@@ -727,8 +785,11 @@ if ( ! function_exists( 'gglcptch_check' ) ) {
 	function gglcptch_check( $debug = false ) {
 		global $gglcptch_options;
 
-		$publickey	=	$gglcptch_options['public_key'];
-		$privatekey	=	$gglcptch_options['private_key'];
+		if ( empty( $gglcptch_options ) )
+			register_gglcptch_settings();
+
+		$publickey	= $gglcptch_options['public_key'];
+		$privatekey	= $gglcptch_options['private_key'];
 
 		if ( ! $privatekey || ! $publickey ) {
 			return array(
@@ -865,26 +926,49 @@ if ( ! function_exists( 'gglcptch_login_check' ) ) {
 
 /* Check google captcha in BWS Contact Form */
 if ( ! function_exists( 'gglcptch_recaptcha_check' ) ) {
-	function gglcptch_recaptcha_check( $display_error = true ) {
+	function gglcptch_recaptcha_check( $allow = true ) {
 		/**
 		 * this condition is necessary for compatibility
 		 * with Contact Form ( Free and Pro ) by BestWebsoft plugins versions
 		 * that use $_POST as parameter for hook ( old versions )
 		 * apply_filters( 'cntctfrmpr_check_form', $_POST );
 		 * @deprecated since 1.22
-		 * @todo remove after some while
+		 * @todo remove after 25.02.2017
 		 */
-		if ( is_array( $display_error ) )
-			$display_error = false;
+		if ( is_array( $allow ) ) {
+			$allow = false;
+			$old_cf_version = true;
+		} else /* end @todo */ if ( ! $allow || is_string( $allow ) || is_wp_error( $allow ) ) {
+			return $allow;
+		}
 
 		$result = gglcptch_check();
-
 
 		if ( $result['response'] || $result['reason'] == 'ERROR_NO_KEYS' )
 			return true;
 
-		return $display_error ? '<strong>' . __( 'Error', 'google-captcha' ) . '</strong>:&nbsp;' . __( 'You have entered an incorrect reCAPTCHA value', 'google-captcha' ) . '.' : false;
-
+		/**
+		 * @deprecated since 1.22
+		 * @todo remove after 25.02.2017
+		 */
+		if ( isset( $old_cf_version ) ) {
+			return false;
+		} else /* end @todo */ {
+			$error_message = '<strong>' . __( 'Error', 'google-captcha' ) . '</strong>:&nbsp;' . __( 'You have entered an incorrect reCAPTCHA value.', 'google-captcha' );
+			/**
+	         * Function 'cntctfrm_handle_captcha_filters' was added in Contact Form 4.0.2 (Free and Pro)
+	         * remove this condition. WP_Error is correct object for return.
+	         * @deprecated since 1.26
+		 	 * @todo remove after 01.08.2017
+	         */
+			if ( function_exists( 'cntctfrm_handle_captcha_filters' ) ) {
+				$allow = new WP_Error();
+				$allow->add( 'gglcptch_error', $error_message );
+			} else {
+				$allow = $error_message;
+			}
+		}
+		return $allow;
 	}
 }
 
@@ -961,8 +1045,22 @@ if ( ! function_exists( 'gglcptch_commentform_check' ) ) {
 
 /* display google captcha in Contact form */
 if ( ! function_exists( 'gglcptch_cf_display' ) ) {
-	function gglcptch_cf_display( $error_message, $content = "" ) {
-		return $content . gglcptch_display();
+	function gglcptch_cf_display( $content, $form_slug = "" ) {
+		/**
+		 * this are necessary for compatibility
+		 * with old Contact Form Free and Pro by BestWebsoft versions.
+		 * correct return - $content = $content . gglcptch_display();
+    	 * @since 1.26
+		 * @todo remove after 1.03.2017
+		 */
+		if ( is_string( $content ) )
+			$content = $content . gglcptch_display();
+		elseif ( is_array( $content ) )
+			$content = gglcptch_display();
+		else
+			$content = $form_slug . gglcptch_display();
+
+		return $content;
 	}
 }
 
@@ -994,6 +1092,7 @@ if ( ! function_exists( 'gglcptch_test_keys_verification' ) ) {
 	function gglcptch_test_keys_verification() {
 		if ( isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'] , $_REQUEST['action'] ) ) {
 			$result = gglcptch_check( true );
+
 			if ( ! $result['response'] ) {
 				$errors = array(
 					/* custom error */
@@ -1020,13 +1119,12 @@ if ( ! function_exists( 'gglcptch_test_keys_verification' ) ) {
 
 				if ( isset( $result['reason'] ) ) {
 					foreach ( (array)$result['reason'] as $error ) { ?>
-						<div class="error gglcptch-test-results"><p><?php echo $errors[ $error ]; ?></p></div>
+						<div class="error gglcptch-test-results"><p><?php echo $error; ?></p></div>
 					<?php }
 				}
 			} else { ?>
 				<div class="updated gglcptch-test-results"><p><?php _e( 'The verification is successfully completed.','google-captcha' ); ?></p></div>
-			<?php 
-				$gglcptch_options = get_option( 'gglcptch_options' );
+				<?php $gglcptch_options = get_option( 'gglcptch_options' );
 				$gglcptch_options['keys_verified'] = true;
 				update_option( 'gglcptch_options', $gglcptch_options );
 			}
@@ -1052,8 +1150,7 @@ if ( ! function_exists( 'gglcptch_action_links' ) ) {
 }
 
 if ( ! function_exists( 'gglcptch_shortcode_button_content' ) ) {
-	function gglcptch_shortcode_button_content( $content ) {
-		global $wp_version; ?>
+	function gglcptch_shortcode_button_content( $content ) { ?>
 		<div id="gglcptch" style="display:none;">
 			<input class="bws_default_shortcode" type="hidden" name="default" value="[bws_google_captcha]" />
 		</div>
@@ -1077,6 +1174,9 @@ if ( ! function_exists ( 'gglcptch_plugin_banner' ) ) {
 	function gglcptch_plugin_banner() {
 		global $hook_suffix, $gglcptch_plugin_info, $gglcptch_options;
 		if ( 'plugins.php' == $hook_suffix ) {
+			if ( empty( $gglcptch_options ) )
+				register_gglcptch_settings();
+
 			if ( empty( $gglcptch_options['public_key'] ) || empty( $gglcptch_options['private_key'] ) ) { ?>
 				<div class="error">
 					<p>
@@ -1118,69 +1218,31 @@ if ( ! function_exists( 'gglcptch_add_tabs' ) ) {
 if ( ! function_exists( 'gglcptch_delete_options' ) ) {
 	function gglcptch_delete_options() {
 		global $wpdb;
-		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-			$old_blog = $wpdb->blogid;
-			/* Get all blog ids */
-			$blogids = $wpdb->get_col( "SELECT `blog_id` FROM $wpdb->blogs" );
-			foreach ( $blogids as $blog_id ) {
-				switch_to_blog( $blog_id );
+
+		if ( ! function_exists( 'get_plugins' ) )
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		$all_plugins = get_plugins();
+
+		if ( ! array_key_exists( 'google-captcha-pro/google-captcha-pro.php', $all_plugins ) ) {
+			if ( function_exists( 'is_multisite' ) && is_multisite() ) {
+				$old_blog = $wpdb->blogid;
+				/* Get all blog ids */
+				$blogids = $wpdb->get_col( "SELECT `blog_id` FROM $wpdb->blogs" );
+				foreach ( $blogids as $blog_id ) {
+					switch_to_blog( $blog_id );
+					delete_option( 'gglcptch_options' );
+				}
+				switch_to_blog( $old_blog );
+			} else {
 				delete_option( 'gglcptch_options' );
 			}
-			switch_to_blog( $old_blog );
-		} else {
-			delete_option( 'gglcptch_options' );
 		}
 
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
 		bws_delete_plugin( plugin_basename( __FILE__ ) );
 	}
-}
-
-global $gglcptch_options;
-$gglcptch_options = get_option( 'gglcptch_options' );
-if ( empty( $gglcptch_options ) ) {
-	register_gglcptch_settings();
-	$gglcptch_options = get_option( 'gglcptch_options' );
-}
-
-/* Add hooks */
-if ( '1' == $gglcptch_options['login_form'] || '1' == $gglcptch_options['reset_pwd_form'] || '1' == $gglcptch_options['registration_form'] ) {
-	add_action( 'login_enqueue_scripts', 'gglcptch_add_styles' );
-
-	if ( '1' == $gglcptch_options['login_form'] ) {
-		add_action( 'login_form', 'gglcptch_login_display' );
-		add_action( 'authenticate', 'gglcptch_login_check', 21, 1 );
-	}
-
-	if ( '1' == $gglcptch_options['reset_pwd_form'] ) {
-		add_action( 'lostpassword_form', 'gglcptch_login_display' );
-		add_action( 'allow_password_reset', 'gglcptch_lostpassword_check' );
-	}
-
-	if ( '1' == $gglcptch_options['registration_form'] ) {
-		if ( ! is_multisite() ) {
-			add_action( 'register_form', 'gglcptch_login_display' );
-			add_action( 'registration_errors', 'gglcptch_lostpassword_check' );
-		} else {
-			add_action( 'signup_extra_fields', 'gglcptch_signup_display' );
-			add_action( 'signup_blogform', 'gglcptch_signup_display' );
-			add_filter( 'wpmu_validate_user_signup', 'gglcptch_signup_check' );
-		}
-	}
-}
-
-if ( '1' == $gglcptch_options['comments_form'] ) {
-	add_action( 'comment_form_after_fields', 'gglcptch_commentform_display' );
-	add_action( 'comment_form_logged_in_after', 'gglcptch_commentform_display' );
-	add_action( 'pre_comment_on_post', 'gglcptch_commentform_check' );
-}
-
-if ( '1' == $gglcptch_options['contact_form'] ) {
-	add_filter( 'cntctfrm_display_captcha', 'gglcptch_cf_display', 10, 2 );
-	add_filter( 'cntctfrmpr_display_captcha', 'gglcptch_cf_display', 10, 2 );
-	add_filter( 'cntctfrm_check_form', 'gglcptch_recaptcha_check' );
-	add_filter( 'cntctfrmpr_check_form', 'gglcptch_recaptcha_check' );
 }
 
 add_action( 'admin_menu', 'gglcptch_admin_menu' );
