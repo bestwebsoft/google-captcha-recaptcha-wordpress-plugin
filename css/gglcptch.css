@@ -15,6 +15,11 @@
 .gglcptch table#recaptcha_table {
 	table-layout: auto !important;
 }
+/* in whitelist notification message */
+.gglcptch_whitelist_message {
+	display: block;
+	margin: 12px 0;
+}
 .gglcptch_v1,
 .gglcptch_v2 {
 	min-width: 1px;

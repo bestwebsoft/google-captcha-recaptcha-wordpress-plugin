@@ -2,18 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 11:33+0300\n"
-"PO-Revision-Date: 2016-07-25 11:33+0300\n"
+"POT-Creation-Date: 2016-10-21 11:17+0300\n"
+"PO-Revision-Date: 2016-10-21 11:21+0300\n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
-"Language-Team: SAID MOULLA <mor0cc0@live.com >\n"
-"Language: uk\n"
+"Language-Team: SAID MOULLA\n"
+"Language: uk-UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Loco-Source-Locale: fr_FR\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Generator: Poedit 1.5.4\n"
@@ -21,107 +21,109 @@ msgstr ""
 "X-Loco-Target-Locale: uk_UA\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:34 google-captcha.php:422
+#: google-captcha.php:34 google-captcha.php:561
 msgid "Google Captcha Settings"
 msgstr "إعدادات Google Captcha"
 
-#: google-captcha.php:202
+#: google-captcha.php:237
 msgid "Warning"
-msgstr ""
+msgstr "تحذير"
 
-#: google-captcha.php:202
+#: google-captcha.php:237
 msgid ""
 "It has been found more than one reCAPTCHA in current form. In this case "
 "reCAPTCHA will not work properly. Please remove all unnecessary reCAPTCHA "
 "blocks."
 msgstr ""
+"لقد تم اكتشاف أكثر من (كابتشا) في النموذج الحالي، وهذا ما سيتسبب في عدم "
+"عملها بشكل صحيح، لذا قم بإزالة كافة (الكابتشا) التي لا حاجة لها."
 
-#: google-captcha.php:206
-#, fuzzy
-msgid "Error: You have entered an incorrect reCAPTCHA value."
-msgstr "خطأ: لقد أدخلت قيمة كابتشا بشكل خاطئ."
+#: google-captcha.php:241
+msgid "Error: You have entered an incorrect reCAPTCHA value"
+msgstr "خطأ: لقد أدخلت الرمز بشكل خاطئ."
 
-#: google-captcha.php:327
-msgid "Normal"
+#: google-captcha.php:345
+msgid "You are in the whitelist"
 msgstr ""
 
-#: google-captcha.php:328
-msgid "Compact"
-msgstr ""
-
-#: google-captcha.php:334
+#: google-captcha.php:472
 msgid "Site key"
 msgstr "مفتاح الموقع"
 
-#: google-captcha.php:339
+#: google-captcha.php:477
 msgid "Secret Key"
 msgstr "المفتاح السري"
 
-#: google-captcha.php:347
+#: google-captcha.php:485
 msgid "Login form"
 msgstr "فورم تسجيل الدخول"
 
-#: google-captcha.php:348
+#: google-captcha.php:486
 msgid "Registration form"
 msgstr "فورم التسجيل"
 
-#: google-captcha.php:349
+#: google-captcha.php:487
 msgid "Reset password form"
 msgstr "فورم إعادة تعيين كلمة السر"
 
-#: google-captcha.php:350
+#: google-captcha.php:488
 msgid "Comments form"
 msgstr "فورم التعليقات"
 
-#: google-captcha.php:369
+#: google-captcha.php:507
 msgid "Enter site key"
 msgstr "أدخل مفتاح الموقع"
 
-#: google-captcha.php:370 google-captcha.php:376
+#: google-captcha.php:508 google-captcha.php:514
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr "تحذير: الكابتشا لن تعمل في حالة عدم إدخال المفاتيح."
 
-#: google-captcha.php:375
+#: google-captcha.php:513
 msgid "Enter secret key"
 msgstr "أدخل المفتاح السري"
 
-#: google-captcha.php:401
+#: google-captcha.php:540
 msgid "Settings saved"
 msgstr "تم حفظ الإعدادات"
 
-#: google-captcha.php:407
-#, fuzzy
-msgid "All plugin settings were restored."
-msgstr "صفحة إعدادات الإضافة"
+#: google-captcha.php:546
+msgid "All plugin settings were restored"
+msgstr "لقد تم استعادة كافة إعدادات الإضافة"
 
-#: google-captcha.php:424 google-captcha.php:1128 google-captcha.php:1150
+#: google-captcha.php:563 google-captcha.php:1235 google-captcha.php:1256
 msgid "Settings"
 msgstr "إعدادات"
 
-#: google-captcha.php:425
+#: google-captcha.php:564
+msgid "Whitelist"
+msgstr ""
+
+#: google-captcha.php:565
 msgid "Custom code"
-msgstr ""
+msgstr "شفرة مخصصة"
 
-#: google-captcha.php:426
+#: google-captcha.php:566
 msgid "Go PRO"
-msgstr ""
+msgstr "الترقية إلى النسخة المتقدمة"
 
-#: google-captcha.php:431
+#: google-captcha.php:571
 msgid ""
 "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA "
 "version 1 features."
 msgstr ""
+"يمكن استعراض (كابتشا) واحدة فقط في هذه الصفحة، وهي مرتبطة بمميزات النسخة "
+"الأولى منها"
 
-#: google-captcha.php:446
-#, fuzzy, php-format
+#: google-captcha.php:586
+#, php-format
 msgid ""
 "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
 "please use %s button"
 msgstr ""
-"إذا كنت ترغب في إضافة Google Captcha إلى الفورم، فقط قم بنسخ ولصق هذا الكود "
-"في المقال أو الصفحة."
+"إذا كنت ترغب في تفعيل خاصية التحقق بالصورة (الكابتشا) في الصفحة أو التدوينة، "
+"الرجاء استخدام الزر %s"
 
-#: google-captcha.php:452
+#: google-captcha.php:592
 #, php-format
 msgid ""
 "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking "
@@ -129,265 +131,340 @@ msgid ""
 "isn't displayed or you would like to add the Google Captcha (reCAPTCHA) to "
 "your own form , please use the shortcode %s"
 msgstr ""
+"يمكنك إضافة (الكابتشا) إلى صفحة أو تدوينة بالضغط على زر %s في بلوك تعديل "
+"المحتوى من خلال استخدام طريقة الوضع البصري في العرض، وفي حالة ما لم يتم عرض "
+"الزر يمكنك إضافة (الكابتشا) في النموذج الخاص بك، عن طريق استخدام الشفرة "
+"التالية %s"
 
-#: google-captcha.php:460
+#: google-captcha.php:600
 msgid "Authentication"
 msgstr "المصادقة"
 
-#: google-captcha.php:461
-#, fuzzy, php-format
+#: google-captcha.php:601
+#, php-format
 msgid "Before you are able to do something, you must to register %shere%s"
 msgstr "قبل التفكير في عمل أي شيء، لابد من التسجيل %s من هنا %s"
 
-#: google-captcha.php:462
-msgid "Enter site key and secret key, that you get after registration."
+#: google-captcha.php:602
+msgid "Enter site key and secret key, that you get after registration"
 msgstr "أدخل مفتاح الموقع والمفتاح السري، الذي حصلت عليه بعد التسجيل."
 
-#: google-captcha.php:477
-#, fuzzy
+#: google-captcha.php:617
 msgid "Test Keys"
-msgstr "المفتاح السري"
+msgstr "اختبار المفاتيح"
 
-#: google-captcha.php:480
+#: google-captcha.php:620
 msgid "Options"
 msgstr "خيارات"
 
-#: google-captcha.php:483
+#: google-captcha.php:623
 msgid "Enable reCAPTCHA for"
-msgstr ""
+msgstr "تفعيل التحقق بالصورة ل"
 
-#: google-captcha.php:487
+#: google-captcha.php:627
 msgid "WordPress default"
-msgstr ""
+msgstr "الافتراضي في الووردبريس"
 
-#: google-captcha.php:496
+#: google-captcha.php:636
 msgid "This option is available only for network or for main blog"
-msgstr ""
+msgstr "هذا الخيار متوفر فقط للشبكات أو للمدونة الرئيسية"
 
-#: google-captcha.php:504
+#: google-captcha.php:644
 msgid "Plugins"
-msgstr ""
+msgstr "الإضافات"
 
-#: google-captcha.php:512 google-captcha.php:517
+#: google-captcha.php:652 google-captcha.php:657
 #, php-format
 msgid "You should %s to use this functionality"
-msgstr ""
+msgstr "يتوجب عليك %s لاستخدام هذه الخصائص"
 
-#: google-captcha.php:513
+#: google-captcha.php:653
 msgid "activate"
-msgstr ""
+msgstr "تفعيل"
 
-#: google-captcha.php:513
+#: google-captcha.php:653
 msgid "for network"
-msgstr ""
+msgstr "للشبكة"
 
-#: google-captcha.php:518
+#: google-captcha.php:658
 msgid "download"
-msgstr ""
+msgstr "تحميل"
 
-#: google-captcha.php:522
-msgid "Check off for adding captcha to forms on their settings pages."
-msgstr ""
+#: google-captcha.php:662
+msgid "Check off for adding captcha to forms on their settings pages"
+msgstr "اختر \"تعطيل\" لإضافة \"الكابتشا\" إلى النماذج في صفحات إعداداتها"
 
-#: google-captcha.php:533 google-captcha.php:610
-msgid "Close"
-msgstr ""
-
-#: google-captcha.php:545 google-captcha.php:646
-msgid "Unlock premium options by upgrading to Pro version"
-msgstr ""
-
-#: google-captcha.php:548 google-captcha.php:649
-msgid "Learn More"
-msgstr ""
-
-#: google-captcha.php:554
+#: google-captcha.php:671
 #, php-format
 msgid ""
 "If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s"
-msgstr ""
+msgstr "إذا كنت تود استخدام (الكابتشا) في نموذج مخصص يرجى الإطلاع على %s"
 
-#: google-captcha.php:554 google-captcha.php:1151
+#: google-captcha.php:671 google-captcha.php:1257
 msgid "FAQ"
 msgstr "أسئلة شائعة"
 
-#: google-captcha.php:559
-#, fuzzy
+#: google-captcha.php:676
 msgid "Hide reCAPTCHA in Comments form for"
-msgstr "لنسخة reCAPTCHA"
+msgstr "إخفاء (الكابتشا) في التعليقات ل"
 
-#: google-captcha.php:571
+#: google-captcha.php:688
 #, fuzzy
-msgid "reCAPTCHA version"
-msgstr "نسخة reCAPTCHA:"
+msgid "Whitelist notification"
+msgstr "اختبار التحقق"
 
-#: google-captcha.php:574 google-captcha.php:575 google-captcha.php:576
-#: google-captcha.php:577
+#: google-captcha.php:694
+msgid ""
+"This message will be displayed instead of the reCAPTCHA If the user IP is "
+"added to the whitelist"
+msgstr ""
+
+#: google-captcha.php:701
+msgid "reCAPTCHA version"
+msgstr "نسخة الكابتشا"
+
+#: google-captcha.php:704 google-captcha.php:705 google-captcha.php:706
+#: google-captcha.php:707
 msgid "version"
 msgstr "النسخة"
 
-#: google-captcha.php:583 google-captcha.php:596
-#, fuzzy
+#: google-captcha.php:713 google-captcha.php:726
 msgid "reCAPTCHA theme"
-msgstr "نسخة reCAPTCHA:"
+msgstr "استايل الكابتشا:"
 
-#: google-captcha.php:584 google-captcha.php:597 google-captcha.php:628
-#, fuzzy
+#: google-captcha.php:714 google-captcha.php:727 includes/pro_banners.php:87
 msgid "for version"
-msgstr "النسخة"
+msgstr "للنسخة"
 
-#: google-captcha.php:614
-#, fuzzy
-msgid "reCAPTCHA language"
-msgstr "نسخة reCAPTCHA:"
-
-#: google-captcha.php:621
-msgid "Use the current site language"
-msgstr ""
-
-#: google-captcha.php:621
-msgid "Using"
-msgstr ""
-
-#: google-captcha.php:627
-#, fuzzy
-msgid "reCAPTCHA size"
-msgstr "نسخة reCAPTCHA:"
-
-#: google-captcha.php:656
+#: google-captcha.php:739
 msgid "Save Changes"
 msgstr "حفظ التغييرات"
 
-#: google-captcha.php:710 google-captcha.php:1167
+#: google-captcha.php:803 google-captcha.php:1276
 msgid "To use Google Captcha you must get the keys from"
-msgstr "لتفعيل Google Captcha لابد من الحصول على المفاتيح من"
+msgstr "لتتمكن من استخدام Google Captcha لابد من الحصول على المفاتيح من"
 
-#: google-captcha.php:711 google-captcha.php:1168
+#: google-captcha.php:804 google-captcha.php:1277
 msgid "here"
 msgstr "هنا"
 
-#: google-captcha.php:712 google-captcha.php:1169
+#: google-captcha.php:805 google-captcha.php:1278
 msgid "and enter them on the"
 msgstr "ثم أدخلهم في"
 
-#: google-captcha.php:714 google-captcha.php:1171
+#: google-captcha.php:807 google-captcha.php:1280
 msgid "plugin setting page"
 msgstr "صفحة إعدادات الإضافة"
 
-#: google-captcha.php:900 google-captcha.php:948
+#: google-captcha.php:1000 google-captcha.php:1048
 msgid "Error"
 msgstr "خطأ"
 
-#: google-captcha.php:900 google-captcha.php:948
-#, fuzzy
-msgid "You have entered an incorrect reCAPTCHA value."
-msgstr "لقد أدخلت قيمة كابتشا بشكل خاطئ"
-
-#: google-captcha.php:978 google-captcha.php:1007 google-captcha.php:1033
-msgid "ERROR"
-msgstr ""
-
-#: google-captcha.php:978 google-captcha.php:1007
-#, fuzzy
+#: google-captcha.php:1000 google-captcha.php:1048 google-captcha.php:1078
+#: google-captcha.php:1107
 msgid "You have entered an incorrect reCAPTCHA value"
-msgstr "لقد أدخلت قيمة كابتشا بشكل خاطئ"
+msgstr "لقد أدخلت الرمز بشكل خاطئ"
 
-#: google-captcha.php:1033
-#, fuzzy
+#: google-captcha.php:1078 google-captcha.php:1107 google-captcha.php:1133
+msgid "ERROR"
+msgstr "خطأ"
+
+#: google-captcha.php:1133
 msgid ""
 "You have entered an incorrect reCAPTCHA value. Click the BACK button on your "
 "browser, and try again."
-msgstr ""
-"خطأ: لقد أدخلت قيمة كابتشا بشكل خاطئ. اضغط زر الرجوع في المتصفح وحاول مجددا."
+msgstr "خطأ: لقد أدخلت الرمز بشكل خاطئ. اضغط زر الرجوع في المتصفح وحاول مجددا."
 
-#: google-captcha.php:1064
+#: google-captcha.php:1171
 msgid "Please, complete the captcha and submit \"Test verification\""
-msgstr ""
+msgstr "الرجاء اتمام الرمز واعتماد \"اختبار التحقق\""
 
-#: google-captcha.php:1068
+#: google-captcha.php:1175
 msgid "Test verification"
-msgstr ""
+msgstr "اختبار التحقق"
 
-#: google-captcha.php:1082 google-captcha.php:1091
-msgid "The user response was missing."
-msgstr ""
+#: google-captcha.php:1190 google-captcha.php:1199
+msgid "The user response was missing"
+msgstr "إجابة المستخدم غير موجودة"
 
-#: google-captcha.php:1084
-msgid "The Secret Key is missing."
-msgstr ""
+#: google-captcha.php:1192
+msgid "The Secret Key is missing"
+msgstr "المفتاح السري غير موجود"
 
-#: google-captcha.php:1087 google-captcha.php:1096
+#: google-captcha.php:1195 google-captcha.php:1204
 msgid "The Secret Key is invalid"
-msgstr ""
+msgstr "المفتاح السري غير صحيح"
 
-#: google-captcha.php:1088 google-captcha.php:1097
+#: google-captcha.php:1196 google-captcha.php:1205
 msgid "Check your domain configuration"
-msgstr ""
+msgstr "تحقق من إعدادات النطاق الخاص بك"
 
-#: google-captcha.php:1089 google-captcha.php:1098
-#, fuzzy
+#: google-captcha.php:1197 google-captcha.php:1206
 msgid "and enter it again"
-msgstr "ثم أدخلهم في"
+msgstr "تم أدخله من جديد"
 
-#: google-captcha.php:1092 google-captcha.php:1100
-msgid "The user response is invalid."
-msgstr ""
+#: google-captcha.php:1200 google-captcha.php:1208
+msgid "The user response is invalid"
+msgstr "إجابة المستخدم خاطئة"
 
-#: google-captcha.php:1109
-msgid "The verification is successfully completed."
-msgstr ""
+#: google-captcha.php:1217
+msgid "The verification is successfully completed"
+msgstr "عملية التحقق تمت بنجاح"
 
-#: google-captcha.php:1152
+#: google-captcha.php:1258
 msgid "Support"
 msgstr "الدعم الفني"
 
+#: includes/whitelist.php:64
+msgid "For IP addresses from the whitelist reCAPTCHA will not be displayed"
+msgstr ""
+
+#: includes/whitelist.php:71
+msgid "Add IP to the whitelist"
+msgstr ""
+
+#: includes/whitelist.php:75
 #, fuzzy
-#~ msgid ""
-#~ "Google Captcha version 2 will not work correctly, since the option "
-#~ "\"allow_url_fopen\" is disabled. Please contact your hosting support "
-#~ "service."
-#~ msgstr ""
-#~ "النسخة الثانية من Google Captcha لن تعمل بشكل جيد، في حالة تم تعطيل "
-#~ "الدالة \"allow_url_fopen\" في PHP الإستضافة."
+msgid "Save changes"
+msgstr "حفظ التغييرات"
 
-#~ msgid ""
-#~ "Google Captcha version 2 will not work correctly, since the option "
-#~ "\"allow_url_fopen\" is disabled in the PHP settings of your hosting."
-#~ msgstr ""
-#~ "النسخة الثانية من Google Captcha لن تعمل بشكل جيد، في حالة تم تعطيل "
-#~ "الدالة \"allow_url_fopen\" في PHP الإستضافة."
+#: includes/whitelist.php:92
+msgid "My IP"
+msgstr ""
 
-#~ msgid "Read more."
-#~ msgstr "إقرأ المزيد"
+#: includes/whitelist.php:96
+msgid "Save IP to the whitelist"
+msgstr ""
 
-#~ msgid "powered by"
-#~ msgstr "مدعوم من"
+#: includes/whitelist.php:100 includes/pro_banners.php:45
+msgid "Allowed formats"
+msgstr ""
 
-#~ msgid "Notice:"
-#~ msgstr "ملاحظة :"
+#: includes/whitelist.php:101
+msgid "Allowed diapason"
+msgstr ""
 
-#~ msgid ""
-#~ "The plugin's settings have been changed. In order to save them please "
-#~ "don't forget to click the 'Save Changes' button."
-#~ msgstr "تم حفظ إعدادات الإضافة بنجاح."
+#: includes/whitelist.php:106
+msgid "Search IP"
+msgstr ""
 
-#~ msgid "Contact form"
-#~ msgstr "فورم الإتصال"
+#: includes/whitelist.php:160
+msgid "Nothing found"
+msgstr ""
 
-#~ msgid "Activate contact form"
-#~ msgstr "تفعيل فورم الإتصال"
+#: includes/whitelist.php:160
+msgid "No IP in the whitelist"
+msgstr ""
 
-#~ msgid "Download contact form"
-#~ msgstr "تحميل فورم الإتصال"
+#: includes/whitelist.php:167
+msgid "IP address"
+msgstr ""
 
-#~ msgid "Enable Google Captcha for:"
-#~ msgstr "تفعيل Google Captcha في كل من :"
+#: includes/whitelist.php:168
+msgid "Date added"
+msgstr ""
 
-#~ msgid "Hide captcha for:"
-#~ msgstr "تعطيل Google Captcha ل :"
+#: includes/whitelist.php:222 includes/whitelist.php:232
+msgid "Remove from the whitelist"
+msgstr ""
 
-#~ msgid "Theme:"
-#~ msgstr "الإستايل :"
+#: includes/whitelist.php:318
+msgid "IP added to the whitelist successfully"
+msgstr ""
 
-#~ msgid "Google Captcha"
-#~ msgstr "Google Captcha"
+#: includes/whitelist.php:320 includes/whitelist.php:341
+#: includes/whitelist.php:351
+msgid "Some errors occured"
+msgstr ""
+
+#: includes/whitelist.php:322
+msgid "IP is already in the whitelist"
+msgstr ""
+
+#: includes/whitelist.php:325
+msgid "Invalid IP. See allowed formats."
+msgstr ""
+
+#: includes/whitelist.php:347
+msgid "One IP was deleted successfully"
+msgstr ""
+
+#: includes/whitelist.php:354
+msgid "You have not entered any IP"
+msgstr ""
+
+#: includes/whitelist.php:357
+msgid "You have not entered any IP in to the search form"
+msgstr ""
+
+#: includes/whitelist.php:359
+msgid "Search results for"
+msgstr ""
+
+#: includes/pro_banners.php:17
+#, fuzzy
+msgid "This options is available in Pro version of plugin"
+msgstr "هذا الخيار متوفر فقط للشبكات أو للمدونة الرئيسية"
+
+#: includes/pro_banners.php:20
+msgid "Close"
+msgstr "إغلاق"
+
+#: includes/pro_banners.php:28
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr "فتح الخصائص المتقدمة عن طريق الترقية إلى نسخة البرو"
+
+#: includes/pro_banners.php:30
+msgid "Learn More"
+msgstr "إقرأ المزيد"
+
+#: includes/pro_banners.php:43
+msgid "Reason"
+msgstr ""
+
+#: includes/pro_banners.php:46
+msgid "Allowed separators for IPs: a comma"
+msgstr ""
+
+#: includes/pro_banners.php:46 includes/pro_banners.php:47
+msgid "semicolon"
+msgstr ""
+
+#: includes/pro_banners.php:46
+msgid "ordinary space, tab, new line or carriage return"
+msgstr ""
+
+#: includes/pro_banners.php:47
+msgid "Allowed separators for reasons: a comma"
+msgstr ""
+
+#: includes/pro_banners.php:47
+msgid "tab, new line or carriage return"
+msgstr ""
+
+#: includes/pro_banners.php:68
+msgid "Normal"
+msgstr "العادي"
+
+#: includes/pro_banners.php:69
+msgid "Compact"
+msgstr "موجز"
+
+#: includes/pro_banners.php:73
+msgid "reCAPTCHA language"
+msgstr "لغة الكابتشا:"
+
+#: includes/pro_banners.php:80
+msgid "Use the current site language"
+msgstr "استخدام لغة الموقع الحالية"
+
+#: includes/pro_banners.php:80
+msgid "Using"
+msgstr "استخدام"
+
+#: includes/pro_banners.php:86
+msgid "reCAPTCHA size"
+msgstr "حجم الكابتشا:"
+
+#~ msgid "You have entered an incorrect reCAPTCHA value."
+#~ msgstr "لقد أدخلت الرمز بشكل خاطئ"

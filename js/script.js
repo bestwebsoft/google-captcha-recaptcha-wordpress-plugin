@@ -1,4 +1,4 @@
-(function( $, gglcptch ) {
+( function( $, gglcptch ) {
 	gglcptch = gglcptch || {};
 
 	gglcptch.prepare = function() {
@@ -6,10 +6,15 @@
 		 * display reCaptcha for plugin`s block
 		 */
 		$( '.gglcptch_v1, .gglcptch_v2' ).each( function() {
-			var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' );
-			if ( gglcptch.vars.visibility || $( this ).is( ':visible' ) )
-				gglcptch.display( container );
-		});
+			var container = $( this ).find( '.gglcptch_recaptcha' );
+			if (
+				container.is( ':empty' ) &&
+				( gglcptch.vars.visibility || $( this ).is( ':visible' ) )
+			) {
+				var containerId = container.attr( 'id' )
+				gglcptch.display( containerId );
+			}
+		} );
 
 		/*
 		 * display reCaptcha for others blocks
@@ -62,7 +67,7 @@
 
 					gglcptch.display( container, false, params );
 				}
-			});
+			} );
 
 			/*
 			 * count the number of reCAPTCHA blocks in the form
@@ -71,7 +76,7 @@
 				if ( $( this ).contents().find( 'iframe[title="recaptcha widget"]' ).length > 1 && ! $( this ).children( '.gglcptch_dublicate_error' ).length ) {
 					$( this ).prepend( '<div class="gglcptch_dublicate_error error" style="color: red;">'+ gglcptch.options.error + '</div><br />\n' );
 				}
-			});
+			} );
 		}
 	};
 
@@ -97,7 +102,7 @@
 
 	window.onload = gglcptch.prepare;
 
-	$( document ).ready(function() {
+	$( document ).ready( function() {
 
 		$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
 
@@ -110,7 +115,7 @@
 				if ( $gglcptch.find( 'input[name="gglcptch_test_enable_js_field"]:hidden' ).length == 0 ) {
 					$gglcptch.append( '<input type="hidden" value="' + gglcptch.vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
 				}
-				$.ajax({
+				$.ajax( {
 					async   : false,
 					cache   : false,
 					type    : 'POST',
@@ -141,13 +146,13 @@
 						e.preventDefault ? e.preventDefault() : (e.returnValue = false);
 						return false;
 					}
-				});
+				} );
 				$( '#recaptcha_reload' ).trigger( 'click' );
 			} else if ( $captcha_v2.length ) {
 				if ( $gglcptch.find( 'input[name="gglcptch_test_enable_js_field"]:hidden' ).length == 0 ) {
 					$gglcptch.append( '<input type="hidden" value="' + gglcptch.vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
 				}
-				$.ajax({
+				$.ajax( {
 					async   : false,
 					cache   : false,
 					type    : 'POST',
@@ -165,7 +170,7 @@
 								$captcha_v2.after( '<label id="gglcptch_error">' + gglcptch.vars.error_msg + '</label>' );
 								$( "#gglcptch_error" ).fadeOut( 4000, function() {
 									$( "#gglcptch_error" ).remove();
-								});
+								} );
 								$( 'html, body' ).animate({ scrollTop: $captcha_v2.offset().top - 50 }, 500);
 							}
 							e.preventDefault ? e.preventDefault() : (e.returnValue = false);
@@ -179,10 +184,10 @@
 						e.preventDefault ? e.preventDefault() : (e.returnValue = false);
 						return false;
 					}
-				});
+				} );
 			}
-		});
-	});
+		} );
+	} );
 
 	function cleanError() {
 		$error = $( this ).parents( '#recaptcha_widget_div' ).next( '#gglcptch_error' );
@@ -198,5 +203,4 @@
 		else
 			return id;
 	}
-
-})(jQuery, gglcptch);
+} )( jQuery, gglcptch );

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 11:34+0300\n"
+"POT-Creation-Date: 2016-10-20 14:10+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: Nick Lai <nick20080808@gmail.com>\n"
@@ -17,100 +17,100 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:34 google-captcha.php:422
+#: google-captcha.php:34 google-captcha.php:561
 msgid "Google Captcha Settings"
 msgstr "reCAPTCHA 驗證碼設置"
 
-#: google-captcha.php:202
+#: google-captcha.php:237
 msgid "Warning"
 msgstr ""
 
-#: google-captcha.php:202
+#: google-captcha.php:237
 msgid ""
 "It has been found more than one reCAPTCHA in current form. In this case "
 "reCAPTCHA will not work properly. Please remove all unnecessary reCAPTCHA "
 "blocks."
 msgstr ""
 
-#: google-captcha.php:206
+#: google-captcha.php:241
 #, fuzzy
-msgid "Error: You have entered an incorrect reCAPTCHA value."
+msgid "Error: You have entered an incorrect reCAPTCHA value"
 msgstr "錯誤：您輸入的驗證碼不正確。"
 
-#: google-captcha.php:327
-msgid "Normal"
+#: google-captcha.php:345
+msgid "You are in the whitelist"
 msgstr ""
 
-#: google-captcha.php:328
-msgid "Compact"
-msgstr ""
-
-#: google-captcha.php:334
+#: google-captcha.php:472
 msgid "Site key"
 msgstr ""
 
-#: google-captcha.php:339
+#: google-captcha.php:477
 msgid "Secret Key"
 msgstr ""
 
-#: google-captcha.php:347
+#: google-captcha.php:485
 msgid "Login form"
 msgstr "登入頁"
 
-#: google-captcha.php:348
+#: google-captcha.php:486
 msgid "Registration form"
 msgstr "用戶註冊頁"
 
-#: google-captcha.php:349
+#: google-captcha.php:487
 msgid "Reset password form"
 msgstr "重設密碼頁"
 
-#: google-captcha.php:350
+#: google-captcha.php:488
 msgid "Comments form"
 msgstr "發表迴響框"
 
-#: google-captcha.php:369
+#: google-captcha.php:507
 #, fuzzy
 msgid "Enter site key"
 msgstr "輸入私有密鑰"
 
-#: google-captcha.php:370 google-captcha.php:376
+#: google-captcha.php:508 google-captcha.php:514
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr "警告：如果你不填寫此欄，驗證碼將不會顯示。"
 
-#: google-captcha.php:375
+#: google-captcha.php:513
 #, fuzzy
 msgid "Enter secret key"
 msgstr "輸入私有密鑰"
 
-#: google-captcha.php:401
+#: google-captcha.php:540
 msgid "Settings saved"
 msgstr "設定已儲存"
 
-#: google-captcha.php:407
+#: google-captcha.php:546
 #, fuzzy
-msgid "All plugin settings were restored."
+msgid "All plugin settings were restored"
 msgstr "外掛設置頁"
 
-#: google-captcha.php:424 google-captcha.php:1128 google-captcha.php:1150
+#: google-captcha.php:563 google-captcha.php:1235 google-captcha.php:1256
 msgid "Settings"
 msgstr "設定"
 
-#: google-captcha.php:425
+#: google-captcha.php:564
+msgid "Whitelist"
+msgstr ""
+
+#: google-captcha.php:565
 msgid "Custom code"
 msgstr ""
 
-#: google-captcha.php:426
+#: google-captcha.php:566
 msgid "Go PRO"
 msgstr ""
 
-#: google-captcha.php:431
+#: google-captcha.php:571
 msgid ""
 "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA "
 "version 1 features."
 msgstr ""
 
-#: google-captcha.php:446
+#: google-captcha.php:586
 #, fuzzy, php-format
 msgid ""
 "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
@@ -118,7 +118,7 @@ msgid ""
 msgstr ""
 "如果您想在自己的表格中加入reCAPTCHA驗證碼，只需貼上此代號到您的文章或頁面："
 
-#: google-captcha.php:452
+#: google-captcha.php:592
 #, php-format
 msgid ""
 "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking "
@@ -127,211 +127,344 @@ msgid ""
 "your own form , please use the shortcode %s"
 msgstr ""
 
-#: google-captcha.php:460
+#: google-captcha.php:600
 msgid "Authentication"
 msgstr "身份驗證"
 
-#: google-captcha.php:461
+#: google-captcha.php:601
 #, fuzzy, php-format
 msgid "Before you are able to do something, you must to register %shere%s"
 msgstr "在開始使用本外掛之先，請到%s這裡%s註冊。"
 
-#: google-captcha.php:462
+#: google-captcha.php:602
 #, fuzzy
-msgid "Enter site key and secret key, that you get after registration."
+msgid "Enter site key and secret key, that you get after registration"
 msgstr "然後複製公開金鑰(Public Key)和私有密鑰(Private Key)到到以下方框。"
 
-#: google-captcha.php:477
+#: google-captcha.php:617
 msgid "Test Keys"
 msgstr ""
 
-#: google-captcha.php:480
+#: google-captcha.php:620
 msgid "Options"
 msgstr "選項"
 
-#: google-captcha.php:483
+#: google-captcha.php:623
 msgid "Enable reCAPTCHA for"
 msgstr ""
 
-#: google-captcha.php:487
+#: google-captcha.php:627
 msgid "WordPress default"
 msgstr ""
 
-#: google-captcha.php:496
+#: google-captcha.php:636
 msgid "This option is available only for network or for main blog"
 msgstr ""
 
-#: google-captcha.php:504
+#: google-captcha.php:644
 #, fuzzy
 msgid "Plugins"
 msgstr "外掛頁面"
 
-#: google-captcha.php:512 google-captcha.php:517
+#: google-captcha.php:652 google-captcha.php:657
 #, php-format
 msgid "You should %s to use this functionality"
 msgstr ""
 
-#: google-captcha.php:513
+#: google-captcha.php:653
 #, fuzzy
 msgid "activate"
 msgstr "Активировать Contact form"
 
-#: google-captcha.php:513
+#: google-captcha.php:653
 msgid "for network"
 msgstr ""
 
-#: google-captcha.php:518
+#: google-captcha.php:658
 msgid "download"
 msgstr ""
 
-#: google-captcha.php:522
-msgid "Check off for adding captcha to forms on their settings pages."
+#: google-captcha.php:662
+msgid "Check off for adding captcha to forms on their settings pages"
 msgstr ""
 
-#: google-captcha.php:533 google-captcha.php:610
-msgid "Close"
-msgstr ""
-
-#: google-captcha.php:545 google-captcha.php:646
-msgid "Unlock premium options by upgrading to Pro version"
-msgstr ""
-
-#: google-captcha.php:548 google-captcha.php:649
-msgid "Learn More"
-msgstr ""
-
-#: google-captcha.php:554
+#: google-captcha.php:671
 #, php-format
 msgid ""
 "If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s"
 msgstr ""
 
-#: google-captcha.php:554 google-captcha.php:1151
+#: google-captcha.php:671 google-captcha.php:1257
 msgid "FAQ"
 msgstr "常見問題"
 
-#: google-captcha.php:559
+#: google-captcha.php:676
 msgid "Hide reCAPTCHA in Comments form for"
 msgstr ""
 
-#: google-captcha.php:571
+#: google-captcha.php:688
+#, fuzzy
+msgid "Whitelist notification"
+msgstr "身份驗證"
+
+#: google-captcha.php:694
+msgid ""
+"This message will be displayed instead of the reCAPTCHA If the user IP is "
+"added to the whitelist"
+msgstr ""
+
+#: google-captcha.php:701
 msgid "reCAPTCHA version"
 msgstr ""
 
-#: google-captcha.php:574 google-captcha.php:575 google-captcha.php:576
-#: google-captcha.php:577
+#: google-captcha.php:704 google-captcha.php:705 google-captcha.php:706
+#: google-captcha.php:707
 msgid "version"
 msgstr ""
 
-#: google-captcha.php:583 google-captcha.php:596
+#: google-captcha.php:713 google-captcha.php:726
 msgid "reCAPTCHA theme"
 msgstr ""
 
-#: google-captcha.php:584 google-captcha.php:597 google-captcha.php:628
+#: google-captcha.php:714 google-captcha.php:727 includes/pro_banners.php:87
 msgid "for version"
 msgstr ""
 
-#: google-captcha.php:614
-msgid "reCAPTCHA language"
-msgstr ""
-
-#: google-captcha.php:621
-msgid "Use the current site language"
-msgstr ""
-
-#: google-captcha.php:621
-msgid "Using"
-msgstr ""
-
-#: google-captcha.php:627
-msgid "reCAPTCHA size"
-msgstr ""
-
-#: google-captcha.php:656
+#: google-captcha.php:739
 msgid "Save Changes"
 msgstr "儲存變更"
 
-#: google-captcha.php:710 google-captcha.php:1167
+#: google-captcha.php:803 google-captcha.php:1276
 msgid "To use Google Captcha you must get the keys from"
 msgstr "如要用reCAPTCHA驗證碼，你必須輸入兩組金鑰。您可以在這裡領取："
 
-#: google-captcha.php:711 google-captcha.php:1168
+#: google-captcha.php:804 google-captcha.php:1277
 msgid "here"
 msgstr "點我"
 
-#: google-captcha.php:712 google-captcha.php:1169
+#: google-captcha.php:805 google-captcha.php:1278
 msgid "and enter them on the"
 msgstr "然後將他們輸入到"
 
-#: google-captcha.php:714 google-captcha.php:1171
+#: google-captcha.php:807 google-captcha.php:1280
 msgid "plugin setting page"
 msgstr "外掛設置頁"
 
-#: google-captcha.php:900 google-captcha.php:948
+#: google-captcha.php:1000 google-captcha.php:1048
 msgid "Error"
 msgstr ""
 
-#: google-captcha.php:900 google-captcha.php:948
-#, fuzzy
-msgid "You have entered an incorrect reCAPTCHA value."
-msgstr "錯誤：您輸入的驗證碼不正確。"
-
-#: google-captcha.php:978 google-captcha.php:1007 google-captcha.php:1033
-msgid "ERROR"
-msgstr ""
-
-#: google-captcha.php:978 google-captcha.php:1007
+#: google-captcha.php:1000 google-captcha.php:1048 google-captcha.php:1078
+#: google-captcha.php:1107
 #, fuzzy
 msgid "You have entered an incorrect reCAPTCHA value"
 msgstr "錯誤：您輸入的驗證碼不正確。"
 
-#: google-captcha.php:1033
+#: google-captcha.php:1078 google-captcha.php:1107 google-captcha.php:1133
+msgid "ERROR"
+msgstr ""
+
+#: google-captcha.php:1133
 #, fuzzy
 msgid ""
 "You have entered an incorrect reCAPTCHA value. Click the BACK button on your "
 "browser, and try again."
 msgstr "錯誤：您輸入的驗證碼不正確。請回到上一頁，然後重新輸入。"
 
-#: google-captcha.php:1064
+#: google-captcha.php:1171
 msgid "Please, complete the captcha and submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:1068
+#: google-captcha.php:1175
 msgid "Test verification"
 msgstr ""
 
-#: google-captcha.php:1082 google-captcha.php:1091
-msgid "The user response was missing."
+#: google-captcha.php:1190 google-captcha.php:1199
+msgid "The user response was missing"
 msgstr ""
 
-#: google-captcha.php:1084
-msgid "The Secret Key is missing."
+#: google-captcha.php:1192
+msgid "The Secret Key is missing"
 msgstr ""
 
-#: google-captcha.php:1087 google-captcha.php:1096
+#: google-captcha.php:1195 google-captcha.php:1204
 msgid "The Secret Key is invalid"
 msgstr ""
 
-#: google-captcha.php:1088 google-captcha.php:1097
+#: google-captcha.php:1196 google-captcha.php:1205
 msgid "Check your domain configuration"
 msgstr ""
 
-#: google-captcha.php:1089 google-captcha.php:1098
+#: google-captcha.php:1197 google-captcha.php:1206
 #, fuzzy
 msgid "and enter it again"
 msgstr "然後將他們輸入到"
 
-#: google-captcha.php:1092 google-captcha.php:1100
-msgid "The user response is invalid."
+#: google-captcha.php:1200 google-captcha.php:1208
+msgid "The user response is invalid"
 msgstr ""
 
-#: google-captcha.php:1109
-msgid "The verification is successfully completed."
+#: google-captcha.php:1217
+msgid "The verification is successfully completed"
 msgstr ""
 
-#: google-captcha.php:1152
+#: google-captcha.php:1258
 msgid "Support"
 msgstr "支援"
+
+#: includes/whitelist.php:64
+msgid "For IP addresses from the whitelist reCAPTCHA will not be displayed"
+msgstr ""
+
+#: includes/whitelist.php:71
+msgid "Add IP to the whitelist"
+msgstr ""
+
+#: includes/whitelist.php:75
+#, fuzzy
+msgid "Save changes"
+msgstr "儲存變更"
+
+#: includes/whitelist.php:92
+msgid "My IP"
+msgstr ""
+
+#: includes/whitelist.php:96
+msgid "Save IP to the whitelist"
+msgstr ""
+
+#: includes/whitelist.php:100 includes/pro_banners.php:45
+msgid "Allowed formats"
+msgstr ""
+
+#: includes/whitelist.php:101
+msgid "Allowed diapason"
+msgstr ""
+
+#: includes/whitelist.php:106
+msgid "Search IP"
+msgstr ""
+
+#: includes/whitelist.php:160
+msgid "Nothing found"
+msgstr ""
+
+#: includes/whitelist.php:160
+msgid "No IP in the whitelist"
+msgstr ""
+
+#: includes/whitelist.php:167
+msgid "IP address"
+msgstr ""
+
+#: includes/whitelist.php:168
+msgid "Date added"
+msgstr ""
+
+#: includes/whitelist.php:222 includes/whitelist.php:232
+msgid "Remove from the whitelist"
+msgstr ""
+
+#: includes/whitelist.php:318
+msgid "IP added to the whitelist successfully"
+msgstr ""
+
+#: includes/whitelist.php:320 includes/whitelist.php:341
+#: includes/whitelist.php:351
+msgid "Some errors occured"
+msgstr ""
+
+#: includes/whitelist.php:322
+msgid "IP is already in the whitelist"
+msgstr ""
+
+#: includes/whitelist.php:325
+msgid "Invalid IP. See allowed formats."
+msgstr ""
+
+#: includes/whitelist.php:347
+msgid "One IP was deleted successfully"
+msgstr ""
+
+#: includes/whitelist.php:354
+msgid "You have not entered any IP"
+msgstr ""
+
+#: includes/whitelist.php:357
+msgid "You have not entered any IP in to the search form"
+msgstr ""
+
+#: includes/whitelist.php:359
+msgid "Search results for"
+msgstr ""
+
+#: includes/pro_banners.php:17
+msgid "This options is available in Pro version of plugin"
+msgstr ""
+
+#: includes/pro_banners.php:20
+msgid "Close"
+msgstr ""
+
+#: includes/pro_banners.php:28
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr ""
+
+#: includes/pro_banners.php:30
+msgid "Learn More"
+msgstr ""
+
+#: includes/pro_banners.php:43
+msgid "Reason"
+msgstr ""
+
+#: includes/pro_banners.php:46
+msgid "Allowed separators for IPs: a comma"
+msgstr ""
+
+#: includes/pro_banners.php:46 includes/pro_banners.php:47
+msgid "semicolon"
+msgstr ""
+
+#: includes/pro_banners.php:46
+msgid "ordinary space, tab, new line or carriage return"
+msgstr ""
+
+#: includes/pro_banners.php:47
+msgid "Allowed separators for reasons: a comma"
+msgstr ""
+
+#: includes/pro_banners.php:47
+msgid "tab, new line or carriage return"
+msgstr ""
+
+#: includes/pro_banners.php:68
+msgid "Normal"
+msgstr ""
+
+#: includes/pro_banners.php:69
+msgid "Compact"
+msgstr ""
+
+#: includes/pro_banners.php:73
+msgid "reCAPTCHA language"
+msgstr ""
+
+#: includes/pro_banners.php:80
+msgid "Use the current site language"
+msgstr ""
+
+#: includes/pro_banners.php:80
+msgid "Using"
+msgstr ""
+
+#: includes/pro_banners.php:86
+msgid "reCAPTCHA size"
+msgstr ""
+
+#, fuzzy
+#~ msgid "You have entered an incorrect reCAPTCHA value."
+#~ msgstr "錯誤：您輸入的驗證碼不正確。"
 
 #~ msgid "powered by"
 #~ msgstr "服務提供者："

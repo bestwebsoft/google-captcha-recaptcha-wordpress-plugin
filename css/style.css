@@ -15,6 +15,18 @@
 .gglcptch_error_msg {
 	color: #dc3232;
 }
+.gglcptch_whitelist_form > div:first-of-type > input[type="text"],
+.gglcptch_whitelist_form > div:first-of-type > label {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.gglcptch_settings_page .bws_pro_version_tooltip {
+	z-index: 1;
+}
+.gglcptch_settings_page .bws_pro_version_bloc {
+	overflow: visible;
+}
+
 @media only screen and ( max-width: 782px ) {
 	#gglcptch-keys input[type=text] {
 		width: 90%;
