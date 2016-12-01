@@ -22,15 +22,16 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 
 = Free Features =
 
-* Add captcha to:
+* Add Google Captcha (reCAPTCHA) to:
 	* Registration form
 	* Login form
 	* Reset password form
 	* Comments form
 	* [Contact Form](http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
 	* Custom form
+* Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses [NEW]
 * Validity check of keys in admin panel
-* Available captcha themes for:
+* Available Google Captcha (reCAPTCHA) themes for:
 	* Version 1
 		* Red (default)
 		* White
@@ -39,7 +40,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* Version 2
 		* Light (default)
 		* Dark
-* Hide captcha in comments form for certain user roles
+* Hide Google Captcha (reCAPTCHA) in comments form for certain user roles
 * Supports Google Captcha (reCAPTCHA):
 	* Version 1
 	* Version 2
@@ -57,6 +58,11 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 > 	* Contact Form 7 (since v 3.4)
 > 	* [Subscriber](http://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3)
 > 	* Multilanguage
+> * Compatible with WooCommerce: [NEW]
+> 	* Login form
+> 	* Register form
+> 	* Lost password form
+> 	* Checkout billing form
 > * Compatible with BuddyPress:
 > 	* Registration form
 > 	* Comments form
@@ -188,12 +194,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 6. The form with Google Captcha (reCAPTCHA) version 1.
 7. The form with Google Captcha (reCAPTCHA) dark theme.
 8. Google Captcha (reCAPTCHA) Settings page.
+9. Google Captcha (reCAPTCHA) Whitelist page.
 
 == Changelog ==
 
 = V1.27 - 26.10.2016 =
 * NEW : Ability to hide Google Captcha (reCAPTCHA) for whitelisted IP and ability to set whitelist notification.
-* NEW : Compatibility with Pagination by BestWebSoft plugin has been added.
+* PRO : Compatibility with WooCommerce plugin has been added.
+* PRO : List of reCAPTCHA languages updated.
 
 = V1.26 - 15.08.2016 =
 * Update : Hook's priority was changed for displaying captcha in the registration form.
@@ -318,7 +326,6 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 
 = V1.27 =
 * New features added.
-* The compatibility with Pagination by BestWebSoft plugin has been added.
 * Functionality improved.
 
 = V1.26 =

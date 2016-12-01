@@ -3,8 +3,6 @@
 
 Protect WordPress website forms from spam entries with Google reCaptcha.
 
-<img src="http://bestwebsoft.com/wp-content/uploads/2014/09/google-captcha-banner-website1.jpg" />
-
 <p>Google Captcha (reCaptcha) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other.</p>
 
 <p>Users are required to confirm that they are not a robot before the form can be submitted. It's easy for people and hard for bots.</p>
@@ -18,7 +16,7 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
 <h4>Free Features</h4>
 
 <ul>
-<li>Add captcha to:
+<li>Add Google Captcha (reCAPTCHA) to:
 
 <ul>
 <li>Registration form</li>
@@ -28,8 +26,9 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
 <li><a href="http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a">Contact Form</a></li>
 <li>Custom form</li>
 </ul></li>
+<li>Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses [NEW]</li>
 <li>Validity check of keys in admin panel</li>
-<li>Available captcha themes for:
+<li>Available Google Captcha (reCAPTCHA) themes for:
 
 <ul>
 <li>Version 1
@@ -47,7 +46,7 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
 <li>Dark</li>
 </ul></li>
 </ul></li>
-<li>Hide captcha in comments form for certain user roles</li>
+<li>Hide Google Captcha (reCAPTCHA) in comments form for certain user roles</li>
 <li>Supports Google Captcha (reCAPTCHA):
 
 <ul>
@@ -73,6 +72,14 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
   <li>Contact Form 7 (since v 3.4)</li>
   <li><a href="http://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3">Subscriber</a></li>
   <li>Multilanguage</li>
+  </ul></li>
+  <li>Compatible with WooCommerce: [NEW]
+  
+  <ul>
+  <li>Login form</li>
+  <li>Register form</li>
+  <li>Lost password form</li>
+  <li>Checkout billing form</li>
   </ul></li>
   <li>Compatible with BuddyPress:
   
