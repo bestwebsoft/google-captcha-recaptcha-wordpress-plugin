@@ -11,7 +11,7 @@
 				container.is( ':empty' ) &&
 				( gglcptch.vars.visibility || $( this ).is( ':visible' ) )
 			) {
-				var containerId = container.attr( 'id' )
+				var containerId = container.attr( 'id' );
 				gglcptch.display( containerId );
 			}
 		} );
@@ -200,7 +200,8 @@
 		var id = 'gglcptch_recaptcha_' + Math.floor( Math.random() * 1000 );
 		if ( $( '#' + id ).length )
 			id = get_id();
-		else
+		else {
 			return id;
+		}
 	}
 } )( jQuery, gglcptch );
