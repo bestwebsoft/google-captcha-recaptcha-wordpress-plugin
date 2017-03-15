@@ -198,10 +198,10 @@
 
 	function get_id() {
 		var id = 'gglcptch_recaptcha_' + Math.floor( Math.random() * 1000 );
-		if ( $( '#' + id ).length )
-			id = get_id();
-		else {
-			return id;
-		}
+		if ( $( '#' + id ).length ) {
+            id = get_id();
+        } else {
+            return id;
+        }
 	}
 } )( jQuery, gglcptch );
