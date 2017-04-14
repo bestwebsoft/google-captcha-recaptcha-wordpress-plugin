@@ -9,9 +9,9 @@
 			var container = $( this ).find( '.gglcptch_recaptcha' );
 			if (
 				container.is( ':empty' ) &&
-				( gglcptch.vars.visibility || $( this ).is( ':visible' ) )
+				( gglcptch.vars.visibility || $( this ).is( ':visible' ) === $( this ).is( ':not(:hidden)' ) )
 			) {
-				var containerId = container.attr( 'id' )
+				var containerId = container.attr( 'id' );
 				gglcptch.display( containerId );
 			}
 		} );
@@ -48,22 +48,30 @@
 						params   = [];
 
 					params['sitekey'] = sitekey ? sitekey : gglcptch.options.sitekey;
-					if ( !! theme )
+					if ( !! theme ) {
 						params['theme'] = theme;
-					if ( !! lang )
+					}
+					if ( !! lang ) {
 						params['lang'] = lang;
-					if ( !! size )
+					}
+					if ( !! size ) {
 						params['size'] = size;
-					if ( !! type )
+					}
+					if ( !! type ) {
 						params['type'] = type;
-					if ( !! tabindex )
+					}
+					if ( !! tabindex ) {
 						params['tabindex'] = tabindex;
-					if ( !! callback )
+					}
+					if ( !! callback ) {
 						params['callback'] = callback;
-					if ( !! ex_call )
+					}
+					if ( !! ex_call ) {
 						params['expired-callback'] = ex_call;
-					if ( !! stoken )
+					}
+					if ( !! stoken ) {
 						params['stoken'] = stoken;
+					}
 
 					gglcptch.display( container, false, params );
 				}
@@ -88,19 +96,19 @@
 		var gglcptch_version = gglcptch.options.version;
 		v1_add_to_last_element = v1_add_to_last_element || false;
 
-		if ( gglcptch_version == 'v1' ) {
+		if ( 'v1' == gglcptch_version ) {
 			if ( Recaptcha.widget == null || v1_add_to_last_element == true ) {
 				Recaptcha.create( gglcptch.options.sitekey, container, { 'theme' : gglcptch.options.theme } );
 			}
 		}
-		if ( gglcptch_version == 'v2' ) {
+		if ( 'v2' == gglcptch_version ) {
 			var parameters = params ? params : { 'sitekey' : gglcptch.options.sitekey, 'theme' : gglcptch.options.theme },
 				gglcptch_index = grecaptcha.render( container, parameters );
 			$( '#' + container ).data( 'gglcptch_index', gglcptch_index );
 		}
 	};
 
-	window.onload = gglcptch.prepare;
+	$( window ).on( 'load', gglcptch.prepare );
 
 	$( document ).ready( function() {
 
@@ -198,9 +206,10 @@
 
 	function get_id() {
 		var id = 'gglcptch_recaptcha_' + Math.floor( Math.random() * 1000 );
-		if ( $( '#' + id ).length )
+		if ( $( '#' + id ).length ) {
 			id = get_id();
-		else
+		} else {
 			return id;
+		}
 	}
 } )( jQuery, gglcptch );

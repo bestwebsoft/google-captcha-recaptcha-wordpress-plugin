@@ -20,6 +20,9 @@
 	display: block;
 	margin: 12px 0;
 }
+.gglcptch {
+	margin-bottom: 10px;
+}
 .gglcptch_v1,
 .gglcptch_v2 {
 	min-width: 1px;

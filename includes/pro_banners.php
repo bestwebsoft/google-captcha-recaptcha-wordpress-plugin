@@ -26,7 +26,7 @@ if ( ! function_exists( 'gglcptch_pro_block' ) ) {
 				</div>
 				<div class="bws_pro_version_tooltip">
 					<div class="bws_info"><?php _e( 'Unlock premium options by upgrading to Pro version', 'google-captcha' ); ?></div>
-					<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=<?php echo $gglcptch_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google Captcha Pro (reCAPTCHA)">
+					<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=<?php echo $gglcptch_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google Captcha Pro (reCAPTCHA)">
 						<?php _e( 'Learn More', 'google-captcha' ); ?>
 					</a>
 					<div class="clear"></div>
@@ -53,11 +53,15 @@ if ( ! function_exists( 'gglcptch_whitelist_banner' ) ) {
 
 if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 	function gglcptch_supported_plugins_banner() { ?>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled" name="gglcptch_sbscrbr" value="1"> Subscriber by BestWebSoft</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled" name="gglcptch_cf7" value="1"> Contact Form 7</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled" name="gglcptch_buddypress_register" value="1"> BuddyPress Registration form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled" name="gglcptch_buddypress_comments" value="1"> BuddyPress Comments form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled" name="gglcptch_buddypress_group" value="1"> BuddyPress "Create a Group" form</label>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> Subscriber by BestWebSoft</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> Contact Form 7</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> BuddyPress Registration form</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> BuddyPress Comments form</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> BuddyPress "Create a Group" form</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Login form</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Register form</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Lost Password form</label><br>
+		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Checkout Billing form</label>
 	<?php }
 }
 
@@ -88,14 +92,12 @@ if ( ! function_exists( 'gglcptch_additional_settings_banner' ) ) {
 				</th>
 				<td><fieldset>
 					<?php foreach ( $gglcptch_sizes_v2 as $value => $name ) {
-						$tooltip = sprintf(
-							'<div class="bws_help_box dashicons dashicons-editor-help" style="vertical-align: middle;z-index:2;"><div class="bws_hidden_help_text" style="z-index: 3;"><img src="%1$s%2$s%3$s"%5$s><img src="%1$s%2$s%4$s"%6$s></div></div><br/>',
-							plugins_url( 'google-captcha/images'),
-							$name == 'Normal' ? '/recaptcha_v2_normal' : '/recaptcha_v2_compact',
-							'_light.png',
-							'_dark.png',
-							' class="gglcptch_size_sample gglcptch_size_sample_light' . ( 'light' == $gglcptch_options['theme_v2'] ? '"' : ' hidden"' ),
-							' class="gglcptch_size_sample gglcptch_size_sample_dark' . ( 'dark' == $gglcptch_options['theme_v2'] ? '"' : ' hidden"' )
+						$link = plugins_url( 'google-captcha/images' );
+						$link .= $value == 'normal' ? '/recaptcha_v2_normal' : '/recaptcha_v2_compact';
+						$tooltip = bws_add_help_box(
+							'<img src="' . $link . '_light.png" class="gglcptch_size_sample gglcptch_size_sample_light' . ( 'light' == $gglcptch_options['theme_v2'] ? '"' : ' hidden"' ) . ' />' .
+							'<img src="' . $link . '_dark.png" class="gglcptch_size_sample gglcptch_size_sample_dark' . ( 'dark' == $gglcptch_options['theme_v2'] ? '"' : ' hidden"' ) . ' />',
+							'bws-auto-width'
 						);
 						printf(
 							'<div class="gglcptch_size_v2"><label><input disabled="disabled" type="radio" %s> %s</label>%s</div>',

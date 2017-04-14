@@ -1,4 +1,4 @@
-<a href="http://bestwebsoft.com/products/wordpress/plugins/google-captcha/" target=_blank>Google Captcha (reCAPTCHA) WordPress Plugin</a>
+<a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/" target=_blank>Google Captcha (reCAPTCHA) WordPress Plugin</a>
 ========================
 
 Protect WordPress website forms from spam entries with Google reCaptcha.
@@ -7,7 +7,7 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
 
 <p>Users are required to confirm that they are not a robot before the form can be submitted. It's easy for people and hard for bots.</p>
 
-<p><a href="http://bestwebsoft.com/demo-for-google-captcha/">View Demo</a></p>
+<p><a href="https://bestwebsoft.com/demo-for-google-captcha/">View Demo</a></p>
 
 
 <div class='video'></div>
@@ -23,10 +23,10 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
 <li>Login form</li>
 <li>Reset password form</li>
 <li>Comments form</li>
-<li><a href="http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a">Contact Form</a></li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a">Contact Form</a></li>
 <li>Custom form</li>
 </ul></li>
-<li>Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses [NEW]</li>
+<li>Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses</li>
 <li>Validity check of keys in admin panel</li>
 <li>Available Google Captcha (reCAPTCHA) themes for:
 
@@ -70,10 +70,10 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
   
   <ul>
   <li>Contact Form 7 (since v 3.4)</li>
-  <li><a href="http://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3">Subscriber</a></li>
+  <li><a href="https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3">Subscriber</a></li>
   <li>Multilanguage</li>
   </ul></li>
-  <li>Compatible with WooCommerce: [NEW]
+  <li>Compatible with WooCommerce:
   
   <ul>
   <li>Login form</li>
@@ -91,26 +91,26 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
   <li>Select Google Captcha (reCAPTCHA) language manually</li>
   <li>Change size: normal or compact (for version 2)</li>
   <li>Configure all subsites on the network</li>
-  <li>Get answer to your support question within one business day (<a href="http://bestwebsoft.com/support-policy/">Support Policy</a>)</li>
+  <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/">Support Policy</a>)</li>
   </ul>
   
-  <p><a href="http://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=c4f2e3054fdbaca8a2b61554cbb9638c">Upgrade to Pro Now</a></p>
+  <p><a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=c4f2e3054fdbaca8a2b61554cbb9638c">Upgrade to Pro Now</a></p>
 </blockquote>
 
-<p>If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">Suggest a Feature</a></p>
+<p>If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new">Suggest a Feature</a></p>
 
 <h4>Documentation &#38; Videos</h4>
 
 <ul>
-<li><a href="https://docs.google.com/document/d/1Nrccb-OLDN80yYjz_6-JPErdpZoslqfPV-g2IZ-GD0A/">[Doc] Installation</a></li>
-<li><a href="https://docs.google.com/document/d/1ggkrkWI4zN5aRN7pAI06-DeJswEywELbI5PAagNwStU/">[Doc] Purchase, Installation &#38; Configuration</a></li>
-<li><a href="https://www.youtube.com/watch?v=X-ccRdEFcM0">[Video] Purchase, Installation, Configuration Tutorial</a></li>
+<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/">[Doc] Installation</a></li>
+<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/">[Doc] Purchase</a></li>
 <li><a href="http://www.youtube.com/watch?v=RUJ9VwZLFSY">[Video] Installation Instruction</a></li>
+<li><a href="https://www.youtube.com/watch?v=X-ccRdEFcM0">[Video] Purchase, Installation &#38; Configuration</a></li>
 </ul>
 
 <h4>Help &#38; Support</h4>
 
-<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help - <a href="http://support.bestwebsoft.com/">http://support.bestwebsoft.com/</a></p>
+<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help - <a href="https://support.bestwebsoft.com/">https://support.bestwebsoft.com/</a></p>
 
 <h4>Translation</h4>
 
@@ -132,25 +132,25 @@ Protect WordPress website forms from spam entries with Google reCaptcha.
 <li>Ukrainian (uk)</li>
 </ul>
 
-<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress">the text of PO and MO files</a> to <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php">files Poedit</a>.</p>
+<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php">files Poedit</a>.</p>
 
 <h4>Recommended Plugins</h4>
 
 <ul>
-<li><a href="http://bestwebsoft.com/products/wordpress/plugins/updater/?k=f47f3eb3d739725d592249dbd129f7ff">Updater</a> - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.</li>
-<li><a href="http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a">Contact Form</a> - Allow customers to reach you using secure contact form plugin any website must have.</li>
-<li><a href="http://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3">Subscriber</a> - Add email newsletter sign up form to WordPress posts, pages and widgets. Collect data and subscribe your users.</li>
-<li><a href="http://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888">Multilanguage</a> - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f47f3eb3d739725d592249dbd129f7ff">Updater</a> - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a">Contact Form</a> - Allow customers to reach you using secure contact form plugin any website must have.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3">Subscriber</a> - Add email newsletter sign up form to WordPress posts, pages and widgets. Collect data and subscribe your users.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888">Multilanguage</a> - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.</li>
 </ul>
 
 <h4>Credits</h4>
 
 <ul>
-<li>lib/recaptchalib.php - Copyright &#169; 2007. Mike Crawford, Ben Maurer (reCAPTCHA - <a href="http://recaptcha.net">http://recaptcha.net</a>). All Rights Reserved.</li>
+<li>lib/recaptchalib.php - Copyright &#169; 2007. Mike Crawford, Ben Maurer (reCAPTCHA - <a href="http://recaptcha.net)" rel="nofollow">http://recaptcha.net)</a>. All Rights Reserved.</li>
 </ul>
 
 <h4>Donate</h4>
 
 <p>Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.</p>
 
-<p><a href="http://bestwebsoft.com/donate/">Donate Now</a></p>
+<p><a href="https://bestwebsoft.com/donate/">Donate Now</a></p>

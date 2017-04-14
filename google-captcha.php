@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: Google Captcha (reCAPTCHA) by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/wordpress/plugins/google-captcha/
+Plugin URI: https://bestwebsoft.com/products/wordpress/plugins/google-captcha/
 Description: Protect WordPress website forms from spam entries with Google Captcha (reCaptcha).
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.27
-Author URI: http://bestwebsoft.com/
+Version: 1.28
+Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2016  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2017  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -265,7 +265,7 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 
 if ( ! function_exists( 'gglcptch_pagination_callback' ) ) {
 	function gglcptch_pagination_callback( $content ) {
-		$content .= "if ( typeof gglcptch !== 'undefined' ) { gglcptch.prepare(); }";
+		$content .= "if ( typeof Recaptcha != 'undefined' || typeof grecaptcha != 'undefined' ) { gglcptch.prepare(); }";
 		return $content;
 	}
 }
@@ -594,17 +594,13 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 				} else { ?>
 					<div style="margin: 20px 0;">
 						<?php printf( __( "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, please use %s button", 'google-captcha' ),
-							'<span class="bws_code"><img style="vertical-align: sub;" src="' . plugins_url( 'bws_menu/images/shortcode-icon.png', __FILE__ ) . '" alt=""/></span>'
-						); ?>
-						<div class="bws_help_box bws_help_box_right dashicons dashicons-editor-help" style="vertical-align: middle;">
-							<div class="bws_hidden_help_text" style="min-width: 260px;">
-								<?php printf(
-									__( "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking on %s button in the content edit block using the Visual mode. If the button isn't displayed or you would like to add the Google Captcha (reCAPTCHA) to your own form , please use the shortcode %s", 'google-captcha' ),
-									'<code><img style="vertical-align: sub;" src="' . plugins_url( 'bws_menu/images/shortcode-icon.png', __FILE__ ) . '" alt="" /></code>',
-									sprintf( '<span class="bws_code">[bws_google_captcha]</span><br/>' )
-								); ?>
-							</div>
-						</div>
+							'<span class="bwsicons bwsicons-shortcode"></span>'
+						);
+						echo bws_add_help_box( sprintf(
+							__( "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking on %s button in the content edit block using the Visual mode. If the button isn't displayed or you would like to add the Google Captcha (reCAPTCHA) to your own form , please use the shortcode %s", 'google-captcha' ),
+							'<span class="bwsicons bwsicons-shortcode"></span>',
+							sprintf( '<span class="bws_code">[bws_google_captcha]</span><br/>' )
+						) ); ?>
 					</div>
 					<form id="gglcptch_admin_settings_page" class="bws_form" method="post" action="admin.php?page=google-captcha.php">
 						<h3><?php _e( 'Authentication', 'google-captcha' ); ?></h3>
@@ -647,7 +643,8 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 												$gglcptch_form_attr = 'disabled="disabled" readonly="readonly"';
 											} ?>
 											<label><input type="checkbox" name="<?php echo 'gglcptch_' . $gglcptch_form_type; ?>" value="<?php echo $gglcptch_form_type; ?>" <?php echo $gglcptch_form_attr; ?> /> <?php echo $gglcptch_form_name; ?></label>
-											<div class="bws_help_box dashicons dashicons-editor-help" style="vertical-align: middle;"><div class="bws_hidden_help_text"><img src="<?php echo plugins_url( 'google-captcha/images') . '/' . $gglcptch_form_type; ?>.jpg" title="<?php echo $gglcptch_form_name; ?>" alt="<?php echo $gglcptch_form_name; ?>"></div></div> <?php echo $gglcptch_form_notice; ?><br />
+											<?php echo bws_add_help_box( '<img src="' . plugins_url( 'google-captcha/images/') . $gglcptch_form_type . '.jpg">', 'bws-auto-width' ); ?>
+											<span class="bws_info"><?php echo $gglcptch_form_notice; ?></span><br />
 										<?php } ?>
 										<br />
 										<p>
@@ -665,7 +662,7 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 										} elseif ( 'not_installed' == $gglcptch_plugin['status'] ) {
 											$gglcptch_attrs = 'disabled="disabled"';
 											$gglcptch_plugin_notice = sprintf( __( 'You should %s to use this functionality', 'google-captcha' ),
-												sprintf( '<a href="http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=0a750deb99a8e5296a5432f4c9cb9b55&pn=75&v=%s&wp_v=%s">%s %s</a>', $gglcptch_plugin_info["Version"], $wp_version, __( 'download', 'google-captcha' ), $gglcptch_plugin_name )
+												sprintf( '<a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=0a750deb99a8e5296a5432f4c9cb9b55&pn=75&v=%s&wp_v=%s">%s %s</a>', $gglcptch_plugin_info["Version"], $wp_version, __( 'download', 'google-captcha' ), $gglcptch_plugin_name )
 											);
 										}
 										if ( $gglcptch_attrs == '' && ( is_plugin_active( 'contact-form-multi-pro/contact-form-multi-pro.php' ) || is_plugin_active( 'contact-form-multi/contact-form-multi.php' ) ) )
@@ -675,7 +672,7 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 											$gglcptch_attrs .= ' checked="checked"';
 										} ?>
 										<label><input type="checkbox" <?php echo $gglcptch_attrs; ?> name="gglcptch_contact_form" value="contact_form" /> <?php echo $gglcptch_plugin_name; ?></label>
-										<div class="bws_help_box dashicons dashicons-editor-help" style="vertical-align: middle;"><div class="bws_hidden_help_text"><img src="<?php echo plugins_url( 'google-captcha/images'); ?>/contact_form.jpg" title="<?php echo $gglcptch_plugin_name; ?>" alt="<?php echo $gglcptch_plugin_name; ?>"></div></div>
+										<?php echo bws_add_help_box( '<img src="' . plugins_url( 'google-captcha/images/contact_form.jpg') . '">', 'bws-auto-width' ); ?>
 										<span class="bws_info"><?php echo $gglcptch_plugin_notice; ?></span><br />
 										<?php gglcptch_pro_block( 'gglcptch_supported_plugins_banner' ); ?>
 										<span class="bws_info"><?php printf( __( 'If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s', 'google-captcha' ), sprintf( '<a href="http://bestwebsoft.com/products/wordpress/plugins/google-captcha/faq/" target="_blank">%s</a>', __( 'FAQ', 'google-captcha' ) ) ); ?></span>
@@ -699,11 +696,8 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 								<td>
 									<label>
 										<input type="text" id="gglcptch_whitelist_message" name="gglcptch_whitelist_message" value="<?php echo $gglcptch_options['whitelist_message']; ?>">
-										<div class="bws_help_box dashicons dashicons-editor-help" style="vertical-align: middle;">
-											<div class="bws_hidden_help_text" style="min-width: 260px;">
-												<?php _e( 'This message will be displayed instead of the reCAPTCHA If the user IP is added to the whitelist', 'google-captcha' ); ?>
-											</div>
-										</div><div class="clear"></div>
+										<?php echo bws_add_help_box( __( 'This message will be displayed instead of the reCAPTCHA If the user IP is added to the whitelist', 'google-captcha' ) ); ?>
+										<div class="clear"></div>
 									</label>
 								</td>
 							</tr>
@@ -712,9 +706,9 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 								<td>
 									<fieldset>
 										<label><input type="radio" name="gglcptch_recaptcha_version" value="v1"<?php if ( 'v1' == $gglcptch_options['recaptcha_version'] ) echo ' checked="checked"'; ?>> <?php _e( 'version', 'google-captcha' ); ?> 1</label>
-										<div class="bws_help_box dashicons dashicons-editor-help" style="vertical-align: middle;"><div class="bws_hidden_help_text"><img src="<?php echo plugins_url( 'google-captcha/images'); ?>/recaptcha_v1.png" title="reCAPTCHA <?php _e( 'version', 'google-captcha' ); ?> 1" alt="reCAPTCHA <?php _e( 'version', 'google-captcha' ); ?> 1"></div></div><br/>
+										<?php echo bws_add_help_box( '<img src="' . plugins_url( 'google-captcha/images/recaptcha_v1.png' ) . '">', 'bws-auto-width' ); ?><br/>
 										<label><input type="radio" name="gglcptch_recaptcha_version" value="v2"<?php if ( 'v2' == $gglcptch_options['recaptcha_version'] ) echo ' checked="checked"'; ?>> <?php _e( 'version', 'google-captcha' ); ?> 2</label>
-										<div class="bws_help_box dashicons dashicons-editor-help" style="vertical-align: middle;"><div class="bws_hidden_help_text"><img src="<?php echo plugins_url( 'google-captcha/images'); ?>/recaptcha_v2.png" title="reCAPTCHA <?php _e( 'version', 'google-captcha' ); ?> 2" alt="reCAPTCHA <?php _e( 'version', 'google-captcha' ); ?> 2"></div></div>
+										<?php echo bws_add_help_box( '<img src="' . plugins_url( 'google-captcha/images/recaptcha_v2.png' ) . '">', 'bws-auto-width' ); ?><br/>
 									</fieldset>
 								</td>
 							</tr>
@@ -789,7 +783,7 @@ if ( ! function_exists( 'gglcptch_check_role' ) ) {
 /* Display google captcha via shortcode */
 if ( ! function_exists( 'gglcptch_display' ) ) {
 	function gglcptch_display( $content = false ) {
-		global $gglcptch_options, $gglcptch_count, $gglcptch_ip_in_whitelist;
+		global $gglcptch_options, $gglcptch_count, $gglcptch_ip_in_whitelist, $gglcptch_plugin_info;
 
 		if ( empty( $gglcptch_options ) )
 			register_gglcptch_settings();
@@ -850,7 +844,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 
 			/* register reCAPTCHA script */
 			if ( ! wp_script_is( 'gglcptch_api', 'registered' ) ) {
-				wp_register_script( 'gglcptch_api', $api_url, false, false, true );
+				wp_register_script( 'gglcptch_api', $api_url, false, $gglcptch_plugin_info['Version'], true );
 				add_action( 'wp_footer', 'gglcptch_add_scripts' );
 				if (
 					'1' == $gglcptch_options['login_form'] ||
@@ -1266,8 +1260,8 @@ if ( ! function_exists( 'gglcptch_links' ) ) {
 		if ( $file == $base ) {
 			if ( ! is_network_admin() )
 				$links[]	=	'<a href="admin.php?page=google-captcha.php">' . __( 'Settings', 'google-captcha' ) . '</a>';
-			$links[]	=	'<a href="http://wordpress.org/plugins/google-captcha/faq/" target="_blank">' . __( 'FAQ', 'google-captcha' ) . '</a>';
-			$links[]	=	'<a href="http://support.bestwebsoft.com">' . __( 'Support', 'google-captcha' ) . '</a>';
+			$links[]	=	'<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538719" target="_blank">' . __( 'FAQ', 'google-captcha' ) . '</a>';
+			$links[]	=	'<a href="https://support.bestwebsoft.com">' . __( 'Support', 'google-captcha' ) . '</a>';
 		}
 		return $links;
 	}
@@ -1336,6 +1330,7 @@ if ( ! function_exists( 'gglcptch_delete_options' ) ) {
 					delete_option( 'gglcptch_options' );
 				}
 				switch_to_blog( $old_blog );
+				delete_site_option( 'gglcptch_options' );
 			} else {
 				$wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}gglcptch_whitelist`;" );
 				delete_option( 'gglcptch_options' );
