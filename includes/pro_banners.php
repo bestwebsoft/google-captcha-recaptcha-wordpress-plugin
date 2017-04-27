@@ -25,9 +25,8 @@ if ( ! function_exists( 'gglcptch_pro_block' ) ) {
 					</div>
 				</div>
 				<div class="bws_pro_version_tooltip">
-					<div class="bws_info"><?php _e( 'Unlock premium options by upgrading to Pro version', 'google-captcha' ); ?></div>
 					<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=<?php echo $gglcptch_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google Captcha Pro (reCAPTCHA)">
-						<?php _e( 'Learn More', 'google-captcha' ); ?>
+						<?php _e( 'Upgrade to Pro', 'google-captcha' ); ?>
 					</a>
 					<div class="clear"></div>
 				</div>
@@ -74,7 +73,7 @@ if ( ! function_exists( 'gglcptch_additional_settings_banner' ) ) {
 		); ?>
 		<table class="form-table bws_pro_version">
 			<tr valign="top">
-				<th scope="row"><?php _e( 'reCAPTCHA language', 'google-captcha' ); ?></th>
+				<th scope="row"><?php _e( 'reCAPTCHA Language', 'google-captcha' ); ?></th>
 				<td>
 					<select disabled="disabled">
 						<option selected="selected">English (US)</option>
@@ -87,7 +86,7 @@ if ( ! function_exists( 'gglcptch_additional_settings_banner' ) ) {
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<?php _e( 'reCAPTCHA size', 'google-captcha' ); ?>
+					<?php _e( 'reCAPTCHA Size', 'google-captcha' ); ?>
 					<br/><span class="bws_info">(<?php _e( 'for version', 'google-captcha' ); ?> 2)</span>
 				</th>
 				<td><fieldset>

@@ -1,14 +1,16 @@
 ( function( $ ) {
 	$( document ).ready( function() {
-		var gglcptch_version_not_selected = $( 'input[name="gglcptch_recaptcha_version"]:not(:checked)' ).val();
-		$( '.gglcptch_theme_' + gglcptch_version_not_selected ).hide();
 
 		$( 'input[name="gglcptch_recaptcha_version"]' ).change( function() {
-			var gglcptch_version_selected = $( this ).val(),
-				gglcptch_version_not_selected = $( 'input[name="gglcptch_recaptcha_version"]:not(:checked)' ).val();
-			$( '.gglcptch_theme_' + gglcptch_version_selected ).show();
-			$( '.gglcptch_theme_' + gglcptch_version_not_selected ).hide();
-		} );
+			var versions =  $( 'input[name="gglcptch_recaptcha_version"]' );
+			versions.each( function() {
+				if ( $( this ).is( ':checked' ) ) {
+					$( '.gglcptch_theme_' + $( this ).val() ).show();
+				} else {
+					$( '.gglcptch_theme_' + $( this ).val() ).hide();
+				}
+			} );
+		} ).trigger( 'change' );
 
 		$( 'input[name="gglcptch_private_key"], input[name="gglcptch_public_key"]' ).change( function() {
 			$( '.gglcptch_verified, #gglcptch-test-keys, #gglcptch-test-block' ).hide();
@@ -29,6 +31,7 @@
 			return false;
 		} );
 
+		/*  add my ip to the whitelist */
 		$( 'input[name="gglcptch_add_to_whitelist_my_ip"]' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
 				var my_ip = $( 'input[name="gglcptch_add_to_whitelist_my_ip_value"]' ).val();
@@ -46,12 +49,15 @@
 			$( this ).closest( 'p' ).after( '<div id="gglcptch-test-block" />' );
 
 		$( '.gglcptch-test-results' ).remove();
-
 		$( '#gglcptch-test-block' ).load( $( this ).prop( 'href' ), function() {
-			$( '.gglcptch_v1, .gglcptch_v2' ).each( function() {
+			$( '.gglcptch_v1, .gglcptch_v2, .gglcptch_invisible' ).each( function() {
 				var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' );
 				if ( $( this ).is( ':visible' ) ) {
 					gglcptch.display( container );
+					if ( $( this ).hasClass( 'gglcptch_invisible' ) ) {
+						var gglcptch_index = $( this ).find( '.gglcptch_recaptcha' ).data( 'gglcptch_index' );
+						grecaptcha.execute( gglcptch_index );
+					}
 				}
 			} );
 		} );
@@ -85,7 +91,10 @@
 					$( '.gglcptch_verified' ).show();
 				} else {
 					$( '.gglcptch_verified' ).hide();
-					if ( 'v2' == $( 'input[name="gglcptch_recaptcha_version"]:checked' ).val() ) {
+					if (
+						'v2' == $( 'input[name="gglcptch_recaptcha_version"]:checked' ).val() ||
+						'invisible' == $( 'input[name="gglcptch_recaptcha_version"]:checked' ).val()
+					) {
 						$( '#gglcptch-test-keys' ).show();
 					}
 				}

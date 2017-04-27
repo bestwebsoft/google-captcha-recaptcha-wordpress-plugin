@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha
 Requires at least: 3.8
-Tested up to: 4.7.3
-Stable tag: 1.28
+Tested up to: 4.7.4
+Stable tag: 1.29
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,6 +44,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 * Supports Google Captcha (reCAPTCHA):
 	* Version 1
 	* Version 2
+	* Invisible reCAPTCHA [NEW]
 * Add custom code via plugin settings page
 * Compatible with latest WordPress version
 * Incredibly simple settings for fast setup without modifying code
@@ -92,7 +93,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 * Arabic (ar) (thanks to [SAID MOULLA](mailto:support@saidmoulla.com), www.saidmoulla.com)
 * Brazilian Portuguese (pt_BR) (thanks to [Elton Fernandes Peetz Prado](mailto:epeetz@gmail.com))
 * Bulgarian (bg_BG) (thanks to [Yasen Georgiev](mailto:me@ygeorgiev.com))
-* Czech (cs_CZ) (thanks to [PaMaDeSSoft](mailto:info@pamadessoft.cz), www.pamadessoft.cz)
+* Czech (cs_CZ) (thanks to [Michal Kučera](mailto:kucerami@gmail.com), www.n0lim.it, [PaMaDeSSoft](mailto:info@pamadessoft.cz), www.pamadessoft.cz)
 * Chinese Traditional (zh_TW) (thanks to [Nick Lai](mailto:nick20080808@gmail.com))
 * Farsi/Persian (fa_IR) (thanks to [Amirreza Nasiri](mailto:nasiri.amirreza.96@gmail.com), www.bytegate.ir)
 * French (fr_FR) (thanks to [Denis Bodorr](mailto:lefinnois@lefinnois.net))
@@ -116,7 +117,7 @@ Some of these translations are not complete. We are constantly adding new featur
 
 = Credits =
 
-* lib/recaptchalib.php - Copyright © 2007. Mike Crawford, Ben Maurer (reCAPTCHA - http://recaptcha.net). All Rights Reserved.
+* lib/recaptchalib.php - Copyright © 2007. Mike Crawford, Ben Maurer (reCAPTCHA - <http://recaptcha.net>). All Rights Reserved.
 
 = Donate =
 
@@ -219,6 +220,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 9. Google Captcha (reCAPTCHA) Whitelist page.
 
 == Changelog ==
+
+= V1.29 - 27.04.2017 =
+* NEW : Invisible reCAPTCHA version has been added.
+* Update : The Czech language file has been updated.
 
 = V1.28 - 14.04.2017 =
 * Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
@@ -348,6 +353,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.29 =
+* Functionality expanded.
+* Languages updated.
 
 = V1.28 =
 * Bugs fixed.
