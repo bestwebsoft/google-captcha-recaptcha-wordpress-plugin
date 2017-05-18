@@ -1,7 +1,7 @@
 <?php
 /*
 * Function for displaying BestWebSoft menu
-* Version: 2.0.6
+* Version: 2.0.7
 */
 
 if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) )
@@ -532,7 +532,7 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 											} ?>
 										</div>
 										<div class="bws_product_description">
-											<?php echo ( strlen( $value_plugin['description'] ) > 100 ) ? substr( $value_plugin['description'], 0, 100 ) . '...' : $value_plugin['description']; ?>
+											<?php echo ( strlen( $value_plugin['description'] ) > 100 ) ? mb_substr( $value_plugin['description'], 0, 100 ) . '...' : $value_plugin['description']; ?>
 										</div>
 										<div class="bws_product_links">
 											<?php if ( $is_active || $is_pro_active ) {

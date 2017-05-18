@@ -109,7 +109,7 @@
 <li>Italian (it_IT) (thanks to <a href="mailto:&#x77;&#097;&#114;&#116;&#049;&#055;&#064;&#104;&#111;&#116;&#109;a&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" rel="nofollow">Istvan</a>)</li>
 <li>Polish (pl_PL) (thanks to <a href="mailto:&#114;&#121;&#115;&#x7a;&#x61;&#114;&#100;&#046;&#x67;&#x6c;&#x65;&#103;&#111;l&#x61;&#x40;&#116;&#114;a&#x6e;&#x73;&#108;&#097;&#110;&#x65;&#x74;&#046;&#099;&#111;&#x6d;" rel="nofollow">Ryszard Glegola</a>, www.translanet.com)</li>
 <li>Russian (ru_RU)</li>
-<li>Spanish (es_ES) (thanks to <a href="mailto:&#099;&#108;&#111;&#117;&#100;&#122;&#x65;&#x72;&#x6f;&#x78;&#x79;&#x7a;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;.c&#111;&#109;" rel="nofollow">Cloudzeroxyz</a>)</li>
+<li>Spanish (es_ES)</li>
 <li>Ukrainian (uk)</li>
 </ul>
 <p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="https://codex.wordpress.org/Translating_WordPress" rel="nofollow">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow">BestWebSoft</a> and we&#8217;ll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php" rel="nofollow">files Poedit</a>.</p>

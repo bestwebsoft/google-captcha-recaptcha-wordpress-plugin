@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-18 17:59+0300\n"
+"POT-Creation-Date: 2017-05-16 09:26+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
+"Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,15 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:34 google-captcha.php:602
+#: google-captcha.php:34 google-captcha.php:593
 msgid "Google Captcha Settings"
 msgstr "Настройки Google Captcha"
 
-#: google-captcha.php:254
+#: google-captcha.php:248
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Пожалуйста, дождитесь окончания загрузки Google reCAPTCHA."
 
-#: google-captcha.php:255
+#: google-captcha.php:249
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -32,90 +32,90 @@ msgstr ""
 "Не удалось загрузить Google reCAPTCHA. Проверьте Ваше подключение к сети "
 "Интернет и перезагрузите эту страницу."
 
-#: google-captcha.php:275
+#: google-captcha.php:269
 msgid "Warning"
 msgstr "Внимание"
 
-#: google-captcha.php:279 google-captcha.php:1127 google-captcha.php:1158
-#: google-captcha.php:1187 google-captcha.php:1217 google-captcha.php:1246
+#: google-captcha.php:273 google-captcha.php:1086 google-captcha.php:1117
+#: google-captcha.php:1146 google-captcha.php:1176 google-captcha.php:1205
 msgid "Error"
 msgstr "Ошибка"
 
-#: google-captcha.php:377
+#: google-captcha.php:371
 msgid "You are in the whitelist"
 msgstr "Вы в белом списке"
 
-#: google-captcha.php:506
+#: google-captcha.php:498
 msgid "Site Key"
 msgstr "Ключ сайта"
 
-#: google-captcha.php:511
+#: google-captcha.php:503
 msgid "Secret Key"
 msgstr "Секретный ключ"
 
-#: google-captcha.php:518 google-captcha.php:519
+#: google-captcha.php:510 google-captcha.php:511
 msgid "Version"
 msgstr "Версия"
 
-#: google-captcha.php:520
+#: google-captcha.php:512
 msgid "Invisible reCAPTCHA"
 msgstr "Невидимая reCAPTCHA"
 
-#: google-captcha.php:525
+#: google-captcha.php:517
 msgid "Login form"
 msgstr "Форма логина"
 
-#: google-captcha.php:526
+#: google-captcha.php:518
 msgid "Registration form"
 msgstr "Форма регистрации"
 
-#: google-captcha.php:527
+#: google-captcha.php:519
 msgid "Reset password form"
 msgstr "Форма восстановления пароля"
 
-#: google-captcha.php:528
+#: google-captcha.php:520
 msgid "Comments form"
 msgstr "Форма комментариев"
 
-#: google-captcha.php:547
+#: google-captcha.php:539
 msgid "Enter site key"
 msgstr "Введите ключ сайта"
 
-#: google-captcha.php:548 google-captcha.php:554
+#: google-captcha.php:540 google-captcha.php:546
 msgid "WARNING: The captcha will not display while you don't fill key fields."
 msgstr ""
 "ПРЕДУПРЕЖДЕНИЕ: Google Captcha не будет отображаться пока вы не заполните "
 "ключевые поля."
 
-#: google-captcha.php:553
+#: google-captcha.php:545
 msgid "Enter secret key"
 msgstr "Введите секретный ключ"
 
-#: google-captcha.php:581
+#: google-captcha.php:572
 msgid "Settings saved"
 msgstr "Настройки сохранены"
 
-#: google-captcha.php:587
+#: google-captcha.php:578
 msgid "All plugin settings were restored"
 msgstr "Настройки плагина были восстановлены"
 
-#: google-captcha.php:604 google-captcha.php:1334 google-captcha.php:1355
+#: google-captcha.php:595 google-captcha.php:1274 google-captcha.php:1295
 msgid "Settings"
 msgstr "Настройки"
 
-#: google-captcha.php:605
+#: google-captcha.php:596
 msgid "Whitelist"
 msgstr "Белый список"
 
-#: google-captcha.php:606
+#: google-captcha.php:597
 msgid "Custom code"
 msgstr "Пользовательский код"
 
-#: google-captcha.php:607
+#: google-captcha.php:598
 msgid "Go PRO"
 msgstr "Перейти на PRO версию"
 
-#: google-captcha.php:612
+#: google-captcha.php:603
 msgid ""
 "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA "
 "version 1 features."
@@ -123,7 +123,7 @@ msgstr ""
 "В связи с особенностями работы reCAPTCHA версии 1 на странице может "
 "отображаться только одна reCAPTCHA."
 
-#: google-captcha.php:627
+#: google-captcha.php:618
 #, php-format
 msgid ""
 "If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
@@ -132,7 +132,7 @@ msgstr ""
 "Если вы хотите добавить Google Captcha (reCAPTCHA) на вашу страницу или "
 "пост, то используйте кнопку %s"
 
-#: google-captcha.php:631
+#: google-captcha.php:622
 #, php-format
 msgid ""
 "You can add the Google Captcha (reCAPTCHA) to your page or post by clicking "
@@ -145,11 +145,11 @@ msgstr ""
 "кнопка не отображается или вы хотите добавить Google Captcha (reCAPTCHA) в "
 "вашу собственную форму, пожалуйста, используйте шорткод %s"
 
-#: google-captcha.php:637
+#: google-captcha.php:628
 msgid "Authentication"
 msgstr "Идентификация"
 
-#: google-captcha.php:638
+#: google-captcha.php:629
 #, php-format
 msgid ""
 "In order to use reCAPTCHA, please enter site and secret keys. You can manage "
@@ -158,53 +158,52 @@ msgstr ""
 "Для использования reCAPTCHA, пожалуйста введите ключ сайта и секретный ключ. "
 "Вы можете управлять своими API ключами %sздесь%s"
 
-#: google-captcha.php:653
+#: google-captcha.php:644
 msgid "Test Keys"
 msgstr "Тестирование ключей"
 
-#: google-captcha.php:656
+#: google-captcha.php:647
 msgid "Options"
 msgstr "Опции"
 
-#: google-captcha.php:659
+#: google-captcha.php:650
 msgid "Enable reCAPTCHA for"
 msgstr "Включить reCAPTCHA для"
 
-#: google-captcha.php:663
+#: google-captcha.php:654
 msgid "WordPress default"
 msgstr "Стандартных форм WordPress"
 
-#: google-captcha.php:672
+#: google-captcha.php:663
 msgid "This option is available only for network or for main blog"
 msgstr "Эта опция доступна только для сети или для основного блога"
 
-#: google-captcha.php:681
+#: google-captcha.php:672
 msgid "Plugins"
 msgstr "Плагинов"
 
-#: google-captcha.php:689 google-captcha.php:694 google-captcha.php:724
-#: google-captcha.php:729
+#: google-captcha.php:680 google-captcha.php:685
 #, php-format
 msgid "You should %s to use this functionality"
 msgstr "Чтобы использовать этот функционал %s"
 
-#: google-captcha.php:690 google-captcha.php:725
+#: google-captcha.php:681
 msgid "activate"
 msgstr "активируйте"
 
-#: google-captcha.php:690 google-captcha.php:725
+#: google-captcha.php:681
 msgid "for network"
 msgstr "для сети"
 
-#: google-captcha.php:695 google-captcha.php:730
+#: google-captcha.php:686
 msgid "download"
 msgstr "загрузить"
 
-#: google-captcha.php:699
+#: google-captcha.php:690
 msgid "Check off for adding captcha to forms on their settings pages"
 msgstr "Выключите для добавления капчи к формам на страницах их настроек"
 
-#: google-captcha.php:742
+#: google-captcha.php:699
 #, php-format
 msgid ""
 "If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s"
@@ -212,19 +211,19 @@ msgstr ""
 "Если вы хотите добавить Google Captcha (reCAPTCHA) в кастомную форму, "
 "смотрите %s"
 
-#: google-captcha.php:742 google-captcha.php:1356
+#: google-captcha.php:699 google-captcha.php:1296
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-captcha.php:747
+#: google-captcha.php:704
 msgid "Hide reCAPTCHA in Comments Form for"
 msgstr "Скрыть reCAPTCHA в Форма комментариев для"
 
-#: google-captcha.php:759
+#: google-captcha.php:716
 msgid "Whitelist Notification"
 msgstr "Уведомление о нахождении в белом списке"
 
-#: google-captcha.php:763
+#: google-captcha.php:720
 msgid ""
 "This message will be displayed instead of the reCAPTCHA if the user IP is "
 "added to the whitelist"
@@ -232,11 +231,11 @@ msgstr ""
 "Указанное сообщение будет отображаться вместо reCAPTCHA для IP адресов из "
 "белого списка"
 
-#: google-captcha.php:769
+#: google-captcha.php:726
 msgid "reCAPTCHA Version"
 msgstr "Версия reCAPTCHA"
 
-#: google-captcha.php:779
+#: google-captcha.php:736
 msgid ""
 "reCAPTCHA block won't be visible for non-suspicious users while suspicious "
 "ones will have to pass the captcha"
@@ -245,63 +244,63 @@ msgstr ""
 "подозрение, в то время как подозрительным пользователям придётся пройти "
 "через капчу"
 
-#: google-captcha.php:787 google-captcha.php:800
+#: google-captcha.php:744 google-captcha.php:757
 msgid "reCAPTCHA Theme"
 msgstr "Тема reCAPTCHA"
 
-#: google-captcha.php:788 google-captcha.php:801 includes/pro_banners.php:90
+#: google-captcha.php:745 google-captcha.php:758 includes/pro_banners.php:90
 msgid "for version"
 msgstr "для версии"
 
-#: google-captcha.php:813
+#: google-captcha.php:770
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: google-captcha.php:877 google-captcha.php:1375
+#: google-captcha.php:834 google-captcha.php:1315
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Чтобы использовать Google Captcha вам необходимо получить ключи"
 
-#: google-captcha.php:878 google-captcha.php:1376
+#: google-captcha.php:835 google-captcha.php:1316
 msgid "here"
 msgstr "здесь"
 
-#: google-captcha.php:879 google-captcha.php:1377
+#: google-captcha.php:836 google-captcha.php:1317
 msgid "and enter them on the"
 msgstr "и вставить их на"
 
-#: google-captcha.php:881 google-captcha.php:1379
+#: google-captcha.php:838 google-captcha.php:1319
 msgid "plugin setting page"
 msgstr "страницу настроек плагина"
 
-#: google-captcha.php:1082
+#: google-captcha.php:1041
 msgid "User response is missing."
 msgstr "Ответ пользователя отсутствует."
 
-#: google-captcha.php:1086 google-captcha.php:1094
+#: google-captcha.php:1045 google-captcha.php:1053
 msgid "Secret Key is invalid"
 msgstr "Некорректный секретный ключ"
 
-#: google-captcha.php:1087 google-captcha.php:1095
+#: google-captcha.php:1046 google-captcha.php:1054
 msgid "Check your domain configuration"
 msgstr "Проверьте настройки вашего домена"
 
-#: google-captcha.php:1088 google-captcha.php:1096
+#: google-captcha.php:1047 google-captcha.php:1055
 msgid "and enter it again"
 msgstr "и введите его снова"
 
-#: google-captcha.php:1091
+#: google-captcha.php:1050
 msgid "Secret Key is missing."
 msgstr "Секретный ключ отсутствует."
 
-#: google-captcha.php:1098
+#: google-captcha.php:1057
 msgid "User response is invalid"
 msgstr "Некорректный ответ пользователя"
 
-#: google-captcha.php:1099
+#: google-captcha.php:1058
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Ошибка: Вы ввели неверное значение reCAPTCHA."
 
-#: google-captcha.php:1100
+#: google-captcha.php:1059
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -309,23 +308,23 @@ msgstr ""
 "В текущей форме найдено более одного блока reCAPTCHA. Пожалуйста, удалите "
 "все лишние блоки reCAPTCHA для корректной дальнейшей работы."
 
-#: google-captcha.php:1246
+#: google-captcha.php:1205
 msgid "Click the BACK button on your browser, and try again."
 msgstr "Воспользуйтесь кнопкой НАЗАД в вашем браузере и попытайтесь снова."
 
-#: google-captcha.php:1291
+#: google-captcha.php:1230
 msgid "Please, complete the captcha and submit \"Test verification\""
 msgstr "Пожалуйста, заполните капчу и нажмите кнопку \"Тестирование проверки\""
 
-#: google-captcha.php:1295
+#: google-captcha.php:1235
 msgid "Test verification"
 msgstr "Тестирование проверки"
 
-#: google-captcha.php:1316
+#: google-captcha.php:1256
 msgid "The verification is successfully completed"
 msgstr "Проверка завершена успешно"
 
-#: google-captcha.php:1357
+#: google-captcha.php:1297
 msgid "Support"
 msgstr "Поддержка"
 
@@ -387,7 +386,7 @@ msgstr "IP был добавлен в белый список"
 
 #: includes/whitelist.php:320 includes/whitelist.php:341
 #: includes/whitelist.php:351
-msgid "Some errors occured"
+msgid "Some errors occurred"
 msgstr "Возникли некоторые ошибки"
 
 #: includes/whitelist.php:322

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bestwebsoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-28 13:50+0300\n"
-"PO-Revision-Date: 2017-03-28 13:50+0300\n"
+"POT-Creation-Date: 2017-05-08 15:43+0300\n"
+"PO-Revision-Date: 2017-05-08 15:43+0300\n"
 "Last-Translator: Mik013\n"
 "Language-Team: Mik013\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.8.7.1\n"
@@ -48,7 +48,7 @@ msgstr "Ohodnoťte jej"
 msgid "Need help?"
 msgstr "Potřebujete pomoc?"
 
-#: bws_functions.php:103 bws_functions.php:916 class-bws-settings.php:1047
+#: bws_functions.php:103 bws_functions.php:907 class-bws-settings.php:1047
 msgid "Visit Help Center"
 msgstr "Navštívit Centrum pomoci"
 
@@ -125,7 +125,7 @@ msgstr ""
 #: bws_functions.php:207
 #, php-format
 msgid "Thank you for installing %s plugin!"
-msgstr ""
+msgstr "Děkujeme vám za instalaci %s pluginu!"
 
 #: bws_functions.php:208
 msgid "Let's get started"
@@ -146,7 +146,7 @@ msgid "Add New"
 msgstr "Přidat nový"
 
 #: bws_functions.php:216 bws_functions.php:226 bws_functions.php:330
-#: bws_functions.php:378 bws_functions.php:482
+#: bws_functions.php:378 bws_functions.php:480
 msgid "Close notice"
 msgstr "Zavřít poznámku"
 
@@ -197,12 +197,12 @@ msgstr ""
 "Váš licenční klíč pro %s vyprší dne %s a nebudou vám poskytovány TOP-"
 "PRIOROTNÍ PODPORA a AKTUALIZACE."
 
-#: bws_functions.php:477
+#: bws_functions.php:475
 #, php-format
 msgid "Thank you for choosing %s plugin!"
-msgstr ""
+msgstr "Děkujeme, že jste si vybrali %s plugin!"
 
-#: bws_functions.php:478
+#: bws_functions.php:476
 msgid ""
 "If you have a feature, suggestion or idea you'd like to see in the plugin, "
 "we'd love to hear about it!"
@@ -210,90 +210,98 @@ msgstr ""
 "Máte-li nápad, nebo doporučení na novou vlastnost, kterou by jste v pluginu "
 "chtěli vidět, rádi o něm uslyšíme!"
 
-#: bws_functions.php:479
+#: bws_functions.php:477
 msgid "Suggest a Feature"
 msgstr "Navrhnout vlastnost"
 
-#: bws_functions.php:495 class-bws-settings.php:533 class-bws-settings.php:536
+#: bws_functions.php:493 class-bws-settings.php:533 class-bws-settings.php:536
 #: class-bws-settings.php:584 class-bws-settings.php:587
 msgid "Notice"
 msgstr "Poznámka"
 
-#: bws_functions.php:495
+#: bws_functions.php:493
 msgid "The plugin's settings have been changed."
 msgstr "Nastavení pluginu bylo změněno."
 
-#: bws_functions.php:496 class-bws-settings.php:182 class-bws-settings.php:202
+#: bws_functions.php:494 class-bws-settings.php:182 class-bws-settings.php:202
 #: deprecated.php:640
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#: bws_functions.php:510
+#: bws_functions.php:508
 msgid ""
 "You can always look at premium options by checking the \"Pro Options\" in "
 "the \"Misc\" tab."
 msgstr ""
 "Vždy se můžete podívat na možnosti prémiové verze, kliknutím na \"PRO "
-"nastavení\" na \"Go PRO\" záložce"
+"nastavení\" na \"Go PRO\" záložce."
 
-#: bws_functions.php:651
+#: bws_functions.php:629
+msgid "Add BWS Shortcode"
+msgstr ""
+
+#: bws_functions.php:630
+msgid "Add BWS Plugins Shortcode"
+msgstr ""
+
+#: bws_functions.php:649
 msgid "Add shortcode"
 msgstr "Přidat krátký kód"
 
-#: bws_functions.php:651
+#: bws_functions.php:649
 msgid "Add BestWebSoft plugins' shortcodes using this button."
 msgstr ""
 "Pomocí tohoto tlačítka můžete přidávat krátké kódy BestWebSoft pluginu."
 
-#: bws_functions.php:700
+#: bws_functions.php:695
 msgid "Close"
 msgstr "Zavřít"
 
-#: bws_functions.php:792
+#: bws_functions.php:787
 msgid "Are you sure you want to restore default settings?"
 msgstr "Jste si jisti, že chcete obnovit výchozí nastavení?"
 
-#: bws_functions.php:795
+#: bws_functions.php:790
 msgid "Yes, restore all settings"
 msgstr "Ano, obnovit veškerá nastavení"
 
-#: bws_functions.php:796
+#: bws_functions.php:791
 msgid "No, go back to the settings page"
 msgstr "Ne, vrátit se zpět na stránku nastavení"
 
-#: bws_functions.php:842
+#: bws_functions.php:833
 msgid "Plugin"
 msgstr "Plugin"
 
-#: bws_functions.php:851
+#: bws_functions.php:842
 msgid "Shortcode settings"
 msgstr "Nastavení krátkých kódů"
 
-#: bws_functions.php:856
+#: bws_functions.php:847
 msgid "The shortcode will be inserted"
 msgstr "Bude vložen krátký kód"
 
-#: bws_functions.php:861
+#: bws_functions.php:852
 msgid "Insert"
 msgstr "Vložit"
 
-#: bws_functions.php:921
+#: bws_functions.php:912
 msgid "FAQ"
 msgstr "Často kladené otázky (FAQ)"
 
-#: bws_functions.php:927
+#: bws_functions.php:918
 msgid "For more information:"
 msgstr "Pro více informací:"
 
-#: bws_functions.php:928
+#: bws_functions.php:919
 msgid "Documentation"
 msgstr "Dokumentace"
 
-#: bws_functions.php:929
+#: bws_functions.php:920
 msgid "Video Instructions"
 msgstr "Video instrukce"
 
-#: bws_functions.php:930
+#: bws_functions.php:921
 msgid "Submit a Request"
 msgstr "Odeslat požadavek"
 
@@ -320,7 +328,7 @@ msgstr "Omlouváme se za nepříjemnosti."
 #: bws_menu.php:128 class-bws-settings.php:813 class-bws-settings.php:916
 #: deprecated.php:139 deprecated.php:358
 msgid "Wrong license key."
-msgstr "Neplatný licenční klíč"
+msgstr "Neplatný licenční klíč."
 
 #: bws_menu.php:130
 msgid ""
@@ -357,7 +365,7 @@ msgstr ""
 
 #: bws_menu.php:142 class-bws-settings.php:828 deprecated.php:153
 msgid "The license key is valid."
-msgstr "Licenční klíč je platný"
+msgstr "Licenční klíč je platný."
 
 #: bws_menu.php:144 class-bws-settings.php:831 deprecated.php:156
 msgid "Your license will expire on"
@@ -623,7 +631,7 @@ msgstr "Stahování instalačního balíčku z"
 #: class-bws-settings.php:992 deprecated.php:387 deprecated.php:409
 #: deprecated.php:431
 msgid "Failed to download the zip archive. Please, upload the plugin manually"
-msgstr "Stažení zip archivu selhalo. Prosíme, nahrajte plugin ručně."
+msgstr "Stažení zip archivu selhalo. Prosíme, nahrajte plugin ručně"
 
 #: bws_menu.php:408
 msgid "Unpacking the package"
@@ -635,7 +643,7 @@ msgstr "Instalace pluginu"
 
 #: bws_menu.php:417 class-bws-settings.php:960 deprecated.php:399
 msgid "Failed to open the zip archive. Please, upload the plugin manually"
-msgstr "Otevření zip archivu selhalo. Prosíme, nahrajte plugin ručně."
+msgstr "Otevření zip archivu selhalo. Prosíme, nahrajte plugin ručně"
 
 #: bws_menu.php:424 class-bws-settings.php:966 deprecated.php:405
 msgid ""
@@ -781,7 +789,7 @@ msgstr "Verze"
 
 #: class-bws-settings.php:282
 msgid "All plugin settings were restored."
-msgstr "Všechna nastavení pluginu byla obnovena"
+msgstr "Všechna nastavení pluginu byla obnovena."
 
 #: class-bws-settings.php:420
 msgid "Custom Code"
@@ -893,7 +901,7 @@ msgstr "Gratulujeme! PRO licence byla úspěšně aktivována."
 #: class-bws-settings.php:715
 #, php-format
 msgid "You will be automatically redirected to the %s in %s seconds."
-msgstr ""
+msgstr "Za %s sekund budete automaticky přesměrováni na %s."
 
 #: class-bws-settings.php:715
 msgid "Settings page"
@@ -970,7 +978,7 @@ msgstr ""
 
 #: class-bws-settings.php:826 deprecated.php:151
 msgid "The Pro Trial license key is valid."
-msgstr "Licenční klíč zkušební Pro verze je platný"
+msgstr "Licenční klíč zkušební Pro verze je platný."
 
 #: class-bws-settings.php:834 deprecated.php:159 deprecated.php:246
 #, php-format
@@ -1005,7 +1013,7 @@ msgstr "Stav systému"
 
 #: deprecated.php:204
 msgid "Please, enter your license key"
-msgstr "Prosím, vložte váš licenční klíč."
+msgstr "Prosím, vložte váš licenční klíč"
 
 #: deprecated.php:223
 msgid ""
@@ -1060,7 +1068,7 @@ msgstr "Zkontrolujte prémiové možnosti na stránce nastavení pluginů!"
 
 #: deprecated.php:478
 msgid "Restore all plugin settings to defaults"
-msgstr "Obnovit veškerá nastavení pluginu na výchozí hodnoty?"
+msgstr "Obnovit veškerá nastavení pluginu na výchozí hodnoty"
 
 #: deprecated.php:480
 msgid "Restore settings"
@@ -1137,138 +1145,308 @@ msgstr "Utility"
 msgid "Other"
 msgstr "Ostatní"
 
-#~ msgid "Thank you for installing"
-#~ msgstr "Děkujeme vám za instalaci"
+#: product_list.php:22
+msgid ""
+"Protect WordPress website forms from spam entries by means of math logic."
+msgstr ""
 
-#~ msgid "Thank you for choosing"
-#~ msgstr "Děkujeme, že jste si vybrali"
+#: product_list.php:32
+msgid "Create your personal car rental/booking and reservation website."
+msgstr ""
 
-# copy
-#~ msgid "PHP Safe Mode"
-#~ msgstr "PHP Safe Mode"
+#: product_list.php:42
+msgid ""
+"Allow customers to reach you using secure contact form plugin any website "
+"must have."
+msgstr ""
 
-#~ msgid "You will be automatically redirected to the %s in 7 seconds."
-#~ msgstr "Budete automaticky přesměrováni na %s za 7 sekund."
+#: product_list.php:52
+msgid "Add unlimited number of contact forms to WordPress website."
+msgstr ""
 
-#~ msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
-#~ msgstr ""
-#~ "Pokud se Vám náš plugin líbí, dejte mu prosím 5 hvězdiček na WordPressu"
+#: product_list.php:62
+msgid "Save and manage contact form messages. Never lose important data."
+msgstr ""
 
-#~ msgid "Rate the plugin"
-#~ msgstr "Hodnotit plugin"
+#: product_list.php:72
+msgid "Add unlimited custom pages to WordPress admin dashboard."
+msgstr ""
 
-#~ msgid "If there is something wrong about it, please contact us"
-#~ msgstr "Pokud cokoli není v pořádku, obraťte se na nás"
+#: product_list.php:79
+msgid "Add custom fields to WordPress website search results."
+msgstr ""
 
-#~ msgid "Donations play an important role in supporting great projects"
-#~ msgstr "Dary hrají důležitou roli v podpoře velkých projektů"
+#: product_list.php:86
+msgid "Add custom post types to WordPress website search results."
+msgstr ""
 
-#~ msgid "This license key is bind to another site"
-#~ msgstr "Tento licenční klíč se váže k jinému webu"
+#: product_list.php:96
+msgid ""
+"Manage database and file system right from your WordPress admin dashboard."
+msgstr ""
 
-#~ msgid ""
-#~ "Unfortunately, Your license has expired. To continue getting top-priority "
-#~ "support and plugin updates you should extend it in your"
-#~ msgstr ""
-#~ "Bohužel, Vaše licence vypršela. Chcete-li pokračovat v získávání top-"
-#~ "prioritní podpory a aktualizace pluginu měli byste ji prodloužit ve vašem"
+#: product_list.php:105
+msgid "Add PayPal and 2CO donate buttons to receive charity payments."
+msgstr ""
 
-#~ msgid ""
-#~ "Congratulations! Pro version of the plugin is successfully installed and "
-#~ "activated."
-#~ msgstr ""
-#~ "Gratulujeme! PRO verze pluginu byla úspěšně instalována a aktivována."
+#: product_list.php:112
+msgid ""
+"Automatically add outgoing email messages to queue instead of sending them "
+"immediately."
+msgstr ""
 
-#~ msgid "After that you can activate it by entering your license key."
-#~ msgstr "Poté, co jej aktivujete vložením vašeho licenčního klíče."
+#: product_list.php:119
+msgid ""
+"Get latest error log messages to diagnose website problems. Define and fix "
+"issues faster."
+msgstr ""
 
-#~ msgid ""
-#~ "Congratulations! The Pro license of the plugin is successfully activated."
-#~ msgstr "Gratulujeme! PRO licence pluginu je úspěšně aktivována."
+#: product_list.php:126
+msgid ""
+"Add Facebook Like, Share and Profile buttons to WordPress posts, pages and "
+"widgets."
+msgstr ""
 
-#~ msgid "This license key is bind to another site."
-#~ msgstr "Tento licenční klíč je přidružen k jiným webovým stránkám."
+#: product_list.php:136
+msgid ""
+"Add featured posts to WordPress posts or widgets. Highlight important "
+"information."
+msgstr ""
 
-#~ msgid ""
-#~ "If needed you can check if the license key is correct or reenter it in "
-#~ "the field below. You can find your license key on your personal page - "
-#~ "Client area - on our website"
-#~ msgstr ""
-#~ "V případě potřeby zkontrolujte, je-li licenční klíč správně zadán, "
-#~ "případně jej do pole níže vložte znova. Váš licenční klíč najdete na vaší "
-#~ "osobní stránce - Client area - na našem webu"
+#: product_list.php:143
+msgid ""
+"Add beautiful galleries, albums & images to your Wordpress website in few "
+"clicks."
+msgstr ""
 
-#~ msgid ""
-#~ "Notice: Your Pro Trial license has expired. To continue using the plugin "
-#~ "you should buy a Pro license"
-#~ msgstr ""
-#~ "Poznámka: Vaše zkušební Pro verze pluginu vypršela. Pro další využíváni "
-#~ "pluginu bude nutné zakoupit Pro licenci"
+#: product_list.php:153
+msgid ""
+"Add unlimited gallery categories. Organize images to make the navigation "
+"through content easier."
+msgstr ""
 
-#~ msgid ""
-#~ "Your license has expired. To continue getting top-priority support and "
-#~ "plugin updates you should extend it."
-#~ msgstr ""
-#~ "Vaše licence vypršela. Pro přístup k top-prioritní podpoře a aktualizacím "
-#~ "pluginu ji budete muset prodloužit."
+#: product_list.php:160
+msgid ""
+"Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress "
+"posts, pages and widgets."
+msgstr ""
 
-#~ msgid "You license for"
-#~ msgstr "Vaše licence pro"
+#: product_list.php:170
+msgid ""
+"Add Adsense ads to pages, posts, custom posts, search results, categories, "
+"tags, pages, and widgets."
+msgstr ""
 
-#~ msgid "expires on"
-#~ msgstr "vyprší"
+#: product_list.php:180
+msgid "Add Google Analytics code to WordPress website and track basic stats."
+msgstr ""
 
-#~ msgid "and you won't be granted TOP-PRIORITY SUPPORT or UPDATES."
-#~ msgstr "a nebudete mít přístup k  TOP-PRIORITNÍ PODPOŘE nebo AKTUALIZACÍM."
+#: product_list.php:190
+msgid ""
+"Protect WordPress website forms from spam entries with Google Captcha "
+"(reCaptcha)."
+msgstr ""
 
-#~ msgid ""
-#~ "You can always look at premium options by clicking on the \"Show Pro "
-#~ "features\" in the \"Go PRO\" tab"
-#~ msgstr ""
-#~ "Vždy se můžete podívat na možnosti prémiové verze, kliknutím na "
-#~ "\"Zobrazit Pro vlastnosti\" na \"Go PRO\" záložce"
+#: product_list.php:200
+msgid "Add customized Google maps to WordPress posts, pages and widgets."
+msgstr ""
 
-#~ msgid "Are you sure you want to restore all settings by default?"
-#~ msgstr ""
-#~ "Jste si jisti, že chcete obnovit veškerá nastavení na výchozí hodnoty?"
+#: product_list.php:210
+msgid ""
+"Generate and add XML sitemap to WordPress website. Help search engines index "
+"your blog."
+msgstr ""
 
-#~ msgid ""
-#~ "This license key is bind to another website. Change it via personal "
-#~ "Client Area."
-#~ msgstr ""
-#~ "Tento licenční klíč je přidružen k jiným webovým stránkám. Změňte jej "
-#~ "prostřednictvím osobní Klientské zóny."
+#: product_list.php:220
+msgid ""
+"Replace external WordPress website links with Google shortlinks and track "
+"click stats."
+msgstr ""
 
-#~ msgid "Congratulations! Pro Membership license is successfully activated."
-#~ msgstr "Gratulujeme! Členská PRO licence byla úspěšně aktivována."
+#: product_list.php:227
+msgid ""
+"Protect WordPress website – allow and deny access for certain IP addresses, "
+"hostnames, etc."
+msgstr ""
 
-#~ msgid "Memory usage"
-#~ msgstr "Využití paměti"
+#: product_list.php:237
+msgid ""
+"Create your personal job board and listing WordPress website. Search jobs, "
+"submit CV/resumes, choose candidates."
+msgstr ""
 
-#~ msgid "MYSQL Version"
-#~ msgstr "Verze MYSQL"
+#: product_list.php:244
+msgid ""
+"Add latest posts or latest posts for selected categories widgets to "
+"WordPress website."
+msgstr ""
 
-#~ msgid "Site URL"
-#~ msgstr "URL webových stránek"
+#: product_list.php:251
+msgid ""
+"Protect WordPress website against brute force attacks. Limit rate of login "
+"attempts."
+msgstr ""
 
-#~ msgid "WordPress Version"
-#~ msgstr "Verze WordPress"
+#: product_list.php:261
+msgid ""
+"Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. "
+"5 plugins included – profile, insider, etc."
+msgstr ""
 
-#~ msgid "WordPress DB Version"
-#~ msgstr "WordPress verze DB"
+#: product_list.php:271
+msgid ""
+"Translate WordPress website content to other languages manually. Create "
+"multilingual pages, posts, widgets, menus, etc."
+msgstr ""
 
-# copy
-#~ msgid "Multisite"
-#~ msgstr "Multisite"
+#: product_list.php:281
+msgid ""
+"Add customizable pagination to WordPress website. Split long content to "
+"multiple pages for better navigation."
+msgstr ""
 
-#~ msgid "Email with system info is sent to "
-#~ msgstr "E-mail se systémovým nastavením byl odeslán na"
+#: product_list.php:291
+msgid ""
+"Generate PDF files and print WordPress posts/pages. Customize document "
+"header/footer styles and appearance."
+msgstr ""
 
-#~ msgid "Client Area"
-#~ msgstr "Klientská zóna"
+#: product_list.php:301
+msgid ""
+"Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, "
+"Profile) to WordPress posts, pages and widgets."
+msgstr ""
 
-#~ msgid "Successfully installed the plugin"
-#~ msgstr "Plugin byl úspěšně instalován"
+#: product_list.php:311
+msgid "Track views, comments and add most popular posts to Wordpress widgets."
+msgstr ""
 
-#~ msgid "Environment"
-#~ msgstr "Prostředí"
+#: product_list.php:318
+msgid ""
+"Create your personal portfolio WordPress website. Manage and showcase past "
+"projects to get more clients."
+msgstr ""
+
+#: product_list.php:328
+msgid "Export WordPress posts to CSV file format easily. Configure data order."
+msgstr ""
+
+#: product_list.php:335
+msgid ""
+"Add extra fields to default WordPress user profile. The easiest way to "
+"create and manage additional custom values."
+msgstr ""
+
+#: product_list.php:342
+msgid ""
+"Add and display HTML advertisement on WordPress website. Customize bar "
+"styles and appearance."
+msgstr ""
+
+#: product_list.php:352
+msgid ""
+"Add customizable quotes and tips blocks to WordPress posts, pages and "
+"widgets."
+msgstr ""
+
+#: product_list.php:359
+msgid ""
+"Add rating plugin to your WordPress website to receive feedback from your "
+"customers."
+msgstr ""
+
+#: product_list.php:366
+msgid ""
+"Create your personal real estate WordPress website. Sell, rent and buy "
+"properties. Add, search and browse listings easily."
+msgstr ""
+
+#: product_list.php:376
+msgid ""
+"Attach, unattach and re-attach media files quickly to WordPress posts and "
+"pages."
+msgstr ""
+
+#: product_list.php:383
+msgid ""
+"Add related posts to WordPress posts or widgets. Link your readers to "
+"relevant content."
+msgstr ""
+
+#: product_list.php:390
+msgid ""
+"Send bulk email messages to WordPress users. Custom templates, advanced "
+"settings and detailed reports."
+msgstr ""
+
+#: product_list.php:400
+msgid ""
+"The best responsive slider plugin for your WordPress website. Create "
+"beautifully animated slides just in a few clicks."
+msgstr ""
+
+#: product_list.php:407
+msgid ""
+"Configure SMTP server to receive email messages from WordPress to Gmail, "
+"Yahoo, Hotmail and other services."
+msgstr ""
+
+#: product_list.php:414
+msgid ""
+"Add social media buttons and widgets to WordPress posts, pages and widgets. "
+"FB, Twitter, G+1, Pinterest, LinkedIn."
+msgstr ""
+
+#: product_list.php:424
+msgid ""
+"Add social media login, registration, and commenting to your WordPress "
+"website."
+msgstr ""
+
+#: product_list.php:431
+msgid ""
+"Add email newsletter sign up form to WordPress posts, pages and widgets. "
+"Collect data and subscribe your users."
+msgstr ""
+
+#: product_list.php:441
+msgid ""
+"Add testimonials and feedbacks from your customers to WordPress posts, pages "
+"and widgets."
+msgstr ""
+
+#: product_list.php:448
+msgid ""
+"Best timesheet plugin for WordPress. Track employee time, streamline "
+"attendance and generate reports."
+msgstr ""
+
+#: product_list.php:458
+msgid ""
+"Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, "
+"pages and widgets."
+msgstr ""
+
+#: product_list.php:468
+msgid ""
+"Automatically check and update WordPress website core with all installed "
+"plugins and themes to the latest versions."
+msgstr ""
+
+#: product_list.php:478
+msgid ""
+"Powerful user role management plugin for WordPress website. Create, edit, "
+"copy, and delete user roles."
+msgstr ""
+
+#: product_list.php:488
+msgid ""
+"Display live count of online visitors who are currently browsing your "
+"WordPress website."
+msgstr ""
+
+#: product_list.php:498
+msgid ""
+"Backup and export Zendesk Help Center content automatically to your "
+"WordPress website database."
+msgstr ""

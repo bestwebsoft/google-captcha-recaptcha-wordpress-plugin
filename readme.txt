@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha
-Requires at least: 3.8
-Tested up to: 4.7.4
-Stable tag: 1.29
+Requires at least: 3.9
+Tested up to: 4.7.5
+Stable tag: 1.30
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -103,7 +103,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 * Italian (it_IT) (thanks to [Istvan](mailto:wart17@hotmail.com))
 * Polish (pl_PL) (thanks to [Ryszard Glegola](mailto:ryszard.glegola@translanet.com), www.translanet.com)
 * Russian (ru_RU)
-* Spanish (es_ES) (thanks to [Cloudzeroxyz](mailto:cloudzeroxyz@gmail.com))
+* Spanish (es_ES)
 * Ukrainian (uk)
 
 Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
@@ -220,6 +220,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 9. Google Captcha (reCAPTCHA) Whitelist page.
 
 == Changelog ==
+
+= V1.30 - 18.05.2017 =
+* Update : The Spanish language file has been updated.
 
 = V1.29 - 27.04.2017 =
 * NEW : Invisible reCAPTCHA version has been added.
@@ -353,6 +356,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.30 =
+* Languages updated.
 
 = V1.29 =
 * Functionality expanded.

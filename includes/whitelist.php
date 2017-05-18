@@ -317,7 +317,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 						if ( ! $wpdb->last_error )
 							$message = __( 'IP added to the whitelist successfully', 'google-captcha' );
 						else
-							$error = __( 'Some errors occured', 'google-captcha' );
+							$error = __( 'Some errors occurred', 'google-captcha' );
 					} else {
 						$error = __( 'IP is already in the whitelist', 'google-captcha' );
 					}
@@ -338,7 +338,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 						$gglcptch_options['whitelist_is_empty'] = is_null( $wpdb->get_var( "SELECT `id` FROM `{$wpdb->prefix}gglcptch_whitelist` LIMIT 1" ) ) ? true : false;
 						update_option( 'gglcptch_options', $gglcptch_options );
 					} else {
-						$error = __( 'Some errors occured', 'google-captcha' );
+						$error = __( 'Some errors occurred', 'google-captcha' );
 					}
 				}
 			} elseif ( isset( $_GET['gglcptch_remove'] ) && check_admin_referer( 'gglcptch_nonce_remove_' . $_GET['gglcptch_remove'] ) ) {
@@ -348,7 +348,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 					$gglcptch_options['whitelist_is_empty'] = is_null( $wpdb->get_var( "SELECT `id` FROM `{$wpdb->prefix}gglcptch_whitelist` LIMIT 1" ) ) ? true : false;
 					update_option( 'gglcptch_options', $gglcptch_options );
 				} else {
-					$error = __( 'Some errors occured', 'google-captcha' );
+					$error = __( 'Some errors occurred', 'google-captcha' );
 				}
 			} elseif ( isset( $_POST['gglcptch_add_to_whitelist'] ) && empty( $_POST['gglcptch_add_to_whitelist'] ) && ! isset( $_POST['bws_hide_premium_options'] ) ) {
 				$error = __( 'You have not entered any IP', 'google-captcha' );
