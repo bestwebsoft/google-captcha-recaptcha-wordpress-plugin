@@ -13,7 +13,7 @@ function gglcptch_onload_callback() {
 	( function( $ ) {
 		gglcptch_pre.is_loaded = true;
 		$( document ).ready( function() {
-			$( 'form' ).find( 'input:submit, button' ).filter('[data-gglcptch_disabled]')
+			$( 'form input:submit, form button' ).filter('[data-gglcptch_disabled]')
 			.removeAttr( 'disabled' )
 			.removeAttr( 'data-gglcptch_disabled' )
 			.each( function() {

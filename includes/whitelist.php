@@ -33,7 +33,6 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 				)
 			);
 			$this->basename	= $plugin_basename;
-			$this->display_notices();
 		}
 
 		/**
@@ -41,7 +40,14 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 		 * @return void
 		 */
 		function display_content() {
-			global $wp_version, $gglcptch_options;
+			global $wp_version, $gglcptch_options; ?>
+			<h1 class="wp-heading-inline"><?php _e( 'Google Captcha Whitelist', 'google-captcha' ); ?></h1>
+			<?php if ( ! ( isset( $_REQUEST['gglcptch_show_whitelist_form'] ) || isset( $_REQUEST['gglcptch_add_to_whitelist'] ) ) ) { ?>
+				<form method="post" action="admin.php?page=google-captcha-whitelist.php" style="display: inline;">
+					<button class="page-title-action" name="gglcptch_show_whitelist_form" value="on"<?php echo ( isset( $_POST['gglcptch_add_to_whitelist'] ) ) ? ' style="display: none;"' : ''; ?>><?php _e( 'Add New', 'google-captcha' ); ?></button>
+				</form>
+			<?php }
+
 			if ( isset( $_SERVER ) ) {
 				$sever_vars = array( 'HTTP_X_REAL_IP', 'HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR' );
 				foreach ( $sever_vars as $var ) {
@@ -60,53 +66,36 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 				}
 			}
 
+			$this->display_notices();
 			$this->prepare_items(); ?>
-			<p><strong><?php _e( 'For IP addresses from the whitelist reCAPTCHA will not be displayed', 'google-captcha' ); ?></strong></p>
-			<?php if ( ! ( isset( $_REQUEST['gglcptch_show_whitelist_form'] ) || isset( $_REQUEST['gglcptch_add_to_whitelist'] ) ) ) { ?>
-				<form method="post" action="admin.php?page=google-captcha.php&amp;action=whitelist" style="margin: 10px 0;">
-					<table>
-						<tr>
-							<td class="gglcptch_whitelist_buttons">
-								<div class="alignleft">
-									<button class="button" name="gglcptch_show_whitelist_form" value="on"><?php _e( 'Add IP to the whitelist', 'google-captcha' ); ?></button>
-								</div>
-								<noscript>
-									<div class="alignleft">
-										<input type="submit" name="gglcptch_save_add_ip_form_button" class="button-primary" value="<?php _e( 'Save changes', 'google-captcha' ); ?>" />
-									</div>
-								</noscript>
-								<?php wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
-								<input type="hidden" name="gglcptch_save_add_ip_form" value="1"/>
-							<td>
-						</tr>
-					</table>
-				</form>
-			<?php } ?>
-			<form class="form-table gglcptch_whitelist_form" method="post" action="admin.php?page=google-captcha.php&amp;action=whitelist" style="margin: 10px 0;<?php echo ! ( isset( $_REQUEST['gglcptch_show_whitelist_form'] ) || isset( $_REQUEST['gglcptch_add_to_whitelist'] ) ) ? 'display: none;': ''; ?>">
-				<div style="margin: 10px 0; position: relative;">
-					<input type="text" maxlength="31" name="gglcptch_add_to_whitelist" />
-					<?php if ( isset( $my_ip ) ) { ?>
-						<br />
-						<label id="gglcptch_add_my_ip">
-							<input type="checkbox" name="gglcptch_add_to_whitelist_my_ip" value="1" />
-							<?php _e( 'My IP', 'google-captcha' ); ?>
-							<input type="hidden" name="gglcptch_add_to_whitelist_my_ip_value" value="<?php echo $my_ip; ?>" />
-						</label>
-					<?php } ?>
-					<br /><input type="submit" class="button-secondary" value="<?php _e( 'Save IP to the whitelist', 'google-captcha' ) ?>" />
-					<?php wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
-				</div>
-				<div style="margin: 10px 0;">
-					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed formats", 'google-captcha' ); ?>:&nbsp;<code>192.168.0.1</code></span><br/>
+			<form class="form-table gglcptch_whitelist_form" method="post" action="admin.php?page=google-captcha-whitelist.php" <?php if ( ! ( isset( $_REQUEST['gglcptch_show_whitelist_form'] ) || isset( $_REQUEST['gglcptch_add_to_whitelist'] ) ) ) echo ' style="display: none;"'; ?>">
+				<label><?php _e( 'IP to whitelist', 'google-captcha' ); ?></label>
+				<br />
+				<input type="text" maxlength="31" name="gglcptch_add_to_whitelist" />
+				<?php if ( isset( $my_ip ) ) { ?>
+					<br />
+					<label id="gglcptch_add_my_ip">
+						<input type="checkbox" name="gglcptch_add_to_whitelist_my_ip" value="1" />
+						<?php _e( 'My IP', 'google-captcha' ); ?>
+						<input type="hidden" name="gglcptch_add_to_whitelist_my_ip_value" value="<?php echo $my_ip; ?>" />
+					</label>
+				<?php } ?>
+				<div>
+					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed formats", 'google-captcha' ); ?>:&nbsp;<code>192.168.0.1</code></span>
+					<br/>
 					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed diapason", 'google-captcha' ); ?>:&nbsp;<code>0.0.0.0 - 255.255.255.255</code></span>
 				</div>
 				<?php gglcptch_pro_block( 'gglcptch_whitelist_banner' ); ?>
-			</form>
-			<form id="gglcptch_whitelist_search" method="post" action="admin.php?page=google-captcha.php&amp;action=whitelist">
+				<p>
+					<input type="submit" class="button-secondary" value="<?php _e( 'Add IP to whitelist', 'google-captcha' ) ?>" />
+					<?php wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
+				</p>
+			</form>			
+			<form id="gglcptch_whitelist_search" method="post" action="admin.php?page=google-captcha-whitelist.php">
 				<?php $this->search_box( __( 'Search IP', 'google-captcha' ), 'search_whitelisted_ip' );
 				wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
 			</form>
-			<form id="gglcptch_whitelist" method="post" action="admin.php?page=google-captcha.php&amp;action=whitelist">
+			<form id="gglcptch_whitelist" method="post" action="admin.php?page=google-captcha-whitelist.php">
 				<?php $this->display();
 				wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
 			</form>
@@ -164,8 +153,8 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 		function get_columns() {
 			$columns = array(
 				'cb'		=> '<input type="checkbox" />',
-				'ip'		=> __( 'IP address', 'google-captcha' ),
-				'add_time'	=> __( 'Date added', 'google-captcha' )
+				'ip'		=> __( 'IP Address', 'google-captcha' ),
+				'add_time'	=> __( 'Date Added', 'google-captcha' )
 			);
 			return $columns;
 		}
@@ -217,9 +206,9 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 			$order    = empty( $this->order )    ? '' : "&order={$this->order}";
 			$paged    = empty( $this->paged )    ? '' : "&paged={$this->paged}";
 			$s        = empty( $this->s )        ? '' : "&s={$this->s}";
-			$url      = "?page=google-captcha.php&action=whitelist&gglcptch_remove={$item['id']}{$order_by}{$order}{$paged}{$s}";
+			$url      = "?page=google-captcha-whitelist.php&gglcptch_remove={$item['id']}{$order_by}{$order}{$paged}{$s}";
 			$actions = array(
-				'remove' => '<a href="' . wp_nonce_url( $url, "gglcptch_nonce_remove_{$item['id']}" ) . '">' . __( 'Remove from the whitelist', 'google-captcha' ) . '</a>'
+				'delete' => '<a href="' . wp_nonce_url( $url, "gglcptch_nonce_remove_{$item['id']}" ) . '">' . __( 'Delete', 'google-captcha' ) . '</a>'
 			);
 			return sprintf('%1$s %2$s', $item['ip'], $this->row_actions( $actions ) );
 		}
@@ -229,7 +218,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 		 */
 		function get_bulk_actions() {
 			/* adding bulk action */
-			return array( 'gglcptch_remove'=> __( 'Remove from the whitelist', 'google-captcha' ) );
+			return array( 'gglcptch_remove'=> __( 'Delete', 'google-captcha' ) );
 		}
 		/**
 		 * Get content for table
@@ -245,7 +234,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 				$where =
 						0 == $ip_int
 					?
-						" WHERE `ip` LIKE '%{$this->s}%' OR `ip_to` LIKE '%{$this->s}%' OR `ip_from` LIKE '%{$this->s}%'"
+						" WHERE `ip` LIKE '%{$this->s}%'"
 					:
 						" WHERE ( `ip_from_int` <= {$ip_int} AND `ip_to_int` >= {$ip_int} )";
 			}
@@ -271,7 +260,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 				$where =
 						0 == $ip_int
 					?
-						" WHERE `ip` LIKE '%{$this->s}%' OR `ip_to` LIKE '%{$this->s}%' OR `ip_from` LIKE '%{$this->s}%'"
+						" WHERE `ip` LIKE '%{$this->s}%'"
 					:
 						" WHERE ( `ip_from_int` <= {$ip_int} AND `ip_to_int` >= {$ip_int} )";
 			}
@@ -315,11 +304,11 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 							)
 						);
 						if ( ! $wpdb->last_error )
-							$message = __( 'IP added to the whitelist successfully', 'google-captcha' );
+							$message = __( 'IP added to the whitelist successfully.', 'google-captcha' );
 						else
-							$error = __( 'Some errors occurred', 'google-captcha' );
+							$error = __( 'Some errors occurred.', 'google-captcha' );
 					} else {
-						$error = __( 'IP is already in the whitelist', 'google-captcha' );
+						$error = __( 'IP is already in the whitelist.', 'google-captcha' );
 					}
 				} else {
 					$error = __( 'Invalid IP. See allowed formats.', 'google-captcha' );
@@ -334,27 +323,27 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 					$list   = implode( ',', $_REQUEST['id'] );
 					$result = $wpdb->query( "DELETE FROM `" . $wpdb->prefix . "gglcptch_whitelist` WHERE `id` IN (" . $list . ");" );
 					if ( ! $wpdb->last_error ) {
-						$message = sprintf( _n( "%s IP was deleted successfully", "%s IPs were deleted successfully", $result, 'google-captcha' ), $result );
+						$message = sprintf( _n( "%s IP was deleted successfully.", "%s IPs were deleted successfully.", $result, 'google-captcha' ), $result );
 						$gglcptch_options['whitelist_is_empty'] = is_null( $wpdb->get_var( "SELECT `id` FROM `{$wpdb->prefix}gglcptch_whitelist` LIMIT 1" ) ) ? true : false;
 						update_option( 'gglcptch_options', $gglcptch_options );
 					} else {
-						$error = __( 'Some errors occurred', 'google-captcha' );
+						$error = __( 'Some errors occurred.', 'google-captcha' );
 					}
 				}
 			} elseif ( isset( $_GET['gglcptch_remove'] ) && check_admin_referer( 'gglcptch_nonce_remove_' . $_GET['gglcptch_remove'] ) ) {
 				$wpdb->delete( $wpdb->prefix . "gglcptch_whitelist", array( 'id' => $_GET['gglcptch_remove'] ) );
 				if ( ! $wpdb->last_error ) {
-					$message = __( "One IP was deleted successfully", 'google-captcha' );
+					$message = __( "One IP was deleted successfully.", 'google-captcha' );
 					$gglcptch_options['whitelist_is_empty'] = is_null( $wpdb->get_var( "SELECT `id` FROM `{$wpdb->prefix}gglcptch_whitelist` LIMIT 1" ) ) ? true : false;
 					update_option( 'gglcptch_options', $gglcptch_options );
 				} else {
-					$error = __( 'Some errors occurred', 'google-captcha' );
+					$error = __( 'Some errors occurred.', 'google-captcha' );
 				}
 			} elseif ( isset( $_POST['gglcptch_add_to_whitelist'] ) && empty( $_POST['gglcptch_add_to_whitelist'] ) && ! isset( $_POST['bws_hide_premium_options'] ) ) {
-				$error = __( 'You have not entered any IP', 'google-captcha' );
+				$error = __( 'You have not entered any IP.', 'google-captcha' );
 			} elseif ( isset( $_REQUEST['s'] ) ) {
 				if ( '' == $_REQUEST['s'] ) {
-					$error = __( 'You have not entered any IP in to the search form', 'google-captcha' );
+					$error = __( 'You have not entered any IP in to the search form.', 'google-captcha' );
 				} else {
 					$message = __( 'Search results for', 'google-captcha' ) . '&nbsp;:&nbsp;' . esc_html( $_REQUEST['s'] );
 				}
@@ -367,4 +356,4 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 			<?php }
 		}
 	}
-} ?>
+}

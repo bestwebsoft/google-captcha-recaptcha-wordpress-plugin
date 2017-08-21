@@ -39,7 +39,7 @@
 #adminmenu #toplevel_page_bws_panel .wp-menu-image {
     font-family: 'bwsicons' !important;
 }
-#adminmenu #toplevel_page_bws_panel  .wp-menu-image:before {
+#adminmenu #toplevel_page_bws_panel .wp-menu-image:before {
     content: "\e93c";
     font-family: 'bwsicons' !important;
 }
@@ -608,7 +608,7 @@ span.bws_code {
     width: 161px;
     margin: -1px 0 0 0;
     border-top: 1px solid #ddd;
-    padding: 20px 20px 20px 45px;
+    padding: 20px 21px 20px 45px;
     color: #000 !important;
     background: #fff !important;
 }
@@ -737,6 +737,9 @@ span.bws_code {
 .rtl .bws_form #postbox-container-2 > div {
     margin-right: 160px;
     margin-left: 0;
+}
+.bws_margined_box {
+    margin: 1em 0;
 }
 @media only screen and (max-width: 1100px) {
     #bws_settings_tabs {

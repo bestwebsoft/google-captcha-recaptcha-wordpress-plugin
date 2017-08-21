@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-16 09:25+0300\n"
+"POT-Creation-Date: 2017-08-21 15:08+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: Cloudzeroxyz <cloudzeroxyz@gmail.com>\n"
@@ -13,19 +13,37 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:34 google-captcha.php:593
+#: google-captcha.php:35 google-captcha.php:37 google-captcha.php:499
+#: includes/class-gglcptch-settings-tabs.php:152
 msgid "Google Captcha Settings"
 msgstr "Googe Captcha Ajustes"
 
-#: google-captcha.php:248
+#: google-captcha.php:37 google-captcha.php:1002 google-captcha.php:1023
+#: includes/class-gglcptch-settings-tabs.php:25
+msgid "Settings"
+msgstr "Configuraciónes"
+
+#: google-captcha.php:39 includes/whitelist.php:44
+msgid "Google Captcha Whitelist"
+msgstr ""
+
+#: google-captcha.php:39
+msgid "Whitelist"
+msgstr "Lista Blanca"
+
+#: google-captcha.php:45 includes/pro_banners.php:29
+msgid "Upgrade to Pro"
+msgstr "Actualizar a Pro"
+
+#: google-captcha.php:267
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Por favor espere hasta que se carga Google reCAPTCHA."
 
-#: google-captcha.php:249
+#: google-captcha.php:268
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -33,275 +51,64 @@ msgstr ""
 "Error al cargar Google reCAPTCHA. Por favor, compruebe su conexión a "
 "internet y vuelva a cargar esta página."
 
-#: google-captcha.php:269
+#: google-captcha.php:288
 msgid "Warning"
 msgstr "Atención"
 
-#: google-captcha.php:273 google-captcha.php:1086 google-captcha.php:1117
-#: google-captcha.php:1146 google-captcha.php:1176 google-captcha.php:1205
+#: google-captcha.php:292 google-captcha.php:807 google-captcha.php:838
+#: google-captcha.php:867 google-captcha.php:897 google-captcha.php:926
 msgid "Error"
 msgstr "Error "
 
-#: google-captcha.php:371
+#: google-captcha.php:390
 msgid "You are in the whitelist"
 msgstr "Estás en la lista blanca"
 
-#: google-captcha.php:498
-msgid "Site Key"
-msgstr "Clave del sitio"
-
-#: google-captcha.php:503
-msgid "Secret Key"
-msgstr "Clave Secreta"
-
-#: google-captcha.php:510 google-captcha.php:511
-msgid "Version"
-msgstr "Versión"
-
-#: google-captcha.php:512
-msgid "Invisible reCAPTCHA"
-msgstr "Invisible reCAPTCHA"
-
-#: google-captcha.php:517
-msgid "Login form"
-msgstr "Formulario de acceso"
-
-#: google-captcha.php:518
-msgid "Registration form"
-msgstr "Formulario de registro"
-
-#: google-captcha.php:519
-msgid "Reset password form"
-msgstr "Formulario de restablecimiento de contraseña"
-
-#: google-captcha.php:520
-msgid "Comments form"
-msgstr "Formulario de comentarios"
-
-#: google-captcha.php:539
-msgid "Enter site key"
-msgstr "Introduce la clave de sitio"
-
-#: google-captcha.php:540 google-captcha.php:546
-msgid "WARNING: The captcha will not display while you don't fill key fields."
-msgstr ""
-"ADVERTENCIA: El Captcha no se mostrará mientras usted no llene  los campos "
-"de clave."
-
-#: google-captcha.php:545
-msgid "Enter secret key"
-msgstr "Introduce la clave secreta"
-
-#: google-captcha.php:572
-msgid "Settings saved"
-msgstr "Configuraciónes guardada"
-
-#: google-captcha.php:578
-msgid "All plugin settings were restored"
-msgstr "Se restauraron todos los parámetros de plugin"
-
-#: google-captcha.php:595 google-captcha.php:1274 google-captcha.php:1295
-msgid "Settings"
-msgstr "Configuraciónes"
-
-#: google-captcha.php:596
-msgid "Whitelist"
-msgstr "Lista Blanca"
-
-#: google-captcha.php:597
-msgid "Custom code"
-msgstr "Código personalizado"
-
-#: google-captcha.php:598
-msgid "Go PRO"
-msgstr "Go PRO"
-
-#: google-captcha.php:603
-msgid ""
-"Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA "
-"version 1 features."
-msgstr ""
-"Sólo un reCAPTCHA puede visualizarse en la página, está relacionado con "
-"características de la versión 1 de reCAPTCHA."
-
-#: google-captcha.php:618
-#, php-format
-msgid ""
-"If you would like to add a Google Captcha (reCAPTCHA) to your page or post, "
-"please use %s button"
-msgstr ""
-"Si desea añadir un Google Captcha (reCAPTCHA) a su página o post, por favor "
-"usar %s botón"
-
-#: google-captcha.php:622
-#, php-format
-msgid ""
-"You can add the Google Captcha (reCAPTCHA) to your page or post by clicking "
-"on %s button in the content edit block using the Visual mode. If the button "
-"isn't displayed or you would like to add the Google Captcha (reCAPTCHA) to "
-"your own form , please use the shortcode %s"
-msgstr ""
-"Puede añadir el Google Captcha (reCAPTCHA) a tu página o post haciendo clic "
-"en %s en el contenido editar bloque usando el modo Visual. Si el botón no "
-"aparece o gustaría añadir el Google Captcha (reCAPTCHA) a su propia forma, "
-"utilice el código %s"
-
-#: google-captcha.php:628
-msgid "Authentication"
-msgstr "Autentificación"
-
-#: google-captcha.php:629
-#, php-format
-msgid ""
-"In order to use reCAPTCHA, please enter site and secret keys. You can manage "
-"your API keys %shere%s"
-msgstr ""
-"Para poder utilizar reCAPTCHA, introduce clave del sitio y clave secreta. "
-"Usted puede administrar su API claves %shere%s"
-
-#: google-captcha.php:644
-msgid "Test Keys"
-msgstr "Test Claves"
-
-#: google-captcha.php:647
-msgid "Options"
-msgstr "Opciones"
-
-#: google-captcha.php:650
-msgid "Enable reCAPTCHA for"
-msgstr "Permite reCAPTCHA para"
-
-#: google-captcha.php:654
-msgid "WordPress default"
-msgstr "WordPress por defecto"
-
-#: google-captcha.php:663
-msgid "This option is available only for network or for main blog"
-msgstr "Esta opción está disponible sólo para red o para blog principal"
-
-#: google-captcha.php:672
-msgid "Plugins"
-msgstr "Plugins"
-
-#: google-captcha.php:680 google-captcha.php:685
-#, php-format
-msgid "You should %s to use this functionality"
-msgstr "Usted debe %s para usar esta funcionalidad"
-
-#: google-captcha.php:681
-msgid "activate"
-msgstr "activar"
-
-#: google-captcha.php:681
-msgid "for network"
-msgstr "para red"
-
-#: google-captcha.php:686
-msgid "download"
-msgstr "descargar"
-
-#: google-captcha.php:690
-msgid "Check off for adding captcha to forms on their settings pages"
-msgstr ""
-"Marcar para añadir captcha a formularios en sus páginas de configuración"
-
-#: google-captcha.php:699
-#, php-format
-msgid ""
-"If you would like to add Google Captcha (reCAPTCHA) to a custom form see %s"
-msgstr ""
-"Si desea añadir Google Captcha (reCAPTCHA) a un formulario personalizado ver "
-"%s"
-
-#: google-captcha.php:699 google-captcha.php:1296
-msgid "FAQ"
-msgstr "Preguntas Frecuentes"
-
-#: google-captcha.php:704
-msgid "Hide reCAPTCHA in Comments Form for"
-msgstr "Ocultar reCAPTCHA en formulario de comentarios para"
-
-#: google-captcha.php:716
-msgid "Whitelist Notification"
-msgstr "Notificaciones de la Lista Blanca"
-
-#: google-captcha.php:720
-msgid ""
-"This message will be displayed instead of the reCAPTCHA if the user IP is "
-"added to the whitelist"
-msgstr ""
-"Este mensaje se visualizará en lugar del reCAPTCHA si la IP del usuario se "
-"agrega a la lista blanca"
-
-#: google-captcha.php:726
-msgid "reCAPTCHA Version"
-msgstr "reCAPTCHA Versión"
-
-#: google-captcha.php:736
-msgid ""
-"reCAPTCHA block won't be visible for non-suspicious users while suspicious "
-"ones will have to pass the captcha"
-msgstr ""
-"reCAPTCHA no será visible para no sospechoso usuarios mientras que los "
-"sospechosos tendrán que pasar el captcha"
-
-#: google-captcha.php:744 google-captcha.php:757
-msgid "reCAPTCHA Theme"
-msgstr "reCAPTCHA Tema"
-
-#: google-captcha.php:745 google-captcha.php:758 includes/pro_banners.php:90
-msgid "for version"
-msgstr "para versión"
-
-#: google-captcha.php:770
-msgid "Save Changes"
-msgstr "Guardar Cambios"
-
-#: google-captcha.php:834 google-captcha.php:1315
+#: google-captcha.php:555 google-captcha.php:1043
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Para utilizar Google Captcha debe obtener las claves de"
 
-#: google-captcha.php:835 google-captcha.php:1316
+#: google-captcha.php:556 google-captcha.php:1044
 msgid "here"
 msgstr "aquí"
 
-#: google-captcha.php:836 google-captcha.php:1317
+#: google-captcha.php:557 google-captcha.php:1045
 msgid "and enter them on the"
 msgstr "e introducirlas en"
 
-#: google-captcha.php:838 google-captcha.php:1319
+#: google-captcha.php:559 google-captcha.php:1047
 msgid "plugin setting page"
 msgstr "página de configuración de plugin"
 
-#: google-captcha.php:1041
+#: google-captcha.php:762
 msgid "User response is missing."
 msgstr "Respuesta del usuario está ausente."
 
-#: google-captcha.php:1045 google-captcha.php:1053
-msgid "Secret Key is invalid"
-msgstr "Clave secreta no es válido"
+#: google-captcha.php:766 google-captcha.php:774
+msgid "Secret Key is invalid."
+msgstr ""
 
-#: google-captcha.php:1046 google-captcha.php:1054
-msgid "Check your domain configuration"
-msgstr "Compruebe su configuración de dominio"
+#: google-captcha.php:767 google-captcha.php:775
+msgid "Check your domain configurations"
+msgstr ""
 
-#: google-captcha.php:1047 google-captcha.php:1055
+#: google-captcha.php:768 google-captcha.php:776
 msgid "and enter it again"
 msgstr "e introducirle otra vez"
 
-#: google-captcha.php:1050
+#: google-captcha.php:771
 msgid "Secret Key is missing."
 msgstr "Clave Secreta está ausente."
 
-#: google-captcha.php:1057
+#: google-captcha.php:778
 msgid "User response is invalid"
 msgstr "Respuesta del usuario no es válido"
 
-#: google-captcha.php:1058
+#: google-captcha.php:779
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Ha introducido un valor incorrecto de reCAPTCHA."
 
-#: google-captcha.php:1059
+#: google-captcha.php:780
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -309,171 +116,535 @@ msgstr ""
 "Más de un reCAPTCHA se ha encontrado en la forma actual. Por favor, elimine "
 "todos los campos de reCAPTCHA innecesarios para que funcione correctamente."
 
-#: google-captcha.php:1205
-msgid "Click the BACK button on your browser, and try again."
-msgstr "Haga clic en el botón atrás de su navegador y vuelve a intentarlo."
+#: google-captcha.php:926
+msgid "Click the BACK button on your browser and try again."
+msgstr ""
 
-#: google-captcha.php:1230
-msgid "Please, complete the captcha and submit \"Test verification\""
-msgstr "Por favor, completar el captcha y presentar \"Test de verificación\""
+#: google-captcha.php:954
+msgid "Please submit \"Test verification\""
+msgstr ""
 
-#: google-captcha.php:1235
+#: google-captcha.php:956
+msgid "Please complete the captcha and submit \"Test verification\""
+msgstr ""
+
+#: google-captcha.php:962
 msgid "Test verification"
 msgstr "Test de verificación"
 
-#: google-captcha.php:1256
-msgid "The verification is successfully completed"
-msgstr "La verificación es completada con éxito"
+#: google-captcha.php:983
+msgid "The verification is successfully completed."
+msgstr ""
 
-#: google-captcha.php:1297
+#: google-captcha.php:1024
+msgid "FAQ"
+msgstr "Preguntas Frecuentes"
+
+#: google-captcha.php:1025
 msgid "Support"
 msgstr "Soporte"
 
-#: includes/whitelist.php:64
-msgid "For IP addresses from the whitelist reCAPTCHA will not be displayed"
-msgstr "Para IP direcciones de lo lista blanca reCAPTCHA no se mostrarán"
+#: includes/class-gglcptch-settings-tabs.php:26
+msgid "Misc"
+msgstr ""
 
-#: includes/whitelist.php:71
-msgid "Add IP to the whitelist"
-msgstr "Añadir IP a la lista blanca"
+#: includes/class-gglcptch-settings-tabs.php:27
+msgid "Custom Code"
+msgstr ""
 
-#: includes/whitelist.php:75
-msgid "Save changes"
-msgstr "Guardar cambios"
+#: includes/class-gglcptch-settings-tabs.php:28
+msgid "License Key"
+msgstr ""
 
-#: includes/whitelist.php:92
-msgid "My IP"
-msgstr "Mi IP"
+#: includes/class-gglcptch-settings-tabs.php:51
+msgid "Site Key"
+msgstr "Clave del sitio"
 
-#: includes/whitelist.php:96
-msgid "Save IP to the whitelist"
-msgstr "Guardar IP a la lista blanca"
+#: includes/class-gglcptch-settings-tabs.php:56
+msgid "Secret Key"
+msgstr "Clave Secreta"
 
-#: includes/whitelist.php:100 includes/pro_banners.php:44
-msgid "Allowed formats"
-msgstr "Formatos permitidos"
+#: includes/class-gglcptch-settings-tabs.php:63
+#: includes/class-gglcptch-settings-tabs.php:64
+msgid "Version"
+msgstr "Versión"
 
-#: includes/whitelist.php:101
-msgid "Allowed diapason"
-msgstr "Diapason permitido"
+#: includes/class-gglcptch-settings-tabs.php:65
+msgid "Invisible"
+msgstr ""
 
-#: includes/whitelist.php:106
-msgid "Search IP"
-msgstr "Buscar IP"
+#: includes/class-gglcptch-settings-tabs.php:70 includes/pro_banners.php:78
+msgid "Login form"
+msgstr "Formulario de acceso"
 
-#: includes/whitelist.php:160
-msgid "Nothing found"
-msgstr "Nada encontrado"
+#: includes/class-gglcptch-settings-tabs.php:71 includes/pro_banners.php:68
+#: includes/pro_banners.php:79
+msgid "Registration form"
+msgstr "Formulario de registro"
 
-#: includes/whitelist.php:160
-msgid "No IP in the whitelist"
-msgstr "No IP en la lista blanca"
+#: includes/class-gglcptch-settings-tabs.php:72
+msgid "Reset password form"
+msgstr "Formulario de restablecimiento de contraseña"
 
-#: includes/whitelist.php:167
-msgid "IP address"
-msgstr "Dirección IP"
+#: includes/class-gglcptch-settings-tabs.php:73 includes/pro_banners.php:69
+msgid "Comments form"
+msgstr "Formulario de comentarios"
 
-#: includes/whitelist.php:168
-msgid "Date added"
-msgstr "Fecha agregada"
+#: includes/class-gglcptch-settings-tabs.php:98
+msgid "Enter site key"
+msgstr "Introduce la clave de sitio"
 
-#: includes/whitelist.php:222 includes/whitelist.php:232
-msgid "Remove from the whitelist"
-msgstr "Quitar de la lista blanca"
+#: includes/class-gglcptch-settings-tabs.php:99
+#: includes/class-gglcptch-settings-tabs.php:106
+msgid "WARNING: The captcha will not be displayed until you fill key fields."
+msgstr ""
 
-#: includes/whitelist.php:318
-msgid "IP added to the whitelist successfully"
-msgstr "IP se ha agregado a la lista blanca correctamente"
+#: includes/class-gglcptch-settings-tabs.php:105
+msgid "Enter secret key"
+msgstr "Introduce la clave secreta"
 
-#: includes/whitelist.php:320 includes/whitelist.php:341
-#: includes/whitelist.php:351
+#: includes/class-gglcptch-settings-tabs.php:138
+msgid "Settings saved."
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:155
+msgid "Authentication"
+msgstr "Autentificación"
+
+#: includes/class-gglcptch-settings-tabs.php:156
+msgid ""
+"Register your website with Google to get required API keys and enter them "
+"below."
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:156
+msgid "Get the API Keys"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:173
+msgid "Test ReCaptcha"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:179
+msgid "General"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:182
+msgid "Enable ReCaptcha for"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:186
+msgid "WordPress default"
+msgstr "WordPress por defecto"
+
+#: includes/class-gglcptch-settings-tabs.php:194
+msgid "This option is available only for network or for main blog."
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:206 includes/pro_banners.php:55
+msgid "External Plugins"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:215
 #, fuzzy
-msgid "Some errors occurred"
-msgstr "Algunos errores ocurrió"
+msgid "Activate"
+msgstr "Tema Activado"
 
-#: includes/whitelist.php:322
-msgid "IP is already in the whitelist"
-msgstr "IP ya está en la lista blanca"
+#: includes/class-gglcptch-settings-tabs.php:218
+msgid "Install Now"
+msgstr ""
 
-#: includes/whitelist.php:325
-msgid "Invalid IP. See allowed formats."
-msgstr "IP es no válido. Ver formatos permitidos."
+#: includes/class-gglcptch-settings-tabs.php:221
+msgid "Enable for adding captcha to forms on their settings pages."
+msgstr ""
 
-#: includes/whitelist.php:347
-msgid "One IP was deleted successfully"
-msgstr "Una dirección IP se ha eliminado correctamente"
+#: includes/class-gglcptch-settings-tabs.php:236
+#: includes/class-gglcptch-settings-tabs.php:296 includes/pro_banners.php:20
+msgid "Close"
+msgstr "Сerrar"
 
-#: includes/whitelist.php:354
-msgid "You have not entered any IP"
-msgstr "No se ha introducido ningún IP"
+#: includes/class-gglcptch-settings-tabs.php:245
+msgid "Hide ReCaptcha in Comments Form for"
+msgstr ""
 
-#: includes/whitelist.php:357
-msgid "You have not entered any IP in to the search form"
-msgstr "No se ha introducido ningún IP en el formulario de búsqueda"
+#: includes/class-gglcptch-settings-tabs.php:257
+msgid "ReCaptcha Version"
+msgstr ""
 
-#: includes/whitelist.php:359
-msgid "Search results for"
-msgstr "Resultados de la búsqueda para"
+#: includes/class-gglcptch-settings-tabs.php:271
+#: includes/class-gglcptch-settings-tabs.php:283
+msgid "Theme"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:305
+msgid "Whitelist Notification"
+msgstr "Notificaciones de la Lista Blanca"
+
+#: includes/class-gglcptch-settings-tabs.php:308
+msgid "This message will be displayed instead of the ReCaptcha."
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:322
+msgid ""
+"Only one ReCaptcha can be displayed on the page, it's related to ReCaptcha "
+"version 1 features."
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:325
+msgid ""
+"ReCaptcha version was changed. Please submit \"Test ReCaptcha\" and "
+"regenerate Site and Secret keys if necessary."
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:338
+msgid "Google Captcha Shortcode"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid ""
+"Add Google Captcha to your posts or pages using the following shortcode:"
+msgstr ""
 
 #: includes/pro_banners.php:17
 msgid "This options is available in Pro version of plugin"
 msgstr "Esta opción está disponible en la versión Pro de plugin"
 
-#: includes/pro_banners.php:20
-msgid "Close"
-msgstr "Сerrar"
+#: includes/pro_banners.php:40 includes/whitelist.php:84
+msgid "Allowed formats"
+msgstr "Formatos permitidos"
 
-#: includes/pro_banners.php:29
-msgid "Upgrade to Pro"
-msgstr "Actualizar a Pro"
+#: includes/pro_banners.php:41
+msgid "Allowed separators for IPs: a comma"
+msgstr "Permitidos separadores para IPs: una coma"
+
+#: includes/pro_banners.php:41 includes/pro_banners.php:44
+msgid "semicolon"
+msgstr "punto y coma"
+
+#: includes/pro_banners.php:41
+msgid "ordinary space, tab, new line or carriage return."
+msgstr ""
 
 #: includes/pro_banners.php:42
 msgid "Reason"
 msgstr "Razon"
 
-#: includes/pro_banners.php:45
-msgid "Allowed separators for IPs: a comma"
-msgstr "Permitidos separadores para IPs: una coma"
-
-#: includes/pro_banners.php:45 includes/pro_banners.php:46
-msgid "semicolon"
-msgstr "punto y coma"
-
-#: includes/pro_banners.php:45
-msgid "ordinary space, tab, new line or carriage return"
-msgstr "ordinario espacio, tabulador, nueva línea o retorno de carro"
-
-#: includes/pro_banners.php:46
+#: includes/pro_banners.php:44
 msgid "Allowed separators for reasons: a comma"
 msgstr "Permite separadores de razones: una coma"
 
-#: includes/pro_banners.php:46
-msgid "tab, new line or carriage return"
-msgstr "tabulador, nueva línea o retorno de carro"
+#: includes/pro_banners.php:44
+msgid "tab, new line or carriage return."
+msgstr ""
 
-#: includes/pro_banners.php:71
+#: includes/pro_banners.php:70
+msgid "Create a Group form"
+msgstr ""
+
+#: includes/pro_banners.php:80
+msgid "Lost password form"
+msgstr ""
+
+#: includes/pro_banners.php:81
+msgid "Checkout form"
+msgstr ""
+
+#: includes/pro_banners.php:94
+msgid "Size"
+msgstr ""
+
+#: includes/pro_banners.php:98
 msgid "Normal"
 msgstr "Normal"
 
-#: includes/pro_banners.php:72
+#: includes/pro_banners.php:99
 msgid "Compact"
 msgstr "Compacto"
 
-#: includes/pro_banners.php:76
-msgid "reCAPTCHA Language"
-msgstr "reCAPTCHA Idioma"
+#: includes/pro_banners.php:104
+msgid "Language"
+msgstr ""
 
-#: includes/pro_banners.php:83
-msgid "Use the current site language"
-msgstr "Usar la actual idioma del sitio"
+#: includes/pro_banners.php:112
+msgid "Multilanguage"
+msgstr ""
 
-#: includes/pro_banners.php:83
-msgid "Using"
-msgstr "Usando"
+#: includes/pro_banners.php:115
+msgid ""
+"Enable to switch language automatically on multilingual website using "
+"Multilanguage plugin."
+msgstr ""
 
-#: includes/pro_banners.php:89
-msgid "reCAPTCHA Size"
-msgstr "reCAPTCHA Tamaño"
+#: includes/whitelist.php:47
+msgid "Add New"
+msgstr ""
+
+#: includes/whitelist.php:72
+msgid "IP to whitelist"
+msgstr ""
+
+#: includes/whitelist.php:79
+msgid "My IP"
+msgstr "Mi IP"
+
+#: includes/whitelist.php:86
+msgid "Allowed diapason"
+msgstr "Diapason permitido"
+
+#: includes/whitelist.php:90
+msgid "Add IP to whitelist"
+msgstr ""
+
+#: includes/whitelist.php:95
+msgid "Search IP"
+msgstr "Buscar IP"
+
+#: includes/whitelist.php:149
+msgid "Nothing found"
+msgstr "Nada encontrado"
+
+#: includes/whitelist.php:149
+msgid "No IP in the whitelist"
+msgstr "No IP en la lista blanca"
+
+#: includes/whitelist.php:156
+msgid "IP Address"
+msgstr ""
+
+#: includes/whitelist.php:157
+msgid "Date Added"
+msgstr ""
+
+#: includes/whitelist.php:211 includes/whitelist.php:221
+msgid "Delete"
+msgstr ""
+
+#: includes/whitelist.php:307
+msgid "IP added to the whitelist successfully."
+msgstr ""
+
+#: includes/whitelist.php:309 includes/whitelist.php:330
+#: includes/whitelist.php:340
+msgid "Some errors occurred."
+msgstr ""
+
+#: includes/whitelist.php:311
+msgid "IP is already in the whitelist."
+msgstr ""
+
+#: includes/whitelist.php:314
+msgid "Invalid IP. See allowed formats."
+msgstr "IP es no válido. Ver formatos permitidos."
+
+#: includes/whitelist.php:336
+msgid "One IP was deleted successfully."
+msgstr ""
+
+#: includes/whitelist.php:343
+msgid "You have not entered any IP."
+msgstr ""
+
+#: includes/whitelist.php:346
+msgid "You have not entered any IP in to the search form."
+msgstr ""
+
+#: includes/whitelist.php:348
+msgid "Search results for"
+msgstr "Resultados de la búsqueda para"
+
+#~ msgid "Check your domain configuration"
+#~ msgstr "Compruebe su configuración de dominio"
+
+#~ msgid "Click the BACK button on your browser, and try again."
+#~ msgstr "Haga clic en el botón atrás de su navegador y vuelve a intentarlo."
+
+#~ msgid "Please, complete the captcha and submit \"Test verification\""
+#~ msgstr ""
+#~ "Por favor, completar el captcha y presentar \"Test de verificación\""
+
+#~ msgid ""
+#~ "WARNING: The captcha will not display while you don't fill key fields."
+#~ msgstr ""
+#~ "ADVERTENCIA: El Captcha no se mostrará mientras usted no llene  los "
+#~ "campos de clave."
+
+#~ msgid "Check off for adding captcha to forms on their settings pages"
+#~ msgstr ""
+#~ "Marcar para añadir captcha a formularios en sus páginas de configuración"
+
+#~ msgid "Invisible reCAPTCHA"
+#~ msgstr "Invisible reCAPTCHA"
+
+#~ msgid "Settings saved"
+#~ msgstr "Configuraciónes guardada"
+
+#~ msgid "All plugin settings were restored"
+#~ msgstr "Se restauraron todos los parámetros de plugin"
+
+#~ msgid "Custom code"
+#~ msgstr "Código personalizado"
+
+#~ msgid "Go PRO"
+#~ msgstr "Go PRO"
+
+#~ msgid ""
+#~ "Only one reCAPTCHA can be displayed on the page, it's related to "
+#~ "reCAPTCHA version 1 features."
+#~ msgstr ""
+#~ "Sólo un reCAPTCHA puede visualizarse en la página, está relacionado con "
+#~ "características de la versión 1 de reCAPTCHA."
+
+#~ msgid ""
+#~ "If you would like to add a Google Captcha (reCAPTCHA) to your page or "
+#~ "post, please use %s button"
+#~ msgstr ""
+#~ "Si desea añadir un Google Captcha (reCAPTCHA) a su página o post, por "
+#~ "favor usar %s botón"
+
+#~ msgid ""
+#~ "You can add the Google Captcha (reCAPTCHA) to your page or post by "
+#~ "clicking on %s button in the content edit block using the Visual mode. If "
+#~ "the button isn't displayed or you would like to add the Google Captcha "
+#~ "(reCAPTCHA) to your own form , please use the shortcode %s"
+#~ msgstr ""
+#~ "Puede añadir el Google Captcha (reCAPTCHA) a tu página o post haciendo "
+#~ "clic en %s en el contenido editar bloque usando el modo Visual. Si el "
+#~ "botón no aparece o gustaría añadir el Google Captcha (reCAPTCHA) a su "
+#~ "propia forma, utilice el código %s"
+
+#~ msgid ""
+#~ "In order to use reCAPTCHA, please enter site and secret keys. You can "
+#~ "manage your API keys %shere%s"
+#~ msgstr ""
+#~ "Para poder utilizar reCAPTCHA, introduce clave del sitio y clave secreta. "
+#~ "Usted puede administrar su API claves %shere%s"
+
+#~ msgid "Test Keys"
+#~ msgstr "Test Claves"
+
+#~ msgid "Options"
+#~ msgstr "Opciones"
+
+#~ msgid "Enable reCAPTCHA for"
+#~ msgstr "Permite reCAPTCHA para"
+
+#~ msgid "This option is available only for network or for main blog"
+#~ msgstr "Esta opción está disponible sólo para red o para blog principal"
+
+#~ msgid "Plugins"
+#~ msgstr "Plugins"
+
+#~ msgid "You should %s to use this functionality"
+#~ msgstr "Usted debe %s para usar esta funcionalidad"
+
+#~ msgid "activate"
+#~ msgstr "activar"
+
+#~ msgid "for network"
+#~ msgstr "para red"
+
+#~ msgid "download"
+#~ msgstr "descargar"
+
+#~ msgid ""
+#~ "If you would like to add Google Captcha (reCAPTCHA) to a custom form see "
+#~ "%s"
+#~ msgstr ""
+#~ "Si desea añadir Google Captcha (reCAPTCHA) a un formulario personalizado "
+#~ "ver %s"
+
+#~ msgid "Hide reCAPTCHA in Comments Form for"
+#~ msgstr "Ocultar reCAPTCHA en formulario de comentarios para"
+
+#~ msgid ""
+#~ "This message will be displayed instead of the reCAPTCHA if the user IP is "
+#~ "added to the whitelist"
+#~ msgstr ""
+#~ "Este mensaje se visualizará en lugar del reCAPTCHA si la IP del usuario "
+#~ "se agrega a la lista blanca"
+
+#~ msgid "reCAPTCHA Version"
+#~ msgstr "reCAPTCHA Versión"
+
+#~ msgid ""
+#~ "reCAPTCHA block won't be visible for non-suspicious users while "
+#~ "suspicious ones will have to pass the captcha"
+#~ msgstr ""
+#~ "reCAPTCHA no será visible para no sospechoso usuarios mientras que los "
+#~ "sospechosos tendrán que pasar el captcha"
+
+#~ msgid "reCAPTCHA Theme"
+#~ msgstr "reCAPTCHA Tema"
+
+#~ msgid "for version"
+#~ msgstr "para versión"
+
+#~ msgid "Save Changes"
+#~ msgstr "Guardar Cambios"
+
+#~ msgid "Secret Key is invalid"
+#~ msgstr "Clave secreta no es válido"
+
+#~ msgid "The verification is successfully completed"
+#~ msgstr "La verificación es completada con éxito"
+
+#~ msgid "For IP addresses from the whitelist reCAPTCHA will not be displayed"
+#~ msgstr "Para IP direcciones de lo lista blanca reCAPTCHA no se mostrarán"
+
+#~ msgid "Add IP to the whitelist"
+#~ msgstr "Añadir IP a la lista blanca"
+
+#~ msgid "Save changes"
+#~ msgstr "Guardar cambios"
+
+#~ msgid "Save IP to the whitelist"
+#~ msgstr "Guardar IP a la lista blanca"
+
+#~ msgid "IP address"
+#~ msgstr "Dirección IP"
+
+#~ msgid "Date added"
+#~ msgstr "Fecha agregada"
+
+#~ msgid "Remove from the whitelist"
+#~ msgstr "Quitar de la lista blanca"
+
+#~ msgid "IP added to the whitelist successfully"
+#~ msgstr "IP se ha agregado a la lista blanca correctamente"
+
+#, fuzzy
+#~ msgid "Some errors occurred"
+#~ msgstr "Algunos errores ocurrió"
+
+#~ msgid "IP is already in the whitelist"
+#~ msgstr "IP ya está en la lista blanca"
+
+#~ msgid "One IP was deleted successfully"
+#~ msgstr "Una dirección IP se ha eliminado correctamente"
+
+#~ msgid "You have not entered any IP"
+#~ msgstr "No se ha introducido ningún IP"
+
+#~ msgid "You have not entered any IP in to the search form"
+#~ msgstr "No se ha introducido ningún IP en el formulario de búsqueda"
+
+#~ msgid "ordinary space, tab, new line or carriage return"
+#~ msgstr "ordinario espacio, tabulador, nueva línea o retorno de carro"
+
+#~ msgid "tab, new line or carriage return"
+#~ msgstr "tabulador, nueva línea o retorno de carro"
+
+#~ msgid "reCAPTCHA Language"
+#~ msgstr "reCAPTCHA Idioma"
+
+#~ msgid "Use the current site language"
+#~ msgstr "Usar la actual idioma del sitio"
+
+#~ msgid "Using"
+#~ msgstr "Usando"
+
+#~ msgid "reCAPTCHA Size"
+#~ msgstr "reCAPTCHA Tamaño"
 
 #, fuzzy
 #~ msgid "Error: You have entered an incorrect reCAPTCHA value"
@@ -495,10 +666,6 @@ msgstr "reCAPTCHA Tamaño"
 
 #~ msgid "powered by"
 #~ msgstr "impulsado por"
-
-#, fuzzy
-#~ msgid "Activate"
-#~ msgstr "Tema Activado"
 
 #~ msgid "Contact form"
 #~ msgstr "Formulario de contacto"

@@ -544,7 +544,20 @@ if ( ! function_exists ( 'bws_plugins_admin_init' ) ) {
 				unset( $recent[ $plugin ] );
 				update_site_option( 'recently_activated', $recent );
 			}
-			wp_redirect( self_admin_url( 'admin.php?page=bws_panel&activate=true' ) );
+			/**
+			* @deprecated 1.9.8 (15.12.2016)
+			*/
+			$is_main_page = in_array( $_GET['page'], array( 'bws_panel', 'bws_themes', 'bws_system_status' ) );
+			$page = esc_attr( $_GET['page'] );
+			$tab = isset( $_GET['tab'] ) ? esc_attr( $_GET['tab'] ) : '';
+
+			if ( $is_main_page )
+				$current_page = 'admin.php?page=' . $page;
+			else
+				$current_page = isset( $_GET['tab'] ) ? 'admin.php?page=' . $page . '&tab=' . $tab : 'admin.php?page=' . $page;
+			/*end deprecated */
+
+			wp_redirect( self_admin_url( $current_page . '&activate=true' ) );
 			exit();
 		}
 
@@ -652,8 +665,6 @@ if ( ! function_exists ( 'bws_plugins_admin_head' ) ) {
 					),
 					'set_timeout' => 2000
 				);
-				if ( $wp_version < '3.9' )
-					$tooltip_args['css_selector'] = '.mce_add_bws_shortcode';
 				bws_add_tooltip_in_admin( $tooltip_args );
 			}
 		}
@@ -847,32 +858,8 @@ if ( ! function_exists( 'bws_shortcode_media_button_popup' ) ) {
 						<p><?php _e( 'The shortcode will be inserted', 'bestwebsoft' ); ?></p>
 						<div id="bws_shortcode_block"><div id="bws_shortcode_display"></div></div>
 					</div>
-					<?php if ( $wp_version < '3.9' ) { ?>
-						<p>
-							<button class="button-primary primary bws_shortcode_insert"><?php _e( 'Insert', 'bestwebsoft' ); ?></button>
-						</p>
-					<?php } ?>
 				</div>
 			</div>
-		<?php }
-		if ( $wp_version < '3.9' ) { ?>
-			<script type="text/javascript">
-				(function($){
-					$( '.bws_shortcode_insert' ).on( 'click',function() {
-						var shortcode = $( '#TB_ajaxContent #bws_shortcode_display' ).text();
-						if ( '' != shortcode ) {
-							/* insert shortcode to tinymce */
-							if ( !tinyMCE.activeEditor || tinyMCE.activeEditor.isHidden() ) {
-								$( 'textarea#content' ).val( shortcode );
-							} else {
-								tinyMCE.execCommand( 'mceInsertContent', false, shortcode );
-							}
-						}
-						/* close the thickbox after adding shortcode to editor */
-						self.parent.tb_remove();
-					});
-				})(jQuery);
-			</script>
 		<?php }
 	}
 }

@@ -16,12 +16,6 @@
 			$( '.gglcptch_verified, #gglcptch-test-keys, #gglcptch-test-block' ).hide();
 		} );
 
-		$( 'select[name="gglcptch_theme_v2"]' ).on( "change", function() {
-			$( '.gglcptch_size_sample' ).hide();
-			var theme = $( this ).find( 'option:selected' ).val();
-			$( '.gglcptch_size_sample_' + theme ).show();
-		} );
-
 		/**
 		 * Handle the "Whitelist" tab on the plugins option page
 		 */
@@ -46,7 +40,7 @@
 		e.preventDefault();
 
 		if ( ! $( '#gglcptch-test-block' ).length )
-			$( this ).closest( 'p' ).after( '<div id="gglcptch-test-block" />' );
+			$( '#gglcptch-test-keys' ).after( '<div id="gglcptch-test-block"></div>' );
 
 		$( '.gglcptch-test-results' ).remove();
 		$( '#gglcptch-test-block' ).load( $( this ).prop( 'href' ), function() {

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha
 Requires at least: 3.9
-Tested up to: 4.7.5
-Stable tag: 1.30
+Tested up to: 4.8.1
+Stable tag: 1.31
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,7 +44,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 * Supports Google Captcha (reCAPTCHA):
 	* Version 1
 	* Version 2
-	* Invisible reCAPTCHA [NEW]
+	* Invisible reCAPTCHA
 * Add custom code via plugin settings page
 * Compatible with latest WordPress version
 * Incredibly simple settings for fast setup without modifying code
@@ -90,18 +90,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 
 = Translation =
 
-* Arabic (ar) (thanks to [SAID MOULLA](mailto:support@saidmoulla.com), www.saidmoulla.com)
-* Brazilian Portuguese (pt_BR) (thanks to [Elton Fernandes Peetz Prado](mailto:epeetz@gmail.com))
-* Bulgarian (bg_BG) (thanks to [Yasen Georgiev](mailto:me@ygeorgiev.com))
 * Czech (cs_CZ) (thanks to [Michal Kučera](mailto:kucerami@gmail.com), www.n0lim.it, [PaMaDeSSoft](mailto:info@pamadessoft.cz), www.pamadessoft.cz)
-* Chinese Traditional (zh_TW) (thanks to [Nick Lai](mailto:nick20080808@gmail.com))
-* Farsi/Persian (fa_IR) (thanks to [Amirreza Nasiri](mailto:nasiri.amirreza.96@gmail.com), www.bytegate.ir)
-* French (fr_FR) (thanks to [Denis Bodorr](mailto:lefinnois@lefinnois.net))
-* German (de_DE) (thanks to [Fred Zimmer](mailto:fred.zimmer@medienconsulting.at), www.medienconsulting.at)
-* Greek (el) (thanks to Dimitris Karantonis, www.soft4real.com/en-UK)
-* Hindi (hi) (thanks to [Development Logics Solutions Pvt Ltd](mailto:contact@developmentlogics.com), www.developmentlogics.com)
-* Italian (it_IT) (thanks to [Istvan](mailto:wart17@hotmail.com))
-* Polish (pl_PL) (thanks to [Ryszard Glegola](mailto:ryszard.glegola@translanet.com), www.translanet.com)
 * Russian (ru_RU)
 * Spanish (es_ES)
 * Ukrainian (uk)
@@ -110,7 +99,7 @@ Some of these translations are not complete. We are constantly adding new featur
 
 = Recommended Plugins =
 
-* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f47f3eb3d739725d592249dbd129f7ff) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f47f3eb3d739725d592249dbd129f7ff) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
 * [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a) - Allow customers to reach you using secure contact form plugin any website must have.
 * [Subscriber](https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3) - Add email newsletter sign up form to WordPress posts, pages and widgets. Collect data and subscribe your users.
 * [Multilanguage](https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888) - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.
@@ -118,12 +107,6 @@ Some of these translations are not complete. We are constantly adding new featur
 = Credits =
 
 * lib/recaptchalib.php - Copyright © 2007. Mike Crawford, Ben Maurer (reCAPTCHA - <http://recaptcha.net>). All Rights Reserved.
-
-= Donate =
-
-Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.
-
-[Donate Now](https://bestwebsoft.com/donate/)
 
 == Installation ==
 
@@ -143,7 +126,7 @@ http://www.youtube.com/watch?v=RUJ9VwZLFSY
 Follow the next steps in order to get and enable Google Captcha (reCAPTCHA) protection using the official Google Captcha keys:
 1. Open your Wordpress admin dashboard.
 2. Navigate to the plugin Settings page.
-3. Click the "here" link.
+3. Click the "Get the API Keys" link.
 4. Enter your domain name and click "Create Key" button.
 5. You will see your public and private keys. Copy them and paste to the appropriate fields on plugin Settings page.
 6. Save changes.
@@ -157,20 +140,20 @@ You should go to the Settings page and select the roles, for which you want to h
 Follow the next steps in order to change the appearance of the Google Captcha:
 1. Open your Wordpress admin dashboard.
 2. Navigate to the plugin Settings page.
-3. Select reCAPTCHA version.
-4. Find the "reCAPTCHA Theme" option (only available for versions 1 and 2) and select the necessary style from the drop-down list.
+3. Select ReCaptcha version.
+4. Find the "Theme" option (only available for versions 1 and 2) and select the necessary style from the drop-down list.
 5. Save changes and check the result.
 
 = Google Captcha (reCaptcha) not displayed on my comment form. Why? =
 
 You might have a theme where "comments.php" is coded incorrectly. Wordpress version matters.
-(WP2 series): Make sure that you theme contains a tag <?php do_action('comment_form', $post->ID); ?> inside the file /wp-content/themes/[your_theme]/comments.php.
+(WP2 series): Make sure that you theme contains a tag &lt;?php do_action('comment_form', $post-&gt;ID); ?&gt; inside the file /wp-content/themes/[your_theme]/comments.php.
 Most WP2 themes already have it. The best place to put this tag is before the comment text area, you can move it up if it is below the comment text area.
 (WP3 series): WP3 has a new function comment_form inside of /wp-includes/comment-template.php.
 Your theme is probably not up-to-date to call that function from "comments.php".
 WP3 theme does not need the code line do_action('comment_form'… inside of /wp-content/themes/[your_theme]/comments.php.
-Instead it uses a new function call inside of "comments.php": <?php comment_form(); ?>
-If you have WP3 and captcha is still missing, make sure your theme has <?php comment_form(); ?>
+Instead it uses a new function call inside of "comments.php": &lt;?php comment_form(); ?&gt;
+If you have WP3 and captcha is still missing, make sure your theme has &lt;?php comment_form(); ?&gt;
 inside of /wp-content/themes/[your_theme]/comments.php (please check the Twenty Ten theme’s "comments.php" for proper example).
 
 = How can I change the location of Google Captcha (reCAPTCHA) in the comments form? =
@@ -195,7 +178,7 @@ For PHP:
 
 For HTML:
 
-`<?php if( function_exists( 'gglcptch_display' ) ) { echo gglcptch_display(); } ; ?>`
+`&lt;?php if( function_exists( 'gglcptch_display' ) ) { echo gglcptch_display(); } ; ?&gt;`
 
 If you have followed all steps, but the problem remains, we can help you to configure your Google Captcha custom form. This will be a paid service since there are a lot of different custom forms and the code should be inserted individually into each of them, so we need some time to study each unique case.
 
@@ -220,6 +203,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 9. Google Captcha (reCAPTCHA) Whitelist page.
 
 == Changelog ==
+
+= V1.31 - 21.08.2017 =
+* Update : The plugin settings page has been updated.
 
 = V1.30 - 18.05.2017 =
 * Update : The Spanish language file has been updated.
@@ -356,6 +342,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.31 =
+* Appearance improved.
 
 = V1.30 =
 * Languages updated.

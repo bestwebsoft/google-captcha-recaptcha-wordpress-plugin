@@ -37,75 +37,82 @@ if ( ! function_exists( 'gglcptch_pro_block' ) ) {
 
 if ( ! function_exists( 'gglcptch_whitelist_banner' ) ) {
 	function gglcptch_whitelist_banner() { ?>
-		<table class="form-table bws_pro_version">
-			<tr>
-				<td valign="top"><?php _e( 'Reason', 'google-captcha' ); ?>
-					<input disabled type="text" style="margin: 10px 0;"/><br />
-					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed formats", 'google-captcha' ); ?>:&nbsp;<code>192.168.0.1, 192.168.0., 192.168., 192., 192.168.0.1/8, 123.126.12.243-185.239.34.54</code></span><br />
-					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed separators for IPs: a comma", 'google-captcha' ); ?> (<code>,</code>), <?php _e( 'semicolon', 'google-captcha' ); ?> (<code>;</code>), <?php _e( 'ordinary space, tab, new line or carriage return', 'google-captcha' ); ?></span><br />
-					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed separators for reasons: a comma", 'google-captcha' ); ?> (<code>,</code>), <?php _e( 'semicolon', 'google-captcha' ); ?> (<code>;</code>), <?php _e( 'tab, new line or carriage return', 'google-captcha' ); ?></span>
+		<div class="bws_info" style="line-height: 2;"><?php _e( "Allowed formats", 'google-captcha' ); ?>:&nbsp;<code>192.168.0.1, 192.168.0., 192.168., 192., 192.168.0.1/8, 123.126.12.243-185.239.34.54</code></div>
+		<div class="bws_info" style="line-height: 2;"><?php _e( "Allowed separators for IPs: a comma", 'google-captcha' ); ?> (<code>,</code>), <?php _e( 'semicolon', 'google-captcha' ); ?> (<code>;</code>), <?php _e( 'ordinary space, tab, new line or carriage return.', 'google-captcha' ); ?></div>	
+		<?php _e( 'Reason', 'google-captcha' ); ?><br>
+		<textarea disabled></textarea>					
+		<div class="bws_info" style="line-height: 2;"><?php _e( "Allowed separators for reasons: a comma", 'google-captcha' ); ?> (<code>,</code>), <?php _e( 'semicolon', 'google-captcha' ); ?> (<code>;</code>), <?php _e( 'tab, new line or carriage return.', 'google-captcha' ); ?></div>
+	<?php }
+}
+
+if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
+	function gglcptch_supported_plugins_banner() { ?>
+		<table class="form-table bws_pro_version">			
+			<tr valign="top">
+				<th scope="row"></th>
+				<td>
+					<p>
+						<i><?php _e( 'External Plugins', 'google-captcha' ); ?></i>
+					</p>
+					<br>
+					<fieldset>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> Subscriber</label><br>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> Contact Form 7</label>
+					</fieldset>
+					<hr>
+					<p>
+						<i>BuddyPress</i>
+					</p>
+					<br>
+					<fieldset>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> <?php _e( 'Registration form', 'google-captcha' ); ?></label><br>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> <?php _e( 'Comments form', 'google-captcha' ); ?></label><br>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> <?php _e( 'Create a Group form', 'google-captcha' ); ?></label>
+					</fieldset>
+					<hr>
+					<p>
+						<i>WooCommerce</i>
+					</p>
+					<br>
+					<fieldset>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> <?php _e( 'Login form', 'google-captcha' ); ?></label><br>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> <?php _e( 'Registration form', 'google-captcha' ); ?></label><br>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> <?php _e( 'Lost password form', 'google-captcha' ); ?></label><br>
+						<label><input disabled="disabled" type="checkbox" disabled="disabled"> <?php _e( 'Checkout form', 'google-captcha' ); ?></label>
+					</fieldset>
 				</td>
 			</tr>
 		</table>
 	<?php }
 }
 
-if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
-	function gglcptch_supported_plugins_banner() { ?>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> Subscriber by BestWebSoft</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> Contact Form 7</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> BuddyPress Registration form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> BuddyPress Comments form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> BuddyPress "Create a Group" form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Login form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Register form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Lost Password form</label><br>
-		<label><input disabled="disabled" type="checkbox" disabled="disabled"> WooCommerce Checkout Billing form</label>
-	<?php }
-}
-
 if ( ! function_exists( 'gglcptch_additional_settings_banner' ) ) {
-	function gglcptch_additional_settings_banner() {
-		global $gglcptch_options;
-		$gglcptch_sizes_v2 = array(
-			'normal'	=> __( 'Normal', 'google-captcha' ),
-			'compact'	=> __( 'Compact', 'google-captcha' )
-		); ?>
-		<table class="form-table bws_pro_version">
-			<tr valign="top">
-				<th scope="row"><?php _e( 'reCAPTCHA Language', 'google-captcha' ); ?></th>
+	function gglcptch_additional_settings_banner() { ?>
+		<table class="form-table bws_pro_version">			
+			<tr class="gglcptch_theme_v2" valign="top">
+				<th scope="row">
+					<?php _e( 'Size', 'google-captcha' ); ?>
+				</th>
 				<td>
-					<select disabled="disabled">
-						<option selected="selected">English (US)</option>
-					</select>
-					<div style="margin: 5px 0 0;">
-						<input disabled="disabled" id="gglcptch_use_multilanguage_locale" type="checkbox" />
-						<label for="gglcptch_use_multilanguage_locale"><?php _e( 'Use the current site language', 'google-captcha' ); ?></label>&nbsp;<span class="bws_info">(<?php _e( 'Using', 'google-captcha' ); ?> Multilanguage by BestWebSoft)</span>
-					</div>
+					<fieldset>
+						<label><input disabled="disabled" type="radio" checked><?php _e( 'Normal', 'google-captcha' ); ?></label><br />
+						<label><input disabled="disabled" type="radio"><?php _e( 'Compact', 'google-captcha' ); ?></label>
+					</fieldset>
 				</td>
 			</tr>
 			<tr valign="top">
-				<th scope="row">
-					<?php _e( 'reCAPTCHA Size', 'google-captcha' ); ?>
-					<br/><span class="bws_info">(<?php _e( 'for version', 'google-captcha' ); ?> 2)</span>
-				</th>
-				<td><fieldset>
-					<?php foreach ( $gglcptch_sizes_v2 as $value => $name ) {
-						$link = plugins_url( 'google-captcha/images' );
-						$link .= $value == 'normal' ? '/recaptcha_v2_normal' : '/recaptcha_v2_compact';
-						$tooltip = bws_add_help_box(
-							'<img src="' . $link . '_light.png" class="gglcptch_size_sample gglcptch_size_sample_light' . ( 'light' == $gglcptch_options['theme_v2'] ? '"' : ' hidden"' ) . ' />' .
-							'<img src="' . $link . '_dark.png" class="gglcptch_size_sample gglcptch_size_sample_dark' . ( 'dark' == $gglcptch_options['theme_v2'] ? '"' : ' hidden"' ) . ' />',
-							'bws-auto-width'
-						);
-						printf(
-							'<div class="gglcptch_size_v2"><label><input disabled="disabled" type="radio" %s> %s</label>%s</div>',
-							$name == 'Normal' ? ' checked="checked"' : '',
-							$name,
-							$tooltip
-						);
-					} ?>
-					</fieldset>
+				<th scope="row"><?php _e( 'Language', 'google-captcha' ); ?></th>
+				<td>
+					<select disabled="disabled">
+						<option selected="selected">English</option>
+					</select>
+				</td>
+			</tr>
+			<tr valign="top">
+				<th scope="row"><?php _e( 'Multilanguage', 'google-captcha' ); ?></th>
+				<td>
+					<input disabled="disabled" type="checkbox" /> 
+					<span class="bws_info"><?php _e( 'Enable to switch language automatically on multilingual website using Multilanguage plugin.', 'google-captcha' ); ?></span>
 				</td>
 			</tr>
 		</table>

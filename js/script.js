@@ -24,6 +24,7 @@
 		 */
 		if ( 'v2' == gglcptch.options.version || 'invisible' == gglcptch.options.version ) {
 			$( '.g-recaptcha' ).each( function() {
+
 				/* reCAPTCHA will be generated into the empty block only */
 				if ( $( this ).html() === '' && $( this ).text() === '' ) {
 
@@ -101,13 +102,13 @@
 				var storedEvents = {};
 				$.extend( true, storedEvents, events );
 				target.off();
-				target.data('storedEvents', storedEvents );
+				target.data( 'storedEvents', storedEvents );
 			}
 		}
 
 		function restoreEvents( el ) {
 			var target = el,
-				events = target.data('storedEvents');
+				events = target.data( 'storedEvents' );
 			/* restoring events */
 			if ( typeof events != 'undefined' ) {
 				for ( var event in events ) {
@@ -122,7 +123,7 @@
 
 		function storeOnSubmit( form, gglcptch_index ) {
 			form.on( 'submit', function( e ) {
-				if ( '' == form.find('.g-recaptcha-response').val() ) {
+				if ( '' == form.find( '.g-recaptcha-response' ).val() ) {
 					e.preventDefault();
 					e.stopImmediatePropagation();
 					targetObject = $( e.target || e.srcElement || e.targetObject );
@@ -130,7 +131,7 @@
 					grecaptcha.execute( gglcptch_index );
 				}
 			} ).find( 'input:submit, button' ).on( 'click', function( e ) {
-				if ( '' == form.find('.g-recaptcha-response').val() ) {
+				if ( '' == form.find( '.g-recaptcha-response' ).val() ) {
 					e.preventDefault();
 					e.stopImmediatePropagation();
 					targetObject = $( e.target || e.srcElement || e.targetObject );
@@ -169,7 +170,7 @@
 				} );
 
 				/* Callback function works only in frontend */
-				if ( 'gglcptch_admin_settings_page' != form.attr( 'id' ) ) {
+				if ( ! $( 'body' ).hasClass( 'wp-admin' ) ) {
 					parameters['callback'] = function( token ) {
 						form.off();
 						restoreEvents( form );
@@ -191,7 +192,7 @@
 				var gglcptch_index = grecaptcha.render( container, parameters );
 				block.data( { 'gglcptch_index' : gglcptch_index } );
 
-				if ( 'gglcptch_admin_settings_page' != form.attr( 'id' ) ) {
+				if ( ! $( 'body' ).hasClass( 'wp-admin' ) ) {
 					storeOnSubmit( form, gglcptch_index );
 				}
 			}
@@ -233,7 +234,7 @@
 
 		$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
 
-		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"], #setupform, .cntctfrmpr_contact_form, .cntctfrm_contact_form, #commentform, #gglcptch_admin_settings_page, #crrntl-user-info' + gglcptch.vars.excluded_forms ).submit( function( e ) {
+		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"], #setupform, .cntctfrmpr_contact_form, .cntctfrm_contact_form, #commentform, .bws_form, #crrntl-user-info' + gglcptch.vars.excluded_forms ).submit( function( e ) {
 			var $form = $( this ),
 				$gglcptch = $form.find( '.gglcptch' ),
 				$captcha = $gglcptch.filter( '.gglcptch_v1' ).find( '.gglcptch_recaptcha:visible' ),
