@@ -16,6 +16,18 @@
 			$( '.gglcptch_verified, #gglcptch-test-keys, #gglcptch-test-block' ).hide();
 		} );
 
+		$( '.gglcptch-settings-accordion' ).accordion(
+			{
+				collapsible: true,
+				heightStyle: "content"
+			}
+		);
+
+		/* Prevent jQuery accordion collapsing on link click */
+		$( ".gglcptch-settings-accordion a" ).on( "click", function( event ) {
+			event.stopPropagation();
+		} );
+
 		/**
 		 * Handle the "Whitelist" tab on the plugins option page
 		 */
@@ -39,8 +51,9 @@
 	$( document ).on( 'click', '#gglcptch-test-keys a', function( e ) {
 		e.preventDefault();
 
-		if ( ! $( '#gglcptch-test-block' ).length )
+		if ( ! $( '#gglcptch-test-block' ).length ) {
 			$( '#gglcptch-test-keys' ).after( '<div id="gglcptch-test-block"></div>' );
+		}
 
 		$( '.gglcptch-test-results' ).remove();
 		$( '#gglcptch-test-block' ).load( $( this ).prop( 'href' ), function() {

@@ -20,12 +20,11 @@
 	display: block;
 	margin: 12px 0;
 }
-.gglcptch {
-	margin-bottom: 10px;
-}
 .gglcptch_v1,
 .gglcptch_v2 {
 	min-width: 1px;
+	padding: 10px 0;
+	clear: both;
 }
 /* rtl fix recaptcha v1 */
 .rtl .gglcptch_v1 .recaptcha_r2_c1 {

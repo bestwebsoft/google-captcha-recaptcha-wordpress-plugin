@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha
 Requires at least: 3.9
-Tested up to: 4.8.1
-Stable tag: 1.31
+Tested up to: 4.8.2
+Stable tag: 1.32
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,7 +40,8 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* Version 2
 		* Light (default)
 		* Dark
-* Hide Google Captcha (reCAPTCHA) in comments form for certain user roles
+* Compatible with [Limit Attempts](https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415) [NEW]
+* Hide Google Captcha (reCAPTCHA) in your forms for certain user roles
 * Supports Google Captcha (reCAPTCHA):
 	* Version 1
 	* Version 2
@@ -58,16 +59,26 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 > * Compatible with:
 > 	* Contact Form 7 (since v 3.4)
 > 	* [Subscriber](https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3)
-> 	* Multilanguage
+> 	* [Multilanguage](https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888)
+> 	* Jetpack Contact Form [NEW]
+> 	* Fast Secure Contact Form [NEW]
 > * Compatible with WooCommerce:
 > 	* Login form
 > 	* Register form
 > 	* Lost password form
 > 	* Checkout billing form
+> * Compatible with bbPress: [NEW]
+> 	* New Topic form
+> 	* Reply form
 > * Compatible with BuddyPress:
 > 	* Registration form
 > 	* Comments form
 > 	* Create a Group form
+> * Compatible with Forums - wpForo: [NEW]
+> 	* Login form
+> 	* Registration form
+> 	* New Topic form
+> 	* Reply form
 > * Select Google Captcha (reCAPTCHA) language manually
 > * Change size: normal or compact (for version 2)
 > * Configure all subsites on the network
@@ -112,7 +123,7 @@ Some of these translations are not complete. We are constantly adding new featur
 
 1. Upload the `google-captcha` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin via the 'Plugins' menu in WordPress.
-3. Plugin settings are located in "BWS Panel" > "Google Captcha".
+3. Plugin settings are located in "Admin Panel" > "Google Captcha".
 4. Create a form in post and insert the shortcode [bws_google_captcha] into the form.
 
 [View a Step-by-step Instruction on Google Captcha (reCAPTCHA) Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
@@ -140,20 +151,20 @@ You should go to the Settings page and select the roles, for which you want to h
 Follow the next steps in order to change the appearance of the Google Captcha:
 1. Open your Wordpress admin dashboard.
 2. Navigate to the plugin Settings page.
-3. Select ReCaptcha version.
+3. Select reCAPTCHA version.
 4. Find the "Theme" option (only available for versions 1 and 2) and select the necessary style from the drop-down list.
 5. Save changes and check the result.
 
 = Google Captcha (reCaptcha) not displayed on my comment form. Why? =
 
 You might have a theme where "comments.php" is coded incorrectly. Wordpress version matters.
-(WP2 series): Make sure that you theme contains a tag &lt;?php do_action('comment_form', $post-&gt;ID); ?&gt; inside the file /wp-content/themes/[your_theme]/comments.php.
+(WP2 series): Make sure that you theme contains a tag `<?php do_action('comment_form', $post->ID); ?>` inside the file /wp-content/themes/[your_theme]/comments.php.
 Most WP2 themes already have it. The best place to put this tag is before the comment text area, you can move it up if it is below the comment text area.
 (WP3 series): WP3 has a new function comment_form inside of /wp-includes/comment-template.php.
 Your theme is probably not up-to-date to call that function from "comments.php".
 WP3 theme does not need the code line do_action('comment_form'… inside of /wp-content/themes/[your_theme]/comments.php.
-Instead it uses a new function call inside of "comments.php": &lt;?php comment_form(); ?&gt;
-If you have WP3 and captcha is still missing, make sure your theme has &lt;?php comment_form(); ?&gt;
+Instead it uses a new function call inside of "comments.php": `<?php comment_form(); ?>`
+If you have WP3 and captcha is still missing, make sure your theme has `<?php comment_form(); ?>`
 inside of /wp-content/themes/[your_theme]/comments.php (please check the Twenty Ten theme’s "comments.php" for proper example).
 
 = How can I change the location of Google Captcha (reCAPTCHA) in the comments form? =
@@ -165,20 +176,62 @@ It depends on the comments form. If the hook call by means of which captcha work
 or any similar line - place it under the Submit button.
 In case there is no such hook in the comments file of your theme, then, unfortunately, this option is not available.
 
-= How to add Google Captcha (reCaptcha) plugin to a custom form on my Wordpress website? =
+= Add Google Captcha (reCAPTCHA) plugin to a custom form on your WordPress website =
 
-Follow the next steps in order to add Google Captcha (reCaptcha) to a custom form on your Wordpress website:
-1. Install the Google Captcha plugin and activate it.
-2. Open the file (PHP or HTML) with the form (where you would like to add Google Captcha to).
-3. Insert the following lines to display the Google Captcha.
+Follow the instructions below in order to add Google Captcha (reCAPTCHA) plugin to your custom PHP or HTML form:
+1. Install the Google Captcha (reCAPTCHA) plugin and activate it.
+2. (Optional) If you would like to have an ability to enable and disable the reCAPTCHA for your custom form on the plugin settings page, please add the following code to the 'functions.php' file of your theme:
 
-For PHP:
+`function add_custom_recaptcha_forms( $forms ) {
+    $forms['my_custom_form'] = array( "form_name" => "Custom Form Name" );
+    return $forms;
+}
+add_filter( 'gglcptch_add_custom_form', 'add_custom_recaptcha_forms' );`
 
-`if( function_exists( 'gglcptch_display' ) ) { echo gglcptch_display(); } ;`
+In this example, 'my_custom_form' is a slug of your custom form.
 
-For HTML:
+Please don't use the following form slugs since they are predefined by plugin settings: login_form, registration_form, reset_pwd_form, comments_form, contact_form, cf7, si_contact_form, jetpack_contact_form, sbscrbr, bbpress_new_topic_form, bbpress_reply_form, buddypress_register, buddypress_comments, buddypress_group, woocommerce_login, woocommerce_register, woocommerce_lost_password, woocommerce_checkout, wpforo_login_form, wpforo_register_form, wpforo_new_topic_form, wpforo_reply_form.
+- Save file changes;
+- Go to the "Settings" tab on the plugin settings page (Admin Dashboard -> Google Captcha); If everything is OK, you will see your form in 'Enable reCAPTCHA for' => 'Custom Forms' (with labels which you specified in the "gglcptch_add_custom_form" hook call function).
+- Enable it and configure form options as you need;
+- Click "Save Changes" button;
 
-`&lt;?php if( function_exists( 'gglcptch_display' ) ) { echo gglcptch_display(); } ; ?&gt;`
+If you don't add this code, no option for your custom form will be displayed on the plugin settings page and the reCAPTCHA will be always displayed in your custom form.
+
+3. Open the file with the form (where you would like to add reCAPTCHA);
+4. Find a place to insert the code for the reCAPTCHA output;
+If you completed the instructions in p. 2, then you should add:
+
+`<?php echo apply_filters( 'gglcptch_display_recaptcha', '', 'my_custom_form' ); ?>`
+
+In this example, the second parameter is a slug of your custom form.
+
+Otherwise, insert the following line:
+
+`<?php echo apply_filters( 'gglcptch_display_recaptcha', '' ); ?>`
+
+6. After that, you should add the following lines to the function of the entered data checking.
+If you completed the instructions in p. 2, then you should add:
+
+`<?php $check_result = apply_filters( 'gglcptch_verify_recaptcha', true, 'string', 'my_custom_form' );
+if ( true === $check_result ) { /* the reCAPTCHA answer is right */
+    /* do necessary action */
+} else { /* the reCAPTCHA answer is wrong or there are some other errors */
+    echo $check_result; /* display the error message or do other necessary actions in case when the reCAPTCHA test was failed */
+} ?>`
+
+In this example, the third parameter is a slug of your custom form.
+
+Otherwise, insert the following lines:
+
+`<?php $check_result = apply_filters( 'gglcptch_verify_recaptcha', true, 'string' );
+if ( true === $check_result ) { /* the reCAPTCHA answer is right */
+    /* do necessary action */
+} else { /* the reCAPTCHA answer is wrong or there are some other errors */
+    echo $check_result; /* display the error message or do other necessary actions in case when the reCAPTCHA test was failed */
+} ?>`
+
+If there is a variable in the check function responsible for the errors output, you can concatenate variable $check_result to this variable. If the 'gglcptch_verify_recaptcha' filter hook returns 'true', it means that you have entered the reCAPTCHA answer properly. In all other cases, the function will return the string with the error message.
 
 If you have followed all steps, but the problem remains, we can help you to configure your Google Captcha custom form. This will be a paid service since there are a lot of different custom forms and the code should be inserted individually into each of them, so we need some time to study each unique case.
 
@@ -203,6 +256,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 9. Google Captcha (reCAPTCHA) Whitelist page.
 
 == Changelog ==
+
+= V1.32 - 13.10.2017 =
+* NEW : The compatibility with Limit Attempts by BestWebSoft plugin has been added.
+* NEW : Ability to hide Google Captcha for logged in users has been added.
+* Update : Ability to check Google Captcha using AJAX has been removed.
+* Update : Ability to display and check the Google Captcha in third-party forms using filters have been added.
+* Update : Ability to disable Google Captcha onload callback has been added.
+* PRO : The compatibility with bbPress, Fast Secure Contact Form, Jetpack, Forums - wpForo forms has been added.
 
 = V1.31 - 21.08.2017 =
 * Update : The plugin settings page has been updated.
@@ -342,6 +403,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.32 =
+* The compatibility with Limit Attempts plugin added.
+* New features added.
+* Functionality expanded.
 
 = V1.31 =
 * Appearance improved.

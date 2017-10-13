@@ -7,8 +7,9 @@
  */
 
 if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
-	if ( ! class_exists( 'WP_List_Table' ) )
+	if ( ! class_exists( 'WP_List_Table' ) ) {
 		require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
+	}
 
 	class Gglcptch_Whitelist extends WP_List_Table {
 		private
@@ -24,8 +25,9 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 		*/
 		function __construct( $plugin_basename ) {
 			global $gglcptch_options;
-			if ( empty( $gglcptch_options ) )
+			if ( empty( $gglcptch_options ) ) {
 				$gglcptch_options = get_option( 'gglcptch_options' );
+			}
 			parent::__construct( array(
 				'singular'	=> 'IP',
 				'plural'	=> 'IP',
@@ -90,7 +92,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 					<input type="submit" class="button-secondary" value="<?php _e( 'Add IP to whitelist', 'google-captcha' ) ?>" />
 					<?php wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
 				</p>
-			</form>			
+			</form>
 			<form id="gglcptch_whitelist_search" method="post" action="admin.php?page=google-captcha-whitelist.php">
 				<?php $this->search_box( __( 'Search IP', 'google-captcha' ), 'search_whitelisted_ip' );
 				wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
@@ -276,8 +278,9 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 			$error = $message = '';
 
 			$bulk_action = isset( $_REQUEST['action'] ) && 'gglcptch_remove' == $_REQUEST['action'] ? true : false;
-			if ( ! $bulk_action )
+			if ( ! $bulk_action ) {
 				$bulk_action = isset( $_REQUEST['action2'] ) && 'gglcptch_remove' == $_REQUEST['action2'] ? true : false;
+			}
 
 			/* Add IP to the database */
 			if (
@@ -303,10 +306,11 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 								'add_time'    => $time
 							)
 						);
-						if ( ! $wpdb->last_error )
+						if ( ! $wpdb->last_error ) {
 							$message = __( 'IP added to the whitelist successfully.', 'google-captcha' );
-						else
+						} else {
 							$error = __( 'Some errors occurred.', 'google-captcha' );
+						}
 					} else {
 						$error = __( 'IP is already in the whitelist.', 'google-captcha' );
 					}

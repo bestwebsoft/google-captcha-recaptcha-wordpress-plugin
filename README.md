@@ -37,7 +37,8 @@
 </li>
 </ul>
 </li>
-<li>Hide Google Captcha (reCAPTCHA) in comments form for certain user roles</li>
+<li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415" rel="nofollow">Limit Attempts</a> [NEW]</li>
+<li>Hide Google Captcha (reCAPTCHA) in your forms for certain user roles</li>
 <li>Supports Google Captcha (reCAPTCHA):
 <ul>
 <li>Version 1</li>
@@ -59,7 +60,9 @@
 <ul>
 <li>Contact Form 7 (since v 3.4)</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3" rel="nofollow">Subscriber</a></li>
-<li>Multilanguage</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888" rel="nofollow">Multilanguage</a></li>
+<li>Jetpack Contact Form [NEW]</li>
+<li>Fast Secure Contact Form [NEW]</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -70,11 +73,25 @@
 <li>Checkout billing form</li>
 </ul>
 </li>
+<li>Compatible with bbPress: [NEW]
+<ul>
+<li>New Topic form</li>
+<li>Reply form</li>
+</ul>
+</li>
 <li>Compatible with BuddyPress:
 <ul>
 <li>Registration form</li>
 <li>Comments form</li>
 <li>Create a Group form</li>
+</ul>
+</li>
+<li>Compatible with Forums &#8211; wpForo: [NEW]
+<ul>
+<li>Login form</li>
+<li>Registration form</li>
+<li>New Topic form</li>
+<li>Reply form</li>
 </ul>
 </li>
 <li>Select Google Captcha (reCAPTCHA) language manually</li>

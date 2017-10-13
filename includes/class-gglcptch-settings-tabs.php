@@ -7,7 +7,7 @@ require_once( dirname( dirname( __FILE__ ) ) . '/bws_menu/class-bws-settings.php
 
 if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 	class Gglcptch_Settings_Tabs extends Bws_Settings_Tabs {
-		private $keys, $versions, $forms, $themes;
+		private $keys, $versions, $forms, $sections, $themes;
 
 		/**
 		 * Constructor.
@@ -65,13 +65,9 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				'invisible'		=> __( 'Invisible', 'google-captcha' )
 			);
 
-			/* Checked forms */
-			$this->forms = array(
-				array( 'login_form', __( 'Login form', 'google-captcha' ) ),
-				array( 'registration_form', __( 'Registration form', 'google-captcha' ) ),
-				array( 'reset_pwd_form', __( 'Reset password form', 'google-captcha' ) ),
-				array( 'comments_form', __( 'Comments form', 'google-captcha' ) ),
-			);
+			/* Supported forms */
+			$this->forms = gglcptch_get_forms();
+			$this->sections = gglcptch_get_sections();
 
 			/* Google captcha themes */
 			$this->themes = array(
@@ -108,8 +104,9 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				$this->keys['private']['error_msg'] = '';
 			}
 
-			if ( $_POST['gglcptch_public_key'] != $this->options['public_key'] || $_POST['gglcptch_private_key'] != $this->options['private_key'] )
+			if ( $_POST['gglcptch_public_key'] != $this->options['public_key'] || $_POST['gglcptch_private_key'] != $this->options['private_key'] ) {
 				$this->options['keys_verified'] = false;
+			}
 
 			if ( $_POST['gglcptch_recaptcha_version'] != $this->options['recaptcha_version'] ) {
 				$this->options['keys_verified'] = false;
@@ -119,14 +116,15 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			$this->options['whitelist_message']	=	stripslashes( esc_html( $_POST['gglcptch_whitelist_message'] ) );
 			$this->options['public_key']			=	trim( stripslashes( esc_html( $_POST['gglcptch_public_key'] ) ) );
 			$this->options['private_key']		=	trim( stripslashes( esc_html( $_POST['gglcptch_private_key'] ) ) );
-			$this->options['login_form']			=	isset( $_POST['gglcptch_login_form'] ) ? 1 : 0;
-			$this->options['registration_form']	=	isset( $_POST['gglcptch_registration_form'] ) ? 1 : 0;
-			$this->options['reset_pwd_form']		=	isset( $_POST['gglcptch_reset_pwd_form'] ) ? 1 : 0;
-			$this->options['comments_form']		=	isset( $_POST['gglcptch_comments_form'] ) ? 1 : 0;
-			$this->options['contact_form']		=	isset( $_POST['gglcptch_contact_form'] ) ? 1 : 0;
 			$this->options['recaptcha_version']	=	in_array( $_POST['gglcptch_recaptcha_version'], array( 'v1', 'v2', 'invisible' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
 			$this->options['theme']				=	stripslashes( esc_html( $_POST['gglcptch_theme'] ) );
 			$this->options['theme_v2']			=	stripslashes( esc_html( $_POST['gglcptch_theme_v2'] ) );
+
+			$this->options['disable_submit']	= isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
+
+			foreach ( $this->forms as $form_slug => $form_data ) {
+				$this->options[ $form_slug ] = isset( $_POST["gglcptch_{$form_slug}"] ) ? 1 : 0;
+			}
 
 			if ( function_exists( 'get_editable_roles' ) ) {
 				foreach ( get_editable_roles() as $role => $fields ) {
@@ -170,7 +168,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 						<th></th>
 						<td>
 							<div id="gglcptch-test-keys">
-								<a class="button button-secondary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ), 'action' => 'gglcptch-test-keys', 'is_network' => $this->is_network_options ? '1' : '0' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test ReCaptcha' , 'google-captcha' ); ?></a>
+								<a class="button button-secondary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ), 'action' => 'gglcptch-test-keys', 'is_network' => $this->is_network_options ? '1' : '0' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test reCAPTCHA' , 'google-captcha' ); ?></a>
 							</div>
 						</td>
 					</tr>
@@ -179,54 +177,46 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			<div class="bws_tab_sub_label"><?php _e( 'General', 'google-captcha' ); ?></div>
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Enable ReCaptcha for', 'google-captcha' ); ?></th>
+					<th scope="row"><?php _e( 'Enable reCAPTCHA for', 'google-captcha' ); ?></th>
 					<td>
-						<fieldset>
-							<p>
-								<i><?php _e( 'WordPress default', 'google-captcha' ); ?></i>
-							</p>
-							<br>
-							<?php foreach ( $this->forms as $form ) {
-								$form_attr = ( '1' == $this->options[ $form[0] ] ) ? 'checked="checked"' : '';
-								$form_notice = '';
+						<!--[if !IE]> -->
+							<div class="gglcptch-settings-accordion">
+						<!-- <![endif]-->
+							<?php foreach ( $this->sections as $section_slug => $section ) {
 
-								if ( ( $form[0] == 'registration_form' || $form[0] == 'reset_pwd_form' ) && ! $is_main_site ) {
-									$form_notice .= '<span class="bws_info">(' . __( 'This option is available only for network or for main blog.', 'google-captcha' ) . ')</span>';
-									$form_attr = 'disabled="disabled" readonly="readonly"';
-								} ?>
-								<label>
-									<input type="checkbox" name="<?php echo 'gglcptch_' . $form[0]; ?>" value="1" <?php echo $form_attr; ?> />
-									 <?php echo $form[1]; ?>
-								</label>
-								<?php echo $form_notice; ?>
-								<br />
+								if ( empty( $section['name'] ) || empty( $section['forms'] ) || ! is_array( $section['forms'] ) ) {
+									continue;
+								}
+
+								$section_notice = ! empty( $section['section_notice'] ) ? $section['section_notice'] : ''; ?>
+								<p class="gglcptch_section_header">
+									<i><?php echo $section['name']; ?></i>
+									<?php if ( ! empty( $section_notice ) ) { ?>
+										&nbsp;<span class="bws_info"><?php echo $section_notice; ?></span>
+									<?php } ?><br />
+								</p>
+								<fieldset class="gglcptch_section_forms">
+									<?php foreach ( $section['forms'] as $form_slug ) {
+										$form_notice = $this->forms[ $form_slug ]['form_notice'];
+										$form_atts = '';
+										if ( '' != $form_notice || '' != $section_notice ) {
+											$form_atts .= disabled( 1, 1, false );
+										}
+										$form_atts .= checked( ! empty( $this->options[ $form_slug ] ), true, false ); ?>
+										<label>
+											<input type="checkbox"<?php echo $form_atts; ?> name="gglcptch_<?php echo $form_slug; ?>" value="1" /> <?php echo $this->forms[ $form_slug ]['form_name']; ?>
+										</label>
+										<?php if ( '' != $form_notice ) { ?>
+											&nbsp;<span class="bws_info"><?php echo $form_notice; ?></span>
+										<?php } ?>
+										<br />
+									<?php } ?>
+									<hr />
+								</fieldset>
 							<?php } ?>
-							<hr>
-							<p>
-								<i><?php _e( 'External Plugins', 'google-captcha' ); ?></i>
-							</p>
-							<br>
-							<?php /* Check Contact Form by BestWebSoft */
-							$plugin_info = gglcptch_plugin_status( array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php' ), $this->all_plugins, $this->is_network_options );
-							$plugin_name = 'Contact Form';
-							$attrs = $plugin_notice = '';
-							if ( 'deactivated' == $plugin_info['status'] ) {
-								$attrs = 'disabled="disabled"';
-								$plugin_notice = '<a href="' . self_admin_url( 'plugins.php' ) . '">' . __( 'Activate', 'google-captcha' ) . '</a>';
-							} elseif ( 'not_installed' == $plugin_info['status'] ) {
-								$attrs = 'disabled="disabled"';
-								$plugin_notice = '<a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=0a750deb99a8e5296a5432f4c9cb9b55&pn=109&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">' . __( 'Install Now', 'google-captcha' ) . '</a>';
-							}
-							if ( $attrs == '' && ( is_plugin_active( 'contact-form-multi-pro/contact-form-multi-pro.php' ) || is_plugin_active( 'contact-form-multi/contact-form-multi.php' ) ) )
-								$plugin_notice = ' (' . __( 'Enable for adding captcha to forms on their settings pages.', 'google-captcha' ) . ')';
-
-							if ( '1' == $this->options['contact_form'] && $attrs == '' ) {
-								$attrs .= ' checked="checked"';
-							} ?>
-							<label><input type="checkbox" <?php echo $attrs; ?> name="gglcptch_contact_form" value="contact_form" /> <?php echo $plugin_name; ?></label>
-							<span class="bws_info"> <?php echo $plugin_notice; ?></span>
-							<hr>
-						</fieldset>
+						<!--[if !IE]> -->
+							</div> <!-- .gglcptch-settings-accordion -->
+						<!-- <![endif]-->
 					</td>
 				</tr>
 			</table>
@@ -242,19 +232,25 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			<?php } ?>
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Hide ReCaptcha in Comments Form for', 'google-captcha' ); ?></th>
+					<th scope="row"><?php _e( 'Hide reCAPTCHA for', 'google-captcha' ); ?></th>
 					<td>
 						<fieldset>
 							<?php if ( function_exists( 'get_editable_roles' ) ) {
-								foreach ( get_editable_roles() as $role => $fields ) : ?>
-									<label><input type="checkbox" name="<?php echo 'gglcptch_' . $role; ?>" value=<?php echo $role; if ( isset( $this->options[ $role ] ) && '1' == $this->options[ $role ] ) echo ' checked'; ?>> <?php echo $fields['name']; ?></label><br/>
-								<?php endforeach;
+								foreach ( get_editable_roles() as $role => $fields ) {
+									printf(
+										'<label><input type="checkbox" name="%1$s" value="%2$s" %3$s> %4$s</label><br/>',
+										'gglcptch_' . $role,
+										$role,
+										checked( ! empty( $this->options[ $role ] ), true, false ),
+										$fields['name']
+									);
+								}
 							} ?>
 						</fieldset>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'ReCaptcha Version', 'google-captcha' ); ?></th>
+					<th scope="row"><?php _e( 'reCAPTCHA Version', 'google-captcha' ); ?></th>
 					<td>
 						<fieldset>
 							<?php foreach ( $this->versions as $version => $version_name ) { ?>
@@ -305,7 +301,16 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					<th scope="row"><?php _e( 'Whitelist Notification', 'google-captcha' ); ?></th>
 					<td>
 						<textarea name="gglcptch_whitelist_message"><?php echo $this->options['whitelist_message']; ?></textarea>
-						<div class="bws_info"><?php _e( 'This message will be displayed instead of the ReCaptcha.', 'google-captcha' ); ?></div>
+						<div class="bws_info"><?php _e( 'This message will be displayed instead of the reCAPTCHA.', 'google-captcha' ); ?></div>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e( 'Disabled Submit Button', 'google-captcha' ); ?></th>
+					<td>
+						<input<?php echo $this->change_permission_attr; ?> id="gglcptch_disable_submit" type="checkbox" <?php checked( ! empty( $this->options["disable_submit"] ) ); ?> name="gglcptch_disable_submit" value="1" />&nbsp;
+						<span class="bws_info">
+							<?php _e( 'Enable to keep submit button disabled until reCAPTCHA is loaded (do not use this option if you see "Failed to load Google reCAPTCHA" message).', 'google-captcha' ); ?>
+						</span>
 					</td>
 				</tr>
 			</table>
@@ -319,10 +324,10 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		 */
 		public function display_custom_messages( $save_results ) {
 			if ( $this->options['recaptcha_version'] == 'v1' ) { ?>
-				<div class="updated inline bws-notice"><p><strong><?php _e( "Only one ReCaptcha can be displayed on the page, it's related to ReCaptcha version 1 features.", 'google-captcha' ); ?></strong></p></div>
+				<div class="updated inline bws-notice"><p><strong><?php _e( "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA version 1 features.", 'google-captcha' ); ?></strong></p></div>
 			<?php }
 			if ( ! empty( $this->options['need_keys_verified_check'] ) ) { ?>
-				<div class="updated inline bws-notice"><p><strong><?php _e( 'ReCaptcha version was changed. Please submit "Test ReCaptcha" and regenerate Site and Secret keys if necessary.', 'google-captcha' ); ?></strong></p></div>
+				<div class="updated inline bws-notice"><p><strong><?php _e( 'reCAPTCHA version was changed. Please submit "Test reCAPTCHA" and regenerate Site and Secret keys if necessary.', 'google-captcha' ); ?></strong></p></div>
 			<?php }
 		}
 

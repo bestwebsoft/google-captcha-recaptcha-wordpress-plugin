@@ -104,6 +104,11 @@
 				target.off();
 				target.data( 'storedEvents', storedEvents );
 			}
+			/* storing and removing onclick action */
+			if ( 'undefined' != typeof target.attr( 'onclick') ) {
+				target.attr( 'gglcptch-onclick', target.attr( 'onclick') );
+				target.removeAttr('onclick');
+			}
 		}
 
 		function restoreEvents( el ) {
@@ -119,6 +124,11 @@
 			}
 			/* reset stored events */
 			target.removeData( 'storedEvents' );
+			/* restoring onclick action */
+			if ( 'undefined' != typeof target.attr( 'gglcptch-onclick' ) ) {
+				target.attr('onclick', target.attr( 'gglcptch-onclick') );
+				target.removeAttr('gglcptch-onclick');
+			}
 		}
 
 		function storeOnSubmit( form, gglcptch_index ) {
@@ -233,130 +243,6 @@
 		$( '.woocommerce' ).on( 'click', '.woocommerce-tabs', gglcptch_prepare );
 
 		$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
-
-		$( 'form' ).not( '[name="loginform"], [name="registerform"], [name="lostpasswordform"], #setupform, .cntctfrmpr_contact_form, .cntctfrm_contact_form, #commentform, .bws_form, #crrntl-user-info' + gglcptch.vars.excluded_forms ).submit( function( e ) {
-			var $form = $( this ),
-				$gglcptch = $form.find( '.gglcptch' ),
-				$captcha = $gglcptch.filter( '.gglcptch_v1' ).find( '.gglcptch_recaptcha:visible' ),
-				$captcha_v2 = $gglcptch.filter( '.gglcptch_v2' ).find( '.gglcptch_recaptcha:visible' );
-				$captcha_invisible = $gglcptch.filter( '.gglcptch_invisible' ).find( '.gglcptch_recaptcha:visible' );
-			if ( $captcha.length ) {
-				if ( $gglcptch.find( 'input[name="gglcptch_test_enable_js_field"]:hidden' ).length == 0 ) {
-					$gglcptch.append( '<input type="hidden" value="' + gglcptch.vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
-				}
-				$.ajax( {
-					async   : false,
-					cache   : false,
-					type    : 'POST',
-					url     : gglcptch.vars.ajaxurl,
-					headers : {
-						'Content-Type' : 'application/x-www-form-urlencoded'
-					},
-					data    : {
-						action: 'gglcptch_captcha_check',
-						recaptcha_challenge_field : $( '#recaptcha_challenge_field' ).val(),
-						recaptcha_response_field  : $( '#recaptcha_response_field' ).val()
-					},
-					success: function( data ) {
-						if ( data == 'error' ) {
-							if ( $captcha.next( '#gglcptch_error' ).length == 0 ) {
-								$captcha.after( '<label id="gglcptch_error">' + gglcptch.vars.error_msg + '</label>' );
-							}
-							$( '#recaptcha_reload' ).trigger( 'click' );
-							e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-							return false;
-						}
-					},
-					error: function( request, status, error ) {
-						if ( $captcha.next( '#gglcptch_error' ).length == 0 ) {
-							$captcha.after( '<label id="gglcptch_error">' + request.status + ' ' + error + '</label>' );
-						}
-						$( '#recaptcha_reload' ).trigger( 'click' );
-						e.preventDefault ? e.preventDefault() : ( e.returnValue = false );
-						return false;
-					}
-				} );
-				$( '#recaptcha_reload' ).trigger( 'click' );
-			} else if ( $captcha_v2.length ) {
-				if ( $gglcptch.find( 'input[name="gglcptch_test_enable_js_field"]:hidden' ).length == 0 ) {
-					$gglcptch.append( '<input type="hidden" value="' + gglcptch.vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
-				}
-				$.ajax( {
-					async   : false,
-					cache   : false,
-					type    : 'POST',
-					url     : gglcptch.vars.ajaxurl,
-					headers : {
-						'Content-Type' : 'application/x-www-form-urlencoded'
-					},
-					data    : {
-						action: 'gglcptch_captcha_check',
-						'g-recaptcha-response'  : $form.find( '.g-recaptcha-response' ).val()
-					},
-					success: function( data ) {
-						if ( data == 'error' ) {
-							if ( $captcha_v2.next( '#gglcptch_error' ).length == 0 ) {
-								$captcha_v2.after( '<label id="gglcptch_error">' + gglcptch.vars.error_msg + '</label>' );
-								$( "#gglcptch_error" ).fadeOut( 15000, function() {
-									$( "#gglcptch_error" ).remove();
-								} );
-								$( 'html, body' ).animate( { scrollTop: $captcha_v2.offset().top - 50 }, 500);
-							}
-							grecaptcha.reset( $captcha_v2.data( 'gglcptch_index' ) );
-							e.preventDefault ? e.preventDefault() : ( e.returnValue = false );
-							return false;
-						}
-					},
-					error: function( request, status, error ) {
-						if ( $captcha_v2.next( '#gglcptch_error' ).length == 0 ) {
-							$captcha_v2.after( '<label id="gglcptch_error">' + request.status + ' ' + error + '</label>' );
-						}
-						grecaptcha.reset( $captcha_v2.data( 'gglcptch_index' ) );
-						e.preventDefault ? e.preventDefault() : ( e.returnValue = false );
-						return false;
-					}
-				} );
-			} else if ( $captcha_invisible.length ) {
-				if ( $gglcptch.find( 'input[name="gglcptch_test_enable_js_field"]:hidden' ).length == 0 ) {
-					$gglcptch.append( '<input type="hidden" value="' + gglcptch.vars.nonce + '" name="gglcptch_test_enable_js_field" />' );
-				}
-				$.ajax( {
-					async	: false,
-					cache	: false,
-					type	: 'POST',
-					url		: gglcptch.vars.ajaxurl,
-					headers	: {
-						'Content-Type' : 'application/x-www-form-urlencoded'
-					},
-					data	: {
-						action: 'gglcptch_captcha_check',
-						'g-recaptcha-response'  : $form.find( '.g-recaptcha-response' ).val()
-					},
-					success: function( data ) {
-						if ( data == 'error' ) {
-							if ( $captcha_invisible.next( '#gglcptch_error' ).length == 0 ) {
-								$captcha_invisible.after( '<label id="gglcptch_error">' + gglcptch.vars.error_msg + '</label>' );
-								$( "#gglcptch_error" ).fadeOut( 15000, function() {
-									$( "#gglcptch_error" ).remove();
-								} );
-								$( 'html, body' ).animate( { scrollTop: $captcha_invisible.offset().top - 50 }, 500);
-							}
-							grecaptcha.reset( $captcha_invisible.data( 'gglcptch_index' ) );
-							e.preventDefault ? e.preventDefault() : ( e.returnValue = false );
-							return false;
-						}
-					},
-					error: function( request, status, error ) {
-						if ( $captcha_invisible.next( '#gglcptch_error' ).length == 0 ) {
-							$captcha_invisible.after( '<label id="gglcptch_error">' + request.status + ' ' + error + '</label>' );
-						}
-						grecaptcha.reset( $captcha_invisible.data( 'gglcptch_index' ) );
-						e.preventDefault ? e.preventDefault() : ( e.returnValue = false );
-						return false;
-					}
-				} );
-			}
-		} );
 	} );
 
 	function cleanError() {
