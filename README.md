@@ -1,7 +1,7 @@
 <a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/" target=_blank>Google Captcha (reCAPTCHA) WordPress Plugin</a>
 ========================
 
-<p>Google Captcha (reCaptcha) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other.</p>
+<p>Google Captcha (reCAPTCHA) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other.</p>
 <p>Users are required to confirm that they are not a robot before the form can be submitted. It&#8217;s easy for people and hard for bots.</p>
 <p><a href="https://bestwebsoft.com/demo-for-google-captcha/" rel="nofollow">View Demo</a></p>
 <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
@@ -37,7 +37,7 @@
 </li>
 </ul>
 </li>
-<li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415" rel="nofollow">Limit Attempts</a> [NEW]</li>
+<li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415" rel="nofollow">Limit Attempts</a></li>
 <li>Hide Google Captcha (reCAPTCHA) in your forms for certain user roles</li>
 <li>Supports Google Captcha (reCAPTCHA):
 <ul>
@@ -61,8 +61,8 @@
 <li>Contact Form 7 (since v 3.4)</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3" rel="nofollow">Subscriber</a></li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888" rel="nofollow">Multilanguage</a></li>
-<li>Jetpack Contact Form [NEW]</li>
-<li>Fast Secure Contact Form [NEW]</li>
+<li>Jetpack Contact Form</li>
+<li>Fast Secure Contact Form</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -73,7 +73,7 @@
 <li>Checkout billing form</li>
 </ul>
 </li>
-<li>Compatible with bbPress: [NEW]
+<li>Compatible with bbPress:
 <ul>
 <li>New Topic form</li>
 <li>Reply form</li>
@@ -86,7 +86,7 @@
 <li>Create a Group form</li>
 </ul>
 </li>
-<li>Compatible with Forums &#8211; wpForo: [NEW]
+<li>Compatible with Forums &#8211; wpForo:
 <ul>
 <li>Login form</li>
 <li>Registration form</li>
@@ -122,7 +122,7 @@
 <h4>Recommended Plugins</h4>
 <ul>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=f47f3eb3d739725d592249dbd129f7ff" rel="nofollow">Updater</a> &#8211; Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.</li>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a" rel="nofollow">Contact Form</a> &#8211; Allow customers to reach you using secure contact form plugin any website must have.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a" rel="nofollow">Contact Form</a> &#8211; Simple contact form plugin any WordPress website must have.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3" rel="nofollow">Subscriber</a> &#8211; Add email newsletter sign up form to WordPress posts, pages and widgets. Collect data and subscribe your users.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888" rel="nofollow">Multilanguage</a> &#8211; Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.</li>
 </ul>
