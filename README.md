@@ -3,7 +3,7 @@
 
 <p>Google Captcha (reCAPTCHA) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other.</p>
 <p>Users are required to confirm that they are not a robot before the form can be submitted. It&#8217;s easy for people and hard for bots.</p>
-<p><a href="https://bestwebsoft.com/demo-for-google-captcha/" rel="nofollow">View Demo</a></p>
+<p><a href="https://bestwebsoft.com/demo-for-google-captcha/?ref=readme" rel="nofollow">View Demo</a></p>
 <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
 <h4>Free Features</h4>
 <ul>
@@ -61,8 +61,9 @@
 <li>Contact Form 7 (since v 3.4)</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=e6d1742fcf1806a39afac207f7920cf3" rel="nofollow">Subscriber</a></li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888" rel="nofollow">Multilanguage</a></li>
-<li>Jetpack Contact Form</li>
+<li>Jetpack contact form</li>
 <li>Fast Secure Contact Form</li>
+<li>MailChimp for WordPress [NEW]</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -106,6 +107,7 @@
 <ul>
 <li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow">[Doc] Installation</a></li>
 <li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow">[Doc] Purchase</a></li>
+<li><a href="https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/" rel="nofollow">[Doc] How to Use</a></li>
 <li><a href="http://www.youtube.com/watch?v=RUJ9VwZLFSY" rel="nofollow">[Video] Installation Instruction</a></li>
 <li><a href="https://www.youtube.com/watch?v=X-ccRdEFcM0" rel="nofollow">[Video] Purchase, Installation &amp; Configuration</a></li>
 </ul>
