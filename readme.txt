@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha
 Requires at least: 3.9
-Tested up to: 4.9.3
-Stable tag: 1.34
+Tested up to: 4.9.4
+Stable tag: 1.35
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,7 +62,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 > 	* [Multilanguage](https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888)
 > 	* Jetpack contact form
 > 	* Fast Secure Contact Form
-> 	* MailChimp for WordPress [NEW]
+> 	* MailChimp for WordPress
 > * Compatible with WooCommerce:
 > 	* Login form
 > 	* Register form
@@ -259,6 +259,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.35 - 08.02.2018 =
+* Update : The Czech language file has been updated.
+* Bugfix : Google Captcha responsive styles have been fixed.
+* Bugfix : Potential bruteforce vulnerability has been fixed.
+
 = V1.34 - 06.02.2018 =
 * NEW : The compatibility with Wordfence option "Immediately block the IP of users who try to sign in as these usernames" has been added.
 * Update : reCAPTCHA output functionality in forms has been optimized.
@@ -414,6 +419,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.35 =
+* Languages updated.
+* Bugs fixed.
 
 = V1.34 =
 * The compatibility with new WordPress version updated.

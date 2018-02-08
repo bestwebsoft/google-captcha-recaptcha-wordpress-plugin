@@ -161,7 +161,7 @@
 		}
 
 		if ( 'v2' == gglcptch_version ) {
-				if ( $( '#' + container ).parent().width() <= 304 ) {
+				if ( $( '#' + container ).parent().width() <= 300 ) {
 					var size = 'compact';
 				} else {
 					var size = 'normal';

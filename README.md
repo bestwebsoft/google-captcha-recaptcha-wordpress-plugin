@@ -63,7 +63,7 @@
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=e48e145002e4b2472e568a81d171b888" rel="nofollow">Multilanguage</a></li>
 <li>Jetpack contact form</li>
 <li>Fast Secure Contact Form</li>
-<li>MailChimp for WordPress [NEW]</li>
+<li>MailChimp for WordPress</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:

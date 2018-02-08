@@ -271,7 +271,8 @@ if ( ! function_exists( 'gglcptch_login_check' ) ) {
 			if ( $gglcptch_check['reason'] == 'VERIFICATION_FAILED' ) {
 				wp_clear_auth_cookie();
 			}
-			$errors = new WP_Error( $user->get_error_code(), __( 'Authentication failed.', 'google-captcha' ) );
+			$error_code = ( is_wp_error( $user ) ) ? $user->get_error_code() : 'incorrect_password';
+			$errors = new WP_Error( $error_code, __( 'Authentication failed.', 'google-captcha' ) );
 			$gglcptch_errors = $gglcptch_check['errors']->errors;
 			foreach ( $gglcptch_errors as $code => $messages ) {
 				foreach ( $messages as $message ) {

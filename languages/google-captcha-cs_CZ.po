@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-06 09:49+0200\n"
+"POT-Creation-Date: 2018-02-08 13:56+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mik013\n"
 "Language-Team: Mik013\n"
@@ -41,7 +41,7 @@ msgstr "Aktualizovat na Pro"
 
 #: google-captcha.php:233
 msgid "Please wait until Google reCAPTCHA is loaded."
-msgstr "Prosím počkejte, než se Google reCAPTCHA načte."
+msgstr "Počkejte, než se Google reCAPTCHA načte."
 
 #: google-captcha.php:234
 msgid ""
@@ -75,7 +75,7 @@ msgstr "a zadejte je na"
 msgid "plugin setting page"
 msgstr "stránce nastavení pluginu"
 
-#: google-captcha.php:796 includes/forms.php:361
+#: google-captcha.php:796 includes/forms.php:362
 msgid "Error"
 msgstr "Chyba"
 
@@ -113,15 +113,15 @@ msgid ""
 "all unnecessary reCAPTCHA fields to make it work properly."
 msgstr ""
 "V aktuálním formuláři byla zjištěna více než jedna reCAPTCHA. Pro správnou "
-"funkcionalitu, prosím odstraňte všechny nepotřebné reCAPTCHA pole."
+"funkcionalitu, odstraňte všechny nepotřebné reCAPTCHA pole."
 
 #: google-captcha.php:975
 msgid "Please submit \"Test verification\""
-msgstr "Odešlete \"Test ověření\""
+msgstr "Odešlete &#8222;Test ověření&#8220;"
 
 #: google-captcha.php:977
 msgid "Please complete the captcha and submit \"Test verification\""
-msgstr "Prosím, doplňte captcha a odešlete \"Test ověření\""
+msgstr "Doplňte captcha a odešlete &#8222;Test ověření&#8220;"
 
 #: google-captcha.php:984
 msgid "Test verification"
@@ -133,7 +133,9 @@ msgstr "Ověření je úspěšně dokončeno."
 
 #: google-captcha.php:1040
 msgid "FAQ"
-msgstr "Často kladené otázky (FAQ)"
+msgstr ""
+"Časté dotazy <acronym title=\\\"Frequently asked questions\\\">(FAQ)</"
+"acronym>"
 
 #: google-captcha.php:1041
 msgid "Support"
@@ -202,7 +204,6 @@ msgid "Get the API Keys"
 msgstr "Získat API klíče"
 
 #: includes/class-gglcptch-settings-tabs.php:171
-#, fuzzy
 msgid "Test reCAPTCHA"
 msgstr "Vyzkoušet reCAPTCHA"
 
@@ -220,9 +221,8 @@ msgid "Close"
 msgstr "Zavřít"
 
 #: includes/class-gglcptch-settings-tabs.php:235
-#, fuzzy
 msgid "Hide reCAPTCHA for"
-msgstr "Povolit reCAPTCHA pro"
+msgstr "Skrýt reCAPTCHA pro"
 
 #: includes/class-gglcptch-settings-tabs.php:253
 msgid "reCAPTCHA Version"
@@ -238,19 +238,21 @@ msgid "Whitelist Notification"
 msgstr "Upozornění na seznam povolených"
 
 #: includes/class-gglcptch-settings-tabs.php:304
-#, fuzzy
 msgid "This message will be displayed instead of the reCAPTCHA."
 msgstr "Tato zpráva se zobrazí namísto reCAPTCHA."
 
 #: includes/class-gglcptch-settings-tabs.php:308
 msgid "Disabled Submit Button"
-msgstr ""
+msgstr "Neaktivní tlačitko odeslat"
 
 #: includes/class-gglcptch-settings-tabs.php:312
 msgid ""
 "Enable to keep submit button disabled until reCAPTCHA is loaded (do not use "
 "this option if you see \"Failed to load Google reCAPTCHA\" message)."
 msgstr ""
+"Nastaví tlačítko odeslat neaktivní, dokud nebude reCAPTCHA načtena (tuto "
+"možnost nepoužívejte, pokud se zobrazuje zpráva &#8222;Nepodařilo se načíst "
+"Google reCAPTCHA&#8220;)."
 
 #: includes/class-gglcptch-settings-tabs.php:327
 msgid ""
@@ -261,13 +263,12 @@ msgstr ""
 "reCAPTCHA verze 1."
 
 #: includes/class-gglcptch-settings-tabs.php:330
-#, fuzzy
 msgid ""
 "reCAPTCHA version was changed. Please submit \"Test reCAPTCHA\" and "
 "regenerate Site and Secret keys if necessary."
 msgstr ""
-"ReCAPTCHA verze byla změněna. Klikněte na \"Vyzkoušet reCAPTCHA\" a znovu "
-"vygenerujte tajné a webové klíče, je-li to nezbytné."
+"Byla změněna verze reCAPTCHA. Klikněte na &#8222;Vyzkoušet reCAPTCHA&#8220; "
+"a znovu vygenerujte tajné a webové klíče, je-li to nezbytné."
 
 #: includes/class-gglcptch-settings-tabs.php:343
 msgid "Google Captcha Shortcode"
@@ -306,11 +307,11 @@ msgstr "Externí pluginy"
 
 #: includes/forms.php:55
 msgid "Custom Forms"
-msgstr ""
+msgstr "Vlastní formuláře"
 
 #: includes/forms.php:76
 msgid "Google Captcha Plugin"
-msgstr ""
+msgstr "Plugin Google Captcha"
 
 #: includes/forms.php:116 includes/forms.php:141
 msgid "Activate"
@@ -320,11 +321,11 @@ msgstr "Aktivovat"
 msgid "Install Now"
 msgstr "Instalovat nyní"
 
-#: includes/forms.php:274
+#: includes/forms.php:275
 msgid "Authentication failed."
-msgstr ""
+msgstr "Ověření selhalo."
 
-#: includes/forms.php:363
+#: includes/forms.php:364
 msgid "Click the BACK button on your browser and try again."
 msgstr "Klikněte ve vašem prohlížeči na tlačítko ZPĚT a zkuste to znovu."
 
@@ -362,62 +363,59 @@ msgstr "tabelátor, nový řádek nebo návratu vozíku."
 
 #: includes/pro_banners.php:53
 msgid "Jetpack Contact Form"
-msgstr ""
+msgstr "Jetpack kontaktní formulář"
 
 #: includes/pro_banners.php:56
 msgid "bbPress New Topic form"
-msgstr ""
+msgstr "bbPress formulář nového tématu"
 
 #: includes/pro_banners.php:57
 msgid "bbPress Reply form"
-msgstr ""
+msgstr "bbPress odpovědní formulář"
 
 #: includes/pro_banners.php:58
-#, fuzzy
 msgid "BuddyPress Registration form"
-msgstr "Buddypress Registrační formulář"
+msgstr "Buddypress registrační formulář"
 
 #: includes/pro_banners.php:59
-#, fuzzy
 msgid "BuddyPress Comments form"
-msgstr "Buddypress Formulář pro odeslání komentáře"
+msgstr "BuddyPress formulář komentářů"
 
 #: includes/pro_banners.php:60
 msgid "BuddyPress Add New Group form"
-msgstr ""
+msgstr "Buddypress formulář Přidat novou skupinu"
 
 #: includes/pro_banners.php:61
-#, fuzzy
 msgid "WooCommerce Login form"
 msgstr "WooCommerce přihlašovací formulář"
 
 #: includes/pro_banners.php:62
 msgid "WooCommerce Registration form"
-msgstr ""
+msgstr "WooCommerce registrační formulář"
 
 #: includes/pro_banners.php:63
 msgid "WooCommerce Reset password form"
-msgstr ""
+msgstr "WooCommerce formulář pro resetování hesla"
 
 #: includes/pro_banners.php:64
 msgid "WooCommerce Checkout form"
-msgstr ""
+msgstr "WooCommerce formulář platby"
 
 #: includes/pro_banners.php:65
 msgid "wpForo Login form"
-msgstr ""
+msgstr "wpForo přihlašovací formulář"
 
 #: includes/pro_banners.php:66
 msgid "wpForo Registration form"
-msgstr ""
+msgstr "wpForo registrační formulář"
 
 #: includes/pro_banners.php:67
 msgid "wpForo New Topic form"
-msgstr ""
+msgstr "wpForo formulář nového tématu"
 
 #: includes/pro_banners.php:68
 msgid "wpForo Reply form"
-msgstr ""
+msgstr "wpForo odpovědní formulář"
 
 #: includes/pro_banners.php:156
 msgid "Size"
