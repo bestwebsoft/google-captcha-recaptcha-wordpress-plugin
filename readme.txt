@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha
 Requires at least: 3.9
-Tested up to: 4.9.4
-Stable tag: 1.36
+Tested up to: 4.9.8
+Stable tag: 1.37
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,6 +28,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* Reset password form
 	* Comments form
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
+	* Testimonials [NEW]
 	* Custom form
 * Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses
 * Validity check of keys in admin panel
@@ -252,12 +253,16 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 3. Lost password form with Google Captcha (reCAPTCHA).
 4. Comments form with Google Captcha (reCAPTCHA).
 5. Contact Form with Google Captcha (reCAPTCHA).
-6. The form with Google Captcha (reCAPTCHA) version 1.
-7. The form with Google Captcha (reCAPTCHA) dark theme.
-8. Google Captcha (reCAPTCHA) Settings page.
-9. Google Captcha (reCAPTCHA) Whitelist page.
+6. The form with Google Captcha (reCAPTCHA) dark theme.
+7. Google Captcha (reCAPTCHA) Settings page.
+8. Google Captcha (reCAPTCHA) Whitelist page.
 
 == Changelog ==
+
+= V1.37 - 07.08.2018 =
+* PRO : The compatibility with Testimonials by BestWebSoft has been added.
+* Update : The Czech language file has been updated.
+* PRO : The bug related to WooCommerce Checkout form has been fixed.
 
 = V1.36 - 19.03.2018 =
 * PRO : The bug related to BuddyPress registration form has been fixed.
@@ -422,6 +427,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.37 =
+* New features added.
+* Languages updated.
+* Bugs fixed.
 
 = V1.36 =
 * Bugs fixed.

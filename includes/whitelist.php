@@ -87,9 +87,17 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 					<br/>
 					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed diapason", 'google-captcha' ); ?>:&nbsp;<code>0.0.0.0 - 255.255.255.255</code></span>
 				</div>
-				<?php gglcptch_pro_block( 'gglcptch_whitelist_banner' ); ?>
+			<?php
+			if ( isset( $_POST['bws_hide_premium_options'] ) ) {
+				$gglcptch_options['hide_premium_options'][0] = 1;
+				update_option( 'gglcptch_options', $gglcptch_options );
+			}
+			$display_pro_options_for_whitelist = get_option( 'gglcptch_options' );
+			if( empty( $display_pro_options_for_whitelist['hide_premium_options'][0] ) ) {
+				gglcptch_pro_block( 'gglcptch_whitelist_banner' );
+			} ?>
 				<p>
-					<input type="submit" class="button-secondary" value="<?php _e( 'Add IP to whitelist', 'google-captcha' ) ?>" />
+					<input type="submit" name="gglcptch_submit_add_to_whitelist" class="button-secondary" value="<?php _e( 'Add IP to whitelist', 'google-captcha' ) ?>" />
 					<?php wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>
 				</p>
 			</form>
@@ -343,7 +351,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 				} else {
 					$error = __( 'Some errors occurred.', 'google-captcha' );
 				}
-			} elseif ( isset( $_POST['gglcptch_add_to_whitelist'] ) && empty( $_POST['gglcptch_add_to_whitelist'] ) && ! isset( $_POST['bws_hide_premium_options'] ) ) {
+			} elseif ( isset( $_POST['gglcptch_submit_add_to_whitelist'] ) && empty( $_POST['gglcptch_add_to_whitelist'] ) ) {
 				$error = __( 'You have not entered any IP.', 'google-captcha' );
 			} elseif ( isset( $_REQUEST['s'] ) ) {
 				if ( '' == $_REQUEST['s'] ) {

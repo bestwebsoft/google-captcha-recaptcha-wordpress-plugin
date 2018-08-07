@@ -14,6 +14,7 @@
 <li>Reset password form</li>
 <li>Comments form</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a" rel="nofollow">Contact Form</a></li>
+<li>Testimonials [NEW]</li>
 <li>Custom form</li>
 </ul>
 </li>

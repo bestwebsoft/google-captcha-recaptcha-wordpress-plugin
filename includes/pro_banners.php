@@ -17,7 +17,7 @@ if ( ! function_exists( 'gglcptch_pro_block' ) ) {
 			<div class="bws_pro_version_bloc gglcptch_pro_block <?php echo $func;?>" title="<?php _e( 'This options is available in Pro version of plugin', 'google-captcha' ); ?>">
 				<div class="bws_pro_version_table_bloc">
 					<?php if ( $show_cross ) { ?>
-						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-captcha' ); ?>"></button>
+						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-captcha' ); ?>" value="1"></button>
 					<?php } ?>
 					<div class="bws_table_bg"></div>
 					<div class="bws_pro_version">
@@ -75,7 +75,7 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 					'si_contact_form',
 					'jetpack_contact_form',
 					'sbscrbr',
-					'mailchimp'
+					'mailchimp',
 				)
 			),
 			'bbpress' => array(

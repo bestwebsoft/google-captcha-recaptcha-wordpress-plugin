@@ -60,7 +60,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			);
 
 			$this->versions = array(
-				'v1'			=> sprintf( '%s 1', __( 'Version', 'google-captcha' ) ),
 				'v2'			=> sprintf( '%s 2', __( 'Version', 'google-captcha' ) ),
 				'invisible'		=> __( 'Invisible', 'google-captcha' )
 			);
@@ -116,8 +115,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			$this->options['whitelist_message']	=	stripslashes( esc_html( $_POST['gglcptch_whitelist_message'] ) );
 			$this->options['public_key']			=	trim( stripslashes( esc_html( $_POST['gglcptch_public_key'] ) ) );
 			$this->options['private_key']		=	trim( stripslashes( esc_html( $_POST['gglcptch_private_key'] ) ) );
-			$this->options['recaptcha_version']	=	in_array( $_POST['gglcptch_recaptcha_version'], array( 'v1', 'v2', 'invisible' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
-			$this->options['theme']				=	stripslashes( esc_html( $_POST['gglcptch_theme'] ) );
+			$this->options['recaptcha_version']	=	in_array( $_POST['gglcptch_recaptcha_version'], array( 'v2', 'invisible' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
 			$this->options['theme_v2']			=	stripslashes( esc_html( $_POST['gglcptch_theme_v2'] ) );
 
 			$this->options['disable_submit']	= isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
@@ -144,9 +142,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		 * @param void
 		 * @return void
 		 */
-		public function tab_settings() {
-			global $wp_version;
-			$is_main_site = is_main_site( get_current_blog_id() ); ?>
+		public function tab_settings() { ?>
 			<h3 class="bws_tab_label"><?php _e( 'Google Captcha Settings', 'google-captcha' ); ?></h3>
 			<?php $this->help_phrase(); ?>
 			<hr>
@@ -262,18 +258,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 						</fieldset>
 					</td>
 				</tr>
-				<tr class="gglcptch_theme_v1" valign="top">
-					<th scope="row">
-						<?php _e( 'Theme', 'google-captcha' ); ?>
-					</th>
-					<td>
-						<select name="gglcptch_theme">
-							<?php foreach ( $this->themes as $theme ) { ?>
-								<option value="<?php echo $theme[0]; ?>" <?php selected( $theme[0], $this->options['theme'] ); ?>><?php echo $theme[1]; ?></option>
-							<?php } ?>
-						</select>
-					</td>
-				</tr>
 				<tr class="gglcptch_theme_v2" valign="top">
 					<th scope="row">
 						<?php _e( 'Theme', 'google-captcha' ); ?>
@@ -319,13 +303,9 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		/**
 		 * Display custom error\message\notice
 		 * @access public
-		 * @param  $save_results - array with error\message\notice
 		 * @return void
 		 */
-		public function display_custom_messages( $save_results ) {
-			if ( $this->options['recaptcha_version'] == 'v1' ) { ?>
-				<div class="updated inline bws-notice"><p><strong><?php _e( "Only one reCAPTCHA can be displayed on the page, it's related to reCAPTCHA version 1 features.", 'google-captcha' ); ?></strong></p></div>
-			<?php }
+		public function display_custom_messages() {
 			if ( ! empty( $this->options['need_keys_verified_check'] ) ) { ?>
 				<div class="updated inline bws-notice"><p><strong><?php _e( 'reCAPTCHA version was changed. Please submit "Test reCAPTCHA" and regenerate Site and Secret keys if necessary.', 'google-captcha' ); ?></strong></p></div>
 			<?php }

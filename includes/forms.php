@@ -12,7 +12,8 @@ if ( ! function_exists( 'gglcptch_get_forms' ) ) {
 			'registration_form'			=> array( 'form_name' => __( 'Registration form', 'google-captcha' ) ),
 			'reset_pwd_form'			=> array( 'form_name' => __( 'Reset password form', 'google-captcha' ) ),
 			'comments_form'				=> array( 'form_name' => __( 'Comments form', 'google-captcha' ) ),
-			'contact_form'				=> array( 'form_name' => 'Contact Form' )
+			'contact_form'				=> array( 'form_name' => 'Contact Form' ),
+			'testimonials'				=> array( 'form_name' => __( 'Testimonials', 'google-captcha' ) )
 		);
 
 		$custom_forms = apply_filters( 'gglcptch_add_custom_form', array() );
@@ -45,7 +46,8 @@ if ( ! function_exists( 'gglcptch_get_sections' ) ) {
 			'external' => array(
 				'name' => __( 'External Plugins', 'google-captcha' ),
 				'forms' => array(
-					'contact_form'
+					'contact_form',
+					'testimonials'
 				)
 			)
 		);
@@ -129,7 +131,8 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 		$form_notice = "";
 
 		$plugins = array(
-			'contact_form'			=> array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php' )
+			'contact_form'			=> array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php' ),
+			'testimonials'			=> 'bws-testimonials/bws-testimonials.php',
 		);
 
 		if ( isset( $plugins[ $form_slug ] ) ) {
@@ -225,7 +228,7 @@ if ( ! function_exists( 'gglcptch_login_display' ) ) {
 
 		global $gglcptch_options;
 
-		if ( isset( $gglcptch_options['recaptcha_version'] ) && in_array( $gglcptch_options['recaptcha_version'], array( 'v1', 'v2' ) ) ) {
+		if ( isset( $gglcptch_options['recaptcha_version'] ) ) {
 			if ( 'v2' == $gglcptch_options['recaptcha_version'] ) {
 				$from_width = 302;
 			} else {
@@ -376,6 +379,21 @@ if ( ! function_exists( 'gglcptch_contact_form_check' ) ) {
 			return $allow;
 		}
 		$gglcptch_check = gglcptch_check( 'contact_form' );
+		if ( ! $gglcptch_check['response'] ) {
+			return $gglcptch_check['errors'];
+		}
+		return $allow;
+	}
+}
+
+/* Check google captcha in BWS Testimonials */
+if ( ! function_exists( 'gglcptch_testimonials_check' ) ) {
+	function gglcptch_testimonials_check( $allow = true ) {
+		global $gglcptch_check;
+		if ( ! $allow || is_string( $allow ) || is_wp_error( $allow ) ) {
+			return $allow;
+		}
+		$gglcptch_check = gglcptch_check( 'testimonials' );
 		if ( ! $gglcptch_check['response'] ) {
 			return $gglcptch_check['errors'];
 		}
