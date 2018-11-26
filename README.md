@@ -1,7 +1,7 @@
 <a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/" target=_blank>Google Captcha (reCAPTCHA) WordPress Plugin</a>
 ========================
 
-<p>Google Captcha (reCAPTCHA) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other.</p>
+<p>Google Captcha (reCAPTCHA) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other. reCAPTCHA Version 3, Version 2, Invisible are included.</p>
 <p>Users are required to confirm that they are not a robot before the form can be submitted. It&#8217;s easy for people and hard for bots.</p>
 <p><a href="https://bestwebsoft.com/demo-for-google-captcha/?ref=readme" rel="nofollow">View Demo</a></p>
 <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
@@ -14,7 +14,7 @@
 <li>Reset password form</li>
 <li>Comments form</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a" rel="nofollow">Contact Form</a></li>
-<li>Testimonials [NEW]</li>
+<li>Testimonials</li>
 <li>Custom form</li>
 </ul>
 </li>
@@ -42,8 +42,8 @@
 <li>Hide Google Captcha (reCAPTCHA) in your forms for certain user roles</li>
 <li>Supports Google Captcha (reCAPTCHA):
 <ul>
-<li>Version 1</li>
 <li>Version 2</li>
+<li>Version 3 [NEW]</li>
 <li>Invisible reCAPTCHA</li>
 </ul>
 </li>

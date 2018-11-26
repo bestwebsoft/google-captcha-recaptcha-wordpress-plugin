@@ -1,10 +1,10 @@
 === Google Captcha (reCAPTCHA) by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
-Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha
+Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 3.9
 Tested up to: 4.9.8
-Stable tag: 1.37
+Stable tag: 1.38
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Protect WordPress website forms from spam entries with Google reCAPTCHA.
 
 == Description ==
 
-Google Captcha (reCAPTCHA) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other.
+Google Captcha (reCAPTCHA) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other. reCAPTCHA Version 3, Version 2, Invisible are included.
 
 Users are required to confirm that they are not a robot before the form can be submitted. It's easy for people and hard for bots.
 
@@ -28,7 +28,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* Reset password form
 	* Comments form
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
-	* Testimonials [NEW]
+	* Testimonials
 	* Custom form
 * Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses
 * Validity check of keys in admin panel
@@ -44,8 +44,8 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 * Compatible with [Limit Attempts](https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415)
 * Hide Google Captcha (reCAPTCHA) in your forms for certain user roles
 * Supports Google Captcha (reCAPTCHA):
-	* Version 1
 	* Version 2
+	* Version 3 [NEW]
 	* Invisible reCAPTCHA
 * Add custom code via plugin settings page
 * Compatible with latest WordPress version
@@ -259,8 +259,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.38 - 26.11.2018 =
+* NEW : Google Captcha (reCAPTCHA) Version 3 has been added.
+
 = V1.37 - 07.08.2018 =
-* PRO : The compatibility with Testimonials by BestWebSoft has been added.
+* NEW : The compatibility with Testimonials by BestWebSoft has been added.
 * Update : The Czech language file has been updated.
 * PRO : The bug related to WooCommerce Checkout form has been fixed.
 
@@ -427,6 +430,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.38 =
+* New features added.
 
 = V1.37 =
 * New features added.

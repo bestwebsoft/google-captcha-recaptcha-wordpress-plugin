@@ -61,6 +61,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 
 			$this->versions = array(
 				'v2'			=> sprintf( '%s 2', __( 'Version', 'google-captcha' ) ),
+                'v3'			=> sprintf( '%s 3', __( 'Version', 'google-captcha' ) ),
 				'invisible'		=> __( 'Invisible', 'google-captcha' )
 			);
 
@@ -115,9 +116,9 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			$this->options['whitelist_message']	=	stripslashes( esc_html( $_POST['gglcptch_whitelist_message'] ) );
 			$this->options['public_key']			=	trim( stripslashes( esc_html( $_POST['gglcptch_public_key'] ) ) );
 			$this->options['private_key']		=	trim( stripslashes( esc_html( $_POST['gglcptch_private_key'] ) ) );
-			$this->options['recaptcha_version']	=	in_array( $_POST['gglcptch_recaptcha_version'], array( 'v2', 'invisible' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
+			$this->options['recaptcha_version']	=	in_array( $_POST['gglcptch_recaptcha_version'], array( 'v2', 'invisible', 'v3' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
 			$this->options['theme_v2']			=	stripslashes( esc_html( $_POST['gglcptch_theme_v2'] ) );
-
+            $this->options['score_v3']          =    isset( $_POST['gglcptch_score_v3'] ) ? (float)$_POST['gglcptch_score_v3'] : 0.5;
 			$this->options['disable_submit']	= isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
 
 			foreach ( $this->forms as $form_slug => $form_data ) {
@@ -269,6 +270,16 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 						</select>
 					</td>
 				</tr>
+                <tr class="gglcptch_score_v3" valign="top">
+                    <th scope="row">
+                        <?php _e( 'Score', 'google-captcha' ); ?>
+                    </th>
+                    <td>
+                        <input name="gglcptch_score_v3" id="gglcptch_score_v3" type="range" list="gglcptch_score_v3_rangeList" min="0" max="1.0" step="0.1" value="<?php  echo $this->options['score_v3']; ?>">
+                        <output id="gglcptch_score_out_v3" for="gglcptch_score_v3"></output>
+                        <span class="bws_info" style="display: block;"><?php echo __( 'Set the minimum verification score from 0 to 1', 'google-captcha' ) . '.';?></span>
+                    </td>
+                </tr>
 			</table>
 			<?php if ( ! $this->hide_pro_tabs ) { ?>
 				<div class="bws_pro_version_bloc">

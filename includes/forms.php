@@ -359,7 +359,7 @@ if ( ! function_exists( 'gglcptch_commentform_check' ) ) {
 	function gglcptch_commentform_check() {
 		$gglcptch_check = gglcptch_check( 'comments_form' );
 		if ( ! $gglcptch_check['response'] ) {
-			$message = gglcptch_get_message() . "<br />";
+			$message = gglcptch_get_message($gglcptch_check['reason']) . "<br />";
 			$error_message = sprintf(
 				'<strong>%s</strong>:&nbsp;%s&nbsp;%s',
 				__( 'Error', 'google-captcha' ),

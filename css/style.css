@@ -28,3 +28,7 @@ body.js .gglcptch-settings-accordion.ui-accordion .gglcptch_section_forms > hr {
 	display: inline-block;
 	margin-bottom: 10px;
 }
+#gglcptch_score_out_v3 {
+	transform: translateY(-50%);
+	display: inline-block;
+}
