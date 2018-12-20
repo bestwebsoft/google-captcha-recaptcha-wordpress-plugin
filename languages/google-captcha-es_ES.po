@@ -20,7 +20,7 @@ msgstr ""
 #: google-captcha.php:38 google-captcha.php:40 google-captcha.php:451
 #: includes/class-gglcptch-settings-tabs.php:147
 msgid "Google Captcha Settings"
-msgstr "Googe Captcha Ajustes"
+msgstr "Google Captcha Ajustes"
 
 #: google-captcha.php:40 google-captcha.php:1060 google-captcha.php:1073
 #: includes/class-gglcptch-settings-tabs.php:25

@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.38
+Version: 1.39
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -576,11 +576,17 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
                               });
                              </script>';
             } else {
-				require_once( 'lib/recaptchalib.php' );
-				$content .= '<div id="gglcptch_recaptcha_' . $id . '" class="gglcptch_recaptcha"></div>';
-				$content .= gglcptch_recaptcha_get_html( $publickey, null, is_ssl() );
-				$deps = array();
-			}
+                /**
+                 * @deprecated
+                 * @todo remove after 01.02.2019
+                 * Also need delete lib/recaptchalib.php'
+                 */
+//				require_once( 'lib/recaptchalib.php' );
+//				$content .= '<div id="gglcptch_recaptcha_' . $id . '" class="gglcptch_recaptcha"></div>';
+//				$content .= gglcptch_recaptcha_get_html( $publickey, null, is_ssl() );
+//				$deps = array();
+                /* @todo end */
+            }
 			$content .= '</div>';
 			$gglcptch_count++;
 
@@ -725,38 +731,43 @@ if ( ! function_exists( 'gglcptch_check' ) ) {
 				}
 			}
 		} else {
-			$gglcptch_recaptcha_challenge_field = $gglcptch_recaptcha_response_field = '';
-
-			if ( ! isset( $_POST['recaptcha_challenge_field'] ) && ! isset( $_POST['recaptcha_response_field'] ) ) {
-				$result = array(
-					'response' => false,
-					'reason'   => 'RECAPTCHA_NO_RESPONSE'
-				);
-			} elseif ( ! empty( $_POST['recaptcha_challenge_field'] ) && empty( $_POST['recaptcha_response_field'] ) ) {
-				$result = array(
-					'response' => false,
-					'reason'   => 'RECAPTCHA_EMPTY_RESPONSE'
-				);
-			} else {
-				$gglcptch_recaptcha_challenge_field = stripslashes( esc_html( $_POST['recaptcha_challenge_field'] ) );
-				$gglcptch_recaptcha_response_field  = stripslashes( esc_html( $_POST['recaptcha_response_field'] ) );
-
-				require_once( 'lib/recaptchalib.php' );
-				$response = gglcptch_recaptcha_check_answer( $privatekey, $gglcptch_remote_addr, $gglcptch_recaptcha_challenge_field, $gglcptch_recaptcha_response_field );
-
-				if ( ! $response->is_valid ) {
-					$result = array(
-						'response' => false,
-						'reason'   => $debug ? $response->error : 'VERIFICATION_FAILED'
-					);
-				} else {
-					$result = array(
-						'response' => true,
-						'reason'   => ''
-					);
-				}
-			}
-		}
+            /**
+             * @deprecated                 *
+             * @todo remove after 01.02.2019
+             */
+//			$gglcptch_recaptcha_challenge_field = $gglcptch_recaptcha_response_field = '';
+//
+//			if ( ! isset( $_POST['recaptcha_challenge_field'] ) && ! isset( $_POST['recaptcha_response_field'] ) ) {
+//				$result = array(
+//					'response' => false,
+//					'reason'   => 'RECAPTCHA_NO_RESPONSE'
+//				);
+//			} elseif ( ! empty( $_POST['recaptcha_challenge_field'] ) && empty( $_POST['recaptcha_response_field'] ) ) {
+//				$result = array(
+//					'response' => false,
+//					'reason'   => 'RECAPTCHA_EMPTY_RESPONSE'
+//				);
+//			} else {
+//				$gglcptch_recaptcha_challenge_field = stripslashes( esc_html( $_POST['recaptcha_challenge_field'] ) );
+//				$gglcptch_recaptcha_response_field  = stripslashes( esc_html( $_POST['recaptcha_response_field'] ) );
+//
+//				require_once( 'lib/recaptchalib.php' );
+//				$response = gglcptch_recaptcha_check_answer( $privatekey, $gglcptch_remote_addr, $gglcptch_recaptcha_challenge_field, $gglcptch_recaptcha_response_field );
+//
+//				if ( ! $response->is_valid ) {
+//					$result = array(
+//						'response' => false,
+//						'reason'   => $debug ? $response->error : 'VERIFICATION_FAILED'
+//					);
+//				} else {
+//					$result = array(
+//						'response' => true,
+//						'reason'   => ''
+//					);
+//				}
+//			}
+            /* @todo end */
+        }
 		if ( ! $result['response'] ) {
 			$result['errors'] = new WP_Error;
 			if ( ! $debug && ! in_array( $result['reason'], array( 'ERROR_WRONG_SECRET', 'ERROR_NO_KEYS' ) ) ) {

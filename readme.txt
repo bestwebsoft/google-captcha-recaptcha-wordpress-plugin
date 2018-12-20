@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 3.9
-Tested up to: 4.9.8
-Stable tag: 1.38
+Tested up to: 5.0.1
+Stable tag: 1.39
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -45,7 +45,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 * Hide Google Captcha (reCAPTCHA) in your forms for certain user roles
 * Supports Google Captcha (reCAPTCHA):
 	* Version 2
-	* Version 3 [NEW]
+	* Version 3
 	* Invisible reCAPTCHA
 * Add custom code via plugin settings page
 * Compatible with latest WordPress version
@@ -259,6 +259,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.39 - 20.12.2018 =
+* Update : All functionality was updated for WordPress 5.0.1.
+
 = V1.38 - 26.11.2018 =
 * NEW : Google Captcha (reCAPTCHA) Version 3 has been added.
 
@@ -430,6 +433,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.39 =
+* The compatibility with new WordPress version updated.
 
 = V1.38 =
 * New features added.

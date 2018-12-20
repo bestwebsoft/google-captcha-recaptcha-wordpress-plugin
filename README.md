@@ -43,7 +43,7 @@
 <li>Supports Google Captcha (reCAPTCHA):
 <ul>
 <li>Version 2</li>
-<li>Version 3 [NEW]</li>
+<li>Version 3</li>
 <li>Invisible reCAPTCHA</li>
 </ul>
 </li>
