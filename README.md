@@ -65,6 +65,7 @@
 <li>Jetpack contact form</li>
 <li>Fast Secure Contact Form</li>
 <li>MailChimp for WordPress</li>
+<li>Ninja Forms [NEW]</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:

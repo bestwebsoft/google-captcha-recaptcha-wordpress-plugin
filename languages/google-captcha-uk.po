@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 12:21+0200\n"
+"POT-Creation-Date: 2019-01-08 13:08+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:451
+#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:449
 #: includes/class-gglcptch-settings-tabs.php:147
 msgid "Google Captcha Settings"
 msgstr "Налаштування Google Captcha"
 
-#: google-captcha.php:40 google-captcha.php:1060 google-captcha.php:1073
+#: google-captcha.php:40 google-captcha.php:1080 google-captcha.php:1093
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Settings"
 msgstr "Налаштування"
@@ -40,11 +40,11 @@ msgstr "Білий список"
 msgid "Upgrade to Pro"
 msgstr "Оновити до Pro"
 
-#: google-captcha.php:239
+#: google-captcha.php:237
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Будь ласка, зачекайте, поки буде завантаженo Google reCAPTCHA."
 
-#: google-captcha.php:240
+#: google-captcha.php:238
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -52,63 +52,67 @@ msgstr ""
 "Не вдалося завантажити Google reCAPTCHA. Будь ласка, перевірте підключення "
 "до Інтернету та оновіть цю сторінку."
 
-#: google-captcha.php:256
+#: google-captcha.php:254
 msgid "Warning"
 msgstr "Увага"
 
-#: google-captcha.php:355
+#: google-captcha.php:353
 msgid "You are in the whitelist"
 msgstr "Ви знаходитесь в білому списку"
 
-#: google-captcha.php:538 google-captcha.php:1095
+#: google-captcha.php:450
+msgid "Please enable JavaScript in your browser."
+msgstr "Будь ласка, увімкніть JavaScript у вашому браузері."
+
+#: google-captcha.php:537 google-captcha.php:1115
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Щоб використовувати Google Captcha, вам необхідно отримати ключі з"
 
-#: google-captcha.php:539 google-captcha.php:1096
+#: google-captcha.php:538 google-captcha.php:1116
 msgid "here"
 msgstr "тут"
 
-#: google-captcha.php:540 google-captcha.php:1097
+#: google-captcha.php:539 google-captcha.php:1117
 msgid "and enter them on the"
 msgstr "і вставте їх у"
 
-#: google-captcha.php:542 google-captcha.php:1099
+#: google-captcha.php:541 google-captcha.php:1119
 msgid "plugin setting page"
 msgstr "сторінку налаштувань плагіну"
 
-#: google-captcha.php:827 includes/forms.php:365
+#: google-captcha.php:847 includes/forms.php:369
 msgid "Error"
 msgstr "Помилка"
 
-#: google-captcha.php:952
+#: google-captcha.php:972
 msgid "User response is missing."
 msgstr "Відповідь користувача відсутня."
 
-#: google-captcha.php:956 google-captcha.php:964
+#: google-captcha.php:976 google-captcha.php:984
 msgid "Secret Key is invalid."
 msgstr "Секретний ключ некоректний."
 
-#: google-captcha.php:957 google-captcha.php:965
+#: google-captcha.php:977 google-captcha.php:985
 msgid "Check your domain configurations"
 msgstr "Перевірте конфігурацію вашого домену"
 
-#: google-captcha.php:958 google-captcha.php:966
+#: google-captcha.php:978 google-captcha.php:986
 msgid "and enter it again"
 msgstr "і введіть його знову"
 
-#: google-captcha.php:961
+#: google-captcha.php:981
 msgid "Secret Key is missing."
 msgstr "Секретний ключ відсутній."
 
-#: google-captcha.php:968
+#: google-captcha.php:988
 msgid "User response is invalid"
 msgstr "Некоректна відповідь користувача"
 
-#: google-captcha.php:969
+#: google-captcha.php:989
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Ви ввели невірне значення reCAPTCHA."
 
-#: google-captcha.php:970
+#: google-captcha.php:990
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -116,32 +120,32 @@ msgstr ""
 "В поточній формі знайдено більш ніж один блок reCAPTCHA. Будь-ласка видаліть "
 "усі зайві блоки reCAPTCHA для коректної подальшої роботи."
 
-#: google-captcha.php:972
+#: google-captcha.php:992
 msgid "reCAPTCHA v3 test failed"
 msgstr "Тест reCAPTCHA v3 не пройдений"
 
-#: google-captcha.php:1010
+#: google-captcha.php:1030
 msgid "Please submit \"Test verification\""
 msgstr "Будь ласка, натисніть кнопку \"Тестування перевірки\""
 
-#: google-captcha.php:1012
+#: google-captcha.php:1032
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr ""
 "Будь ласка, заповніть капчу і натисніть кнопку \"Тестування перевірки\""
 
-#: google-captcha.php:1019
+#: google-captcha.php:1039
 msgid "Test verification"
 msgstr "Тестування перевірки"
 
-#: google-captcha.php:1040
+#: google-captcha.php:1060
 msgid "The verification is successfully completed."
 msgstr "Перевірка завершена успішно."
 
-#: google-captcha.php:1075
+#: google-captcha.php:1095
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-captcha.php:1076
+#: google-captcha.php:1096
 msgid "Support"
 msgstr "Техпідтримка"
 
@@ -330,11 +334,11 @@ msgstr "Активувати"
 msgid "Install Now"
 msgstr "Встановити зараз"
 
-#: includes/forms.php:278
+#: includes/forms.php:282
 msgid "Authentication failed."
 msgstr "Помилка аутентифікації."
 
-#: includes/forms.php:367
+#: includes/forms.php:371
 msgid "Click the BACK button on your browser and try again."
 msgstr "Натисніть кнопку НАЗАД у браузері та спробуйте ще раз."
 

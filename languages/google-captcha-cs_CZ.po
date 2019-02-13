@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 12:24+0200\n"
+"POT-Creation-Date: 2019-01-08 13:07+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mik013\n"
 "Language-Team: Mik013\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:451
+#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:449
 #: includes/class-gglcptch-settings-tabs.php:147
 msgid "Google Captcha Settings"
 msgstr "Nastavení Google Captcha"
 
-#: google-captcha.php:40 google-captcha.php:1060 google-captcha.php:1073
+#: google-captcha.php:40 google-captcha.php:1080 google-captcha.php:1093
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Settings"
 msgstr "Nastavení"
@@ -39,11 +39,11 @@ msgstr "Seznam povolených"
 msgid "Upgrade to Pro"
 msgstr "Aktualizovat na Pro"
 
-#: google-captcha.php:239
+#: google-captcha.php:237
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Počkejte, než se Google reCAPTCHA načte."
 
-#: google-captcha.php:240
+#: google-captcha.php:238
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -51,63 +51,67 @@ msgstr ""
 "Nepodařilo se načíst Google reCAPTCHA. Zkontrolujte připojení k Internetu a "
 "znovu načtěte tuto stránku."
 
-#: google-captcha.php:256
+#: google-captcha.php:254
 msgid "Warning"
 msgstr "Upozornění"
 
-#: google-captcha.php:355
+#: google-captcha.php:353
 msgid "You are in the whitelist"
 msgstr "Jste na seznamu povolených"
 
-#: google-captcha.php:538 google-captcha.php:1095
+#: google-captcha.php:450
+msgid "Please enable JavaScript in your browser."
+msgstr ""
+
+#: google-captcha.php:537 google-captcha.php:1115
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Chcete-li použít Google Captcha musíte získat klíče z"
 
-#: google-captcha.php:539 google-captcha.php:1096
+#: google-captcha.php:538 google-captcha.php:1116
 msgid "here"
 msgstr "zde"
 
-#: google-captcha.php:540 google-captcha.php:1097
+#: google-captcha.php:539 google-captcha.php:1117
 msgid "and enter them on the"
 msgstr "a zadejte je na"
 
-#: google-captcha.php:542 google-captcha.php:1099
+#: google-captcha.php:541 google-captcha.php:1119
 msgid "plugin setting page"
 msgstr "stránce nastavení pluginu"
 
-#: google-captcha.php:827 includes/forms.php:365
+#: google-captcha.php:847 includes/forms.php:369
 msgid "Error"
 msgstr "Chyba"
 
-#: google-captcha.php:952
+#: google-captcha.php:972
 msgid "User response is missing."
 msgstr "Chybí odezva uživatele."
 
-#: google-captcha.php:956 google-captcha.php:964
+#: google-captcha.php:976 google-captcha.php:984
 msgid "Secret Key is invalid."
 msgstr "Tajný klíč je neplatný."
 
-#: google-captcha.php:957 google-captcha.php:965
+#: google-captcha.php:977 google-captcha.php:985
 msgid "Check your domain configurations"
 msgstr "Zkontrolujte konfiguraci vaší domény"
 
-#: google-captcha.php:958 google-captcha.php:966
+#: google-captcha.php:978 google-captcha.php:986
 msgid "and enter it again"
 msgstr "a zadejte jej znovu"
 
-#: google-captcha.php:961
+#: google-captcha.php:981
 msgid "Secret Key is missing."
 msgstr "Tajný klíč chybí."
 
-#: google-captcha.php:968
+#: google-captcha.php:988
 msgid "User response is invalid"
 msgstr "Neplatná odezva uživatele"
 
-#: google-captcha.php:969
+#: google-captcha.php:989
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Zadali jste nesprávnou hodnotu reCAPTCHA ."
 
-#: google-captcha.php:970
+#: google-captcha.php:990
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -115,33 +119,33 @@ msgstr ""
 "V aktuálním formuláři byla zjištěna více než jedna reCAPTCHA. Pro správnou "
 "funkcionalitu, odstraňte všechny nepotřebné reCAPTCHA pole."
 
-#: google-captcha.php:972
+#: google-captcha.php:992
 msgid "reCAPTCHA v3 test failed"
 msgstr ""
 
-#: google-captcha.php:1010
+#: google-captcha.php:1030
 msgid "Please submit \"Test verification\""
 msgstr "Odešlete &#8222;Test ověření&#8220;"
 
-#: google-captcha.php:1012
+#: google-captcha.php:1032
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr "Doplňte captcha a odešlete &#8222;Test ověření&#8220;"
 
-#: google-captcha.php:1019
+#: google-captcha.php:1039
 msgid "Test verification"
 msgstr "Test ověření"
 
-#: google-captcha.php:1040
+#: google-captcha.php:1060
 msgid "The verification is successfully completed."
 msgstr "Ověření je úspěšně dokončeno."
 
-#: google-captcha.php:1075
+#: google-captcha.php:1095
 msgid "FAQ"
 msgstr ""
 "Časté dotazy <acronym title=\\\"Frequently asked questions\\\">(FAQ)</"
 "acronym>"
 
-#: google-captcha.php:1076
+#: google-captcha.php:1096
 msgid "Support"
 msgstr "Podpora"
 
@@ -328,11 +332,11 @@ msgstr "Aktivovat"
 msgid "Install Now"
 msgstr "Instalovat nyní"
 
-#: includes/forms.php:278
+#: includes/forms.php:282
 msgid "Authentication failed."
 msgstr "Ověření selhalo."
 
-#: includes/forms.php:367
+#: includes/forms.php:371
 msgid "Click the BACK button on your browser and try again."
 msgstr "Klikněte ve vašem prohlížeči na tlačítko ZPĚT a zkuste to znovu."
 

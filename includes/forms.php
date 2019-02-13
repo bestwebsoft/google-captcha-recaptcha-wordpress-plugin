@@ -158,41 +158,31 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 
 if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 	function gglcptch_add_actions() {
-		global $gglcptch_options, $wp_version, $gglcptch_ip_in_whitelist;
+		global $gglcptch_options, $wp_version;
 
 		$is_user_logged_in = is_user_logged_in();
 
 		if ( ! empty( $gglcptch_options['login_form'] ) || ! empty( $gglcptch_options['reset_pwd_form'] ) || ! empty( $gglcptch_options['registration_form'] ) ) {
-			add_action( 'login_enqueue_scripts', 'gglcptch_add_styles' );
 
 			if ( gglcptch_is_recaptcha_required( 'login_form', $is_user_logged_in ) ) {
 				add_action( 'login_form', 'gglcptch_login_display' );
-				if ( ! $gglcptch_ip_in_whitelist ) {
-					add_action( 'authenticate', 'gglcptch_login_check', 21, 1 );
-				}
+				add_action( 'authenticate', 'gglcptch_login_check', 21, 1 );
 			}
 
 			if ( gglcptch_is_recaptcha_required( 'registration_form', $is_user_logged_in ) ) {
 				if ( ! is_multisite() ) {
 					add_action( 'register_form', 'gglcptch_login_display', 99 );
-					if ( ! $gglcptch_ip_in_whitelist ) {
-						add_action( 'registration_errors', 'gglcptch_register_check', 10, 1 );
-					}
+					add_action( 'registration_errors', 'gglcptch_register_check', 10, 1 );
 				} else {
 					add_action( 'signup_extra_fields', 'gglcptch_signup_display' );
 					add_action( 'signup_blogform', 'gglcptch_signup_display' );
-					if ( ! $gglcptch_ip_in_whitelist ) {
-						add_filter( 'wpmu_validate_user_signup', 'gglcptch_signup_check', 10, 3 );
-					}
+					add_filter( 'wpmu_validate_user_signup', 'gglcptch_signup_check', 10, 3 );
 				}
 			}
 
 			if ( gglcptch_is_recaptcha_required( 'reset_pwd_form', $is_user_logged_in ) ) {
 				add_action( 'lostpassword_form', 'gglcptch_login_display' );
-
-				if ( ! $gglcptch_ip_in_whitelist ) {
-					add_action( 'allow_password_reset', 'gglcptch_lostpassword_check' );
-				}
+				add_action( 'allow_password_reset', 'gglcptch_lostpassword_check' );
 			}
 		}
 
@@ -200,17 +190,18 @@ if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 		if ( gglcptch_is_recaptcha_required( 'comments_form', $is_user_logged_in ) ) {
 			add_action( 'comment_form_after_fields', 'gglcptch_commentform_display' );
 			add_action( 'comment_form_logged_in_after', 'gglcptch_commentform_display' );
-			if ( ! $gglcptch_ip_in_whitelist ) {
-				add_action( 'pre_comment_on_post', 'gglcptch_commentform_check' );
-			}
+			add_action( 'pre_comment_on_post', 'gglcptch_commentform_check' );
 		}
 
 		/* Add Google Captcha to Contact Form by BestWebSoft */
 		if ( gglcptch_is_recaptcha_required( 'contact_form', $is_user_logged_in ) ) {
 			add_filter( 'cntctfrm_display_captcha', 'gglcptch_display', 10, 1 );
-			if ( ! $gglcptch_ip_in_whitelist ) {
-				add_filter( 'cntctfrm_check_form', 'gglcptch_contact_form_check' );
-			}
+			add_filter( 'cntctfrm_check_form', 'gglcptch_contact_form_check' );
+		}
+
+		/* Add Google Captcha to Testimonials by BestWebSoft */
+		if ( gglcptch_is_recaptcha_required( 'testimonials', $is_user_logged_in ) ) {
+			add_filter( 'tstmnls_display_recaptcha', 'gglcptch_display', 10, 0 );
 		}
 	}
 }

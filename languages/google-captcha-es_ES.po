@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 12:24+0200\n"
+"POT-Creation-Date: 2019-01-08 13:07+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: Cloudzeroxyz <cloudzeroxyz@gmail.com>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:451
+#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:449
 #: includes/class-gglcptch-settings-tabs.php:147
 msgid "Google Captcha Settings"
 msgstr "Google Captcha Ajustes"
 
-#: google-captcha.php:40 google-captcha.php:1060 google-captcha.php:1073
+#: google-captcha.php:40 google-captcha.php:1080 google-captcha.php:1093
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Settings"
 msgstr "Configuraciónes"
@@ -39,11 +39,11 @@ msgstr "Lista Blanca"
 msgid "Upgrade to Pro"
 msgstr "Actualizar a Pro"
 
-#: google-captcha.php:239
+#: google-captcha.php:237
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Por favor espere hasta que se carga Google reCAPTCHA."
 
-#: google-captcha.php:240
+#: google-captcha.php:238
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -51,63 +51,67 @@ msgstr ""
 "Error al cargar Google reCAPTCHA. Por favor, compruebe su conexión a "
 "internet y vuelva a cargar esta página."
 
-#: google-captcha.php:256
+#: google-captcha.php:254
 msgid "Warning"
 msgstr "Atención"
 
-#: google-captcha.php:355
+#: google-captcha.php:353
 msgid "You are in the whitelist"
 msgstr "Estás en la lista blanca"
 
-#: google-captcha.php:538 google-captcha.php:1095
+#: google-captcha.php:450
+msgid "Please enable JavaScript in your browser."
+msgstr ""
+
+#: google-captcha.php:537 google-captcha.php:1115
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Para utilizar Google Captcha debe obtener las claves de"
 
-#: google-captcha.php:539 google-captcha.php:1096
+#: google-captcha.php:538 google-captcha.php:1116
 msgid "here"
 msgstr "aquí"
 
-#: google-captcha.php:540 google-captcha.php:1097
+#: google-captcha.php:539 google-captcha.php:1117
 msgid "and enter them on the"
 msgstr "e introducirlas en"
 
-#: google-captcha.php:542 google-captcha.php:1099
+#: google-captcha.php:541 google-captcha.php:1119
 msgid "plugin setting page"
 msgstr "página de configuración de plugin"
 
-#: google-captcha.php:827 includes/forms.php:365
+#: google-captcha.php:847 includes/forms.php:369
 msgid "Error"
 msgstr "Error "
 
-#: google-captcha.php:952
+#: google-captcha.php:972
 msgid "User response is missing."
 msgstr "Respuesta del usuario está ausente."
 
-#: google-captcha.php:956 google-captcha.php:964
+#: google-captcha.php:976 google-captcha.php:984
 msgid "Secret Key is invalid."
 msgstr ""
 
-#: google-captcha.php:957 google-captcha.php:965
+#: google-captcha.php:977 google-captcha.php:985
 msgid "Check your domain configurations"
 msgstr ""
 
-#: google-captcha.php:958 google-captcha.php:966
+#: google-captcha.php:978 google-captcha.php:986
 msgid "and enter it again"
 msgstr "e introducirle otra vez"
 
-#: google-captcha.php:961
+#: google-captcha.php:981
 msgid "Secret Key is missing."
 msgstr "Clave Secreta está ausente."
 
-#: google-captcha.php:968
+#: google-captcha.php:988
 msgid "User response is invalid"
 msgstr "Respuesta del usuario no es válido"
 
-#: google-captcha.php:969
+#: google-captcha.php:989
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Ha introducido un valor incorrecto de reCAPTCHA."
 
-#: google-captcha.php:970
+#: google-captcha.php:990
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -115,31 +119,31 @@ msgstr ""
 "Más de un reCAPTCHA se ha encontrado en la forma actual. Por favor, elimine "
 "todos los campos de reCAPTCHA innecesarios para que funcione correctamente."
 
-#: google-captcha.php:972
+#: google-captcha.php:992
 msgid "reCAPTCHA v3 test failed"
 msgstr ""
 
-#: google-captcha.php:1010
+#: google-captcha.php:1030
 msgid "Please submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:1012
+#: google-captcha.php:1032
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:1019
+#: google-captcha.php:1039
 msgid "Test verification"
 msgstr "Test de verificación"
 
-#: google-captcha.php:1040
+#: google-captcha.php:1060
 msgid "The verification is successfully completed."
 msgstr ""
 
-#: google-captcha.php:1075
+#: google-captcha.php:1095
 msgid "FAQ"
 msgstr "Preguntas Frecuentes"
 
-#: google-captcha.php:1076
+#: google-captcha.php:1096
 msgid "Support"
 msgstr "Soporte"
 
@@ -323,11 +327,11 @@ msgstr "Activar"
 msgid "Install Now"
 msgstr ""
 
-#: includes/forms.php:278
+#: includes/forms.php:282
 msgid "Authentication failed."
 msgstr ""
 
-#: includes/forms.php:367
+#: includes/forms.php:371
 msgid "Click the BACK button on your browser and try again."
 msgstr ""
 

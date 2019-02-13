@@ -65,7 +65,8 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 			'wpforo_login_form'			=> array( 'form_name' => __( 'wpForo Login form', 'google-captcha' ) ),
 			'wpforo_register_form'		=> array( 'form_name' => __( 'wpForo Registration form', 'google-captcha' ) ),
 			'wpforo_new_topic_form'		=> array( 'form_name' => __( 'wpForo New Topic form', 'google-captcha' ) ),
-			'wpforo_reply_form'			=> array( 'form_name' => __( 'wpForo Reply form', 'google-captcha') )
+			'wpforo_reply_form'			=> array( 'form_name' => __( 'wpForo Reply form', 'google-captcha') ),
+            'ninja_form'				=> array( 'form_name' => __( 'Ninja Forms', 'google-captcha' ) )
 		);
 		$pro_sections = array(
 			'external' => array(
@@ -76,6 +77,7 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 					'jetpack_contact_form',
 					'sbscrbr',
 					'mailchimp',
+                    'ninja_form',
 				)
 			),
 			'bbpress' => array(

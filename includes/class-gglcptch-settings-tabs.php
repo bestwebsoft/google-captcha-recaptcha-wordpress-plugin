@@ -173,6 +173,19 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			</table>
 			<div class="bws_tab_sub_label"><?php _e( 'General', 'google-captcha' ); ?></div>
 			<table class="form-table">
+                <tr valign="top">
+                    <th scope="row"><?php _e( 'reCAPTCHA Version', 'google-captcha' ); ?></th>
+                    <td>
+                        <fieldset>
+                            <?php foreach ( $this->versions as $version => $version_name ) { ?>
+                                <label>
+                                    <input type="radio" name="gglcptch_recaptcha_version" value="<?php echo $version; ?>" <?php checked( $version, $this->options['recaptcha_version'] ); ?>> <?php echo $version_name; ?>
+                                </label>
+                                <br/>
+                            <?php } ?>
+                        </fieldset>
+                    </td>
+                </tr>
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Enable reCAPTCHA for', 'google-captcha' ); ?></th>
 					<td>
@@ -243,19 +256,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 									);
 								}
 							} ?>
-						</fieldset>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'reCAPTCHA Version', 'google-captcha' ); ?></th>
-					<td>
-						<fieldset>
-							<?php foreach ( $this->versions as $version => $version_name ) { ?>
-								<label>
-									<input type="radio" name="gglcptch_recaptcha_version" value="<?php echo $version; ?>" <?php checked( $version, $this->options['recaptcha_version'] ); ?>> <?php echo $version_name; ?>
-								</label>
-								<br/>
-							<?php } ?>
 						</fieldset>
 					</td>
 				</tr>
