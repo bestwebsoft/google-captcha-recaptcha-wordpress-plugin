@@ -76,6 +76,12 @@
 <li>Checkout billing form</li>
 </ul>
 </li>
+<li>Compatible with Divi Builder:
+<ul>
+<li>Contact form</li>
+<li>Login form</li>
+</ul>
+</li>
 <li>Compatible with bbPress:
 <ul>
 <li>New Topic form</li>
@@ -95,6 +101,12 @@
 <li>Registration form</li>
 <li>New Topic form</li>
 <li>Reply form</li>
+</ul>
+</li>
+<li>Compatible with Divi Builder:
+<ul>
+<li>Login form</li>
+<li>Contact form</li>
 </ul>
 </li>
 <li>Select Google Captcha (reCAPTCHA) language manually</li>
