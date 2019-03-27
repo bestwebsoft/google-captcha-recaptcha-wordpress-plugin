@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.42
+Version: 1.43
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -123,11 +123,14 @@ if ( ! function_exists( 'gglcptch_admin_init' ) ) {
 /* Add google captcha styles */
 if ( ! function_exists( 'gglcptch_add_admin_script_styles' ) ) {
 	function gglcptch_add_admin_script_styles() {
-		global $gglcptch_plugin_info;
+		global $gglcptch_plugin_info, $gglcptch_options;
 
 		/* css for displaing an icon */
 		wp_enqueue_style( 'gglcptch_admin_page_stylesheet', plugins_url( 'css/admin_page.css', __FILE__ ) );
 
+		if ( 1 == $gglcptch_options['hide_badge'] ) {
+			wp_enqueue_style( 'gglcptch_hide', plugins_url( 'css/hide_badge.css', __FILE__ ), array(), $gglcptch_plugin_info['Version'] );
+		}
 		if ( isset( $_REQUEST['page'] ) && ( 'google-captcha.php' == $_REQUEST['page'] || 'google-captcha-whitelist.php' == $_REQUEST['page'] ) ) {
 			wp_enqueue_style( 'gglcptch_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array(), $gglcptch_plugin_info['Version'] );
 			wp_enqueue_script( 'gglcptch_admin_script', plugins_url( 'js/admin_script.js', __FILE__ ), array( 'jquery', 'jquery-ui-accordion' ), $gglcptch_plugin_info['Version'] );
@@ -253,6 +256,10 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 				'visibility'	=> ( 'login_footer' == current_filter() )
 			)
 		) );
+
+		if ( 1 == $gglcptch_options['hide_badge'] ) {
+			wp_enqueue_style( 'gglcptch_hide', plugins_url( 'css/hide_badge.css', __FILE__ ), array(), $gglcptch_plugin_info['Version'] );
+        }
 	}
 }
 
@@ -362,7 +369,8 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 			'first_install'				=>	strtotime( "now" ),
 			'display_settings_notice'	=> 1,
 			'suggest_feature_banner'	=> 1,
-            'score_v3'                  => 0.5
+            'score_v3'                  => 0.5,
+            'hide_badge'                => 0
 		);
 
 		if ( function_exists( 'get_editable_roles' ) ) {
@@ -522,6 +530,17 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			$privatekey = $gglcptch_options['private_key'];
 
 			$content .= '<div class="gglcptch gglcptch_' . $gglcptch_options['recaptcha_version'] . '">';
+
+			if ( 1 == $gglcptch_options['hide_badge'] ) {
+				$content .= sprintf(
+					'<div>%s<a href="https://policies.google.com/privacy">%s</a>%s<a href="https://policies.google.com/terms">%s</a>%s</div>',
+					__( 'This site is protected by reCAPTCHA and the Google ', 'google-captcha' ),
+					__( 'Privacy Policy', 'google-captcha' ),
+					__( ' and ', 'google-captcha' ),
+					__( 'Terms of Service', 'google-captcha' ),
+					__( ' apply.', 'google-captcha' )
+				);
+			}
 			if ( ! $privatekey || ! $publickey ) {
 				if ( current_user_can( 'manage_options' ) ) {
 					$content .= sprintf(
@@ -568,17 +587,6 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
                                   });
                               });
                              </script>';
-            } else {
-                /**
-                 * @deprecated
-                 * @todo remove after 01.02.2019
-                 * Also need delete lib/recaptchalib.php'
-                 */
-//				require_once( 'lib/recaptchalib.php' );
-//				$content .= '<div id="gglcptch_recaptcha_' . $id . '" class="gglcptch_recaptcha"></div>';
-//				$content .= gglcptch_recaptcha_get_html( $publickey, null, is_ssl() );
-//				$deps = array();
-                /* @todo end */
             }
 			$content .= '</div>';
 			$gglcptch_count++;
@@ -741,44 +749,8 @@ if ( ! function_exists( 'gglcptch_check' ) ) {
 					}
 				}
 			}
-		} else {
-            /**
-             * @deprecated                 *
-             * @todo remove after 01.02.2019
-             */
-//			$gglcptch_recaptcha_challenge_field = $gglcptch_recaptcha_response_field = '';
-//
-//			if ( ! isset( $_POST['recaptcha_challenge_field'] ) && ! isset( $_POST['recaptcha_response_field'] ) ) {
-//				$result = array(
-//					'response' => false,
-//					'reason'   => 'RECAPTCHA_NO_RESPONSE'
-//				);
-//			} elseif ( ! empty( $_POST['recaptcha_challenge_field'] ) && empty( $_POST['recaptcha_response_field'] ) ) {
-//				$result = array(
-//					'response' => false,
-//					'reason'   => 'RECAPTCHA_EMPTY_RESPONSE'
-//				);
-//			} else {
-//				$gglcptch_recaptcha_challenge_field = stripslashes( esc_html( $_POST['recaptcha_challenge_field'] ) );
-//				$gglcptch_recaptcha_response_field  = stripslashes( esc_html( $_POST['recaptcha_response_field'] ) );
-//
-//				require_once( 'lib/recaptchalib.php' );
-//				$response = gglcptch_recaptcha_check_answer( $privatekey, $gglcptch_remote_addr, $gglcptch_recaptcha_challenge_field, $gglcptch_recaptcha_response_field );
-//
-//				if ( ! $response->is_valid ) {
-//					$result = array(
-//						'response' => false,
-//						'reason'   => $debug ? $response->error : 'VERIFICATION_FAILED'
-//					);
-//				} else {
-//					$result = array(
-//						'response' => true,
-//						'reason'   => ''
-//					);
-//				}
-//			}
-            /* @todo end */
-        }
+		}
+
 		if ( ! $result['response'] ) {
 			$result['errors'] = new WP_Error;
 			if ( ! $debug && ! in_array( $result['reason'], array( 'ERROR_WRONG_SECRET', 'ERROR_NO_KEYS' ) ) ) {

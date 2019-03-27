@@ -40,6 +40,7 @@
 </li>
 <li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415" rel="nofollow">Limit Attempts</a></li>
 <li>Hide Google Captcha (reCAPTCHA) in your forms for certain user roles</li>
+<li>Hide Google Captcha (reCAPTCHA) Badge (Invisible and V3) [NEW]</li>
 <li>Supports Google Captcha (reCAPTCHA):
 <ul>
 <li>Version 2</li>
@@ -65,7 +66,7 @@
 <li>Jetpack contact form</li>
 <li>Fast Secure Contact Form</li>
 <li>MailChimp for WordPress</li>
-<li>Ninja Forms [NEW]</li>
+<li>Ninja Forms</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -76,10 +77,11 @@
 <li>Checkout billing form</li>
 </ul>
 </li>
-<li>Compatible with Divi Builder:
+<li>Compatible with Divi:
 <ul>
-<li>Contact form</li>
-<li>Login form</li>
+<li>Divi Builder Contact form</li>
+<li>Divi Builder Login form</li>
+<li>Divi Theme Contact form [NEW]</li>
 </ul>
 </li>
 <li>Compatible with bbPress:
@@ -101,12 +103,6 @@
 <li>Registration form</li>
 <li>New Topic form</li>
 <li>Reply form</li>
-</ul>
-</li>
-<li>Compatible with Divi Builder:
-<ul>
-<li>Login form</li>
-<li>Contact form</li>
 </ul>
 </li>
 <li>Select Google Captcha (reCAPTCHA) language manually</li>

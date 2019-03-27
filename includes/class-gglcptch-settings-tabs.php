@@ -120,6 +120,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			$this->options['theme_v2']			=	stripslashes( esc_html( $_POST['gglcptch_theme_v2'] ) );
             $this->options['score_v3']          =    isset( $_POST['gglcptch_score_v3'] ) ? (float)$_POST['gglcptch_score_v3'] : 0.5;
 			$this->options['disable_submit']	= isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
+            $this->options['hide_badge']        = isset( $_POST['gglcptch_hide_badge'] ) ? 1 : 0;
 
 			foreach ( $this->forms as $form_slug => $form_data ) {
 				$this->options[ $form_slug ] = isset( $_POST["gglcptch_{$form_slug}"] ) ? 1 : 0;
@@ -259,6 +260,17 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 						</fieldset>
 					</td>
 				</tr>
+                <tr class="gglcptch_badge_v3" valign="top">
+                    <th scope="row">
+						<?php _e( 'Hide reCAPTCHA Badge', 'google-captcha' ); ?>
+                    </th>
+                    <td>
+                        <input<?php echo $this->change_permission_attr; ?> id="gglcptch_hide_badge" type="checkbox" <?php checked( ! empty( $this->options["hide_badge"] ) ); ?> name="gglcptch_hide_badge" value="1" />&nbsp;
+                        <span class="bws_info">
+							<?php _e( 'Enable to hide reCAPTCHA Badge for Version 3 and Invisble reCAPTCHA.', 'google-captcha' ); ?>
+						</span>
+                    </td>
+                </tr>
 				<tr class="gglcptch_theme_v2" valign="top">
 					<th scope="row">
 						<?php _e( 'Theme', 'google-captcha' ); ?>

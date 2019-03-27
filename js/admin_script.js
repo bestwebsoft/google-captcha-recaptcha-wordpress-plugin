@@ -1,23 +1,23 @@
 ( function( $ ) {
 	$( document ).ready( function() {
 
-
-        $(	"#gglcptch_score_v3").change(function() {
+        $( '#gglcptch_score_v3' ).change( function() {
             var score;
-            score = $(this).val();
-            $("#gglcptch_score_out_v3").text(score);
-        })
-            .trigger('change');
+            score = $( this ).val();
+            $( '#gglcptch_score_out_v3' ).text( score );
+        } ).trigger( 'change' );
 
 		$( 'input[name="gglcptch_recaptcha_version"]' ).change( function() {
-			var versions =  $( 'input[name="gglcptch_recaptcha_version"]' );
+			var versions = $( 'input[name="gglcptch_recaptcha_version"]' );
 			versions.each( function() {
 				if ( $( this ).is( ':checked' ) ) {
 					$( '.gglcptch_theme_' + $( this ).val() ).show();
                     $( '.gglcptch_score_' + $( this ).val() ).show();
+                    $( '.gglcptch_badge_v3' ).show();
 				} else {
 					$( '.gglcptch_theme_' + $( this ).val() ).hide();
                     $( '.gglcptch_score_' + $( this ).val() ).hide();
+					$( '.gglcptch_badge_' + $( this ).val() ).hide();
 				}
 			} );
 		} ).trigger( 'change' );
@@ -85,7 +85,7 @@
             if( $( '#gglcptch_test_keys_verification' ).length > 0 ) {
                 $( '#gglcptch_test_keys_verification' ).removeAttr('disabled');
             }
-        }, 2000 );
+        }, 8000 );
 		return false;
 	} );
 
