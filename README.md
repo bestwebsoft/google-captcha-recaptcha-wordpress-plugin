@@ -19,6 +19,7 @@
 </ul>
 </li>
 <li>Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses</li>
+<li>Disable the submit button [NEW]</li>
 <li>Validity check of keys in admin panel</li>
 <li>Available Google Captcha (reCAPTCHA) themes for:
 <ul>
@@ -40,7 +41,7 @@
 </li>
 <li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415" rel="nofollow">Limit Attempts</a></li>
 <li>Hide Google Captcha (reCAPTCHA) in your forms for certain user roles</li>
-<li>Hide Google Captcha (reCAPTCHA) Badge (Invisible and V3) [NEW]</li>
+<li>Hide Google Captcha (reCAPTCHA) Badge (Invisible and V3)</li>
 <li>Supports Google Captcha (reCAPTCHA):
 <ul>
 <li>Version 2</li>
@@ -81,7 +82,7 @@
 <ul>
 <li>Divi Builder Contact form</li>
 <li>Divi Builder Login form</li>
-<li>Divi Theme Contact form [NEW]</li>
+<li>Divi Theme Contact form</li>
 </ul>
 </li>
 <li>Compatible with bbPress:

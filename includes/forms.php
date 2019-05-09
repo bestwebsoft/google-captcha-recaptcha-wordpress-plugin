@@ -5,7 +5,7 @@
  */
 if ( ! function_exists( 'gglcptch_get_forms' ) ) {
 	function gglcptch_get_forms() {
-		global $gglcptch_options, $gglcptch_forms;
+		global $gglcptch_forms;
 
 		$default_forms = array(
 			'login_form'				=> array( 'form_name' => __( 'Login form', 'google-captcha' ) ),
@@ -112,9 +112,7 @@ if ( ! function_exists( 'gglcptch_get_section_notice' ) ) {
 			$slug = explode( '/', $plugins[ $section_slug ] );
 			$slug = $slug[0];
 			$plugin_info = gglcptch_plugin_status( $plugins[ $section_slug ], get_plugins(), $is_network_admin );
-			if ( 'activated' == $plugin_info['status'] ) {
-				/* check required conditions */
-			} elseif ( 'deactivated' == $plugin_info['status'] ) {
+			if ( 'deactivated' == $plugin_info['status'] ) {
 				$section_notice = '<a href="' . self_admin_url( 'plugins.php' ) . '">' . __( 'Activate', 'google-captcha' ) . '</a>';
 			} elseif ( 'not_installed' == $plugin_info['status'] ) {
 				$section_notice = sprintf( '<a href="http://wordpress.org/plugins/%s/" target="_blank">%s</a>', $slug, __( 'Install Now', 'google-captcha' ) );
@@ -138,9 +136,7 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 		if ( isset( $plugins[ $form_slug ] ) ) {
 			$plugin_info = gglcptch_plugin_status( $plugins[ $form_slug ], get_plugins(), is_network_admin() );
 
-			if ( 'activated' == $plugin_info['status'] ) {
-				/* check required conditions */
-			} elseif ( 'deactivated' == $plugin_info['status'] ) {
+			if ( 'deactivated' == $plugin_info['status'] ) {
 				$form_notice = '<a href="' . self_admin_url( 'plugins.php' ) . '">' . __( 'Activate', 'google-captcha' ) . '</a>';
 			} elseif ( 'not_installed' == $plugin_info['status'] ) {
 				if ( 'contact_form' == $form_slug ) {
@@ -158,7 +154,7 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 
 if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 	function gglcptch_add_actions() {
-		global $gglcptch_options, $wp_version;
+		global $gglcptch_options;
 
 		$is_user_logged_in = is_user_logged_in();
 

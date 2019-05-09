@@ -14,10 +14,12 @@
 					$( '.gglcptch_theme_' + $( this ).val() ).show();
                     $( '.gglcptch_score_' + $( this ).val() ).show();
                     $( '.gglcptch_badge_v3' ).show();
+					$( '.gglcptch_submit_' + $( this ).val() ).show();
 				} else {
 					$( '.gglcptch_theme_' + $( this ).val() ).hide();
                     $( '.gglcptch_score_' + $( this ).val() ).hide();
 					$( '.gglcptch_badge_' + $( this ).val() ).hide();
+					$( '.gglcptch_submit_' + $( this ).val() ).hide();
 				}
 			} );
 		} ).trigger( 'change' );

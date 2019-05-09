@@ -4,7 +4,7 @@ Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 3.9
 Tested up to: 5.1.1
-Stable tag: 1.43
+Stable tag: 1.44
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,6 +31,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* Testimonials
 	* Custom form
 * Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses
+* Disable the submit button [NEW]
 * Validity check of keys in admin panel
 * Available Google Captcha (reCAPTCHA) themes for:
 	* Version 1
@@ -43,7 +44,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 		* Dark
 * Compatible with [Limit Attempts](https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415)
 * Hide Google Captcha (reCAPTCHA) in your forms for certain user roles
-* Hide Google Captcha (reCAPTCHA) Badge (Invisible and V3) [NEW]
+* Hide Google Captcha (reCAPTCHA) Badge (Invisible and V3)
 * Supports Google Captcha (reCAPTCHA):
 	* Version 2
 	* Version 3
@@ -74,7 +75,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 > * Compatible with Divi:
 > 	* Divi Builder Contact form
 > 	* Divi Builder Login form
-> 	* Divi Theme Contact form [NEW]
+> 	* Divi Theme Contact form
 > * Compatible with bbPress:
 > 	* New Topic form
 > 	* Reply form
@@ -264,6 +265,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. Google Captcha (reCAPTCHA) Whitelist page.
 
 == Changelog ==
+
+= V1.44 - 09.05.2019 =
+* NEW : The ability to keep submit button disabled until user passes the reCAPTCHA test has been added.
+* Bugfix : The bug with "Advanced Protection" option has been fixed.
 
 = V1.43 - 27.03.2019 =
 * NEW : The ability to hide reCAPTCHA Badge has been added.
@@ -457,6 +462,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.44 =
+* New features added.
+* Bugs fixed.
 
 = V1.43 =
 * New features added.

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-04 12:07+0200\n"
+"POT-Creation-Date: 2019-04-16 17:22+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mik013\n"
 "Language-Team: Mik013\n"
@@ -17,33 +17,33 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:457
+#: google-captcha.php:39 google-captcha.php:46 google-captcha.php:476
 #: includes/class-gglcptch-settings-tabs.php:148
 msgid "Google Captcha Settings"
 msgstr "Nastavení Google Captcha"
 
-#: google-captcha.php:40 google-captcha.php:1055 google-captcha.php:1068
+#: google-captcha.php:47 google-captcha.php:1075 google-captcha.php:1088
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Settings"
 msgstr "Nastavení"
 
-#: google-captcha.php:42 includes/whitelist.php:46
+#: google-captcha.php:54 includes/whitelist.php:46
 msgid "Google Captcha Whitelist"
 msgstr "Google Captcha seznam povolených"
 
-#: google-captcha.php:42
+#: google-captcha.php:55
 msgid "Whitelist"
 msgstr "Seznam povolených"
 
-#: google-captcha.php:48 includes/pro_banners.php:29
+#: google-captcha.php:71 includes/pro_banners.php:29
 msgid "Upgrade to Pro"
 msgstr "Aktualizovat na Pro"
 
-#: google-captcha.php:240
+#: google-captcha.php:259
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Počkejte, než se Google reCAPTCHA načte."
 
-#: google-captcha.php:241
+#: google-captcha.php:260
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -51,87 +51,87 @@ msgstr ""
 "Nepodařilo se načíst Google reCAPTCHA. Zkontrolujte připojení k Internetu a "
 "znovu načtěte tuto stránku."
 
-#: google-captcha.php:257
+#: google-captcha.php:276
 msgid "Warning"
 msgstr "Upozornění"
 
-#: google-captcha.php:360
+#: google-captcha.php:379
 msgid "You are in the whitelist"
 msgstr "Jste na seznamu povolených"
 
-#: google-captcha.php:458
+#: google-captcha.php:477
 msgid "Please enable JavaScript in your browser."
 msgstr ""
 
-#: google-captcha.php:541
+#: google-captcha.php:560
 msgid "This site is protected by reCAPTCHA and the Google "
 msgstr ""
 
-#: google-captcha.php:542
+#: google-captcha.php:561
 msgid "Privacy Policy"
 msgstr ""
 
-#: google-captcha.php:543
+#: google-captcha.php:562
 msgid " and "
 msgstr ""
 
-#: google-captcha.php:544
+#: google-captcha.php:563
 msgid "Terms of Service"
 msgstr ""
 
-#: google-captcha.php:545
+#: google-captcha.php:564
 msgid " apply."
 msgstr ""
 
-#: google-captcha.php:552 google-captcha.php:1090
+#: google-captcha.php:571 google-captcha.php:1110
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Chcete-li použít Google Captcha musíte získat klíče z"
 
-#: google-captcha.php:553 google-captcha.php:1091
+#: google-captcha.php:572 google-captcha.php:1111
 msgid "here"
 msgstr "zde"
 
-#: google-captcha.php:554 google-captcha.php:1092
+#: google-captcha.php:573 google-captcha.php:1112
 msgid "and enter them on the"
 msgstr "a zadejte je na"
 
-#: google-captcha.php:556 google-captcha.php:1094
+#: google-captcha.php:575 google-captcha.php:1114
 msgid "plugin setting page"
 msgstr "stránce nastavení pluginu"
 
-#: google-captcha.php:823 includes/forms.php:356
+#: google-captcha.php:843 includes/forms.php:356
 msgid "Error"
 msgstr "Chyba"
 
-#: google-captcha.php:948
+#: google-captcha.php:968
 msgid "User response is missing."
 msgstr "Chybí odezva uživatele."
 
-#: google-captcha.php:952 google-captcha.php:960
+#: google-captcha.php:972 google-captcha.php:980
 msgid "Secret Key is invalid."
 msgstr "Tajný klíč je neplatný."
 
-#: google-captcha.php:953 google-captcha.php:961
+#: google-captcha.php:973 google-captcha.php:981
 msgid "Check your domain configurations"
 msgstr "Zkontrolujte konfiguraci vaší domény"
 
-#: google-captcha.php:954 google-captcha.php:962
+#: google-captcha.php:974 google-captcha.php:982
 msgid "and enter it again"
 msgstr "a zadejte jej znovu"
 
-#: google-captcha.php:957
+#: google-captcha.php:977
 msgid "Secret Key is missing."
 msgstr "Tajný klíč chybí."
 
-#: google-captcha.php:964
+#: google-captcha.php:984
 msgid "User response is invalid"
 msgstr "Neplatná odezva uživatele"
 
-#: google-captcha.php:965
+#: google-captcha.php:985
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Zadali jste nesprávnou hodnotu reCAPTCHA ."
 
-#: google-captcha.php:966
+#: google-captcha.php:986
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -139,33 +139,33 @@ msgstr ""
 "V aktuálním formuláři byla zjištěna více než jedna reCAPTCHA. Pro správnou "
 "funkcionalitu, odstraňte všechny nepotřebné reCAPTCHA pole."
 
-#: google-captcha.php:968
+#: google-captcha.php:988
 msgid "reCAPTCHA v3 test failed"
 msgstr ""
 
-#: google-captcha.php:1006
+#: google-captcha.php:1026
 msgid "Please submit \"Test verification\""
 msgstr "Odešlete &#8222;Test ověření&#8220;"
 
-#: google-captcha.php:1008
+#: google-captcha.php:1028
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr "Doplňte captcha a odešlete &#8222;Test ověření&#8220;"
 
-#: google-captcha.php:1014
+#: google-captcha.php:1034
 msgid "Test verification"
 msgstr "Test ověření"
 
-#: google-captcha.php:1035
+#: google-captcha.php:1055
 msgid "The verification is successfully completed."
 msgstr "Ověření je úspěšně dokončeno."
 
-#: google-captcha.php:1070
+#: google-captcha.php:1090
 msgid "FAQ"
 msgstr ""
 "Časté dotazy <acronym title=\\\"Frequently asked questions\\\">(FAQ)</"
 "acronym>"
 
-#: google-captcha.php:1071
+#: google-captcha.php:1091
 msgid "Support"
 msgstr "Podpora"
 
@@ -270,6 +270,14 @@ msgstr ""
 msgid "Theme"
 msgstr "Šablona"
 
+#: includes/class-gglcptch-settings-tabs.php:280
+msgid "Light"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:281
+msgid "Dark"
+msgstr ""
+
 #: includes/class-gglcptch-settings-tabs.php:287
 msgid "Score"
 msgstr ""
@@ -342,7 +350,7 @@ msgstr "Testimonials"
 msgid "WordPress default"
 msgstr "WordPress"
 
-#: includes/forms.php:47 includes/pro_banners.php:75
+#: includes/forms.php:47 includes/pro_banners.php:76
 msgid "External Plugins"
 msgstr "Externí pluginy"
 
@@ -465,36 +473,42 @@ msgstr ""
 #: includes/pro_banners.php:70
 #, fuzzy
 #| msgid "Jetpack Contact Form"
-msgid "Contact Forms"
+msgid "Divi Contact Form"
 msgstr "Jetpack Contact Form"
 
 #: includes/pro_banners.php:71
 #, fuzzy
 #| msgid "Login form"
-msgid "Login Forms"
+msgid "Divi Login Forms"
 msgstr "Přihlašovací formulář"
 
-#: includes/pro_banners.php:167
+#: includes/pro_banners.php:72
+#, fuzzy
+#| msgid "Jetpack Contact Form"
+msgid "Divi Theme Contact Form"
+msgstr "Jetpack Contact Form"
+
+#: includes/pro_banners.php:174
 msgid "Size"
 msgstr "Velikost"
 
-#: includes/pro_banners.php:171
+#: includes/pro_banners.php:178
 msgid "Normal"
 msgstr "Normální"
 
-#: includes/pro_banners.php:172
+#: includes/pro_banners.php:179
 msgid "Compact"
 msgstr "Kompaktní"
 
-#: includes/pro_banners.php:177
+#: includes/pro_banners.php:184
 msgid "Language"
 msgstr "Jazyk"
 
-#: includes/pro_banners.php:185
+#: includes/pro_banners.php:192
 msgid "Multilanguage"
 msgstr "Multilanguage"
 
-#: includes/pro_banners.php:188
+#: includes/pro_banners.php:195
 msgid ""
 "Enable to switch language automatically on multilingual website using "
 "Multilanguage plugin."

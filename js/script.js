@@ -6,7 +6,14 @@
 		 * display reCaptcha for plugin`s block
 		 */
 		$( '.gglcptch_v1, .gglcptch_v2, .gglcptch_invisible' ).each( function() {
+
 			var container = $( this ).find( '.gglcptch_recaptcha' );
+
+			// add data-callback to disable submit
+			if ( 'v2' === gglcptch.options.version ) {
+				container.attr( 'data-callback', 'recaptchaCallback' );
+			}
+
 			if (
 				container.is( ':empty' ) &&
 				( gglcptch.vars.visibility || $( this ).is( ':visible' ) === $( this ).is( ':not(:hidden)' ) )
@@ -91,6 +98,11 @@
 	gglcptch.display = function( container, v1_add_to_last_element, params ) {
 		if ( typeof( container ) == 'undefined' || container == '' || typeof( gglcptch.options ) == 'undefined' ) {
 			return;
+		}
+
+		// add attribute disable to the submit
+		if ( 'v2' === gglcptch.options.version && gglcptch.options.disable ) {
+			$( 'form input:submit, form button' ).prop( 'disabled', true );
 		}
 
 		function storeEvents( el ) {
@@ -212,6 +224,12 @@
 			}
 		}
 	};
+
+	// get callback and remove disabled attribute from submit
+	function recaptchaCallback() {
+		$( 'form input:submit, form button' ).prop( 'disabled', false );
+	}
+	window.recaptchaCallback = recaptchaCallback;
 
 	$( document ).ready( function() {
 		var tryCounter = 0,

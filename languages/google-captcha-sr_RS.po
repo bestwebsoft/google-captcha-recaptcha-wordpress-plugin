@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-04 12:06+0200\n"
+"POT-Creation-Date: 2019-05-06 10:58+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Team Link <teamlink@gmx.us>\n"
@@ -18,33 +18,33 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: google-captcha.php:38 google-captcha.php:40 google-captcha.php:457
-#: includes/class-gglcptch-settings-tabs.php:148
+#: google-captcha.php:39 google-captcha.php:49 google-captcha.php:485
+#: includes/class-gglcptch-settings-tabs.php:149
 msgid "Google Captcha Settings"
 msgstr "Google Captcha Подешавања"
 
-#: google-captcha.php:40 google-captcha.php:1055 google-captcha.php:1068
+#: google-captcha.php:50 google-captcha.php:1068 google-captcha.php:1081
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Settings"
 msgstr "Подешавања"
 
-#: google-captcha.php:42 includes/whitelist.php:46
+#: google-captcha.php:58 includes/whitelist.php:46
 msgid "Google Captcha Whitelist"
 msgstr ""
 
-#: google-captcha.php:42
+#: google-captcha.php:59
 msgid "Whitelist"
 msgstr "Бела листа"
 
-#: google-captcha.php:48 includes/pro_banners.php:29
+#: google-captcha.php:76 includes/pro_banners.php:29
 msgid "Upgrade to Pro"
 msgstr "Пређи на Про"
 
-#: google-captcha.php:240
+#: google-captcha.php:264
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Молимо сачекајте док се Google reCAPTCHA учита."
 
-#: google-captcha.php:241
+#: google-captcha.php:265
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -52,87 +52,87 @@ msgstr ""
 "Није успело учитавање Google reCAPTCHA-e  Молимо проверите Вашу интернет "
 "конекцију и освежите страну."
 
-#: google-captcha.php:257
+#: google-captcha.php:281
 msgid "Warning"
 msgstr "Упозорење"
 
-#: google-captcha.php:360
+#: google-captcha.php:389
 msgid "You are in the whitelist"
 msgstr "Ви сте на белој листи"
 
-#: google-captcha.php:458
+#: google-captcha.php:486
 msgid "Please enable JavaScript in your browser."
 msgstr ""
 
-#: google-captcha.php:541
+#: google-captcha.php:560
 msgid "This site is protected by reCAPTCHA and the Google "
 msgstr ""
 
-#: google-captcha.php:542
+#: google-captcha.php:561
 msgid "Privacy Policy"
 msgstr ""
 
-#: google-captcha.php:543
+#: google-captcha.php:562
 msgid " and "
 msgstr ""
 
-#: google-captcha.php:544
+#: google-captcha.php:563
 msgid "Terms of Service"
 msgstr ""
 
-#: google-captcha.php:545
+#: google-captcha.php:564
 msgid " apply."
 msgstr ""
 
-#: google-captcha.php:552 google-captcha.php:1090
+#: google-captcha.php:571 google-captcha.php:1103
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Да бисте користили Google Captcha морате узети кључеве од"
 
-#: google-captcha.php:553 google-captcha.php:1091
+#: google-captcha.php:572 google-captcha.php:1104
 msgid "here"
 msgstr "овде"
 
-#: google-captcha.php:554 google-captcha.php:1092
+#: google-captcha.php:573 google-captcha.php:1105
 msgid "and enter them on the"
 msgstr "и унесите их на"
 
-#: google-captcha.php:556 google-captcha.php:1094
+#: google-captcha.php:575 google-captcha.php:1107
 msgid "plugin setting page"
 msgstr "страна подешавања додатка"
 
-#: google-captcha.php:823 includes/forms.php:356
+#: google-captcha.php:846 includes/forms.php:352
 msgid "Error"
 msgstr "Грешка"
 
-#: google-captcha.php:948
+#: google-captcha.php:968
 msgid "User response is missing."
 msgstr "Одговор корисника недостаје."
 
-#: google-captcha.php:952 google-captcha.php:960
-msgid "Secret Key is invalid."
-msgstr ""
-
-#: google-captcha.php:953 google-captcha.php:961
-msgid "Check your domain configurations"
-msgstr ""
-
-#: google-captcha.php:954 google-captcha.php:962
-msgid "and enter it again"
-msgstr "и унесите поново"
-
-#: google-captcha.php:957
+#: google-captcha.php:970
 msgid "Secret Key is missing."
 msgstr "Тајни кључ недостаје."
 
-#: google-captcha.php:964
+#: google-captcha.php:973
+msgid "Secret Key is invalid."
+msgstr ""
+
+#: google-captcha.php:974
+msgid "Check your domain configurations"
+msgstr ""
+
+#: google-captcha.php:975
+msgid "and enter it again"
+msgstr "и унесите поново"
+
+#: google-captcha.php:977
 msgid "User response is invalid"
 msgstr "Одговор корисника није исправан"
 
-#: google-captcha.php:965
+#: google-captcha.php:978
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Унели сте нетачну reCAPTCHA вредност."
 
-#: google-captcha.php:966
+#: google-captcha.php:979
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -140,31 +140,31 @@ msgstr ""
 "Више од једне reCAPTCHA је нађено у тренутној форми. Молим вас да уклоните "
 "сва непотребна reCAPTCHA поља како би форма радила исправно."
 
-#: google-captcha.php:968
+#: google-captcha.php:981
 msgid "reCAPTCHA v3 test failed"
 msgstr ""
 
-#: google-captcha.php:1006
+#: google-captcha.php:1019
 msgid "Please submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:1008
+#: google-captcha.php:1021
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:1014
+#: google-captcha.php:1027
 msgid "Test verification"
 msgstr "Тестирај верификацију"
 
-#: google-captcha.php:1035
+#: google-captcha.php:1048
 msgid "The verification is successfully completed."
 msgstr ""
 
-#: google-captcha.php:1070
+#: google-captcha.php:1083
 msgid "FAQ"
 msgstr "ЧПП"
 
-#: google-captcha.php:1071
+#: google-captcha.php:1084
 msgid "Support"
 msgstr "Подршка"
 
@@ -210,104 +210,122 @@ msgstr ""
 msgid "Enter secret key"
 msgstr "Унесите тајни кључ"
 
-#: includes/class-gglcptch-settings-tabs.php:136
+#: includes/class-gglcptch-settings-tabs.php:137
 msgid "Settings saved."
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:151
+#: includes/class-gglcptch-settings-tabs.php:152
 msgid "Authentication"
 msgstr "Аутентикација"
 
-#: includes/class-gglcptch-settings-tabs.php:152
+#: includes/class-gglcptch-settings-tabs.php:153
 msgid ""
 "Register your website with Google to get required API keys and enter them "
 "below."
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:152
+#: includes/class-gglcptch-settings-tabs.php:153
 msgid "Get the API Keys"
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:169
+#: includes/class-gglcptch-settings-tabs.php:170
 #, fuzzy
 msgid "Test reCAPTCHA"
 msgstr "Невидљиви reCAPTCHA"
 
-#: includes/class-gglcptch-settings-tabs.php:175
+#: includes/class-gglcptch-settings-tabs.php:176
 msgid "General"
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:178
+#: includes/class-gglcptch-settings-tabs.php:179
 msgid "reCAPTCHA Version"
 msgstr "reCAPTCHA верзија"
 
-#: includes/class-gglcptch-settings-tabs.php:191
+#: includes/class-gglcptch-settings-tabs.php:192
 msgid "Enable reCAPTCHA for"
 msgstr "Омогући reCAPTCHA за"
 
-#: includes/class-gglcptch-settings-tabs.php:237
-#: includes/class-gglcptch-settings-tabs.php:299 includes/pro_banners.php:20
+#: includes/class-gglcptch-settings-tabs.php:238
+#: includes/class-gglcptch-settings-tabs.php:300 includes/pro_banners.php:20
 msgid "Close"
 msgstr "Затвори"
 
-#: includes/class-gglcptch-settings-tabs.php:246
+#: includes/class-gglcptch-settings-tabs.php:247
 #, fuzzy
 msgid "Hide reCAPTCHA for"
 msgstr "Омогући reCAPTCHA за"
 
-#: includes/class-gglcptch-settings-tabs.php:265
+#: includes/class-gglcptch-settings-tabs.php:266
 #, fuzzy
 msgid "Hide reCAPTCHA Badge"
 msgstr "Омогући reCAPTCHA за"
 
-#: includes/class-gglcptch-settings-tabs.php:270
+#: includes/class-gglcptch-settings-tabs.php:271
 msgid "Enable to hide reCAPTCHA Badge for Version 3 and Invisble reCAPTCHA."
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:276
+#: includes/class-gglcptch-settings-tabs.php:277
 msgid "Theme"
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:287
+#: includes/class-gglcptch-settings-tabs.php:281
+msgid "Light"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:282
+msgid "Dark"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:288
 msgid "Score"
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:292
+#: includes/class-gglcptch-settings-tabs.php:293
 msgid "Set the minimum verification score from 0 to 1"
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:308
+#: includes/class-gglcptch-settings-tabs.php:309
 msgid "Whitelist Notification"
 msgstr "Нотификација за белу листу"
 
-#: includes/class-gglcptch-settings-tabs.php:311
+#: includes/class-gglcptch-settings-tabs.php:312
 #, fuzzy
 msgid "This message will be displayed instead of the reCAPTCHA."
 msgstr ""
 "Ова порука ће бити приказана уместо reCAPTCHA уколико је кориснички IP додат "
 "у белу листу"
 
-#: includes/class-gglcptch-settings-tabs.php:315
-msgid "Disabled Submit Button"
+#: includes/class-gglcptch-settings-tabs.php:316
+msgid "Advanced Protection"
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:319
+#: includes/class-gglcptch-settings-tabs.php:320
 msgid ""
 "Enable to keep submit button disabled until reCAPTCHA is loaded (do not use "
 "this option if you see \"Failed to load Google reCAPTCHA\" message)."
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:333
+#: includes/class-gglcptch-settings-tabs.php:326
+msgid "Disabled Submit Button"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:331
+msgid ""
+"Enable to keep submit button disabled until user passes the reCAPTCHA test "
+"(for Version 2)."
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:345
 msgid ""
 "reCAPTCHA version was changed. Please submit \"Test reCAPTCHA\" and "
 "regenerate Site and Secret keys if necessary."
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:346
+#: includes/class-gglcptch-settings-tabs.php:358
 msgid "Google Captcha Shortcode"
 msgstr ""
 
-#: includes/class-gglcptch-settings-tabs.php:349
+#: includes/class-gglcptch-settings-tabs.php:361
 msgid ""
 "Add Google Captcha to your posts or pages using the following shortcode:"
 msgstr ""
@@ -336,7 +354,7 @@ msgstr "Testimonials"
 msgid "WordPress default"
 msgstr "WordPress подразумевано"
 
-#: includes/forms.php:47 includes/pro_banners.php:75
+#: includes/forms.php:47 includes/pro_banners.php:76
 msgid "External Plugins"
 msgstr ""
 
@@ -348,19 +366,19 @@ msgstr ""
 msgid "Google Captcha Plugin"
 msgstr ""
 
-#: includes/forms.php:118 includes/forms.php:144
+#: includes/forms.php:116 includes/forms.php:140
 msgid "Activate"
 msgstr "Активирај"
 
-#: includes/forms.php:120 includes/forms.php:147 includes/forms.php:151
+#: includes/forms.php:118 includes/forms.php:143 includes/forms.php:147
 msgid "Install Now"
 msgstr ""
 
-#: includes/forms.php:269
+#: includes/forms.php:265
 msgid "Authentication failed."
 msgstr ""
 
-#: includes/forms.php:358
+#: includes/forms.php:354
 msgid "Click the BACK button on your browser and try again."
 msgstr ""
 
@@ -459,36 +477,42 @@ msgstr ""
 #: includes/pro_banners.php:70
 #, fuzzy
 #| msgid "Contact form"
-msgid "Contact Forms"
+msgid "Divi Contact Form"
 msgstr "Контакт форма"
 
 #: includes/pro_banners.php:71
 #, fuzzy
 #| msgid "Login form"
-msgid "Login Forms"
+msgid "Divi Login Forms"
 msgstr "Логин форма"
 
-#: includes/pro_banners.php:167
+#: includes/pro_banners.php:72
+#, fuzzy
+#| msgid "Contact form"
+msgid "Divi Theme Contact Form"
+msgstr "Контакт форма"
+
+#: includes/pro_banners.php:174
 msgid "Size"
 msgstr ""
 
-#: includes/pro_banners.php:171
+#: includes/pro_banners.php:178
 msgid "Normal"
 msgstr "Нормално"
 
-#: includes/pro_banners.php:172
+#: includes/pro_banners.php:179
 msgid "Compact"
 msgstr "Компактно"
 
-#: includes/pro_banners.php:177
+#: includes/pro_banners.php:184
 msgid "Language"
 msgstr ""
 
-#: includes/pro_banners.php:185
+#: includes/pro_banners.php:192
 msgid "Multilanguage"
 msgstr ""
 
-#: includes/pro_banners.php:188
+#: includes/pro_banners.php:195
 msgid ""
 "Enable to switch language automatically on multilingual website using "
 "Multilanguage plugin."

@@ -113,14 +113,15 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				$this->options['need_keys_verified_check'] = true;
 			}
 
-			$this->options['whitelist_message']	=	stripslashes( esc_html( $_POST['gglcptch_whitelist_message'] ) );
-			$this->options['public_key']			=	trim( stripslashes( esc_html( $_POST['gglcptch_public_key'] ) ) );
-			$this->options['private_key']		=	trim( stripslashes( esc_html( $_POST['gglcptch_private_key'] ) ) );
-			$this->options['recaptcha_version']	=	in_array( $_POST['gglcptch_recaptcha_version'], array( 'v2', 'invisible', 'v3' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
-			$this->options['theme_v2']			=	stripslashes( esc_html( $_POST['gglcptch_theme_v2'] ) );
-            $this->options['score_v3']          =    isset( $_POST['gglcptch_score_v3'] ) ? (float)$_POST['gglcptch_score_v3'] : 0.5;
-			$this->options['disable_submit']	= isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
-            $this->options['hide_badge']        = isset( $_POST['gglcptch_hide_badge'] ) ? 1 : 0;
+			$this->options['whitelist_message']	    = stripslashes( esc_html( $_POST['gglcptch_whitelist_message'] ) );
+			$this->options['public_key']			= trim( stripslashes( esc_html( $_POST['gglcptch_public_key'] ) ) );
+			$this->options['private_key']		    = trim( stripslashes( esc_html( $_POST['gglcptch_private_key'] ) ) );
+			$this->options['recaptcha_version']	    = in_array( $_POST['gglcptch_recaptcha_version'], array( 'v2', 'invisible', 'v3' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
+			$this->options['theme_v2']			    = stripslashes( esc_html( $_POST['gglcptch_theme_v2'] ) );
+            $this->options['score_v3']              = isset( $_POST['gglcptch_score_v3'] ) ? (float)$_POST['gglcptch_score_v3'] : 0.5;
+			$this->options['disable_submit']	    = isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
+            $this->options['hide_badge']            = isset( $_POST['gglcptch_hide_badge'] ) ? 1 : 0;
+            $this->options['disable_submit_button'] = isset( $_POST['gglcptch_disable_submit_button'] ) ? 1 : 0;
 
 			foreach ( $this->forms as $form_slug => $form_data ) {
 				$this->options[ $form_slug ] = isset( $_POST["gglcptch_{$form_slug}"] ) ? 1 : 0;
@@ -265,7 +266,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 						<?php _e( 'Hide reCAPTCHA Badge', 'google-captcha' ); ?>
                     </th>
                     <td>
-                        <input<?php echo $this->change_permission_attr; ?> id="gglcptch_hide_badge" type="checkbox" <?php checked( ! empty( $this->options["hide_badge"] ) ); ?> name="gglcptch_hide_badge" value="1" />&nbsp;
+                        <input<?php echo $this->change_permission_attr; ?> id="gglcptch_hide_badge" type="checkbox" <?php checked( ! empty( $this->options['hide_badge'] ) ); ?> name="gglcptch_hide_badge" value="1" />&nbsp;
                         <span class="bws_info">
 							<?php _e( 'Enable to hide reCAPTCHA Badge for Version 3 and Invisble reCAPTCHA.', 'google-captcha' ); ?>
 						</span>
@@ -277,8 +278,8 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					</th>
 					<td>
 						<select name="gglcptch_theme_v2">
-							<option value="light" <?php selected( 'light', $this->options['theme_v2'] ); ?>>Light</option>
-							<option value="dark" <?php selected( 'dark', $this->options['theme_v2'] ); ?>>Dark</option>
+							<option value="light" <?php selected( 'light', $this->options['theme_v2'] ); ?>><?php _e( 'Light', 'google-captcha' ); ?></option>
+							<option value="dark" <?php selected( 'dark', $this->options['theme_v2'] ); ?>><?php _e( 'Dark', 'google-captcha' ); ?></option>
 						</select>
 					</td>
 				</tr>
@@ -312,14 +313,25 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Disabled Submit Button', 'google-captcha' ); ?></th>
+					<th scope="row"><?php _e( 'Advanced Protection', 'google-captcha' ); ?></th>
 					<td>
-						<input<?php echo $this->change_permission_attr; ?> id="gglcptch_disable_submit" type="checkbox" <?php checked( ! empty( $this->options["disable_submit"] ) ); ?> name="gglcptch_disable_submit" value="1" />&nbsp;
+						<input<?php echo $this->change_permission_attr; ?> id="gglcptch_disable_submit" type="checkbox" <?php checked( ! empty( $this->options["disable_submit"] ) ); ?> name="gglcptch_disable_submit" value="1" />
 						<span class="bws_info">
 							<?php _e( 'Enable to keep submit button disabled until reCAPTCHA is loaded (do not use this option if you see "Failed to load Google reCAPTCHA" message).', 'google-captcha' ); ?>
 						</span>
 					</td>
 				</tr>
+                <tr class="gglcptch_submit_v2" valign="top">
+                    <th scope="row">
+						<?php _e( 'Disabled Submit Button', 'google-captcha' ); ?>
+                    </th>
+                    <td>
+                        <input<?php echo $this->change_permission_attr; ?> id="gglcptch_disable_submit_button" type="checkbox" <?php checked( ! empty( $this->options['disable_submit_button'] ) ); ?> name="gglcptch_disable_submit_button" value="1" />
+                        <span class="bws_info">
+							<?php _e( 'Enable to keep submit button disabled until user passes the reCAPTCHA test (for Version 2).', 'google-captcha' ); ?>
+						</span>
+                    </td>
+                </tr>
 			</table>
 		<?php }
 

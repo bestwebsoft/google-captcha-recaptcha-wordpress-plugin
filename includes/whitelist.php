@@ -42,7 +42,7 @@ if ( ! class_exists( 'Gglcptch_Whitelist' ) ) {
 		 * @return void
 		 */
 		function display_content() {
-			global $wp_version, $gglcptch_options; ?>
+			global $gglcptch_options; ?>
 			<h1 class="wp-heading-inline"><?php _e( 'Google Captcha Whitelist', 'google-captcha' ); ?></h1>
 			<?php if ( ! ( isset( $_REQUEST['gglcptch_show_whitelist_form'] ) || isset( $_REQUEST['gglcptch_add_to_whitelist'] ) ) ) { ?>
 				<form method="post" action="admin.php?page=google-captcha-whitelist.php" style="display: inline;">
