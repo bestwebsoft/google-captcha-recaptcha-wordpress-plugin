@@ -101,8 +101,8 @@
 		}
 
 		// add attribute disable to the submit
-		if ( 'v2' === gglcptch.options.version && gglcptch.options.disable ) {
-			$( 'form input:submit, form button' ).prop( 'disabled', true );
+		if ( 'v2' === gglcptch.options.version && '1' === gglcptch.options.disable ) {
+            $( '#' + container ).closest( 'form' ).find( 'input:submit, button' ).prop( 'disabled', true );
 		}
 
 		function storeEvents( el ) {
