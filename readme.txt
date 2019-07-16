@@ -4,7 +4,7 @@ Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 3.9
 Tested up to: 5.2.2
-Stable tag: 1.45
+Stable tag: 1.46
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -266,6 +266,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.46 - 16.07.2019 =
+* Update : All functionality was updated for WordPress 5.2.2.
+
 = V1.45 - 16.07.2019 =
 * Bugfix : The bug with "Disabled Submit Button" option in several forms on the page has been fixed.
 * Bugfix : The bug with custom forms has been fixed.
@@ -466,6 +469,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.46 =
+* The compatibility with new WordPress version updated.
 
 = V1.45 =
 * Bugs fixed.
