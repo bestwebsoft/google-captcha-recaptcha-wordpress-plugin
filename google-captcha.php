@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.45
+Version: 1.47
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -162,10 +162,6 @@ if ( ! function_exists( 'gglcptch_add_admin_script_styles' ) ) {
 		if ( isset( $_REQUEST['page'] ) && ( 'google-captcha.php' == $_REQUEST['page'] || 'google-captcha-whitelist.php' == $_REQUEST['page'] ) ) {
 			wp_enqueue_style( 'gglcptch_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array(), $gglcptch_plugin_info['Version'] );
 			wp_enqueue_script( 'gglcptch_admin_script', plugins_url( 'js/admin_script.js', __FILE__ ), array( 'jquery', 'jquery-ui-accordion' ), $gglcptch_plugin_info['Version'] );
-			wp_localize_script( 'gglcptch_admin_script', 'gglcptchScriptVars', array(
-				'version'   => $gglcptch_options['recaptcha_version'],
-				'disable'   => $gglcptch_options['disable_submit_button']
-			) );
 
 			bws_enqueue_settings_scripts();
 			bws_plugins_include_codemirror();
@@ -562,7 +558,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 
 			if ( $gglcptch_options['hide_badge'] && 'v2' != $gglcptch_options['recaptcha_version'] ) {
 				$content .= sprintf(
-					'<div>%s<a href="https://policies.google.com/privacy" target="_blank">%s</a>%s<a href="https://policies.google.com/terms" target="_blank">%s</a>%s</div>',
+					'<div class="google-captcha-notice">%s<a href="https://policies.google.com/privacy" target="_blank">%s</a>%s<a href="https://policies.google.com/terms" target="_blank">%s</a>%s</div>',
 					__( 'This site is protected by reCAPTCHA and the Google ', 'google-captcha' ),
 					__( 'Privacy Policy', 'google-captcha' ),
 					__( ' and ', 'google-captcha' ),

@@ -9,11 +9,6 @@
 
 			var container = $( this ).find( '.gglcptch_recaptcha' );
 
-			// add data-callback to disable submit
-			if ( 'v2' === gglcptch.options.version ) {
-				container.attr( 'data-callback', 'recaptchaCallback' );
-			}
-
 			if (
 				container.is( ':empty' ) &&
 				( gglcptch.vars.visibility || $( this ).is( ':visible' ) === $( this ).is( ':not(:hidden)' ) )
@@ -101,7 +96,7 @@
 		}
 
 		// add attribute disable to the submit
-		if ( 'v2' === gglcptch.options.version && '1' == gglcptch.options.disable ) {
+		if ( 'v2' === gglcptch.options.version && gglcptch.options.disable ) {
 			$( '#' + container ).closest( 'form' ).find( 'input:submit, button' ).prop( 'disabled', true );
 		}
 
@@ -165,12 +160,6 @@
 		var gglcptch_version = gglcptch.options.version;
 		v1_add_to_last_element = v1_add_to_last_element || false;
 
-		if ( 'v1' == gglcptch_version ) {
-			if ( Recaptcha.widget == null || v1_add_to_last_element == true ) {
-				Recaptcha.create( gglcptch.options.sitekey, container, { 'theme' : gglcptch.options.theme } );
-			}
-		}
-
 		if ( 'v2' == gglcptch_version ) {
 				if ( $( '#' + container ).parent().width() <= 300 ) {
 					var size = 'compact';
@@ -178,7 +167,17 @@
 					var size = 'normal';
 				}
 			var parameters = params ? params : { 'sitekey' : gglcptch.options.sitekey, 'theme' : gglcptch.options.theme, 'size' : size },
-				gglcptch_index = grecaptcha.render( container, parameters );
+				block = $( '#' + container ),
+				form = block.closest( 'form' );
+
+				/* Callback function works only in frontend */
+				if ( ! $( 'body' ).hasClass( 'wp-admin' ) ) {
+					parameters['callback'] = function() {
+						form.find( 'button, input:submit' ).prop( 'disabled', false );
+					};
+				}
+
+			var gglcptch_index = grecaptcha.render( container, parameters );
 			$( '#' + container ).data( 'gglcptch_index', gglcptch_index );
 		}
 
@@ -224,12 +223,6 @@
 			}
 		}
 	};
-
-	// get callback and remove disabled attribute from submit
-	function recaptchaCallback() {
-		$( 'form input:submit, form button' ).prop( 'disabled', false );
-	}
-	window.recaptchaCallback = recaptchaCallback;
 
 	$( document ).ready( function() {
 		var tryCounter = 0,

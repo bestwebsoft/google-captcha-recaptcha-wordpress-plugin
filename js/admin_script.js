@@ -70,14 +70,7 @@
 		$( '.gglcptch-test-results' ).remove();
 		$( '#gglcptch-test-block' ).load( $( this ).prop( 'href' ), function() {
 			$( '.gglcptch_v1, .gglcptch_v2, .gglcptch_invisible' ).each( function() {
-				var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' ),
-				containerData = $( this ).find( '.gglcptch_recaptcha' );
-
-				// add data-callback to disable submit
-				if ( 'v2' === gglcptchScriptVars.version && '1' === gglcptchScriptVars.disable ) {
-					containerData.attr( 'data-callback', 'recaptchaCallback' );
-				}
-
+				var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' );
 				if ( $( this ).is( ':visible' ) ) {
 					gglcptch.display( container );
 					if ( $( this ).hasClass( 'gglcptch_invisible' ) ) {
@@ -90,27 +83,12 @@
 
 		e.stopPropagation();
 		$( '#gglcptch-test-keys' ).hide();
-
-		// get callback for option disabled submit
-		function recaptchaCallback() {
-			$( 'form input:submit, form button' ).prop( 'disabled', false );
-		}
-
-		// remove disabled attr
-		function removeDisabled() {
-			if ( $( '#gglcptch_test_keys_verification' ).length > 0 ) {
-				$( '#gglcptch_test_keys_verification' ).removeAttr( 'disabled' );
-			}
-		}
-
-		if ( 'v2' === gglcptchScriptVars.version ) {
-			if ( '1' === gglcptchScriptVars.disable ) {
-				window.recaptchaCallback = recaptchaCallback;
-			} else {
-				setTimeout( removeDisabled, 8000 );
-			}
-		}
-
+        setTimeout( function(){
+            if( $( '#gglcptch_test_keys_verification' ).length > 0 ) {
+                $( '#gglcptch_test_keys_verification' ).removeAttr('disabled');
+                $( '.bws_form input[type="submit"]' ).removeAttr( 'disabled' );
+            }
+        }, 8000 );
 		return false;
 	} );
 

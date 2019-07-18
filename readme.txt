@@ -4,7 +4,7 @@ Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 3.9
 Tested up to: 5.2.2
-Stable tag: 1.46
+Stable tag: 1.47
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -266,6 +266,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.47 - 18.07.2019 =
+* Update : The bug with the reCAPTCHA verification in version 1.46 has been fixed.
+
 = V1.46 - 16.07.2019 =
 * Update : All functionality was updated for WordPress 5.2.2.
 
@@ -469,6 +472,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.47 =
+* Bugs fixed.
 
 = V1.46 =
 * The compatibility with new WordPress version updated.
