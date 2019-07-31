@@ -4,7 +4,7 @@ Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 3.9
 Tested up to: 5.2.2
-Stable tag: 1.49
+Stable tag: 1.50
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -266,6 +266,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.50 - 31.07.2019 =
+* Pro : The bug with the Divi Theme hooks has been fixed.
+
 = V1.49 - 30.07.2019 =
 * Update : General performance has been improved.
 
@@ -478,6 +481,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.50 =
+* Bugs fixed.
 
 = V1.49 =
 * Functionality improved.
