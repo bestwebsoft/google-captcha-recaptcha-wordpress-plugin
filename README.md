@@ -19,7 +19,7 @@
 </ul>
 </li>
 <li>Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses</li>
-<li>Disable the submit button [NEW]</li>
+<li>Disable the submit button</li>
 <li>Validity check of keys in admin panel</li>
 <li>Available Google Captcha (reCAPTCHA) themes for:
 <ul>

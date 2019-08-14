@@ -4,7 +4,7 @@ Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 3.9
 Tested up to: 5.2.2
-Stable tag: 1.50
+Stable tag: 1.51
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,7 +31,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* Testimonials
 	* Custom form
 * Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses
-* Disable the submit button [NEW]
+* Disable the submit button
 * Validity check of keys in admin panel
 * Available Google Captcha (reCAPTCHA) themes for:
 	* Version 1
@@ -266,6 +266,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.51 - 14.08.2019 =
+* Update : BWS menu has been updated.
+* Pro : The bug with the reCAPTCHA verification on the Divi Contact forms has been fixed.
+
 = V1.50 - 31.07.2019 =
 * Pro : The bug with the Divi Theme hooks has been fixed.
 
@@ -481,6 +485,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.51 =
+* Functionality improved.
+* Bugs fixed.
 
 = V1.50 =
 * Bugs fixed.

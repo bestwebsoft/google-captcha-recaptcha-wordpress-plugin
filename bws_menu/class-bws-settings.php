@@ -757,7 +757,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 						if( ! empty( $single_license['pro_basename'] ) ) {
 							$license_key = ! empty( $bstwbsftwppdtplgns_options[ $single_license['pro_basename'] ] ) ? $bstwbsftwppdtplgns_options[ $single_license['pro_basename'] ] : '';
 						}
-						$current_plugin_link = ( ! empty( $this->link_key ) && ! empty( $this->link_pn ) ? esc_url( 'https://bestwebsoft.com/products/wordpress/plugins/' . $single_license['slug'] . '/' . '?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ) : esc_url( 'https://bestwebsoft.com/products/wordpress/plugins/' . $single_license['slug'] . '/' ) );
+						$current_plugin_link = ( ! empty( $this->link_key ) && ! empty( $this->link_pn ) ? esc_url( 'https://bestwebsoft.com/products/wordpress/plugins/' . $this->wp_slug . '/' . '?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ) : esc_url( 'https://bestwebsoft.com/products/wordpress/plugins/' . $this->wp_slug . '/' ) );
 						?>
                         <table class="form-table">
                             <tr>
