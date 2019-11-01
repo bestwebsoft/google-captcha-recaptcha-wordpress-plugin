@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-15 14:38+0300\n"
+"POT-Creation-Date: 2019-09-30 11:03+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Team Link <teamlink@gmx.us>\n"
@@ -13,17 +13,18 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: bws_menu\n"
 
-#: google-captcha.php:39 google-captcha.php:49 google-captcha.php:489
+#: google-captcha.php:39 google-captcha.php:49 google-captcha.php:485
 #: includes/class-gglcptch-settings-tabs.php:149
 msgid "Google Captcha Settings"
 msgstr "Google Captcha Подешавања"
 
-#: google-captcha.php:50 google-captcha.php:1074 google-captcha.php:1087
+#: google-captcha.php:50 google-captcha.php:1070 google-captcha.php:1083
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Settings"
 msgstr "Подешавања"
@@ -40,11 +41,11 @@ msgstr "Бела листа"
 msgid "Upgrade to Pro"
 msgstr "Пређи на Про"
 
-#: google-captcha.php:268
+#: google-captcha.php:264
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Молимо сачекајте док се Google reCAPTCHA учита."
 
-#: google-captcha.php:269
+#: google-captcha.php:265
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -52,87 +53,87 @@ msgstr ""
 "Није успело учитавање Google reCAPTCHA-e  Молимо проверите Вашу интернет "
 "конекцију и освежите страну."
 
-#: google-captcha.php:285
+#: google-captcha.php:281
 msgid "Warning"
 msgstr "Упозорење"
 
-#: google-captcha.php:393
+#: google-captcha.php:389
 msgid "You are in the whitelist"
 msgstr "Ви сте на белој листи"
 
-#: google-captcha.php:490
+#: google-captcha.php:486
 msgid "Please enable JavaScript in your browser."
 msgstr ""
 
-#: google-captcha.php:566
+#: google-captcha.php:562
 msgid "This site is protected by reCAPTCHA and the Google "
 msgstr ""
 
-#: google-captcha.php:567
+#: google-captcha.php:563
 msgid "Privacy Policy"
 msgstr ""
 
-#: google-captcha.php:568
+#: google-captcha.php:564
 msgid " and "
 msgstr ""
 
-#: google-captcha.php:569
+#: google-captcha.php:565
 msgid "Terms of Service"
 msgstr ""
 
-#: google-captcha.php:570
+#: google-captcha.php:566
 msgid " apply."
 msgstr ""
 
-#: google-captcha.php:577 google-captcha.php:1109
+#: google-captcha.php:573 google-captcha.php:1105
 msgid "To use Google Captcha you must get the keys from"
 msgstr "Да бисте користили Google Captcha морате узети кључеве од"
 
-#: google-captcha.php:578 google-captcha.php:1110
+#: google-captcha.php:574 google-captcha.php:1106
 msgid "here"
 msgstr "овде"
 
-#: google-captcha.php:579 google-captcha.php:1111
+#: google-captcha.php:575 google-captcha.php:1107
 msgid "and enter them on the"
 msgstr "и унесите их на"
 
-#: google-captcha.php:581 google-captcha.php:1113
+#: google-captcha.php:577 google-captcha.php:1109
 msgid "plugin setting page"
 msgstr "страна подешавања додатка"
 
-#: google-captcha.php:852 includes/forms.php:352
+#: google-captcha.php:848 includes/forms.php:352
 msgid "Error"
 msgstr "Грешка"
 
-#: google-captcha.php:974
+#: google-captcha.php:970
 msgid "User response is missing."
 msgstr "Одговор корисника недостаје."
 
-#: google-captcha.php:976
+#: google-captcha.php:972
 msgid "Secret Key is missing."
 msgstr "Тајни кључ недостаје."
 
-#: google-captcha.php:979
+#: google-captcha.php:975
 msgid "Secret Key is invalid."
 msgstr ""
 
-#: google-captcha.php:980
+#: google-captcha.php:976
 msgid "Check your domain configurations"
 msgstr ""
 
-#: google-captcha.php:981
+#: google-captcha.php:977
 msgid "and enter it again"
 msgstr "и унесите поново"
 
-#: google-captcha.php:983
+#: google-captcha.php:979
 msgid "User response is invalid"
 msgstr "Одговор корисника није исправан"
 
-#: google-captcha.php:984
+#: google-captcha.php:980
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Унели сте нетачну reCAPTCHA вредност."
 
-#: google-captcha.php:985
+#: google-captcha.php:981
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -140,31 +141,31 @@ msgstr ""
 "Више од једне reCAPTCHA је нађено у тренутној форми. Молим вас да уклоните "
 "сва непотребна reCAPTCHA поља како би форма радила исправно."
 
-#: google-captcha.php:987
+#: google-captcha.php:983
 msgid "reCAPTCHA v3 test failed"
 msgstr ""
 
-#: google-captcha.php:1025
+#: google-captcha.php:1021
 msgid "Please submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:1027
+#: google-captcha.php:1023
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr ""
 
-#: google-captcha.php:1033
+#: google-captcha.php:1029
 msgid "Test verification"
 msgstr "Тестирај верификацију"
 
-#: google-captcha.php:1054
+#: google-captcha.php:1050
 msgid "The verification is successfully completed."
 msgstr ""
 
-#: google-captcha.php:1089
+#: google-captcha.php:1085
 msgid "FAQ"
 msgstr "ЧПП"
 
-#: google-captcha.php:1090
+#: google-captcha.php:1086
 msgid "Support"
 msgstr "Подршка"
 
@@ -354,7 +355,7 @@ msgstr "Testimonials"
 msgid "WordPress default"
 msgstr "WordPress подразумевано"
 
-#: includes/forms.php:47 includes/pro_banners.php:76
+#: includes/forms.php:47 includes/pro_banners.php:75
 msgid "External Plugins"
 msgstr ""
 
@@ -476,43 +477,35 @@ msgstr ""
 
 #: includes/pro_banners.php:70
 #, fuzzy
-#| msgid "Contact form"
 msgid "Divi Contact Form"
 msgstr "Контакт форма"
 
 #: includes/pro_banners.php:71
 #, fuzzy
-#| msgid "Login form"
 msgid "Divi Login Forms"
 msgstr "Логин форма"
 
-#: includes/pro_banners.php:72
-#, fuzzy
-#| msgid "Contact form"
-msgid "Divi Theme Contact Form"
-msgstr "Контакт форма"
-
-#: includes/pro_banners.php:174
+#: includes/pro_banners.php:173
 msgid "Size"
 msgstr ""
 
-#: includes/pro_banners.php:178
+#: includes/pro_banners.php:177
 msgid "Normal"
 msgstr "Нормално"
 
-#: includes/pro_banners.php:179
+#: includes/pro_banners.php:178
 msgid "Compact"
 msgstr "Компактно"
 
-#: includes/pro_banners.php:184
+#: includes/pro_banners.php:183
 msgid "Language"
 msgstr ""
 
-#: includes/pro_banners.php:192
+#: includes/pro_banners.php:191
 msgid "Multilanguage"
 msgstr ""
 
-#: includes/pro_banners.php:195
+#: includes/pro_banners.php:194
 msgid ""
 "Enable to switch language automatically on multilingual website using "
 "Multilanguage plugin."
@@ -596,6 +589,11 @@ msgstr ""
 #: includes/whitelist.php:360
 msgid "Search results for"
 msgstr "Резултати претраге за"
+
+#, fuzzy
+#~| msgid "Contact form"
+#~ msgid "Divi Theme Contact Form"
+#~ msgstr "Контакт форма"
 
 #~ msgid ""
 #~ "Only one reCAPTCHA can be displayed on the page, it's related to "

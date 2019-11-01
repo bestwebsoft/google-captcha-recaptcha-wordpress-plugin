@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.52
+Version: 1.53
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -607,7 +607,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
                             <script>
                               grecaptcha.ready(function() {
                                   grecaptcha.execute(\''. $gglcptch_options['public_key'] .'\', {action: \'BWS_reCaptcha\'}).then(function(token) {
-                                     document.getElementById(\'g-recaptcha-response\').value=token;
+                                    document.querySelectorAll( "#g-recaptcha-response" ).forEach( elem => ( elem.value = token ) );
                                   });
                               });
                              </script>';
@@ -1026,7 +1026,7 @@ if ( ! function_exists( 'gglcptch_test_keys' ) ) {
 			<?php echo gglcptch_display(); ?>
 			<p>
 				<input type="hidden" name="gglcptch_test_keys_verification-nonce" value="<?php echo wp_create_nonce( 'gglcptch_test_keys_verification' ); ?>" />
-				<button id="gglcptch_test_keys_verification" name="action" class="button-primary" value="gglcptch_test_keys_verification" disabled="disabled"><?php _e( 'Test verification', 'google-captcha' ); ?></button>
+				<button id="gglcptch_test_keys_verification" name="action" class="button-primary cptch_loading" value="gglcptch_test_keys_verification" disabled="disabled"><?php _e( 'Test verification', 'google-captcha' ); ?></button>
 			</p>
 		<?php }
 		die();

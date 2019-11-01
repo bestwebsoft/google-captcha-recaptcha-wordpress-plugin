@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 4.0
-Tested up to: 5.2.2
-Stable tag: 1.52
+Tested up to: 5.2.4
+Stable tag: 1.53
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -266,6 +266,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.53 - 01.11.2019 =
+* Pro : The compatibility with Divi theme and Divi builder has been improved.
+* Pro : The bug with the reCAPTCHA verification on the Buddypress comment form has been fixed.
+* Bugfix : The bug with the Google Captcha (reCAPTCHA) Version 3 verification in several forms on the page has been fixed.
+* Update : All functionality was updated for WordPress 5.2.4.
+
 = V1.52 - 04.09.2019 =
 * Update: The deactivation feedback has been changed. Misleading buttons have been removed.
 
@@ -488,6 +494,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.53 =
+* Functionality improved.
+* Bugs fixed.
+* Bugs fixed.
+* The compatibility with new WordPress version updated.
 
 = V1.52 =
 * Usability improved

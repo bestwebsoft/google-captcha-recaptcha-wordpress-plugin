@@ -68,8 +68,7 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 			'wpforo_reply_form'			=> array( 'form_name' => __( 'wpForo Reply form', 'google-captcha') ),
             'ninja_form'				=> array( 'form_name' => __( 'Ninja Forms', 'google-captcha' ) ),
 			'divi_contact_form'			=> array( 'form_name' => __( 'Divi Contact Form', 'google-captcha' ) ),
-			'divi_login'				=> array( 'form_name' => __( 'Divi Login Forms', 'google-captcha' ) ),
-			'divi_theme_contact_form'	=> array( 'form_name' => __( 'Divi Theme Contact Form', 'google-captcha' ) ),
+			'divi_login'				=> array( 'form_name' => __( 'Divi Login Form', 'google-captcha' ) )
 		);
 		$pro_sections = array(
 			'external' => array(
@@ -101,16 +100,10 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 				)
 			),
 			'divi' => array(
-				'name' => 'Divi Builder',
+				'name' => 'Divi',
 				'forms' => array(
 					'divi_contact_form',
 					'divi_login',
-				)
-			),
-			'divi_theme' => array(
-				'name' => 'Divi Theme',
-				'forms' => array(
-					'divi_theme_contact_form',
 				)
 			),
 			'bbpress' => array(
