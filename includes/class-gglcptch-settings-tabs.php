@@ -89,6 +89,8 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		 */
 		public function save_options() {
 
+			$message = $notice = $error = '';
+
 			/* Save data for settings page */
 			if ( empty( $_POST['gglcptch_public_key'] ) ) {
 				$this->keys['public']['error_msg'] = __( 'Enter site key', 'google-captcha' );

@@ -83,10 +83,10 @@ $bws_plugins = array(
 		'name'			=> 'Custom Admin Page',
 		'description'	=> __( 'Add unlimited custom pages to WordPress admin dashboard.', 'bestwebsoft' ),
 		'link'			=> 'https://bestwebsoft.com/products/wordpress/plugins/custom-admin-page/?k=9ac03f16c25e845e8e055a221c3e1467&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
-		'settings'		=> 'admin.php?page=custom-admin-page.php',
+		'settings'		=> 'edit.php?post_type=bws-admin_page&page=custom-admin-page.php',
 		'pro_version'	=> 'custom-admin-page-pro/custom-admin-page-pro.php',
 		'purchase' 		=> 'https://bestwebsoft.com/products/wordpress/plugins/custom-admin-page/buy/?k=b986f456dba092b537f1a7755a363be9&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
-		'pro_settings' 	=> 'admin.php?page=custom-admin-page.php'
+		'pro_settings' 	=> 'edit.php?post_type=bws-admin_page&page=custom-admin-page.php'
 	),
 	'custom-search-plugin/custom-search-plugin.php' => array(
 		'category'		=> array( 'navigation' ),
