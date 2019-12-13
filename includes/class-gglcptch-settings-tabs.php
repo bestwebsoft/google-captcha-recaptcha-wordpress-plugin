@@ -2,9 +2,6 @@
 /**
  * Displays the content on the plugin settings page
  */
-
-require_once( dirname( dirname( __FILE__ ) ) . '/bws_menu/class-bws-settings.php' );
-
 if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 	class Gglcptch_Settings_Tabs extends Bws_Settings_Tabs {
 		private $keys, $versions, $forms, $sections, $themes;
@@ -34,7 +31,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				'prefix'             => 'gglcptch',
 				'default_options'    => gglcptch_get_default_options(),
 				'options'            => $gglcptch_options,
-				'is_network_options' => is_network_admin(),
 				'tabs'               => $tabs,
 				'wp_slug'            => 'google-captcha',
 				'pro_page'           => 'admin.php?page=google-captcha-pro.php',
@@ -115,11 +111,11 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				$this->options['need_keys_verified_check'] = true;
 			}
 
-			$this->options['whitelist_message']	    = stripslashes( esc_html( $_POST['gglcptch_whitelist_message'] ) );
-			$this->options['public_key']			= trim( stripslashes( esc_html( $_POST['gglcptch_public_key'] ) ) );
-			$this->options['private_key']		    = trim( stripslashes( esc_html( $_POST['gglcptch_private_key'] ) ) );
+			$this->options['whitelist_message']	    = stripslashes( sanitize_text_field( $_POST['gglcptch_whitelist_message'] ) );
+			$this->options['public_key']			= stripslashes( sanitize_text_field( $_POST['gglcptch_public_key'] ) );
+			$this->options['private_key']		    = stripslashes( sanitize_text_field( $_POST['gglcptch_private_key'] ) );
 			$this->options['recaptcha_version']	    = in_array( $_POST['gglcptch_recaptcha_version'], array( 'v2', 'invisible', 'v3' ) ) ? $_POST['gglcptch_recaptcha_version']: 'v2';
-			$this->options['theme_v2']			    = stripslashes( esc_html( $_POST['gglcptch_theme_v2'] ) );
+			$this->options['theme_v2']			    = stripslashes( sanitize_text_field( $_POST['gglcptch_theme_v2'] ) );
             $this->options['score_v3']              = isset( $_POST['gglcptch_score_v3'] ) ? (float)$_POST['gglcptch_score_v3'] : 0.5;
 			$this->options['disable_submit']	    = isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
             $this->options['hide_badge']            = isset( $_POST['gglcptch_hide_badge'] ) ? 1 : 0;
@@ -148,7 +144,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		 * @return void
 		 */
 		public function tab_settings() { ?>
-			<h3 class="bws_tab_label"><?php _e( 'Google Captcha Settings', 'google-captcha' ); ?></h3>
+			<h3 class="bws_tab_label"><?php _e( 'reCaptcha Settings', 'google-captcha' ); ?></h3>
 			<?php $this->help_phrase(); ?>
 			<hr>
 			<div class="bws_tab_sub_label"><?php _e( 'Authentication', 'google-captcha' ); ?></div>
@@ -357,10 +353,10 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		public function display_metabox() { ?>
 			<div class="postbox">
 				<h3 class="hndle">
-					<?php _e( 'Google Captcha Shortcode', 'google-captcha' ); ?>
+					<?php _e( 'reCaptcha Shortcode', 'google-captcha' ); ?>
 				</h3>
 				<div class="inside">
-					<?php _e( "Add Google Captcha to your posts or pages using the following shortcode:", 'google-captcha' ); ?>
+					<?php _e( "Add reCaptcha to your posts or pages using the following shortcode:", 'google-captcha' ); ?>
 					<?php bws_shortcode_output( '[bws_google_captcha]' ); ?>
 				</div>
 			</div>

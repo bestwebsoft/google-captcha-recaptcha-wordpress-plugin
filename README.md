@@ -1,13 +1,13 @@
 <a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/" target=_blank>Google Captcha (reCAPTCHA) WordPress Plugin</a>
 ========================
 
-<p>Google Captcha (reCAPTCHA) plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other. reCAPTCHA Version 3, Version 2, Invisible are included.</p>
+<p>reCaptcha plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other. reCAPTCHA Version 3, Version 2, Invisible are included.</p>
 <p>Users are required to confirm that they are not a robot before the form can be submitted. It&#8217;s easy for people and hard for bots.</p>
 <p><a href="https://bestwebsoft.com/demo-for-google-captcha/?ref=readme" rel="nofollow">View Demo</a></p>
 <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
 <h4>Free Features</h4>
 <ul>
-<li>Add Google Captcha (reCAPTCHA) to:
+<li>Add reCaptcha to:
 <ul>
 <li>Registration form</li>
 <li>Login form</li>
@@ -18,10 +18,10 @@
 <li>Custom form</li>
 </ul>
 </li>
-<li>Hide Google Captcha (reCAPTCHA) for the whitelisted IP addresses</li>
+<li>Hide reCaptcha for the whitelisted IP addresses</li>
 <li>Disable the submit button</li>
 <li>Validity check of keys in admin panel</li>
-<li>Available Google Captcha (reCAPTCHA) themes for:
+<li>Available reCaptcha themes for:
 <ul>
 <li>Version 1
 <ul>
@@ -40,9 +40,9 @@
 </ul>
 </li>
 <li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415" rel="nofollow">Limit Attempts</a></li>
-<li>Hide Google Captcha (reCAPTCHA) in your forms for certain user roles</li>
-<li>Hide Google Captcha (reCAPTCHA) Badge (Invisible and V3)</li>
-<li>Supports Google Captcha (reCAPTCHA):
+<li>Hide reCaptcha in your forms for certain user roles</li>
+<li>Hide reCaptcha Badge (Invisible and V3)</li>
+<li>Supports reCaptcha:
 <ul>
 <li>Version 2</li>
 <li>Version 3</li>
@@ -106,7 +106,7 @@
 <li>Reply form</li>
 </ul>
 </li>
-<li>Select Google Captcha (reCAPTCHA) language manually</li>
+<li>Select reCaptcha language manually</li>
 <li>Change size: normal or compact (for version 2)</li>
 <li>Configure all subsites on the network</li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow">Support Policy</a>)</li>

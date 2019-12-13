@@ -18,6 +18,14 @@
 			}
 		} );
 
+		if ( 'v3' == gglcptch.options.version ) {
+			grecaptcha.ready( function() {
+				grecaptcha.execute( gglcptch.options.sitekey, {action: 'BWS_reCaptcha'}).then(function( token ) {
+					document.querySelectorAll( "#g-recaptcha-response" ).forEach( elem => ( elem.value = token ) );
+				});
+			});
+		}
+
 		/*
 		 * display reCaptcha for others blocks
 		 * this part is neccessary because
@@ -159,13 +167,13 @@
 
 		var gglcptch_version = gglcptch.options.version;
 		v1_add_to_last_element = v1_add_to_last_element || false;
-
+		
 		if ( 'v2' == gglcptch_version ) {
-				if ( $( '#' + container ).parent().width() <= 300 ) {
-					var size = 'compact';
-				} else {
-					var size = 'normal';
-				}
+			if ( $( '#' + container ).parent().width() <= 300 && $( '#' + container ).parent().width() != 0 || $( window ).width() < 400 ) {
+				var size = 'compact';
+			} else {
+				var size = 'normal';
+			}
 			var parameters = params ? params : { 'sitekey' : gglcptch.options.sitekey, 'theme' : gglcptch.options.theme, 'size' : size },
 				block = $( '#' + container ),
 				form = block.closest( 'form' );
@@ -179,9 +187,7 @@
 
 			var gglcptch_index = grecaptcha.render( container, parameters );
 			$( '#' + container ).data( 'gglcptch_index', gglcptch_index );
-		}
-
-		if ( 'invisible' == gglcptch_version ) {
+		} else if ( 'invisible' == gglcptch_version ) {
 			var block = $( '#' + container ),
 				form = block.closest( 'form' ),
 				parameters = params ? params : { 'sitekey' : gglcptch.options.sitekey, 'size' : 'invisible', 'tabindex' : 9999 },
