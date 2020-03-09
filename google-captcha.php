@@ -6,12 +6,12 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.55
+Version: 1.56
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -106,7 +106,7 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		}
 
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $gglcptch_plugin_info, '4.0' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $gglcptch_plugin_info, '4.5' );
 
 		$is_admin = is_admin() && ! defined( 'DOING_AJAX' );
 		/* Call register settings function */
@@ -409,7 +409,8 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 			'suggest_feature_banner'	=> 1,
             'score_v3'                  => 0.5,
             'hide_badge'                => 0,
-            'disable_submit_button'     => 0
+            'disable_submit_button'     => 0,
+			'use_globally'              => 0
 		);
 
 		if ( function_exists( 'get_editable_roles' ) ) {
@@ -670,6 +671,7 @@ if ( ! function_exists( 'gglcptch_display_custom' ) ) {
 if ( ! function_exists( 'gglcptch_get_api_url' ) ) {
 	function gglcptch_get_api_url() {
 		global $gglcptch_options;
+		$use_globally = $gglcptch_options['use_globally'] ? 'recaptcha.net' : 'google.com';
 
 		switch ( true ) {
             case (
@@ -677,13 +679,13 @@ if ( ! function_exists( 'gglcptch_get_api_url' ) ) {
                     in_array( $gglcptch_options['recaptcha_version'], array( 'v2', 'invisible' ) )
             ) :
                 $callback = ( ! empty( $gglcptch_options['disable_submit'] ) ) ? 'onload=gglcptch_onload_callback&' : '';
-				$api_url = sprintf( 'https://www.google.com/recaptcha/api.js?%srender=explicit', $callback );
+				$api_url = sprintf( 'https://www.' . $use_globally . '/recaptcha/api.js?%srender=explicit', $callback );
             break;
             case (
                     isset( $gglcptch_options['recaptcha_version'] ) &&
                     'v3' == $gglcptch_options['recaptcha_version']
             ) :
-				$api_url = sprintf( 'https://www.google.com/recaptcha/api.js?render=%s', $gglcptch_options['public_key'] );
+				$api_url = sprintf( 'https://www.' . $use_globally . '/recaptcha/api.js?render=%s', $gglcptch_options['public_key'] );
             break;
             default :
 				$api_url = 'https://www.google.com/recaptcha/api/js/recaptcha_ajax.js';
@@ -697,7 +699,7 @@ if ( ! function_exists( 'gglcptch_get_response' ) ) {
 		$args = array(
 			'body' => array(
 				'secret'   => $privatekey,
-				'response' => stripslashes( sanitize_text_field( $_POST["g-recaptcha-response"] ) ),
+				'response' => isset( $_POST["g-recaptcha-response"] ) ? stripslashes( sanitize_text_field( $_POST["g-recaptcha-response"] ) ) : '',
 				'remoteip' => $remote_ip,
 			),
 			'sslverify' => false
@@ -986,7 +988,7 @@ if ( ! function_exists( 'gglcptch_get_message' ) ) {
 			'incorrect'					=> __( 'You have entered an incorrect reCAPTCHA value.', 'google-captcha' ),
 			'multiple_blocks'			=> __( 'More than one reCAPTCHA has been found in the current form. Please remove all unnecessary reCAPTCHA fields to make it work properly.', 'google-captcha' ),
             /* v3 error */
-            'RECAPTCHA_SMALL_SCORE'     => __( 'reCAPTCHA v3 test failed', 'google-captcha' )
+            'RECAPTCHA_SMALL_SCORE'     => __( 'reCaptcha v3 test failed', 'google-captcha' )
 		);
 
 		if ( isset( $messages[ $message_code ] ) ) {
@@ -1102,22 +1104,6 @@ if ( ! function_exists ( 'gglcptch_plugin_banner' ) ) {
 			if ( empty( $gglcptch_options ) ) {
 				register_gglcptch_settings();
 			}
-
-			if ( empty( $gglcptch_options['public_key'] ) || empty( $gglcptch_options['private_key'] ) ) { ?>
-				<div class="error">
-					<p>
-						<?php printf(
-							'<strong>%s <a target="_blank" href="https://www.google.com/recaptcha/admin#list">%s</a> %s <a target="_blank" href="%s">%s</a>.</strong>',
-							__( 'To use reCaptcha you must get the keys from', 'google-captcha' ),
-							__ ( 'here', 'google-captcha' ),
-							__ ( 'and enter them on the', 'google-captcha' ),
-							admin_url( '/admin.php?page=google-captcha.php' ),
-							__( 'plugin setting page', 'google-captcha' )
-						); ?>
-					</p>
-				</div>
-			<?php }			
-
 			bws_plugin_banner_to_settings( $gglcptch_plugin_info, 'gglcptch_options', 'google-captcha', 'admin.php?page=google-captcha.php' );
 		}
 

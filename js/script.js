@@ -21,7 +21,7 @@
 		if ( 'v3' == gglcptch.options.version ) {
 			grecaptcha.ready( function() {
 				grecaptcha.execute( gglcptch.options.sitekey, {action: 'BWS_reCaptcha'}).then(function( token ) {
-					document.querySelectorAll( "#g-recaptcha-response" ).forEach( elem => ( elem.value = token ) );
+					document.querySelectorAll( "#g-recaptcha-response" ).forEach( function ( elem ) { elem.value = token } );
 				});
 			});
 		}

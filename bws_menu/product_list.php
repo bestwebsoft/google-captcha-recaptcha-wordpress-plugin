@@ -26,16 +26,6 @@ $bws_plugins = array(
 		'purchase'		=> 'https://bestwebsoft.com/products/wordpress/plugins/captcha/buy/?k=ff7d65e55e5e7f98f219be9ed711094e&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 		'pro_settings'	=> 'admin.php?page=captcha_pro.php'
 	),
-	'car-rental/car-rental.php' => array(
-		'category'		=> array( 'ecommerce' ),
-		'name'			=> 'Car Rental',
-		'description'	=> __( 'Create your personal car rental/booking and reservation website.', 'bestwebsoft' ),
-		'link'			=> 'https://bestwebsoft.com/products/wordpress/plugins/car-rental/?k=444cac6df9a0d3a9763ab4753d24941b&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
-		'settings'		=> 'admin.php?page=car-rental-settings',
-		'pro_version'	=> 'car-rental-pro/car-rental-pro.php',
-		'purchase'		=> 'https://bestwebsoft.com/products/wordpress/plugins/car-rental/buy/?k=7643d4f0698252fa1159de078d22269c&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
-		'pro_settings'	=> 'admin.php?page=car-rental-pro-settings'
-	),
 	'bws-car-rental/bws-car-rental.php' => array(
 		'category'		=> array( 'ecommerce' ),
 		'name'			=> 'Car Rental V2',
@@ -47,6 +37,13 @@ $bws_plugins = array(
 		'pro_settings'	=> 'admin.php?page=bws-car-rental-pro-settings',
 		'icon'          => '//ps.w.org/car-rental/assets/icon-128x128.png',
 		'install_url'   => 'https://bestwebsoft.com/products/wordpress/plugins/car-rental-v2/'
+	),
+	'columns-bws/columns-bws.php' => array(
+		'category'		=> array( 'content' ),
+		'name'			=> 'Columns',
+		'description'	=> __( 'Add columns with custom content to WordPress website pages, posts, widgets, etc.', 'bestwebsoft' ),
+		'link'			=> 'https://bestwebsoft.com/products/wordpress/plugins/columns/?k=6d2cddc059a04e4d528cec14de47fb1e&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+		'settings'		=> 'admin.php?page=columns-settings.php'
 	),
 	'contact-form-plugin/contact_form.php' => array(
 		'category'		=> array( 'marketing', 'recommended' ),
@@ -228,7 +225,7 @@ $bws_plugins = array(
 	),
 	'bws-linkedin/bws-linkedin.php' => array(
 		'category'		=> array( 'smm' ),
-		'name'			=> 'Linked',
+		'name'			=> 'LinkedIn',
 		'description'	=> __( 'Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 plugins included – profile, insider, etc.', 'bestwebsoft' ),
 		'link'			=> 'https://bestwebsoft.com/products/wordpress/plugins/linkedin/?k=d63c7319622ccc5f589dd2d545c1d77c&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 		'settings'		=> 'admin.php?page=linkedin.php',
@@ -268,7 +265,7 @@ $bws_plugins = array(
 	),
 	'bws-pinterest/bws-pinterest.php' => array(
 		'category'		=> array( 'smm' ),
-		'name'			=> 'Image Pinning',
+		'name'			=> 'Pinterest',
 		'description'	=> __( 'Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.', 'bestwebsoft' ),
 		'link'			=> 'https://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=504107b6213f247a67fe7ffb94e97c78&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 		'settings'		=> 'admin.php?page=pinterest.php',
@@ -420,7 +417,7 @@ $bws_plugins = array(
 	),
 	'twitter-plugin/twitter.php' => array(
 		'category'		=> array( 'smm' ),
-		'name'			=> 'Tweeting',
+		'name'			=> 'Twitter',
 		'description'	=> __( 'Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts and pages.', 'bestwebsoft' ),
 		'link'			=> 'https://bestwebsoft.com/products/wordpress/plugins/twitter/?k=f8cb514e25bd7ec4974d64435c5eb333&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 		'settings'		=> 'admin.php?page=twitter.php',

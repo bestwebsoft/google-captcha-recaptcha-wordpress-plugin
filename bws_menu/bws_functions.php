@@ -560,7 +560,7 @@ if ( ! function_exists ( 'bws_plugins_admin_init' ) ) {
 if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) ) {
 	function bws_admin_enqueue_scripts() {
 		global $wp_scripts, $hook_suffix,
-			$post_type, $wp_version,
+			$post_type,
 			$bws_plugin_banner_go_pro, $bws_plugin_banner_timeout, $bstwbsftwppdtplgns_banner_array,
 			$bws_shortcode_list;
 
@@ -653,8 +653,7 @@ if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) ) {
 							if ( isset( $value['js_function'] ) )
 								$script .= "'" . $value['js_function'] . "',";
 						}
-					$script .= "],
-					'wp_version' : '" . $wp_version . "'
+					$script .= "]
 				};";
 			wp_register_script( 'bws_shortcode_button', '' );
 			wp_enqueue_script( 'bws_shortcode_button' );
@@ -695,7 +694,6 @@ if ( ! function_exists( 'bws_enqueue_settings_scripts' ) ) {
 
 if ( ! function_exists ( 'bws_plugins_admin_head' ) ) {
 	function bws_plugins_admin_head() {
-		global $wp_version;
 		if ( isset( $_GET['page'] ) && $_GET['page'] == "bws_panel" ) { ?>
 			<noscript>
 				<style type="text/css">
@@ -705,27 +703,6 @@ if ( ! function_exists ( 'bws_plugins_admin_head' ) ) {
 				</style>
 			</noscript>
 		<?php }
-		if ( 4.2 > $wp_version ) { ?>
-			<style type="text/css">
-				.bws_hide_settings_notice,
-				.bws_hide_premium_options {
-					width: 11px;
-					height: 11px;
-					border: none;
-					background: url("<?php echo bws_menu_url( 'images/close_banner.png' ); ?>") no-repeat center center;
-					box-shadow: none;
-					float: right;
-					margin: 8px;
-				}
-				.bws_hide_settings_notice:hover,
-				.bws_hide_premium_options:hover {
-					cursor: pointer;
-				}
-				.bws_hide_premium_options {
-					position: relative;
-				}
-			</style>
-		<?php }		
     }
 }
 
@@ -902,7 +879,7 @@ if ( ! function_exists( 'bws_register_buttons' ) ) {
 /* Generate inline content for the popup window when the "bws shortcode" button is clicked */
 if ( ! function_exists( 'bws_shortcode_media_button_popup' ) ) {
 	function bws_shortcode_media_button_popup() {
-		global $bws_shortcode_list, $wp_version;
+		global $bws_shortcode_list;
 
 		if ( ! empty( $bws_shortcode_list ) ) { ?>
 			<div id="bws_shortcode_popup" style="display:none;">
@@ -973,7 +950,7 @@ if ( ! function_exists( 'bws_help_tab' ) ) {
 		$screen->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:', 'bestwebsoft' ) . '</strong></p>' .
 			'<p><a href="https://drive.google.com/folderview?id=0B5l8lO-CaKt9VGh0a09vUjNFNjA&usp=sharing#list" target="_blank">' . __( 'Documentation', 'bestwebsoft' ) . '</a></p>' .
-			'<p><a href="http://www.youtube.com/user/bestwebsoft/playlists?flow=grid&sort=da&view=1" target="_blank">' . __( 'Video Instructions', 'bestwebsoft' ) . '</a></p>' .
+			'<p><a href="https://www.youtube.com/user/bestwebsoft/playlists?flow=grid&sort=da&view=1" target="_blank">' . __( 'Video Instructions', 'bestwebsoft' ) . '</a></p>' .
 			'<p><a href="https://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">' . __( 'Submit a Request', 'bestwebsoft' ) . '</a></p>'
 		);
 	}

@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
-Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 1.55
+Requires at least: 4.5
+Tested up to: 5.3.2
+Stable tag: 1.56
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,7 +28,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* Reset password form
 	* Comments form
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
-	* Testimonials
+	* [Testimonials](https://bestwebsoft.com/products/wordpress/plugins/testimonials/)
 	* Custom form
 * Hide reCaptcha for the whitelisted IP addresses
 * Disable the submit button
@@ -101,7 +101,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 * [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 * [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
-* [[Doc] How to Use](https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/)
+* [[Doc] User Guide](https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/)
 * [[Video] Installation Instruction](http://www.youtube.com/watch?v=RUJ9VwZLFSY)
 * [[Video] Purchase, Installation & Configuration](https://www.youtube.com/watch?v=X-ccRdEFcM0)
 
@@ -112,6 +112,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 = Translation =
 
 * Czech (cs_CZ) (thanks to [Michal Kučera](mailto:kucerami@gmail.com), www.n0lim.it, [PaMaDeSSoft](mailto:info@pamadessoft.cz), www.pamadessoft.cz)
+* Romanian (ro_RO)
 * Russian (ru_RU)
 * Spanish (es_ES)
 * Ukrainian (uk)
@@ -265,6 +266,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Whitelist page.
 
 == Changelog ==
+
+= V1.56 - 06.03.2020 =
+* NEW : The Romanian language file was added.
+* Update : BWS menu has been updated.
+* Update : All functionality was updated for WordPress 5.3.2.
+* Bugfix : The bug with the reCAPTCHA displaying in Internet Explorer has been fixed.
 
 = V1.55 - 11.12.2019 =
 * Update : Plugin was renamed.
@@ -502,6 +509,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.56 =
+* The compatibility with new WordPress version updated.
+* Languages updated.
+* Bugs fixed.
 
 = V1.55 =
 * Bugs fixed.

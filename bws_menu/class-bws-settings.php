@@ -236,7 +236,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 		 */
 		public function display_tabs() {
 			global $wp_version; ?>
-            <div id="bws_settings_tabs_wrapper"<?php if ( version_compare( $wp_version, '4.0', '<' ) ) echo ' class="edit-form-section"'; ?>>
+            <div id="bws_settings_tabs_wrapper">
                 <ul id="bws_settings_tabs">
 					<?php $this->display_tabs_list(); ?>
                 </ul>
@@ -452,7 +452,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 				                'learn_more_link'	=> 'https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started'
 				),
 				'php' => array( 'description' 	=> sprintf( __( 'This PHP code will be hooked to the %s action and will be printed on front end only.', 'bestwebsoft' ), '<a href="https://codex.wordpress.org/Plugin_API/Action_Reference/init" target="_blank"><code>init</code></a>' ),
-				                'learn_more_link'	=> 'http://php.net/'
+				                'learn_more_link'	=> 'https://php.net/'
 				),
 				'js' => array( 'description' 	=> __( 'These code will be added to the header on all pages of your site.', 'bestwebsoft' ),
 				               'learn_more_link'	=> 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
@@ -692,7 +692,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 					),
 					'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 				);
-				$raw_response = wp_remote_post( 'http://bestwebsoft.com/wp-content/plugins/products-statistics/track-usage/', $options );
+				$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/products-statistics/track-usage/', $options );
 
 				if ( ! is_wp_error( $raw_response ) && 200 == wp_remote_retrieve_response_code( $raw_response ) ) {
 					$response = maybe_unserialize( wp_remote_retrieve_body( $raw_response ) );
@@ -727,7 +727,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 				if ( ! empty( $this->pro_page ) || ! empty( $single_license['pro_basename'] )  ) {
 
 					if ( $this->pro_plugin_is_activated && ( empty( $single_license['pro_basename'] ) || isset( $this->bws_license_plugin ) ) ) {
-						$url = 'http://bestwebsoft.com/wp-content/plugins/paid-products/plugins/downloads/?bws_first_download=' . $this->bws_license_plugin . '&bws_license_key=' . $bstwbsftwppdtplgns_options[ $this->bws_license_plugin ] . '&download_from=5'; ?>
+						$url = 'https://bestwebsoft.com/wp-content/plugins/paid-products/plugins/downloads/?bws_first_download=' . $this->bws_license_plugin . '&bws_license_key=' . $bstwbsftwppdtplgns_options[ $this->bws_license_plugin ] . '&download_from=5'; ?>
 						<table class="form-table">
                             <tr>
                                 <th scope="row"><?php echo $pro_plugin_name . ' License'; ?></th>
@@ -859,7 +859,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 									'body'       => array( 'plugins' => serialize( $to_send ) ),
 									'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 								);
-								$raw_response = wp_remote_post( 'http://bestwebsoft.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
+								$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
 
 								if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) ) {
 									$error = __( 'Something went wrong. Please try again later. If the error appears again, please contact us', 'bestwebsoft' ) . ': <a href=https://support.bestwebsoft.com>BestWebSoft</a>. ' . __( 'We are sorry for inconvenience.', 'bestwebsoft' );
@@ -968,7 +968,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 										'body'       => array( 'plugins' => serialize( $to_send ) ),
 										'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 									);
-									$raw_response = wp_remote_post( 'http://bestwebsoft.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
+									$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
 
 									if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) ) {
 										$error = __( "Something went wrong. Please try again later. If the error appears again, please contact us", 'bestwebsoft' ) . ': <a href="https://support.bestwebsoft.com">BestWebSoft</a>. ' . __( "We are sorry for inconvenience.", 'bestwebsoft' );

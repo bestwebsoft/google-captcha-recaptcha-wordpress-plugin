@@ -361,7 +361,7 @@ if ( ! function_exists( 'bws_submit_uninstall_reason_action' ) ) {
 			exit;
 		}
 
-		$reason_info = isset( $_REQUEST['reason_info'] ) ? stripcslashes( sanitize_textarea_field( $_REQUEST['reason_info'] ) ) : '';
+		$reason_info = isset( $_REQUEST['reason_info'] ) ? stripcslashes( sanitize_text_field( $_REQUEST['reason_info'] ) ) : '';
 		if ( ! empty( $reason_info ) ) {
 			$reason_info = substr( $reason_info, 0, 255 );
 		}
@@ -391,7 +391,7 @@ if ( ! function_exists( 'bws_submit_uninstall_reason_action' ) ) {
 		}
 
 		/* send data */
-		$raw_response = wp_remote_post( 'http://bestwebsoft.com/wp-content/plugins/products-statistics/deactivation-feedback/', array(
+		$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/products-statistics/deactivation-feedback/', array(
 			'method'  => 'POST',
 			'body'    => $options,
 			'timeout' => 15,

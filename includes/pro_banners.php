@@ -185,7 +185,7 @@ if ( ! function_exists( 'gglcptch_additional_settings_banner' ) ) {
 				<th scope="row"><?php _e( 'Multilanguage', 'google-captcha' ); ?></th>
 				<td>
 					<input disabled="disabled" type="checkbox" />
-					<span class="bws_info"><?php _e( 'Enable to switch language automatically on multilingual website using Multilanguage plugin.', 'google-captcha' ); ?></span>
+					<span class="bws_info"><?php _e( 'Enable to switch language automatically on multilingual website using the Multilanguage plugin.', 'google-captcha' ); ?></span>
 				</td>
 			</tr>
 		</table>

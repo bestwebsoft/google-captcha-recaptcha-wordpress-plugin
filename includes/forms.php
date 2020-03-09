@@ -67,7 +67,7 @@ if ( ! function_exists( 'gglcptch_get_sections' ) ) {
 	}
 }
 
-/* Add reCAPTCHA forms to the Limit Attempts plugin */
+/* Add reCaptcha forms to the Limit Attempts plugin */
 if ( ! function_exists( 'gglcptch_add_lmtttmpts_forms' ) ) {
 	function gglcptch_add_lmtttmpts_forms( $forms = array() ) {
 		if ( ! is_array( $forms ) ) {
