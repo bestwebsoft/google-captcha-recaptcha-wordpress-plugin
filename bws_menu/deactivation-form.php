@@ -122,7 +122,9 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 						</div>
 					</div>
 					<div class="bws-modal-footer">
-						<a href="#" class="button button-primary bws-modal-button-deactivate"></a>
+						<a href="#" class="button button-primary bws-modal-button-deactivate disabled">' . __( 'Submit and Deactivate', 'bestwebsoft' ) . '</a>
+						<a href="#" class="bws-modal-skip-link">' . __( 'Skip and Deactivate', 'bestwebsoft' ) . '</a>
+						<span class="bws-modal-processing hidden">' . __( 'Processing', 'bestwebsoft' ) . '...</span>
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -184,6 +186,14 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 							}, 150 );
 						});
 
+						\$modal.on( 'click', '.bws-modal-footer .bws-modal-skip-link', function( evt ) {
+							evt.preventDefault();
+							
+							/* If no selected reason, just deactivate the plugin. */
+							window.location.href = \$deactivateLink.attr( 'href' );
+							return;
+						});
+
 						\$modal.on( 'click', '.bws-modal-footer .button', function( evt ) {
 							evt.preventDefault();
 
@@ -194,46 +204,40 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 							var _parent = $( this ).parents( '.bws-modal:first' ),
 								_this =  $( this );
 
-							if ( _this.hasClass( 'allow-deactivate' ) ) {
-								var \$radio = \$modal.find( 'input[type=\"radio\"]:checked' );
+							var \$radio = \$modal.find( 'input[type=\"radio\"]:checked' );
 
-								if ( 0 === \$radio.length ) {
-									/* If no selected reason, just deactivate the plugin. */
-									window.location.href = \$deactivateLink.attr( 'href' );
-									return;
-								}
-
-								var \$selected_reason = \$radio.parents( 'li:first' ),
-								    \$input = \$selected_reason.find( 'textarea, input[type=\"text\"]' ),
-								    userReason = ( 0 !== \$input.length ) ? \$input.val().trim() : '';
-
-								var is_anonymous = ( \$anonymousFeedback.find( 'input' ).is( ':checked' ) ) ? 0 : 1;
-
-								$.ajax({
-									url       : ajaxurl,
-									method    : 'POST',
-									data      : {
-										'action'			: 'bws_submit_uninstall_reason_action',
-										'plugin'			: '" . $basename . "',
-										'reason_id'			: \$radio.val(),
-										'reason_info'		: userReason,
-										'is_anonymous'		: is_anonymous,
-										'bws_ajax_nonce'	: '" . wp_create_nonce( 'bws_ajax_nonce' ) . "'
-									},
-									beforeSend: function() {
-										_parent.find( '.bws-modal-footer .button' ).addClass( 'disabled' );
-										_parent.find( '.bws-modal-footer .button-secondary' ).text( '" . __( 'Processing', 'bestwebsoft' ) . "' + '...' );
-									},
-									complete  : function( message ) {
-										/* Do not show the dialog box, deactivate the plugin. */
-										window.location.href = \$deactivateLink.attr( 'href' );
-									}
-								});
-							} else if ( _this.hasClass( 'bws-modal-button-deactivate' ) ) {
-								/* Change the Deactivate button's text and show the reasons panel. */
-								_parent.find( '.bws-modal-button-deactivate' ).addClass( 'allow-deactivate' );
-								BwsModalShowPanel();
+							if ( 0 === \$radio.length ) {
+								/* If no selected reason */
+								BwsModalDisableDeactivateButton();
+								return;
 							}
+
+							var \$selected_reason = \$radio.parents( 'li:first' ),
+							    \$input = \$selected_reason.find( 'textarea, input[type=\"text\"]' ),
+							    userReason = ( 0 !== \$input.length ) ? \$input.val().trim() : '';
+
+							var is_anonymous = ( \$anonymousFeedback.find( 'input' ).is( ':checked' ) ) ? 0 : 1;
+
+							$.ajax({
+								url       : ajaxurl,
+								method    : 'POST',
+								data      : {
+									'action'			: 'bws_submit_uninstall_reason_action',
+									'plugin'			: '" . $basename . "',
+									'reason_id'			: \$radio.val(),
+									'reason_info'		: userReason,
+									'is_anonymous'		: is_anonymous,
+									'bws_ajax_nonce'	: '" . wp_create_nonce( 'bws_ajax_nonce' ) . "'
+								},
+								beforeSend: function() {
+									_parent.find( '.bws-modal-footer .button' ).hide();
+									_parent.find( '.bws-modal-footer .bws-modal-processing' ).show();
+								},
+								complete  : function( message ) {
+									/* Do not show the dialog box, deactivate the plugin. */
+									window.location.href = \$deactivateLink.attr( 'href' );
+								}
+							});
 						});
 
 						\$modal.on( 'click', 'input[type=\"radio\"]', function() {
@@ -251,7 +255,6 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 
 							\$modal.find( '.bws-modal-reason-input' ).remove();
 							\$modal.find( '.bws-modal-internal-message' ).hide();
-							\$modal.find( '.bws-modal-button-deactivate' ).text( '" . __( 'Submit and Deactivate', 'bestwebsoft' ) . "' );
 
 							BwsModalEnableDeactivateButton();
 
@@ -299,9 +302,7 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 					}
 
 					function BwsModalReset() {
-						selectedReasonID = false;
-
-						BwsModalEnableDeactivateButton();
+						selectedReasonID = false;						
 
 						/* Uncheck all radio buttons.*/
 						\$modal.find( 'input[type=\"radio\"]' ).prop( 'checked', false );
@@ -314,14 +315,14 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 						/* Hide, since by default there is no selected reason.*/
 						\$anonymousFeedback.hide();
 
-						var \$deactivateButton = \$modal.find( '.bws-modal-button-deactivate' );
+						BwsModalDisableDeactivateButton();
 
-						\$deactivateButton.addClass( 'allow-deactivate' );
 						BwsModalShowPanel();
 					}
 
 					function BwsModalEnableDeactivateButton() {
-						\$modal.find( '.bws-modal-button-deactivate' ).removeClass( 'disabled' );
+						\$modal.find( '.bws-modal-button-deactivate' ).removeClass( 'disabled' ).show();
+						\$modal.find( '.bws-modal-processing' ).hide();
 					}
 
 					function BwsModalDisableDeactivateButton() {
@@ -330,8 +331,6 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 
 					function BwsModalShowPanel() {
 						\$modal.find( '.bws-modal-panel' ).addClass( 'active' );
-						/* Update the deactivate button's text */
-						\$modal.find( '.bws-modal-button-deactivate' ).text( '" . __( 'Skip and Deactivate', 'bestwebsoft' ) . "' );
 					}
 				})(jQuery);";
 		}
@@ -361,7 +360,7 @@ if ( ! function_exists( 'bws_submit_uninstall_reason_action' ) ) {
 			exit;
 		}
 
-		$reason_info = isset( $_REQUEST['reason_info'] ) ? stripcslashes( sanitize_text_field( $_REQUEST['reason_info'] ) ) : '';
+		$reason_info = isset( $_REQUEST['reason_info'] ) ? stripcslashes( sanitize_textarea_field( $_REQUEST['reason_info'] ) ) : '';
 		if ( ! empty( $reason_info ) ) {
 			$reason_info = substr( $reason_info, 0, 255 );
 		}

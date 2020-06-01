@@ -282,6 +282,7 @@ if ( ! function_exists( 'gglcptch_register_check' ) ) {
 		if ( ! $gglcptch_check['response'] ) {
 			return $gglcptch_check['errors'];
 		}
+		$_POST['g-recaptcha-response-check'] = true;
 		return $allow;
 	}
 }
@@ -289,7 +290,7 @@ if ( ! function_exists( 'gglcptch_register_check' ) ) {
 /* Check google captcha in lostpassword form */
 if ( ! function_exists( 'gglcptch_lostpassword_check' ) ) {
 	function gglcptch_lostpassword_check( $allow ) {
-		if ( gglcptch_is_woocommerce_page() )
+		if ( gglcptch_is_woocommerce_page() || ( isset( $_POST['g-recaptcha-response-check'] ) && true === $_POST['g-recaptcha-response-check'] ) )
 			return $allow;
 		$gglcptch_check = gglcptch_check( 'reset_pwd_form' );
 		if ( ! $gglcptch_check['response'] ) {

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 4.5
-Tested up to: 5.3.2
-Stable tag: 1.56
+Tested up to: 5.4.1
+Stable tag: 1.57
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -267,6 +267,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.57 - 01.06.2020 =
+* Bugfix : The bug with sending a standard email after registration has been fixed.
+
 = V1.56 - 06.03.2020 =
 * NEW : The Romanian language file was added.
 * Update : BWS menu has been updated.
@@ -509,6 +512,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.57 =
+* Bugs fixed.
 
 = V1.56 =
 * The compatibility with new WordPress version updated.
