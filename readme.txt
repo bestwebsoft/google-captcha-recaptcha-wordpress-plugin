@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 4.5
-Tested up to: 5.4.1
-Stable tag: 1.57
+Tested up to: 5.5
+Stable tag: 1.58
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -267,6 +267,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.58 - 10.09.2020 =
+* Pro : The compatibility with Gravity Forms has been fixed.
+* Pro : The bug with the reCaptcha displaying in wpForo form has been fixed.
+* Update : BWS menu has been updated.
+
 = V1.57 - 01.06.2020 =
 * Bugfix : The bug with sending a standard email after registration has been fixed.
 
@@ -512,6 +517,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.58 =
+* Bugs fixed.
 
 = V1.57 =
 * Bugs fixed.

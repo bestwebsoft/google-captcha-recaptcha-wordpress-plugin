@@ -34,8 +34,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				'tabs'               => $tabs,
 				'doc_link'			 => 'https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/',
 				'wp_slug'            => 'google-captcha',
-				'pro_page'           => 'admin.php?page=google-captcha-pro.php',
-				'bws_license_plugin' => 'google-captcha-pro/google-captcha-pro.php',
 				'link_key'           => 'b850d949ccc1239cab0da315c3c822ab',
 				'link_pn'            => '109'
 			) );
