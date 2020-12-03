@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.58
+Version: 1.59
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -53,12 +53,12 @@ if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
                 'gglcptch_add_settings_page'
             );
 
-			$whitelist_page = add_submenu_page(
+			$allowlist_page = add_submenu_page(
                 'google-captcha.php',
-                __( 'reCaptcha Whitelist', 'google-captcha' ),
-                __( 'Whitelist', 'google-captcha' ),
+                __( 'reCaptcha Allow List', 'google-captcha' ),
+                __( 'Allow List', 'google-captcha' ),
                 'manage_options',
-                'google-captcha-whitelist.php',
+                'google-captcha-allowlist.php',
                 'gglcptch_add_settings_page'
             );
 
@@ -79,7 +79,7 @@ if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
 			}
 
 			add_action( "load-{$settings_page}", 'gglcptch_add_tabs' );
-			add_action( "load-{$whitelist_page}", 'gglcptch_add_tabs' );
+			add_action( "load-{$allowlist_page}", 'gglcptch_add_tabs' );
 		}
 	}
 }
@@ -163,7 +163,7 @@ if ( ! function_exists( 'gglcptch_add_admin_script_styles' ) ) {
 		/* css for displaing an icon */
 		wp_enqueue_style( 'gglcptch_admin_page_stylesheet', plugins_url( 'css/admin_page.css', __FILE__ ) );
 
-		if ( isset( $_REQUEST['page'] ) && ( 'google-captcha.php' == $_REQUEST['page'] || 'google-captcha-whitelist.php' == $_REQUEST['page'] ) ) {
+		if ( isset( $_REQUEST['page'] ) && ( 'google-captcha.php' == $_REQUEST['page'] || 'google-captcha-allowlist.php' == $_REQUEST['page'] ) ) {
 			wp_enqueue_style( 'gglcptch_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array(), $gglcptch_plugin_info['Version'] );
 			wp_enqueue_script( 'gglcptch_admin_script', plugins_url( 'js/admin_script.js', __FILE__ ), array( 'jquery', 'jquery-ui-accordion' ), $gglcptch_plugin_info['Version'] );
 
@@ -322,7 +322,7 @@ if ( ! function_exists( 'gglcptch_create_table' ) ) {
 		global $wpdb;
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
-        $sql = "CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}gglcptch_whitelist` (
+        $sql = "CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}gglcptch_allowlist` (
             `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
             `ip` CHAR(31) NOT NULL,
             `ip_from_int` BIGINT,
@@ -333,8 +333,8 @@ if ( ! function_exists( 'gglcptch_create_table' ) ) {
         dbDelta( $sql );
 
         /* add unique key */
-        if ( ! $wpdb->query( "SHOW KEYS FROM `{$wpdb->prefix}gglcptch_whitelist` WHERE Key_name='ip'" ) ) {
-            $wpdb->query( "ALTER TABLE `{$wpdb->prefix}gglcptch_whitelist` ADD UNIQUE(`ip`);" );
+        if ( ! $wpdb->query( "SHOW KEYS FROM `{$wpdb->prefix}gglcptch_allowlist` WHERE Key_name='ip'" ) ) {
+            $wpdb->query( "ALTER TABLE `{$wpdb->prefix}gglcptch_allowlist` ADD UNIQUE(`ip`);" );
         }
 	}
 }
@@ -342,9 +342,9 @@ if ( ! function_exists( 'gglcptch_create_table' ) ) {
 /* Google catpcha settings */
 if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 	function register_gglcptch_settings() {
-		global $gglcptch_options, $gglcptch_plugin_info;
+		global $wpdb, $gglcptch_options, $gglcptch_plugin_info;
 
-		$plugin_db_version = '0.1';
+		$plugin_db_version = '0.2';
 
 		/* Install the option defaults */
 		if ( ! get_option( 'gglcptch_options' ) ) {
@@ -353,11 +353,34 @@ if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 		/* Get options from the database */
 		$gglcptch_options = get_option( 'gglcptch_options' );
 
+		/* Update tables when update plugin and tables changes*/
+		if ( ! isset( $gglcptch_options['plugin_db_version'] ) || $gglcptch_options['plugin_db_version'] != $plugin_db_version ) {
+
+			if ( ! isset( $gglcptch_options['plugin_db_version'] ) ) {
+				gglcptch_create_table();
+			}
+
+			/**
+			 * @deprecated since 1.59
+			 * @todo remove after 01.05.2021
+			 */
+			if ( isset( $gglcptch_options['plugin_option_version'] ) &&  version_compare( $gglcptch_options['plugin_option_version'] , '1.59', '<' ) )  {
+				$prefix = $wpdb->prefix . 'gglcptch_';
+				/* Renaming a table */
+				$wpdb->query( "RENAME TABLE `" . $prefix . "whitelist` TO `" . $prefix . "allowlist`" );
+
+				/* Renaming old options to DB */
+				$gglcptch_options['allowlist_is_empty'] = $gglcptch_options['whitelist_is_empty'];
+				$gglcptch_options['allowlist_message'] = $gglcptch_options['whitelist_message'];
+			}
+			/* end deprecated */
+
+			$gglcptch_options['plugin_db_version'] = $plugin_db_version;
+			update_option( 'gglcptch_options', $gglcptch_options );
+		}
+
 		/* Array merge incase this version has added new options */
-		if (
-            ! isset( $gglcptch_options['plugin_option_version'] ) ||
-            $gglcptch_options['plugin_option_version'] != $gglcptch_plugin_info["Version"]
-        ) {
+		if ( ! isset( $gglcptch_options['plugin_option_version'] ) || $gglcptch_options['plugin_option_version'] != $gglcptch_plugin_info["Version"] ) {
 			$gglcptch_options = array_merge( gglcptch_get_default_options(), $gglcptch_options );
 			$gglcptch_options['plugin_option_version'] = $gglcptch_plugin_info["Version"];
 
@@ -373,20 +396,6 @@ if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 			}
 			update_option( 'gglcptch_options', $gglcptch_options );
 		}
-		/* Update tables when update plugin and tables changes*/
-		if (
-		        ! isset( $gglcptch_options['plugin_db_version'] ) ||
-                (
-                        isset( $gglcptch_options['plugin_db_version'] ) &&
-                        $gglcptch_options['plugin_db_version'] != $plugin_db_version
-                )
-		) {
-			if ( ! isset( $gglcptch_options['plugin_db_version'] ) ) {
-				gglcptch_create_table();
-			}
-			$gglcptch_options['plugin_db_version'] = $plugin_db_version;
-			update_option( 'gglcptch_options', $gglcptch_options );
-		}
 	}
 }
 
@@ -395,7 +404,7 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 		global $gglcptch_plugin_info;
 
 		$default_options = array(
-			'whitelist_message'			=> __( 'You are in the whitelist', 'google-captcha' ),
+			'allowlist_message'			=> __( 'You are in the allow list', 'google-captcha' ),
 			'public_key'				=> '',
 			'private_key'				=> '',
 			'login_form'				=> 0,
@@ -457,22 +466,22 @@ if ( ! function_exists( 'gglcptch_plugin_status' ) ) {
 	}
 }
 
-if ( ! function_exists( 'gglcptch_whitelisted_ip' ) ) {
-	function gglcptch_whitelisted_ip() {
+if ( ! function_exists( 'gglcptch_allowlisted_ip' ) ) {
+	function gglcptch_allowlisted_ip() {
 		global $wpdb, $gglcptch_options;
 		$checked = false;
 		if ( empty( $gglcptch_options ) ) {
 			$gglcptch_options = get_option( 'gglcptch_options' );
 		}
-		$whitelist_exist = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}gglcptch_whitelist'" );
-		if ( 1 === $whitelist_exist ) {
+		$allowlist_exist = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}gglcptch_allowlist'" );
+		if ( 1 === $allowlist_exist ) {
 			$ip = gglcptch_get_ip();
 
 			if ( ! empty( $ip ) ) {
 				$ip_int = sprintf( '%u', ip2long( $ip ) );
 				$result = $wpdb->get_var(
 					"SELECT `id`
-					FROM `{$wpdb->prefix}gglcptch_whitelist`
+					FROM `{$wpdb->prefix}gglcptch_allowlist`
 					WHERE ( `ip_from_int` <= {$ip_int} AND `ip_to_int` >= {$ip_int} ) OR `ip` LIKE '{$ip}' LIMIT 1;"
 				);
 				$checked = is_null( $result ) || ! $result ? false : true;
@@ -497,8 +506,8 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
                 <noscript><div class="error below-h2"><p><strong><?php _e( "Please enable JavaScript in your browser.", 'google-captcha' ); ?></strong></p></div></noscript>
 				<?php $page->display_content();
 			} else {
-				require_once( dirname( __FILE__ ) . '/includes/whitelist.php' );
-				$page = new Gglcptch_Whitelist( plugin_basename( __FILE__ ) );
+				require_once( dirname( __FILE__ ) . '/includes/allowlist.php' );
+				$page = new Gglcptch_Allowlist( plugin_basename( __FILE__ ) );
 				if ( is_object( $page ) ) {
 					$page->display_content();
 				}
@@ -565,7 +574,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			register_gglcptch_settings();
 		}
 
-		if ( ! gglcptch_whitelisted_ip() || ( isset( $_GET['action'] ) && 'gglcptch-test-keys' == $_GET['action'] ) ) {
+		if ( ! gglcptch_allowlisted_ip() || ( isset( $_GET['action'] ) && 'gglcptch-test-keys' == $_GET['action'] ) ) {
 
 			if ( ! $gglcptch_count ) {
 				$gglcptch_count = 1;
@@ -651,8 +660,8 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			) {
 				gglcptch_add_styles();
 			}
-		} elseif ( ! empty( $gglcptch_options['whitelist_message'] ) ) {
-			$content .= '<label class="gglcptch_whitelist_message" style="display: block;">' . $gglcptch_options['whitelist_message'] . '</label>';
+		} elseif ( ! empty( $gglcptch_options['allowlist_message'] ) ) {
+			$content .= '<label class="gglcptch_allowlist_message" style="display: block;">' . $gglcptch_options['allowlist_message'] . '</label>';
 		}
 
 		return $content;
@@ -717,7 +726,7 @@ if ( ! function_exists( 'gglcptch_check' ) ) {
 	function gglcptch_check( $form = 'general', $debug = false ) {
 		global $gglcptch_options;
 
-        if ( gglcptch_whitelisted_ip() && 'gglcptch_test' != $form ) {
+        if ( gglcptch_allowlisted_ip() && 'gglcptch_test' != $form ) {
             $result = array(
                     'response' => true,
                     'reason' => ''

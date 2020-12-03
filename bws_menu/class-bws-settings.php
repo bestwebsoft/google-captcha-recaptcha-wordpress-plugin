@@ -169,6 +169,10 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
                                             <div class="submitbox" id="submitpost">
                                                 <div id="minor-publishing">
                                                     <div id="misc-publishing-actions">
+                                                        <?php /**
+                                                         * action - Display additional content for #misc-publishing-actions
+                                                         */
+                                                        do_action( __CLASS__ . '_information_postbox_top' ); ?>
 														<?php if ( $this->is_pro ) {
 															if ( isset( $bstwbsftwppdtplgns_options['wrong_license_key'][ $this->plugin_basename ] ) || empty( $bstwbsftwppdtplgns_options['time_out'] ) || ! array_key_exists( $this->plugin_basename, $bstwbsftwppdtplgns_options['time_out'] ) ) {
 																$license_type = 'Pro';
@@ -205,6 +209,10 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
                                                         <div class="misc-pub-section">
                                                             <strong><?php _e( 'Version', 'bestwebsoft' ); ?>:</strong> <?php echo $this->plugins_info['Version']; ?>
                                                         </div><!-- .misc-pub-section -->
+                                                        <?php /**
+                                                         * action - Display additional content for #misc-publishing-actions
+                                                         */
+                                                        do_action( __CLASS__ . '_information_postbox_bottom' ); ?>
                                                     </div>
                                                     <div class="clear"></div>
                                                 </div>

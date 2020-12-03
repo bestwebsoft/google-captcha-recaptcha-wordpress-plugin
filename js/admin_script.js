@@ -41,21 +41,21 @@
 		} );
 
 		/**
-		 * Handle the "Whitelist" tab on the plugins option page
+		 * Handle the "Allow list" tab on the plugins option page
 		 */
-		$( 'button[name="gglcptch_show_whitelist_form"]' ).click( function() {
+		$( 'button[name="gglcptch_show_allowlist_form"]' ).click( function() {
 			$( this ).closest( 'form' ).hide();
-			$( '.gglcptch_whitelist_form' ).show();
+			$( '.gglcptch_allowlist_form' ).show();
 			return false;
 		} );
 
-		/*  add my ip to the whitelist */
-		$( 'input[name="gglcptch_add_to_whitelist_my_ip"]' ).change( function() {
+		/*  add my ip to the allowlist */
+		$( 'input[name="gglcptch_add_to_allowlist_my_ip"]' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
-				var my_ip = $( 'input[name="gglcptch_add_to_whitelist_my_ip_value"]' ).val();
-				$( 'input[name="gglcptch_add_to_whitelist"]' ).val( my_ip ).attr( 'readonly', 'readonly' );
+				var my_ip = $( 'input[name="gglcptch_add_to_allowlist_my_ip_value"]' ).val();
+				$( 'input[name="gglcptch_add_to_allowlist"]' ).val( my_ip ).attr( 'readonly', 'readonly' );
 			} else {
-				$( 'input[name="gglcptch_add_to_whitelist"]' ).val( '' ).removeAttr( 'readonly' );
+				$( 'input[name="gglcptch_add_to_allowlist"]' ).val( '' ).removeAttr( 'readonly' );
 			}
 		} );
 	} );
@@ -69,7 +69,7 @@
 
 		$( '.gglcptch-test-results' ).remove();
 		$( '#gglcptch-test-block' ).load( $( this ).prop( 'href' ), function() {
-			$( '.gglcptch_v1, .gglcptch_v2, .gglcptch_invisible' ).each( function() {
+			$( '.gglcptch_v2, .gglcptch_invisible' ).each( function() {
 				var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' );
 				if ( $( this ).is( ':visible' ) ) {
 					gglcptch.display( container );

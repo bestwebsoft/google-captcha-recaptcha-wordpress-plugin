@@ -18,25 +18,13 @@
 <li>Custom form</li>
 </ul>
 </li>
-<li>Hide reCaptcha for the whitelisted IP addresses</li>
+<li>Hide reCaptcha for the allow list IP addresses</li>
 <li>Disable the submit button</li>
 <li>Validity check of keys in admin panel</li>
-<li>Available reCaptcha themes for:
-<ul>
-<li>Version 1
-<ul>
-<li>Red (default)</li>
-<li>White</li>
-<li>Blackglass</li>
-<li>Clean</li>
-</ul>
-</li>
-<li>Version 2
+<li>Available reCaptcha themes for Version 2:
 <ul>
 <li>Light (default)</li>
 <li>Dark</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415" rel="nofollow ugc">Limit Attempts</a></li>
@@ -116,11 +104,12 @@
 <p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">Suggest a Feature</a></p>
 <h4>Documentation &amp; Videos</h4>
 <ul>
+<li><a href="https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/" rel="nofollow ugc">[Doc] User Guide</a></li>
 <li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow ugc">[Doc] Installation</a></li>
 <li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow ugc">[Doc] Purchase</a></li>
-<li><a href="https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/" rel="nofollow ugc">[Doc] User Guide</a></li>
 <li><a href="http://www.youtube.com/watch?v=RUJ9VwZLFSY" rel="nofollow ugc">[Video] Installation Instruction</a></li>
 <li><a href="https://www.youtube.com/watch?v=X-ccRdEFcM0" rel="nofollow ugc">[Video] Purchase, Installation &amp; Configuration</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZFv6txtic0Y" rel="nofollow ugc">[Video] User Guide</a></li>
 </ul>
 <h4>Help &amp; Support</h4>
 <p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow ugc">https://support.bestwebsoft.com/</a></p>
@@ -130,6 +119,7 @@
 <li>Romanian (ro_RO)</li>
 <li>Russian (ru_RU)</li>
 <li>Spanish (es_ES)</li>
+<li>Turkish (tr_TR) (thanks to <a href="mailto:&#097;&#x64;&#109;i&#x6e;&#064;&#x6c;&#x6f;&#114;&#x64;&#105;&#122;&#x2e;&#099;o&#x6d;" rel="nofollow ugc">Lordiz</a>, www.lordiz.com)</li>
 <li>Ukrainian (uk)</li>
 </ul>
 <p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="https://codex.wordpress.org/Translating_WordPress" rel="nofollow ugc">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">BestWebSoft</a> and we&#8217;ll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php" rel="nofollow ugc">files Poedit</a>.</p>

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 1.58
+Tested up to: 5.5.3
+Stable tag: 1.59
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,18 +30,12 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
 	* [Testimonials](https://bestwebsoft.com/products/wordpress/plugins/testimonials/)
 	* Custom form
-* Hide reCaptcha for the whitelisted IP addresses
+* Hide reCaptcha for the allow list IP addresses
 * Disable the submit button
 * Validity check of keys in admin panel
-* Available reCaptcha themes for:
-	* Version 1
-		* Red (default)
-		* White
-		* Blackglass
-		* Clean
-	* Version 2
-		* Light (default)
-		* Dark
+* Available reCaptcha themes for Version 2:
+    * Light (default)
+    * Dark
 * Compatible with [Limit Attempts](https://bestwebsoft.com/products/wordpress/plugins/limit-attempts/?k=1b1865c556920231995b35c3ed889415)
 * Hide reCaptcha in your forms for certain user roles
 * Hide reCaptcha Badge (Invisible and V3)
@@ -99,11 +93,12 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Documentation & Videos =
 
+* [[Doc] User Guide](https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/)
 * [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 * [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
-* [[Doc] User Guide](https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/)
 * [[Video] Installation Instruction](http://www.youtube.com/watch?v=RUJ9VwZLFSY)
 * [[Video] Purchase, Installation & Configuration](https://www.youtube.com/watch?v=X-ccRdEFcM0)
+* [[Video] User Guide](https://www.youtube.com/watch?v=ZFv6txtic0Y)
 
 = Help & Support =
 
@@ -115,6 +110,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 * Romanian (ro_RO)
 * Russian (ru_RU)
 * Spanish (es_ES)
+* Turkish (tr_TR) (thanks to [Lordiz](mailto:admin@lordiz.com), www.lordiz.com)
 * Ukrainian (uk)
 
 Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
@@ -263,12 +259,22 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Contact Form with reCaptcha.
 6. The form with reCaptcha dark theme.
 7. reCaptcha Settings page.
-8. reCaptcha Whitelist page.
+8. reCaptcha Allow List page.
 
 == Changelog ==
 
+= V1.59 - 02.12.2020 =
+* NEW : The Turkish language file was added.
+* NEW : The compatibility with Android app has been added.
+* Bugfix : The compatibility with Divi theme and Divi builder has been improved.
+* Bugfix : The bug related to reCaptcha validation in the WooCommerce checkout form has been fixed.
+* Bugfix : The problem with the correct operation of the "Disabled Submit Button" option in the WooCommerce checkout form has been fixed.
+* Bugfix : Connection via XML-RPC has been fixed.
+* Update : Whitelist replaced with allow list.
+* Update : BWS Panel section was updated.
+
 = V1.58 - 10.09.2020 =
-* Pro : The compatibility with Gravity Forms has been fixed.
+* Pro : The compatibility with Ninja Forms has been fixed.
 * Pro : The bug with the reCaptcha displaying in wpForo form has been fixed.
 * Update : BWS menu has been updated.
 
@@ -517,6 +523,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.59 =
+* Bugs fixed.
+* Languages updated.
 
 = V1.58 =
 * Bugs fixed.

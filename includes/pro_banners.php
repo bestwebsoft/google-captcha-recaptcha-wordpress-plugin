@@ -35,8 +35,8 @@ if ( ! function_exists( 'gglcptch_pro_block' ) ) {
 	}
 }
 
-if ( ! function_exists( 'gglcptch_whitelist_banner' ) ) {
-	function gglcptch_whitelist_banner() { ?>
+if ( ! function_exists( 'gglcptch_allowlist_banner' ) ) {
+	function gglcptch_allowlist_banner() { ?>
 		<div class="bws_info" style="line-height: 2;"><?php _e( "Allowed formats", 'google-captcha' ); ?>:&nbsp;<code>192.168.0.1, 192.168.0., 192.168., 192., 192.168.0.1/8, 123.126.12.243-185.239.34.54</code></div>
 		<div class="bws_info" style="line-height: 2;"><?php _e( "Allowed separators for IPs: a comma", 'google-captcha' ); ?> (<code>,</code>), <?php _e( 'semicolon', 'google-captcha' ); ?> (<code>;</code>), <?php _e( 'ordinary space, tab, new line or carriage return.', 'google-captcha' ); ?></div>
 		<?php _e( 'Reason', 'google-captcha' ); ?><br>
