@@ -18,7 +18,7 @@
 <li>Custom form</li>
 </ul>
 </li>
-<li>Hide reCaptcha for the allow list IP addresses</li>
+<li>Hide reCaptcha for the allowlisted IP addresses</li>
 <li>Disable the submit button</li>
 <li>Validity check of keys in admin panel</li>
 <li>Available reCaptcha themes for Version 2:
@@ -56,6 +56,7 @@
 <li>Fast Secure Contact Form</li>
 <li>MailChimp for WordPress</li>
 <li>Ninja Forms</li>
+<li>Gravity Forms [NEW]</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:

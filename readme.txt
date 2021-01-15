@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 4.5
-Tested up to: 5.5.3
-Stable tag: 1.59
+Tested up to: 5.6
+Stable tag: 1.60
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ Users are required to confirm that they are not a robot before the form can be s
 
 [View Demo](https://bestwebsoft.com/demo-for-google-captcha/?ref=readme)
 
-http://www.youtube.com/watch?v=qwHsW3IJ7gQ
+http://www.youtube.com/watch?v=L2BziEOL3Fg
 
 = Free Features =
 
@@ -30,7 +30,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
 	* [Testimonials](https://bestwebsoft.com/products/wordpress/plugins/testimonials/)
 	* Custom form
-* Hide reCaptcha for the allow list IP addresses
+* Hide reCaptcha for the allowlisted IP addresses
 * Disable the submit button
 * Validity check of keys in admin panel
 * Available reCaptcha themes for Version 2:
@@ -61,6 +61,7 @@ http://www.youtube.com/watch?v=qwHsW3IJ7gQ
 > 	* Fast Secure Contact Form
 > 	* MailChimp for WordPress
 > 	* Ninja Forms
+> 	* Gravity Forms [NEW]
 > * Compatible with WooCommerce:
 > 	* Login form
 > 	* Register form
@@ -262,6 +263,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Allow List page.
 
 == Changelog ==
+
+= V1.60 - 15.01.2021 =
+* Pro : The compatibility with Gravity Forms has been added.
+* Pro : The compatibility with WooCommerce has been improved.
+* Update : All functionality was updated for WordPress 5.6.
 
 = V1.59 - 02.12.2020 =
 * NEW : The Turkish language file was added.
@@ -523,6 +529,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.60 =
+* New features added.
+* Functionality improved.
 
 = V1.59 =
 * Bugs fixed.

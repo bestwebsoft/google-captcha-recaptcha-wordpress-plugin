@@ -68,13 +68,15 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 			'wpforo_reply_form'			=> array( 'form_name' => __( 'wpForo Reply form', 'google-captcha') ),
             'ninja_form'				=> array( 'form_name' => __( 'Ninja Forms', 'google-captcha' ) ),
 			'divi_contact_form'			=> array( 'form_name' => __( 'Divi Contact Form', 'google-captcha' ) ),
-			'divi_login'				=> array( 'form_name' => __( 'Divi Login Form', 'google-captcha' ) )
+			'divi_login'				=> array( 'form_name' => __( 'Divi Login Form', 'google-captcha' ) ),
+			'gravity_forms'				=> array( 'form_name' => __( 'Gravity Forms', 'google-captcha' ) )
 		);
 		$pro_sections = array(
 			'external' => array(
 				'name' => __( 'External Plugins', 'google-captcha' ),
 				'forms' => array(
 					'cf7',
+					'gravity_forms',
 					'si_contact_form',
 					'jetpack_contact_form',
 					'sbscrbr',

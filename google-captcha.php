@@ -6,12 +6,12 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.59
+Version: 1.60
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2021  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -364,7 +364,7 @@ if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 			 * @deprecated since 1.59
 			 * @todo remove after 01.05.2021
 			 */
-			if ( isset( $gglcptch_options['plugin_option_version'] ) &&  version_compare( $gglcptch_options['plugin_option_version'] , '1.59', '<' ) )  {
+			if ( isset( $gglcptch_options['plugin_option_version'] ) && version_compare( $gglcptch_options['plugin_option_version'], '1.59', '<' ) ) {
 				$prefix = $wpdb->prefix . 'gglcptch_';
 				/* Renaming a table */
 				$wpdb->query( "RENAME TABLE `" . $prefix . "whitelist` TO `" . $prefix . "allowlist`" );
