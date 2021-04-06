@@ -161,20 +161,9 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 	<?php }
 }
 
-if ( ! function_exists( 'gglcptch_additional_settings_banner' ) ) {
-	function gglcptch_additional_settings_banner() { ?>
+if ( ! function_exists( 'gglcptch_additional_settings_banner_general' ) ) {
+	function gglcptch_additional_settings_banner_general() { ?>
 		<table class="form-table bws_pro_version">
-			<tr class="gglcptch_theme_v2" valign="top">
-				<th scope="row">
-					<?php _e( 'Size', 'google-captcha' ); ?>
-				</th>
-				<td>
-					<fieldset>
-						<label><input disabled="disabled" type="radio" checked><?php _e( 'Normal', 'google-captcha' ); ?></label><br />
-						<label><input disabled="disabled" type="radio"><?php _e( 'Compact', 'google-captcha' ); ?></label>
-					</fieldset>
-				</td>
-			</tr>
 			<tr valign="top">
 				<th scope="row"><?php _e( 'Language', 'google-captcha' ); ?></th>
 				<td>
@@ -188,6 +177,24 @@ if ( ! function_exists( 'gglcptch_additional_settings_banner' ) ) {
 				<td>
 					<input disabled="disabled" type="checkbox" />
 					<span class="bws_info"><?php _e( 'Enable to switch language automatically on multilingual website using the Multilanguage plugin.', 'google-captcha' ); ?></span>
+				</td>
+			</tr>
+		</table>
+	<?php }
+}
+
+if ( ! function_exists( 'gglcptch_additional_settings_banner_appearence' ) ) {
+	function gglcptch_additional_settings_banner_appearence() { ?>
+		<table class="form-table bws_pro_version">
+			<tr class="gglcptch_theme_v2" valign="top">
+				<th scope="row">
+					<?php _e( 'Size', 'google-captcha' ); ?>
+				</th>
+				<td>
+					<fieldset>
+						<label><input disabled="disabled" type="radio" checked><?php _e( 'Normal', 'google-captcha' ); ?></label><br />
+						<label><input disabled="disabled" type="radio"><?php _e( 'Compact', 'google-captcha' ); ?></label>
+					</fieldset>
 				</td>
 			</tr>
 		</table>

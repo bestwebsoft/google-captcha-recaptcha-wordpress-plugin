@@ -101,10 +101,11 @@ if ( ! function_exists( 'gglcptch_add_lmtttmpts_forms' ) ) {
 if ( ! function_exists( 'gglcptch_get_section_notice' ) ) {
 	function gglcptch_get_section_notice( $section_slug = '' ) {
 		$section_notice = "";
-		$plugins = array(
-			/* example: */
-			/* 'bbpress'			=> 'bbpress/bbpress.php' */
-		);
+        $plugins = array(
+	        /* example: */
+	        /* 'bbpress'    => 'bbpress/bbpress.php' */
+        );
+		$plugins = apply_filters( 'gglcptch_custom_plugin_section_notice', $plugins );
 
 		$is_network_admin = is_network_admin();
 
@@ -199,6 +200,8 @@ if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 		if ( gglcptch_is_recaptcha_required( 'testimonials', $is_user_logged_in ) ) {
 			add_filter( 'tstmnls_display_recaptcha', 'gglcptch_display', 10, 0 );
 		}
+
+		do_action( 'gglcptch_add_plus_actions', $is_user_logged_in );
 	}
 }
 
@@ -217,27 +220,25 @@ if ( ! function_exists( 'gglcptch_login_display' ) ) {
 
 		if ( isset( $gglcptch_options['recaptcha_version'] ) ) {
 			if ( 'v2' == $gglcptch_options['recaptcha_version'] ) {
-				$from_width = 302;
-			} else {
-				$from_width = 320;
-			} ?>
-			<style type="text/css" media="screen">
-				.login-action-login #loginform,
-				.login-action-lostpassword #lostpasswordform,
-				.login-action-register #registerform {
-					width: <?php echo $from_width; ?>px !important;
-				}
-				#login_error,
-				.message {
-					width: <?php echo $from_width + 20; ?>px !important;
-				}
-				.login-action-login #loginform .gglcptch,
-				.login-action-lostpassword #lostpasswordform .gglcptch,
-				.login-action-register #registerform .gglcptch {
-					margin-bottom: 10px;
-				}
-			</style>
-		<?php }
+				$from_width = 302; ?>
+				<style type="text/css" media="screen">
+					.login-action-login #loginform,
+					.login-action-lostpassword #lostpasswordform,
+					.login-action-register #registerform {
+						width: <?php echo $from_width; ?>px !important;
+					}
+					#login_error,
+					.message {
+						width: <?php echo $from_width + 20; ?>px !important;
+					}
+					.login-action-login #loginform .gglcptch,
+					.login-action-lostpassword #lostpasswordform .gglcptch,
+					.login-action-register #registerform .gglcptch {
+						margin-bottom: 10px;
+					}
+				</style>
+			<?php }
+		}
 		echo gglcptch_display();
 		return true;
 	}

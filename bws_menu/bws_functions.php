@@ -697,6 +697,7 @@ if ( ! function_exists( 'bws_enqueue_settings_scripts' ) ) {
 	function bws_enqueue_settings_scripts() {
 		wp_enqueue_script( 'jquery-ui-resizable' );
 		wp_enqueue_script( 'jquery-ui-tabs' );
+		wp_enqueue_style( 'bws-modal-css', bws_menu_url( 'css/modal.css' ) );
 	}
 }
 

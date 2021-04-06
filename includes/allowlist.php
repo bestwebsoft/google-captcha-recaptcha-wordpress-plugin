@@ -87,15 +87,16 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 					<br/>
 					<span class="bws_info" style="line-height: 2;"><?php _e( "Allowed diapason", 'google-captcha' ); ?>:&nbsp;<code>0.0.0.0 - 255.255.255.255</code></span>
 				</div>
-			<?php
-			if ( isset( $_POST['bws_hide_premium_options'] ) ) {
-				$gglcptch_options['hide_premium_options'][0] = 1;
-				update_option( 'gglcptch_options', $gglcptch_options );
-			}
-			$display_pro_options_for_allowlist = get_option( 'gglcptch_options' );
-			if( empty( $display_pro_options_for_allowlist['hide_premium_options'][0] ) ) {
-				gglcptch_pro_block( 'gglcptch_allowlist_banner' );
-			} ?>
+                <!-- pls -->
+                <?php if ( isset( $_POST['bws_hide_premium_options'] ) ) {
+                    $gglcptch_options['hide_premium_options'][0] = 1;
+                    update_option( 'gglcptch_options', $gglcptch_options );
+                }
+                $display_pro_options_for_allowlist = get_option( 'gglcptch_options' );
+                if( empty( $display_pro_options_for_allowlist['hide_premium_options'][0] ) ) {
+                    gglcptch_pro_block( 'gglcptch_allowlist_banner' );
+                } ?>
+                <!-- end pls -->
 				<p>
 					<input type="submit" name="gglcptch_submit_add_to_allowlist" class="button-secondary" value="<?php _e( 'Add IP to Allow List', 'google-captcha' ) ?>" />
 					<?php wp_nonce_field( $this->basename, 'gglcptch_nonce_name' ); ?>

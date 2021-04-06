@@ -22,7 +22,9 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				'settings'      => array( 'label' => __( 'Settings', 'google-captcha' ) ),
 				'misc'          => array( 'label' => __( 'Misc', 'google-captcha' ) ),
 				'custom_code'   => array( 'label' => __( 'Custom Code', 'google-captcha' ) ),
+                /*pls */
 				'license'       => array( 'label' => __( 'License Key', 'google-captcha' ) )
+                /* pls*/
 			);
 
 			parent::__construct( array(
@@ -32,11 +34,13 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				'default_options'    => gglcptch_get_default_options(),
 				'options'            => $gglcptch_options,
 				'tabs'               => $tabs,
+                'doc_link'			 => 'https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/',
+                'doc_video_link'     => 'https://www.youtube.com/watch?v=ZFv6txtic0Y/',
+                /*pls */
 				'wp_slug'            => 'google-captcha',
 				'link_key'           => 'b850d949ccc1239cab0da315c3c822ab',
-				'link_pn'            => '109',
-				'doc_link'			 => 'https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/',
-				'doc_video_link'     => 'https://www.youtube.com/watch?v=ZFv6txtic0Y/'
+				'link_pn'            => '109'
+                /* pls*/
 			) );
 
 			$this->all_plugins = get_plugins();
@@ -66,6 +70,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			$this->sections = gglcptch_get_sections();
 
 			add_action( get_parent_class( $this ) . '_display_custom_messages', array( $this, 'display_custom_messages' ) );
+            add_action( get_parent_class( $this ) . '_additional_misc_options', array( $this, 'additional_misc_options' ) );
 			add_action( get_parent_class( $this ) . '_display_metabox', array( $this, 'display_metabox' ) );
 		}
 
@@ -112,7 +117,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			$this->options['disable_submit']	    = isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
             $this->options['hide_badge']            = isset( $_POST['gglcptch_hide_badge'] ) ? 1 : 0;
             $this->options['disable_submit_button'] = isset( $_POST['gglcptch_disable_submit_button'] ) ? 1 : 0;
-			$this->options['use_globally']          = isset( $_POST['gglcptch_use_globally'] ) ? 1 : 0;
+			$this->options['use_globally']          = intval( $_POST['gglcptch_use_globally'] );
 
 			foreach ( $this->forms as $form_slug => $form_data ) {
 				$this->options[ $form_slug ] = isset( $_POST["gglcptch_{$form_slug}"] ) ? 1 : 0;
@@ -124,6 +129,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				}
 			}
 
+            $this->options = apply_filters( 'gglcptch_before_save_options', $this->options );
 			update_option( 'gglcptch_options', $this->options );
 			$message = __( "Settings saved.", 'google-captcha' );
 
@@ -140,30 +146,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			<h3 class="bws_tab_label"><?php _e( 'reCaptcha Settings', 'google-captcha' ); ?></h3>
 			<?php $this->help_phrase(); ?>
 			<hr>
-			<div class="bws_tab_sub_label"><?php _e( 'Authentication', 'google-captcha' ); ?></div>
-			<div class="bws_info"><?php _e( 'Register your domain name with Google reCaptcha service and add the keys to the fields below.', 'google-captcha' ); ?> <a target="_blank" href="https://www.google.com/recaptcha/admin#list"><?php _e( 'Get the API Keys', 'google-captcha' ); ?></a></div>
-			<table class="form-table">
-				<?php foreach ( $this->keys as $key => $fields ) { ?>
-					<tr>
-						<th><?php echo $fields['display_name']; ?></th>
-						<td>
-							<input class="regular-text" type="text" name="<?php echo $fields['form_name']; ?>" value="<?php echo $this->options[ $key . '_key' ] ?>" maxlength="200" />
-							<label class="gglcptch_error_msg error"><?php echo $fields['error_msg']; ?></label>
-							<span class="dashicons dashicons-yes gglcptch_verified <?php if ( ! isset( $this->options['keys_verified'] ) || true !== $this->options['keys_verified'] ) echo 'hidden'; ?>"></span>
-						</td>
-					</tr>
-				<?php }
-				if ( ! empty( $this->options['public_key'] ) && ! empty( $this->options['private_key'] ) ) { ?>
-					<tr class="hide-if-no-js">
-						<th></th>
-						<td>
-							<div id="gglcptch-test-keys">
-								<a class="button button-secondary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ), 'action' => 'gglcptch-test-keys', 'is_network' => $this->is_network_options ? '1' : '0' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test reCaptcha' , 'google-captcha' ); ?></a>
-							</div>
-						</td>
-					</tr>
-				<?php } ?>
-			</table>
 			<div class="bws_tab_sub_label"><?php _e( 'General', 'google-captcha' ); ?></div>
 			<table class="form-table">
                 <tr valign="top">
@@ -179,7 +161,36 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
                         </fieldset>
                     </td>
                 </tr>
-				<tr valign="top">
+            </table>
+            <table class="form-table gglcptch_settings_form">
+                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'Register your domain name with Google reCaptcha service and add the keys to the fields below. %s Get the API Keys. %s' , 'google-captcha' ), 
+                	'<a target="_blank" href="https://www.google.com/recaptcha/admin#list">', 
+                	'</a>' ) ?>
+                </div>
+                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'If you do not want to create API keys use %s Captcha by BestWebSoft %s plugin.', 'google-captcha' ), 
+                	'<a target="_blank" href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=dcf21edcd5cc9374f5e15c8055e40797">', 
+                	'</a>' ); ?>
+                </div>
+				<?php foreach ( $this->keys as $key => $fields ) { ?>
+					<tr>
+						<th><?php echo $fields['display_name']; ?></th>
+						<td>
+							<input class="regular-text" type="text" name="<?php echo $fields['form_name']; ?>" value="<?php echo $this->options[ $key . '_key' ] ?>" maxlength="200" />
+							<label class="gglcptch_error_msg error"><?php echo $fields['error_msg']; ?></label>
+							<span class="dashicons dashicons-yes gglcptch_verified <?php if ( ! isset( $this->options['keys_verified'] ) || true !== $this->options['keys_verified'] ) echo 'hidden'; ?>"></span>
+						</td>
+					</tr>
+				<?php } if ( ! empty( $this->options['public_key'] ) && ! empty( $this->options['private_key'] ) ) { ?>
+					<tr class="hide-if-no-js">
+						<th></th>
+						<td>
+							<div id="gglcptch-test-keys">
+								<a class="button button-secondary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ), 'action' => 'gglcptch-test-keys', 'is_network' => $this->is_network_options ? '1' : '0' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test reCaptcha' , 'google-captcha' ); ?></a>
+							</div>
+						</td>
+					</tr>
+				<?php } ?>				
+                <tr valign="top">
 					<th scope="row"><?php _e( 'Enable reCaptcha for', 'google-captcha' ); ?></th>
 					<td>
 						<!--[if !IE]> -->
@@ -223,6 +234,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
+            <!-- pls -->
 			<?php if ( ! $this->hide_pro_tabs ) { ?>
 				<div class="bws_pro_version_bloc">
 					<div class="bws_pro_version_table_bloc">
@@ -233,7 +245,88 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					<?php $this->bws_pro_block_links(); ?>
 				</div>
 			<?php } ?>
+            <!-- end pls -->
 			<table class="form-table">
+				<tr valign="top">
+                    <th scope="row">
+						<?php _e( 'reCaptcha Domain', 'google-captcha' ); ?>
+                    </th>
+                    <td>
+                    	<select <?php echo $this->change_permission_attr; ?> name="gglcptch_use_globally">
+                        	<option value="0" <?php selected( $this->options['use_globally'], 0 ); ?>>google.com</option>
+                        	<option value="1" <?php selected( $this->options['use_globally'], 1 ); ?>>recaptcha.net</option>
+                        </select>
+                        <div class="bws_info">
+							<?php _e( 'If Google is not accessible or blocked in your country select other one.', 'google-captcha' ); ?>
+						</div>
+                    </td>
+                </tr>
+            </table>
+            <!-- pls -->
+			<?php if ( ! $this->hide_pro_tabs ) { ?>
+				<div class="bws_pro_version_bloc">
+					<div class="bws_pro_version_table_bloc">
+						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-captcha' ); ?>"></button>
+						<div class="bws_table_bg"></div>
+						<?php gglcptch_additional_settings_banner_general(); ?>
+					</div>
+					<?php $this->bws_pro_block_links(); ?>
+				</div>
+			<?php } ?>
+            <!-- end pls -->
+
+			<div class="bws_tab_sub_label"><?php _e( 'Appearence', 'google-captcha' ); ?></div>
+			<table class="form-table">
+				<tr class="gglcptch_theme_v2" valign="top">
+					<th scope="row">
+						<?php _e( 'Theme', 'google-captcha' ); ?>
+					</th>
+					<td>
+						<select name="gglcptch_theme_v2">
+							<option value="light" <?php selected( 'light', $this->options['theme_v2'] ); ?>><?php _e( 'Light', 'google-captcha' ); ?></option>
+							<option value="dark" <?php selected( 'dark', $this->options['theme_v2'] ); ?>><?php _e( 'Dark', 'google-captcha' ); ?></option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<!-- pls -->
+			<?php if ( ! $this->hide_pro_tabs ) { ?>
+				<div class="bws_pro_version_bloc">
+					<div class="bws_pro_version_table_bloc">
+						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-captcha' ); ?>"></button>
+						<div class="bws_table_bg"></div>
+						<?php gglcptch_additional_settings_banner_appearence(); ?>
+					</div>
+					<?php $this->bws_pro_block_links(); ?>
+				</div>
+			<?php } ?>
+            <!-- end pls -->
+			<table class="form-table">
+				<tr class="gglcptch_badge_v3" valign="top">
+                    <th scope="row">
+						<?php _e( 'Hide reCaptcha Badge', 'google-captcha' ); ?>
+                    </th>
+                    <td>
+                        <input<?php echo $this->change_permission_attr; ?> id="gglcptch_hide_badge" type="checkbox" <?php checked( ! empty( $this->options['hide_badge'] ) ); ?> name="gglcptch_hide_badge" value="1" />&nbsp;
+                        <span class="bws_info">
+							<?php _e( 'Enable to hide reCaptcha Badge for Version 3 and Invisible reCaptcha.', 'google-captcha' ); ?>
+						</span>
+                    </td>
+                </tr>
+			</table>
+
+			<div class="bws_tab_sub_label"><?php _e( 'Additional Protective Measures', 'google-captcha' ); ?></div>
+			<table class="form-table">	
+				<tr class="gglcptch_score_v3" valign="top">
+                    <th scope="row">
+                        <?php _e( 'Score', 'google-captcha' ); ?>
+                    </th>
+                    <td>
+                        <input name="gglcptch_score_v3" id="gglcptch_score_v3" type="range" list="gglcptch_score_v3_rangeList" min="0" max="1.0" step="0.1" value="<?php  echo $this->options['score_v3']; ?>">
+                        <output id="gglcptch_score_out_v3" for="gglcptch_score_v3"></output>
+                        <span class="bws_info" style="display: block;"><?php printf( __( 'Set the minimum verification score from %s to %s (default is %s).', 'google-captcha' ), 0, 1, 0.5 ); ?></span>
+                    </td>
+                </tr>		
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Hide reCaptcha for', 'google-captcha' ); ?></th>
 					<td>
@@ -252,61 +345,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 						</fieldset>
 					</td>
 				</tr>
-                <tr class="gglcptch_badge_v3" valign="top">
-                    <th scope="row">
-						<?php _e( 'Hide reCaptcha Badge', 'google-captcha' ); ?>
-                    </th>
-                    <td>
-                        <input<?php echo $this->change_permission_attr; ?> id="gglcptch_hide_badge" type="checkbox" <?php checked( ! empty( $this->options['hide_badge'] ) ); ?> name="gglcptch_hide_badge" value="1" />&nbsp;
-                        <span class="bws_info">
-							<?php _e( 'Enable to hide reCaptcha Badge for Version 3 and Invisble reCaptcha.', 'google-captcha' ); ?>
-						</span>
-                    </td>
-                </tr>
-				<tr class="gglcptch_theme_v2" valign="top">
-					<th scope="row">
-						<?php _e( 'Theme', 'google-captcha' ); ?>
-					</th>
-					<td>
-						<select name="gglcptch_theme_v2">
-							<option value="light" <?php selected( 'light', $this->options['theme_v2'] ); ?>><?php _e( 'Light', 'google-captcha' ); ?></option>
-							<option value="dark" <?php selected( 'dark', $this->options['theme_v2'] ); ?>><?php _e( 'Dark', 'google-captcha' ); ?></option>
-						</select>
-					</td>
-				</tr>
-                <tr class="gglcptch_score_v3" valign="top">
-                    <th scope="row">
-                        <?php _e( 'Score', 'google-captcha' ); ?>
-                    </th>
-                    <td>
-                        <input name="gglcptch_score_v3" id="gglcptch_score_v3" type="range" list="gglcptch_score_v3_rangeList" min="0" max="1.0" step="0.1" value="<?php  echo $this->options['score_v3']; ?>">
-                        <output id="gglcptch_score_out_v3" for="gglcptch_score_v3"></output>
-                        <span class="bws_info" style="display: block;"><?php printf( __( 'Set the minimum verification score from %s to %s (default is %s).', 'google-captcha' ), 0, 1, 0.5 ); ?></span>
-                    </td>
-                </tr>
-			</table>
-			<?php if ( ! $this->hide_pro_tabs ) { ?>
-				<div class="bws_pro_version_bloc">
-					<div class="bws_pro_version_table_bloc">
-						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-captcha' ); ?>"></button>
-						<div class="bws_table_bg"></div>
-						<?php gglcptch_additional_settings_banner(); ?>
-					</div>
-					<?php $this->bws_pro_block_links(); ?>
-				</div>
-			<?php } ?>
-			<table class="form-table">
-                <tr valign="top">
-                    <th scope="row">
-						<?php _e( 'Use reCaptcha Globally', 'google-captcha' ); ?>
-                    </th>
-                    <td>
-                        <input<?php echo $this->change_permission_attr; ?> type="checkbox" <?php checked( $this->options['use_globally'] ); ?> name="gglcptch_use_globally" value="1" />
-                        <span class="bws_info">
-							<?php _e( 'Enable to use reCaptcha when Google is not accessible or blocked in your country.', 'google-captcha' ); ?>
-						</span>
-                    </td>
-                </tr>
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Allow List Notification', 'google-captcha' ); ?></th>
 					<td>
@@ -347,6 +385,10 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				<div class="updated inline bws-notice"><p><strong><?php _e( 'reCaptcha version was changed. Please submit "Test reCaptcha" and regenerate Site and Secret keys if necessary.', 'google-captcha' ); ?></strong></p></div>
 			<?php }
 		}
+
+        public function additional_misc_options() {
+            do_action( 'gglcptch_settings_page_misc_action', $this->options );
+        }
 
 		/**
 		 * Display custom metabox

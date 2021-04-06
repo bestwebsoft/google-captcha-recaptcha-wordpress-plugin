@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.60
+Version: 1.61
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -70,14 +70,14 @@ if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
                 'gglcptch-bws-panel',
                 'bws_add_menu_render'
             );
-
-			if ( isset( $submenu['google-captcha.php'] ) ) {
-				$submenu['google-captcha.php'][] = array(
-					'<span style="color:#d86463"> ' . __('Upgrade to Pro', 'google-captcha' ) . '</span>',
-					'manage_options',
-					'https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=' . $gglcptch_plugin_info["Version"] . '&wp_v=' . $wp_version );
-			}
-
+            /*pls */
+            if ( isset( $submenu['google-captcha.php'] ) ) {
+                $submenu['google-captcha.php'][] = array(
+                    '<span style="color:#d86463"> ' . __('Upgrade to Pro', 'google-captcha' ) . '</span>',
+                    'manage_options',
+                    'https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=' . $gglcptch_plugin_info["Version"] . '&wp_v=' . $wp_version );
+            }
+            /* pls*/
 			add_action( "load-{$settings_page}", 'gglcptch_add_tabs' );
 			add_action( "load-{$allowlist_page}", 'gglcptch_add_tabs' );
 		}
@@ -145,13 +145,16 @@ if ( ! function_exists( 'gglcptch_admin_init' ) ) {
 			$bws_plugin_info = array( 'id' => '109', 'version' => $gglcptch_plugin_info["Version"] );
 		}
 
+        /*pls */
 		if ( 'plugins.php' == $pagenow ) {
-			if ( empty( $gglcptch_options ) ) {
+			if ( empty( $gglcptch_options ) )
 				register_gglcptch_settings();
-			}
-			if ( function_exists( 'bws_plugin_banner_go_pro' ) )
-				bws_plugin_banner_go_pro( $gglcptch_options, $gglcptch_plugin_info, 'gglcptch', 'google-captcha', '676d9558f9786ab41d7de35335cf5c4d', '109', 'google-captcha' );
+
+			if ( function_exists( 'bws_plugin_banner_go_pro' ) ) {
+                bws_plugin_banner_go_pro( $gglcptch_options, $gglcptch_plugin_info, 'gglcptch', 'google-captcha', '676d9558f9786ab41d7de35335cf5c4d', '109', 'google-captcha' );
+            }
 		}
+        /* pls*/
 	}
 }
 
@@ -274,6 +277,8 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 		}
 
 		wp_enqueue_script( 'gglcptch_script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery', 'gglcptch_api' ), $gglcptch_plugin_info["Version"], true );
+
+		do_action( 'gglcptch_custom_enqueue_script' );
 
 		$options = array(
 			'version'	=> $gglcptch_options['recaptcha_version'],
@@ -495,13 +500,21 @@ if ( ! function_exists( 'gglcptch_allowlisted_ip' ) ) {
 if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 	function gglcptch_add_settings_page() {
 		global $gglcptch_plugin_info;
-		require_once( dirname( __FILE__ ) . '/includes/pro_banners.php' ); ?>
+		/*pls */
+		require_once( dirname( __FILE__ ) . '/includes/pro_banners.php' );
+		/* pls*/ 
+		if ( 'google-captcha.php' == $_GET['page'] ) {
+			if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
+				require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
+			}
+			require_once( dirname( __FILE__ ) . '/includes/class-gglcptch-settings-tabs.php' );
+			$page = new Gglcptch_Settings_Tabs( plugin_basename( __FILE__ ) );
+			if ( method_exists( $page, 'add_request_feature' ) ) {
+                $page->add_request_feature();
+			}
+		} ?>
 		<div class="wrap">
-			<?php if ( 'google-captcha.php' == $_GET['page'] ) {
-				if ( ! class_exists( 'Bws_Settings_Tabs' ) )
-					require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
-				require_once( dirname( __FILE__ ) . '/includes/class-gglcptch-settings-tabs.php' );
-				$page = new Gglcptch_Settings_Tabs( plugin_basename( __FILE__ ) ); ?>
+			<?php if ( 'google-captcha.php' == $_GET['page'] ) { ?>
 				<h1><?php _e( 'reCaptcha Settings', 'google-captcha' ); ?></h1>
                 <noscript><div class="error below-h2"><p><strong><?php _e( "Please enable JavaScript in your browser.", 'google-captcha' ); ?></strong></p></div></noscript>
 				<?php $page->display_content();
@@ -511,8 +524,9 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 				if ( is_object( $page ) ) {
 					$page->display_content();
 				}
-
-				bws_plugin_reviews_block( $gglcptch_plugin_info['Name'], 'google-captcha' );
+				/*pls */
+                bws_plugin_reviews_block( $gglcptch_plugin_info['Name'], 'google-captcha' );
+				/* pls*/
 			} ?>
 		</div>
 	<?php }
