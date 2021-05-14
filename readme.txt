@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 4.5
-Tested up to: 5.7
-Stable tag: 1.61
+Tested up to: 5.7.2
+Stable tag: 1.62
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,6 +62,7 @@ http://www.youtube.com/watch?v=L2BziEOL3Fg
 > 	* MailChimp for WordPress
 > 	* Ninja Forms
 > 	* Gravity Forms
+> 	* WPForms [NEW]
 > * Compatible with WooCommerce:
 > 	* Login form
 > 	* Register form
@@ -263,6 +264,13 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Allow List page.
 
 == Changelog ==
+
+= V1.62 - 14.05.2021 =
+* Update : All functionality was updated for WordPress 5.7.2.
+* Bugfix : The issue of sending a password reset link on the user edit page has been fixed.
+* Pro : The issue with submitting Contact 7 form with empty recaptcha has been fixed.
+* Pro : The issue with displaying recaptcha in the form of creating a new topic and in the reply form has been fixed.
+* Pro : The compatibility with WPForms has been added.
 
 = V1.61 - 06.04.2021 =
 * Update : Settings page has been changed for better usability.
@@ -534,6 +542,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.62 =
+* The compatibility with new WordPress version updated.
+* Bugs fixed.
+* New features added.
 
 = V1.61 =
 * Usability improved.

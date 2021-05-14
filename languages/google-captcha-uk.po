@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-06 09:45+0300\n"
+"POT-Creation-Date: 2021-04-21 11:10+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -350,7 +350,7 @@ msgstr ""
 "пункт."
 
 #: includes/class-gglcptch-settings-tabs.php:278
-msgid "Appearence"
+msgid "Appearance"
 msgstr "Зовнішній Вигляд"
 
 #: includes/class-gglcptch-settings-tabs.php:282
@@ -467,7 +467,7 @@ msgstr "Testimonials"
 msgid "WordPress default"
 msgstr "Стандартних форм WordPress"
 
-#: includes/forms.php:47 includes/pro_banners.php:76
+#: includes/forms.php:47 includes/pro_banners.php:77
 msgid "External Plugins"
 msgstr "Зовнішні плагіни"
 
@@ -595,15 +595,19 @@ msgstr "Форма логіну плагіна Divi"
 msgid "Gravity Forms"
 msgstr "Gravity Forms"
 
-#: includes/pro_banners.php:168
+#: includes/pro_banners.php:73
+msgid "WPForms"
+msgstr "WPForms"
+
+#: includes/pro_banners.php:170
 msgid "Language"
 msgstr "Мова"
 
-#: includes/pro_banners.php:176
+#: includes/pro_banners.php:178
 msgid "Multilanguage"
 msgstr "Multilanguage"
 
-#: includes/pro_banners.php:179
+#: includes/pro_banners.php:181
 msgid ""
 "Enable to switch language automatically on multilingual website using the "
 "Multilanguage plugin."
@@ -611,15 +615,15 @@ msgstr ""
 "Увімкніть, щоб перемкнути мову автоматично на багатомовному сайті, "
 "використовуючи плагін Multilanguage."
 
-#: includes/pro_banners.php:191
+#: includes/pro_banners.php:193
 msgid "Size"
 msgstr "Розмір"
 
-#: includes/pro_banners.php:195
+#: includes/pro_banners.php:197
 msgid "Normal"
 msgstr "Нормальний"
 
-#: includes/pro_banners.php:196
+#: includes/pro_banners.php:198
 msgid "Compact"
 msgstr "Компактний"
 

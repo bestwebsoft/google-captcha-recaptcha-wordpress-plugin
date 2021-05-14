@@ -275,7 +275,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			<?php } ?>
             <!-- end pls -->
 
-			<div class="bws_tab_sub_label"><?php _e( 'Appearence', 'google-captcha' ); ?></div>
+			<div class="bws_tab_sub_label"><?php _e( 'Appearance', 'google-captcha' ); ?></div>
 			<table class="form-table">
 				<tr class="gglcptch_theme_v2" valign="top">
 					<th scope="row">
@@ -295,7 +295,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					<div class="bws_pro_version_table_bloc">
 						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-captcha' ); ?>"></button>
 						<div class="bws_table_bg"></div>
-						<?php gglcptch_additional_settings_banner_appearence(); ?>
+						<?php gglcptch_additional_settings_banner_appearance(); ?>
 					</div>
 					<?php $this->bws_pro_block_links(); ?>
 				</div>

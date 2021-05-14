@@ -69,7 +69,8 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
             'ninja_form'				=> array( 'form_name' => __( 'Ninja Forms', 'google-captcha' ) ),
 			'divi_contact_form'			=> array( 'form_name' => __( 'Divi Contact Form', 'google-captcha' ) ),
 			'divi_login'				=> array( 'form_name' => __( 'Divi Login Form', 'google-captcha' ) ),
-			'gravity_forms'				=> array( 'form_name' => __( 'Gravity Forms', 'google-captcha' ) )
+			'gravity_forms'				=> array( 'form_name' => __( 'Gravity Forms', 'google-captcha' ) ),
+			'wpforms'				    => array( 'form_name' => __( 'WPForms', 'google-captcha' ) )
 		);
 		$pro_sections = array(
 			'external' => array(
@@ -82,6 +83,7 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 					'sbscrbr',
 					'mailchimp',
                     'ninja_form',
+                    'wpforms'
 				)
 			),
 			'woocommerce' => array(
@@ -183,8 +185,8 @@ if ( ! function_exists( 'gglcptch_additional_settings_banner_general' ) ) {
 	<?php }
 }
 
-if ( ! function_exists( 'gglcptch_additional_settings_banner_appearence' ) ) {
-	function gglcptch_additional_settings_banner_appearence() { ?>
+if ( ! function_exists( 'gglcptch_additional_settings_banner_appearance' ) ) {
+	function gglcptch_additional_settings_banner_appearance() { ?>
 		<table class="form-table bws_pro_version">
 			<tr class="gglcptch_theme_v2" valign="top">
 				<th scope="row">
