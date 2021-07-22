@@ -34,7 +34,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				'default_options'    => gglcptch_get_default_options(),
 				'options'            => $gglcptch_options,
 				'tabs'               => $tabs,
-                'doc_link'			 => 'https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/',
+                'doc_link'			 => 'https://bestwebsoft.com/documentation/recaptcha/recaptcha-user-guide/',
                 'doc_video_link'     => 'https://www.youtube.com/watch?v=ZFv6txtic0Y/',
                 /*pls */
 				'wp_slug'            => 'google-captcha',

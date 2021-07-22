@@ -70,7 +70,10 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 			'divi_contact_form'			=> array( 'form_name' => __( 'Divi Contact Form', 'google-captcha' ) ),
 			'divi_login'				=> array( 'form_name' => __( 'Divi Login Form', 'google-captcha' ) ),
 			'gravity_forms'				=> array( 'form_name' => __( 'Gravity Forms', 'google-captcha' ) ),
-			'wpforms'				    => array( 'form_name' => __( 'WPForms', 'google-captcha' ) )
+			'wpforms'				    => array( 'form_name' => __( 'WPForms', 'google-captcha' ) ),
+			'ultimate_member_login'		=> array( 'form_name' => __( 'Ultimate Member Login form', 'google-captcha' ) ),
+			'ultimate_member_register'	=> array( 'form_name' => __( 'Ultimate Member Registration form', 'google-captcha' ) ),
+			'ultimate_member_profile'	=> array( 'form_name' => __( 'Ultimate Member Profile form', 'google-captcha' ) )
 		);
 		$pro_sections = array(
 			'external' => array(
@@ -124,6 +127,14 @@ if ( ! function_exists( 'gglcptch_supported_plugins_banner' ) ) {
 					'wpforo_register_form',
 					'wpforo_new_topic_form',
 					'wpforo_reply_form'
+				)
+			),
+			'ultimate_member' => array(
+				'name' => 'Ultimate Member',
+				'forms' => array(
+					'ultimate_member_login',
+					'ultimate_member_register',
+					'ultimate_member_profile'
 				)
 			)
 		); ?>

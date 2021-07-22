@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.62
+Version: 1.63
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -938,7 +938,7 @@ if ( ! function_exists( 'gglcptch_handle_by_limit_attempts' ) ) {
 			$gglcptch_forms = gglcptch_get_forms();
 		}
 
-		$la_form_slug = "{$form_slug}_recaptcha_check";
+		$la_form_slug = "{$form_slug}_captcha_check";
 
 		/* if reCAPTCHA answer is right */
 		if ( true == $check_result ) {
@@ -949,7 +949,10 @@ if ( ! function_exists( 'gglcptch_handle_by_limit_attempts' ) ) {
 			/* if reCAPTCHA answer is wrong */
 			$form_data = array( 'form_name' => $gglcptch_forms[ $form_slug ]['form_name'] );
 
-			$la_error = apply_filters( 'lmtttmpts_form_fail', $la_form_slug, '', $form_data );
+			if ( 'login_form_captcha_check' != $form_slug ) {
+				$la_error = apply_filters( 'lmtttmpts_form_fail', $la_form_slug, '', $form_data );
+			}
+
 			if ( ! empty( $la_error ) && $la_form_slug != $la_error ) {
 				if ( is_wp_error( $check_result ) ) {
 					$check_result->add( "gglcptch_error_lmttmpts", $la_error );

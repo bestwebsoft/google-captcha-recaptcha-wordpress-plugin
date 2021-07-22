@@ -82,9 +82,9 @@ if ( ! function_exists( 'gglcptch_add_lmtttmpts_forms' ) ) {
 		$recaptcha_forms = gglcptch_get_forms();
 
 		foreach ( $recaptcha_forms as $form_slug => $form_data ) {
-			$forms["gglcptch"]["forms"]["{$form_slug}_recaptcha_check"] = $form_data;
+			$forms["gglcptch"]["forms"]["{$form_slug}_captcha_check"] = $form_data;
 			if ( empty( $form_data['form_notice'] ) ) {
-				$forms["gglcptch"]["forms"]["{$form_slug}_recaptcha_check"]['form_notice'] = gglcptch_get_section_notice( $form_slug );
+				$forms["gglcptch"]["forms"]["{$form_slug}_captcha_check"]['form_notice'] = gglcptch_get_section_notice( $form_slug );
 			}
 		}
 
