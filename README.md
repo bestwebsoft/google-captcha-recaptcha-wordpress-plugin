@@ -18,7 +18,7 @@
 <li>Custom form</li>
 </ul>
 </li>
-<li>Hide reCaptcha for the allowlisted IP addresses</li>
+<li>Hide reCaptcha for the allow list IP addresses</li>
 <li>Disable the submit button</li>
 <li>Validity check of keys in admin panel</li>
 <li>Available reCaptcha themes for Version 2:
@@ -56,7 +56,9 @@
 <li>Fast Secure Contact Form</li>
 <li>MailChimp for WordPress</li>
 <li>Ninja Forms</li>
-<li>Gravity Forms [NEW]</li>
+<li>Gravity Forms</li>
+<li>WPForms</li> 
+<li>Caldera Forms [NEW]</li> 
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -95,6 +97,13 @@
 <li>Reply form</li>
 </ul>
 </li>
+<li>Compatible with Ultimate Member:
+<ul>
+<li>Login form</li>
+<li>Registration form</li>
+<li>Profile form</li>
+</ul>
+</li>
 <li>Select reCaptcha language manually</li>
 <li>Change size: normal or compact (for version 2)</li>
 <li>Configure all subsites on the network</li>
@@ -105,10 +114,10 @@
 <p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">Suggest a Feature</a></p>
 <h4>Documentation &amp; Videos</h4>
 <ul>
-<li><a href="https://docs.google.com/document/d/1yTDdMSLqvgATbo5lPzuNn4QRF0EyEPFuLoFB15beMww/" rel="nofollow ugc">[Doc] User Guide</a></li>
-<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow ugc">[Doc] Installation</a></li>
-<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow ugc">[Doc] Purchase</a></li>
-<li><a href="http://www.youtube.com/watch?v=RUJ9VwZLFSY" rel="nofollow ugc">[Video] Installation Instruction</a></li>
+<li><a href="https://bestwebsoft.com/documentation/recaptcha/recaptcha-user-guide/" rel="nofollow ugc">[Doc] User Guide</a></li>
+<li><a href="https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/" rel="nofollow ugc">[Doc] Installation</a></li>
+<li><a href="https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/" rel="nofollow ugc">[Doc] Purchase</a></li>
+<li><a href="https://www.youtube.com/watch?v=RUJ9VwZLFSY" rel="nofollow ugc">[Video] Installation Instruction</a></li>
 <li><a href="https://www.youtube.com/watch?v=X-ccRdEFcM0" rel="nofollow ugc">[Video] Purchase, Installation &amp; Configuration</a></li>
 <li><a href="https://www.youtube.com/watch?v=ZFv6txtic0Y" rel="nofollow ugc">[Video] User Guide</a></li>
 </ul>
