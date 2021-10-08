@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-20 17:21+0300\n"
+"POT-Creation-Date: 2021-09-23 15:05+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: bws_menu\n"
 
 #: google-captcha.php:39 google-captcha.php:49 google-captcha.php:520
-#: includes/class-gglcptch-settings-tabs.php:146
+#: includes/class-gglcptch-settings-tabs.php:147
 msgid "reCaptcha Settings"
 msgstr "Налаштування reCaptcha"
 
-#: google-captcha.php:50 google-captcha.php:1109 google-captcha.php:1122
+#: google-captcha.php:50 google-captcha.php:1114 google-captcha.php:1127
 #: includes/class-gglcptch-settings-tabs.php:22
 msgid "Settings"
 msgstr "Налаштування"
@@ -101,39 +101,43 @@ msgstr "і вставте їх у"
 msgid "plugin setting page"
 msgstr "сторінку налаштувань плагіну"
 
-#: google-captcha.php:884 includes/forms.php:358
+#: google-captcha.php:788
+msgid "Response is empty"
+msgstr "Відповідь порожня"
+
+#: google-captcha.php:889 includes/forms.php:358
 msgid "Error"
 msgstr "Помилка"
 
-#: google-captcha.php:1009
+#: google-captcha.php:1014
 msgid "User response is missing."
 msgstr "Відповідь користувача відсутня."
 
-#: google-captcha.php:1011
+#: google-captcha.php:1016
 msgid "Secret Key is missing."
 msgstr "Секретний ключ відсутній."
 
-#: google-captcha.php:1014
+#: google-captcha.php:1019
 msgid "Secret Key is invalid."
 msgstr "Секретний ключ некоректний."
 
-#: google-captcha.php:1015
+#: google-captcha.php:1020
 msgid "Check your domain configurations"
 msgstr "Перевірте конфігурацію вашого домену"
 
-#: google-captcha.php:1016
+#: google-captcha.php:1021
 msgid "and enter it again"
 msgstr "і введіть його знову"
 
-#: google-captcha.php:1018
+#: google-captcha.php:1023
 msgid "User response is invalid"
 msgstr "Некоректна відповідь користувача"
 
-#: google-captcha.php:1019
+#: google-captcha.php:1024
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Ви ввели невірне значення reCAPTCHA."
 
-#: google-captcha.php:1020
+#: google-captcha.php:1025
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -141,32 +145,32 @@ msgstr ""
 "В поточній формі знайдено більш ніж один блок reCAPTCHA. Будь-ласка видаліть "
 "усі зайві блоки reCAPTCHA для коректної подальшої роботи."
 
-#: google-captcha.php:1022
+#: google-captcha.php:1027
 msgid "reCaptcha v3 test failed"
 msgstr "Тест reCaptcha v3 не пройдений"
 
-#: google-captcha.php:1060
+#: google-captcha.php:1065
 msgid "Please submit \"Test verification\""
 msgstr "Будь ласка, натисніть кнопку \"Тестування перевірки\""
 
-#: google-captcha.php:1062
+#: google-captcha.php:1067
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr ""
 "Будь ласка, заповніть капчу і натисніть кнопку \"Тестування перевірки\""
 
-#: google-captcha.php:1068
+#: google-captcha.php:1073
 msgid "Test verification"
 msgstr "Тестування перевірки"
 
-#: google-captcha.php:1089
+#: google-captcha.php:1094
 msgid "The verification is successfully completed."
 msgstr "Перевірка завершена успішно."
 
-#: google-captcha.php:1124
+#: google-captcha.php:1129
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-captcha.php:1125
+#: google-captcha.php:1130
 msgid "Support"
 msgstr "Техпідтримка"
 
@@ -280,33 +284,33 @@ msgstr "Версія"
 msgid "Invisible"
 msgstr "Невидима"
 
-#: includes/class-gglcptch-settings-tabs.php:89
+#: includes/class-gglcptch-settings-tabs.php:90
 msgid "Enter site key"
 msgstr "Введіть ключ сайту"
 
-#: includes/class-gglcptch-settings-tabs.php:90
-#: includes/class-gglcptch-settings-tabs.php:97
+#: includes/class-gglcptch-settings-tabs.php:91
+#: includes/class-gglcptch-settings-tabs.php:98
 msgid "WARNING: The captcha will not be displayed until you fill key fields."
 msgstr ""
 "УВАГА: Капча не буде відображатись, поки ви не заповните поля з ключами."
 
-#: includes/class-gglcptch-settings-tabs.php:96
+#: includes/class-gglcptch-settings-tabs.php:97
 msgid "Enter secret key"
 msgstr "Введіть секретний ключ"
 
-#: includes/class-gglcptch-settings-tabs.php:134
+#: includes/class-gglcptch-settings-tabs.php:135
 msgid "Settings saved."
 msgstr "Налаштування збережені."
 
-#: includes/class-gglcptch-settings-tabs.php:149
+#: includes/class-gglcptch-settings-tabs.php:150
 msgid "General"
 msgstr "Загальне"
 
-#: includes/class-gglcptch-settings-tabs.php:152
+#: includes/class-gglcptch-settings-tabs.php:153
 msgid "reCaptcha Version"
 msgstr "Версія reCaptcha"
 
-#: includes/class-gglcptch-settings-tabs.php:166
+#: includes/class-gglcptch-settings-tabs.php:167
 #, php-format
 msgid ""
 "Register your domain name with Google reCaptcha service and add the keys to "
@@ -315,7 +319,7 @@ msgstr ""
 "Зареєструйте свій веб-сайт за допомогою Google reCaptcha, щоб отримати "
 "необхідні API ключі та введіть їх нижче. %s Отримати API ключі. %s"
 
-#: includes/class-gglcptch-settings-tabs.php:170
+#: includes/class-gglcptch-settings-tabs.php:171
 #, php-format
 msgid ""
 "If you do not want to create API keys use %s Captcha by BestWebSoft %s "
@@ -324,88 +328,88 @@ msgstr ""
 "Якщо ви не хочете створювати ключі API, використовуйте %s Captcha by "
 "BestWebSoft %s плагін."
 
-#: includes/class-gglcptch-settings-tabs.php:188
+#: includes/class-gglcptch-settings-tabs.php:189
 msgid "Test reCaptcha"
 msgstr "Тестування reCaptcha"
 
-#: includes/class-gglcptch-settings-tabs.php:194
+#: includes/class-gglcptch-settings-tabs.php:195
 msgid "Enable reCaptcha for"
 msgstr "Включити reCaptcha для"
 
-#: includes/class-gglcptch-settings-tabs.php:241
-#: includes/class-gglcptch-settings-tabs.php:269
-#: includes/class-gglcptch-settings-tabs.php:296 includes/pro_banners.php:20
+#: includes/class-gglcptch-settings-tabs.php:242
+#: includes/class-gglcptch-settings-tabs.php:270
+#: includes/class-gglcptch-settings-tabs.php:297 includes/pro_banners.php:20
 msgid "Close"
 msgstr "Закрити"
 
-#: includes/class-gglcptch-settings-tabs.php:252
+#: includes/class-gglcptch-settings-tabs.php:253
 msgid "reCaptcha Domain"
 msgstr "reCaptcha Домен"
 
-#: includes/class-gglcptch-settings-tabs.php:260
+#: includes/class-gglcptch-settings-tabs.php:261
 msgid ""
 "If Google is not accessible or blocked in your country select other one."
 msgstr ""
 "Якщо Google недоступний або заблокований у вашій країні, виберіть інший "
 "пункт."
 
-#: includes/class-gglcptch-settings-tabs.php:278
+#: includes/class-gglcptch-settings-tabs.php:279
 msgid "Appearance"
 msgstr "Зовнішній Вигляд"
 
-#: includes/class-gglcptch-settings-tabs.php:282
+#: includes/class-gglcptch-settings-tabs.php:283
 msgid "Theme"
 msgstr "Тема"
 
-#: includes/class-gglcptch-settings-tabs.php:286
+#: includes/class-gglcptch-settings-tabs.php:287
 msgid "Light"
 msgstr "Свiтла"
 
-#: includes/class-gglcptch-settings-tabs.php:287
+#: includes/class-gglcptch-settings-tabs.php:288
 msgid "Dark"
 msgstr "Темна"
 
-#: includes/class-gglcptch-settings-tabs.php:307
+#: includes/class-gglcptch-settings-tabs.php:308
 msgid "Hide reCaptcha Badge"
 msgstr "Сховати знак ReCaptcha"
 
-#: includes/class-gglcptch-settings-tabs.php:312
+#: includes/class-gglcptch-settings-tabs.php:313
 msgid "Enable to hide reCaptcha Badge for Version 3 and Invisible reCaptcha."
 msgstr ""
 "Увімкніть, щоб приховати значок reCaptcha для версії 3 і Invisible reCaptcha."
 
-#: includes/class-gglcptch-settings-tabs.php:318
+#: includes/class-gglcptch-settings-tabs.php:319
 msgid "Additional Protective Measures"
 msgstr "Додаткові Захисні Заходи"
 
-#: includes/class-gglcptch-settings-tabs.php:322
+#: includes/class-gglcptch-settings-tabs.php:323
 msgid "Score"
 msgstr "Кількість очок"
 
-#: includes/class-gglcptch-settings-tabs.php:327
+#: includes/class-gglcptch-settings-tabs.php:328
 #, php-format
 msgid "Set the minimum verification score from %s to %s (default is %s)."
 msgstr ""
 "Вкажіть граничне значення, при якому перевірка буде пройдена від %s до %s "
 "(за замовчуванням %s)."
 
-#: includes/class-gglcptch-settings-tabs.php:331
+#: includes/class-gglcptch-settings-tabs.php:332
 msgid "Hide reCaptcha for"
 msgstr "Сховати ReCaptcha для"
 
-#: includes/class-gglcptch-settings-tabs.php:349
+#: includes/class-gglcptch-settings-tabs.php:350
 msgid "Allow List Notification"
 msgstr "Повідомлення про знаходження у білому списку"
 
-#: includes/class-gglcptch-settings-tabs.php:352
+#: includes/class-gglcptch-settings-tabs.php:353
 msgid "This message will be displayed instead of the reCaptcha."
 msgstr "Це повідомлення буде відображатися замість reCaptcha."
 
-#: includes/class-gglcptch-settings-tabs.php:356
+#: includes/class-gglcptch-settings-tabs.php:357
 msgid "Advanced Protection"
 msgstr "Посилений захист"
 
-#: includes/class-gglcptch-settings-tabs.php:360
+#: includes/class-gglcptch-settings-tabs.php:361
 msgid ""
 "Enable to keep submit button disabled until reCaptcha is loaded (do not use "
 "this option if you see \"Failed to load Google reCaptcha\" message)."
@@ -414,11 +418,11 @@ msgstr ""
 "не буде завантажена reCaptcha (Не використовуйте цю опцію, якщо ви бачите "
 "повідомлення \"Не вдалося завантажити Google reCaptcha\")."
 
-#: includes/class-gglcptch-settings-tabs.php:366
+#: includes/class-gglcptch-settings-tabs.php:367
 msgid "Disabled Submit Button"
 msgstr "Відключена кнопка підтвердження"
 
-#: includes/class-gglcptch-settings-tabs.php:371
+#: includes/class-gglcptch-settings-tabs.php:372
 msgid ""
 "Enable to keep submit button disabled until user passes the reCaptcha test "
 "(for Version 2)."
@@ -426,7 +430,7 @@ msgstr ""
 "Увімкніть, щоб кнопка відправки залишалася відключеною до тих пір, поки "
 "користувач не пройде тест reCaptcha (для версії 2)."
 
-#: includes/class-gglcptch-settings-tabs.php:385
+#: includes/class-gglcptch-settings-tabs.php:386
 msgid ""
 "reCaptcha version was changed. Please submit \"Test reCaptcha\" and "
 "regenerate Site and Secret keys if necessary."
@@ -434,11 +438,16 @@ msgstr ""
 "Версію reCaptcha було змінено. Будь ласка, натисніть \"Тестування reCaptcha"
 "\" та оновіть секретний ключ та ключ сайту, якщо це необхідно."
 
-#: includes/class-gglcptch-settings-tabs.php:402
+#: includes/class-gglcptch-settings-tabs.php:396
+#, php-format
+msgid "ReCaptcha plugin is fully compliant with GDPR. %s Learn more %s"
+msgstr ""
+
+#: includes/class-gglcptch-settings-tabs.php:411
 msgid "reCaptcha Shortcode"
 msgstr "Шорткод reCaptcha"
 
-#: includes/class-gglcptch-settings-tabs.php:405
+#: includes/class-gglcptch-settings-tabs.php:414
 msgid "Add reCaptcha to your posts or pages using the following shortcode:"
 msgstr ""
 "Додайте reCaptcha до своїх постів або сторінок за допомогою такого шорткоду:"
@@ -467,7 +476,7 @@ msgstr "Testimonials"
 msgid "WordPress default"
 msgstr "Стандартних форм WordPress"
 
-#: includes/forms.php:47 includes/pro_banners.php:80
+#: includes/forms.php:47 includes/pro_banners.php:82
 msgid "External Plugins"
 msgstr "Зовнішні плагіни"
 
@@ -611,15 +620,19 @@ msgstr "Форма реєстрації плагіна Ultimate Member"
 msgid "Ultimate Member Profile form"
 msgstr "Форма профілю плагіна Ultimate Member"
 
-#: includes/pro_banners.php:181
+#: includes/pro_banners.php:78
+msgid "Elementor Contact Form"
+msgstr "Контактна форма Elementor"
+
+#: includes/pro_banners.php:185
 msgid "Language"
 msgstr "Мова"
 
-#: includes/pro_banners.php:189
+#: includes/pro_banners.php:193
 msgid "Multilanguage"
 msgstr "Multilanguage"
 
-#: includes/pro_banners.php:192
+#: includes/pro_banners.php:196
 msgid ""
 "Enable to switch language automatically on multilingual website using the "
 "Multilanguage plugin."
@@ -627,15 +640,15 @@ msgstr ""
 "Увімкніть, щоб перемкнути мову автоматично на багатомовному сайті, "
 "використовуючи плагін Multilanguage."
 
-#: includes/pro_banners.php:204
+#: includes/pro_banners.php:208
 msgid "Size"
 msgstr "Розмір"
 
-#: includes/pro_banners.php:208
+#: includes/pro_banners.php:212
 msgid "Normal"
 msgstr "Нормальний"
 
-#: includes/pro_banners.php:209
+#: includes/pro_banners.php:213
 msgid "Compact"
 msgstr "Компактний"
 

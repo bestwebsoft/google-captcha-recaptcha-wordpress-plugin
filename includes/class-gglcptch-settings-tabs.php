@@ -72,6 +72,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			add_action( get_parent_class( $this ) . '_display_custom_messages', array( $this, 'display_custom_messages' ) );
             add_action( get_parent_class( $this ) . '_additional_misc_options', array( $this, 'additional_misc_options' ) );
 			add_action( get_parent_class( $this ) . '_display_metabox', array( $this, 'display_metabox' ) );
+			add_action( get_parent_class( $this ) .'_information_postbox_bottom', array( $this, 'information_postbox_bottom' ) );
 		}
 
 		/**
@@ -389,6 +390,14 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
         public function additional_misc_options() {
             do_action( 'gglcptch_settings_page_misc_action', $this->options );
         }
+
+        public function information_postbox_bottom() { ?>
+        	<div class="misc-pub-section">
+            <?php printf( __( 'ReCaptcha plugin is fully compliant with GDPR. %s Learn more %s' , 'google-captcha' ), 
+                	'<a target="_blank" href="https://support.bestwebsoft.com/hc/en-us/articles/4406398670097">', 
+                	'</a>' ); ?>
+            </div>
+        <?php }
 
 		/**
 		 * Display custom metabox

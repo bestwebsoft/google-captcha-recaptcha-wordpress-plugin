@@ -18,7 +18,7 @@
 <li>Custom form</li>
 </ul>
 </li>
-<li>Hide reCaptcha for the allow list IP addresses</li>
+<li>Hide reCaptcha for the allowlisted IP addresses</li>
 <li>Disable the submit button</li>
 <li>Validity check of keys in admin panel</li>
 <li>Available reCaptcha themes for Version 2:
@@ -57,8 +57,9 @@
 <li>MailChimp for WordPress</li>
 <li>Ninja Forms</li>
 <li>Gravity Forms</li>
-<li>WPForms</li> 
-<li>Caldera Forms [NEW]</li> 
+<li>WPForms</li>
+<li>Caldera Forms</li>
+<li>Elementor Pro Contact Forms [NEW]</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -117,14 +118,14 @@
 <li><a href="https://bestwebsoft.com/documentation/recaptcha/recaptcha-user-guide/" rel="nofollow ugc">[Doc] User Guide</a></li>
 <li><a href="https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/" rel="nofollow ugc">[Doc] Installation</a></li>
 <li><a href="https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/" rel="nofollow ugc">[Doc] Purchase</a></li>
-<li><a href="https://www.youtube.com/watch?v=RUJ9VwZLFSY" rel="nofollow ugc">[Video] Installation Instruction</a></li>
+<li><a href="http://www.youtube.com/watch?v=RUJ9VwZLFSY" rel="nofollow ugc">[Video] Installation Instruction</a></li>
 <li><a href="https://www.youtube.com/watch?v=X-ccRdEFcM0" rel="nofollow ugc">[Video] Purchase, Installation &amp; Configuration</a></li>
 <li><a href="https://www.youtube.com/watch?v=ZFv6txtic0Y" rel="nofollow ugc">[Video] User Guide</a></li>
 </ul>
 <h4>Help &amp; Support</h4>
 <p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow ugc">https://support.bestwebsoft.com/</a></p>
 <h4>Affiliate Program</h4>
-<p>Earn 20% commission by selling the premium WordPress plugins and themes by BestWebSoft — <a href="https://bestwebsoft.com/affiliate/" rel="nofollow">https://bestwebsoft.com/affiliate/</a></p>
+<p>Earn 20% commission by selling the premium WordPress plugins and themes by BestWebSoft &#8211; <a href="https://bestwebsoft.com/affiliate/" rel="nofollow ugc">https://bestwebsoft.com/affiliate/</a></p>
 <h4>Translation</h4>
 <ul>
 <li>Czech (cs_CZ) (thanks to <a href="mailto:&#107;&#117;&#x63;&#x65;&#114;&#x61;&#x6d;&#105;&#064;&#x67;&#109;&#097;&#x69;&#108;&#046;&#x63;&#x6f;&#109;" rel="nofollow ugc">Michal Kučera</a>, www.n0lim.it, <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#x70;&#x61;&#x6d;&#x61;&#x64;&#x65;&#115;&#115;&#111;&#102;&#116;.&#x63;&#x7a;" rel="nofollow ugc">PaMaDeSSoft</a>, www.pamadessoft.cz)</li>
