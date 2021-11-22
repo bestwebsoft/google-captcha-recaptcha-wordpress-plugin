@@ -563,8 +563,9 @@ if ( ! function_exists( 'bws_hide_premium_options_check' ) ) {
 
 if ( ! function_exists ( 'bws_plugins_admin_init' ) ) {
 	function bws_plugins_admin_init() {
+		$page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : '';
 		if ( isset( $_GET['bws_activate_plugin'] ) && check_admin_referer( 'bws_activate_plugin' . $_GET['bws_activate_plugin'] ) ) {
-
+	
 			$plugin = isset( $_GET['bws_activate_plugin'] ) ? sanitize_text_field( $_GET['bws_activate_plugin'] ) : '';
 			$result = activate_plugin( $plugin, '', is_network_admin() );
 			if ( is_wp_error( $result ) ) {
@@ -589,9 +590,8 @@ if ( ! function_exists ( 'bws_plugins_admin_init' ) ) {
 			/**
 			* @deprecated 1.9.8 (15.12.2016)
 			*/
-			$is_main_page = in_array( $_GET['page'], array( 'bws_panel', 'bws_themes', 'bws_system_status' ) );
-			$page = wp_unslash( $_GET['page'] );
-			$tab = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : '';
+			$is_main_page = in_array( $page, array( 'bws_panel', 'bws_themes', 'bws_system_status' ) );
+			$tab = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : '';
 
 			if ( $is_main_page )
 				$current_page = 'admin.php?page=' . $page;
@@ -603,7 +603,7 @@ if ( ! function_exists ( 'bws_plugins_admin_init' ) ) {
 			exit();
 		}
 
-		if ( isset( $_GET['page'] ) && ( $_GET['page'] == 'bws_panel' || strpos( $_GET['page'], '-bws-panel' ) ) ) {
+		if ( $page == 'bws_panel' || strpos( $page, '-bws-panel' ) ) {
 			if ( ! session_id() )
 				@session_start();
 		}
@@ -619,12 +619,16 @@ if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) ) {
 			$bws_plugin_banner_go_pro, $bws_plugin_banner_timeout, $bstwbsftwppdtplgns_banner_array,
 			$bws_shortcode_list;
 
+		$page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : '';
+
 		$jquery_ui_version = isset( $wp_scripts->registered['jquery-ui-core']->ver ) ? $wp_scripts->registered['jquery-ui-core']->ver : '1.12.1';
-		wp_enqueue_style( 'jquery-ui-style', bws_menu_url( 'css/jquery-ui-styles/' . $jquery_ui_version . '/jquery-ui.css' ) );
+		if ( 'et_divi_options' != $page ) {
+			wp_enqueue_style( 'jquery-ui-style', bws_menu_url( 'css/jquery-ui-styles/' . $jquery_ui_version . '/jquery-ui.css' ) );
+		}
 		wp_enqueue_style( 'bws-admin-css', bws_menu_url( 'css/general_style.css' ) );
 		wp_enqueue_script( 'bws-admin-scripts', bws_menu_url( 'js/general_script.js' ), array( 'jquery', 'jquery-ui-tooltip' ) );
 
-		if ( isset( $_GET['page'] ) && ( in_array( $_GET['page'], array( 'bws_panel', 'bws_themes', 'bws_system_status' ) ) || strpos( $_GET['page'], '-bws-panel' ) ) ) {
+		if ( in_array( $page, array( 'bws_panel', 'bws_themes', 'bws_system_status' ) ) || strpos( $page, '-bws-panel' ) ) {
 			wp_enqueue_style( 'bws_menu_style', bws_menu_url( 'css/style.css' ) );
 			wp_enqueue_script( 'bws_menu_script', bws_menu_url( 'js/bws_menu.js' ) );
 			wp_enqueue_script( 'theme-install' );
@@ -750,7 +754,9 @@ if ( ! function_exists( 'bws_enqueue_settings_scripts' ) ) {
 
 if ( ! function_exists ( 'bws_plugins_admin_head' ) ) {
 	function bws_plugins_admin_head() {
-		if ( isset( $_GET['page'] ) && $_GET['page'] == "bws_panel" ) { ?>
+		$page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : '';
+
+		if ( $page == "bws_panel" ) { ?>
 			<noscript>
 				<style type="text/css">
 					.bws_product_button {

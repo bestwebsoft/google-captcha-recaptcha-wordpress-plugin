@@ -1,7 +1,7 @@
 <?php
 /*
 * Function for displaying BestWebSoft menu
-* Version: 2.4.0
+* Version: 2.4.1
 */
 
 if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) )
@@ -16,8 +16,8 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 		 * @deprecated 1.9.8 (15.12.2016)
 		 */
 		$is_main_page = in_array( $_GET['page'], array( 'bws_panel', 'bws_themes', 'bws_system_status' ) );
-		$page = wp_unslash( $_GET['page'] );
-		$tab = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : '';
+		$page = sanitize_text_field( $_GET['page'] );
+		$tab = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : '';
 
 		if ( $is_main_page )
 			$current_page = 'admin.php?page=' . $page;

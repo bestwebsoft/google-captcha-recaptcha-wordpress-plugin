@@ -59,7 +59,7 @@
 <li>Gravity Forms</li>
 <li>WPForms</li>
 <li>Caldera Forms</li>
-<li>Elementor Pro Contact Forms [NEW]</li>
+<li>Elementor Pro Contact Forms</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -129,6 +129,7 @@
 <h4>Translation</h4>
 <ul>
 <li>Czech (cs_CZ) (thanks to <a href="mailto:&#107;&#117;&#x63;&#x65;&#114;&#x61;&#x6d;&#105;&#064;&#x67;&#109;&#097;&#x69;&#108;&#046;&#x63;&#x6f;&#109;" rel="nofollow ugc">Michal Kučera</a>, www.n0lim.it, <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#x70;&#x61;&#x6d;&#x61;&#x64;&#x65;&#115;&#115;&#111;&#102;&#116;.&#x63;&#x7a;" rel="nofollow ugc">PaMaDeSSoft</a>, www.pamadessoft.cz)</li>
+<li>French (fr_FR)</li>
 <li>Romanian (ro_RO)</li>
 <li>Russian (ru_RU)</li>
 <li>Spanish (es_ES)</li>
