@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 4.5
-Tested up to: 5.8.2
-Stable tag: 1.66
+Tested up to: 5.9
+Stable tag: 1.67
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -275,6 +275,18 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Allow List page.
 
 == Changelog ==
+
+= V1.67 - 20.04.2022 =
+* Update : BWS Panel changes.
+* Pro: Divi Child Theme fixes.
+* Pro: Jetpack Contact Form Fixes.
+* Pro: Elementor Popup contact form issue has been fixed.
+* Bugfix: "User response is missing." message has been fixed.
+* Pro: WPForms plugin issue with reCaptcha v2 has been fixed.
+* Pro: Hide reCaptcha for Administrator oprion for Contact Form 7 has been fixed.
+* Bugfix: Menu issue for WordPress 5.9 as been fixed. 
+* Bugfix: Other minor fixes.
+
 
 = V1.66 - 22.11.2021 =
 * NEW : The French language file was added.
@@ -574,6 +586,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.67 =
+* Bugs fixed.
 
 = V1.66 =
 * Bugs fixed.

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 15:06+0300\n"
+"POT-Creation-Date: 2022-04-21 15:17+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -10,12 +10,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.0\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bws_menu\n"
 
@@ -24,7 +24,7 @@ msgstr ""
 msgid "reCaptcha Settings"
 msgstr "Настройки reCaptcha"
 
-#: google-captcha.php:50 google-captcha.php:1114 google-captcha.php:1127
+#: google-captcha.php:50 google-captcha.php:1118 google-captcha.php:1131
 #: includes/class-gglcptch-settings-tabs.php:22
 msgid "Settings"
 msgstr "Настройки"
@@ -109,35 +109,35 @@ msgstr "Ответ отсутствует"
 msgid "Error"
 msgstr "Ошибка"
 
-#: google-captcha.php:1014
+#: google-captcha.php:1018
 msgid "User response is missing."
 msgstr "Ответ пользователя отсутствует."
 
-#: google-captcha.php:1016
+#: google-captcha.php:1020
 msgid "Secret Key is missing."
 msgstr "Секретный ключ отсутствует."
 
-#: google-captcha.php:1019
+#: google-captcha.php:1023
 msgid "Secret Key is invalid."
 msgstr "Некорректный секретный ключ."
 
-#: google-captcha.php:1020
+#: google-captcha.php:1024
 msgid "Check your domain configurations"
 msgstr "Проверьте настройки вашего домена"
 
-#: google-captcha.php:1021
+#: google-captcha.php:1025
 msgid "and enter it again"
 msgstr "и введите его снова"
 
-#: google-captcha.php:1023
+#: google-captcha.php:1027
 msgid "User response is invalid"
 msgstr "Некорректный ответ пользователя"
 
-#: google-captcha.php:1024
+#: google-captcha.php:1028
 msgid "You have entered an incorrect reCAPTCHA value."
 msgstr "Ошибка: Вы ввели неверное значение reCAPTCHA."
 
-#: google-captcha.php:1025
+#: google-captcha.php:1029
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -145,32 +145,32 @@ msgstr ""
 "В текущей форме найдено более одного блока reCAPTCHA. Пожалуйста, удалите "
 "все лишние блоки reCAPTCHA для дальнейшей корректной работы."
 
-#: google-captcha.php:1027
+#: google-captcha.php:1031
 msgid "reCaptcha v3 test failed"
 msgstr "Тест reCaptcha v3 не пройден"
 
-#: google-captcha.php:1065
+#: google-captcha.php:1069
 msgid "Please submit \"Test verification\""
 msgstr "Пожалуйста, нажмите кнопку \"Тестирование проверки\"."
 
-#: google-captcha.php:1067
+#: google-captcha.php:1071
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr ""
 "Пожалуйста, заполните капчу и нажмите кнопку \"Тестирование проверки\"."
 
-#: google-captcha.php:1073
+#: google-captcha.php:1077
 msgid "Test verification"
 msgstr "Тестирование проверки"
 
-#: google-captcha.php:1094
+#: google-captcha.php:1098
 msgid "The verification is successfully completed."
 msgstr "Тестирование проверки успешно завершено."
 
-#: google-captcha.php:1129
+#: google-captcha.php:1133
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-captcha.php:1130
+#: google-captcha.php:1134
 msgid "Support"
 msgstr "Поддержка"
 
