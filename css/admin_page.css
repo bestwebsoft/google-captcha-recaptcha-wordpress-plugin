@@ -42,3 +42,6 @@
         transform: rotate(3000deg)
     }
 }
+.bws_info.warning {
+	color: red;
+}

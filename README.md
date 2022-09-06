@@ -60,6 +60,8 @@
 <li>WPForms</li>
 <li>Caldera Forms</li>
 <li>Elementor Pro Contact Forms</li>
+<li>LearnDash Registration Page</li>
+<li>BuddyBoss</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:

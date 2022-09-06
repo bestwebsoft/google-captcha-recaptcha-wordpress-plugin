@@ -51,7 +51,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 			<?php }
 
 			if ( isset( $_SERVER ) ) {
-				$sever_vars = array( 'HTTP_X_REAL_IP', 'HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR' );
+				$sever_vars = array( 'REMOTE_ADDR', 'HTTP_X_REAL_IP', 'HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR' );
 				foreach ( $sever_vars as $var ) {
 					if ( ! empty( $_SERVER[ $var ] ) ) {
 						if ( filter_var( $_SERVER[ $var ], FILTER_VALIDATE_IP ) ) {

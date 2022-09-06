@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
-Requires at least: 4.5
-Tested up to: 5.9
-Stable tag: 1.67
+Requires at least: 5.6
+Tested up to: 6.0
+Stable tag: 1.68
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -65,6 +65,8 @@ http://www.youtube.com/watch?v=L2BziEOL3Fg
 > 	* WPForms
 > 	* Caldera Forms
 > 	* Elementor Pro Contact Forms
+> 	* LearnDash Registration Page
+> 	* BuddyBoss
 > * Compatible with WooCommerce:
 > 	* Login form
 > 	* Register form
@@ -275,6 +277,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Allow List page.
 
 == Changelog ==
+
+= V1.68 - 05.09.2022 =
+* Update : BWS Panel changes.
+* Pro: The compatibility with BuddyBoss has been added.
+* Pro: The compatibility with LearnDash registration page has been added.
+* Bugfix: Minor bugs fixed.
 
 = V1.67 - 20.04.2022 =
 * Update : BWS Panel changes.
@@ -586,6 +594,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.68 =
+* Plugin optimization completed.
+* New features added.
+* Bugs fixed.
 
 = V1.67 =
 * Bugs fixed.

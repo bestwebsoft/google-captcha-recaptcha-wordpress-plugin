@@ -149,29 +149,38 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			<hr>
 			<div class="bws_tab_sub_label"><?php _e( 'General', 'google-captcha' ); ?></div>
 			<table class="form-table">
-                <tr valign="top">
-                    <th scope="row"><?php _e( 'reCaptcha Version', 'google-captcha' ); ?></th>
-                    <td>
-                        <fieldset>
-                            <?php foreach ( $this->versions as $version => $version_name ) { ?>
-                                <label>
-                                    <input type="radio" name="gglcptch_recaptcha_version" value="<?php echo $version; ?>" <?php checked( $version, $this->options['recaptcha_version'] ); ?>> <?php echo $version_name; ?>
-                                </label>
-                                <br/>
-                            <?php } ?>
-                        </fieldset>
-                    </td>
-                </tr>
-            </table>
-            <table class="form-table gglcptch_settings_form">
-                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'Register your domain name with Google reCaptcha service and add the keys to the fields below. %s Get the API Keys. %s' , 'google-captcha' ), 
-                	'<a target="_blank" href="https://www.google.com/recaptcha/admin#list">', 
-                	'</a>' ) ?>
-                </div>
-                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'If you do not want to create API keys use %s Captcha by BestWebSoft %s plugin.', 'google-captcha' ), 
-                	'<a target="_blank" href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=dcf21edcd5cc9374f5e15c8055e40797">', 
-                	'</a>' ); ?>
-                </div>
+				<tr valign="top">
+					<th scope="row"><?php _e( 'reCaptcha Version', 'google-captcha' ); ?></th>
+					<td>
+						<fieldset>
+							<?php foreach ( $this->versions as $version => $version_name ) { ?>
+								<label>
+									<input type="radio" name="gglcptch_recaptcha_version" value="<?php echo $version; ?>" <?php checked( $version, $this->options['recaptcha_version'] ); ?>> <?php echo $version_name; ?>
+								</label>
+								<br/>
+							<?php } ?>
+						</fieldset>
+					</td>
+				</tr>
+		</table>
+		<table class="form-table gglcptch_settings_form">
+				<div class="bws_info gglcptch_settings_form"><?php printf( __( 'Register your domain name with Google reCaptcha service and add the keys to the fields below. %s Get the API Keys. %s' , 'google-captcha' ), 
+					'<a target="_blank" href="https://www.google.com/recaptcha/admin#list">', 
+					'</a>' ) ?>
+				</div>
+				<div class="bws_info gglcptch_settings_form"><?php printf( __( 'If you do not want to create API keys use %1%sCaptcha by BestWebSoft%2$s plugin.', 'google-captcha' ), 
+					'<a target="_blank" href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=dcf21edcd5cc9374f5e15c8055e40797">', 
+					'</a>' ); ?>
+				</div>
+				<div class="bws_info warning gglcptch_settings_form"> 
+					<?php
+					printf(
+						__( 'The Google reCaptcha block loads the webfont "Roboto" from fonts.googleapis.com. If you do not want to load this font use %1$sCaptcha by BestWebSoft%2$s plugin.', 'google-captcha-pro' ),
+						'<a target="_blank" href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=dcf21edcd5cc9374f5e15c8055e40797">',
+						'</a>'
+					);
+					?>
+				</div>
 				<?php foreach ( $this->keys as $key => $fields ) { ?>
 					<tr>
 						<th><?php echo $fields['display_name']; ?></th>

@@ -6,12 +6,12 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.67
+Version: 1.68
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2021  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2022  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -350,6 +350,13 @@ if ( ! function_exists( 'gglcptch_create_table' ) ) {
 if ( ! function_exists( 'register_gglcptch_settings' ) ) {
 	function register_gglcptch_settings() {
 		global $wpdb, $gglcptch_options, $gglcptch_plugin_info;
+
+		if ( empty( $gglcptch_plugin_info ) ) {
+			if ( ! function_exists( 'get_plugin_data' ) ) {
+				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			}
+			$gglcptch_plugin_info = get_plugin_data( __FILE__ );
+		}
 
 		$plugin_db_version = '0.2';
 
@@ -1015,7 +1022,7 @@ if ( ! function_exists( 'gglcptch_get_message' ) ) {
 
 		$messages = array(
 			/* custom error */
-			'RECAPTCHA_EMPTY_RESPONSE'	=> __( 'User response is missing.', 'google-captcha' ),
+			'RECAPTCHA_EMPTY_RESPONSE'	=> __( 'The reCaptcha verification failed. Please try again.', 'google-captcha' ),
 			/* v2 error */
 			'missing-input-secret' 		=> __( 'Secret Key is missing.', 'google-captcha' ),
 			'invalid-input-secret' 		=> sprintf(
