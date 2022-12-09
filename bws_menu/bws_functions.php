@@ -828,6 +828,10 @@ if ( ! function_exists( 'bws_admin_enqueue_scripts' ) ) {
 			}
 		}
 
+		if ( 'multilanguage-languages.php' === $page ) {
+			wp_enqueue_style( 'bws-modal-css', bws_menu_url( 'css/modal.css' ) );
+		}
+
 		if ( ! empty( $bws_shortcode_list ) ) {
 			/* TinyMCE Shortcode Plugin */
 			$script = "var bws_shortcode_button = {
@@ -909,7 +913,10 @@ if ( ! function_exists( 'bws_plugins_admin_head' ) ) {
  */
 if ( ! function_exists( 'bws_plugins_admin_footer' ) ) {
 	function bws_plugins_admin_footer() {
-		bws_shortcode_media_button_popup();
+		$screen = get_current_screen();
+		if ( $screen->parent_base == 'edit' ) {
+			bws_shortcode_media_button_popup();
+		}
 	}
 }
 
@@ -924,11 +931,7 @@ if ( ! function_exists( 'bws_plugins_include_codemirror' ) ) {
 		if ( version_compare( $wp_version, '4.9.0', '>=' ) ) {
 			wp_enqueue_style( 'wp-codemirror' );
 			wp_enqueue_script( 'wp-codemirror' );
-		} else {
-			wp_enqueue_style( 'codemirror.css', bws_menu_url( 'css/codemirror.css' ), array(), '2.4.2' );
-			wp_enqueue_script( 'codemirror.js', bws_menu_url( 'js/codemirror.js' ), array( 'jquery' ), '2.4.2' );
 		}
-
 	}
 }
 

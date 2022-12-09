@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 5.6
-Tested up to: 6.0
-Stable tag: 1.68
+Tested up to: 6.1
+Stable tag: 1.70
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -278,22 +278,30 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.70 - 09.12.2022 =
+* Pro : Option for display V3 on all pages
+* Update : BWS Panel section was updated.
+* Bugfix : Minor bugs fixed.
+
+= V1.69 - 10.09.2022 =
+* Bugfix : Minor bugs fixed.
+
 = V1.68 - 05.09.2022 =
 * Update : BWS Panel changes.
-* Pro: The compatibility with BuddyBoss has been added.
-* Pro: The compatibility with LearnDash registration page has been added.
-* Bugfix: Minor bugs fixed.
+* Pro : The compatibility with BuddyBoss has been added.
+* Pro : The compatibility with LearnDash registration page has been added.
+* Bugfix : Minor bugs fixed.
 
 = V1.67 - 20.04.2022 =
 * Update : BWS Panel changes.
-* Pro: Divi Child Theme fixes.
-* Pro: Jetpack Contact Form Fixes.
-* Pro: Elementor Popup contact form issue has been fixed.
-* Bugfix: "User response is missing." message has been fixed.
-* Pro: WPForms plugin issue with reCaptcha v2 has been fixed.
-* Pro: Hide reCaptcha for Administrator oprion for Contact Form 7 has been fixed.
-* Bugfix: Menu issue for WordPress 5.9 as been fixed. 
-* Bugfix: Other minor fixes.
+* Pro : Divi Child Theme fixes.
+* Pro : Jetpack Contact Form Fixes.
+* Pro : Elementor Popup contact form issue has been fixed.
+* Bugfix : "User response is missing." message has been fixed.
+* Pro : WPForms plugin issue with reCaptcha v2 has been fixed.
+* Pro : Hide reCaptcha for Administrator oprion for Contact Form 7 has been fixed.
+* Bugfix : Menu issue for WordPress 5.9 as been fixed. 
+* Bugfix : Other minor fixes.
 
 
 = V1.66 - 22.11.2021 =
@@ -594,6 +602,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.70 =
+* Plugin optimization completed.
+* New features added.
+* Bugs fixed.
+
+= V1.69 =
+* Bugs fixed.
 
 = V1.68 =
 * Plugin optimization completed.
