@@ -748,7 +748,7 @@ if ( ! function_exists( 'bws_admin_enqueue_scripts' ) ) {
 		if ( ! $wp_filesystem->exists( dirname( __FILE__ ) . '/css/jquery-ui-styles/' . $jquery_ui_version . '/' ) ) {
 			$jquery_ui_version = '1.12.1';
 		}
-		if ( 'et_divi_options' !== $page ) {
+		if ( ! in_array( $page, array( 'et_divi_options', 'gf_edit_forms' ) ) ) {
 			wp_enqueue_style( 'jquery-ui-style', bws_menu_url( 'css/jquery-ui-styles/' . $jquery_ui_version . '/jquery-ui.css', array(), $jquery_ui_version ) );
 		}
 		wp_enqueue_style( 'bws-admin-css', bws_menu_url( 'css/general_style.css' ), array(), '2.4.2' );
