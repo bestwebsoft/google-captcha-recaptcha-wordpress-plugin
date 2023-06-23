@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.71
+Version: 1.72
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -175,6 +175,14 @@ if ( ! function_exists( 'gglcptch_add_admin_script_styles' ) ) {
 			bws_enqueue_settings_scripts();
 			bws_plugins_include_codemirror();
 		}
+	}
+}
+/* Add reCaptcha styles for login page */
+if ( ! function_exists( 'gglcptch_add_login_styles' ) ) {
+	function gglcptch_add_login_styles() {
+		global $gglcptch_plugin_info, $gglcptch_options;
+
+		wp_enqueue_style( 'gglcptch_stylesheet', plugins_url( 'css/login-style.css', __FILE__ ), array(), $gglcptch_plugin_info['Version'] );
 	}
 }
 
@@ -651,7 +659,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 				</noscript>';
 				$deps = ( ! empty( $gglcptch_options['disable_submit'] ) ) ? array( 'gglcptch_pre_api' ) : array( 'jquery' );
 			} elseif ( isset( $gglcptch_options['recaptcha_version'] ) &&  'v3' == $gglcptch_options['recaptcha_version'] ) {
-			    $content .= '<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />';
+			    $content .= '<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" /><br /><div class="gglcptch_error_text">' . __( 'The reCAPTCHA verification period has expired. Please reload the page.', 'google-captcha' ) . '</div>';
             }
 			$content .= '</div>';
 			$gglcptch_count++;
@@ -1222,6 +1230,7 @@ add_action( 'admin_init', 'gglcptch_admin_init' );
 add_action( 'plugins_loaded', 'gglcptch_plugins_loaded' );
 
 add_action( 'admin_enqueue_scripts', 'gglcptch_add_admin_script_styles' );
+add_action( 'login_enqueue_scripts', 'gglcptch_add_login_styles' );
 add_filter( 'script_loader_tag', 'gglcptch_add_async_attribute', 10, 2 );
 add_action( 'admin_footer', 'gglcptch_admin_footer' );
 add_filter( 'pgntn_callback', 'gglcptch_pagination_callback' );

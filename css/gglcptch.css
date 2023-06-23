@@ -28,3 +28,7 @@
 .gglcptch_recaptcha .grecaptcha-badge {
 	z-index: 100;
 }
+.gglcptch_error_text {
+	color: red;
+	display: none;
+}

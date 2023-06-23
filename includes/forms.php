@@ -137,7 +137,7 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 		$form_notice = '';
 
 		$plugins = array(
-			'contact_form' => array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php' ),
+			'contact_form' => array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php', 'contact-form-plus/contact-form-plus.php' ),
 			'testimonials' => 'bws-testimonials/bws-testimonials.php',
 		);
 

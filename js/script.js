@@ -22,6 +22,12 @@
 			grecaptcha.ready( function() {
 				grecaptcha.execute( gglcptch.options.sitekey, {action: 'BWS_reCaptcha'}).then(function( token ) {
 					document.querySelectorAll( "#g-recaptcha-response" ).forEach( function ( elem ) { elem.value = token } );
+					var gglcptchTimeout = setTimeout( function(){
+						$( '.gglcptch_error_text' ).each( function(){
+							$( this ).show();
+							clearTimeout( gglcptchTimeout );
+						});
+					}, 180000 );
 				});
 			});
 		}
