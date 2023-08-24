@@ -138,7 +138,7 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 
 		$plugins = array(
 			'contact_form' => array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php', 'contact-form-plus/contact-form-plus.php' ),
-			'testimonials' => 'bws-testimonials/bws-testimonials.php',
+			'testimonials' => array( 'bws-testimonials/bws-testimonials.php', 'bws-testimonials-pro/bws-testimonials-pro.php' ),
 		);
 
 		if ( isset( $plugins[ $form_slug ] ) ) {
@@ -150,9 +150,7 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 				if ( 'contact_form' === $form_slug ) {
 					$form_notice = '<a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=fa26df3911ebcd90c3e85117d6dd0ce0&pn=281&v=' . $gglcptch_plugin_info['Version'] . '&wp_v=' . $wp_version . '" target="_blank">' . __( 'Install Now', 'google-captcha' ) . '</a>';
 				} else {
-					$slug        = explode( '/', $plugins[ $form_slug ] );
-					$slug        = $slug[0];
-					$form_notice = sprintf( '<a href="http://wordpress.org/plugins/%s/" target="_blank">%s</a>', $slug, __( 'Install Now', 'google-captcha' ) );
+					$form_notice = '<a href="https://bestwebsoft.com/products/wordpress/plugins/bws-testimonials/?k=451513a59dcd9844db90b567473022ce&pn=281&v=' . $gglcptch_plugin_info['Version'] . '&wp_v=' . $wp_version . '" target="_blank">' . __( 'Install Now', 'google-captcha' ) . '</a>';
 				}
 			}
 		}

@@ -95,7 +95,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 				<div>
 					<span class="bws_info" style="line-height: 2;"><?php esc_html_e( 'Allowed formats', 'google-captcha' ); ?>:&nbsp;<code>192.168.0.1</code></span>
 					<br/>
-					<span class="bws_info" style="line-height: 2;"><?php esc_html_e( 'Allowed diapason', 'google-captcha' ); ?>:&nbsp;<code>0.0.0.0 - 255.255.255.255</code></span>
+					<span class="bws_info" style="line-height: 2;"><?php esc_html_e( 'Allowed diapason', 'google-captcha' ); ?>:&nbsp;<code>0.0.0.0-255.255.255.255</code></span>
 				</div>
 				<!-- pls -->
 				<?php
@@ -330,33 +330,28 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 			) {
 				$add_ip = isset( $_POST['gglcptch_add_to_allowlist_my_ip'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_add_to_allowlist_my_ip_value'] ) ) : sanitize_text_field( wp_unslash( $_POST['gglcptch_add_to_allowlist'] ) );
 
-				$valid_ip = filter_var( stripslashes( trim( $add_ip ) ), FILTER_VALIDATE_IP );
+				$list_ip = preg_split( "/[\s,;]+/", trim( $add_ip, " \s\r\n\t,;" ) );
 
-				if ( $valid_ip ) {
-					$ip_int = sprintf( '%u', ip2long( $valid_ip ) );
-					$id     = $wpdb->get_var( $wpdb->prepare( 'SELECT `id` FROM ' . $wpdb->prefix . 'gglcptch_allowlist WHERE ( `ip_from_int` <= %d AND `ip_to_int` >= %d ) OR `ip` LIKE %s LIMIT 1;', $ip_int, $ip_int, $valid_ip ) );
-					/* check if IP already in database */
-					if ( is_null( $id ) ) {
-						$time = current_time( 'mysql' );
-						$wpdb->insert(
-							$wpdb->prefix . 'gglcptch_allowlist',
-							array(
-								'ip'          => $valid_ip,
-								'ip_from_int' => $ip_int,
-								'ip_to_int'   => $ip_int,
-								'add_time'    => $time,
-							)
-						);
-						if ( ! $wpdb->last_error ) {
-							$message = __( 'IP added to the allow list successfully.', 'google-captcha' );
+				foreach( $list_ip as $new_ip ){
+					$type_ip = $this->valid_ip( trim( $new_ip ) );
+					if ( $type_ip ) {
+						$ip_int = sprintf( '%u', ip2long( $new_ip ) );
+						$id     = $wpdb->get_var( $wpdb->prepare( 'SELECT `id` FROM ' . $wpdb->prefix . 'gglcptch_allowlist WHERE ( `ip_from_int` <= %d AND `ip_to_int` >= %d ) OR `ip` LIKE %s LIMIT 1;', $ip_int, $ip_int, $new_ip ) );
+						/* check if IP already in database */
+						if ( is_null( $id ) ) {
+							$time = current_time( 'mysql' );
+							$result = $this->save_ip( $new_ip, $type_ip, $time );
+							if ( false !== $result ) {
+								$message = __( 'IP added to the allow list successfully.', 'google-captcha' );
+							} else {
+								$error = __( 'Some errors occurred.', 'google-captcha' );
+							}
 						} else {
-							$error = __( 'Some errors occurred.', 'google-captcha' );
+							$error = __( 'IP is already in the allow list.', 'google-captcha' );
 						}
 					} else {
-						$error = __( 'IP is already in the allow list.', 'google-captcha' );
+						$error = __( 'Invalid IP. See allowed formats.', 'google-captcha' );
 					}
-				} else {
-					$error = __( 'Invalid IP. See allowed formats.', 'google-captcha' );
 				}
 				if ( empty( $error ) ) {
 					$gglcptch_options['allowlist_is_empty'] = false;
@@ -415,5 +410,109 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 				<?php
 			}
 		}
+
+		/**
+		 * Function to check if IP (mask/diapason) is valid
+		 * @param $ip_to_check  string  IP, mask or diapason to check
+		 * @return bool False - if it's not valid IP, mask or diapason | string with the type of entered value - if valid IP, mask or diapason
+		 */
+		function valid_ip( $ip_to_check = null ) {
+			if ( empty( $ip_to_check ) ) {
+				return false;
+			} else {
+				/* if IP (or mask/diapason) is not empty*/
+				if ( preg_match( '/^(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])(\.(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])){3}$/', $ip_to_check ) ) {
+					/* single IP */
+					return 'single_ip';
+				} elseif ( preg_match( '/^(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])(\.(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])){3}\/(3[0-2]|[1-2][0-9]|[0-9])$/', $ip_to_check ) ) {
+					/* normal mask like 128.45.25.0/8 */
+					return 'normal_mask';
+				} elseif ( preg_match( '/^(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])(\.(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])){0,2}\.$/', $ip_to_check ) ) {
+					/* shorten mask like 192.168. or 128.45.25. */
+					return 'shorten_mask';
+				} elseif ( preg_match( '/^(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])(\.(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])){3}\-(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])(\.(25[0-5]|2[0-4][0-9]|[1][0-9]{2}|[1-9][0-9]|[0-9])){3}$/', $ip_to_check ) ) {
+					/* diapason like 128.45.25.0-188.5.5.5 */
+					$ip_to_check = explode( '-', $ip_to_check ); /*$ips[0] - diapason from, $ips[1] - diapason to*/
+					if ( sprintf( '%u', ip2long( $ip_to_check[0] ) ) <= sprintf( '%u', ip2long( $ip_to_check[1] ) ) ) {
+						return 'diapason';
+					} else {
+						return false;
+					}
+				} else {
+					return false;
+				}
+			}
+		}
+
+		/**
+		 * Save IP in database
+		 */
+		function save_ip( $ip, $type_ip, $time ) {
+			global $wpdb;
+			switch ( $type_ip ) {
+				case 'single_ip': /* if insert single ip address */
+					$ip_from_int = $ip_to_int = sprintf( '%u', ip2long( $ip ) ); /*because adding a single address diapason will contain one address*/
+					$ip_from     = $ip_to = $ip;
+					break;
+				case 'shorten_mask': /* if insert ip mask like 'xxx.' or 'xxx.xxx.' or 'xxx.xxx.xxx.' */
+					$dot_entry = substr_count( $ip, '.' );
+					switch ( $dot_entry ) {
+						case 3: /* in case if mask like xxx.xxx.xxx. */
+							$ip_from = $ip . '0';
+							$ip_to   = $ip . '255';
+							break;
+						case 2: /* in case if mask like xxx.xxx. */
+							$ip_from = $ip . '0.0';
+							$ip_to   = $ip . '255.255';
+							break;
+						case 1: /*i n case if mask like xxx. */
+							$ip_from = $ip . '0.0.0';
+							$ip_to   = $ip . '255.255.255';
+							break;
+						default: /* insurance */
+							$ip_from = '0.0.0.0';
+							$ip_to   = '0.0.0.0';
+							break;
+					}
+					$ip_from_int = sprintf( '%u', ip2long( $ip_from ) );
+					$ip_to_int   = sprintf( '%u', ip2long( $ip_to ) );
+					break;
+				case 'diapason': /* if insert diapason of ip addresses like xxx.xxx.xxx.xxx-yyy.yyy.yyy.yyy */
+					$ips         = explode( '-', $ip ); /* $ips[0] - diapason from, $ips[1] - diapason to */
+					$ip_from     = trim( $ips[0] );
+					$ip_to       = trim( $ips[1] );
+					$ip_from_int = sprintf( '%u', ip2long( $ip_from ) );
+					$ip_to_int   = sprintf( '%u', ip2long( $ip_to ) );
+					break;
+				case 'normal_mask': /* if insert ip mask like xxx.xxx.xxx.xxx/yy */
+					$mask        = explode( '/' , $ip ); /* $mask[0] - is ip address, $mask[1] - is cidr mask */
+					$nmask       = 4294967295 - ( pow( 2 , 32 - $mask[1] ) - 1 ); /* calculation netmask in decimal view from cidr mask */
+					$ip_from_int = ip2long( $mask[0] ) & $nmask; /* calculating network address signed (this is doing for correct worl with netmsk) */
+					$ip_from_int = sprintf( '%u', $ip_from_int ); /* and now unsigned */
+					$ip_to_int   = $ip_from_int + ( pow( 2 , 32 - $mask[1] ) - 1 ); /* calculating broadcast */
+					$ip_from     = long2ip( $ip_from_int );
+					$ip_to       = long2ip( $ip_to_int );
+				default:
+					break;
+			}
+			/* add a new row to db */
+			$result = $wpdb->insert(
+				$wpdb->prefix . "gglcptch_allowlist",
+				array(
+					'ip'          => $ip,
+					'ip_from_int' => $ip_from_int,
+					'ip_to_int'   => $ip_to_int,
+					'add_time'    => $time,
+				),
+				array(
+					'%s', /* all '%s' because max value in '%d' is 2147483647 */
+					'%s',
+					'%s',
+					'%s'
+				)
+			);
+			return $result;
+		}
+
 	}
 }

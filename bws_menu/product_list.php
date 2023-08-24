@@ -429,6 +429,9 @@ $bws_plugins = array(
 		'description' => __( 'Add testimonials and feedbacks from your customers to WordPress website posts, pages, and widgets.', 'bestwebsoft' ),
 		'link'        => 'https://bestwebsoft.com/products/wordpress/plugins/testimonials/?k=3fe4bb89dc901c98e43a113e08f8db73&pn=' . $bws_plugin_info['id'] . '&v=' . $bws_plugin_info['version'] . '&wp_v=' . $wp_version,
 		'settings'    => 'admin.php?page=testimonials.php',
+		'pro_version'  => 'bws-testimonials-pro/bws-testimonials-pro.php',
+		'purchase'     => 'https://bestwebsoft.com/products/wordpress/plugins/testimonials/buy/?k=3fe4bb89dc901c98e43a113e08f8db73&pn=' . $bws_plugin_info['id'] . '&v=' . $bws_plugin_info['version'] . '&wp_v=' . $wp_version,
+		'pro_settings' => 'edit.php?post_type=bws-testimonial&page=testimonials-ro.php',
 	),
 	'timesheet/timesheet.php'                           => array(
 		'category'     => array( 'admin-tools' ),
