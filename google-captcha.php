@@ -575,6 +575,9 @@ if ( ! function_exists( 'gglcptch_is_recaptcha_required' ) ) {
 				( ! $is_user_logged_in || ! gglcptch_is_hidden_for_role() )
 			);
 
+		/* No required into API request */
+		$result = wp_is_json_request() ? false: $result;
+
 		return $result;
 	}
 }
