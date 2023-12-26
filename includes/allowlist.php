@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Display content of "Allow List" tab on settings page
  *
@@ -49,7 +51,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 			<h1 class="wp-heading-inline"><?php esc_html_e( 'reCaptcha Allow List', 'google-captcha' ); ?></h1>
 			<?php if ( ! ( isset( $_REQUEST['gglcptch_show_allowlist_form'] ) || isset( $_REQUEST['gglcptch_add_to_allowlist'] ) ) ) { ?>
 				<form method="post" action="admin.php?page=google-captcha-allowlist.php" style="display: inline;">
-					<button class="page-title-action" name="gglcptch_show_allowlist_form" value="on"<?php echo ( isset( $_POST['gglcptch_add_to_allowlist'] ) ) ? ' style="display: none;"' : ''; ?>><?php esc_html_e( 'Add New', 'google-captcha' ); ?></button>
+					<button class="page-title-action" name="gglcptch_show_allowlist_form" value="on"<?php echo ( isset( $_POST['gglcptch_add_to_allowlist'] ) ) ? ' style="display: none;"' : ''; ?> /><?php esc_html_e( 'Add New', 'google-captcha' ); ?></button>
 				</form>
 				<?php
 			}
@@ -274,12 +276,19 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 				$where  =
 						0 === $ip_int
 					?
-						" WHERE `ip` LIKE '%{$this->s}%'"
+						$wpdb->prepare(
+							' WHERE `ip` LIKE %s',
+							'%' . $this->s . '%'
+						)
 					:
-						" WHERE ( `ip_from_int` <= {$ip_int} AND `ip_to_int` >= {$ip_int} )";
+						$wpdb->prepare(
+							' WHERE ( `ip_from_int` <= %d AND `ip_to_int` >= %d )',
+							$ip_int,
+							$ip_int
+						);
 			}
-			$order_by = empty( $this->order_by ) ? '' : " ORDER BY `{$this->order_by}`";
-			$order    = empty( $this->order ) ? '' : strtoupper( " {$this->order}" );
+			$order_by = empty( $this->order_by ) ? '' : ' ORDER BY `' . $this->order_by . '`';
+			$order    = empty( $this->order ) ? '' : strtoupper( ' ' . $this->order );
 			$offset   = empty( $this->paged ) ? '' : ' OFFSET ' . ( $this->per_page * ( absint( $this->paged ) - 1 ) );
 
 			return $wpdb->get_results( "SELECT * FROM `{$wpdb->prefix}gglcptch_allowlist`{$where}{$order_by}{$order} LIMIT {$this->per_page}{$offset}", ARRAY_A );
@@ -301,11 +310,18 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 				$where  =
 						0 === $ip_int
 					?
-						" WHERE `ip` LIKE '%{$this->s}%'"
+						$wpdb->prepare(
+							' WHERE `ip` LIKE %s',
+							'%' . $this->s . '%'
+						)
 					:
-						" WHERE ( `ip_from_int` <= {$ip_int} AND `ip_to_int` >= {$ip_int} )";
+						$wpdb->prepare(
+							' WHERE ( `ip_from_int` <= %d AND `ip_to_int` >= %d )',
+							$ip_int,
+							$ip_int
+						);
 			}
-			return absint( $wpdb->get_var( "SELECT COUNT(`id`) FROM `{$wpdb->prefix}gglcptch_allowlist`{$where}" ) );
+			return absint( $wpdb->get_var( 'SELECT COUNT(`id`) FROM `' . $wpdb->prefix . 'gglcptch_allowlist`' . $where ) );
 		}
 
 		/**
@@ -317,9 +333,9 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 			global $wpdb, $gglcptch_options;
 			$error = $message = '';
 
-			$bulk_action = isset( $_REQUEST['action'] ) && 'gglcptch_remove' === $_REQUEST['action'] ? true : false;
+			$bulk_action = isset( $_REQUEST['action'] ) && 'gglcptch_remove' === sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) ? true : false;
 			if ( ! $bulk_action ) {
-				$bulk_action = isset( $_REQUEST['action2'] ) && 'gglcptch_remove' === $_REQUEST['action2'] ? true : false;
+				$bulk_action = isset( $_REQUEST['action2'] ) && 'gglcptch_remove' === sanitize_text_field( wp_unslash( $_REQUEST['action2'] ) ) ? true : false;
 			}
 
 			/* Add IP to the database */
@@ -330,16 +346,23 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 			) {
 				$add_ip = isset( $_POST['gglcptch_add_to_allowlist_my_ip'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_add_to_allowlist_my_ip_value'] ) ) : sanitize_text_field( wp_unslash( $_POST['gglcptch_add_to_allowlist'] ) );
 
-				$list_ip = preg_split( "/[\s,;]+/", trim( $add_ip, " \s\r\n\t,;" ) );
+				$list_ip = preg_split( '/[\s,;]+/', trim( $add_ip, " \s\r\n\t,;" ) );
 
-				foreach( $list_ip as $new_ip ){
+				foreach ( $list_ip as $new_ip ) {
 					$type_ip = $this->valid_ip( trim( $new_ip ) );
 					if ( $type_ip ) {
 						$ip_int = sprintf( '%u', ip2long( $new_ip ) );
-						$id     = $wpdb->get_var( $wpdb->prepare( 'SELECT `id` FROM ' . $wpdb->prefix . 'gglcptch_allowlist WHERE ( `ip_from_int` <= %d AND `ip_to_int` >= %d ) OR `ip` LIKE %s LIMIT 1;', $ip_int, $ip_int, $new_ip ) );
+						$id     = $wpdb->get_var(
+							$wpdb->prepare(
+								'SELECT `id` FROM ' . $wpdb->prefix . 'gglcptch_allowlist WHERE ( `ip_from_int` <= %d AND `ip_to_int` >= %d ) OR `ip` LIKE %s LIMIT 1;', 
+								$ip_int,
+								$ip_int,
+								$new_ip
+							)
+						);
 						/* check if IP already in database */
 						if ( is_null( $id ) ) {
-							$time = current_time( 'mysql' );
+							$time   = current_time( 'mysql' );
 							$result = $this->save_ip( $new_ip, $type_ip, $time );
 							if ( false !== $result ) {
 								$message = __( 'IP added to the allow list successfully.', 'google-captcha' );
@@ -379,7 +402,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 				$wpdb->delete(
 					$wpdb->prefix . 'gglcptch_allowlist',
 					array(
-						'id' => absint( sanitize_text_field( wp_unslash( $_GET['gglcptch_remove'] ) ) )
+						'id' => absint( sanitize_text_field( wp_unslash( $_GET['gglcptch_remove'] ) ) ),
 					)
 				);
 
@@ -413,6 +436,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 
 		/**
 		 * Function to check if IP (mask/diapason) is valid
+		 *
 		 * @param $ip_to_check  string  IP, mask or diapason to check
 		 * @return bool False - if it's not valid IP, mask or diapason | string with the type of entered value - if valid IP, mask or diapason
 		 */
@@ -485,11 +509,11 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 					$ip_to_int   = sprintf( '%u', ip2long( $ip_to ) );
 					break;
 				case 'normal_mask': /* if insert ip mask like xxx.xxx.xxx.xxx/yy */
-					$mask        = explode( '/' , $ip ); /* $mask[0] - is ip address, $mask[1] - is cidr mask */
-					$nmask       = 4294967295 - ( pow( 2 , 32 - $mask[1] ) - 1 ); /* calculation netmask in decimal view from cidr mask */
+					$mask        = explode( '/', $ip ); /* $mask[0] - is ip address, $mask[1] - is cidr mask */
+					$nmask       = 4294967295 - ( pow( 2, 32 - $mask[1] ) - 1 ); /* calculation netmask in decimal view from cidr mask */
 					$ip_from_int = ip2long( $mask[0] ) & $nmask; /* calculating network address signed (this is doing for correct worl with netmsk) */
 					$ip_from_int = sprintf( '%u', $ip_from_int ); /* and now unsigned */
-					$ip_to_int   = $ip_from_int + ( pow( 2 , 32 - $mask[1] ) - 1 ); /* calculating broadcast */
+					$ip_to_int   = $ip_from_int + ( pow( 2, 32 - $mask[1] ) - 1 ); /* calculating broadcast */
 					$ip_from     = long2ip( $ip_from_int );
 					$ip_to       = long2ip( $ip_to_int );
 				default:
@@ -497,7 +521,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 			}
 			/* add a new row to db */
 			$result = $wpdb->insert(
-				$wpdb->prefix . "gglcptch_allowlist",
+				$wpdb->prefix . 'gglcptch_allowlist',
 				array(
 					'ip'          => $ip,
 					'ip_from_int' => $ip_from_int,
@@ -508,7 +532,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 					'%s', /* all '%s' because max value in '%d' is 2147483647 */
 					'%s',
 					'%s',
-					'%s'
+					'%s',
 				)
 			);
 			return $result;

@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Displays the content of the dialog box when the user clicks on the "Deactivate" link on the plugin settings page
  *

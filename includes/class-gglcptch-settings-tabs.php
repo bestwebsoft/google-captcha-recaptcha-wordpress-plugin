@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Displays the content on the plugin settings page
  */
@@ -401,7 +403,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 										'gglcptch_' . esc_attr( $role ),
 										esc_attr( $role ),
 										checked( ! empty( $this->options[ $role ] ), true, false ),
-										translate_user_role( $fields['name'] )
+										esc_html( translate_user_role( $fields['name'] ) )
 									);
 								}
 							}

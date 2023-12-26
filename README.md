@@ -12,6 +12,7 @@
 <li>Registration form</li>
 <li>Login form</li>
 <li>Reset password form</li>
+<li>Protected post password form</li>
 <li>Comments form</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a" rel="nofollow ugc">Contact Form</a></li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/testimonials/" rel="nofollow ugc">Testimonials</a></li>
@@ -153,4 +154,6 @@
 <h4>Credits</h4>
 <ul>
 <li>lib/recaptchalib.php &#8211; Copyright © 2007. Mike Crawford, Ben Maurer (reCAPTCHA &#8211; <a href="http://recaptcha.net" rel="nofollow ugc">http://recaptcha.net</a>). All Rights Reserved.</li>
+<li>The plugin uses Google Recaptcha (Google LLC) services to process data and protect against spam. <a href="https://www.google.com/recaptcha/" rel="nofollow ugc">https://www.google.com/recaptcha/</a> Terms of service <a href="https://policies.google.com/terms" rel="nofollow ugc">https://policies.google.com/terms</a>. Privacy Policy <a href="https://policies.google.com/privacy" rel="nofollow ugc">https://policies.google.com/privacy</a>.</li>
+<li>This plugin incorporates a license verification mechanism to ensure the authenticity of your license key and provide access to premium features and updates. The verification process involves connecting securely to our external service hosted at BestWebSoft website <a href="https://bestwebsoft.com" rel="nofollow ugc">https://bestwebsoft.com</a>. Privacy Policy <a href="https://bestwebsoft.com/privacy-policy/" rel="nofollow ugc">https://bestwebsoft.com/privacy-policy/</a>. End user license agreement <a href="https://bestwebsoft.com/end-user-license-agreement/" rel="nofollow ugc">https://bestwebsoft.com/end-user-license-agreement/</a>.</li>
 </ul>

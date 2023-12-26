@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 5.6
-Tested up to: 6.3
-Stable tag: 1.73
+Tested up to: 6.4.2
+Stable tag: 1.74
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,6 +26,7 @@ http://www.youtube.com/watch?v=L2BziEOL3Fg
 	* Registration form
 	* Login form
 	* Reset password form
+	* Protected post password form
 	* Comments form
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
 	* [Testimonials](https://bestwebsoft.com/products/wordpress/plugins/testimonials/)
@@ -144,6 +145,9 @@ Some of these translations are not complete. We are constantly adding new featur
 = Credits =
 
 * lib/recaptchalib.php - Copyright © 2007. Mike Crawford, Ben Maurer (reCAPTCHA - <http://recaptcha.net>). All Rights Reserved.
+* The plugin uses Google Recaptcha (Google LLC) services to process data and protect against spam. <https://www.google.com/recaptcha/> Terms of service <https://policies.google.com/terms>. Privacy Policy <https://policies.google.com/privacy>.
+* This plugin incorporates a license verification mechanism to ensure the authenticity of your license key and provide access to premium features and updates. The verification process involves connecting securely to our external service hosted at BestWebSoft website <https://bestwebsoft.com>. Privacy Policy <https://bestwebsoft.com/privacy-policy/>. End user license agreement <https://bestwebsoft.com/end-user-license-agreement/>.
+
 
 == Installation ==
 
@@ -281,6 +285,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Allow List page.
 
 == Changelog ==
+
+= V1.74 - 25.12.2023 =
+* Update : All functionality was updated for WordPress 6.4.2
+* Update : BWS Panel section was updated.
+* NEW : The compatibility with Password Protected Pages form has been added.
+* Bugfix : Minor bugs fixed.
 
 = V1.73 - 24.08.2023 =
 * Update : All functionality was updated for WordPress 6.3
@@ -619,6 +629,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.74 =
+* The compatibility with new WordPress version updated.
+* Plugin optimization completed.
+* New features added.
+* Bugs fixed.
 
 = V1.73 =
 * The compatibility with new WordPress version updated.

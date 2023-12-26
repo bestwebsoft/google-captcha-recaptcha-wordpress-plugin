@@ -5,6 +5,8 @@
  * Main functions
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * General functions for BestWebSoft plugins
  */
@@ -264,7 +266,7 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 						<div class="icon">
 							<img title="" src="<?php echo esc_url( $banner_value['banner_url'] ); ?>" alt="" />
 						</div>
-						<div class="text"><?php printf( esc_html__( "Your license key for %1\$s expires on %2\$s and you won't be granted TOP-PRIORITY SUPPORT or UPDATES.", 'bestwebsoft' ), '<strong>' . esc_html__( $banner_value['plugin_name'] ) . '</strong>', esc_html__( $bstwbsftwppdtplgns_options['time_out'][ $banner_value['plugin_key'] ] ) ); ?> <a target="_new" href="https://support.bestwebsoft.com/entries/53487136"><?php esc_html_e( 'Learn more', 'bestwebsoft' ); ?></a></div>
+						<div class="text"><?php printf( esc_html__( "Your license key for %1\$s expires on %2\$s and you won't be granted TOP-PRIORITY SUPPORT or UPDATES.", 'bestwebsoft' ), '<strong>' . esc_html( $banner_value['plugin_name'] ) . '</strong>', esc_html( $bstwbsftwppdtplgns_options['time_out'][ $banner_value['plugin_key'] ] ) ); ?> <a target="_new" href="https://support.bestwebsoft.com/entries/53487136"><?php esc_html_e( 'Learn more', 'bestwebsoft' ); ?></a></div>
 					</div>
 				</div>
 				<?php
@@ -279,9 +281,9 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 					<?php
 					printf(
 						'<strong>%s</strong> %s <strong>WordPress %s</strong> %s',
-						esc_html__( $value['name'] ),
+						esc_html( $value['name'] ),
 						esc_html__( 'requires', 'bestwebsoft' ),
-						esc_html__( $value['version'] ),
+						esc_html( $value['version'] ),
 						esc_html__( 'or higher! We do not guarantee that our plugin will work correctly. Please upgrade to WordPress latest version.', 'bestwebsoft' )
 					);
 					?>

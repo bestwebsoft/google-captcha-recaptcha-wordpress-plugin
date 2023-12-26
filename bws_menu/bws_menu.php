@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Function for displaying BestWebSoft menu
  * Version: 2.4.3
@@ -96,6 +98,18 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 			if ( isset( $_SESSION['bws_membership_time_check'] ) && isset( $_SESSION['bws_membership_list'] ) && $_SESSION['bws_membership_time_check'] < strtotime( '+12 hours' ) ) {
 				$update_membership_list = false;
 				$plugins_array          = $_SESSION['bws_membership_list'];
+				foreach( $plugins_array as $plugins_key => $plugins_value ) {
+					if ( is_array( $plugins_value ) ) {
+						$plugins_array[ $plugins_key ] = array_map( 'sanitize_text_field', array_map( 'wp_unslash', $plugins_value ) );
+					} elseif ( is_object( $plugins_value ) ) {
+						foreach( $plugins_value as $plugins_key2 => $plugins_value2 ){
+							$plugins_value->$plugins_key2 = sanitize_text_field( wp_unslash( $plugins_value2 ) );
+						}
+						$plugins_array[ $plugins_key ] = $plugins_value;
+					} else {
+						$plugins_array[ $plugins_key ] = sanitize_text_field( wp_unslash( $plugins_value ) );
+					}
+				}
 			}
 
 			if ( ( $update_membership_list && ! empty( $bws_license_key ) ) || ( isset( $_POST['bws_license_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'bws_license_nonce_name' ) ) ) {

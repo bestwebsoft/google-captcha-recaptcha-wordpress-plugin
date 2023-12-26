@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Displays the content on the plugin settings page
  *
@@ -594,7 +596,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 									<?php echo wp_kses_post( $extension_data['description'] ); ?>
 									<br>
 									<a href="<?php echo esc_url( $extension_data['learn_more_link'] ); ?>" target="_blank">
-										<?php printf( esc_html__( 'Learn more about %s', 'bestwebsoft' ), esc_html__( $name ) ); ?>
+										<?php printf( esc_html__( 'Learn more about %s', 'bestwebsoft' ), esc_html( $name ) ); ?>
 									</a>
 								</p>
 								<?php

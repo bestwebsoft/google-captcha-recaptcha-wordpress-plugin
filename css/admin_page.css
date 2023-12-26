@@ -45,3 +45,6 @@
 .bws_info.warning {
 	color: red;
 }
+.gglcptch_error_text {
+	display: none;
+}
