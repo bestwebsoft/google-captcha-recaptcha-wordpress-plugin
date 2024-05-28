@@ -3,7 +3,9 @@
  * BestWebSoft product list
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 global $bws_plugin_info, $wp_version;
 

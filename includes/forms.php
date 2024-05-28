@@ -319,10 +319,12 @@ if ( ! function_exists( 'gglcptch_login_check' ) ) {
 			}
 			$error_code      = ( is_wp_error( $user ) ) ? $user->get_error_code() : 'incorrect_password';
 			$errors          = new WP_Error( $error_code, __( 'Authentication failed.', 'google-captcha' ) );
-			$gglcptch_errors = $gglcptch_check['errors']->errors;
-			foreach ( $gglcptch_errors as $code => $messages ) {
-				foreach ( $messages as $message ) {
-					$errors->add( $code, $message );
+			if ( isset( $gglcptch_check['errors'] ) ) {
+				$gglcptch_errors = $gglcptch_check['errors']->errors;
+				foreach ( $gglcptch_errors as $code => $messages ) {
+					foreach ( $messages as $message ) {
+						$errors->add( $code, $message );
+					}
 				}
 			}
 			$gglcptch_check['errors'] = $errors;
@@ -384,7 +386,7 @@ if ( ! function_exists( 'gglcptch_password_form_display' ) ) {
 	 * @param   object $post     Post object.
 	 * @return  string  $expire   Form content.
 	 */
-	function gglcptch_password_form_display( $output, $post ) {
+	function gglcptch_password_form_display( $output, $post = null ) {
 		$recaptcha = gglcptch_display();
 		if ( '' !== $recaptcha && isset( $_COOKIE['gglcptch_password_form_errors'] ) ) {
 			$output = str_replace( '</form>', '<div class="error gglcptch-password-form-error"><p>' . wp_kses_post( wp_unslash( $_COOKIE['gglcptch_password_form_errors'] ) ) . '</p></div>' . $recaptcha . '</form>', $output );
