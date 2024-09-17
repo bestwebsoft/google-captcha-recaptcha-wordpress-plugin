@@ -111,6 +111,20 @@
 			return;
 		}
 
+		if ( 'v2' === gglcptch.options.version && $( '#' + container ).parents( '.gglcptch_custom' ).length > 0 ) {
+			if ( $( '#' + container ).find( 'textarea#g-recaptcha-response' ).length == 0 ) {
+				setTimeout(
+					function(){
+						$( '#' + container ).find( 'textarea#g-recaptcha-response' ).remove();
+					},
+					1000
+				);
+			} else {
+				$( '#' + container ).find( 'textarea#g-recaptcha-response' ).remove();
+			}
+			$( '.gglcptch.gglcptch_v2 noscript' ).remove();
+		}
+		
 		// add attribute disable to the submit
 		if ( 'v2' === gglcptch.options.version && gglcptch.options.disable ) {
 			$( '#' + container ).closest( 'form' ).find( 'input:submit, button' ).prop( 'disabled', true );

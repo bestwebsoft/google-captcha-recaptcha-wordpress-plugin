@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.75
+Version: 1.78
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -603,7 +603,12 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 		<div class="wrap">
 			<?php if ( 'google-captcha.php' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) { ?>
 				<h1><?php esc_html_e( 'reCaptcha Settings', 'google-captcha' ); ?></h1>
-		<noscript><div class="error below-h2"><p><strong><?php esc_html_e( 'Please enable JavaScript in your browser.', 'google-captcha' ); ?></strong></p></div></noscript>
+				<noscript><div class="error below-h2"><p><strong><?php esc_html_e( 'Please enable JavaScript in your browser.', 'google-captcha' ); ?></strong></p></div></noscript>
+				<?php
+				if ( function_exists( 'bws_plugin_promo_banner' ) ) {
+					echo bws_plugin_promo_banner( $gglcptch_plugin_info, 'gglcptch_options', 'google-captcha', 'https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?utm_source=wordpress&utm_medium=plugin_banner&utm_campaign=upgrade' );
+				}
+				?>
 				<?php
 				$page->display_content();
 			} else {
@@ -690,7 +695,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 	 *
 	 * @return string $content
 	 */
-	function gglcptch_display( $attr = array(), $content = false ) {
+	function gglcptch_display( $attr = array(), $content = false, $custom = false ) {
 		global $gglcptch_options, $gglcptch_count, $gglcptch_plugin_info;
 
 		if ( empty( $gglcptch_options ) ) {
@@ -703,7 +708,11 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 				$gglcptch_count = 1;
 			}
 
-			$content .= '<div class="gglcptch gglcptch_' . $gglcptch_options['recaptcha_version'] . '">';
+			if ( true === $custom ) {
+				$content .= '<div class="gglcptch gglcptch_' . $gglcptch_options['recaptcha_version'] . ' gglcptch_custom">';
+			} else {
+				$content .= '<div class="gglcptch gglcptch_' . $gglcptch_options['recaptcha_version'] . '">';
+			}
 
 			if ( $gglcptch_options['hide_badge'] && 'v2' !== $gglcptch_options['recaptcha_version'] ) {
 				$content .= sprintf(
@@ -736,6 +745,9 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			/* generating random id value in case of getting content with pagination plugin for not getting duplicate id values */
 			$id = wp_rand();
 			if ( isset( $gglcptch_options['recaptcha_version'] ) && in_array( $gglcptch_options['recaptcha_version'], array( 'v2', 'invisible' ) ) ) {
+				if ( true === $custom ) {
+					$content .= '<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px !important; height: 40px !important; border: 1px solid #c1c1c1 !important; margin: 10px 25px !important; padding: 0px !important; resize: none !important;">';
+				}
 				$content .= '<div id="gglcptch_recaptcha_' . esc_attr( $id ) . '" class="gglcptch_recaptcha"></div>
 				<noscript>
 					<div style="width: 302px;">
@@ -745,10 +757,11 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 							</div>
 						</div>
 						<div style="border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px; height: 60px; width: 300px;">
-							<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px !important; height: 40px !important; border: 1px solid #c1c1c1 !important; margin: 10px 25px !important; padding: 0px !important; resize: none !important;"></textarea>
+							<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px !important; height: 40px !important; border: 1px solid #c1c1c1 !important; margin: 10px 25px !important; padding: 0px !important; resize: none !important;">
 						</div>
 					</div>
 				</noscript>';
+				
 				$deps     = ( ! empty( $gglcptch_options['disable_submit'] ) ) ? array( 'gglcptch_pre_api' ) : array( 'jquery' );
 			} elseif ( isset( $gglcptch_options['recaptcha_version'] ) && 'v3' === $gglcptch_options['recaptcha_version'] ) {
 				$content .= '<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" /><br /><div class="gglcptch_error_text">' . esc_html__( 'The reCAPTCHA verification period has expired. Please reload the page.', 'google-captcha' ) . '</div>';
@@ -802,7 +815,7 @@ if ( ! function_exists( 'gglcptch_display_custom' ) ) {
 	 */
 	function gglcptch_display_custom( $content = '', $form_slug = '' ) {
 		if ( gglcptch_is_recaptcha_required( $form_slug ) ) {
-			$content = gglcptch_display( array(), $content );
+			$content = gglcptch_display( array(), $content, true );
 		}
 
 		return $content;
@@ -1338,6 +1351,9 @@ if ( ! function_exists( 'gglcptch_plugin_banner' ) ) {
 				register_gglcptch_settings();
 			}
 			bws_plugin_banner_to_settings( $gglcptch_plugin_info, 'gglcptch_options', 'google-captcha', 'admin.php?page=google-captcha.php' );
+			if ( function_exists( 'bws_plugin_banner_to_promo' ) ) {
+				bws_plugin_banner_to_promo( $gglcptch_plugin_info, 'gglcptch_options', 'google-captcha', 'admin.php?page=google-captcha.php', array( __( 'Double-Check Your reCAPTCHA Keys', 'bestwebsoft' ), __( "Ensure your keys are correctly configured for maximum protection. Click “Test Keys” button. Check your settings now!", 'bestwebsoft' ) ) );
+			}
 		}
 
 		if ( isset( $_GET['page'] ) && 'google-captcha.php' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) {

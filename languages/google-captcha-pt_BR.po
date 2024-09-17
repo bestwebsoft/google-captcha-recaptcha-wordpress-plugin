@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha by BestWebSoft\n"
-"POT-Creation-Date: 2024-05-28 13:16+0300\n"
-"PO-Revision-Date: 2024-05-28 13:17+0300\n"
+"POT-Creation-Date: 2024-09-17 13:06+0300\n"
+"PO-Revision-Date: 2024-09-17 13:07+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -29,7 +29,7 @@ msgid "reCaptcha Settings"
 msgstr "Configurações do reCaptcha"
 
 # automatic translation
-#: google-captcha.php:55 google-captcha.php:1301 google-captcha.php:1321
+#: google-captcha.php:55 google-captcha.php:1310 google-captcha.php:1330
 #: includes/class-gglcptch-settings-tabs.php:24
 msgid "Settings"
 msgstr "Configurações"
@@ -79,99 +79,99 @@ msgid "Please enable JavaScript in your browser."
 msgstr "Ative o JavaScript em seu navegador."
 
 # automatic translation
-#: google-captcha.php:711
+#: google-captcha.php:716
 msgid "This site is protected by reCAPTCHA and the Google "
 msgstr "Este site é protegido por reCAPTCHA e pelo Google"
 
 # automatic translation
-#: google-captcha.php:712
+#: google-captcha.php:717
 msgid "Privacy Policy"
 msgstr "política de Privacidade"
 
 # automatic translation
-#: google-captcha.php:713
+#: google-captcha.php:718
 msgid " and "
 msgstr " e"
 
 # automatic translation
-#: google-captcha.php:714
+#: google-captcha.php:719
 msgid "Terms of Service"
 msgstr "Termos de serviço"
 
 # automatic translation
-#: google-captcha.php:715
+#: google-captcha.php:720
 msgid " apply."
 msgstr " aplicar."
 
 # automatic translation
-#: google-captcha.php:722
+#: google-captcha.php:727
 msgid "To use reCaptcha you must get the keys from"
 msgstr "Para usar o reCaptcha, você deve obter as chaves de"
 
 # automatic translation
-#: google-captcha.php:723
+#: google-captcha.php:728
 msgid "here"
 msgstr "aqui"
 
 # automatic translation
-#: google-captcha.php:724
+#: google-captcha.php:729
 msgid "and enter them on the"
 msgstr "e insira-os no"
 
 # automatic translation
-#: google-captcha.php:726
+#: google-captcha.php:731
 msgid "plugin setting page"
 msgstr "página de configuração do plug-in"
 
 # automatic translation
-#: google-captcha.php:754
-#, fuzzy
-#| msgid "The reCaptcha verification failed. Please try again."
+#: google-captcha.php:763
 msgid "The reCAPTCHA verification period has expired. Please reload the page."
-msgstr "A verificação do reCaptcha falhou. Por favor, tente novamente."
+msgstr ""
+"O período de verificação do reCAPTCHA expirou. Por favor, recarregue a "
+"página."
 
 # automatic translation
-#: google-captcha.php:927
+#: google-captcha.php:936
 msgid "Response is empty"
 msgstr "A resposta está vazia"
 
 # automatic translation
-#: google-captcha.php:1029 includes/forms.php:504 includes/forms.php:512
+#: google-captcha.php:1038 includes/forms.php:504 includes/forms.php:512
 msgid "Error"
 msgstr "Erro"
 
 # automatic translation
-#: google-captcha.php:1177 google-captcha.php:1187
+#: google-captcha.php:1186 google-captcha.php:1196
 msgid "The reCaptcha verification failed. Please try again."
 msgstr "A verificação do reCaptcha falhou. Por favor, tente novamente."
 
 # automatic translation
-#: google-captcha.php:1179
+#: google-captcha.php:1188
 msgid "Secret Key is missing."
 msgstr "Falta a chave secreta."
 
 # automatic translation
-#: google-captcha.php:1182
+#: google-captcha.php:1191
 msgid "Secret Key is invalid."
 msgstr "A chave secreta é inválida."
 
 # automatic translation
-#: google-captcha.php:1183
+#: google-captcha.php:1192
 msgid "Check your domain configurations"
 msgstr "Verifique as configurações do seu domínio"
 
 # automatic translation
-#: google-captcha.php:1184
+#: google-captcha.php:1193
 msgid "and enter it again"
 msgstr "e entre novamente"
 
 # automatic translation
-#: google-captcha.php:1186
+#: google-captcha.php:1195
 msgid "User response is invalid"
 msgstr "A resposta do usuário é inválida"
 
 # automatic translation
-#: google-captcha.php:1188
+#: google-captcha.php:1197
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -180,39 +180,52 @@ msgstr ""
 "campos reCAPTCHA desnecessários para que funcione corretamente."
 
 # automatic translation
-#: google-captcha.php:1190
+#: google-captcha.php:1199
 msgid "reCaptcha v3 test failed"
 msgstr "teste reCaptcha v3 falhou"
 
 # automatic translation
-#: google-captcha.php:1236
+#: google-captcha.php:1245
 msgid "Please submit \"Test verification\""
 msgstr "Envie \"Verificação de teste\""
 
 # automatic translation
-#: google-captcha.php:1238
+#: google-captcha.php:1247
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr "Por favor, complete o captcha e envie \"Verificação de teste\""
 
 # automatic translation
-#: google-captcha.php:1245
+#: google-captcha.php:1254
 msgid "Test verification"
 msgstr "verificação de teste"
 
 # automatic translation
-#: google-captcha.php:1273
+#: google-captcha.php:1282
 msgid "The verification is successfully completed."
 msgstr "A verificação foi concluída com sucesso."
 
 # automatic translation
-#: google-captcha.php:1323
+#: google-captcha.php:1332
 msgid "FAQ"
 msgstr "Perguntas frequentes"
 
 # automatic translation
-#: google-captcha.php:1324
+#: google-captcha.php:1333
 msgid "Support"
 msgstr "Apoiar"
+
+#: google-captcha.php:1350
+msgid "Double-Check Your reCAPTCHA Keys"
+msgstr "Verifique novamente suas chaves reCAPTCHA"
+
+#: google-captcha.php:1350
+msgid ""
+"Ensure your keys are correctly configured for maximum protection. Click "
+"“Test Keys” button. Check your settings now!"
+msgstr ""
+"Certifique-se de que suas chaves estejam configuradas corretamente para "
+"obter proteção máxima. Clique no botão \"Test Keys\" (Testar chaves). "
+"Verifique suas configurações agora!"
 
 # automatic translation
 #: includes/allowlist.php:54
@@ -596,10 +609,8 @@ msgstr "Formulário de redefinição de senha"
 
 # automatic translation
 #: includes/forms.php:23
-#, fuzzy
-#| msgid "Reset password form"
 msgid "Protected post password form"
-msgstr "Formulário de redefinição de senha"
+msgstr "Formulário de senha de postagem protegida"
 
 # automatic translation
 #: includes/forms.php:24

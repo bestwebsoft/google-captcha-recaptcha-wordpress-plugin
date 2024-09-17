@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha by BestWebSoft\n"
-"POT-Creation-Date: 2024-05-28 13:04+0300\n"
-"PO-Revision-Date: 2024-05-28 13:06+0300\n"
+"POT-Creation-Date: 2024-09-17 13:07+0300\n"
+"PO-Revision-Date: 2024-09-17 13:07+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "reCaptcha Settings"
 msgstr "Настройки reCaptcha"
 
-#: google-captcha.php:55 google-captcha.php:1301 google-captcha.php:1321
+#: google-captcha.php:55 google-captcha.php:1310 google-captcha.php:1330
 #: includes/class-gglcptch-settings-tabs.php:24
 msgid "Settings"
 msgstr "Настройки"
@@ -69,79 +69,79 @@ msgstr "Вы в белом списке"
 msgid "Please enable JavaScript in your browser."
 msgstr "Пожалуйста, включите поддержку JavaScript в вашем браузере."
 
-#: google-captcha.php:711
+#: google-captcha.php:716
 msgid "This site is protected by reCAPTCHA and the Google "
 msgstr "Этот сайт защищен reCAPTCHA и применяются "
 
-#: google-captcha.php:712
+#: google-captcha.php:717
 msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
-#: google-captcha.php:713
+#: google-captcha.php:718
 msgid " and "
 msgstr " и "
 
-#: google-captcha.php:714
+#: google-captcha.php:719
 msgid "Terms of Service"
 msgstr "Условия обслуживания"
 
-#: google-captcha.php:715
+#: google-captcha.php:720
 msgid " apply."
 msgstr " Google."
 
-#: google-captcha.php:722
+#: google-captcha.php:727
 msgid "To use reCaptcha you must get the keys from"
 msgstr "Чтобы использовать reCaptcha, вам необходимо получить ключи"
 
-#: google-captcha.php:723
+#: google-captcha.php:728
 msgid "here"
 msgstr "здесь"
 
-#: google-captcha.php:724
+#: google-captcha.php:729
 msgid "and enter them on the"
 msgstr "и вставить их на"
 
-#: google-captcha.php:726
+#: google-captcha.php:731
 msgid "plugin setting page"
 msgstr "странице настроек плагина"
 
-#: google-captcha.php:754
+#: google-captcha.php:763
 msgid "The reCAPTCHA verification period has expired. Please reload the page."
 msgstr "Период проверки reCAPTCHA истек. Пожалуйста, перезагрузите страницу."
 
-#: google-captcha.php:927
+#: google-captcha.php:936
 msgid "Response is empty"
 msgstr "Ответ отсутствует"
 
-#: google-captcha.php:1029 includes/forms.php:504 includes/forms.php:512
+#: google-captcha.php:1038 includes/forms.php:504 includes/forms.php:512
 msgid "Error"
 msgstr "Ошибка"
 
-#: google-captcha.php:1177 google-captcha.php:1187
+#: google-captcha.php:1186 google-captcha.php:1196
 msgid "The reCaptcha verification failed. Please try again."
 msgstr "Проверка reCaptcha не удалась. Пожалуйста, попробуйте еще раз."
 
-#: google-captcha.php:1179
+#: google-captcha.php:1188
 msgid "Secret Key is missing."
 msgstr "Секретный ключ отсутствует."
 
-#: google-captcha.php:1182
+#: google-captcha.php:1191
 msgid "Secret Key is invalid."
 msgstr "Некорректный секретный ключ."
 
-#: google-captcha.php:1183
+#: google-captcha.php:1192
 msgid "Check your domain configurations"
 msgstr "Проверьте настройки вашего домена"
 
-#: google-captcha.php:1184
+#: google-captcha.php:1193
 msgid "and enter it again"
 msgstr "и введите его снова"
 
-#: google-captcha.php:1186
+#: google-captcha.php:1195
 msgid "User response is invalid"
 msgstr "Некорректный ответ пользователя"
 
-#: google-captcha.php:1188
+#: google-captcha.php:1197
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -149,34 +149,46 @@ msgstr ""
 "В текущей форме найдено более одного блока reCAPTCHA. Пожалуйста, удалите "
 "все лишние блоки reCAPTCHA для дальнейшей корректной работы."
 
-#: google-captcha.php:1190
+#: google-captcha.php:1199
 msgid "reCaptcha v3 test failed"
 msgstr "Тест reCaptcha v3 не пройден"
 
-#: google-captcha.php:1236
+#: google-captcha.php:1245
 msgid "Please submit \"Test verification\""
 msgstr "Пожалуйста, нажмите кнопку \"Тестирование проверки\"."
 
-#: google-captcha.php:1238
+#: google-captcha.php:1247
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr ""
 "Пожалуйста, заполните капчу и нажмите кнопку \"Тестирование проверки\"."
 
-#: google-captcha.php:1245
+#: google-captcha.php:1254
 msgid "Test verification"
 msgstr "Тестирование проверки"
 
-#: google-captcha.php:1273
+#: google-captcha.php:1282
 msgid "The verification is successfully completed."
 msgstr "Тестирование проверки успешно завершено."
 
-#: google-captcha.php:1323
+#: google-captcha.php:1332
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-captcha.php:1324
+#: google-captcha.php:1333
 msgid "Support"
 msgstr "Поддержка"
+
+#: google-captcha.php:1350
+msgid "Double-Check Your reCAPTCHA Keys"
+msgstr "Дважды проверьте ключи reCAPTCHA"
+
+#: google-captcha.php:1350
+msgid ""
+"Ensure your keys are correctly configured for maximum protection. Click "
+"“Test Keys” button. Check your settings now!"
+msgstr ""
+"Убедитесь, что ваши ключи правильно настроены для максимальной защиты. "
+"Нажмите кнопку \"Проверить ключи\". Проверьте свои настройки прямо сейчас!"
 
 #: includes/allowlist.php:54
 msgid "Add New"
