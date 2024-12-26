@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.78
+Version: 1.79
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -637,7 +637,9 @@ if ( ! function_exists( 'gglcptch_is_recaptcha_required' ) ) {
 	function gglcptch_is_recaptcha_required( $form_slug = '', $is_user_logged_in = null ) {
 		global $gglcptch_options;
 
-		if ( wp_is_json_request() ) {
+		global $gglcptch_options;
+
+		if ( strstr( $_SERVER['REQUEST_URI'], '/jwt-auth' ) ) {
 			return false;
 		}
 
@@ -652,14 +654,13 @@ if ( ! function_exists( 'gglcptch_is_recaptcha_required' ) ) {
 			}
 		}
 
-		$result =
-			isset( $gglcptch_options[ $form_slug ] ) &&
-			(
-				! empty( $gglcptch_options[ $form_slug ] ) &&
+		$result = isset( $gglcptch_options[ $form_slug ] ) && (
+			( ! empty( $gglcptch_options[ $form_slug ] ) && is_admin() && ( ! wp_doing_ajax() || ( isset( $_POST['action'] ) && 'wpforms_new_field_gglcptch' === $_POST['action'] ) ) ) ||
+			( ! empty( $gglcptch_options[ $form_slug ] ) &&
 				( ! $is_user_logged_in || ! gglcptch_is_hidden_for_role() )
-			);
-
-		return $result;
+			)
+		);
+		return apply_filters( 'gglcptch_is_recaptcha_required', $result, $form_slug, $is_user_logged_in );
 	}
 }
 

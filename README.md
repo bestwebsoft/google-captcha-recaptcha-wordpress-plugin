@@ -4,7 +4,7 @@
 <p>reCaptcha plugin is an effective security solution that protects your WordPress website forms from spam entries while letting real people pass through with ease.  It can be used for login, registration, password recovery, comments, popular contact forms, and other. reCAPTCHA Version 3, Version 2, Invisible are included.</p>
 <p>Users are required to confirm that they are not a robot before the form can be submitted. It&#8217;s easy for people and hard for bots.</p>
 <p><a href="https://bestwebsoft.com/demo-for-google-captcha/?ref=readme" rel="nofollow ugc">View Demo</a></p>
-<p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
+<p></p>
 <h4>Free Features</h4>
 <ul>
 <li>Add reCaptcha to:

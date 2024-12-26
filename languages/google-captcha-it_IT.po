@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha by BestWebSoft\n"
 "POT-Creation-Date: 2024-09-17 13:06+0300\n"
-"PO-Revision-Date: 2024-09-17 13:06+0300\n"
+"PO-Revision-Date: 2024-10-10 12:17+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.3\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: google-captcha.php\n"
@@ -81,27 +81,27 @@ msgstr "Si prega di abilitare javascript nel browser."
 # automatic translation
 #: google-captcha.php:716
 msgid "This site is protected by reCAPTCHA and the Google "
-msgstr "Questo sito è protetto da reCAPTCHA e da Google"
+msgstr " Questo sito è protetto da reCAPTCHA e si applicano  "
 
 # automatic translation
 #: google-captcha.php:717
 msgid "Privacy Policy"
-msgstr "politica sulla riservatezza"
+msgstr "le norme sulla privacy e i termini di servizio di Google."
 
 # automatic translation
 #: google-captcha.php:718
 msgid " and "
-msgstr " e "
+msgstr "  e  "
 
 # automatic translation
 #: google-captcha.php:719
 msgid "Terms of Service"
-msgstr "Termini di servizio"
+msgstr "  Termini di servizio "
 
 # automatic translation
 #: google-captcha.php:720
 msgid " apply."
-msgstr " fare domanda a."
+msgstr "  fare domanda a. "
 
 # automatic translation
 #: google-captcha.php:727
