@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.79
+Version: 1.80
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -94,6 +94,14 @@ if ( ! function_exists( 'gglcptch_plugins_loaded' ) ) {
 	 */
 	function gglcptch_plugins_loaded() {
 		load_plugin_textdomain( 'google-captcha', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+		$is_user_logged_in = is_user_logged_in();
+
+		if ( ( is_plugin_active( 'formidable/formidable.php' ) || is_plugin_active( 'formidable-pro/formidable-pro.php' ) ) ) {
+			require_once( dirname( __FILE__ ) . '/includes/captcha-for-formidable.php' );
+		}
+
 	}
 }
 
@@ -487,6 +495,7 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 			'comments_form'           => 0,
 			'contact_form'            => 0,
 			'testimonials'            => 0,
+			'frm_contact_form'	      => 0,
 			'theme_v2'                => 'light',
 			'recaptcha_version'       => 'v2',
 			'plugin_option_version'   => $gglcptch_plugin_info['Version'],
@@ -497,6 +506,9 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 			'hide_badge'              => 0,
 			'disable_submit_button'   => 0,
 			'use_globally'            => 0,
+			'weekdays'							  => array( 1, 2, 3, 4, 5, 6, 7 ),
+			'all_day'                 => array( 1, 2, 3, 4, 5, 6, 7 ),
+			'hours'                   => array(),
 		);
 
 		if ( function_exists( 'get_editable_roles' ) ) {
@@ -703,7 +715,16 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			register_gglcptch_settings();
 		}
 
-		if ( ! gglcptch_allowlisted_ip() || ( isset( $_GET['action'] ) && 'gglcptch-test-keys' === sanitize_text_field( wp_unslash( $_GET['action'] ) ) ) ) {
+		$weekdays_flag = true;
+		if ( isset( $gglcptch_options['weekdays'] ) ) {
+			$week_day = date( 'N' );
+			$hour     = date( 'G' );
+			if ( ! in_array( $week_day, $gglcptch_options['weekdays'] ) || ( ! in_array( $week_day, $gglcptch_options['all_day'] ) && ! in_array( $hour, $gglcptch_options['hours'][ $week_day ] ) ) ) {
+				$weekdays_flag = false;
+			}
+		}
+
+		if ( ! gglcptch_allowlisted_ip() && true === $weekdays_flag || ( isset( $_GET['action'] ) && 'gglcptch-test-keys' === sanitize_text_field( wp_unslash( $_GET['action'] ) ) ) ) {
 
 			if ( ! $gglcptch_count ) {
 				$gglcptch_count = 1;
@@ -797,7 +818,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			) {
 				gglcptch_add_styles();
 			}
-		} elseif ( ! empty( $gglcptch_options['allowlist_message'] ) ) {
+		} elseif ( gglcptch_allowlisted_ip() && ! empty( $gglcptch_options['allowlist_message'] ) ) {
 			$content .= '<label class="gglcptch_allowlist_message" style="display: block;">' . esc_html( $gglcptch_options['allowlist_message'] ) . '</label>';
 		}
 
@@ -895,7 +916,16 @@ if ( ! function_exists( 'gglcptch_check' ) ) {
 			return $result;
 		}
 
-		if ( gglcptch_allowlisted_ip() && 'gglcptch_test' !== $form ) {
+		$weekdays_flag = true;
+		if ( isset( $gglcptch_options['weekdays'] ) ) {
+			$week_day = date( 'N' );
+			$hour     = date( 'G' );
+			if ( ! in_array( $week_day, $gglcptch_options['weekdays'] ) || ( ! in_array( $week_day, $gglcptch_options['all_day'] ) && ! in_array( $hour, $gglcptch_options['hours'][ $week_day ] ) ) ) {
+				$weekdays_flag = false;
+			}
+		}
+
+		if ( ( gglcptch_allowlisted_ip() && 'gglcptch_test' !== $form ) || false === $weekdays_flag ) {
 			$result = array(
 				'response' => true,
 				'reason'   => '',

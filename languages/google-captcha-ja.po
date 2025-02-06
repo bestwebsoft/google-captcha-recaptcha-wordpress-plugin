@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha by BestWebSoft\n"
-"POT-Creation-Date: 2024-09-17 13:06+0300\n"
-"PO-Revision-Date: 2024-09-17 13:06+0300\n"
+"POT-Creation-Date: 2025-02-06 17:52+0200\n"
+"PO-Revision-Date: 2025-02-06 17:52+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.3\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: google-captcha.php\n"
@@ -23,13 +23,14 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: bws_menu\n"
 
 # automatic translation
-#: google-captcha.php:44 google-captcha.php:54 google-captcha.php:605
-#: includes/class-gglcptch-settings-tabs.php:153
+#: google-captcha.php:44 google-captcha.php:54 google-captcha.php:617
+#: includes/captcha-for-formidable.php:68
+#: includes/class-gglcptch-settings-tabs.php:160
 msgid "reCaptcha Settings"
 msgstr "reCaptcha 設定"
 
 # automatic translation
-#: google-captcha.php:55 google-captcha.php:1310 google-captcha.php:1330
+#: google-captcha.php:55 google-captcha.php:1345 google-captcha.php:1365
 #: includes/class-gglcptch-settings-tabs.php:24
 msgid "Settings"
 msgstr "設定"
@@ -50,12 +51,12 @@ msgid "Upgrade to Pro"
 msgstr "プロ仕様にアップグレードする"
 
 # automatic translation
-#: google-captcha.php:305
+#: google-captcha.php:313
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Google reCAPTCHA が読み込まれるまでお待ちください。"
 
 # automatic translation
-#: google-captcha.php:306
+#: google-captcha.php:314
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -64,113 +65,113 @@ msgstr ""
 "ページをリロードしてください。"
 
 # automatic translation
-#: google-captcha.php:321
+#: google-captcha.php:329
 msgid "Warning"
 msgstr "警告"
 
 # automatic translation
-#: google-captcha.php:480
+#: google-captcha.php:488
 msgid "You are in the allow list"
 msgstr "あなたは許可リストに登録されています"
 
 # automatic translation
-#: google-captcha.php:606
+#: google-captcha.php:618
 msgid "Please enable JavaScript in your browser."
 msgstr "ブラウザで JavaScript を有効にしてください。"
 
 # automatic translation
-#: google-captcha.php:716
+#: google-captcha.php:742
 msgid "This site is protected by reCAPTCHA and the Google "
 msgstr "このサイトは reCAPTCHA と Google によって保護されています"
 
 # automatic translation
-#: google-captcha.php:717
+#: google-captcha.php:743
 msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
 
 # automatic translation
-#: google-captcha.php:718
+#: google-captcha.php:744
 msgid " and "
 msgstr " と"
 
 # automatic translation
-#: google-captcha.php:719
+#: google-captcha.php:745
 msgid "Terms of Service"
 msgstr "利用規約"
 
 # automatic translation
-#: google-captcha.php:720
+#: google-captcha.php:746
 msgid " apply."
 msgstr " 申し込み。"
 
 # automatic translation
-#: google-captcha.php:727
+#: google-captcha.php:753
 msgid "To use reCaptcha you must get the keys from"
 msgstr ""
 "reCaptchaを使用するには、以下のサイトからキーを取得する必要があります。"
 
 # automatic translation
-#: google-captcha.php:728
+#: google-captcha.php:754
 msgid "here"
 msgstr "ここ"
 
 # automatic translation
-#: google-captcha.php:729
+#: google-captcha.php:755
 msgid "and enter them on the"
 msgstr "入力しますと、"
 
 # automatic translation
-#: google-captcha.php:731
+#: google-captcha.php:757
 msgid "plugin setting page"
 msgstr "プラグイン設定ページ"
 
 # automatic translation
-#: google-captcha.php:763
+#: google-captcha.php:789
 msgid "The reCAPTCHA verification period has expired. Please reload the page."
 msgstr "reCAPTCHAの認証期間が終了しました。ページを再読み込みしてください。"
 
 # automatic translation
-#: google-captcha.php:936
+#: google-captcha.php:971
 msgid "Response is empty"
 msgstr "応答が空です"
 
 # automatic translation
-#: google-captcha.php:1038 includes/forms.php:504 includes/forms.php:512
+#: google-captcha.php:1073 includes/forms.php:507 includes/forms.php:515
 msgid "Error"
 msgstr "エラー"
 
 # automatic translation
-#: google-captcha.php:1186 google-captcha.php:1196
+#: google-captcha.php:1221 google-captcha.php:1231
 msgid "The reCaptcha verification failed. Please try again."
 msgstr "reCaptcha の検証に失敗しました。もう一度やり直してください。"
 
 # automatic translation
-#: google-captcha.php:1188
+#: google-captcha.php:1223
 msgid "Secret Key is missing."
 msgstr "秘密鍵がありません。"
 
 # automatic translation
-#: google-captcha.php:1191
+#: google-captcha.php:1226
 msgid "Secret Key is invalid."
 msgstr "秘密鍵が無効です。"
 
 # automatic translation
-#: google-captcha.php:1192
+#: google-captcha.php:1227
 msgid "Check your domain configurations"
 msgstr "ドメイン構成を確認する"
 
 # automatic translation
-#: google-captcha.php:1193
+#: google-captcha.php:1228
 msgid "and enter it again"
 msgstr "もう一度入力してください"
 
 # automatic translation
-#: google-captcha.php:1195
+#: google-captcha.php:1230
 msgid "User response is invalid"
 msgstr "ユーザーの応答が無効です"
 
 # automatic translation
-#: google-captcha.php:1197
+#: google-captcha.php:1232
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -179,45 +180,45 @@ msgstr ""
 "な reCAPTCHA フィールドをすべて削除してください。"
 
 # automatic translation
-#: google-captcha.php:1199
+#: google-captcha.php:1234
 msgid "reCaptcha v3 test failed"
 msgstr "reCaptcha v3 テストに失敗しました"
 
 # automatic translation
-#: google-captcha.php:1245
+#: google-captcha.php:1280
 msgid "Please submit \"Test verification\""
 msgstr "「試験確認書」を提出してください"
 
 # automatic translation
-#: google-captcha.php:1247
+#: google-captcha.php:1282
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr "キャプチャを完了し、「テスト検証」を送信してください"
 
 # automatic translation
-#: google-captcha.php:1254
+#: google-captcha.php:1289
 msgid "Test verification"
 msgstr "テスト検証"
 
 # automatic translation
-#: google-captcha.php:1282
+#: google-captcha.php:1317
 msgid "The verification is successfully completed."
 msgstr "検証は正常に完了しました。"
 
 # automatic translation
-#: google-captcha.php:1332
+#: google-captcha.php:1367
 msgid "FAQ"
 msgstr "よくある質問"
 
 # automatic translation
-#: google-captcha.php:1333
+#: google-captcha.php:1368
 msgid "Support"
 msgstr "サポート"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid "Double-Check Your reCAPTCHA Keys"
 msgstr "reCAPTCHAキーのダブルチェック"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid ""
 "Ensure your keys are correctly configured for maximum protection. Click "
 "“Test Keys” button. Check your settings now!"
@@ -333,6 +334,12 @@ msgstr "検索フォームに IP を入力していません。"
 msgid "Search results for"
 msgstr "の検索結果"
 
+#: includes/captcha-for-formidable.php:68
+msgid ""
+"Currently, the reCaptcha will not be displayed according to the Weekdays and "
+"Hours settings."
+msgstr "現在、平日と時間帯の設定により、reCaptchaは表示されません。"
+
 # automatic translation
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Misc"
@@ -391,22 +398,22 @@ msgid "Enter secret key"
 msgstr "秘密鍵を入力してください"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:140
+#: includes/class-gglcptch-settings-tabs.php:147
 msgid "Settings saved."
 msgstr "保存された設定。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:156
+#: includes/class-gglcptch-settings-tabs.php:163
 msgid "General"
 msgstr "全般的"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:159
+#: includes/class-gglcptch-settings-tabs.php:166
 msgid "reCaptcha Version"
 msgstr "reCaptcha バージョン"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:176
+#: includes/class-gglcptch-settings-tabs.php:183
 #, php-format
 msgid ""
 "Register your domain name with Google reCaptcha service and add the keys to "
@@ -416,7 +423,7 @@ msgstr ""
 "します。 %1$s API キーを取得します。 %2$s"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:185
+#: includes/class-gglcptch-settings-tabs.php:192
 #, php-format
 msgid ""
 "If you do not want to create API keys use %1$sCaptcha by BestWebSoft%2$s "
@@ -426,7 +433,7 @@ msgstr ""
 "用してください。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:194
+#: includes/class-gglcptch-settings-tabs.php:201
 #, php-format
 msgid ""
 "The Google reCaptcha block loads the webfont \"Roboto\" from fonts."
@@ -438,106 +445,143 @@ msgstr ""
 "インの %1$sCaptcha を使用してください。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:236
+#: includes/class-gglcptch-settings-tabs.php:243
 msgid "Test reCaptcha"
 msgstr "reCaptcha をテストする"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:242
+#: includes/class-gglcptch-settings-tabs.php:249
 msgid "Enable reCaptcha for"
 msgstr "の reCaptcha を有効にする"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:293
-#: includes/class-gglcptch-settings-tabs.php:321
-#: includes/class-gglcptch-settings-tabs.php:348
-#: includes/class-gglcptch-settings-tabs.php:386 includes/pro_banners.php:24
+#: includes/class-gglcptch-settings-tabs.php:300
+#: includes/class-gglcptch-settings-tabs.php:327
+#: includes/class-gglcptch-settings-tabs.php:401
+#: includes/class-gglcptch-settings-tabs.php:439 includes/pro_banners.php:24
 msgid "Close"
 msgstr "近い"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:304
+#: includes/class-gglcptch-settings-tabs.php:311
 msgid "reCaptcha Domain"
 msgstr "reCaptcha ドメイン"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:312
+#: includes/class-gglcptch-settings-tabs.php:319
 msgid ""
 "If Google is not accessible or blocked in your country select other one."
 msgstr ""
 "お住まいの国で Google にアクセスできない、またはブロックされている場合は、別"
 "のものを選択してください。"
 
+#: includes/class-gglcptch-settings-tabs.php:336
+msgid "Weekdays and Hours"
+msgstr "平日と営業時間"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Monday"
+msgstr "月曜日"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Tuesday"
+msgstr "火曜日"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Wednesday"
+msgstr "水曜日"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Thursday"
+msgstr "木曜日"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Friday"
+msgstr "金曜日"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Saturday"
+msgstr "土曜日"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Sunday"
+msgstr "日曜日"
+
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:330
+#: includes/class-gglcptch-settings-tabs.php:361
+msgid "All day"
+msgstr "終日"
+
+# automatic translation
+#: includes/class-gglcptch-settings-tabs.php:383
 msgid "Appearance"
 msgstr "外観"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:334
+#: includes/class-gglcptch-settings-tabs.php:387
 msgid "Theme"
 msgstr "テーマ"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:338
+#: includes/class-gglcptch-settings-tabs.php:391
 msgid "Light"
 msgstr "ライト"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:339
+#: includes/class-gglcptch-settings-tabs.php:392
 msgid "Dark"
 msgstr "暗い"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:359
+#: includes/class-gglcptch-settings-tabs.php:412
 msgid "Hide reCaptcha Badge"
 msgstr "reCaptcha バッジを非表示"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:364
+#: includes/class-gglcptch-settings-tabs.php:417
 msgid "Enable to hide reCaptcha Badge for Version 3 and Invisible reCaptcha."
 msgstr ""
 "バージョン 3 の reCaptcha バッジと非表示の reCaptcha を非表示にすることができ"
 "ます。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:370
+#: includes/class-gglcptch-settings-tabs.php:423
 msgid "Additional Protective Measures"
 msgstr "追加の保護対策"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:374
+#: includes/class-gglcptch-settings-tabs.php:427
 msgid "Score"
 msgstr "スコア"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:379
+#: includes/class-gglcptch-settings-tabs.php:432
 #, php-format
 msgid "Set the minimum verification score from %1$s to %2$s (default is %3$s)."
 msgstr "最小検証スコアを %1$s から %2$s に設定します (デフォルトは %3$s)。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:395
+#: includes/class-gglcptch-settings-tabs.php:448
 msgid "Hide reCaptcha for"
 msgstr "reCaptcha を非表示にする"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:415
+#: includes/class-gglcptch-settings-tabs.php:468
 msgid "Allow List Notification"
 msgstr "許可リスト通知"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:418
+#: includes/class-gglcptch-settings-tabs.php:471
 msgid "This message will be displayed instead of the reCaptcha."
 msgstr "このメッセージは reCaptcha の代わりに表示されます。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:422
+#: includes/class-gglcptch-settings-tabs.php:475
 msgid "Advanced Protection"
 msgstr "高度な保護"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:426
+#: includes/class-gglcptch-settings-tabs.php:479
 msgid ""
 "Enable to keep submit button disabled until reCaptcha is loaded (do not use "
 "this option if you see \"Failed to load Google reCaptcha\" message)."
@@ -547,12 +591,12 @@ msgstr ""
 "合は、このオプションを使用しないでください)。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:432
+#: includes/class-gglcptch-settings-tabs.php:485
 msgid "Disabled Submit Button"
 msgstr "無効化された送信ボタン"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:437
+#: includes/class-gglcptch-settings-tabs.php:490
 msgid ""
 "Enable to keep submit button disabled until user passes the reCaptcha test "
 "(for Version 2)."
@@ -561,7 +605,7 @@ msgstr ""
 "きます (バージョン 2 の場合)。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:455
+#: includes/class-gglcptch-settings-tabs.php:508
 msgid ""
 "reCaptcha version was changed. Please submit \"Test reCaptcha\" and "
 "regenerate Site and Secret keys if necessary."
@@ -570,18 +614,18 @@ msgstr ""
 "じてサイトとシークレット キーを再生成してください。"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:469
+#: includes/class-gglcptch-settings-tabs.php:522
 #, php-format
 msgid "ReCaptcha plugin is fully compliant with GDPR. %1$s Learn more %2$s"
 msgstr "ReCaptcha プラグインは GDPR に完全に準拠しています。 %1$s 詳細 %2$s"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:489
+#: includes/class-gglcptch-settings-tabs.php:542
 msgid "reCaptcha Shortcode"
 msgstr "reCaptcha ショートコード"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:492
+#: includes/class-gglcptch-settings-tabs.php:545
 msgid "Add reCaptcha to your posts or pages using the following shortcode:"
 msgstr ""
 "以下のショートコードを使って、投稿やページにreCaptchaを追加してください："
@@ -617,42 +661,47 @@ msgid "Testimonials"
 msgstr "お客様の声"
 
 # automatic translation
-#: includes/forms.php:53
+#: includes/forms.php:27
+msgid "Formidable Contact Form"
+msgstr "お問い合わせフォーム"
+
+# automatic translation
+#: includes/forms.php:54
 msgid "WordPress default"
 msgstr "ワードプレスのデフォルト"
 
 # automatic translation
-#: includes/forms.php:63 includes/pro_banners.php:95
+#: includes/forms.php:64 includes/pro_banners.php:95
 msgid "External Plugins"
 msgstr "外部プラグイン"
 
 # automatic translation
-#: includes/forms.php:75
+#: includes/forms.php:77
 msgid "Custom Forms"
 msgstr "カスタムフォーム"
 
 # automatic translation
-#: includes/forms.php:104
+#: includes/forms.php:106
 msgid "reCaptcha Plugin"
 msgstr "reCaptcha プラグイン"
 
 # automatic translation
-#: includes/forms.php:141 includes/forms.php:171
+#: includes/forms.php:143 includes/forms.php:174
 msgid "Activate"
 msgstr "活性化"
 
 # automatic translation
-#: includes/forms.php:143 includes/forms.php:174 includes/forms.php:176
+#: includes/forms.php:145 includes/forms.php:177 includes/forms.php:179
 msgid "Install Now"
 msgstr "今すぐインストール"
 
 # automatic translation
-#: includes/forms.php:321
+#: includes/forms.php:324
 msgid "Authentication failed."
 msgstr "認証に失敗しました。"
 
 # automatic translation
-#: includes/forms.php:514
+#: includes/forms.php:517
 msgid "Click the BACK button on your browser and try again."
 msgstr "ブラウザの「戻る」ボタンをクリックして、もう一度やり直してください。"
 

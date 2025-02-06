@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 13:07+0300\n"
+"POT-Creation-Date: 2025-02-06 17:53+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -12,43 +12,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.4.3\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bws_menu\n"
 
-#: google-captcha.php:44 google-captcha.php:54
+#: google-captcha.php:44 google-captcha.php:54 google-captcha.php:617
+#: includes/captcha-for-formidable.php:68
+#: includes/class-gglcptch-settings-tabs.php:160
 msgid "reCaptcha Settings"
 msgstr " Setari reCaptcha"
 
-#: google-captcha.php:55 google-captcha.php:1310 google-captcha.php:1330
+#: google-captcha.php:55 google-captcha.php:1345 google-captcha.php:1365
 #: includes/class-gglcptch-settings-tabs.php:24
 msgid "Settings"
 msgstr "Setari"
 
-#: google-captcha.php:63
-#, fuzzy
-#| msgid "Google Captcha Whitelist"
+#: google-captcha.php:63 includes/allowlist.php:51
 msgid "reCaptcha Allow List"
-msgstr "Lista alba Google Captcha"
+msgstr "lista de permise reCaptcha"
 
 #: google-captcha.php:64
-#, fuzzy
-#| msgid "Allowed diapason"
 msgid "Allow List"
-msgstr "Diapazonul permis"
+msgstr "Lista de permise"
 
-#: google-captcha.php:80
+#: google-captcha.php:80 includes/pro_banners.php:33
 msgid "Upgrade to Pro"
 msgstr "Updateaza la Pro"
 
-#: google-captcha.php:305
+#: google-captcha.php:313
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Va rugam a astepta incarcarea completa a Google reCAPTCHA."
 
-#: google-captcha.php:306
+#: google-captcha.php:314
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -56,49 +54,92 @@ msgstr ""
 "Incercare nereusita de a incarca Google reCAPTCHA. Va rugam a verifica "
 "conexiunea Dvs. la reteaua de internet si restartati pagina data."
 
-#: google-captcha.php:321
+#: google-captcha.php:329
 msgid "Warning"
 msgstr "Atentie"
 
-#: google-captcha.php:480
-#, fuzzy
-#| msgid "You are in the whitelist"
+#: google-captcha.php:488
 msgid "You are in the allow list"
-msgstr "Sunteti in lista alba"
+msgstr "Sunteți în lista de permise"
 
-#: google-captcha.php:936
+#: google-captcha.php:618
+msgid "Please enable JavaScript in your browser."
+msgstr "Va rugam a porni JavaScript in browserul Dvs."
+
+#: google-captcha.php:742
+msgid "This site is protected by reCAPTCHA and the Google "
+msgstr "Pagina data web este protejata cu reCAPTCHA care este in aplicare"
+
+#: google-captcha.php:743
+msgid "Privacy Policy"
+msgstr "Politica confidialitatii"
+
+#: google-captcha.php:744
+msgid " and "
+msgstr " si "
+
+#: google-captcha.php:745
+msgid "Terms of Service"
+msgstr "Conditiile de service"
+
+#: google-captcha.php:746
+msgid " apply."
+msgstr " Google."
+
+#: google-captcha.php:753
+msgid "To use reCaptcha you must get the keys from"
+msgstr "Pentru a utiliza reCaptcha trebuie să obțineți cheile de la"
+
+#: google-captcha.php:754
+msgid "here"
+msgstr "aici"
+
+#: google-captcha.php:755
+msgid "and enter them on the"
+msgstr "si a le include in"
+
+#: google-captcha.php:757
+msgid "plugin setting page"
+msgstr "pagina setariloe ale plugin-ului"
+
+#: google-captcha.php:789
+msgid "The reCAPTCHA verification period has expired. Please reload the page."
+msgstr ""
+"Perioada de verificare reCAPTCHA a expirat. Vă rugăm să reîncărcați pagina."
+
+#: google-captcha.php:971
 msgid "Response is empty"
 msgstr "Răspunsul este gol"
 
-#: google-captcha.php:1038 includes/forms.php:504 includes/forms.php:512
+#: google-captcha.php:1073 includes/forms.php:507 includes/forms.php:515
 msgid "Error"
 msgstr "Eroare"
 
-#: google-captcha.php:1186 google-captcha.php:1196
+#: google-captcha.php:1221 google-captcha.php:1231
 msgid "The reCaptcha verification failed. Please try again."
 msgstr "Verificarea reCaptcha a eșuat. Vă rugăm să încercați din nou."
 
-#: google-captcha.php:1188
+#: google-captcha.php:1223
 msgid "Secret Key is missing."
 msgstr "Cheia secreta lipseste."
 
-#: google-captcha.php:1191
+#: google-captcha.php:1226
 msgid "Secret Key is invalid."
 msgstr "Cheie secreta nevalida."
 
-#: google-captcha.php:1192
+#: google-captcha.php:1227
 msgid "Check your domain configurations"
 msgstr "Verificati setarile domeniului Dvs."
 
-#: google-captcha.php:1193
+#: google-captcha.php:1228
 msgid "and enter it again"
 msgstr "si includeti-l ica o data"
 
-#: google-captcha.php:1195
+#: google-captcha.php:1230
 msgid "User response is invalid"
 msgstr "Raspuns nevalid a utilizatorului"
 
-#: google-captcha.php:1197
+#: google-captcha.php:1232
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -106,31 +147,69 @@ msgstr ""
 "Mai multe reCAPTCHA au fost gasite in formularul curent. Eliminați toate "
 "campurile reCAPTCHA de prisos pentru funcționare corecta."
 
-#: google-captcha.php:1199
-#, fuzzy
-#| msgid "reCAPTCHA v3 test failed"
+#: google-captcha.php:1234
 msgid "reCaptcha v3 test failed"
-msgstr "Test reCAPTCHA v3 esuat"
+msgstr "testul reCaptcha v3 a eșuat"
 
-#: google-captcha.php:1332
+#: google-captcha.php:1280
+msgid "Please submit \"Test verification\""
+msgstr "Va rugam a selecta ”Testeaza verificarea”."
+
+#: google-captcha.php:1282
+msgid "Please complete the captcha and submit \"Test verification\""
+msgstr "Va rugam a completa captcha si selectati ”Testati verificarea”."
+
+#: google-captcha.php:1289
+msgid "Test verification"
+msgstr "Testarea verificarii"
+
+#: google-captcha.php:1317
+msgid "The verification is successfully completed."
+msgstr "Verificarea a fost finalizata cu succes."
+
+#: google-captcha.php:1367
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-captcha.php:1333
+#: google-captcha.php:1368
 msgid "Support"
 msgstr "Suport"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid "Double-Check Your reCAPTCHA Keys"
 msgstr "Verifică de două ori cheile tale reCAPTCHA"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid ""
 "Ensure your keys are correctly configured for maximum protection. Click "
 "“Test Keys” button. Check your settings now!"
 msgstr ""
 "Asigurați-vă că cheile dvs. sunt configurate corect pentru protecție maximă. "
 "Faceți clic pe butonul \"Testare chei\". Verificați acum setările!"
+
+#: includes/allowlist.php:54
+msgid "Add New"
+msgstr "Adaugati"
+
+#: includes/allowlist.php:86
+msgid "IP to Allow List"
+msgstr "IP la lista de permise"
+
+#: includes/allowlist.php:93
+msgid "My IP"
+msgstr "IP-ul meu"
+
+#: includes/allowlist.php:98 includes/pro_banners.php:46
+msgid "Allowed formats"
+msgstr "Formate permise"
+
+#: includes/allowlist.php:100
+msgid "Allowed diapason"
+msgstr "Diazon permis"
+
+#: includes/allowlist.php:115
+msgid "Add IP to Allow List"
+msgstr "Adăugați IP la lista de permisiuni"
 
 #: includes/allowlist.php:121
 msgid "Search IP"
@@ -141,10 +220,8 @@ msgid "Nothing found"
 msgstr "Nimic gasit"
 
 #: includes/allowlist.php:182
-#, fuzzy
-#| msgid "No IP in the whitelist"
 msgid "No IP in the Allow List"
-msgstr "Lista IP nu contine intrari"
+msgstr "Niciun IP în lista de permisiuni"
 
 #: includes/allowlist.php:191
 msgid "IP Address"
@@ -159,10 +236,8 @@ msgid "Delete"
 msgstr "Sterge"
 
 #: includes/allowlist.php:368
-#, fuzzy
-#| msgid "IP added to the whitelist successfully."
 msgid "IP added to the allow list successfully."
-msgstr "IP adaugat cu succes in lista alba."
+msgstr "IP adăugat cu succes la lista de permisiuni."
 
 #: includes/allowlist.php:370 includes/allowlist.php:397
 #: includes/allowlist.php:414
@@ -170,10 +245,8 @@ msgid "Some errors occurred."
 msgstr "Au aparut unele erori."
 
 #: includes/allowlist.php:373
-#, fuzzy
-#| msgid "IP is already in the whitelist."
 msgid "IP is already in the allow list."
-msgstr "Adresa IP este deja in lista alba."
+msgstr "IP este deja în lista de permisiuni."
 
 #: includes/allowlist.php:376
 msgid "Invalid IP. See allowed formats."
@@ -194,6 +267,14 @@ msgstr "Nu ati introdus nicio adresa IP in formularul de cautare."
 #: includes/allowlist.php:422
 msgid "Search results for"
 msgstr "Resultatele cautarii pentru"
+
+#: includes/captcha-for-formidable.php:68
+msgid ""
+"Currently, the reCaptcha will not be displayed according to the Weekdays and "
+"Hours settings."
+msgstr ""
+"În prezent, reCaptcha nu va fi afișat în conformitate cu setările Zile "
+"lucrătoare și Ore."
 
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Misc"
@@ -224,6 +305,10 @@ msgstr "Versiunea"
 msgid "Invisible"
 msgstr "Invisibil"
 
+#: includes/class-gglcptch-settings-tabs.php:90
+msgid "Sorry, your nonce did not verify."
+msgstr "Ne pare rau! Gateway-ul de plata nu este valid."
+
 #: includes/class-gglcptch-settings-tabs.php:95
 msgid "Enter site key"
 msgstr "Introduceti cheia site-ului"
@@ -239,9 +324,209 @@ msgstr ""
 msgid "Enter secret key"
 msgstr "Introduceti cheia secreta"
 
-#: includes/class-gglcptch-settings-tabs.php:140
+#: includes/class-gglcptch-settings-tabs.php:147
 msgid "Settings saved."
 msgstr "Setarile sunt salvate."
+
+#: includes/class-gglcptch-settings-tabs.php:163
+msgid "General"
+msgstr "General"
+
+#: includes/class-gglcptch-settings-tabs.php:166
+msgid "reCaptcha Version"
+msgstr "versiunea reCaptcha"
+
+#: includes/class-gglcptch-settings-tabs.php:183
+#, php-format
+msgid ""
+"Register your domain name with Google reCaptcha service and add the keys to "
+"the fields below. %1$s Get the API Keys. %2$s"
+msgstr ""
+"Înregistrați-vă numele de domeniu cu serviciul Google reCaptcha și adăugați "
+"cheile la câmpurile de mai jos. %1$s Obțineți cheile API. %2$s"
+
+#: includes/class-gglcptch-settings-tabs.php:192
+#, php-format
+msgid ""
+"If you do not want to create API keys use %1$sCaptcha by BestWebSoft%2$s "
+"plugin."
+msgstr ""
+"Dacă nu doriți să creați chei API, utilizați %1$sCaptcha by BestWebSoft%2$s "
+"plugin."
+
+#: includes/class-gglcptch-settings-tabs.php:201
+#, php-format
+msgid ""
+"The Google reCaptcha block loads the webfont \"Roboto\" from fonts."
+"googleapis.com. If you do not want to load this font use %1$sCaptcha by "
+"BestWebSoft%2$s plugin."
+msgstr ""
+"Blocul Google reCaptcha încarcă fontul web \"Roboto\" de la fonts.googleapis."
+"com. Dacă nu doriți să încărcați acest font, utilizați pluginul %1$sCaptcha "
+"by BestWebSoft%2$s."
+
+#: includes/class-gglcptch-settings-tabs.php:243
+msgid "Test reCaptcha"
+msgstr "Testați reCaptcha"
+
+#: includes/class-gglcptch-settings-tabs.php:249
+msgid "Enable reCaptcha for"
+msgstr "Activați reCaptcha pentru"
+
+#: includes/class-gglcptch-settings-tabs.php:300
+#: includes/class-gglcptch-settings-tabs.php:327
+#: includes/class-gglcptch-settings-tabs.php:401
+#: includes/class-gglcptch-settings-tabs.php:439 includes/pro_banners.php:24
+msgid "Close"
+msgstr "Inchide"
+
+#: includes/class-gglcptch-settings-tabs.php:311
+msgid "reCaptcha Domain"
+msgstr "domeniul reCaptcha"
+
+#: includes/class-gglcptch-settings-tabs.php:319
+msgid ""
+"If Google is not accessible or blocked in your country select other one."
+msgstr ""
+"Dacă Google nu este accesibil sau este blocat în țara dvs., selectați altul."
+
+#: includes/class-gglcptch-settings-tabs.php:336
+msgid "Weekdays and Hours"
+msgstr "Zilele săptămânii și orele"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Monday"
+msgstr "Luni"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Tuesday"
+msgstr "Marți"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Wednesday"
+msgstr "Miercuri"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Thursday"
+msgstr "Joi"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Friday"
+msgstr "Vineri"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Saturday"
+msgstr "Sâmbătă"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Sunday"
+msgstr "Duminică"
+
+#: includes/class-gglcptch-settings-tabs.php:361
+msgid "All day"
+msgstr "Toata ziua"
+
+#: includes/class-gglcptch-settings-tabs.php:383
+msgid "Appearance"
+msgstr "Aspect"
+
+#: includes/class-gglcptch-settings-tabs.php:387
+msgid "Theme"
+msgstr "Tema"
+
+#: includes/class-gglcptch-settings-tabs.php:391
+msgid "Light"
+msgstr "Luminoasa"
+
+#: includes/class-gglcptch-settings-tabs.php:392
+msgid "Dark"
+msgstr "Intunecata"
+
+#: includes/class-gglcptch-settings-tabs.php:412
+msgid "Hide reCaptcha Badge"
+msgstr "Ascundeți insigna reCaptcha"
+
+#: includes/class-gglcptch-settings-tabs.php:417
+msgid "Enable to hide reCaptcha Badge for Version 3 and Invisible reCaptcha."
+msgstr ""
+"Activați pentru a ascunde insigna reCaptcha pentru versiunea 3 și reCaptcha "
+"invizibil."
+
+#: includes/class-gglcptch-settings-tabs.php:423
+msgid "Additional Protective Measures"
+msgstr "Măsuri de protecție suplimentare"
+
+#: includes/class-gglcptch-settings-tabs.php:427
+msgid "Score"
+msgstr "Scorul"
+
+#: includes/class-gglcptch-settings-tabs.php:432
+#, php-format
+msgid "Set the minimum verification score from %1$s to %2$s (default is %3$s)."
+msgstr ""
+"Setați scorul minim de verificare de la %1$s la %2$s (valoarea implicită "
+"este %3$s)."
+
+#: includes/class-gglcptch-settings-tabs.php:448
+msgid "Hide reCaptcha for"
+msgstr "Ascundeți reCaptcha pentru"
+
+#: includes/class-gglcptch-settings-tabs.php:468
+msgid "Allow List Notification"
+msgstr "Permiteți notificarea listei"
+
+#: includes/class-gglcptch-settings-tabs.php:471
+msgid "This message will be displayed instead of the reCaptcha."
+msgstr "Acest mesaj va fi afișat în loc de reCaptcha."
+
+#: includes/class-gglcptch-settings-tabs.php:475
+msgid "Advanced Protection"
+msgstr "Protectie avansata"
+
+#: includes/class-gglcptch-settings-tabs.php:479
+msgid ""
+"Enable to keep submit button disabled until reCaptcha is loaded (do not use "
+"this option if you see \"Failed to load Google reCaptcha\" message)."
+msgstr ""
+"Activați pentru a menține butonul de trimitere dezactivat până la încărcarea "
+"reCaptcha (nu utilizați această opțiune dacă vedeți mesajul \"Failed to load "
+"Google reCaptcha\")."
+
+#: includes/class-gglcptch-settings-tabs.php:485
+msgid "Disabled Submit Button"
+msgstr "Buton Trimiteti dezactivat"
+
+#: includes/class-gglcptch-settings-tabs.php:490
+msgid ""
+"Enable to keep submit button disabled until user passes the reCaptcha test "
+"(for Version 2)."
+msgstr ""
+"Activați pentru a menține butonul de trimitere dezactivat până când "
+"utilizatorul trece testul reCaptcha (pentru versiunea 2)."
+
+#: includes/class-gglcptch-settings-tabs.php:508
+msgid ""
+"reCaptcha version was changed. Please submit \"Test reCaptcha\" and "
+"regenerate Site and Secret keys if necessary."
+msgstr ""
+"versiunea reCaptcha a fost modificată. Vă rugăm să trimiteți \"Test "
+"reCaptcha\" și să regenerați cheile Site și Secret dacă este necesar."
+
+#: includes/class-gglcptch-settings-tabs.php:522
+#, php-format
+msgid "ReCaptcha plugin is fully compliant with GDPR. %1$s Learn more %2$s"
+msgstr ""
+"Pluginul ReCaptcha este pe deplin conform cu GDPR. %1$s Aflați mai multe %2$s"
+
+#: includes/class-gglcptch-settings-tabs.php:542
+msgid "reCaptcha Shortcode"
+msgstr "cod scurt reCaptcha"
+
+#: includes/class-gglcptch-settings-tabs.php:545
+msgid "Add reCaptcha to your posts or pages using the following shortcode:"
+msgstr ""
+"Adăugați reCaptcha la postările sau paginile dvs. utilizând următorul cod "
+"scurt:"
 
 #: includes/forms.php:20
 msgid "Login form"
@@ -256,10 +541,8 @@ msgid "Reset password form"
 msgstr "Formular resetare parola"
 
 #: includes/forms.php:23
-#, fuzzy
-#| msgid "Lost password form"
 msgid "Protected post password form"
-msgstr "Форма восстановления пароля"
+msgstr "Formular cu parolă pentru post protejat"
 
 #: includes/forms.php:24
 msgid "Comments form"
@@ -269,39 +552,69 @@ msgstr "Formular comentarii"
 msgid "Testimonials"
 msgstr "Testimonials"
 
-#: includes/forms.php:53
+#: includes/forms.php:27
+msgid "Formidable Contact Form"
+msgstr "Formular de contact Formidabil"
+
+#: includes/forms.php:54
 msgid "WordPress default"
 msgstr "WordPress implicit"
 
-#: includes/forms.php:63 includes/pro_banners.php:95
+#: includes/forms.php:64 includes/pro_banners.php:95
 msgid "External Plugins"
 msgstr "Plugin-uri externe"
 
-#: includes/forms.php:75
+#: includes/forms.php:77
 msgid "Custom Forms"
 msgstr "Formulare personalizate"
 
-#: includes/forms.php:104
-#, fuzzy
-#| msgid "Google Captcha Plugin"
+#: includes/forms.php:106
 msgid "reCaptcha Plugin"
-msgstr "Plugin Google Captcha"
+msgstr "plugin reCaptcha"
 
-#: includes/forms.php:141 includes/forms.php:171
+#: includes/forms.php:143 includes/forms.php:174
 msgid "Activate"
 msgstr "Activare"
 
-#: includes/forms.php:143 includes/forms.php:174 includes/forms.php:176
+#: includes/forms.php:145 includes/forms.php:177 includes/forms.php:179
 msgid "Install Now"
 msgstr "Instalati acum"
 
-#: includes/forms.php:321
+#: includes/forms.php:324
 msgid "Authentication failed."
 msgstr "Eroare autentificare."
 
-#: includes/forms.php:514
+#: includes/forms.php:517
 msgid "Click the BACK button on your browser and try again."
 msgstr "Selectati INAPOI in browserul Dvs. si incercati din nou."
+
+#: includes/pro_banners.php:21
+msgid "This options is available in Pro version of plugin"
+msgstr "Aceata optiune este accesibila in varianta PRO a plugin-ului"
+
+#: includes/pro_banners.php:47
+msgid "Allowed separators for IPs: a comma"
+msgstr "Separatoare permise pentru IP-uri: virgula"
+
+#: includes/pro_banners.php:47 includes/pro_banners.php:50
+msgid "semicolon"
+msgstr "punct si virgula"
+
+#: includes/pro_banners.php:47
+msgid "ordinary space, tab, new line or carriage return."
+msgstr "spatiu obisnuit, tab, inie noua sau returul carului."
+
+#: includes/pro_banners.php:48
+msgid "Reason"
+msgstr "Pricina"
+
+#: includes/pro_banners.php:50
+msgid "Allowed separators for reasons: a comma"
+msgstr "Separatoare permise pentru motive: virgula"
+
+#: includes/pro_banners.php:50
+msgid "tab, new line or carriage return."
+msgstr "tab, inie noua sau returul carului."
 
 #: includes/pro_banners.php:60
 msgid "Jetpack Contact Form"
@@ -368,10 +681,8 @@ msgid "Divi Contact Form"
 msgstr "Divi formular de contact"
 
 #: includes/pro_banners.php:78
-#, fuzzy
-#| msgid "Divi Login Forms"
 msgid "Divi Login Form"
-msgstr "Divi formular de logare"
+msgstr "Formular de conectare Divi"
 
 #: includes/pro_banners.php:79
 msgid "Gravity Forms"
@@ -382,26 +693,20 @@ msgid "WPForms"
 msgstr "WPForms"
 
 #: includes/pro_banners.php:81
-#, fuzzy
-#| msgid "WooCommerce Login form"
 msgid "Ultimate Member Login form"
-msgstr "Formular logare WooCommerce"
+msgstr "Formular de conectare membru Ultimate"
 
 #: includes/pro_banners.php:82
-#, fuzzy
-#| msgid "WooCommerce Registration form"
 msgid "Ultimate Member Registration form"
-msgstr "Formular registrare WooCommerce"
+msgstr "Formular de înregistrare pentru membrii Ultimate"
 
 #: includes/pro_banners.php:83
 msgid "Ultimate Member Profile form"
 msgstr "Formularul de profil al membrului Ultimate"
 
 #: includes/pro_banners.php:85
-#, fuzzy
-#| msgid "Jetpack Contact Form"
 msgid "Elementor Contact Form"
-msgstr "Formularul de contact Jetpack"
+msgstr "Formular de contact Elementor"
 
 #: includes/pro_banners.php:86
 msgid "MemberPress checkout form"
@@ -416,75 +721,65 @@ msgid "MemberPress forgot password form"
 msgstr "MemberPress a uitat parola formular"
 
 #: includes/pro_banners.php:89
-#, fuzzy
-#| msgid "Login form"
 msgid "LearnDash login form"
-msgstr "Formular de logare"
+msgstr "Formular de conectare LearnDash"
 
 #: includes/pro_banners.php:90
-#, fuzzy
-#| msgid "Registration form"
 msgid "LearnDash registration form"
-msgstr "Formular de registrare"
+msgstr "Formular de înregistrare LearnDash"
 
 #: includes/pro_banners.php:91
-#, fuzzy
-#| msgid "BuddyPress Registration form"
 msgid "BuddyBoss registration form"
-msgstr "Formular inregistrare BuddyPress"
+msgstr "Formular de înregistrare BuddyBoss"
+
+#: includes/pro_banners.php:224
+msgid "Language"
+msgstr "Limba"
+
+#: includes/pro_banners.php:232
+msgid "Multilanguage"
+msgstr "Multilanguage"
+
+#: includes/pro_banners.php:235
+msgid ""
+"Enable to switch language automatically on multilingual website using the "
+"Multilanguage plugin."
+msgstr ""
+"Permiteți schimbarea automată a limbii pe un site web multilingv utilizând "
+"pluginul Multilanguage."
+
+#: includes/pro_banners.php:249
+msgid "Size"
+msgstr "Dimensiune"
+
+#: includes/pro_banners.php:253
+msgid "Normal"
+msgstr "Normal"
+
+#: includes/pro_banners.php:254
+msgid "Compact"
+msgstr "Compact"
+
+#: includes/pro_banners.php:269
+msgid "Display for"
+msgstr "Nume afișat"
+
+#: includes/pro_banners.php:273
+msgid "Only form"
+msgstr "Numai forma"
+
+#: includes/pro_banners.php:274
+msgid "All pages"
+msgstr "Toate paginile"
 
 #~ msgid "Whitelist"
 #~ msgstr "Lista alba"
-
-#~ msgid "Please enable JavaScript in your browser."
-#~ msgstr "Va rugam a porni JavaScript in browserul Dvs."
-
-#~ msgid "This site is protected by reCAPTCHA and the Google "
-#~ msgstr "Pagina data web este protejata cu reCAPTCHA care este in aplicare"
-
-#~ msgid "Privacy Policy"
-#~ msgstr "Politica confidialitatii"
-
-#~ msgid " and "
-#~ msgstr " si "
-
-#~ msgid "Terms of Service"
-#~ msgstr "Conditiile de service"
-
-#~ msgid " apply."
-#~ msgstr " Google."
-
-#, fuzzy
-#~| msgid "To use Google Captcha you must get the keys from"
-#~ msgid "To use reCaptcha you must get the keys from"
-#~ msgstr "Pentru a folosi Google Captcha, este necesar de a obtine cheile"
-
-#~ msgid "here"
-#~ msgstr "aici"
-
-#~ msgid "and enter them on the"
-#~ msgstr "si a le include in"
-
-#~ msgid "plugin setting page"
-#~ msgstr "pagina setariloe ale plugin-ului"
 
 #~ msgid "User response is missing."
 #~ msgstr "Raspunsul utilizatorului lipseste."
 
 #~ msgid "You have entered an incorrect reCAPTCHA value."
 #~ msgstr "Eroare: ati inclus valoare gresita reCAPTCHA."
-
-#~ msgid "Please submit \"Test verification\""
-#~ msgstr "Va rugam a selecta ”Testeaza verificarea”."
-
-#~ msgid "Please complete the captcha and submit \"Test verification\""
-#~ msgstr "Va rugam a completa captcha si selectati ”Testati verificarea”."
-
-#~ msgid "Test verification"
-#~ msgstr "Testarea verificarii"
-
-#~ msgid "The verification is successfully completed."
-#~ msgstr "Verificarea a fost finalizata cu succes."
 
 #~ msgid "Authentication"
 #~ msgstr "Identificarea"
@@ -502,17 +797,11 @@ msgstr "Formular inregistrare BuddyPress"
 #~ msgid "Test reCAPTCHA"
 #~ msgstr "Testare reCAPTCHA"
 
-#~ msgid "General"
-#~ msgstr "General"
-
 #~ msgid "reCAPTCHA Version"
 #~ msgstr "Versiunea reCAPTCHA"
 
 #~ msgid "Enable reCAPTCHA for"
 #~ msgstr "Activati reCAPTCHA pentru"
-
-#~ msgid "Close"
-#~ msgstr "Inchide"
 
 #~ msgid "Hide reCAPTCHA for"
 #~ msgstr "Ascunde reCAPTCHA pentru"
@@ -520,127 +809,8 @@ msgstr "Formular inregistrare BuddyPress"
 #~ msgid "Hide reCAPTCHA Badge"
 #~ msgstr "Ascunde insigna reCAPTCHA"
 
-#~ msgid "Enable to hide reCAPTCHA Badge for Version 3 and Invisble reCAPTCHA."
-#~ msgstr ""
-#~ "Activati ascunderea insignei reCAPTCHA pentru versiunea 3 si reCAPTCHA "
-#~ "invizibila."
-
-#~ msgid "Theme"
-#~ msgstr "Tema"
-
-#~ msgid "Light"
-#~ msgstr "Luminoasa"
-
-#~ msgid "Dark"
-#~ msgstr "Intunecata"
-
-#~ msgid "Score"
-#~ msgstr "Scorul"
-
-#~ msgid "Set the minimum verification score from 0 to 1"
-#~ msgstr "Setati scorul minim de verificare de la 0 la 1"
-
-#~ msgid "Whitelist Notification"
-#~ msgstr "Notificare despre aflare in lista alba"
-
-#~ msgid "This message will be displayed instead of the reCAPTCHA."
-#~ msgstr "Acest mesaj va fi afișat in locul reCAPTCHA."
-
-#~ msgid "Advanced Protection"
-#~ msgstr "Protectie avansata"
-
-#~ msgid ""
-#~ "Enable to keep submit button disabled until reCAPTCHA is loaded (do not "
-#~ "use this option if you see \"Failed to load Google reCAPTCHA\" message)."
-#~ msgstr ""
-#~ "Activati pentru a mentine butonul de trimitere dezactivat pana ce "
-#~ "reCAPTCHA se incarca (nu folositi aceasta obtiune daca vedeti ”Eroare "
-#~ "incarcare Google reCAPTCHA”)."
-
-#~ msgid "Disabled Submit Button"
-#~ msgstr "Buton Trimiteti dezactivat"
-
-#~ msgid ""
-#~ "Enable to keep submit button disabled until user passes the reCAPTCHA "
-#~ "test (for Version 2)."
-#~ msgstr ""
-#~ "Activati pentru mentinerea butonului de trimitere dezactivt pana cand "
-#~ "utilizatorul trece testul reCAPTCHA (pentru versiunea 2)."
-
-#~ msgid ""
-#~ "reCAPTCHA version was changed. Please submit \"Test reCAPTCHA\" and "
-#~ "regenerate Site and Secret keys if necessary."
-#~ msgstr ""
-#~ "Versiunea reCAPTCHA a fost modificata. Va rugam sa selectati “Testare "
-#~ "reCAPTCHA” si sa regenerati cheile site-ului si secreta daca este necesar."
-
-#, fuzzy
-#~| msgid "Google Captcha Shortcode"
-#~ msgid "reCaptcha Shortcode"
-#~ msgstr "Google Captcha Shortcode (code scurt)"
-
-#, fuzzy
-#~| msgid ""
-#~| "Add Google Captcha to your posts or pages using the following shortcode:"
-#~ msgid "Add reCaptcha to your posts or pages using the following shortcode:"
-#~ msgstr ""
-#~ "Adaugati Google Captcha la postarile sau paginile Dvs. folosind urmatorul "
-#~ "cod scurt:"
-
-#~ msgid "This options is available in Pro version of plugin"
-#~ msgstr "Aceata optiune este accesibila in varianta PRO a plugin-ului"
-
-#~ msgid "Allowed formats"
-#~ msgstr "Formate permise"
-
-#~ msgid "Allowed separators for IPs: a comma"
-#~ msgstr "Separatoare permise pentru IP-uri: virgula"
-
-#~ msgid "semicolon"
-#~ msgstr "punct si virgula"
-
-#~ msgid "ordinary space, tab, new line or carriage return."
-#~ msgstr "spatiu obisnuit, tab, inie noua sau returul carului."
-
-#~ msgid "Reason"
-#~ msgstr "Pricina"
-
-#~ msgid "Allowed separators for reasons: a comma"
-#~ msgstr "Separatoare permise pentru motive: virgula"
-
-#~ msgid "tab, new line or carriage return."
-#~ msgstr "tab, inie noua sau returul carului."
-
-#~ msgid "Size"
-#~ msgstr "Dimensiune"
-
-#~ msgid "Normal"
-#~ msgstr "Normal"
-
-#~ msgid "Compact"
-#~ msgstr "Compact"
-
-#~ msgid "Language"
-#~ msgstr "Limba"
-
-#~ msgid "Multilanguage"
-#~ msgstr "Multilanguage"
-
-#~ msgid ""
-#~ "Enable to switch language automatically on multilingual website using "
-#~ "Multilanguage plugin."
-#~ msgstr ""
-#~ "Activati pentru a schimba automat limbajul pe site-ul multilingual "
-#~ "folosind pluginul Multilanguage."
-
-#~ msgid "Add New"
-#~ msgstr "Adaugati"
-
 #~ msgid "IP to whitelist"
 #~ msgstr "IP catre lista alba"
-
-#~ msgid "My IP"
-#~ msgstr "IP-ul meu"
 
 #~ msgid "Add IP to whitelist"
 #~ msgstr "Adauga IP in lista alba"
@@ -673,18 +843,6 @@ msgstr "Formular inregistrare BuddyPress"
 #~ "Google reCAPTCHA v1 API закрыт в марте 2018 года. <a href='https://www."
 #~ "programmableweb.com/news/google-recaptcha-v1-api-shutting-down-march-2018/"
 #~ "brief/2017/10/24' target='_blank'>Узнать больше</a>"
-
-#~ msgid "Test ReCaptcha"
-#~ msgstr "Тестирование ReCaptcha"
-
-#~ msgid "Enable ReCaptcha for"
-#~ msgstr "Включить ReCaptcha для"
-
-#~ msgid "Hide ReCaptcha for"
-#~ msgstr "Спрятать ReCaptcha для"
-
-#~ msgid "ReCaptcha Version"
-#~ msgstr "Версия ReCaptcha"
 
 #~ msgid ""
 #~ "Only one ReCaptcha can be displayed on the page, it's related to "

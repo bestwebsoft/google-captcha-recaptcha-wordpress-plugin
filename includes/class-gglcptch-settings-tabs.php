@@ -125,6 +125,13 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				$this->options['disable_submit_button'] = isset( $_POST['gglcptch_disable_submit_button'] ) ? 1 : 0;
 				$this->options['use_globally']          = isset( $_POST['gglcptch_use_globally'] ) ? intval( sanitize_text_field( wp_unslash( $_POST['gglcptch_use_globally'] ) ) ) : 0;
 
+				$this->options['weekdays'] = isset( $_POST['gglcptch_weekdays'] ) && is_array( $_POST['gglcptch_weekdays'] ) ? array_map( 'intval', $_POST['gglcptch_weekdays'] ) : array();
+				$this->options['all_day']  = isset( $_POST['gglcptch_all_day'] ) && is_array( $_POST['gglcptch_all_day'] ) ? array_map( 'intval', $_POST['gglcptch_all_day'] ) : array();
+				$this->options['hours']    = isset( $_POST['gglcptch_hours'] ) && is_array( $_POST['gglcptch_hours'] ) ? $_POST['gglcptch_hours'] : array();
+				foreach( $this->options['hours'] as $key => $value ) {
+					$this->options['hours'][ $key ] = array_map( 'intval', $value );
+				}
+
 				foreach ( $this->forms as $form_slug => $form_data ) {
 					$this->options[ $form_slug ] = isset( $_POST[ 'gglcptch_' . $form_slug ] ) ? 1 : 0;
 				}
@@ -191,7 +198,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				<div class="bws_info warning gglcptch_settings_form"> 
 						<?php
 						printf(
-							esc_html__( 'The Google reCaptcha block loads the webfont "Roboto" from fonts.googleapis.com. If you do not want to load this font use %1$sCaptcha by BestWebSoft%2$s plugin.', 'google-captcha-pro' ),
+							esc_html__( 'The Google reCaptcha block loads the webfont "Roboto" from fonts.googleapis.com. If you do not want to load this font use %1$sCaptcha by BestWebSoft%2$s plugin.', 'google-captcha' ),
 							'<a target="_blank" href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=dcf21edcd5cc9374f5e15c8055e40797">',
 							'</a>'
 						);
@@ -314,7 +321,6 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
-			<!-- pls -->
 			<?php if ( ! $this->hide_pro_tabs ) { ?>
 				<div class="bws_pro_version_bloc">
 					<div class="bws_pro_version_table_bloc">
@@ -325,8 +331,55 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					<?php $this->bws_pro_block_links(); ?>
 				</div>
 			<?php } ?>
-			<!-- end pls -->
-
+			<table class="form-table">
+				<tr valign="top">
+					<th scope="row"><?php esc_html_e( 'Weekdays and Hours', 'google-captcha' ); ?></th>
+					<td>
+						<table class="gglcptch-weekdays-wrapper">
+							<tr>
+								<?php
+								$days = array( __( 'Monday', 'google-captcha' ), __( 'Tuesday', 'google-captcha' ), __( 'Wednesday', 'google-captcha' ), __( 'Thursday', 'google-captcha' ), __( 'Friday', 'google-captcha' ), __( 'Saturday', 'google-captcha' ), __( 'Sunday', 'google-captcha' ) );
+								foreach( $days as $key => $day ) {
+									?>
+									<th>
+										<label>
+											<input<?php echo $this->change_permission_attr; ?> class="gglcptch_weekdays" type="checkbox" <?php checked( in_array( $key + 1, $this->options['weekdays'] ) ); ?> name="gglcptch_weekdays[]" value="<?php echo esc_attr( $key + 1 ); ?>" /> <?php echo esc_html( $day, 'google-captcha' ); ?>
+										</label>
+									</th>
+									<?php
+								}									
+								?>
+							</tr>
+							<tr>
+								<?php
+								foreach( $days as $key => $day ) {
+									$class = in_array( $key + 1, $this->options['all_day'] ) || ! in_array( $key + 1, $this->options['weekdays'] ) ? 'gglcptch_hours_wrapper hidden' : 'gglcptch_hours_wrapper';											
+									$class_label = ! in_array( $key + 1, $this->options['weekdays'] ) ? 'hidden' : '';											
+									?>
+									<td>
+										<label class="<?php echo esc_attr( $class_label ); ?>">
+											<input<?php echo $this->change_permission_attr; ?> class="gglcptch_all_day[<?php echo esc_attr( $key + 1 ); ?>]" type="checkbox" <?php checked( in_array( $key + 1, $this->options['all_day'] ) ); ?> name="gglcptch_all_day[<?php echo esc_attr( $key + 1 ); ?>]" value="<?php echo esc_attr( $key + 1 ); ?>" /> <?php echo esc_html_e( 'All day', 'google-captcha' ); ?>
+										</label>
+										<div class="<?php echo esc_attr( $class ); ?>">
+											<?php
+											for( $i = 0; $i < 24; $i++ ) {
+												?>
+												<label class="gglcptch_hours">
+													<input<?php echo $this->change_permission_attr; ?> type="checkbox" <?php checked( isset( $this->options['hours'][ $key + 1 ] ) && in_array( $i, $this->options['hours'][ $key + 1 ] ) ); ?> name="gglcptch_hours[<?php echo esc_attr( $key + 1 ); ?>][]" value="<?php echo esc_attr( $i ); ?>" /> <?php echo esc_attr( str_pad( $i, 2, '0', STR_PAD_LEFT ) . ':00' ); ?> 
+												</label><br />
+												<?php
+											}
+											?>
+										</div>
+									</td>
+									<?php
+								}
+								?>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
 			<div class="bws_tab_sub_label"><?php esc_html_e( 'Appearance', 'google-captcha' ); ?></div>
 			<table class="form-table">
 				<tr class="gglcptch_theme_v2" valign="top">

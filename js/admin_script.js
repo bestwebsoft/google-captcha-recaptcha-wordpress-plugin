@@ -35,6 +35,26 @@
 			}
 		);
 
+		$( 'input[class^="gglcptch_all_day"]' ).change( function() {
+			if ( $( this ).is( ':checked' ) ) {
+				$( this ).parent().parent().find( '.gglcptch_hours_wrapper' ).addClass( 'hidden' );
+			} else {
+				$( this ).parent().parent().find( '.gglcptch_hours_wrapper' ).removeClass( 'hidden' );
+			}
+		} );
+		$( 'input[class^="gglcptch_weekdays"]' ).change( function() {
+			if ( $( this ).is( ':checked' ) ) {
+				var next = $( this ).parent().parent().parent().next().children().eq( parseInt( $( this ).val() ) - 1 );
+				if ( $( next ).find( 'input[class^="gglcptch_all_day"]' ).is( ':checked' ) ) {
+					$( next ).children().eq( 0 ).removeClass( 'hidden' );
+				} else {
+					$( next ).children().removeClass( 'hidden' );
+				}
+			} else {
+				$( this ).parent().parent().parent().next().children().eq( parseInt( $( this ).val() ) - 1 ).children().addClass( 'hidden' );
+			}
+		} );
+
 		/* Prevent jQuery accordion collapsing on link click */
 		$( ".gglcptch-settings-accordion a" ).on( "click", function( event ) {
 			event.stopPropagation();

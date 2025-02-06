@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Сaptcha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 13:07+0300\n"
+"POT-Creation-Date: 2025-02-06 18:43+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
@@ -11,45 +11,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.4.3\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bws_menu\n"
 
-#: google-captcha.php:44 google-captcha.php:54
-#, fuzzy
-#| msgid "Google Captcha Settings"
+#: google-captcha.php:44 google-captcha.php:54 google-captcha.php:617
+#: includes/captcha-for-formidable.php:68
+#: includes/class-gglcptch-settings-tabs.php:160
 msgid "reCaptcha Settings"
-msgstr "Google Captcha Ayarlar"
+msgstr "reCaptcha Ayarları"
 
-#: google-captcha.php:55 google-captcha.php:1310 google-captcha.php:1330
+#: google-captcha.php:55 google-captcha.php:1345 google-captcha.php:1365
 #: includes/class-gglcptch-settings-tabs.php:24
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: google-captcha.php:63
-#, fuzzy
-#| msgid "Google Captcha Whitelist"
+#: google-captcha.php:63 includes/allowlist.php:51
 msgid "reCaptcha Allow List"
-msgstr "Google Captcha Beyaz Liste"
+msgstr "reCaptcha İzin Ver Listesi"
 
 #: google-captcha.php:64
-#, fuzzy
-#| msgid "Allowed diapason"
 msgid "Allow List"
-msgstr "İzin Verilen Formatlar"
+msgstr "İzin Ver Listesi"
 
-#: google-captcha.php:80
+#: google-captcha.php:80 includes/pro_banners.php:33
 msgid "Upgrade to Pro"
 msgstr "Pro Sürüme Yükselt"
 
-#: google-captcha.php:305
+#: google-captcha.php:313
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Lütfen Google reCAPTCHA yüklenene kadar bekleyin."
 
-#: google-captcha.php:306
+#: google-captcha.php:314
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -57,49 +53,91 @@ msgstr ""
 "Google reCAPTCHA yüklenemedi. Lütfen internet bağlantınızı kontrol edin ve "
 "bu sayfayı yeniden yükleyin."
 
-#: google-captcha.php:321
+#: google-captcha.php:329
 msgid "Warning"
 msgstr "Uyarı"
 
-#: google-captcha.php:480
-#, fuzzy
-#| msgid "You are in the whitelist"
+#: google-captcha.php:488
 msgid "You are in the allow list"
-msgstr "Beyaz Listedesiniz"
+msgstr "İzin verilenler listesindesiniz"
 
-#: google-captcha.php:936
+#: google-captcha.php:618
+msgid "Please enable JavaScript in your browser."
+msgstr "Lütfen tarayıcınızda JavaScript'i etkinleştirin."
+
+#: google-captcha.php:742
+msgid "This site is protected by reCAPTCHA and the Google "
+msgstr "Bu site reCAPTCHA ve Google tarafından korunmaktadır "
+
+#: google-captcha.php:743
+msgid "Privacy Policy"
+msgstr "Gizlilik Politikası"
+
+#: google-captcha.php:744
+msgid " and "
+msgstr " ve "
+
+#: google-captcha.php:745
+msgid "Terms of Service"
+msgstr "Kullanım Şartları"
+
+#: google-captcha.php:746
+msgid " apply."
+msgstr " uygula."
+
+#: google-captcha.php:753
+msgid "To use reCaptcha you must get the keys from"
+msgstr "ReCaptcha'yı kullanmak için anahtarları şuradan almalısınız"
+
+#: google-captcha.php:754
+msgid "here"
+msgstr "buraya"
+
+#: google-captcha.php:755
+msgid "and enter them on the"
+msgstr "ve onları girin"
+
+#: google-captcha.php:757
+msgid "plugin setting page"
+msgstr "eklenti ayar sayfası"
+
+#: google-captcha.php:789
+msgid "The reCAPTCHA verification period has expired. Please reload the page."
+msgstr "ReCAPTCHA doğrulama süresi sona erdi. Lütfen sayfayı yeniden yükleyin."
+
+#: google-captcha.php:971
 msgid "Response is empty"
 msgstr "Yanıt boş"
 
-#: google-captcha.php:1038 includes/forms.php:504 includes/forms.php:512
+#: google-captcha.php:1073 includes/forms.php:507 includes/forms.php:515
 msgid "Error"
 msgstr "Hata"
 
-#: google-captcha.php:1186 google-captcha.php:1196
+#: google-captcha.php:1221 google-captcha.php:1231
 msgid "The reCaptcha verification failed. Please try again."
 msgstr "ReCaptcha doğrulaması başarısız oldu. Lütfen tekrar deneyin."
 
-#: google-captcha.php:1188
+#: google-captcha.php:1223
 msgid "Secret Key is missing."
 msgstr "Gizli Anahtar eksik."
 
-#: google-captcha.php:1191
+#: google-captcha.php:1226
 msgid "Secret Key is invalid."
 msgstr "Gizli Anahtar geçersiz."
 
-#: google-captcha.php:1192
+#: google-captcha.php:1227
 msgid "Check your domain configurations"
 msgstr "Etki alanı yapılandırmalarınızı kontrol edin"
 
-#: google-captcha.php:1193
+#: google-captcha.php:1228
 msgid "and enter it again"
 msgstr "ve tekrar girin"
 
-#: google-captcha.php:1195
+#: google-captcha.php:1230
 msgid "User response is invalid"
 msgstr "Kullanıcı cevabı geçersiz"
 
-#: google-captcha.php:1197
+#: google-captcha.php:1232
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -107,31 +145,69 @@ msgstr ""
 "Mevcut formda birden fazla reCAPTCHA bulundu. Düzgün çalışmasını sağlamak "
 "için lütfen tüm gereksiz reCAPTCHA alanlarını kaldırın."
 
-#: google-captcha.php:1199
-#, fuzzy
-#| msgid "reCAPTCHA v3 test failed"
+#: google-captcha.php:1234
 msgid "reCaptcha v3 test failed"
-msgstr "reCAPTCHA v3 testi başarısız oldu"
+msgstr "reCaptcha v3 testi başarısız oldu"
 
-#: google-captcha.php:1332
+#: google-captcha.php:1280
+msgid "Please submit \"Test verification\""
+msgstr "Lütfen \"Test doğrulaması\" gönderin"
+
+#: google-captcha.php:1282
+msgid "Please complete the captcha and submit \"Test verification\""
+msgstr "Lütfen captcha'yı tamamlayın ve \"Test doğrulaması\" gönderin"
+
+#: google-captcha.php:1289
+msgid "Test verification"
+msgstr "Test doğrulaması"
+
+#: google-captcha.php:1317
+msgid "The verification is successfully completed."
+msgstr "Doğrulama başarıyla tamamlandı."
+
+#: google-captcha.php:1367
 msgid "FAQ"
 msgstr "SSS"
 
-#: google-captcha.php:1333
+#: google-captcha.php:1368
 msgid "Support"
 msgstr "Destek"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid "Double-Check Your reCAPTCHA Keys"
 msgstr "ReCAPTCHA Anahtarlarınızı İki Kez Kontrol Edin"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid ""
 "Ensure your keys are correctly configured for maximum protection. Click "
 "“Test Keys” button. Check your settings now!"
 msgstr ""
 "Maksimum koruma için anahtarlarınızın doğru yapılandırıldığından emin olun. "
 "\"Anahtarları Test Et\" düğmesine tıklayın. Ayarlarınızı şimdi kontrol edin!"
+
+#: includes/allowlist.php:54
+msgid "Add New"
+msgstr "Yeni Ekle"
+
+#: includes/allowlist.php:86
+msgid "IP to Allow List"
+msgstr "İzin Verilecek IP Listesi"
+
+#: includes/allowlist.php:93
+msgid "My IP"
+msgstr "Beim IP"
+
+#: includes/allowlist.php:98 includes/pro_banners.php:46
+msgid "Allowed formats"
+msgstr "İzin verilen formatlar"
+
+#: includes/allowlist.php:100
+msgid "Allowed diapason"
+msgstr "Izin verilen diapason"
+
+#: includes/allowlist.php:115
+msgid "Add IP to Allow List"
+msgstr "İzin Verilenler Listesine IP Ekleme"
 
 #: includes/allowlist.php:121
 msgid "Search IP"
@@ -142,10 +218,8 @@ msgid "Nothing found"
 msgstr "Hiçbirşey Bulunamadı"
 
 #: includes/allowlist.php:182
-#, fuzzy
-#| msgid "No IP in the whitelist"
 msgid "No IP in the Allow List"
-msgstr "Beyaz listede IP yok"
+msgstr "İzin Verilenler Listesinde IP Yok"
 
 #: includes/allowlist.php:191
 msgid "IP Address"
@@ -160,10 +234,8 @@ msgid "Delete"
 msgstr "SİL"
 
 #: includes/allowlist.php:368
-#, fuzzy
-#| msgid "IP added to the whitelist successfully."
 msgid "IP added to the allow list successfully."
-msgstr "IP, beyaz listeye başarıyla eklendi."
+msgstr "IP, izin verilenler listesine başarıyla eklendi."
 
 #: includes/allowlist.php:370 includes/allowlist.php:397
 #: includes/allowlist.php:414
@@ -171,10 +243,8 @@ msgid "Some errors occurred."
 msgstr "Bazı hatalar oluştu."
 
 #: includes/allowlist.php:373
-#, fuzzy
-#| msgid "IP is already in the whitelist."
 msgid "IP is already in the allow list."
-msgstr "IP zaten beyaz listede."
+msgstr "IP zaten izin verilenler listesinde."
 
 #: includes/allowlist.php:376
 msgid "Invalid IP. See allowed formats."
@@ -195,6 +265,13 @@ msgstr "Arama formuna herhangi bir IP girmediniz."
 #: includes/allowlist.php:422
 msgid "Search results for"
 msgstr "Arama sonuçları"
+
+#: includes/captcha-for-formidable.php:68
+msgid ""
+"Currently, the reCaptcha will not be displayed according to the Weekdays and "
+"Hours settings."
+msgstr ""
+"Şu anda reCaptcha, Hafta İçi ve Saatler ayarlarına göre görüntülenmeyecektir."
 
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Misc"
@@ -225,6 +302,10 @@ msgstr "Versiyon"
 msgid "Invisible"
 msgstr "Görünmez"
 
+#: includes/class-gglcptch-settings-tabs.php:90
+msgid "Sorry, your nonce did not verify."
+msgstr "Üzgünüz, kimliğiniz doğrulamadı."
+
 #: includes/class-gglcptch-settings-tabs.php:95
 msgid "Enter site key"
 msgstr "Site anahtarını girin"
@@ -239,9 +320,208 @@ msgstr ""
 msgid "Enter secret key"
 msgstr "Gizli anahtarı girin"
 
-#: includes/class-gglcptch-settings-tabs.php:140
+#: includes/class-gglcptch-settings-tabs.php:147
 msgid "Settings saved."
 msgstr "Ayarlar kaydedildi."
+
+#: includes/class-gglcptch-settings-tabs.php:163
+msgid "General"
+msgstr "Genel"
+
+#: includes/class-gglcptch-settings-tabs.php:166
+msgid "reCaptcha Version"
+msgstr "reCaptcha Sürümü"
+
+#: includes/class-gglcptch-settings-tabs.php:183
+#, php-format
+msgid ""
+"Register your domain name with Google reCaptcha service and add the keys to "
+"the fields below. %1$s Get the API Keys. %2$s"
+msgstr ""
+"Alan adınızı Google reCaptcha servisine kaydedin ve anahtarları aşağıdaki "
+"alanlara ekleyin. %1$s API Anahtarlarını alın. %2$s"
+
+#: includes/class-gglcptch-settings-tabs.php:192
+#, php-format
+msgid ""
+"If you do not want to create API keys use %1$sCaptcha by BestWebSoft%2$s "
+"plugin."
+msgstr ""
+"API anahtarları oluşturmak istemiyorsanız %1$sCaptcha by BestWebSoft%2$s "
+"eklentisini kullanın."
+
+#: includes/class-gglcptch-settings-tabs.php:201
+#, php-format
+msgid ""
+"The Google reCaptcha block loads the webfont \"Roboto\" from fonts."
+"googleapis.com. If you do not want to load this font use %1$sCaptcha by "
+"BestWebSoft%2$s plugin."
+msgstr ""
+"Google reCaptcha bloğu fonts.googleapis.com adresinden \"Roboto\" web "
+"fontunu yükler. Bu yazı tipini yüklemek istemiyorsanız %1$sCaptcha by "
+"BestWebSoft%2$s eklentisini kullanın."
+
+#: includes/class-gglcptch-settings-tabs.php:243
+msgid "Test reCaptcha"
+msgstr "ReCaptcha'yı test edin"
+
+#: includes/class-gglcptch-settings-tabs.php:249
+msgid "Enable reCaptcha for"
+msgstr "Için reCaptcha'yı etkinleştirin"
+
+#: includes/class-gglcptch-settings-tabs.php:300
+#: includes/class-gglcptch-settings-tabs.php:327
+#: includes/class-gglcptch-settings-tabs.php:401
+#: includes/class-gglcptch-settings-tabs.php:439 includes/pro_banners.php:24
+msgid "Close"
+msgstr "Kapat"
+
+#: includes/class-gglcptch-settings-tabs.php:311
+msgid "reCaptcha Domain"
+msgstr "reCaptcha Etki Alanı"
+
+#: includes/class-gglcptch-settings-tabs.php:319
+msgid ""
+"If Google is not accessible or blocked in your country select other one."
+msgstr "Ülkenizde Google'a erişilemiyorsa veya engellenmişse diğerini seçin."
+
+#: includes/class-gglcptch-settings-tabs.php:336
+msgid "Weekdays and Hours"
+msgstr "Hafta İçi Günler ve Saatler"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Monday"
+msgstr "Pazartesi"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Tuesday"
+msgstr "Salı"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Thursday"
+msgstr "Perşembe"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Friday"
+msgstr "Cuma"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Saturday"
+msgstr "Cumartesi"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Sunday"
+msgstr "Pazar"
+
+#: includes/class-gglcptch-settings-tabs.php:361
+msgid "All day"
+msgstr "Tüm gün"
+
+#: includes/class-gglcptch-settings-tabs.php:383
+msgid "Appearance"
+msgstr "Görünüm"
+
+#: includes/class-gglcptch-settings-tabs.php:387
+msgid "Theme"
+msgstr "Tema"
+
+#: includes/class-gglcptch-settings-tabs.php:391
+msgid "Light"
+msgstr "Aydınlık"
+
+#: includes/class-gglcptch-settings-tabs.php:392
+msgid "Dark"
+msgstr "Karanlık"
+
+#: includes/class-gglcptch-settings-tabs.php:412
+msgid "Hide reCaptcha Badge"
+msgstr "ReCaptcha Rozetini Gizle"
+
+#: includes/class-gglcptch-settings-tabs.php:417
+msgid "Enable to hide reCaptcha Badge for Version 3 and Invisible reCaptcha."
+msgstr ""
+"Sürüm 3 ve Görünmez reCaptcha için reCaptcha Rozetini gizlemeyi "
+"etkinleştirin."
+
+#: includes/class-gglcptch-settings-tabs.php:423
+msgid "Additional Protective Measures"
+msgstr "Ek Koruyucu Önlemler"
+
+#: includes/class-gglcptch-settings-tabs.php:427
+msgid "Score"
+msgstr "Puan"
+
+#: includes/class-gglcptch-settings-tabs.php:432
+#, php-format
+msgid "Set the minimum verification score from %1$s to %2$s (default is %3$s)."
+msgstr ""
+"Minimum doğrulama puanını %1$s ile %2$s arasında ayarlayın (varsayılan değer "
+"%3$s'dir)."
+
+#: includes/class-gglcptch-settings-tabs.php:448
+msgid "Hide reCaptcha for"
+msgstr "Şunlar için reCaptcha'yı gizle"
+
+#: includes/class-gglcptch-settings-tabs.php:468
+msgid "Allow List Notification"
+msgstr "Liste Bildirimine İzin Ver"
+
+#: includes/class-gglcptch-settings-tabs.php:471
+msgid "This message will be displayed instead of the reCaptcha."
+msgstr "Bu mesaj reCaptcha yerine görüntülenecektir."
+
+#: includes/class-gglcptch-settings-tabs.php:475
+msgid "Advanced Protection"
+msgstr "Gelişmiş Koruma"
+
+#: includes/class-gglcptch-settings-tabs.php:479
+msgid ""
+"Enable to keep submit button disabled until reCaptcha is loaded (do not use "
+"this option if you see \"Failed to load Google reCaptcha\" message)."
+msgstr ""
+"ReCaptcha yüklenene kadar gönder düğmesini devre dışı tutmayı etkinleştirin "
+"(\"Google reCaptcha yüklenemedi\" mesajını görürseniz bu seçeneği "
+"kullanmayın)."
+
+#: includes/class-gglcptch-settings-tabs.php:485
+msgid "Disabled Submit Button"
+msgstr "Gönderme Düğmesi Devre Dışı"
+
+#: includes/class-gglcptch-settings-tabs.php:490
+msgid ""
+"Enable to keep submit button disabled until user passes the reCaptcha test "
+"(for Version 2)."
+msgstr ""
+"Kullanıcı reCaptcha testini geçene kadar gönder düğmesini devre dışı tutmayı "
+"etkinleştirin (Sürüm 2 için)."
+
+#: includes/class-gglcptch-settings-tabs.php:508
+msgid ""
+"reCaptcha version was changed. Please submit \"Test reCaptcha\" and "
+"regenerate Site and Secret keys if necessary."
+msgstr ""
+"reCaptcha sürümü değiştirildi. Lütfen \"Test reCaptcha\" gönderin ve "
+"gerekirse Site ve Gizli anahtarları yeniden oluşturun."
+
+#: includes/class-gglcptch-settings-tabs.php:522
+#, php-format
+msgid "ReCaptcha plugin is fully compliant with GDPR. %1$s Learn more %2$s"
+msgstr ""
+"ReCaptcha eklentisi GDPR ile tamamen uyumludur. %1$s Daha fazla bilgi %2$s"
+
+#: includes/class-gglcptch-settings-tabs.php:542
+msgid "reCaptcha Shortcode"
+msgstr "reCaptcha Kısa Kodu"
+
+#: includes/class-gglcptch-settings-tabs.php:545
+msgid "Add reCaptcha to your posts or pages using the following shortcode:"
+msgstr ""
+"Aşağıdaki kısa kodu kullanarak yazılarınıza veya sayfalarınıza reCaptcha "
+"ekleyin:"
 
 #: includes/forms.php:20
 msgid "Login form"
@@ -256,10 +536,8 @@ msgid "Reset password form"
 msgstr "Şifre Sıfırlama Formu"
 
 #: includes/forms.php:23
-#, fuzzy
-#| msgid "Reset password form"
 msgid "Protected post password form"
-msgstr "Şifre Sıfırlama Formu"
+msgstr "Korumalı gönderi şifre formu"
 
 #: includes/forms.php:24
 msgid "Comments form"
@@ -269,39 +547,69 @@ msgstr "Yorum Formu"
 msgid "Testimonials"
 msgstr "Görüşler"
 
-#: includes/forms.php:53
+#: includes/forms.php:27
+msgid "Formidable Contact Form"
+msgstr "Biçimlendirilebilir İletişim Formu"
+
+#: includes/forms.php:54
 msgid "WordPress default"
 msgstr "WordPress varsayılanı"
 
-#: includes/forms.php:63 includes/pro_banners.php:95
+#: includes/forms.php:64 includes/pro_banners.php:95
 msgid "External Plugins"
 msgstr "Harici Eklentiler"
 
-#: includes/forms.php:75
+#: includes/forms.php:77
 msgid "Custom Forms"
 msgstr "Özel Formlar"
 
-#: includes/forms.php:104
-#, fuzzy
-#| msgid "Google Captcha Plugin"
+#: includes/forms.php:106
 msgid "reCaptcha Plugin"
-msgstr "Google Captcha Eklentisi"
+msgstr "reCaptcha Eklentisi"
 
-#: includes/forms.php:141 includes/forms.php:171
+#: includes/forms.php:143 includes/forms.php:174
 msgid "Activate"
 msgstr "Etkinleştir"
 
-#: includes/forms.php:143 includes/forms.php:174 includes/forms.php:176
+#: includes/forms.php:145 includes/forms.php:177 includes/forms.php:179
 msgid "Install Now"
 msgstr "Şimdi Yükle"
 
-#: includes/forms.php:321
+#: includes/forms.php:324
 msgid "Authentication failed."
 msgstr "Kimlik doğrulama başarısız oldu."
 
-#: includes/forms.php:514
+#: includes/forms.php:517
 msgid "Click the BACK button on your browser and try again."
 msgstr "Tarayıcınızda GERİ düğmesini tıklayın ve tekrar deneyin."
+
+#: includes/pro_banners.php:21
+msgid "This options is available in Pro version of plugin"
+msgstr "Bu seçenekler eklentinin Pro sürümünde mevcuttur"
+
+#: includes/pro_banners.php:47
+msgid "Allowed separators for IPs: a comma"
+msgstr "IP'ler için izin verilen ayırıcılar: virgül"
+
+#: includes/pro_banners.php:47 includes/pro_banners.php:50
+msgid "semicolon"
+msgstr "noktalı virgül"
+
+#: includes/pro_banners.php:47
+msgid "ordinary space, tab, new line or carriage return."
+msgstr "sıradan boşluk, sekme, yeni satır veya satır başı."
+
+#: includes/pro_banners.php:48
+msgid "Reason"
+msgstr "Sebep"
+
+#: includes/pro_banners.php:50
+msgid "Allowed separators for reasons: a comma"
+msgstr "Nedenlerle izin verilen ayırıcılar: virgül"
+
+#: includes/pro_banners.php:50
+msgid "tab, new line or carriage return."
+msgstr "sekme, yeni satır veya satır başı."
 
 #: includes/pro_banners.php:60
 msgid "Jetpack Contact Form"
@@ -368,8 +676,6 @@ msgid "Divi Contact Form"
 msgstr "Divi İletişim Formu"
 
 #: includes/pro_banners.php:78
-#, fuzzy
-#| msgid "Divi Login Forms"
 msgid "Divi Login Form"
 msgstr "Divi Giriş Formu"
 
@@ -382,97 +688,87 @@ msgid "WPForms"
 msgstr "WPForms"
 
 #: includes/pro_banners.php:81
-#, fuzzy
-#| msgid "WooCommerce Login form"
 msgid "Ultimate Member Login form"
-msgstr "WooCommerce Giriş Formu"
+msgstr "Ultimate Üye Giriş formu"
 
 #: includes/pro_banners.php:82
-#, fuzzy
-#| msgid "WooCommerce Registration form"
 msgid "Ultimate Member Registration form"
-msgstr "WooCommerce Kayıt Formu"
+msgstr "Nihai Üye Kayıt formu"
 
 #: includes/pro_banners.php:83
 msgid "Ultimate Member Profile form"
 msgstr "Ultimate Member Profile formu"
 
 #: includes/pro_banners.php:85
-#, fuzzy
-#| msgid "Jetpack Contact Form"
 msgid "Elementor Contact Form"
-msgstr "Jetpack İletişim Formu"
+msgstr "Elementor İletişim Formu"
 
 #: includes/pro_banners.php:86
-#, fuzzy
-#| msgid "WooCommerce Checkout form"
 msgid "MemberPress checkout form"
-msgstr "WooCommerce Sepet Formu"
+msgstr "MemberPress ödeme formu"
 
 #: includes/pro_banners.php:87
-#, fuzzy
-#| msgid "bbPress Reply form"
 msgid "MemberPress login form"
-msgstr "bbPress Yanıt Formu"
+msgstr "MemberPress giriş formu"
 
 #: includes/pro_banners.php:88
-#, fuzzy
-#| msgid "Reset password form"
 msgid "MemberPress forgot password form"
-msgstr "Şifre Sıfırlama Formu"
+msgstr "MemberPress şifremi unuttum formu"
 
 #: includes/pro_banners.php:89
-#, fuzzy
-#| msgid "Login form"
 msgid "LearnDash login form"
-msgstr "Giriş Formu"
+msgstr "LearnDash giriş formu"
 
 #: includes/pro_banners.php:90
-#, fuzzy
-#| msgid "Registration form"
 msgid "LearnDash registration form"
-msgstr "Kayıt Formu"
+msgstr "LearnDash kayıt formu"
 
 #: includes/pro_banners.php:91
-#, fuzzy
-#| msgid "BuddyPress Registration form"
 msgid "BuddyBoss registration form"
-msgstr "BuddyPress Kayıt Formu"
+msgstr "BuddyBoss kayıt formu"
+
+#: includes/pro_banners.php:224
+msgid "Language"
+msgstr "Dil"
+
+#: includes/pro_banners.php:232
+msgid "Multilanguage"
+msgstr "Çoklu Dil"
+
+#: includes/pro_banners.php:235
+msgid ""
+"Enable to switch language automatically on multilingual website using the "
+"Multilanguage plugin."
+msgstr ""
+"Multilanguage eklentisini kullanarak çok dilli web sitesinde dili otomatik "
+"olarak değiştirmeyi etkinleştirin."
+
+#: includes/pro_banners.php:249
+msgid "Size"
+msgstr "Boyut"
+
+#: includes/pro_banners.php:253
+msgid "Normal"
+msgstr "Normal"
+
+#: includes/pro_banners.php:254
+msgid "Compact"
+msgstr "Kompakt"
+
+#: includes/pro_banners.php:269
+msgid "Display for"
+msgstr "İçin göster"
+
+#: includes/pro_banners.php:273
+msgid "Only form"
+msgstr "Sadece form"
+
+#: includes/pro_banners.php:274
+msgid "All pages"
+msgstr "Tüm sayfalar"
 
 #~ msgid "Whitelist"
 #~ msgstr "Beyaz Liste"
-
-#~ msgid "Please enable JavaScript in your browser."
-#~ msgstr "Lütfen tarayıcınızda JavaScript'i etkinleştirin."
-
-#~ msgid "This site is protected by reCAPTCHA and the Google "
-#~ msgstr "Bu site reCAPTCHA ve Google tarafından korunmaktadır "
-
-#~ msgid "Privacy Policy"
-#~ msgstr "Gizlilik Politikası"
-
-#~ msgid " and "
-#~ msgstr " ve "
-
-#~ msgid "Terms of Service"
-#~ msgstr "Kullanım Şartları"
-
-#~ msgid " apply."
-#~ msgstr " uygula."
-
-#, fuzzy
-#~| msgid "To use Google Captcha you must get the keys from"
-#~ msgid "To use reCaptcha you must get the keys from"
-#~ msgstr "Google Captcha'yı kullanmak için anahtarları şuradan almalısınız"
-
-#~ msgid "here"
-#~ msgstr "buraya"
-
-#~ msgid "and enter them on the"
-#~ msgstr "ve onları girin"
-
-#~ msgid "plugin setting page"
-#~ msgstr "eklenti ayar sayfası"
 
 #~ msgid "User response is missing."
 #~ msgstr "Kullanıcı cevabı eksik."
@@ -480,210 +776,14 @@ msgstr "BuddyPress Kayıt Formu"
 #~ msgid "You have entered an incorrect reCAPTCHA value."
 #~ msgstr "Yanlış bir reCAPTCHA değeri girdiniz."
 
-#~ msgid "Please submit \"Test verification\""
-#~ msgstr "Lütfen \"Test doğrulaması\" gönderin"
-
-#~ msgid "Please complete the captcha and submit \"Test verification\""
-#~ msgstr "Lütfen captcha'yı tamamlayın ve \"Test doğrulaması\" gönderin"
-
-#~ msgid "Test verification"
-#~ msgstr "Test doğrulaması"
-
-#~ msgid "The verification is successfully completed."
-#~ msgstr "Doğrulama başarıyla tamamlandı."
-
 #~ msgid "Authentication"
 #~ msgstr "Yetkilendirme"
-
-#, fuzzy
-#~| msgid ""
-#~| "Register your website with Google to get required API keys and enter "
-#~| "them below."
-#~ msgid ""
-#~ "Register your domain name with Google reCaptcha service and add the keys "
-#~ "to the fields below."
-#~ msgstr ""
-#~ "Gerekli API anahtarlarını almak için web sitenizi Google'a kaydedin ve "
-#~ "aşağıya girin."
 
 #~ msgid "Get the API Keys"
 #~ msgstr "API Anahtarlarını alın"
 
-#, fuzzy
-#~| msgid "Google Captcha"
-#~ msgid "Test reCaptcha"
-#~ msgstr "Google Captcha"
-
-#~ msgid "General"
-#~ msgstr "Genel"
-
-#, fuzzy
-#~| msgid "reCAPTCHA Version"
-#~ msgid "reCaptcha Version"
-#~ msgstr "reCAPTCHA Versiyonu"
-
-#, fuzzy
-#~| msgid "Enable Google Captcha for:"
-#~ msgid "Enable reCaptcha for"
-#~ msgstr "Habilitar Google Captcha para:"
-
-#~ msgid "Close"
-#~ msgstr "Kapat"
-
-#, fuzzy
-#~| msgid "Hide captcha for:"
-#~ msgid "Hide reCaptcha for"
-#~ msgstr "Ocultar captcha para:"
-
-#, fuzzy
-#~| msgid "Hide reCAPTCHA Badge"
-#~ msgid "Hide reCaptcha Badge"
-#~ msgstr "ReCAPTCHA Rozetini Gizle"
-
-#, fuzzy
-#~| msgid ""
-#~| "Enable to hide reCAPTCHA Badge for Version 3 and Invisble reCAPTCHA."
-#~ msgid "Enable to hide reCaptcha Badge for Version 3 and Invisble reCaptcha."
-#~ msgstr ""
-#~ "ReCAPTCHA Rozetini Sürüm 3 ve Görünmez reCAPTCHA için gizlemeyi "
-#~ "etkinleştirin."
-
-#~ msgid "Theme"
-#~ msgstr "Tema"
-
-#~ msgid "Light"
-#~ msgstr "Aydınlık"
-
-#~ msgid "Dark"
-#~ msgstr "Karanlık"
-
-#~ msgid "Score"
-#~ msgstr "Puan"
-
-#, fuzzy, php-format
-#~| msgid "Set the minimum verification score from 0 to 1"
-#~ msgid "Set the minimum verification score from %s to %s (default is %s)."
-#~ msgstr "Minimum doğrulama puanını 0'dan 1'e ayarlayın"
-
-#~ msgid "Whitelist Notification"
-#~ msgstr "Beyaz Liste Bildirimi"
-
-#, fuzzy
-#~| msgid "This message will be displayed instead of the reCAPTCHA."
-#~ msgid "This message will be displayed instead of the reCaptcha."
-#~ msgstr "ReCAPTCHA yerine bu mesaj görüntülenecektir."
-
-#~ msgid "Advanced Protection"
-#~ msgstr "Gelişmiş Koruma"
-
-#, fuzzy
-#~| msgid ""
-#~| "Enable to keep submit button disabled until reCAPTCHA is loaded (do not "
-#~| "use this option if you see \"Failed to load Google reCAPTCHA\" message)."
-#~ msgid ""
-#~ "Enable to keep submit button disabled until reCaptcha is loaded (do not "
-#~ "use this option if you see \"Failed to load Google reCaptcha\" message)."
-#~ msgstr ""
-#~ "ReCAPTCHA yüklenene kadar gönder düğmesini devre dışı bırakmak için "
-#~ "etkinleştirin (\"Google reCAPTCHA yüklenemedi\" mesajını görürseniz bu "
-#~ "seçeneği kullanmayın)."
-
-#~ msgid "Disabled Submit Button"
-#~ msgstr "Gönderme Düğmesi Devre Dışı"
-
-#, fuzzy
-#~| msgid ""
-#~| "Enable to keep submit button disabled until user passes the reCAPTCHA "
-#~| "test (for Version 2)."
-#~ msgid ""
-#~ "Enable to keep submit button disabled until user passes the reCaptcha "
-#~ "test (for Version 2)."
-#~ msgstr ""
-#~ "Kullanıcı reCAPTCHA testini geçene kadar gönder düğmesini devre dışı "
-#~ "bırakmayı etkinleştirin (Sürüm 2 için)."
-
-#, fuzzy
-#~| msgid ""
-#~| "reCAPTCHA version was changed. Please submit \"Test reCAPTCHA\" and "
-#~| "regenerate Site and Secret keys if necessary."
-#~ msgid ""
-#~ "reCaptcha version was changed. Please submit \"Test reCaptcha\" and "
-#~ "regenerate Site and Secret keys if necessary."
-#~ msgstr ""
-#~ "reCAPTCHA sürümü değiştirildi. Lütfen \"reCAPTCHA Testi\" gönderin ve "
-#~ "gerekirse Site Anahtarı ve Gizli Anahtarı yeniden oluşturun."
-
-#, fuzzy
-#~| msgid "Google Captcha Shortcode"
-#~ msgid "reCaptcha Shortcode"
-#~ msgstr "Google Captcha Çağırma Kodu"
-
-#, fuzzy
-#~| msgid ""
-#~| "Add Google Captcha to your posts or pages using the following shortcode:"
-#~ msgid "Add reCaptcha to your posts or pages using the following shortcode:"
-#~ msgstr ""
-#~ "Aşağıdaki kodu kullanarak yazılarınıza veya sayfalarınıza Google Captcha "
-#~ "ekleyin:"
-
-#~ msgid "This options is available in Pro version of plugin"
-#~ msgstr "Bu seçenekler eklentinin Pro sürümünde mevcuttur"
-
-#~ msgid "Allowed formats"
-#~ msgstr "İzin verilen formatlar"
-
-#~ msgid "Allowed separators for IPs: a comma"
-#~ msgstr "IP'ler için izin verilen ayırıcılar: virgül"
-
-#~ msgid "semicolon"
-#~ msgstr "noktalı virgül"
-
-#~ msgid "ordinary space, tab, new line or carriage return."
-#~ msgstr "sıradan boşluk, sekme, yeni satır veya satır başı."
-
-#~ msgid "Reason"
-#~ msgstr "Sebep"
-
-#~ msgid "Allowed separators for reasons: a comma"
-#~ msgstr "Nedenlerle izin verilen ayırıcılar: virgül"
-
-#~ msgid "tab, new line or carriage return."
-#~ msgstr "sekme, yeni satır veya satır başı."
-
-#~ msgid "Size"
-#~ msgstr "Boyut"
-
-#~ msgid "Normal"
-#~ msgstr "Normal"
-
-#~ msgid "Compact"
-#~ msgstr "Kompakt"
-
-#~ msgid "Language"
-#~ msgstr "Dil"
-
-#~ msgid "Multilanguage"
-#~ msgstr "Çoklu Dil"
-
-#, fuzzy
-#~| msgid ""
-#~| "Enable to switch language automatically on multilingual website using "
-#~| "Multilanguage plugin."
-#~ msgid ""
-#~ "Enable to switch language automatically on multilingual website using the "
-#~ "Multilanguage plugin."
-#~ msgstr ""
-#~ "Çoklu Dil eklentisini kullanarak çok dilli web sitesinde dili otomatik "
-#~ "olarak değiştirmeyi etkinleştirin."
-
-#~ msgid "Add New"
-#~ msgstr "Yeni Ekle"
-
 #~ msgid "IP to whitelist"
 #~ msgstr "Beyaz listeye eklenecek IP"
-
-#~ msgid "My IP"
-#~ msgstr "Beim IP"
 
 #~ msgid "Add IP to whitelist"
 #~ msgstr "Beyaz listeye IP ekleyin"

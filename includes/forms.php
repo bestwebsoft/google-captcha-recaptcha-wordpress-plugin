@@ -24,6 +24,7 @@ if ( ! function_exists( 'gglcptch_get_forms' ) ) {
 			'comments_form'     => array( 'form_name' => __( 'Comments form', 'google-captcha' ) ),
 			'contact_form'      => array( 'form_name' => 'Contact Form' ),
 			'testimonials'      => array( 'form_name' => __( 'Testimonials', 'google-captcha' ) ),
+			'frm_contact_form'  => array( 'form_name' => __( 'Formidable Contact Form', 'google-captcha' ) ),
 		);
 
 		$custom_forms   = apply_filters( 'gglcptch_add_custom_form', array() );
@@ -64,6 +65,7 @@ if ( ! function_exists( 'gglcptch_get_sections' ) ) {
 				'forms' => array(
 					'contact_form',
 					'testimonials',
+					'frm_contact_form'
 				),
 			),
 		);
@@ -160,8 +162,9 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 		$form_notice = '';
 
 		$plugins = array(
-			'contact_form' => array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php', 'contact-form-plus/contact-form-plus.php' ),
-			'testimonials' => array( 'bws-testimonials/bws-testimonials.php', 'bws-testimonials-pro/bws-testimonials-pro.php' ),
+			'contact_form'     => array( 'contact-form-plugin/contact_form.php', 'contact-form-pro/contact_form_pro.php', 'contact-form-plus/contact-form-plus.php' ),
+			'testimonials'     => array( 'bws-testimonials/bws-testimonials.php', 'bws-testimonials-pro/bws-testimonials-pro.php' ),
+			'frm_contact_form' => array( 'formidable/formidable.php', 'formidable-pro/formidable-pro.php' ),
 		);
 
 		if ( isset( $plugins[ $form_slug ] ) ) {

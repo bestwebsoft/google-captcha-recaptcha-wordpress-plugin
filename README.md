@@ -63,6 +63,7 @@
 <li>Elementor Pro Contact Forms</li>
 <li>LearnDash Registration Page</li>
 <li>BuddyBoss</li>
+<li>Formidable Forms</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:
@@ -109,6 +110,7 @@
 </ul>
 </li>
 <li>Select reCaptcha language manually</li>
+<li>Activate reCaptcha on certain Weekdays and Hours</li>
 <li>Change size: normal or compact (for version 2)</li>
 <li>Configure all subsites on the network</li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow ugc">Support Policy</a>)</li>

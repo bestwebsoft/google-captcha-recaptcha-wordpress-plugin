@@ -48,3 +48,6 @@
 .gglcptch_error_text {
 	display: none;
 }
+.gglcptch-weekdays-wrapper td {
+	vertical-align: top;
+}

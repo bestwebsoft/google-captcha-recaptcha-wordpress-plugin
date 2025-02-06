@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reCaptcha by BestWebSoft\n"
-"POT-Creation-Date: 2024-09-17 13:06+0300\n"
-"PO-Revision-Date: 2024-10-10 12:17+0300\n"
+"POT-Creation-Date: 2025-02-06 17:52+0200\n"
+"PO-Revision-Date: 2025-02-06 17:52+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -23,13 +23,14 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: bws_menu\n"
 
 # automatic translation
-#: google-captcha.php:44 google-captcha.php:54 google-captcha.php:605
-#: includes/class-gglcptch-settings-tabs.php:153
+#: google-captcha.php:44 google-captcha.php:54 google-captcha.php:617
+#: includes/captcha-for-formidable.php:68
+#: includes/class-gglcptch-settings-tabs.php:160
 msgid "reCaptcha Settings"
 msgstr "Impostazioni reCaptcha"
 
 # automatic translation
-#: google-captcha.php:55 google-captcha.php:1310 google-captcha.php:1330
+#: google-captcha.php:55 google-captcha.php:1345 google-captcha.php:1365
 #: includes/class-gglcptch-settings-tabs.php:24
 msgid "Settings"
 msgstr "Impostazioni"
@@ -50,12 +51,12 @@ msgid "Upgrade to Pro"
 msgstr "Aggiornamento a Pro"
 
 # automatic translation
-#: google-captcha.php:305
+#: google-captcha.php:313
 msgid "Please wait until Google reCAPTCHA is loaded."
 msgstr "Attendi fino al caricamento di Google reCAPTCHA."
 
 # automatic translation
-#: google-captcha.php:306
+#: google-captcha.php:314
 msgid ""
 "Failed to load Google reCAPTCHA. Please check your internet connection and "
 "reload this page."
@@ -64,112 +65,112 @@ msgstr ""
 "e ricarica questa pagina."
 
 # automatic translation
-#: google-captcha.php:321
+#: google-captcha.php:329
 msgid "Warning"
 msgstr "Avvertimento"
 
 # automatic translation
-#: google-captcha.php:480
+#: google-captcha.php:488
 msgid "You are in the allow list"
 msgstr "Sei nell'elenco Consenti"
 
 # automatic translation
-#: google-captcha.php:606
+#: google-captcha.php:618
 msgid "Please enable JavaScript in your browser."
 msgstr "Si prega di abilitare javascript nel browser."
 
 # automatic translation
-#: google-captcha.php:716
+#: google-captcha.php:742
 msgid "This site is protected by reCAPTCHA and the Google "
 msgstr " Questo sito è protetto da reCAPTCHA e si applicano  "
 
 # automatic translation
-#: google-captcha.php:717
+#: google-captcha.php:743
 msgid "Privacy Policy"
 msgstr "le norme sulla privacy e i termini di servizio di Google."
 
 # automatic translation
-#: google-captcha.php:718
+#: google-captcha.php:744
 msgid " and "
 msgstr "  e  "
 
 # automatic translation
-#: google-captcha.php:719
+#: google-captcha.php:745
 msgid "Terms of Service"
 msgstr "  Termini di servizio "
 
 # automatic translation
-#: google-captcha.php:720
+#: google-captcha.php:746
 msgid " apply."
 msgstr "  fare domanda a. "
 
 # automatic translation
-#: google-captcha.php:727
+#: google-captcha.php:753
 msgid "To use reCaptcha you must get the keys from"
 msgstr "Per utilizzare reCaptcha devi ottenere le chiavi da"
 
 # automatic translation
-#: google-captcha.php:728
+#: google-captcha.php:754
 msgid "here"
 msgstr "Qui"
 
 # automatic translation
-#: google-captcha.php:729
+#: google-captcha.php:755
 msgid "and enter them on the"
 msgstr "e inserirli sul"
 
 # automatic translation
-#: google-captcha.php:731
+#: google-captcha.php:757
 msgid "plugin setting page"
 msgstr "pagina delle impostazioni del plug-in"
 
 # automatic translation
-#: google-captcha.php:763
+#: google-captcha.php:789
 msgid "The reCAPTCHA verification period has expired. Please reload the page."
 msgstr "Il periodo di verifica reCAPTCHA è scaduto. Ricaricare la pagina."
 
 # automatic translation
-#: google-captcha.php:936
+#: google-captcha.php:971
 msgid "Response is empty"
 msgstr "La risposta è vuota"
 
 # automatic translation
-#: google-captcha.php:1038 includes/forms.php:504 includes/forms.php:512
+#: google-captcha.php:1073 includes/forms.php:507 includes/forms.php:515
 msgid "Error"
 msgstr "Errore"
 
 # automatic translation
-#: google-captcha.php:1186 google-captcha.php:1196
+#: google-captcha.php:1221 google-captcha.php:1231
 msgid "The reCaptcha verification failed. Please try again."
 msgstr "La verifica reCaptcha non è riuscita. Per favore riprova."
 
 # automatic translation
-#: google-captcha.php:1188
+#: google-captcha.php:1223
 msgid "Secret Key is missing."
 msgstr "Manca la chiave segreta."
 
 # automatic translation
-#: google-captcha.php:1191
+#: google-captcha.php:1226
 msgid "Secret Key is invalid."
 msgstr "La chiave segreta non è valida."
 
 # automatic translation
-#: google-captcha.php:1192
+#: google-captcha.php:1227
 msgid "Check your domain configurations"
 msgstr "Controlla le configurazioni del tuo dominio"
 
 # automatic translation
-#: google-captcha.php:1193
+#: google-captcha.php:1228
 msgid "and enter it again"
 msgstr "e inseriscilo di nuovo"
 
 # automatic translation
-#: google-captcha.php:1195
+#: google-captcha.php:1230
 msgid "User response is invalid"
 msgstr "La risposta dell'utente non è valida"
 
 # automatic translation
-#: google-captcha.php:1197
+#: google-captcha.php:1232
 msgid ""
 "More than one reCAPTCHA has been found in the current form. Please remove "
 "all unnecessary reCAPTCHA fields to make it work properly."
@@ -178,45 +179,45 @@ msgstr ""
 "campi reCAPTCHA non necessari per farlo funzionare correttamente."
 
 # automatic translation
-#: google-captcha.php:1199
+#: google-captcha.php:1234
 msgid "reCaptcha v3 test failed"
 msgstr "Test reCaptcha v3 fallito"
 
 # automatic translation
-#: google-captcha.php:1245
+#: google-captcha.php:1280
 msgid "Please submit \"Test verification\""
 msgstr "Si prega di inviare \"verifica di prova\""
 
 # automatic translation
-#: google-captcha.php:1247
+#: google-captcha.php:1282
 msgid "Please complete the captcha and submit \"Test verification\""
 msgstr "Si prega di completare il captcha e inviare \"Verifica del test\""
 
 # automatic translation
-#: google-captcha.php:1254
+#: google-captcha.php:1289
 msgid "Test verification"
 msgstr "Verifica di prova"
 
 # automatic translation
-#: google-captcha.php:1282
+#: google-captcha.php:1317
 msgid "The verification is successfully completed."
 msgstr "La verifica è stata completata con successo."
 
 # automatic translation
-#: google-captcha.php:1332
+#: google-captcha.php:1367
 msgid "FAQ"
 msgstr "FAQ"
 
 # automatic translation
-#: google-captcha.php:1333
+#: google-captcha.php:1368
 msgid "Support"
 msgstr "Supporto"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid "Double-Check Your reCAPTCHA Keys"
 msgstr "Ricontrollare le chiavi reCAPTCHA"
 
-#: google-captcha.php:1350
+#: google-captcha.php:1386
 msgid ""
 "Ensure your keys are correctly configured for maximum protection. Click "
 "“Test Keys” button. Check your settings now!"
@@ -334,6 +335,14 @@ msgstr "Non hai inserito alcun IP nel modulo di ricerca."
 msgid "Search results for"
 msgstr "Cerca risultati per"
 
+#: includes/captcha-for-formidable.php:68
+msgid ""
+"Currently, the reCaptcha will not be displayed according to the Weekdays and "
+"Hours settings."
+msgstr ""
+"Attualmente, il reCaptcha non viene visualizzato in base alle impostazioni "
+"dei giorni e degli orari della settimana."
+
 # automatic translation
 #: includes/class-gglcptch-settings-tabs.php:25
 msgid "Misc"
@@ -394,22 +403,22 @@ msgid "Enter secret key"
 msgstr "Inserisci la chiave segreta"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:140
+#: includes/class-gglcptch-settings-tabs.php:147
 msgid "Settings saved."
 msgstr "Impostazioni salvate."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:156
+#: includes/class-gglcptch-settings-tabs.php:163
 msgid "General"
 msgstr "Generale"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:159
+#: includes/class-gglcptch-settings-tabs.php:166
 msgid "reCaptcha Version"
 msgstr "Versione reCaptcha"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:176
+#: includes/class-gglcptch-settings-tabs.php:183
 #, php-format
 msgid ""
 "Register your domain name with Google reCaptcha service and add the keys to "
@@ -419,7 +428,7 @@ msgstr ""
 "le chiavi nei campi sottostanti. %1$s Ottieni le chiavi API. %2$s"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:185
+#: includes/class-gglcptch-settings-tabs.php:192
 #, php-format
 msgid ""
 "If you do not want to create API keys use %1$sCaptcha by BestWebSoft%2$s "
@@ -428,7 +437,7 @@ msgstr ""
 "Se non vuoi creare chiavi API usa il plugin %1$sCaptcha di BestWebSoft%2$s."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:194
+#: includes/class-gglcptch-settings-tabs.php:201
 #, php-format
 msgid ""
 "The Google reCaptcha block loads the webfont \"Roboto\" from fonts."
@@ -440,79 +449,116 @@ msgstr ""
 "BestWebSoft%2$s."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:236
+#: includes/class-gglcptch-settings-tabs.php:243
 msgid "Test reCaptcha"
 msgstr "Prova reCaptcha"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:242
+#: includes/class-gglcptch-settings-tabs.php:249
 msgid "Enable reCaptcha for"
 msgstr "Abilita reCaptcha per"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:293
-#: includes/class-gglcptch-settings-tabs.php:321
-#: includes/class-gglcptch-settings-tabs.php:348
-#: includes/class-gglcptch-settings-tabs.php:386 includes/pro_banners.php:24
+#: includes/class-gglcptch-settings-tabs.php:300
+#: includes/class-gglcptch-settings-tabs.php:327
+#: includes/class-gglcptch-settings-tabs.php:401
+#: includes/class-gglcptch-settings-tabs.php:439 includes/pro_banners.php:24
 msgid "Close"
 msgstr "Vicino"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:304
+#: includes/class-gglcptch-settings-tabs.php:311
 msgid "reCaptcha Domain"
 msgstr "Dominio reCaptcha"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:312
+#: includes/class-gglcptch-settings-tabs.php:319
 msgid ""
 "If Google is not accessible or blocked in your country select other one."
 msgstr ""
 "Se Google non è accessibile o è bloccato nel tuo Paese, selezionane un altro."
 
+#: includes/class-gglcptch-settings-tabs.php:336
+msgid "Weekdays and Hours"
+msgstr "Giorni e orari feriali"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Monday"
+msgstr "Lunedì"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Tuesday"
+msgstr "Martedì"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Thursday"
+msgstr "Giovedì"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Friday"
+msgstr "Venerdì"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Saturday"
+msgstr "Sabato"
+
+#: includes/class-gglcptch-settings-tabs.php:341
+msgid "Sunday"
+msgstr "Domenica"
+
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:330
+#: includes/class-gglcptch-settings-tabs.php:361
+msgid "All day"
+msgstr "Tutto il giorno"
+
+# automatic translation
+#: includes/class-gglcptch-settings-tabs.php:383
 msgid "Appearance"
 msgstr "Aspetto"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:334
+#: includes/class-gglcptch-settings-tabs.php:387
 msgid "Theme"
 msgstr "Tema"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:338
+#: includes/class-gglcptch-settings-tabs.php:391
 msgid "Light"
 msgstr "Leggero"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:339
+#: includes/class-gglcptch-settings-tabs.php:392
 msgid "Dark"
 msgstr "Buio"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:359
+#: includes/class-gglcptch-settings-tabs.php:412
 msgid "Hide reCaptcha Badge"
 msgstr "Nascondi badge reCaptcha"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:364
+#: includes/class-gglcptch-settings-tabs.php:417
 msgid "Enable to hide reCaptcha Badge for Version 3 and Invisible reCaptcha."
 msgstr ""
 "Abilita per nascondere il badge reCaptcha per la versione 3 e il reCaptcha "
 "invisibile."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:370
+#: includes/class-gglcptch-settings-tabs.php:423
 msgid "Additional Protective Measures"
 msgstr "Ulteriori misure di protezione"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:374
+#: includes/class-gglcptch-settings-tabs.php:427
 msgid "Score"
 msgstr "Punto"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:379
+#: includes/class-gglcptch-settings-tabs.php:432
 #, php-format
 msgid "Set the minimum verification score from %1$s to %2$s (default is %3$s)."
 msgstr ""
@@ -520,27 +566,27 @@ msgstr ""
 "predefinito è %3$s)."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:395
+#: includes/class-gglcptch-settings-tabs.php:448
 msgid "Hide reCaptcha for"
 msgstr "Nascondi reCaptcha per"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:415
+#: includes/class-gglcptch-settings-tabs.php:468
 msgid "Allow List Notification"
 msgstr "Consenti notifica elenco"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:418
+#: includes/class-gglcptch-settings-tabs.php:471
 msgid "This message will be displayed instead of the reCaptcha."
 msgstr "Questo messaggio verrà visualizzato al posto del reCaptcha."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:422
+#: includes/class-gglcptch-settings-tabs.php:475
 msgid "Advanced Protection"
 msgstr "Protezione avanzata"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:426
+#: includes/class-gglcptch-settings-tabs.php:479
 msgid ""
 "Enable to keep submit button disabled until reCaptcha is loaded (do not use "
 "this option if you see \"Failed to load Google reCaptcha\" message)."
@@ -550,12 +596,12 @@ msgstr ""
 "messaggio \"Impossibile caricare Google reCaptcha\")."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:432
+#: includes/class-gglcptch-settings-tabs.php:485
 msgid "Disabled Submit Button"
 msgstr "Pulsante Invia disattivato"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:437
+#: includes/class-gglcptch-settings-tabs.php:490
 msgid ""
 "Enable to keep submit button disabled until user passes the reCaptcha test "
 "(for Version 2)."
@@ -564,7 +610,7 @@ msgstr ""
 "l'utente non supera il test reCaptcha (per la versione 2)."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:455
+#: includes/class-gglcptch-settings-tabs.php:508
 msgid ""
 "reCaptcha version was changed. Please submit \"Test reCaptcha\" and "
 "regenerate Site and Secret keys if necessary."
@@ -573,7 +619,7 @@ msgstr ""
 "reCaptcha\" e rigenerare le chiavi del sito e segrete, se necessario."
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:469
+#: includes/class-gglcptch-settings-tabs.php:522
 #, php-format
 msgid "ReCaptcha plugin is fully compliant with GDPR. %1$s Learn more %2$s"
 msgstr ""
@@ -581,12 +627,12 @@ msgstr ""
 "informazioni %2$s"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:489
+#: includes/class-gglcptch-settings-tabs.php:542
 msgid "reCaptcha Shortcode"
 msgstr "codice breve reCaptcha"
 
 # automatic translation
-#: includes/class-gglcptch-settings-tabs.php:492
+#: includes/class-gglcptch-settings-tabs.php:545
 msgid "Add reCaptcha to your posts or pages using the following shortcode:"
 msgstr ""
 "Aggiungi reCaptcha ai tuoi post o pagine utilizzando il seguente shortcode:"
@@ -622,42 +668,47 @@ msgid "Testimonials"
 msgstr "Testimonianze"
 
 # automatic translation
-#: includes/forms.php:53
+#: includes/forms.php:27
+msgid "Formidable Contact Form"
+msgstr "Modulo di contatto formidabile"
+
+# automatic translation
+#: includes/forms.php:54
 msgid "WordPress default"
 msgstr "Predefinito WordPress"
 
 # automatic translation
-#: includes/forms.php:63 includes/pro_banners.php:95
+#: includes/forms.php:64 includes/pro_banners.php:95
 msgid "External Plugins"
 msgstr "Plugin esterni"
 
 # automatic translation
-#: includes/forms.php:75
+#: includes/forms.php:77
 msgid "Custom Forms"
 msgstr "Moduli personalizzati"
 
 # automatic translation
-#: includes/forms.php:104
+#: includes/forms.php:106
 msgid "reCaptcha Plugin"
 msgstr "plug-in reCaptcha"
 
 # automatic translation
-#: includes/forms.php:141 includes/forms.php:171
+#: includes/forms.php:143 includes/forms.php:174
 msgid "Activate"
 msgstr "Attivare"
 
 # automatic translation
-#: includes/forms.php:143 includes/forms.php:174 includes/forms.php:176
+#: includes/forms.php:145 includes/forms.php:177 includes/forms.php:179
 msgid "Install Now"
 msgstr "Installa ora"
 
 # automatic translation
-#: includes/forms.php:321
+#: includes/forms.php:324
 msgid "Authentication failed."
 msgstr "Autenticazione fallita."
 
 # automatic translation
-#: includes/forms.php:514
+#: includes/forms.php:517
 msgid "Click the BACK button on your browser and try again."
 msgstr "Fare clic sul pulsante INDIETRO del browser e riprovare."
 
