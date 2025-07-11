@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.80
+Version: 1.82
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -31,6 +31,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 require_once dirname( __FILE__ ) . '/includes/forms.php';
+require_once dirname( __FILE__ ) . '/includes/forminator.php';
 
 if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
 	/**
@@ -486,6 +487,8 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 
 		$default_options = array(
 			'allowlist_message'       => __( 'You are in the allow list', 'google-captcha' ),
+			'error_message'           => __( 'The reCaptcha verification failed. Please try again.', 'google-captcha' ),
+			'empty_error_message'     => __( 'The reCaptcha verification failed. Please try again.', 'google-captcha' ),
 			'public_key'              => '',
 			'private_key'             => '',
 			'login_form'              => 0,
@@ -1213,12 +1216,12 @@ if ( ! function_exists( 'gglcptch_get_message' ) ) {
 	 * @return  string      $message    Returned message.
 	 */
 	function gglcptch_get_message( $message_code = 'incorrect', $echo = false ) {
-
+		global $gglcptch_options;
 		$message = '';
 
 		$messages = array(
 			/* custom error */
-			'RECAPTCHA_EMPTY_RESPONSE' => __( 'The reCaptcha verification failed. Please try again.', 'google-captcha' ),
+			'RECAPTCHA_EMPTY_RESPONSE' => isset( $gglcptch_options['empty_error_message'] ) ? $gglcptch_options['empty_error_message'] : __( 'The reCaptcha verification failed. Please try again.', 'google-captcha' ),
 			/* v2 error */
 			'missing-input-secret'     => __( 'Secret Key is missing.', 'google-captcha' ),
 			'invalid-input-secret'     => sprintf(
@@ -1228,7 +1231,7 @@ if ( ! function_exists( 'gglcptch_get_message' ) ) {
 				__( 'and enter it again', 'google-captcha' )
 			),
 			'incorrect-captcha-sol'    => __( 'User response is invalid', 'google-captcha' ),
-			'incorrect'                => __( 'The reCaptcha verification failed. Please try again.', 'google-captcha' ),
+			'incorrect'                => isset( $gglcptch_options['error_message'] ) ? $gglcptch_options['error_message'] : __( 'The reCaptcha verification failed. Please try again.', 'google-captcha' ),
 			'multiple_blocks'          => __( 'More than one reCAPTCHA has been found in the current form. Please remove all unnecessary reCAPTCHA fields to make it work properly.', 'google-captcha' ),
 			/* v3 error */
 			'RECAPTCHA_SMALL_SCORE'    => __( 'reCaptcha v3 test failed', 'google-captcha' ),

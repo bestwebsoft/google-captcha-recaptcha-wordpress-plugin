@@ -43,6 +43,7 @@
 <li>Incredibly simple settings for fast setup without modifying code</li>
 <li>Detailed step-by-step documentation and videos</li>
 <li>Multilingual and RTL ready</li>
+<li>Edit error message</li>
 </ul>
 <blockquote>
 <p><strong>Pro Features</strong></p>
@@ -64,6 +65,7 @@
 <li>LearnDash Registration Page</li>
 <li>BuddyBoss</li>
 <li>Formidable Forms</li>
+<li>Forminator Forms</li>
 </ul>
 </li>
 <li>Compatible with WooCommerce:

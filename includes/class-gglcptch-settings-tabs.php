@@ -115,6 +115,8 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				}
 
 				$this->options['allowlist_message']     = isset( $_POST['gglcptch_allowlist_message'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_allowlist_message'] ) ) : '';
+				$this->options['error_message']         = isset( $_POST['gglcptch_error_message'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_error_message'] ) ) : '';
+				$this->options['empty_error_message']   = isset( $_POST['gglcptch_empty_error_message'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_empty_error_message'] ) ) : '';
 				$this->options['public_key']            = isset( $_POST['gglcptch_public_key'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_public_key'] ) ) : '';
 				$this->options['private_key']           = isset( $_POST['gglcptch_private_key'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_private_key'] ) ) : '';
 				$this->options['recaptcha_version']     = in_array( sanitize_text_field( wp_unslash( $_POST['gglcptch_recaptcha_version'] ) ), array( 'v2', 'invisible', 'v3' ), true ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_recaptcha_version'] ) ) : $this->options['recaptcha_version'];
@@ -469,6 +471,20 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					<td>
 						<textarea name="gglcptch_allowlist_message"><?php echo esc_html( $this->options['allowlist_message'] ); ?></textarea>
 						<div class="bws_info"><?php esc_html_e( 'This message will be displayed instead of the reCaptcha.', 'google-captcha' ); ?></div>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php esc_html_e( 'Failed Error Message', 'google-captcha' ); ?></th>
+					<td>
+						<textarea name="gglcptch_error_message"><?php echo esc_html( $this->options['error_message'] ); ?></textarea>
+						<div class="bws_info"><?php esc_html_e( 'This message will be displayed when an error occurred while checking the reCaptcha.', 'google-captcha' ); ?></div>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php esc_html_e( 'Empty field Error Message', 'google-captcha' ); ?></th>
+					<td>
+						<textarea name="gglcptch_empty_error_message"><?php echo esc_html( $this->options['empty_error_message'] ); ?></textarea>
+						<div class="bws_info"><?php esc_html_e( 'This message will be displayed when an error occurred while checking the reCaptcha.', 'google-captcha' ); ?></div>
 					</td>
 				</tr>
 				<tr valign="top">
