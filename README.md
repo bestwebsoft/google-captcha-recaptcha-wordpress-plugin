@@ -16,6 +16,7 @@
 <li>Comments form</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a" rel="nofollow ugc">Contact Form</a></li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/testimonials/" rel="nofollow ugc">Testimonials</a></li>
+<li><a href="https://wordpress.org/plugins/bws-login-register" rel="ugc">Login &amp; Register Form</a></li>
 <li>Custom form</li>
 </ul>
 </li>
@@ -111,10 +112,18 @@
 <li>Profile form</li>
 </ul>
 </li>
+<li>Compatible with BWS Login Register Form:
+<ul>
+<li>Login form</li>
+<li>Registration form</li>
+<li>Forgot Password form</li>
+</ul>
+</li>
 <li>Select reCaptcha language manually</li>
 <li>Activate reCaptcha on certain Weekdays and Hours</li>
 <li>Change size: normal or compact (for version 2)</li>
 <li>Configure all subsites on the network</li>
+<li>Block disposable emails</li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow ugc">Support Policy</a>)</li>
 </ul>
 <p><a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=c4f2e3054fdbaca8a2b61554cbb9638c" rel="nofollow ugc">Upgrade to Pro Now</a></p>

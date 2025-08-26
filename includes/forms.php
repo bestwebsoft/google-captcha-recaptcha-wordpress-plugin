@@ -17,14 +17,17 @@ if ( ! function_exists( 'gglcptch_get_forms' ) ) {
 		global $gglcptch_forms;
 
 		$default_forms = array(
-			'login_form'        => array( 'form_name' => __( 'Login form', 'google-captcha' ) ),
-			'registration_form' => array( 'form_name' => __( 'Registration form', 'google-captcha' ) ),
-			'reset_pwd_form'    => array( 'form_name' => __( 'Reset password form', 'google-captcha' ) ),
-			'password_form'     => array( 'form_name' => __( 'Protected post password form', 'google-captcha' ) ),
-			'comments_form'     => array( 'form_name' => __( 'Comments form', 'google-captcha' ) ),
-			'contact_form'      => array( 'form_name' => 'Contact Form' ),
-			'testimonials'      => array( 'form_name' => __( 'Testimonials', 'google-captcha' ) ),
-			'frm_contact_form'  => array( 'form_name' => __( 'Formidable Contact Form', 'google-captcha' ) ),
+			'login_form'           => array( 'form_name' => __( 'Login form', 'google-captcha' ) ),
+			'registration_form'    => array( 'form_name' => __( 'Registration form', 'google-captcha' ) ),
+			'reset_pwd_form'       => array( 'form_name' => __( 'Reset password form', 'google-captcha' ) ),
+			'password_form'        => array( 'form_name' => __( 'Protected post password form', 'google-captcha' ) ),
+			'comments_form'        => array( 'form_name' => __( 'Comments form', 'google-captcha' ) ),
+			'contact_form'         => array( 'form_name' => 'Contact Form' ),
+			'testimonials'         => array( 'form_name' => __( 'Testimonials', 'google-captcha' ) ),
+			'frm_contact_form'     => array( 'form_name' => __( 'Formidable Contact Form', 'google-captcha' ) ),
+			'bws_login_form'       => array( 'form_name' => __( 'BWS Login form', 'google-captcha' ) ),
+			'bws_register_form'    => array( 'form_name' => __( 'BWS Register form', 'google-captcha' ) ),
+			'bws_forgot_pass_form' => array( 'form_name' => __( 'BWS Forgot Password form', 'google-captcha' ) ),
 		);
 
 		$custom_forms   = apply_filters( 'gglcptch_add_custom_form', array() );
@@ -66,6 +69,14 @@ if ( ! function_exists( 'gglcptch_get_sections' ) ) {
 					'contact_form',
 					'testimonials',
 					'frm_contact_form'
+				),
+			),
+			'bws_login_register' => array(
+				'name'  => 'BWS Login Register',
+				'forms' => array(
+					'bws_login_form',
+					'bws_register_form',
+					'bws_forgot_pass_form'
 				),
 			),
 		);
@@ -130,7 +141,11 @@ if ( ! function_exists( 'gglcptch_get_section_notice' ) ) {
 	 */
 	function gglcptch_get_section_notice( $section_slug = '' ) {
 		$section_notice = '';
-		$plugins        = array( /* Example: 'bbpress' => 'bbpress/bbpress.php' */ );
+
+		$plugins          = array(
+			'bws_login_register' => 'bws-login-register/bws-login-register.php'
+		);
+
 		$plugins        = apply_filters( 'gglcptch_custom_plugin_section_notice', $plugins );
 
 		$is_network_admin = is_network_admin();
@@ -240,6 +255,12 @@ if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 		/* Add Google Captcha to Testimonials by BestWebSoft */
 		if ( gglcptch_is_recaptcha_required( 'testimonials', $is_user_logged_in ) ) {
 			add_filter( 'tstmnls_display_recaptcha', 'gglcptch_display', 10, 0 );
+		}
+
+		/* Add Google Captcha to BWS Login Register */
+		if ( gglcptch_is_recaptcha_required( 'bws_login_form', $is_user_logged_in ) || gglcptch_is_recaptcha_required( 'bws_register_form', $is_user_logged_in ) || gglcptch_is_recaptcha_required( 'bws_forgot_pass_form', $is_user_logged_in ) ) {
+			add_filter( 'lgnrgstrfrm_add_field', 'gglcptch_add_login_register_forms', 10, 2 );
+			add_filter( 'lgnrgstrfrm_check_field', 'gglcptch_check_login_register_forms', 10 );
 		}
 
 		do_action( 'gglcptch_add_plus_actions', $is_user_logged_in );
@@ -559,3 +580,43 @@ if ( ! function_exists( 'gglcptch_testimonials_check' ) ) {
 		return $allow;
 	}
 }
+
+if ( ! function_exists( 'gglcptch_add_login_register_forms' ) ) {
+	/**
+	 * Check google captcha in BWS Testimonial
+	 *
+	 * @param   string $content Content.
+	 * @param   string $form    Form name.
+	 * @return  string $content Content after update.
+	 */
+	function gglcptch_add_login_register_forms( $content, $form ) {
+		$is_user_logged_in = is_user_logged_in();
+		if ( gglcptch_is_recaptcha_required( 'bws_login_form', $is_user_logged_in ) && 'login' === $form ) {
+			return gglcptch_display( array(), $content );
+		} elseif ( gglcptch_is_recaptcha_required( 'bws_register_form', $is_user_logged_in ) && 'register' === $form ) {
+			return gglcptch_display( array(), $content );
+		} elseif( gglcptch_is_recaptcha_required( 'bws_forgot_pass_form', $is_user_logged_in ) && 'forgot_password' === $form ) {
+			return gglcptch_display( array(), $content );
+		}
+		return $content;
+	}
+}
+
+if ( ! function_exists( 'gglcptch_check_login_register_forms' ) ) {
+	/**
+	 * Check google captcha in BWS Testimonial
+	 *
+	 * @param   string $form          Form name.
+	 * @return  string $error_message Error for reCaptcha.
+	 */
+	function gglcptch_check_login_register_forms( $form ) {
+		global $gglcptch_options;
+		$gglcptch_check = gglcptch_check( 'bws_' . $form . '_form' );
+		if ( ! $gglcptch_check['response'] ) {
+			$error_message = implode( '<br>', $gglcptch_check['errors']->get_error_messages() );
+			return $error_message;
+		}
+		return '';
+	}
+}
+

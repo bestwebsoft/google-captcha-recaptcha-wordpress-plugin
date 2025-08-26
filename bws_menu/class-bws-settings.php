@@ -553,60 +553,60 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 							<?php
 							if ( ! current_user_can( 'edit_plugins' ) ) {
 								echo '<p>' . esc_html__( 'You do not have sufficient permissions to edit plugins for this site.', 'bestwebsoft' ) . '</p>';
-							} else {
+								return;
+							}
 
-								$list = array(
-									'css' => array(
-										'description'     => __( 'These styles will be added to the header on all pages of your site.', 'bestwebsoft' ),
-										'learn_more_link' => 'https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started',
-									),
-									'php' => array(
-										'description'     => sprintf( __( 'This PHP code will be hooked to the %s Action and will be printed on front end only.', 'bestwebsoft' ), '<a href="https://codex.wordpress.org/Plugin_API/Action_Reference/init" target="_blank"><code>init</code></a>' ),
-										'learn_more_link' => 'https://php.net/',
-									),
-									'js'  => array(
-										'description'     => __( 'These code will be added to the header on all pages of your site.', 'bestwebsoft' ),
-										'learn_more_link' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-									),
-								);
+							$list = array(
+								'css' => array(
+									'description'     => __( 'These styles will be added to the header on all pages of your site.', 'bestwebsoft' ),
+									'learn_more_link' => 'https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started',
+								),
+								'php' => array(
+									'description'     => sprintf( __( 'This PHP code will be hooked to the %s Action and will be printed on front end only.', 'bestwebsoft' ), '<a href="https://codex.wordpress.org/Plugin_API/Action_Reference/init" target="_blank"><code>init</code></a>' ),
+									'learn_more_link' => 'https://php.net/',
+								),
+								'js'  => array(
+									'description'     => __( 'These code will be added to the header on all pages of your site.', 'bestwebsoft' ),
+									'learn_more_link' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+								),
+							);
 
-								foreach ( $list as $extension => $extension_data ) {
-									$name = 'js' === $extension ? 'JavaScript' : strtoupper( $extension );
-									?>
-									<p><big>
-											<strong><?php echo esc_html( $name ); ?></strong>
+							foreach ( $list as $extension => $extension_data ) {
+								$name = 'js' === $extension ? 'JavaScript' : strtoupper( $extension );
+								?>
+								<p><big>
+										<strong><?php echo esc_html( $name ); ?></strong>
+										<?php
+										if ( ! $this->custom_code_args[ "{$extension}_writeable" ] ) {
+											echo '(' . esc_html__( 'Browsing', 'bestwebsoft' ) . ')';
+										}
+										?>
+									</big>
+								</p>
+								<p class="bws_info">
+									<label>
+										<input type="checkbox" value="1" 
 											<?php
-											if ( ! $this->custom_code_args[ "{$extension}_writeable" ] ) {
-												echo '(' . esc_html__( 'Browsing', 'bestwebsoft' ) . ')';
+											if ( $this->custom_code_args[ "is_{$extension}_active" ] ) {
+												echo 'checked';
 											}
 											?>
-										</big>
-									</p>
-									<p class="bws_info">
-										<label>
-											<input type="checkbox" value="1" 
-												<?php
-												if ( $this->custom_code_args[ "is_{$extension}_active" ] ) {
-													echo 'checked';
-												}
-												?>
-											 />
-											<?php printf( esc_html__( 'Activate custom %s code.', 'bestwebsoft' ), esc_html( $name ) ); ?>
-										</label>
-									</p>
-									<textarea cols="70" rows="25" id="bws_newcontent_<?php echo esc_attr( $extension ); ?>" disabled="disabled"><?php
-									if ( isset( $this->custom_code_args[ "content_{$extension}" ] ) ) {
-										echo esc_html( stripslashes_deep( $this->custom_code_args[ "content_{$extension}" ] ) ); }
-									?></textarea>
-									<p class="bws_info">
-										<?php echo wp_kses_post( $extension_data['description'] ); ?>
-										<br>
-										<a href="<?php echo esc_url( $extension_data['learn_more_link'] ); ?>" target="_blank">
-											<?php printf( esc_html__( 'Learn more about %s', 'bestwebsoft' ), esc_html( $name ) ); ?>
-										</a>
-									</p>
-									<?php
-								}
+										 />
+										<?php printf( esc_html__( 'Activate custom %s code.', 'bestwebsoft' ), esc_html( $name ) ); ?>
+									</label>
+								</p>
+								<textarea cols="70" rows="25" id="bws_newcontent_<?php echo esc_attr( $extension ); ?>" disabled="disabled"><?php
+								if ( isset( $this->custom_code_args[ "content_{$extension}" ] ) ) {
+									echo esc_html( stripslashes_deep( $this->custom_code_args[ "content_{$extension}" ] ) ); }
+								?></textarea>
+								<p class="bws_info">
+									<?php echo wp_kses_post( $extension_data['description'] ); ?>
+									<br>
+									<a href="<?php echo esc_url( $extension_data['learn_more_link'] ); ?>" target="_blank">
+										<?php printf( esc_html__( 'Learn more about %s', 'bestwebsoft' ), esc_html( $name ) ); ?>
+									</a>
+								</p>
+								<?php
 							}
 							?>
 						</div>

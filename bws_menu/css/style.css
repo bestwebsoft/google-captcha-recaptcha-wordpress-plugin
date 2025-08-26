@@ -402,6 +402,7 @@ a.bws_donate {
 .bws-category a.bws-active span {
 	color: #8bbed2;
 }
+
 @media screen and (max-width: 1700px) {
 	.bws-products {
 		width: 1020px;

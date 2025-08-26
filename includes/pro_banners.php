@@ -235,6 +235,30 @@ if ( ! function_exists( 'gglcptch_additional_settings_banner_general' ) ) {
 					<span class="bws_info"><?php esc_html_e( 'Enable to switch language automatically on multilingual website using the Multilanguage plugin.', 'google-captcha' ); ?></span>
 				</td>
 			</tr>
+			<tr valign="top">
+				<th scope="row"><?php esc_html_e( 'Block disposable emails', 'google-captcha' ); ?></th>
+				<td>
+					<label><input id="gglcptch_block_disposable_emails" type="checkbox" disabled="disabled"  />
+					<span class="bws_info">
+						<?php esc_html_e( 'Please make sure reCAPTCHA is active for this form in order for the disposable email check to function.', 'google-captcha' ); ?>
+					</span></label><br /><br />
+					
+					<div class="gglcptch_block_disposable_emails">
+						<label><input type="submit" class="button button-primary button-large" disabled="disabled" value="<?php esc_html_e( 'Download file with disposable domains', 'google-captcha' ); ?>" /></label><br />
+						<p><b><?php esc_html_e( 'WordPress forms', 'google-captcha' ); ?>:</b></p>
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'Registration form', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'Comments form', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'Contact Form by BestWebSoft', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'Subscriber by BestWebSoft', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'WooCommerce Registration form', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'WooCommerce Checkout form', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'LearnDash registration form', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'MemberPress checkout form', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'BuddyBoss registration form', 'google-captcha' ); ?></label><br />
+						<label><input type="checkbox" disabled="disabled"><?php esc_html_e( 'BWS Register form', 'google-captcha' ); ?></label><br />
+					</div>
+				</td>
+			</tr>
 		</table>
 		<?php
 	}

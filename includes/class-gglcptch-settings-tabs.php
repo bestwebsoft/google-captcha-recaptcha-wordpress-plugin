@@ -265,7 +265,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 								<p class="gglcptch_section_header">
 									<i><?php echo esc_html( $section['name'] ); ?></i>
 									<?php if ( ! empty( $section_notice ) ) { ?>
-										&nbsp;<span class="bws_info"><?php echo esc_html( $section_notice ); ?></span>
+										&nbsp;<span class="bws_info"><?php echo wp_kses_post( $section_notice ); ?></span>
 									<?php } ?><br />
 								</p>
 								<fieldset class="gglcptch_section_forms">

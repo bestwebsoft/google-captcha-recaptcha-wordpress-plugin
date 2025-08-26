@@ -4,7 +4,7 @@ Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 5.6
 Tested up to: 6.8
-Stable tag: 1.83
+Stable tag: 1.84
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,6 +30,7 @@ http://www.youtube.com/watch?v=L2BziEOL3Fg
 	* Comments form
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=56575444122cff9ab3ee3e640efb001a)
 	* [Testimonials](https://bestwebsoft.com/products/wordpress/plugins/testimonials/)
+	* [Login & Register Form](https://wordpress.org/plugins/bws-login-register)
 	* Custom form
 * Hide reCaptcha for the allowlisted IP addresses
 * Disable the submit button
@@ -96,10 +97,15 @@ http://www.youtube.com/watch?v=L2BziEOL3Fg
 > 	* Login form
 > 	* Registration form
 > 	* Profile form
+> * Compatible with BWS Login Register Form:
+> 	* Login form
+> 	* Registration form
+> 	* Forgot Password form
 > * Select reCaptcha language manually
 > * Activate reCaptcha on certain Weekdays and Hours
 > * Change size: normal or compact (for version 2)
 > * Configure all subsites on the network
+> * Block disposable emails
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=c4f2e3054fdbaca8a2b61554cbb9638c)
@@ -289,6 +295,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Allow List page.
 
 == Changelog ==
+
+= V1.84 - 26.08.2025 =
+* Pro : The Block disposable emails functionality has been added.
+* NEW : The new compatibility with BWS Login Register Form has been added.
+* Update : BWS Panel section was updated.
 
 = V1.83 - 13.07.2025 =
 * Bugfix : Fixed small bug with plugin activation.
@@ -663,6 +674,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.84 =
+* The compatibility with new WordPress version updated.
+* New features added.
 
 = V1.83 =
 * Bugs fixed.
