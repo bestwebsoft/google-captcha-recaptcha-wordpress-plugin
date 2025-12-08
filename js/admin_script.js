@@ -78,6 +78,15 @@
 				$( 'input[name="gglcptch_add_to_allowlist"]' ).val( '' ).removeAttr( 'readonly' );
 			}
 		} );
+
+		/*  Hide login block */
+		$( '#gglcptch_hide_login' ).on( 'change', function() {
+			if ( $( this ).is( ':checked' ) ) {
+				$( '.gglcptch_login_slug' ).show();
+			} else {
+				$( '.gglcptch_login_slug' ).hide();
+			}
+		} );
 	} );
 
 	$( document ).on( 'click', '#gglcptch-test-keys a', function( e ) {

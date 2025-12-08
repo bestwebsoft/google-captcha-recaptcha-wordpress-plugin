@@ -41,60 +41,6 @@
 		 * via plugin`s php-functionality
 		 */
 		if ( 'v2' == gglcptch.options.version || 'invisible' == gglcptch.options.version ) {
-			$( '.g-recaptcha' ).each( function() {
-				/* reCAPTCHA will be generated into the empty block only */
-				if ( $( this ).html() === '' && $( this ).text() === '' ) {
-
-					/* get element`s ID */
-					var container = $( this ).attr( 'id' );
-
-					if ( typeof container == 'undefined' ) {
-						container = get_id();
-						$( this ).attr( 'id', container );
-					}
-
-					/* get reCapatcha parameters */
-					var sitekey  = $( this ).attr( 'data-sitekey' ),
-						theme    = $( this ).attr( 'data-theme' ),
-						lang     = $( this ).attr( 'data-lang' ),
-						size     = $( this ).attr( 'data-size' ),
-						type     = $( this ).attr( 'data-type' ),
-						tabindex = $( this ).attr( 'data-tabindex' ),
-						callback = $( this ).attr( 'data-callback' ),
-						ex_call  = $( this ).attr( 'data-expired-callback' ),
-						stoken   = $( this ).attr( 'data-stoken' ),
-						params   = [];
-
-					params['sitekey'] = sitekey ? sitekey : gglcptch.options.sitekey;
-					if ( !! theme ) {
-						params['theme'] = theme;
-					}
-					if ( !! lang ) {
-						params['lang'] = lang;
-					}
-					if ( !! size ) {
-						params['size'] = size;
-					}
-					if ( !! type ) {
-						params['type'] = type;
-					}
-					if ( !! tabindex ) {
-						params['tabindex'] = tabindex;
-					}
-					if ( !! callback ) {
-						params['callback'] = callback;
-					}
-					if ( !! ex_call ) {
-						params['expired-callback'] = ex_call;
-					}
-					if ( !! stoken ) {
-						params['stoken'] = stoken;
-					}
-
-					gglcptch.display( container, params );
-				}
-			} );
-
 			/*
 			 * count the number of reCAPTCHA blocks in the form
 			 */

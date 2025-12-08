@@ -6,7 +6,7 @@ Description: Protect WordPress website forms from spam entries with Google Captc
 Author: BestWebSoft
 Text Domain: google-captcha
 Domain Path: /languages
-Version: 1.84
+Version: 1.85
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -137,7 +137,116 @@ if ( ! function_exists( 'gglcptch_init' ) ) {
 		if ( ! $is_admin && ! empty( $gglcptch_options['public_key'] ) && ! empty( $gglcptch_options['private_key'] ) ) {
 			gglcptch_add_actions();
 		}
+
+		if ( isset( $gglcptch_options['hide_login'] ) && isset( $gglcptch_options['slug_login'] ) && ! empty( $gglcptch_options['slug_login'] ) ) {
+			$request_url = sanitize_url( wp_unslash( $_SERVER['REQUEST_URI'] ) );
+			add_filter( 'site_url', 'gglcptch_check_login_url', 10, 4 );
+			add_action( 'login_init', 'gglcptch_login_head', 10 );
+			add_action( 'login_form', 'gglcptch_add_field' );
+
+			add_filter( 'lostpassword_url',  'gglcptch_lostpassword', 10 );
+			add_filter( 'lostpassword_redirect', 'gglcptch_lostpassword_redirect', 100 );
+			
+			global $pagenow;
+			if ( ( false !== strpos( $request_url, '/admin' ) || false !== strpos( $request_url, '/wp-admin' ) || false !== strpos( $request_url, '/dashboard' ) ) && 'index.php' === $pagenow ) {
+				$url = get_site_url() . '/?' . $gglcptch_options['slug_login'];
+				wp_safe_redirect( $url );
+				exit();
+			}
+
+			if ( false !== strpos( wp_parse_url( $request_url, PHP_URL_QUERY ), $gglcptch_options['slug_login'] ) && false === strpos( $request_url, 'wp-login.php' ) ) {
+				$pagenow = 'wp-login.php';
+				require_once( ABSPATH . 'wp-login.php' );
+        exit;
+			}
+		}
 	}
+}
+
+if ( ! function_exists( 'gglcptch_check_login_url' ) ) {
+	/**
+	 * Change login URI
+	 */
+	function gglcptch_check_login_url( $url, $path, $scheme, $blog_id ) {
+		global $gglcptch_options;
+		$parsed_url = wp_parse_url( $url );
+
+		if ( strpos( $url, 'wp-login.php' ) === false || empty( $gglcptch_options['slug_login'] ) ) {
+			return $url;
+		}
+
+		$args = explode( '?', $url );
+
+		if ( isset( $args[1] ) ) {
+			parse_str( $args[1], $args );
+			if ( ! array_key_exists( $gglcptch_options['slug_login'], $args ) ) {
+				$args[ $gglcptch_options['slug_login'] ] = 1;
+			}
+			$url = add_query_arg( $args, get_site_url() . '/?' . $gglcptch_options['slug_login'] );
+		} else {
+			$url = get_site_url() . '/?' . $gglcptch_options['slug_login'];
+		}
+		return $url;
+	}
+}
+
+if ( ! function_exists( 'gglcptch_login_head' ) ) {
+	/**
+	 * Changed for login page
+	 */
+	function gglcptch_login_head() {
+    global $gglcptch_options;
+    if ( isset( $_GET['action'] ) && ( isset( $_GET['key'] ) || 'resetpass' === sanitize_text_field( wp_unslash( $_GET['action'] ) ) || 'rp' === sanitize_text_field( $_GET['action'] ) ) ) {
+			return;
+		}
+ 
+    if ( isset( $_POST['redirect_slug'] ) && $gglcptch_options['slug_login'] === sanitize_text_field( wp_unslash( $_POST['redirect_slug'] ) ) ) {
+			return false;
+		}
+
+    $request_url = sanitize_url( wp_unslash( $_SERVER['REQUEST_URI'] ) );
+
+    if ( false !== strpos( $request_url, 'action=logout' ) ) { 
+      check_admin_referer( 'log-out' );
+      wp_logout();
+      wp_safe_redirect( home_url(), 302 );
+      die;
+    }
+    if ( false === strpos( $request_url, $gglcptch_options['slug_login'] ) && ( false !== strpos( $request_url, 'wp-login' ) || false !== strpos( $request_url, 'login' ) ) ) {
+      wp_safe_redirect( home_url( $gglcptch_options['login_error_redirection'] ), 302 );
+      exit();
+    }
+  }
+}
+
+if ( ! function_exists( 'gglcptch_add_field' ) ) {
+	/**
+	 * Add field for login form
+	 */
+  function gglcptch_add_field() {
+		global $gglcptch_options;
+    echo '<input type="hidden" name="redirect_slug" value="' . esc_attr( $gglcptch_options['slug_login'] ) . '" />';
+  }
+}
+
+if ( ! function_exists( 'gglcptch_lostpassword_redirect' ) ) {
+	/**
+	 * Change lost password link in email
+	 */
+  function gglcptch_lostpassword_redirect( $lostpassword_redirect ) {
+    global $gglcptch_options;
+    return 'wp-login.php?checkemail=confirm&redirect=false&' . $gglcptch_options['slug_login'];
+  }
+}
+
+if ( ! function_exists( 'gglcptch_lostpassword' ) ) {
+	/**
+	 * Change lost password link
+	 */
+  function gglcptch_lostpassword() {
+    global $gglcptch_options;
+    return site_url( 'wp-login.php?action=lostpassword&' . $gglcptch_options['slug_login'] . '&redirect=false' );
+  }
 }
 
 if ( ! function_exists( 'gglcptch_plugin_activate' ) ) {
@@ -511,7 +620,10 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 			'weekdays'							  => array( 1, 2, 3, 4, 5, 6, 7 ),
 			'all_day'                 => array( 1, 2, 3, 4, 5, 6, 7 ),
 			'hours'                   => array(),
-		);
+			'hide_login'              => 0,
+			'slug_login'              => '',
+			'login_error_redirection' => '404',
+	);
 
 		if ( function_exists( 'get_editable_roles' ) ) {
 			foreach ( get_editable_roles() as $role => $fields ) {
@@ -1448,7 +1560,7 @@ register_activation_hook( __FILE__, 'gglcptch_plugin_activate' );
 
 add_action( 'admin_menu', 'gglcptch_admin_menu' );
 
-add_action( 'init', 'gglcptch_init' );
+add_action( 'init', 'gglcptch_init', 10 );
 add_action( 'admin_init', 'gglcptch_admin_init' );
 
 add_action( 'plugins_loaded', 'gglcptch_plugins_loaded' );

@@ -45,6 +45,7 @@
 <li>Detailed step-by-step documentation and videos</li>
 <li>Multilingual and RTL ready</li>
 <li>Edit error message</li>
+<li>Hide Login page</li>
 </ul>
 <blockquote>
 <p><strong>Pro Features</strong></p>
@@ -124,6 +125,7 @@
 <li>Change size: normal or compact (for version 2)</li>
 <li>Configure all subsites on the network</li>
 <li>Block disposable emails</li>
+<li>Administrator Login notification</li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow ugc">Support Policy</a>)</li>
 </ul>
 <p><a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=c4f2e3054fdbaca8a2b61554cbb9638c" rel="nofollow ugc">Upgrade to Pro Now</a></p>

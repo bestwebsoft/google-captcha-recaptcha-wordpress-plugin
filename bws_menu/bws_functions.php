@@ -805,7 +805,7 @@ if ( ! function_exists( 'bws_admin_enqueue_scripts' ) ) {
 		if ( in_array( $page, array( 'bws_panel', 'bws_themes', 'bws_system_status', $plugin_file ) ) || $include_jquery_ui || strpos( $page, '-bws-panel' ) ) {
 			$jquery_ui_version = isset( $wp_scripts->registered['jquery-ui-core']->ver ) ? $wp_scripts->registered['jquery-ui-core']->ver : '1.12.1';
 			WP_Filesystem();
-			if ( ! $wp_filesystem->exists( dirname( __FILE__ ) . '/css/jquery-ui-styles/' . $jquery_ui_version . '/' ) ) {
+			if ( ! empty( $wp_filesystem->link ) && ! $wp_filesystem->exists( dirname( __FILE__ ) . '/css/jquery-ui-styles/' . $jquery_ui_version . '/' ) ) {
 				$jquery_ui_version = '1.12.1';
 			}
 			wp_enqueue_style( 'jquery-ui-style', bws_menu_url( 'css/jquery-ui-styles/' . $jquery_ui_version . '/jquery-ui.css', array(), $jquery_ui_version ) );

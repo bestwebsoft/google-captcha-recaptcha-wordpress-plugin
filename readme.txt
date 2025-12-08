@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: anti-spam security, antispam, recaptcha, captcha, captha, Invisible reCaptcha, Invisible captcha, Invisibl reCaptcha, comment, cpatcha, google catcha, Invisible re captcha, recaptcha version3
 Requires at least: 5.6
-Tested up to: 6.8
-Stable tag: 1.84
+Tested up to: 6.9
+Stable tag: 1.85
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -51,6 +51,7 @@ http://www.youtube.com/watch?v=L2BziEOL3Fg
 * Detailed step-by-step documentation and videos
 * Multilingual and RTL ready
 * Edit error message
+* Hide Login page
 
 > **Pro Features**
 >
@@ -106,6 +107,7 @@ http://www.youtube.com/watch?v=L2BziEOL3Fg
 > * Change size: normal or compact (for version 2)
 > * Configure all subsites on the network
 > * Block disposable emails
+> * Administrator Login notification
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=c4f2e3054fdbaca8a2b61554cbb9638c)
@@ -295,6 +297,13 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 8. reCaptcha Allow List page.
 
 == Changelog ==
+
+= V1.85 - 08.12.2025 =
+* Pro : The Administrator Login notification functionality has been added.
+* NEW : The Hide Login page functionality has been added.
+* Update : BWS Panel section was updated.
+* Bugfix : Minor bugs fixed.
+* Update : All functionality was updated for WordPress 6.8.3.
 
 = V1.84 - 26.08.2025 =
 * Pro : The Block disposable emails functionality has been added.
@@ -674,6 +683,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Ability to add Google Captcha (reCAPTCHA) into standard forms was added.
 
 == Upgrade Notice ==
+
+= V1.85 =
+* The compatibility with new WordPress version updated.
+* New features added.
+* Bug fixed.
 
 = V1.84 =
 * The compatibility with new WordPress version updated.

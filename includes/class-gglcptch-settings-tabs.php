@@ -22,6 +22,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 
 			$tabs = array(
 				'settings'    => array( 'label' => __( 'Settings', 'google-captcha' ) ),
+				'hide_login'  => array( 'label' => __( 'Hide Login', 'google-captcha' ) ),
 				'misc'        => array( 'label' => __( 'Misc', 'google-captcha' ) ),
 				'custom_code' => array( 'label' => __( 'Custom Code', 'google-captcha' ) ),
 				'license'     => array( 'label' => __( 'License Key', 'google-captcha' ) ),
@@ -142,6 +143,22 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					foreach ( get_editable_roles() as $role => $fields ) {
 						$this->options[ $role ] = isset( $_POST[ 'gglcptch_' . $role ] ) ? 1 : 0;
 					}
+				}
+
+				$this->options['hide_login']  = isset( $_POST['gglcptch_hide_login'] ) ? 1 : 0;
+				$new_login_slug = isset( $_POST['gglcptch_slug_login'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_slug_login'] ) ) : '';
+				if ( 1 === $this->options['hide_login'] && empty( $new_login_slug ) ) {
+					$error = __( 'Cannot set Slug for Login page to home page.', 'google-captcha' );
+				} elseif ( in_array( $new_login_slug, [ $this->options['login_error_redirection'], 'wp-admin', 'wp-login', 'wp-login.php', 'login'] ) ) {
+					$error = __( 'Cannot set login to reserved URLs or the redirection page.', 'google-captcha' );
+				} else {
+					$this->options['slug_login'] = $new_login_slug;
+				}
+				$login_error_redirection = isset( $_POST['gglcptch_login_error_redirection'] ) ? sanitize_text_field( wp_unslash( $_POST['gglcptch_login_error_redirection'] ) ) : '';
+				if ( in_array( $login_error_redirection, [ $this->options['slug_login'], 'wp-admin', 'wp-login', 'wp-login.php', 'login'] ) ) {
+					$error = __( 'Cannot set redirection to reserved URLs or the new login page.', 'google-captcha' );
+				} else {
+					$this->options['login_error_redirection'] = $login_error_redirection;
 				}
 
 				$this->options = apply_filters( 'gglcptch_before_save_options', $this->options );
@@ -510,6 +527,52 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			</table>
 			<?php
 			wp_nonce_field( 'gglcptch_save_action', 'gglcptch_save_field' );
+		}
+
+		/**
+		 * Displays 'hide login' menu-tab
+		 *
+		 * @access public
+		 * @param void
+		 * @return void
+		 */
+		public function tab_hide_login() {
+			global $gglcptch_languages, $wp_version, $gglcptch_options;
+			?>
+			<h3 class="bws_tab_label"><?php esc_html_e( 'Hide Login Settings', 'google-captcha' ); ?></h3>
+			<?php $this->help_phrase(); ?>
+			<hr>
+			<table class="form-table gglcptch_settings_form">
+				<tr valign="top">
+					<th scope="row">
+						<?php esc_html_e( 'Hide Login page', 'google-captcha' ); ?>
+					</th>
+					<td>
+						<input id="gglcptch_hide_login" name="gglcptch_hide_login" type="checkbox" value="1" <?php echo checked( $this->options['hide_login'] ); ?>>
+					</td>
+				</tr>
+				<tr class="gglcptch_login_slug" valign="top" <?php echo empty( $this->options['hide_login'] ) || 0 === $this->options['hide_login'] ? 'style="display:none;"' : '';  ?>>
+					<th scope="row">
+						<?php esc_html_e( 'Slug for Login page', 'google-captcha' ); ?>
+					</th>
+					<td>
+						<input name="gglcptch_slug_login" type="text" value="<?php echo $this->options['slug_login']; ?>">
+						<span class="bws_info" style="display: block;"><?php printf( __( 'Access to the login page will only be possible from this URL: %s', 'google-captcha' ), home_url( ! empty( $this->options['slug_login'] ) ? '?' . $this->options['slug_login'] : '?slug_page' ) ); ?></span>
+						<span class="bws_info warning" style="display: block;"><?php _e( 'The slug must be unique to the site.', 'google-captcha' ); ?></span>
+					</td>
+				</tr>
+				<tr class="gglcptch_login_slug" <?php echo empty( $this->options['hide_login'] ) || 0 === $this->options['hide_login'] ? 'style="display:none;"' : '';  ?>>
+					<th scope="row">
+						<?php esc_html_e( 'Redirection', 'google-captcha' ); ?>
+					</th>
+					<td>
+						<input name="gglcptch_login_error_redirection" type="text" value="<?php echo $this->options['login_error_redirection']; ?>">
+						<span class="bws_info" style="display: block;"><?php _e( 'This page shown when accessing the login page with the wrong URL, leaving it empty will redirect to the home page', 'google-captcha' ); ?></span>
+					</td>
+					
+				</tr>
+			</table>
+			<?php
 		}
 
 		/**
